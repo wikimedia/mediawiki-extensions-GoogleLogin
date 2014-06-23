@@ -26,3 +26,9 @@ $wgGoogleSecret = <your client secret key>;
 $wgGoogleAppId = <your google client id>;
 
 Have fun with the new Special Page Special:GoogleLogin.
+
+Google API PHP Client
+==
+This Extension uses the Google API PHP Client, a free software licensed under Apacha 2.0:
+https://github.com/google/google-api-php-client
+https://github.com/google/google-api-php-client/blob/master/LICENSE
