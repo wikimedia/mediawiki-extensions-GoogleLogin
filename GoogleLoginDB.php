@@ -1,0 +1,87 @@
+<?php
+	class GoogleLoginDB {
+		public function GoogleIdExists( $googleId, $db = DB_SLAVE ) {
+			$dbr = wfGetDB( $db, array(), self::sharedDB() );
+			$prefix = self::getPrefix();
+			$res = $dbr->select(
+				array( "{$prefix}user_google_user" ),
+				array( 'user_id' ),
+				array( 'user_googleid' ),
+				__METHOD__
+			);
+			// $res might be null if the table user_fbconnect wasn't created
+			$userId = array();
+			if ( $res === 0 ) {
+				return false;
+			} else {
+				foreach( $res as $row ) {
+					$userId['id'] = $row->user_id;
+				}
+				$res->free();
+				return $userId;
+			}
+			return true;
+		}
+
+		public function createConnection( $googleId, $userId ) {
+			$dbr = wfGetDB( DB_MASTER );
+			$prefix = self::getPrefix();
+			if (
+				$dbr->insert(
+					"{$prefix}user_google_user",
+					array(
+						'user_id' => $userId,
+						'user_googleid' => $googleId
+					),
+					__METHOD__,
+					array( 'IGNORE' )
+				)
+			) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		public function terminateConnection( $googleId ) {
+			$dbr = wfGetDB( DB_MASTER );
+			$prefix = self::getPrefix();
+			if (
+				$dbr->delete(
+					"{$prefix}user_google_user",
+					"user_googleid = {$googleId}",
+					__METHOD__
+				)
+			) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		/**
+		 * Returns the name of the shared database, if one is in use for the Facebook
+		 * Connect users table. Note that 'user_fbconnect' (without respecting
+		 * $wgSharedPrefix) is added to $wgSharedTables in FacebookInit::init() by
+		 * default. This function can also be used as a test for whether a shared
+		 * database for Facebook users is in use.
+		 * 
+		 * See also <http://www.mediawiki.org/wiki/Manual:Shared_database>
+		 */
+		public static function sharedDB() {
+			global $wgExternalSharedDB;
+			if ( !empty( $wgExternalSharedDB ) ) {
+				return $wgExternalSharedDB;
+			}
+			return false;
+		}
+
+		/**
+		 * Returns the table prefix name, either $wgDBprefix, $wgSharedPrefix
+		 * depending on whether a shared database is in use.
+		 */
+		private static function getPrefix() {
+		 global $wgDBprefix, $wgSharedPrefix;
+		 return self::sharedDB() ? $wgSharedPrefix : ""; // bugfix for $wgDBprefix;
+		}
+	}
