@@ -9,7 +9,7 @@
 		 * @param SubPage $par Subpage submitted to this Special page.
 		 */
 		function execute( $par ) {
-			global $wgGoogleSecret, $wgGoogleAppId, $wgGoogleAppName, $wgGoogleDevKey, $wgScriptDir;
+			global $wgScriptDir;
 			$this->setHeaders();
 			$request = $this->getRequest();
 			$out = $this->getOutput();
@@ -140,8 +140,7 @@
 		 * @return Google_Service_Plus An instance of Google Plus Client
 		 */
 		private function prepareClient( $client ) {
-			global $wgGoogleSecret, $wgGoogleAppId, $wgGoogleAppName, $wgGoogleDevKey;
-			$request = $this->getRequest();
+			global $wgGoogleSecret, $wgGoogleAppId, $wgGoogleAppName;
 			$client->setClientId( $wgGoogleAppId );
 			$client->setClientSecret( $wgGoogleSecret );
 			$client->setRedirectUri( WebRequest::detectServer().$this->getPageTitle()->getLocalUrl() );
