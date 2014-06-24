@@ -31,23 +31,24 @@
 			return true;
 		}
 
-		public static function onUserLoginForm( &$template ) {
-			global $wgOut;
-			$wgOut->addHtml(
-				Html::openelement( 'div', array( 'style' => 'float:right;' ), null)
-			);
-			$wgOut->addHtml( Html::openelement( 'li', array(
-					'style' => 'list-style:none;',
+		public static function onUserLoginForm( &$tpl ) {
+			// we don't want to delete the output of other extensions, so "extend" header
+			$header = $tpl->get( 'header' );
+
+			$header .= 
+				Html::openelement( 'div', null) .
+				Html::openelement( 'li', array(
+					'style' => 'list-style:none;width:100%;',
 				) ) .
 				Html::element( 'a' , array(
 						'href' => Title::makeTitle( -1, 'GoogleLogin' )->getLocalUrl(),
-						'class' => 'mw-ui-button mw-ui-destructive mw-ui-big',
+						'class' => 'mw-ui-button mw-ui-destructive',
+						'style' => 'width:100%;'
 					), wfMessage( 'googlelogin' )
 				) .
-				Html::closeelement( 'li' )
-			);
-			$wgOut->addHtml(
-				Html::closeelement( 'div')
-			);
+				Html::closeelement( 'li' ) .
+				Html::closeelement( 'div');
+
+			$tpl->set( 'header', $header );
 		}
 	}
