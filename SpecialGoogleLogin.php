@@ -372,7 +372,8 @@
 					// Google id.
 					if ( $this->isRequestValid() ) {
 						$user = $this->getUser();
-						if ( !empty( $userInfo['id'] ) && !empty( $user->getId() ) ) {
+						$userId = $user->getId();
+						if ( !empty( $userInfo['id'] ) && !empty( $userId ) ) {
 							if ( $db->createConnection( $userInfo['id'], $user->getId() ) ) {
 								$out->addWikiMsg( 'googlelogin-success-merge' );
 							} else {
