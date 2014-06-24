@@ -4,9 +4,9 @@
 			$dbr = wfGetDB( $db, array(), self::sharedDB() );
 			$prefix = self::getPrefix();
 			$res = $dbr->select(
-				array( "{$prefix}user_google_user" ),
+				"user_google_user",
 				array( 'user_id' ),
-				array( 'user_googleid' ),
+				'user_googleid = ' . $googleId,
 				__METHOD__
 			);
 			// $res might be null if the table user_fbconnect wasn't created
