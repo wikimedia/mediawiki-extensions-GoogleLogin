@@ -35,7 +35,7 @@
 			// we don't want to delete the output of other extensions, so "extend" header
 			$header = $tpl->get( 'header' );
 
-			$header .= 
+			$header .=
 				Html::openelement( 'div', null) .
 				Html::openelement( 'li', array(
 					'style' => 'list-style:none;width:100%;',

@@ -65,7 +65,7 @@
 		 * $wgSharedPrefix) is added to $wgSharedTables in FacebookInit::init() by
 		 * default. This function can also be used as a test for whether a shared
 		 * database for Facebook users is in use.
-		 * 
+		 *
 		 * See also <http://www.mediawiki.org/wiki/Manual:Shared_database>
 		 */
 		public static function sharedDB() {
