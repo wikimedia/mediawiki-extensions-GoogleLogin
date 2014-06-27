@@ -124,29 +124,180 @@
 			$request = $this->getRequest();
 			$user = $this->getUser();
 			$googleIdExists = $db->GoogleIdExists( $userInfo['id'] );
-			if ( !$googleIdExists ) {
-				if ( !$user->isLoggedIn() ) {
-					$this->createGoogleUserForm( $userInfo, $db );
-				} else {
-					$this->GoogleUserForm( 'Merge' );
-				}
-			} else {
-				if ( $user->isLoggedIn() ) {
-					if ( $user->getId() != $googleIdExists['id'] ) {
-						$out->addWikiMsg( 'googlelogin-link-other' );
+			if (
+				$this->isValidDomain(
+					$this->getHost(
+						'test.gmail.com'//$userInfo['emails'][0]['value']
+					)
+				)
+			) {
+				if ( !$googleIdExists ) {
+					if ( !$user->isLoggedIn() ) {
+						$this->createGoogleUserForm( $userInfo, $db );
 					} else {
-						if ( $request->getVal( 'code' ) !== null ) {
-							// if user logged into google account and is already logged in and linked,
-							// show the whole special page, not only a button - bug 67486
-							$out->redirect( $this->getPageTitle()->getLocalUrl() );
-						} else {
-							$this->GoogleUserForm( 'Unlink' );
-						}
+						$this->GoogleUserForm( 'Merge' );
 					}
 				} else {
-					$this->loginGoogleUser( $googleIdExists['id'] );
+					if ( $user->isLoggedIn() ) {
+						if ( $user->getId() != $googleIdExists['id'] ) {
+							$out->addWikiMsg( 'googlelogin-link-other' );
+						} else {
+							if ( $request->getVal( 'code' ) !== null ) {
+								// if user logged into google account and is already logged in and linked,
+								// show the whole special page, not only a button - bug 67486
+								$out->redirect( $this->getPageTitle()->getLocalUrl() );
+							} else {
+								$this->GoogleUserForm( 'Unlink' );
+							}
+						}
+					} else {
+						$this->loginGoogleUser( $googleIdExists['id'] );
+					}
 				}
+			} else {
+				$out->addWikiMsg(
+					'googlelogin-unallowed-domain',
+					$this->getHost(
+						$userInfo['emails'][0]['value']
+					)
+				);
 			}
+		}
+
+		/**
+		 * Creates the TLD cache from which the valid tld of mail domain comes from.
+		 * @param string $cacheFile The file to create the cache too (must be writeable for the
+		 * webserver!)
+		 * @param int $max_tl How deep the domain list is (enclude example.co.uk (2) or
+		 * example.lib.wy.us (3)?)
+		 * @see http://www.programmierer-forum.de/domainnamen-ermitteln-t244185.htm
+		 */
+		function createTLDCache( $cacheFile, $max_tl = 2 ) {
+			$cacheFolder = str_replace( basename( $cacheFile ), '', $cacheFile );
+			if ( !is_writable( $cacheFolder ) ) {
+				throw new MWException( $cacheFolder . ' is not writeable!' );
+			}
+			$tlds = file(
+				'http://mxr.mozilla.org/mozilla-central/source/netwerk/dns/effective_tld_names.dat?raw=1'
+			);
+			if ( $tlds === false ) {
+				throw new MWException( 'Domainlist can not be downloaded!' );
+			}
+			$i = 0;
+			// remove unnecessary lines
+			foreach ( $tlds as $tld ) {
+				$tlds[ $i ] = trim( $tld );
+				/**
+					empty
+					comments
+					top level domains
+					is overboard
+				*/
+				if (
+					!$tlds[ $i ] ||
+					$tld[0] == '/' ||
+					strpos( $tld, '.' ) === false ||
+					substr_count( $tld, '.' ) >= $max_tl
+				) {
+					unset( $tlds[ $i ] );
+				}
+				$i++;
+			}
+			$tlds = array_values( $tlds );
+			file_put_contents(
+				$cacheFile,
+				"<?php\n" . '$tlds = ' . str_replace(
+					array( ' ', "\n" ),
+					'',
+					var_export( $tlds, true )
+				) . ";\n?" . ">"
+			);
+		}
+
+		/**
+		 * Returns the domain and tld (without subdomains) of the provided E-Mailadress
+		 * @param string $domain The domain part of the email address to extract from.
+		 * @return string The Tld and domain of $domain without subdomains
+		 * @see http://www.programmierer-forum.de/domainnamen-ermitteln-t244185.htm
+		 */
+		function getHost( $domain = '' ) {
+			global $wgGoogleAllowedDomainsStrict;
+			if ( $wgGoogleAllowedDomainsStrict ) {
+				$domain = explode( '@', $domain );
+				// we can trust google to give us only valid email address, so give the last element
+				return array_pop( $domain );
+			}
+			// for parse_url()
+			$domain =
+				!isset($domain[5]) ||
+				(
+					$domain[3] != ':' &&
+					$domain[4] != ':' &&
+					$domain[5] != ':'
+				) ? 'http://' . $domain : $domain;
+			// remove "/path/file.html", "/:80", etc.
+			$domain = parse_url( $domain, PHP_URL_HOST );
+			// separate domain level
+			$lvl = explode('.', $domain); // 0 => www, 1 => example, 2 => co, 3 => uk
+			// set levels
+			krsort( $lvl ); // 3 => uk, 2 => co, 1 => example, 0 => www
+			$lvl = array_values( $lvl ); // 0 => uk, 1 => co, 2 => example, 3 => www
+			$_1st = $lvl[0];
+			$_2nd = isset( $lvl[1] ) ? $lvl[1] . '.' . $_1st : false;
+			$_3rd = isset( $lvl[2] ) ? $lvl[2] . '.' . $_2nd : false;
+			$_4th = isset( $lvl[3] ) ? $lvl[3] . '.' . $_3rd : false;
+
+			// tld extract
+			if ( !file_exists(__DIR__ . "/cache/tld.txt") ) {
+				$this->createTLDCache( __DIR__ . "/cache/tld.txt" );
+			}
+			require ( __DIR__ . "/cache/tld.txt" );
+			$tlds = array_flip( $tlds );
+			if ( // fourth level is TLD
+				$_4th &&
+				!isset( $tlds[ '!' . $_4th ] ) &&
+				(
+					isset( $tlds[ $_4th ] ) ||
+					isset( $tlds[ '*.' . $_3rd ] )
+				)
+			) {
+				$domain = isset( $lvl[4] ) ? $lvl[4] . '.' . $_4th : false;
+			} elseif ( // third level is TLD
+				$_3rd &&
+				!isset( $tlds[ '!' . $_3rd ] ) &&
+				(
+					isset($tlds[ $_3rd ]) ||
+					isset( $tlds[ '*.' . $_2nd ] )
+				)
+			) {
+				$domain = $_4th;
+			} elseif ( // second level is TLD
+				!isset( $tlds[ '!' . $_2nd ] ) &&
+				(
+					isset( $tlds[ $_2nd ] ) ||
+					isset( $tlds[ '*.' . $_1st ] )
+				)
+			) {
+				$domain = $_3rd;
+			} else { // first level is TLD
+				$domain = $_2nd;
+			}
+			return $domain;
+		}
+		/**
+		 * If restriction of domains is enabled, check if the user E-Mail is valid before do anything.
+		 * @param string $mailDomain The domain of email address
+		 * @return boolean
+		 */
+		private function isValidDomain( $mailDomain ) {
+			global $wgGoogleAllowedDomains;
+			if ( is_array( $wgGoogleAllowedDomains ) ) {
+				if ( in_array( $mailDomain, $wgGoogleAllowedDomains ) ) {
+					return true;
+				}
+				return false;
+			}
+			return true;
 		}
 
 		/**
