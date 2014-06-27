@@ -53,3 +53,35 @@
 	$wgHooks['UserLogoutComplete'][] = 'GoogleLoginHooks::onUserLogoutComplete';
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'GoogleLoginHooks::onLoadExtensionSchemaUpdates';
 	$wgHooks['UserLoginForm'][] = 'GoogleLoginHooks::onUserLoginForm';
+
+	// Configuration settings defaults
+
+	/**
+	 * The Secret key of Google developer console
+	 */
+	$wgGLSecret = '';
+
+	/**
+	 * The App ID of the web application to use for GoogleLogin
+	 */
+	$wgGLAppId = '';
+
+	/**
+	 * Which domains are allowed to login (or create/merge an account) with GoogleLogin
+	 * default: empty string -> all domains allowed
+	 * to allow special domains, create an array with all allowed domains, example:
+	 * array( 'example.com' );
+	 */
+	$wgGLAllowedDomains = '';
+
+	/**
+	 * If $wgGoogleAllowedDomains restrict to specified domains, use strict mode? Means:
+	 * Only the exact specified domains are allowed, e.g. if test.example.com is allowed and strict
+	 * mode is enabled, example.com isn't allowed (if strict mode is of, it is allowed)
+	 */
+	$wgGLAllowedDomainsStrict = false;
+
+	/**
+	 * If the user creates an account via GoogleLogin, show this as a reason in log?
+	 */
+	$wgGLShowCreateReason = false;
