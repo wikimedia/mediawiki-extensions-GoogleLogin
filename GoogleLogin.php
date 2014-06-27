@@ -33,7 +33,7 @@
 		'url' => 'https://www.mediawiki.org/wiki/Extension:GoogleLogin',
 		'descriptionmsg' => 'googlelogin-desc',
 		'version'  => '0.1.0',
-		'license-name' => "Lizenz",
+		'license-name' => "MIT",
 	);
 
 	// Autoload Classes

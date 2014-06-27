@@ -1,4 +1,9 @@
 {
+    "@metadata": {
+        "authors": [
+            "Florian Schmidt"
+        ]
+    },
 	"googlelogin": "Anmelden mit Google",
 	"googlelogin-desc": "Stellt eine [[Special:GoogleLogin|Spezialseite]] zur Verfügung, die es Nutzern erlaubt, sich mit Ihrem Googlekonto anzumelden.",
 	"googlelogin-parerror": "Die aufgerufene Unterseite existiert nicht. Bitte gehen Sie zurück und versuchen die Aktion erneut.",
@@ -18,7 +23,6 @@
 	"googlelogin-form-create": "Benutzerkonto erstellen",
 	"googlelogin-form-merge": "Verknüpfe Google- und Wiki-konto",
 	"googlelogin-form-unlink": "Löse Google- und Wiki-konto-Verknüpfung",
-	"googlelogin-username": "Benutzername",
 	"googlelogin-email": "E-Mail-Adress",
 	"googlelogin-googleuser": "Google-Benutzer",
 	"googlelogin-information-title": "Kontoinformationen",
