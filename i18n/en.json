@@ -8,6 +8,7 @@
 	"googlelogin-desc": "Provides a [[Special:GoogleLogin|Special page]] to allow users to login with their Google accounts",
 	"googlelogin-parerror": "The requested page doesn't exist. Please go back and try the action again.",
 	"googlelogin-unexpected-error": "Oops, there was an unexpected error. Please go back and try again.",
+	"googlelogin-unallowed-domain": "The email domain used for the primary email address of your Google account ($1) isn't allowed to login into this wiki.",
 	"googlelogin-form-choosename-title": "Choose username",
 	"googlelogin-form-choosename": "Please choose your username to create a wiki account",
 	"googlelogin-form-choosename-finish-title": "Create wiki account",

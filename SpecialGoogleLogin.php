@@ -92,29 +92,69 @@
 			$request = $this->getRequest();
 			$user = $this->getUser();
 			$googleIdExists = $db->GoogleIdExists( $userInfo['id'] );
-			if ( !$googleIdExists ) {
-				if ( !$user->isLoggedIn() ) {
-					$this->createGoogleUserForm( $userInfo, $db );
-				} else {
-					$this->GoogleUserForm( 'Merge' );
-				}
-			} else {
-				if ( $user->isLoggedIn() ) {
-					if ( $user->getId() != $googleIdExists['id'] ) {
-						$out->addWikiMsg( 'googlelogin-link-other' );
+			if ( $this->isValidDomain( $userInfo['emails'][0]['value'] ) ) {
+				if ( !$googleIdExists ) {
+					if ( !$user->isLoggedIn() ) {
+						$this->createGoogleUserForm( $userInfo, $db );
 					} else {
-						if ( $request->getVal( 'code' ) !== null ) {
-							// if user logged into google account and is already logged in and linked,
-							// show the whole special page, not only a button - bug 67486
-							$out->redirect( $this->getPageTitle()->getLocalUrl() );
-						} else {
-							$this->GoogleUserForm( 'Unlink' );
-						}
+						$this->GoogleUserForm( 'Merge' );
 					}
 				} else {
-					$this->loginGoogleUser( $googleIdExists['id'] );
+					if ( $user->isLoggedIn() ) {
+						if ( $user->getId() != $googleIdExists['id'] ) {
+							$out->addWikiMsg( 'googlelogin-link-other' );
+						} else {
+							if ( $request->getVal( 'code' ) !== null ) {
+								// if user logged into google account and is already logged in and linked,
+								// show the whole special page, not only a button - bug 67486
+								$out->redirect( $this->getPageTitle()->getLocalUrl() );
+							} else {
+								$this->GoogleUserForm( 'Unlink' );
+							}
+						}
+					} else {
+						$this->loginGoogleUser( $googleIdExists['id'] );
+					}
 				}
+			} else {
+				$out->addWikiMsg(
+					'googlelogin-unallowed-domain',
+					$this->getDomainFromMail( $userInfo['emails'][0]['value'] )
+				);
 			}
+		}
+
+		/**
+		 * Returns the domain and tld (without subdomains) of the provided E-Mailadress
+		 * @param string $mailAdress The E-Mailadress to extract the domain and tld from
+		 * @return string The Tld and domain of $emailAdress without subdomains
+		 */
+		public function getDomainFromMail( $mailAdress ) {
+			// extract complete Domain of adress
+			$domainName = preg_split( "/(\.|@)/", $mailAdress );
+			// get the domain and tld to check (to allow subdomains)
+			$domainName = implode(
+				'.',
+				array_slice( $domainName, -2)
+			);
+
+			return strtolower($domainName);
+		}
+
+		/**
+		 * If restriction of domains is enabled, check if the user E-Mail is valid before do anything.
+		 * @param string $mailAdress The E-Mailadress to check for
+		 * @return boolean
+		 */
+		private function isValidDomain( $mailAdress ) {
+			global $wgGoogleAllowedDomains;
+			if ( is_array( $wgGoogleAlowedDomains ) ) {
+				if ( in_array( $this->getDomainFromMail( $mailAdress ), $wgGoogleAlowedDomains ) ) {
+					return true;
+				}
+				return false;
+			}
+			return true;
 		}
 
 		/**
