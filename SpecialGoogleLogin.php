@@ -89,6 +89,7 @@
 		 */
 		private function createOrMerge( $userInfo, $db ) {
 			$out = $this->getOutput();
+			$request = $this->getRequest();
 			$user = $this->getUser();
 			$googleIdExists = $db->GoogleIdExists( $userInfo['id'] );
 			if ( !$googleIdExists ) {
@@ -102,7 +103,13 @@
 					if ( $user->getId() != $googleIdExists['id'] ) {
 						$out->addWikiMsg( 'googlelogin-link-other' );
 					} else {
-						$this->GoogleUserForm( 'Unlink' );
+						if ( $request->getVal( 'code' ) !== null ) {
+							// if user logged into google account and is already logged in and linked,
+							// show the whole special page, not only a button - bug 67486
+							$out->redirect( $this->getPageTitle()->getLocalUrl() );
+						} else {
+							$this->GoogleUserForm( 'Unlink' );
+						}
 					}
 				} else {
 					$this->loginGoogleUser( $googleIdExists['id'] );
