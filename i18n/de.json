@@ -7,7 +7,7 @@
 	"googlelogin": "Anmelden mit Google",
 	"googlelogin-desc": "Stellt eine [[Special:GoogleLogin|Spezialseite]] zur Verfügung, die es Nutzern erlaubt, sich mit Ihrem Googlekonto anzumelden.",
 	"googlelogin-parerror": "Die aufgerufene Unterseite existiert nicht. Bitte gehen Sie zurück und versuchen die Aktion erneut.",
-	"googlelogin-unexpected-error": "Oops, da war ein unbekanntes Problem. Bitte gehen Sie zurück und versuchen die Aktion erneut.",
+	"googlelogin-generic-error": "Oops, da war ein Problem. Bitte gehen Sie zurück und versuchen die Aktion erneut. Fehlernachricht: $1",
 	"googlelogin-form-choosename-title": "Wähle Benutzername",
 	"googlelogin-form-choosename": "Wähle deinen Benutzernamen um ein Wikibenutzer zu erstellen",
 	"googlelogin-form-choosename-finish-title": "Benutzerkonto erstellen",

@@ -10,6 +10,9 @@
 		 */
 		function execute( $par ) {
 			global $wgScriptDir;
+			// first set our own handler for catchable fatal errors
+			set_error_handler( 'SpecialGoogleLogin::catchableFatalHandler', E_RECOVERABLE_ERROR );
+
 			$this->setHeaders();
 			$request = $this->getRequest();
 			$out = $this->getOutput();
@@ -20,12 +23,21 @@
 			$plus = $this->prepareClient( $client );
 
 			if ( $request->getVal( 'code' ) !== null ) {
-				$client->authenticate( $request->getVal( 'code' ) );
-				$request->setSessionData( 'access_token', $client->getAccessToken() );
-				$userInfo = $plus->people->get("me");
-				$this->createOrMerge( $userInfo, $db );
+				try {
+					$client->authenticate( $request->getVal( 'code' ) );
+					$request->setSessionData( 'access_token', $client->getAccessToken() );
+					try {
+						$userInfo = $plus->people->get("me1");
+					} catch ( Google_Service_Exception $e ) {
+						$this->createError( $e->getMessage() );
+						return;
+					}
+					$this->createOrMerge( $userInfo, $db );
+				} catch( Google_Auth_Exception $e ) {
+					$this->createError( $e->getMessage() );
+				}
 			} elseif ( $request->getVal( 'error' )  !== null ) {
-				$out->addWikiMsg( 'googlelogin-unexpected-error' );
+				$this->createError( 'Authentication failed' );
 				$out->addHtml(
 					Html::element( 'br' ) .
 					Html::element( 'a',
@@ -45,7 +57,12 @@
 					if ( !empty( $par ) ) {
 						$this->finishAction( $par, $client, $plus, $db );
 					} else {
-						$userInfo = $plus->people->get("me");
+						try {
+							$userInfo = $plus->people->get("me");
+						} catch ( Google_Service_Exception $e ) {
+							$this->createError( $e->getMessage() );
+							return;
+						}
 						$googleIdExists = $db->GoogleIdExists( $userInfo['id'] );
 						$buildTable = array(
 							array(
@@ -80,6 +97,21 @@
 					$out->redirect( $authUrl );
 				}
 			}
+		}
+
+		public static function catchableFatalHandler($errorNo, $errorString, $errorFile, $errorLine) {
+			global $wgOut;
+			$wgOut->addWikiMsg( 'googlelogin-generic-error', $errorString );
+			return true;
+		}
+
+		/**
+		 * Creates a generic error message with further information in $errorMessage.
+		 * @param string $errorMessage short description or further information to the error
+		 */
+		private function createError( $errorMessage ) {
+			$out = $this->getOutput();
+			$out->addWikiMsg( 'googlelogin-generic-error', $errorMessage );
 		}
 
 		/**
@@ -136,7 +168,7 @@
 				$client = new Google_Client();
 				return $client;
 			} else {
-				throw new MWException();
+				throw new MWException( 'Not all required files exist, please reinstall GoogleLogin' );
 			}
 		}
 
@@ -322,7 +354,12 @@
 			$out = $this->getOutput();
 			$request = $this->getRequest();
 			// get userinfos of google plus api result
-			$userInfo = $plus->people->get("me");
+			try {
+				$userInfo = $plus->people->get("me");
+			} catch ( Google_Service_Exception $e ) {
+				$this->createError( $e->getMessage() );
+				return;
+			}
 			switch ( $par ) {
 				default:
 					// here is nothing to see!
@@ -377,7 +414,7 @@
 							$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
 						}
 					} else {
-						$out->addWikiMsg( 'googlelogin-unexpected-error' );
+						$this->createError( 'Token failure' );
 					}
 				break;
 				case 'Merge':
@@ -390,11 +427,11 @@
 							if ( $db->createConnection( $userInfo['id'], $user->getId() ) ) {
 								$out->addWikiMsg( 'googlelogin-success-merge' );
 							} else {
-								$out->addWikiMsg( 'googlelogin-unexpected-error' );
+								$this->createError( 'Database error' );
 							}
 						}
 					} else {
-						$out->addWikiMsg( 'googlelogin-unexpected-error' );
+						$this->createError( 'Token failure' );
 					}
 				break;
 				case 'Logout':
@@ -404,7 +441,7 @@
 						$request->setSessionData( 'access_token', '' );
 						$out->redirect( $this->getPageTitle()->getLocalUrl() );
 					} else {
-						$out->addWikiMsg( 'googlelogin-unexpected-error' );
+						$this->createError( 'Token failure' );
 					}
 				break;
 				case 'Unlink':
@@ -413,10 +450,10 @@
 						if ( $db->terminateConnection( $userInfo['id'] ) ) {
 							$out->addWikiMsg( 'googlelogin-success-unlink' );
 						} else {
-							$out->addWikiMsg( 'googlelogin-unexpected-error' );
+							$this->createError( 'Database error' );
 						}
 					} else {
-						$out->addWikiMsg( 'googlelogin-unexpected-error' );
+						$this->createError( 'Token failure' );
 					}
 				break;
 			}
