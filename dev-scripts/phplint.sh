@@ -8,7 +8,7 @@ if [ -z ${MEDIAWIKI_CODESNIFFER_CONFIG_DIR+x} ]
 		exit 1
 fi
 
-for file in `find . -name '*.php' -not -path './admin/src/*' -not -path './admin/lib/*' -not -path './vendor/*'`; do
+for file in `find . -name '*.php' -not -path './Google/*' -not -path './vendor/*'`; do
 	RESULTS=`php -l $file`
 	if [ "$RESULTS" != "No syntax errors detected in $file" ]; then
 		echo $RESULTS

@@ -60,6 +60,7 @@
 		}
 
 		/**
+		 * Copied from Extension:Facebook
 		 * Returns the name of the shared database, if one is in use for the Facebook
 		 * Connect users table. Note that 'user_fbconnect' (without respecting
 		 * $wgSharedPrefix) is added to $wgSharedTables in FacebookInit::init() by
@@ -77,11 +78,12 @@
 		}
 
 		/**
+		 * Copied from Extension:Facebook
 		 * Returns the table prefix name, either $wgDBprefix, $wgSharedPrefix
 		 * depending on whether a shared database is in use.
 		 */
 		private static function getPrefix() {
-		 global $wgDBprefix, $wgSharedPrefix;
-		 return self::sharedDB() ? $wgSharedPrefix : ""; // bugfix for $wgDBprefix;
+			global $wgDBprefix, $wgSharedPrefix;
+			return self::sharedDB() ? $wgSharedPrefix : ""; // bugfix for $wgDBprefix;
 		}
 	}

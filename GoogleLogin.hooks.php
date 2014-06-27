@@ -40,7 +40,7 @@
 				Html::openelement( 'li', array(
 					'style' => 'list-style:none;width:100%;',
 				) ) .
-				Html::element( 'a' , array(
+				Html::element( 'a', array(
 						'href' => Title::makeTitle( -1, 'GoogleLogin' )->getLocalUrl(),
 						'class' => 'mw-ui-button mw-ui-destructive',
 						'style' => 'width:100%;'

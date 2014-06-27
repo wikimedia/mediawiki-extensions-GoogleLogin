@@ -130,8 +130,8 @@
 			) {
 				// Add location of Google api in include path to enable includes from Google Client
 				set_include_path(get_include_path() . PATH_SEPARATOR . $dir . '/');
-				require_once( $dir . '/Google/Client.php' );
-				require_once( $dir . '/Google/Service/Plus.php' );
+				require_once ( $dir . '/Google/Client.php' );
+				require_once ( $dir . '/Google/Service/Plus.php' );
 				// yes, we initiate Google client here ;)
 				$client = new Google_Client();
 				return $client;
@@ -186,7 +186,8 @@
 				$names[$userInfo['name']['givenName']] = 'wpGivenName';
 			}
 			$names[wfMessage( 'googlelogin-form-chooseown' )->text()] = 'wpOwn';
-			$defaultName = ($request->getVal( 'wpChooseName' ) !== '' ? $request->getVal( 'wpChooseName' ) : 'wpOwn');
+			$defaultName = ($request->getVal( 'wpChooseName' ) !== '' ?
+				$request->getVal( 'wpChooseName' ) : 'wpOwn');
 			$formElements = array(
 				'ChooseName' => array(
 					'section' => 'choosename',
@@ -202,7 +203,7 @@
 					'label' => wfMessage( 'googlelogin-form-chooseown' )->text() . ':',
 					'help' => wfMessage( 'googlelogin-form-choosename-help' )->text()
 				),
-            );
+			);
 			$htmlForm = new HTMLForm( $formElements, $this->getContext(), 'googlelogin-form' );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->getRequestToken() );
 			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-create' )->text() );
@@ -243,11 +244,15 @@
 
 		/**
 		 * Creates a standard form with only a button and hidden securehash field for one-button-actions
-		 * @param string $action The action the button will link to (note: this string is the suffix for the Message
-		 *	key for the buttons name)
+		 * @param string $action The action the button will link to (note: this string is
+		 *	the suffix for the Message key for the buttons name)
 		 */
 		private function GoogleUserForm( $action ) {
-			$htmlForm = new HTMLForm( array(), $this->getContext(), 'googlelogin-form' . strtolower( $action ) );
+			$htmlForm = new HTMLForm(
+				array(),
+				$this->getContext(),
+				'googlelogin-form' . strtolower( $action )
+			);
 
 			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-' . strtolower( $action ) )->text() );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->getRequestToken() );
@@ -273,7 +278,8 @@
 		}
 
 		/**
-		 * Checks, if the submitted secure token is valid (check before do any "write" action after form submit)
+		 * Checks, if the submitted secure token is valid (check before do any
+		 * "write" action after form submit)
 		 * @return boolean
 		 */
 		private function isRequestValid() {
