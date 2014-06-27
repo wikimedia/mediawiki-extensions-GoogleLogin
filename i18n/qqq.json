@@ -7,7 +7,7 @@
 	"googlelogin": "Main title of Extension's Special page.",
 	"googlelogin-desc": "Extension description in Special:Version.",
 	"googlelogin-parerror": "Error message when a Subpage of Special:GoogleLogin is requested, which does not exist.",
-	"googlelogin-unexpected-error": "Generic error message for errors with not specific error message (unexpected generic error)",
+	"googlelogin-generic-error": "Generic error message for errors with no specific error message. $1 provides a short description of the error (e.g. Database error)",
 	"googlelogin-form-choosename-title": "Title of SpecialPage when the user can create a new user and has to choose an Username.",
 	"googlelogin-form-choosename": "Title of fieldset to explain shortly, what the user has to do (choose username).",
 	"googlelogin-form-choosename-finish-title": "Title of Subpage 'Finish' after the Useraccount is successful created.",
