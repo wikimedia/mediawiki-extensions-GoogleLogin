@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_c5b79a80",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-06-28T07:44:02Z",
+      "side": 1,
+      "message": "* \"email domain\" should be lower case and without a dash.\n* \"email address\" should be lower case and correctly spelled.\n* change suggestion: \"your primary\" -\u003e \"the primary\"",
+      "revId": "0ca47f9bf6ad29abf5b051323618d683a3a77e23",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
