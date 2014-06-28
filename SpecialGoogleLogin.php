@@ -218,7 +218,7 @@
 				$names[$userInfo['name']['givenName']] = 'wpGivenName';
 			}
 			$names[wfMessage( 'googlelogin-form-chooseown' )->text()] = 'wpOwn';
-			$defaultName = ($request->getVal( 'wpChooseName' ) !== '' ?
+			$defaultName = ($request->getVal( 'wpChooseName' ) !== null ?
 				$request->getVal( 'wpChooseName' ) : 'wpOwn');
 			$formElements = array(
 				'ChooseName' => array(
@@ -350,6 +350,7 @@
 		 * - Unlink Wiki and Google account (Unlink)
 		 */
 		private function finishAction( $par, $client, $plus, $db ) {
+			global $wgGoogleShowCreateReason;
 			// prepare MediaWiki variables/classes we need
 			$out = $this->getOutput();
 			$request = $this->getRequest();
@@ -407,11 +408,22 @@
 								'email' => $userInfo['emails'][0]['value'],
 								'real_name' => $userInfo['name']['givenName']
 							);
-							$user = User::createNew( $userName, $userParam );
-							$user->sendConfirmationMail();
-							$user->setCookies();
-							$db->createConnection( $userInfo['id'], $user->getId() );
-							$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
+							if ( !$db->GoogleIdExists( $userInfo['id'] ) ) {
+								$user = User::createNew( $userName, $userParam );
+								$user->sendConfirmationMail();
+								$user->setCookies();
+								// create a log entry for the created user - bug 67245
+								$createReason = '';
+								if ( $wgGoogleShowCreateReason ) {
+									$createReason =
+										'via [[' . $this->getPageTitle() . '|Google Login]]';
+								}
+								$logEntry = $user->addNewUserLogEntry( 'create', $createReason );
+								$db->createConnection( $userInfo['id'], $user->getId() );
+								$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
+							} else {
+								$this->createError( wfMessage( 'googlelogin-link-other' )->text() );
+							}
 						}
 					} else {
 						$this->createError( 'Token failure' );
