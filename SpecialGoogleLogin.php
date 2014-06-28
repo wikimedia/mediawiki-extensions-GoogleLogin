@@ -408,18 +408,22 @@
 								'email' => $userInfo['emails'][0]['value'],
 								'real_name' => $userInfo['name']['givenName']
 							);
-							$user = User::createNew( $userName, $userParam );
-							// create a log entry for the created user - bug 67245
-							$createReason = '';
-							if ( $wgGoogleShowCreateReason ) {
-								$createReason =
-									'via [[' . $this->getPageTitle() . '|Google Login]]';
+							if ( !$db->GoogleIdExists( $userInfo['id'] ) ) {
+								$user = User::createNew( $userName, $userParam );
+								$user->sendConfirmationMail();
+								$user->setCookies();
+								// create a log entry for the created user - bug 67245
+								$createReason = '';
+								if ( $wgGoogleShowCreateReason ) {
+									$createReason =
+										'via [[' . $this->getPageTitle() . '|Google Login]]';
+								}
+								$logEntry = $user->addNewUserLogEntry( 'create', $createReason );
+								$db->createConnection( $userInfo['id'], $user->getId() );
+								$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
+							} else {
+								$this->createError( wfMessage( 'googlelogin-link-other' )->text() );
 							}
-							$user->addNewUserLogEntry( 'create', $createReason );
-							$user->sendConfirmationMail();
-							$user->setCookies();
-							$db->createConnection( $userInfo['id'], $user->getId() );
-							$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
 						}
 					} else {
 						$this->createError( 'Token failure' );
