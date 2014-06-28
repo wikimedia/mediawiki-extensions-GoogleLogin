@@ -1,5 +1,5 @@
 <?php
-	/*
+	/**
 	GoogleLogin License
 	Copyright (c) 2014 Florian Schmidt
 
@@ -26,7 +26,7 @@
 		die( 'This is an extension for Mediawiki and can not run standalone.' );
 	}
 
-	$wgExtensionCredits['validextensionclass'][] = array(
+	$wgExtensionCredits['specialpage'][] = array(
 		'path' => __FILE__,
 		'name' => 'GoogleLogin',
 		'author' => 'Florian Schmidt',
