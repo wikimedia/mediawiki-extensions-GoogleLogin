@@ -27,7 +27,7 @@
 					$client->authenticate( $request->getVal( 'code' ) );
 					$request->setSessionData( 'access_token', $client->getAccessToken() );
 					try {
-						$userInfo = $plus->people->get("me1");
+						$userInfo = $plus->people->get("me");
 					} catch ( Google_Service_Exception $e ) {
 						$this->createError( $e->getMessage() );
 						return;
