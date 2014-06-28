@@ -218,7 +218,7 @@
 				$names[$userInfo['name']['givenName']] = 'wpGivenName';
 			}
 			$names[wfMessage( 'googlelogin-form-chooseown' )->text()] = 'wpOwn';
-			$defaultName = ($request->getVal( 'wpChooseName' ) !== '' ?
+			$defaultName = ($request->getVal( 'wpChooseName' ) !== null ?
 				$request->getVal( 'wpChooseName' ) : 'wpOwn');
 			$formElements = array(
 				'ChooseName' => array(
@@ -350,6 +350,7 @@
 		 * - Unlink Wiki and Google account (Unlink)
 		 */
 		private function finishAction( $par, $client, $plus, $db ) {
+			global $wgGoogleShowCreateReason;
 			// prepare MediaWiki variables/classes we need
 			$out = $this->getOutput();
 			$request = $this->getRequest();
@@ -408,6 +409,13 @@
 								'real_name' => $userInfo['name']['givenName']
 							);
 							$user = User::createNew( $userName, $userParam );
+							// create a log entry for the created user - bug 67245
+							$createReason = '';
+							if ( $wgGoogleShowCreateReason ) {
+								$createReason =
+									'via [[' . $this->getPageTitle() . '|Google Login]]';
+							}
+							$user->addNewUserLogEntry( 'create', $createReason );
 							$user->sendConfirmationMail();
 							$user->setCookies();
 							$db->createConnection( $userInfo['id'], $user->getId() );
