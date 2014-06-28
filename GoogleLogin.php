@@ -1,8 +1,8 @@
 <?php
-	/*
-	Google Login License
+	/**
+	GoogleLogin License
 	Copyright (c) 2014 Florian Schmidt
-	
+
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
 	in the Software without restriction, including without limitation the rights
@@ -26,14 +26,14 @@
 		die( 'This is an extension for Mediawiki and can not run standalone.' );
 	}
 
-	$wgExtensionCredits['validextensionclass'][] = array(
+	$wgExtensionCredits['specialpage'][] = array(
 		'path' => __FILE__,
-		'name' => 'Google Login',
+		'name' => 'GoogleLogin',
 		'author' => 'Florian Schmidt',
 		'url' => 'https://www.mediawiki.org/wiki/Extension:GoogleLogin',
 		'descriptionmsg' => 'googlelogin-desc',
 		'version'  => '0.1.0',
-		'license-name' => "Lizenz",
+		'license-name' => "MIT",
 	);
 
 	// Autoload Classes
