@@ -1,36 +1,38 @@
 {
-    "@metadata": {
-        "authors": [
-            "Florian Schmidt"
-        ]
-    },
+	"@metadata": {
+		"authors": [
+			"Florian Schmidt",
+			"Metalhead64",
+			"Thomas Bohn"
+		]
+	},
 	"googlelogin": "Anmelden mit Google",
-	"googlelogin-desc": "Stellt eine [[Special:GoogleLogin|Spezialseite]] zur Verfügung, die es Nutzern erlaubt, sich mit Ihrem Googlekonto anzumelden.",
-	"googlelogin-parerror": "Die aufgerufene Unterseite existiert nicht. Bitte gehen Sie zurück und versuchen die Aktion erneut.",
+	"googlelogin-desc": "Stellt eine [[Special:GoogleLogin|Spezialseite]] zur Verfügung, die es Nutzern erlaubt, sich mit Ihrem Google-Konto anzumelden.",
+	"googlelogin-parerror": "Die aufgerufene Seite existiert nicht. Bitte gehen Sie zurück und versuchen die Aktion erneut.",
 	"googlelogin-generic-error": "Oops, da war ein Problem. Bitte gehen Sie zurück und versuchen die Aktion erneut. Fehlernachricht: $1",
 	"googlelogin-form-choosename-title": "Wähle Benutzername",
-	"googlelogin-form-choosename": "Wähle deinen Benutzernamen um ein Wikibenutzer zu erstellen",
+	"googlelogin-form-choosename": "Wähle einen Benutzernamen um ein Konto zu erstellen",
 	"googlelogin-form-choosename-finish-title": "Benutzerkonto erstellen",
-	"googlelogin-form-choosename-finish-body": "Glückwunsch! Du hast erfolgreich den Wikibenutzer $1 erstellt und mit deinem Googlekonto verbunden.",
+	"googlelogin-form-choosename-finish-body": "Glückwunsch! Du hast erfolgreich das Konto $1 erstellt und mit deinem Google-Konto verbunden.",
 	"googlelogin-form-choosename-error": "Du musst einen Benutzernamen eintragen, oder wähle einen unserer Vorschläge.",
 	"googlelogin-form-choosename-existerror": "Der Benutzername ''$1'' ist bereits vergeben. Bitte wähle einen anderen.",
 	"googlelogin-form-chooseown": "Eigener Name",
 	"googlelogin-form-chooseown-error": "Bitte teile uns deinen gewünschten Benutzernamen mit, oder wähle einen unserer Vorschläge.",
 	"googlelogin-form-choosename-help": "'Eigener Name' wird nur beachtet, wenn 'Eigener Name' ausgewählt wurde.",
 	"googlelogin-form-merge-title": "Benutzerkonten zusammenführen",
-	"googlelogin-form-logout": "Mit einem anderen Googlekonto anmelden",
-	"googlelogin-form-backlink": "Zurück zu Google Login",
+	"googlelogin-form-logout": "Mit einem anderen Google-Konto anmelden",
+	"googlelogin-form-backlink": "Zurück zum Google-Login",
 	"googlelogin-form-create": "Benutzerkonto erstellen",
-	"googlelogin-form-merge": "Verknüpfe Google- und Wiki-konto",
-	"googlelogin-form-unlink": "Löse Google- und Wiki-konto-Verknüpfung",
-	"googlelogin-email": "E-Mail-Adress",
+	"googlelogin-form-merge": "Google- und Benutzerkonto zusammenführen",
+	"googlelogin-form-unlink": "Verknüpfung mit Google-Konto aufheben",
+	"googlelogin-email": "E-Mail-Adresse",
 	"googlelogin-googleuser": "Google-Benutzer",
 	"googlelogin-information-title": "Kontoinformationen",
-	"googlelogin-information-body": "In der folgenden Tabelle findest du Informationen zu deinem Google-Konto und ob dieser mit einem Wikibenutzer verknüpft ist oder nicht.",
+	"googlelogin-information-body": "In der folgenden Tabelle findest du Informationen zu deinem Google-Konto und ob dieser mit einem Konto verknüpft ist oder nicht.",
 	"googlelogin-linkstatus": "Status der Verknüpfung",
 	"googlelogin-linked": "verknüpft",
 	"googlelogin-unlinked": "nicht verknüpft",
-	"googlelogin-link-other": "Dein Google-Konto ist bereits mit einem anderen Wikibenutzer verknüpft. Je Google-Nutzer ist nur eine Verknüpfung erlaubt. Bitte löse zuerst die Verknüpfung zu deinem anderen Konto oder kontaktiere einen Administrator, wenn du kein anderes Konto besitzt.",
-	"googlelogin-success-merge": "Glückwunsch! Dein Wikiaccount ist nun mit deinem Googlekonto verknüpft.",
-	"googlelogin-success-unlink": "Glückwunsch! Dein Wikiaccount ist nicht länger mit deinem Googleaccount verknüpft."
+	"googlelogin-link-other": "Dein Google-Konto ist bereits mit einem anderen Konto verknüpft. Ein Google-Konto kann nur mit einen Benutzerkonto verknüpft werden. Bitte löse zuerst die Verknüpfung zu deinem anderen Konto oder kontaktiere einen Administrator, wenn du kein anderes Konto besitzt.",
+	"googlelogin-success-merge": "Glückwunsch! Dein Konto ist nun mit deinem Google-Konto verknüpft.",
+	"googlelogin-success-unlink": "Glückwunsch! Dein Wiki-Konto ist nicht mehr mit deinem Google-Konto verknüpft."
 }

@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"googlelogin": "Најава со Google",
+	"googlelogin-desc": "Дава [[Special:GoogleLogin|специјална страница]] што им овозможува на корисниците да се најавуваат со сметка на Google",
+	"googlelogin-parerror": "Побараната страница не постои. Навратете се и обидете се повторно.",
+	"googlelogin-generic-error": "Се појави неочекувана грешка. Навратете се и обидете се повторно. Порака: $1",
+	"googlelogin-form-choosename-title": "Одберете корисничко име",
+	"googlelogin-form-choosename": "Одберете корисничко име за да направите сметка на викито",
+	"googlelogin-form-choosename-finish-title": "Направи сметка на викито",
+	"googlelogin-form-choosename-finish-body": "Честитаме! Направивте сметка $1 на викито и ја поврзавте со вашата сметка на Google.",
+	"googlelogin-form-choosename-error": "Мора да одберете корисничко име или да се решите за некое од предложените.",
+	"googlelogin-form-choosename-existerror": "Корисничкото име ''$1'' е зафатено. Одберете друго.",
+	"googlelogin-form-chooseown": "Одберете ваше",
+	"googlelogin-form-chooseown-error": "Укажете го посакуваното корисничко име или решете се за едно од предложените.",
+	"googlelogin-form-choosename-help": "Ќе се земе предвид само „Свое име“ ако изберете „{{int:googlelogin-form-chooseown}}“.",
+	"googlelogin-form-merge-title": "Спој сметка",
+	"googlelogin-form-logout": "Најава со друга сметка на Google",
+	"googlelogin-form-backlink": "Назад на најавата со Google",
+	"googlelogin-form-create": "Направи сметка",
+	"googlelogin-form-merge": "Спој ги сметките на Google и викито",
+	"googlelogin-form-unlink": "Одвој ги сметките на Google  -> викито",
+	"googlelogin-email": "Е-пошта",
+	"googlelogin-googleuser": "Корисник на Google",
+	"googlelogin-information-title": "Информации за сметката",
+	"googlelogin-information-body": "Во следнава табела ќе најдете информации за вашата сметка на Google, со податок дали е сврзана со викисметка.",
+	"googlelogin-linkstatus": "Статус на сврзаност",
+	"googlelogin-linked": "сврзана",
+	"googlelogin-unlinked": "несврзана",
+	"googlelogin-link-other": "Вашата сметка на Google е веќе сврзана со друг корисник. Може да се сврзе со само една сметка. Најпрвин прекинете ја врската со другата сметка, или пак обратете се кај администратор ако немате друга сметка на викито.",
+	"googlelogin-success-merge": "Честитаме! Вашата викисметка сега е сврзана со сметката на Google.",
+	"googlelogin-success-unlink": "Честитаме! Вашата викисметка повеќе не е сврзана со сметката на Google."
+}

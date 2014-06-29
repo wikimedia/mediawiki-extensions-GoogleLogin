@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"googlelogin": "Connexion avec Google",
+	"googlelogin-desc": "Fournit une [[Special:GoogleLogin|page spéciale]] pour permettre aux utilisateurs de se connecter avec leur compte Google",
+	"googlelogin-parerror": "La page demandée n’existe pas. Veuillez revenir en arrière et réessayer l’action.",
+	"googlelogin-generic-error": "Oups, une erreur inattendue s’est produite. Veuillez revenir en arrière et réessayer.",
+	"googlelogin-form-choosename-title": "Choisir un nom d’utilisateur",
+	"googlelogin-form-choosename": "Veuillez choisir votre nom d’utilisateur pour créer un compte wiki",
+	"googlelogin-form-choosename-finish-title": "Créer un compte wiki",
+	"googlelogin-form-choosename-finish-body": "Félicitations ! Vous avez créé le compte wiki $1 et l’avez lié à votre compte Google.",
+	"googlelogin-form-choosename-error": "Vous devez choisir un nom d’utilisateur, ou en prendre un de notre suggestion.",
+	"googlelogin-form-choosename-existerror": "Le nom d’utilisateur « $1 » est déjà utilisé, veuillez en choisir un autre.",
+	"googlelogin-form-chooseown": "Choisir le sien",
+	"googlelogin-form-chooseown-error": "Veuillez nous faire savoir le nom d’utilisateur que vous désires, ou prenez une de nos suggestions.",
+	"googlelogin-form-choosename-help": "'Nom propre' est uniquement observé, si vous choisissez '{{int:googlelogin-form-chooseown}}'.",
+	"googlelogin-form-merge-title": "Fusionner le compte utilisateur",
+	"googlelogin-form-logout": "Connexion avec un autre compte Google",
+	"googlelogin-form-backlink": "Retour à la connexion Google",
+	"googlelogin-form-create": "Créer un compte",
+	"googlelogin-form-merge": "Fusionner les comptes Google et wiki",
+	"googlelogin-form-unlink": "Supprimer le lien Google -> compte wiki",
+	"googlelogin-email": "Adresse de courriel",
+	"googlelogin-googleuser": "Utilisateur Google",
+	"googlelogin-information-title": "Information sur le compte",
+	"googlelogin-information-body": "Dans le tableau suivant, vous trouverez des informations sur votre compte Google et s’il est lié à un compte wiki ou non.",
+	"googlelogin-linkstatus": "État du lien",
+	"googlelogin-linked": "lié",
+	"googlelogin-unlinked": "non lié",
+	"googlelogin-link-other": "Votre compte Google est déjà lié à un autre utilisateur. Votre compte Google ne peut être lié qu’à un seul compte wiki. Veuillez supprimer la connexion à votre autre compte wiki ou contacter un administrateur, si vous n’avez pas d’autre compte wiki.",
+	"googlelogin-success-merge": "Félicitations ! Votre compte wiki est maintenant lié à votre compte Google.",
+	"googlelogin-success-unlink": "Félicitations ! Votre compte wiki n’est plus lié à votre compte Google."
+}

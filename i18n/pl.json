@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"googlelogin-parerror": "Żądana strona nie istnieje. Proszę wrócić i spróbować ponownie.",
+	"googlelogin-form-choosename-title": "Wybierz nazwę użytkownika",
+	"googlelogin-form-create": "Utwórz konto",
+	"googlelogin-email": "Adres e‐mail",
+	"googlelogin-googleuser": "Użytkownik Google",
+	"googlelogin-information-title": "Informacje o koncie",
+	"googlelogin-success-merge": "Gratulacje! Konto wiki jest teraz powiązane z Twoim kontem Google.",
+	"googlelogin-success-unlink": "Gratulacje! Konto wiki nie jest już powiązane z Twoim kontem Google."
+}

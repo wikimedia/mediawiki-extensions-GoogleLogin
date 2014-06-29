@@ -1,31 +1,32 @@
 {
-    "@metadata": {
-        "authors": [
-            "Florian Schmidt"
-        ]
-    },
-	"googlelogin": "Main title of Extension's Special page.",
-	"googlelogin-desc": "Extension description in Special:Version.",
+	"@metadata": {
+		"authors": [
+			"Florian Schmidt",
+			"Shirayuki"
+		]
+	},
+	"googlelogin": "{{doc-special|GoogleLogin}}\nAlso used as label for the button shown in [[Special:Login]].",
+	"googlelogin-desc": "{{desc|name=Google Login|url=http://www.mediawiki.org/wiki/Extension:GoogleLogin}}",
 	"googlelogin-parerror": "Error message when a Subpage of Special:GoogleLogin is requested, which does not exist.",
-	"googlelogin-generic-error": "Generic error message for errors with no specific error message. $1 provides a short description of the error (e.g. Database error)",
+	"googlelogin-generic-error": "Generic error message for errors with no specific error message.\n\nParameters:\n* $1 - a short description of the error (e.g. Database error)",
 	"googlelogin-form-choosename-title": "Title of SpecialPage when the user can create a new user and has to choose an Username.",
 	"googlelogin-form-choosename": "Title of fieldset to explain shortly, what the user has to do (choose username).",
 	"googlelogin-form-choosename-finish-title": "Title of Subpage 'Finish' after the Useraccount is successful created.",
 	"googlelogin-form-choosename-finish-body": "Message for Subpage 'Finish' after the Useraccount is successful created.",
 	"googlelogin-form-choosename-error": "Message after the user did not provide a Username to explain, that he must choose a Username (own or one of the suggestions)",
-	"googlelogin-form-choosename-existerror": "The Username the user want to use for his Useraccount already exists, he must use another.",
-	"googlelogin-form-chooseown": "Name of radio element to choose an own Username for the creation of a new Useraccount.",
+	"googlelogin-form-choosename-existerror": "The username the user want to use for their user account already exists, they must use another.\n\nParameters:\n* $1 - username",
+	"googlelogin-form-chooseown": "Label for radio element to choose an own username for the creation of a new user account.",
 	"googlelogin-form-chooseown-error": "The user want to choose an own Username, but the input field for the username is empty. The user must provide a username or choose one of the suggestions.",
-	"googlelogin-form-choosename-help": "Displays a help text under textfield to provide an own Username, that this is only observed, if the user selected that he want to use an own Username.",
+	"googlelogin-form-choosename-help": "Displays a help text under textfield to provide an own username, that this is only observed, if the user selected that they want to use an own username.\n\nRefers to {{msg-mw|Googlelogin-form-chooseown}}.",
 	"googlelogin-form-merge-title": "Title of button to merge the wiki and Google account.",
 	"googlelogin-form-logout": "Title of button to choose another Google account to merge/create (to/a new) wiki account. (logout the currently Google account in wiki)",
-	"googlelogin-form-backlink": "Backlink on Subpages of Special:GoogleLogin to go back to Main Specialpage.",
-	"googlelogin-form-create": "Title of button to create a new Useraccount on form to choose the Username.",
+	"googlelogin-form-backlink": "Used as link text on subpages of Special:GoogleLogin to go back to Main special page [[Special:GoogleLogin]].",
+	"googlelogin-form-create": "Title of button to create a new user account on form to choose the username.\n{{Identical|Create account}}",
 	"googlelogin-form-merge": "Title of button to merge the wikiaccount and Google account, if the user is logged into a wikiaccount (and not connected to a Google account) and navigates to Special:GoogleLogin.",
 	"googlelogin-form-unlink": "Title of button to unlink the connection between the wiki user account and Google account.",
-	"googlelogin-email": "Title of value E-Mailadress in account information table on Special:GoogleLogin.",
+	"googlelogin-email": "Title of value email address in account information table on [[Special:GoogleLogin]].\n{{Identical|E-mail address}}",
 	"googlelogin-googleuser": "Title of value Google-Account (Google username) in account information table on Special:GoogleLogin.",
-	"googlelogin-information-title": "Title of fieldset containing the table with account information.",
+	"googlelogin-information-title": "Title of fieldset containing the table with account information.\n{{Identical|Account information}}",
 	"googlelogin-information-body": "Information text above account information table, that the following table contains information about the Google and wiki account and the link status (linked, not linked).",
 	"googlelogin-linkstatus": "Title of value Link status in account information table on Special:GoogleLogin (is wiki account linked to Google account?).",
 	"googlelogin-linked": "Google and wiki account are linked. (Used in account information table)",

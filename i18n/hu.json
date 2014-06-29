@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Csega"
+		]
+	},
+	"googlelogin": "Bejelentkezés Google-lel",
+	"googlelogin-form-choosename-title": "Felhasználónév kiválasztása",
+	"googlelogin-form-choosename-finish-title": "Wiki fiók létrehozása",
+	"googlelogin-form-create": "Fiók létrehozása",
+	"googlelogin-form-merge": "A Google fiók beolvasztása a wikisbe",
+	"googlelogin-email": "Email cím",
+	"googlelogin-googleuser": "Google felhasználó",
+	"googlelogin-information-title": "Fiókinformációk",
+	"googlelogin-linkstatus": "Hivatkozás állapota",
+	"googlelogin-success-merge": "Gratulálunk! A wikis fiókod összekötöttük a Google fiókoddal."
+}

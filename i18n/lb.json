@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"googlelogin": "Alogge mat Google",
+	"googlelogin-parerror": "Déi ugefrot Säit gëtt et net. Gitt w.e.g. zréck a probéiert déi Aktioun nach eng Kéier.",
+	"googlelogin-form-choosename-title": "Benotzernumm eraussichen",
+	"googlelogin-form-merge-title": "Benotzerkont fusionéieren",
+	"googlelogin-form-logout": "Mat engem anere Google Benotzerkont aloggen",
+	"googlelogin-form-backlink": "Zréck op de Google-Login",
+	"googlelogin-form-merge": "Google-Benotzerkont mam Wiki-Benotzerkont verbannen",
+	"googlelogin-form-unlink": "Linkt tëscht dem Google am Wiki Benotzerkont opléisen",
+	"googlelogin-email": "E-Mail-Adress",
+	"googlelogin-googleuser": "Google-Benotzer",
+	"googlelogin-information-title": "Benotzerkontinformatioun",
+	"googlelogin-linked": "verbonn",
+	"googlelogin-unlinked": "net verbonn"
+}

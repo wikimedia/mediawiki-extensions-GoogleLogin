@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"googlelogin": "使用Google登录",
+	"googlelogin-desc": "提供[[Special:GoogleLogin|特殊页面]]允许用户使用它们的Google账户登录",
+	"googlelogin-parerror": "请求的页面不存在。请返回并再尝试操作。",
+	"googlelogin-generic-error": "我的天，出现意外错误。请返回重试。",
+	"googlelogin-form-choosename-title": "选择用户名",
+	"googlelogin-form-choosename": "请选择您的用户名以创建wiki帐户",
+	"googlelogin-form-choosename-finish-title": "创建wiki账户",
+	"googlelogin-form-choosename-finish-body": "祝贺！您创建了wiki账户$1并关联到您的Google账户。",
+	"googlelogin-form-choosename-error": "您必须选择用户名或选择我们的建议之一。",
+	"googlelogin-form-choosename-existerror": "用户名''$1''已被使用，请选择其他。",
+	"googlelogin-form-chooseown": "选择我的",
+	"googlelogin-form-chooseown-error": "请让我们了解您渴望的用户名或选择我们的建议之一。",
+	"googlelogin-form-choosename-help": "“自己的名字”只会被观察，如果您选择“{{int:googlelogin-form-chooseown}}”。",
+	"googlelogin-form-merge-title": "合并用户账户",
+	"googlelogin-form-logout": "通过另一Google账户登录",
+	"googlelogin-form-backlink": "回到Google登录",
+	"googlelogin-form-create": "创建账户",
+	"googlelogin-form-merge": "合并Google账户至wiki账户",
+	"googlelogin-form-unlink": "取消关联Google -> wiki账户",
+	"googlelogin-email": "邮件地址",
+	"googlelogin-googleuser": "Google用户",
+	"googlelogin-information-title": "账户信息",
+	"googlelogin-information-body": "下表中您会发现关于您的Google账户的信息，并且包括连接的wiki账户（如有）。",
+	"googlelogin-linkstatus": "连接状态",
+	"googlelogin-linked": "已链接",
+	"googlelogin-unlinked": "未链接",
+	"googlelogin-link-other": "您的Google账户已连接至其他用户。您的Google账户只能连接一个wiki账户。请取消关联那个wiki账户或联络管理员，如果您没有其他wiki账户的话。",
+	"googlelogin-success-merge": "祝贺！您的wiki帐户现已关联您的Google账户。",
+	"googlelogin-success-unlink": "祝贺！您的wiki帐户现已取消关联您的Google账户。"
+}
