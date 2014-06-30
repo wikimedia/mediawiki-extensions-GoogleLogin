@@ -40,6 +40,10 @@
 	$wgAutoloadClasses[ 'SpecialGoogleLogin' ] = __DIR__ . '/SpecialGoogleLogin.php';
 	$wgAutoloadClasses[ 'GoogleLoginHooks' ] = __DIR__ . '/GoogleLogin.hooks.php';
 	$wgAutoloadClasses[ 'GoogleLoginDB' ] = __DIR__ . '/GoogleLoginDB.php';
+	$wgAutoloadClasses[ 'GoogleLoginAuth' ] = __DIR__ . '/GoogleLoginAuth.php';
+
+	// load $wgAuth
+	$wgAuth = new GoogleLoginAuth;
 
 	// i18n directory and aliases
 	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = __DIR__ . '/GoogleLogin.alias.php';
