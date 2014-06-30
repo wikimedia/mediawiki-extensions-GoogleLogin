@@ -36,18 +36,30 @@
 			$header = $tpl->get( 'header' );
 
 			$header .=
-				Html::openelement( 'div', null) .
-				Html::openelement( 'li', array(
-					'style' => 'list-style:none;width:100%;',
-				) ) .
+				Html::openelement( 'div', array( 'class' => 'mw-ui-vform' ) ) .
+				Html::openelement( 'div', array() ) .
+				Html::openElement(
+					'label',
+					array( 'class' => 'mw-ui-checkbox-label' )
+				) .
+				Html::input(
+					'google-keep-loggedin',
+					'true',
+					'checkbox'
+				) .
+				' ' .
+				wfMessage( 'userlogin-remembermypassword' )->text() .
+				Html::closeElement( 'label' ) .
+				Html::closeelement( 'div') .
+				Html::openElement( 'div' ) .
 				Html::element( 'a', array(
 						'href' => Title::makeTitle( -1, 'GoogleLogin' )->getLocalUrl(),
 						'class' => 'mw-ui-button mw-ui-destructive',
 						'style' => 'width:100%;'
 					), wfMessage( 'googlelogin' )
 				) .
-				Html::closeelement( 'li' ) .
-				Html::closeelement( 'div');
+				Html::closeElement( 'div' ) .
+				Html::closeElement( 'div' );
 
 			$tpl->set( 'header', $header );
 		}
