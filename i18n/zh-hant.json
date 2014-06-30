@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"googlelogin-generic-error": "啊呀，出現錯誤。請返回並再試。訊息：$1"
+}

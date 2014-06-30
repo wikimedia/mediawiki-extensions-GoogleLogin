@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lokal Profil",
+			"WikiPhoenix"
+		]
+	},
+	"googlelogin": "Logga in med Google",
+	"googlelogin-desc": "Tillhandahåller en [[Special:GoogleLogin|specialsida]] för att låta användare logga in med sina Google-konton",
+	"googlelogin-form-choosename-title": "Välj användarnamn",
+	"googlelogin-form-choosename": "Välj ditt användarnamn för att skapa ett wikikonto",
+	"googlelogin-form-choosename-finish-title": "Skapa wikikonto",
+	"googlelogin-form-choosename-finish-body": "Grattis! Du har skapat wikikontot $1  och kopplat den med ditt Google-konto.",
+	"googlelogin-form-chooseown": "Välj eget",
+	"googlelogin-form-logout": "Logga in med ett annat Google-konto",
+	"googlelogin-form-backlink": "Tillbaka till Google-inloggning",
+	"googlelogin-form-create": "Skapa konto",
+	"googlelogin-email": "E-postadress",
+	"googlelogin-googleuser": "Google-användare",
+	"googlelogin-information-title": "Kontoinformation"
+}
