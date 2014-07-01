@@ -179,7 +179,7 @@
 		 * @return Google_Service_Plus An instance of Google Plus Client
 		 */
 		private function prepareClient( $client ) {
-			global $wgGoogleSecret, $wgGoogleAppId, $wgGoogleAppName;
+			global $wgGLSecret, $wgGLAppId, $wgGLAppName;
 			$client->setClientId( $wgGoogleAppId );
 			$client->setClientSecret( $wgGoogleSecret );
 			$client->setRedirectUri( WebRequest::detectServer().$this->getPageTitle()->getLocalUrl() );
@@ -350,7 +350,7 @@
 		 * - Unlink Wiki and Google account (Unlink)
 		 */
 		private function finishAction( $par, $client, $plus, $db ) {
-			global $wgGoogleShowCreateReason;
+			global $wgGLShowCreateReason;
 			// prepare MediaWiki variables/classes we need
 			$out = $this->getOutput();
 			$request = $this->getRequest();
