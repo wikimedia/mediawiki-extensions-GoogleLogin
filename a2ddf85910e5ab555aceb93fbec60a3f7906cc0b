@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_26c41d68",
+        "filename": "i18n/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-01T10:35:43Z",
+      "side": 1,
+      "message": "Use double quotes for consistency with core and other extensions.",
+      "revId": "a2ddf85910e5ab555aceb93fbec60a3f7906cc0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_46a601c0",
+        "filename": "i18n/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-01T10:35:43Z",
+      "side": 1,
+      "message": "adress -\u003e address",
+      "revId": "a2ddf85910e5ab555aceb93fbec60a3f7906cc0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_26abfd87",
+        "filename": "i18n/en.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-07-01T10:35:43Z",
+      "side": 1,
+      "message": "\"unlink the account\" or \"sever the connection\". This is a contamination (and a nice one) -- http://www.thefreedictionary.com/contamination second meaning.",
+      "revId": "a2ddf85910e5ab555aceb93fbec60a3f7906cc0b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
