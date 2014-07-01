@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sjoerddebruin"
+		]
+	},
+	"googlelogin-email": "E-mailadres",
+	"googlelogin-googleuser": "Googlegebruiker",
+	"googlelogin-information-title": "Gebruikersgegevens"
+}
