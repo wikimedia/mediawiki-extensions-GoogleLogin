@@ -214,8 +214,8 @@
 		 */
 		private function prepareClient( $client ) {
 			global $wgGLSecret, $wgGLAppId, $wgGLAppName;
-			$client->setClientId( $wgGoogleAppId );
-			$client->setClientSecret( $wgGoogleSecret );
+			$client->setClientId( $wgGLAppId );
+			$client->setClientSecret( $wgGLSecret );
 			$client->setRedirectUri( WebRequest::detectServer().$this->getPageTitle()->getLocalUrl() );
 			$client->addScope( "https://www.googleapis.com/auth/userinfo.profile" );
 			$client->addScope( "https://www.googleapis.com/auth/userinfo.email" );
