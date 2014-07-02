@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_dc42b13e",
+        "filename": "SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-07-02T18:10:58Z",
+      "side": 1,
+      "message": "I will rethink the visibility of all functions again, when i move the main logic out of the special page :) Thanks for the hint.",
+      "parentUuid": "ae43a74e_8140465c",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_e1803290",
         "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-02T17:25:13Z",
       "side": 1,
       "message": "Not sure how those tests exactly work. Are you actually making requests to Google APIs? You might want to stub them out. Ideally, unit tests should run in isolation, no Internet connection or external services should be necessary.",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_3cec1df2",
+        "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-07-02T18:10:58Z",
+      "side": 1,
+      "message": "Right, the extension requests the Google API, but the functions tested here does not trigger any of the request(-functions), so they can run standalone (and without \"Google\" directory (which includs the api files), too) :)",
+      "parentUuid": "ae43a74e_e1803290",
       "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ae43a74e_bc712da9",
+        "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-07-02T18:10:58Z",
+      "side": 1,
+      "message": "Ok :)",
+      "parentUuid": "ae43a74e_61b68287",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae43a74e_a16b4aed",
         "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-02T17:25:13Z",
       "side": 1,
       "message": "I think you can use PHPUnit\u0027s data providers for this:\nhttp://phpunit.de/manual/4.1/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.data-providers",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_1ce7190f",
+        "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-07-02T18:10:58Z",
+      "side": 1,
+      "message": "I will have a look at this, sounds good.",
+      "parentUuid": "ae43a74e_a16b4aed",
       "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
