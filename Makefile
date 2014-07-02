@@ -4,7 +4,10 @@ phpcheck:
 phplint: phpcheck
 	@dev-scripts/phplint.sh
 
-tests: phplint
+phpunit:
+	cd ../../tests/phpunit && php phpunit.php --group=GoogleLogin
+
+tests: phplint phpunit
 
 installhooks:
 	ln -sf ${PWD}/dev-scripts/pre-commit .git/hooks/pre-commit

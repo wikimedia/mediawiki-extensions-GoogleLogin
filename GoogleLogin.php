@@ -53,3 +53,4 @@
 	$wgHooks['UserLogoutComplete'][] = 'GoogleLoginHooks::onUserLogoutComplete';
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'GoogleLoginHooks::onLoadExtensionSchemaUpdates';
 	$wgHooks['UserLoginForm'][] = 'GoogleLoginHooks::onUserLoginForm';
+	$wgHooks['UnitTestsList'][] = 'GoogleLoginHooks::onUnitTestsList';
