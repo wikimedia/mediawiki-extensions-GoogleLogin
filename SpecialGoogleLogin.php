@@ -314,7 +314,7 @@
 		 * "write" action after form submit)
 		 * @return boolean
 		 */
-		private function isRequestValid() {
+		public function isRequestValid() {
 			$request = $this->getRequest();
 			if (
 				( $request->getSessionData( 'googlelogin_secure_token' ) ===
@@ -333,7 +333,7 @@
 		 * Generates a request token to send as securehash and save this token as session variable
 		 * @return string
 		 */
-		private function getRequestToken() {
+		public function getRequestToken() {
 			$request = $this->getRequest();
 			if ( !isset( $this->requestToken ) ) {
 				$this->requestToken = md5( rand() );
