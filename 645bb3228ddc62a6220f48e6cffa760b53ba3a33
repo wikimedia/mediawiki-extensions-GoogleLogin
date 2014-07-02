@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_8140465c",
+        "filename": "SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 542
+      },
+      "writtenOn": "2014-07-02T17:25:13Z",
+      "side": 1,
+      "message": "Changing a method from private to public only for a test is usually a code smell. Your tests should test public interfaces only. In other words, you\u0027d test logic from private methods byt testing public methods that use them (e.g. public method uses a private method to check if request is valid and throws an exception if it\u0027s not).",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_e1803290",
+        "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 542
+      },
+      "writtenOn": "2014-07-02T17:25:13Z",
+      "side": 1,
+      "message": "Not sure how those tests exactly work. Are you actually making requests to Google APIs? You might want to stub them out. Ideally, unit tests should run in isolation, no Internet connection or external services should be necessary.",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_61b68287",
+        "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 542
+      },
+      "writtenOn": "2014-07-02T17:25:13Z",
+      "side": 1,
+      "message": "That\u0027s not necessary, you\u0027re not overriding anything so you can just remove it and parent function will be called anyway.",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_a16b4aed",
+        "filename": "tests/phpunit/SpecialGoogleLoginTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 542
+      },
+      "writtenOn": "2014-07-02T17:25:13Z",
+      "side": 1,
+      "message": "I think you can use PHPUnit\u0027s data providers for this:\nhttp://phpunit.de/manual/4.1/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.data-providers",
+      "revId": "645bb3228ddc62a6220f48e6cffa760b53ba3a33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
