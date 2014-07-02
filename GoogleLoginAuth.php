@@ -16,7 +16,10 @@
 				// FIXME: Use direct redirect to Google Login page (after logic is in own class)
 				$wgOut->redirect(
 					Title::makeTitle( -1, 'GoogleLogin' )->getLocalUrl() .
-					'?keep=' . $wgRequest->getVal( 'google-keep-loggedin' ) );
+					'?keep=' . $wgRequest->getVal( 'google-keep-loggedin' ) .
+					'&returnto=' . $wgRequest->getVal( 'returnto' ) .
+					'&returntoquery=' . $wgRequest->getVal( 'returntoquery' )
+				);
 			}
 			return false;
 		}
