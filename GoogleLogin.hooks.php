@@ -51,4 +51,10 @@
 
 			$tpl->set( 'header', $header );
 		}
+
+		public static function onUnitTestsList( &$files ) {
+			$files = array_merge( $files, glob( __DIR__ . '/tests/phpunit/*Test.php' ) );
+
+			return true;
+		}
 	}
