@@ -1,19 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Fitoschido"
 		]
 	},
 	"googlelogin": "Iniciar sesión con Google",
 	"googlelogin-desc": "Proporciona una [[Special:GoogleLogin|Página especial]] para permitir a los usuarios iniciar sesión con sus cuentas de Google",
 	"googlelogin-parerror": "La página solicitada no existe. Por favor vuelve y prueba la acción otra vez.",
-	"googlelogin-generic-error": "Uy, hubo un error. Por favor regrese y vuelva a intentarlo. Mensaje:$1",
+	"googlelogin-generic-error": "Ocurrió un error. Regresa y vuelve a intentarlo. Mensaje: $1",
 	"googlelogin-form-choosename-title": "Elegir nombre de usuario",
 	"googlelogin-form-choosename": "Por favor, elije tu nombre de usuario para crear una cuenta en el wiki",
 	"googlelogin-form-choosename-finish-title": "Crear cuenta en el wiki",
 	"googlelogin-form-choosename-finish-body": "¡Felicidades! Has creado la cuenta $1 en el wiki y la has vinculado con tu cuenta de Google.",
 	"googlelogin-form-choosename-error": "Debes elegir un nombre de usuario o elegir uno de nuestra sugerencia.",
 	"googlelogin-form-choosename-existerror": "El nombre de usuario ''$1'' ya está en uso, por favor, elige otro.",
+	"googlelogin-form-merge-title": "Fusionar cuenta de usuario",
 	"googlelogin-form-logout": "Iniciar sesión con otra cuenta de Google",
 	"googlelogin-form-backlink": "Volver al inicio de sesión de Google",
 	"googlelogin-form-create": "Crear cuenta",

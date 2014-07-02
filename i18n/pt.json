@@ -7,7 +7,7 @@
 	"googlelogin": "Iniciar sessão com Google",
 	"googlelogin-desc": "Fornece uma [[Special:GoogleLogin|página especial]] para permitir aos utilizadores iniciarem sessão com as suas contas Google.",
 	"googlelogin-parerror": "A página solicitada não existe. Por favor, volte atrás e tente novamente.",
-	"googlelogin-generic-error": "Ocorreu um erro inesperado. Por favor, volte atrás e tente novamente.",
+	"googlelogin-generic-error": "Ocorreu um erro inesperado. Por favor, volte atrás e tente novamente. Mensagem: $1",
 	"googlelogin-form-choosename-title": "Escolha o nome de utilizador(a)",
 	"googlelogin-form-choosename": "Por favor, escolha o seu nome de utilizador(a) para criar uma conta wiki.",
 	"googlelogin-form-choosename-finish-title": "Criar uma conta wiki",
