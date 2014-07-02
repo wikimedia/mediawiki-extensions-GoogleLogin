@@ -19,6 +19,9 @@
 			$out->addStyle( $wgScriptDir . '/extensions/GoogleLogin/style/style.css' );
 			$db = new GoogleLoginDB;
 
+			if ( $request->getVal( 'keep' ) === "1" ) {
+				$this->setKeepLogin( true );
+			}
 			$client = $this->includeAPIFiles();
 			$plus = $this->prepareClient( $client );
 
@@ -99,7 +102,38 @@
 			}
 		}
 
-		public static function catchableFatalHandler($errorNo, $errorString, $errorFile, $errorLine) {
+		/**
+		 * Set the value, if the user want to keep his login
+		 * @param boolean $status True, if the user wants to keep
+		 */
+		public function setKeepLogin( $status = false ) {
+			$request = $this->getRequest();
+			$request->setSessionData( 'google-keep-loggedin', $status );
+		}
+
+		/**
+		 * Returns, if the user want to keep his login (the value of keep login will be deleted!)
+		 * @return boolean
+		 */
+		public function getKeepLogin() {
+			$request = $this->getRequest();
+			$status = $request->getSessionData( 'google-keep-loggedin' );
+			$request->setSessionData( 'google-keep-loggedin', null );
+			return ( $status ? true : false );
+		}
+
+		/**
+		 * Handles all catchable fatal errors
+		 *
+		 * @param integer $errorNo error Level
+		 * @param string $errorString error message
+		 * @param string $errorFile in which file the error raised
+		 * @param integer $errorLine the line in $errorFile the error raised in
+		 * @return boolean Always true
+		 */
+		public static function catchableFatalHandler(
+			$errorNo, $errorString, $errorFile, $errorLine
+		) {
 			global $wgOut;
 			$wgOut->addWikiMsg( 'googlelogin-generic-error', $errorString );
 			return true;
@@ -197,7 +231,7 @@
 		private function loginGoogleUser( $id ) {
 			$out = $this->getOutput();
 			$user = User::newFromId( $id );
-			$user->setCookies();
+			$user->setCookies( null, null, $this->getKeepLogin() );
 			$out->redirect( Title::newMainPage()->getFullURL() );
 		}
 

@@ -36,18 +36,30 @@
 			$header = $tpl->get( 'header' );
 
 			$header .=
-				Html::openelement( 'div', null) .
-				Html::openelement( 'li', array(
-					'style' => 'list-style:none;width:100%;',
-				) ) .
-				Html::element( 'a', array(
-						'href' => Title::makeTitle( -1, 'GoogleLogin' )->getLocalUrl(),
-						'class' => 'mw-ui-button mw-ui-destructive',
-						'style' => 'width:100%;'
-					), wfMessage( 'googlelogin' )
+				Html::openelement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
+				Html::openElement(
+					'label',
+					array( 'class' => 'mw-ui-checkbox-label' )
 				) .
-				Html::closeelement( 'li' ) .
-				Html::closeelement( 'div');
+				Html::input(
+					'google-keep-loggedin',
+					'1',
+					'checkbox'
+				) .
+				' ' .
+				wfMessage( 'userlogin-remembermypassword' )->text() .
+				Html::closeElement( 'label' ) .
+				Html::closeElement( 'div') .
+				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
+				Html::element( 'input', array(
+						'class' => 'mw-ui-button mw-ui-destructive',
+						'style' => 'width:100%;',
+						'type' => 'submit',
+						'name' => 'googlelogin-submit',
+						'value' => wfMessage( 'googlelogin' )->text()
+					), ''
+				) .
+				Html::closeElement( 'div' );
 
 			$tpl->set( 'header', $header );
 		}
