@@ -33,7 +33,7 @@
 	"googlelogin-linkstatus": "Status der Verknüpfung",
 	"googlelogin-linked": "verknüpft",
 	"googlelogin-unlinked": "nicht verknüpft",
-	"googlelogin-link-other": "Dein Google-Konto ist bereits mit einem anderen Konto verknüpft. Ein Google-Konto kann nur mit einen Benutzerkonto verknüpft werden. Bitte löse zuerst die Verknüpfung zu deinem anderen Konto oder kontaktiere einen Administrator, wenn du kein anderes Konto besitzt.",
+	"googlelogin-link-other": "Dein Google-Benutzerkonto ist bereits mit einem anderen Benutzer verknüpft. Bitte trenne die Verbindung oder kontaktiere einen Administrator, falls du kein weiteres Wiki-Benutzerkonto hast.",
 	"googlelogin-success-merge": "Glückwunsch! Dein Konto ist nun mit deinem Google-Konto verknüpft.",
 	"googlelogin-success-unlink": "Glückwunsch! Dein Wiki-Konto ist nicht mehr mit deinem Google-Konto verknüpft."
 }

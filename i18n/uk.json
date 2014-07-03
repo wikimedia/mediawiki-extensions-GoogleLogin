@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"googlelogin": "Увійти з Google",
+	"googlelogin-desc": "Надає [[Special:GoogleLogin|спеціальну сторінку]], щоб користувачі могли увійти з їхніх облікових записів Google",
+	"googlelogin-parerror": "Запитувана сторінка не існує. Будь ласка, поверніться назад і повторіть операцію.",
+	"googlelogin-generic-error": "Ой, сталася помилка. Будь ласка, поверніться назад і повторіть спробу. Повідомлення: $1",
+	"googlelogin-unallowed-domain": "Домен електронної пошти, що використовується для основної електронної адреси вашого облікового запису Google ($1) не має права увійти на цій вікі.",
+	"googlelogin-form-choosename-title": "Виберіть ім'я користувача",
+	"googlelogin-form-choosename": "Будь ласка, оберіть своє ім'я користувача для створення облікового запису у вікі",
+	"googlelogin-form-choosename-finish-title": "Створити обліковий запис у вікі",
+	"googlelogin-form-choosename-finish-body": "Вітаємо! Ви створили обліковий запис $1 у вікі і пов'язали його зі своїм обліковим записом Google.",
+	"googlelogin-form-choosename-error": "Ви повинні вибрати ім'я користувача або вибрати одну з наших підказок.",
+	"googlelogin-form-choosename-existerror": "Ім'я користувача «$1» вже використовується, будь ласка, виберіть інше.",
+	"googlelogin-form-chooseown": "Вибрати власне",
+	"googlelogin-form-chooseown-error": "Будь ласка, дайте нам знати бажане ім'я користувача або скористайтеся однією з наших пропозицій.",
+	"googlelogin-form-choosename-help": "Спостерігається тільки «власне ім'я», якщо ви обираєте «{{int:googlelogin-form-chooseown}}».",
+	"googlelogin-form-merge-title": "Об'єднати облікові записи",
+	"googlelogin-form-logout": "Вхід у систему з іншого облікового запису Google",
+	"googlelogin-form-backlink": "Назад до входження через Google",
+	"googlelogin-form-create": "Створити обліковий запис",
+	"googlelogin-form-merge": "Об'єднати Google з обліковим записом вікі",
+	"googlelogin-form-unlink": "Від'єднати Google -> обліковий запис вікі",
+	"googlelogin-email": "Адреса електронної пошти",
+	"googlelogin-googleuser": "Користувач Google",
+	"googlelogin-information-title": "Відомості облікового запису",
+	"googlelogin-information-body": "У поданій таблиці ви знайдете інформацію про свій обліковий запис Google, а також пов'язаний він з обліковим записом у вікі чи ні.",
+	"googlelogin-linkstatus": "Статус зв'язаності",
+	"googlelogin-linked": "пов'язано",
+	"googlelogin-unlinked": "не пов'язано",
+	"googlelogin-link-other": "Ваш обліковий запис Google уже зв'язано з іншим користувачем. Будь ласка, від'єднайте підключення або зверніться до адміністратора, якщо у вас немає іншого облікового запису вікі.",
+	"googlelogin-success-merge": "Вітаємо! Ваш обліковий запису у вікі тепер пов'язано з вашим обліковим записом Google.",
+	"googlelogin-success-unlink": "Вітаємо! Ваш обліковий запису у вікі більше не пов'язано з вашим обліковим записом Google."
+}
