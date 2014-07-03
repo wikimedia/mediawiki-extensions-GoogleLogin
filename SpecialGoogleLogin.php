@@ -19,9 +19,7 @@
 			$out->addStyle( $wgScriptDir . '/extensions/GoogleLogin/style/style.css' );
 			$db = new GoogleLoginDB;
 
-			if ( $request->getVal( 'keep' ) === "1" ) {
-				$this->setKeepLogin( true );
-			}
+			$this->setLoginParameter( $request );
 			$client = $this->includeAPIFiles();
 			$plus = $this->prepareClient( $client );
 
@@ -100,6 +98,48 @@
 					$out->redirect( $authUrl );
 				}
 			}
+		}
+
+		/**
+		 * Helps to set the correct values for post login redirect, e.g. keep login
+		 */
+		public function setLoginParameter( $request ) {
+			if ( $request->getVal( 'keep' ) === "1" ) {
+				$this->setKeepLogin( true );
+			}
+			$returnTo = $request->getVal( 'returnto' );
+			if ( $returnTo !== null ) {
+				$this->setReturnTo( $returnTo, $request->getVal( 'returntoquery' ) );
+			}
+		}
+
+		/**
+		 * Set redirect location, if provided
+		 * @param string $returnTo Location to redirect after Login
+		 * @param string $returnToQuery Query for the Location URL
+		 */
+		public function setReturnTo( $returnTo, $returnToQuery ) {
+			$request = $this->getRequest();
+			$request->setSessionData( 'google-returnto', $returnTo );
+			if ( isset( $returnToQuery ) ) {
+				$request->setSessionData( 'google-returntoquery', $returnToQuery );
+			}
+		}
+		/**
+		 * Get recirect location data
+		 * @return array Array with title and query for redirect location
+		 */
+		public function getReturnTo() {
+			$request = $this->getRequest();
+			$returnTo = array();
+			$returnTo['title'] = $request->getSessionData( 'google-returnto' );
+			$query = $request->getSessionData( 'google-returntoquery' );
+			$returnTo['query'] = '';
+			if ( $query ) {
+				$returnTo['query'] = $request->getSessionData( 'google-returntoquery' );
+			}
+			$request->setSessionData( 'google-returnto', null );
+			return $returnTo;
 		}
 
 		/**
@@ -383,7 +423,13 @@
 			$out = $this->getOutput();
 			$user = User::newFromId( $id );
 			$user->setCookies( null, null, $this->getKeepLogin() );
-			$out->redirect( Title::newMainPage()->getFullURL() );
+			$returnTo = $this->getReturnTo();
+			if ( empty( $returnTo ) ) {
+				$redirectTo = Title::newMainPage()->getFullURL();
+			} else {
+				$redirectTo = Title::newFromText( $returnTo['title'] )->getFullURL( $returnTo['query'] );
+			}
+			$out->redirect( $redirectTo );
 		}
 
 		/**
