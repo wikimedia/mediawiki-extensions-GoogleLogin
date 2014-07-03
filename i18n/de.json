@@ -10,6 +10,7 @@
 	"googlelogin-desc": "Stellt eine [[Special:GoogleLogin|Spezialseite]] zur Verfügung, die es Nutzern erlaubt, sich mit Ihrem Google-Konto anzumelden.",
 	"googlelogin-parerror": "Die aufgerufene Seite existiert nicht. Bitte gehen Sie zurück und versuchen die Aktion erneut.",
 	"googlelogin-generic-error": "Oops, da war ein Problem. Bitte gehen Sie zurück und versuchen die Aktion erneut. Fehlernachricht: $1",
+	"googlelogin-unallowed-domain": "Die E-Mail-Domain, welche von deiner primären E-Mailadresse verwendet wird ($1), ist für die Anmeldung mit GoogleLogin in diesem Wiki nicht erlaubt.",
 	"googlelogin-form-choosename-title": "Wähle Benutzername",
 	"googlelogin-form-choosename": "Wähle einen Benutzernamen um ein Konto zu erstellen",
 	"googlelogin-form-choosename-finish-title": "Benutzerkonto erstellen",
