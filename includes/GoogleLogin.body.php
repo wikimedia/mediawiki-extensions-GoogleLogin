@@ -10,12 +10,16 @@
 		private $mPlusClient;
 
 		/**
-		 * Returns an instance of Google client to do requests with to Google API
+		 * Returns an prepared instance of Google client to do requests with to Google API
 		 * @return Google_Client
 		 */
 		public function getClient() {
 			if ( empty( $this->mGoogleClient ) ) {
-				$this->mGoogleClient = $this->includeAPIFiles();
+				$client = $this->includeAPIFiles();
+				$this->mGoogleClient = $this->prepareClient(
+					$client,
+					$this->getSpecialPageUri()
+				);
 			}
 			return $this->mGoogleClient;
 		}
@@ -27,10 +31,6 @@
 		public function getPlus() {
 			if ( empty( $this->mPlusClient ) ) {
 				$client = $this->mGoogleClient;
-				$client = $this->prepareClient(
-					$client,
-					$this->getSpecialPageUri()
-				);
 				$this->mPlusClient = new Google_Service_Plus( $client );
 			}
 			return $this->mPlusClient;
@@ -89,7 +89,7 @@
 		 * Helps to set the correct values for post login redirect, e.g. keep login
 		 */
 		public function setLoginParameter( $request ) {
-			if ( $request->getVal( 'keep' ) === "1" ) {
+			if ( $request->getVal( 'google-keep-loggedin' ) === "1" ) {
 				$this->setKeepLogin( true );
 			}
 			$returnTo = $request->getVal( 'returnto' );
