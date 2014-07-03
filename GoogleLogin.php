@@ -36,18 +36,21 @@
 		'license-name' => "MIT",
 	);
 
+	$dir = __DIR__;
+
 	// Autoload Classes
-	$wgAutoloadClasses[ 'SpecialGoogleLogin' ] = __DIR__ . '/SpecialGoogleLogin.php';
-	$wgAutoloadClasses[ 'GoogleLoginHooks' ] = __DIR__ . '/GoogleLogin.hooks.php';
-	$wgAutoloadClasses[ 'GoogleLoginDB' ] = __DIR__ . '/GoogleLoginDB.php';
-	$wgAutoloadClasses[ 'GoogleLoginAuth' ] = __DIR__ . '/GoogleLoginAuth.php';
+	$wgAutoloadClasses[ 'GoogleLogin' ] = $dir . '/includes/GoogleLogin.body.php';
+	$wgAutoloadClasses[ 'SpecialGoogleLogin' ] = $dir . '/includes/specials/SpecialGoogleLogin.php';
+	$wgAutoloadClasses[ 'GoogleLoginHooks' ] = $dir . '/includes/GoogleLogin.hooks.php';
+	$wgAutoloadClasses[ 'GoogleLoginDB' ] = $dir . '/includes/GoogleLoginDB.php';
+	$wgAutoloadClasses[ 'GoogleLoginAuth' ] = $dir . '/includes/GoogleLoginAuth.php';
 
 	// load $wgAuth
 	$wgAuth = new GoogleLoginAuth;
 
 	// i18n directory and aliases
-	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = __DIR__ . '/GoogleLogin.alias.php';
-	$wgMessagesDirs['GoogleLogin'] = __DIR__ . '/i18n';
+	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = $dir . '/includes/GoogleLogin.alias.php';
+	$wgMessagesDirs['GoogleLogin'] = $dir . '/i18n';
 
 	// Special Page
 	$wgSpecialPageGroups[ 'GoogleLogin' ] = 'login';
