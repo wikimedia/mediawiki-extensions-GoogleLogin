@@ -652,6 +652,16 @@
 								$logEntry = $user->addNewUserLogEntry( 'create', $createReason );
 								$db->createConnection( $userInfo['id'], $user->getId() );
 								$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
+								$returnTo = $this->getReturnTo();
+								if ( empty( $returnTo['title'] ) ) {
+									$redirectTo = Title::newMainPage();
+								} else {
+									$redirectTo = Title::newFromText(
+										$returnTo['title']
+									);
+								}
+								$redirectQuery = wfCgiToArray( $returnTo['query'] );
+								$out->addReturnTo( $redirectTo, $redirectQuery );
 							} else {
 								$this->createError( wfMessage( 'googlelogin-link-other' )->text() );
 							}
