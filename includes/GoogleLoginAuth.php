@@ -13,13 +13,11 @@
 		public function authenticate( $username, $password ) {
 			global $wgOut, $wgRequest;
 			if ( $wgRequest->getVal( 'googlelogin-submit' ) !== null ) {
-				// FIXME: Use direct redirect to Google Login page (after logic is in own class)
-				$wgOut->redirect(
-					Title::makeTitle( -1, 'GoogleLogin' )->getLocalUrl() .
-					'?keep=' . $wgRequest->getVal( 'google-keep-loggedin' ) .
-					'&returnto=' . $wgRequest->getVal( 'returnto' ) .
-					'&returntoquery=' . $wgRequest->getVal( 'returntoquery' )
-				);
+				$googleLogin = new GoogleLogin;
+				$googleLogin->setLoginParameter( $wgRequest );
+				$client = $googleLogin->getClient();
+				$authUrl = $client->createAuthUrl();
+				$wgOut->redirect( $authUrl );
 			}
 			return false;
 		}
