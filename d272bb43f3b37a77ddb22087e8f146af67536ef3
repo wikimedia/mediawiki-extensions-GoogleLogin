@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae43a74e_bfb6bad5",
+        "filename": "GoogleLoginAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-03T08:43:13Z",
+      "side": 1,
+      "message": "Insufficient escaping, pass the parameters as an array to getLocalUrl.",
+      "revId": "d272bb43f3b37a77ddb22087e8f146af67536ef3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_5fc7ce4a",
+        "filename": "SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-03T08:43:13Z",
+      "side": 1,
+      "message": "getCheck? getBool?",
+      "revId": "d272bb43f3b37a77ddb22087e8f146af67536ef3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_3fc2ca39",
+        "filename": "SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-03T08:43:13Z",
+      "side": 1,
+      "message": "Do not use isset or empty for variables which are guaranteed to be set.",
+      "revId": "d272bb43f3b37a77ddb22087e8f146af67536ef3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_1fc14633",
+        "filename": "SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-03T08:43:13Z",
+      "side": 1,
+      "message": "Do not use isset or empty for variables which are guaranteed to be set.",
+      "revId": "d272bb43f3b37a77ddb22087e8f146af67536ef3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae43a74e_ffbb22b8",
+        "filename": "SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2014-07-03T08:43:13Z",
+      "side": 1,
+      "message": "Title::newFromText might return null.",
+      "revId": "d272bb43f3b37a77ddb22087e8f146af67536ef3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
