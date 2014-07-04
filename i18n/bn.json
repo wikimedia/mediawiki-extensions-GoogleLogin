@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftab1995"
+		]
+	},
+	"googlelogin": "গুগল দিয়ে প্রবেশ",
+	"googlelogin-form-choosename-title": "ব্যবহারকারীর নাম বাছাই করুন",
+	"googlelogin-form-choosename": "একটি উইকি অ্যাকাউন্ট তৈরি করতে আপনার ব্যবহারকারীর নাম চয়ন করুন",
+	"googlelogin-form-choosename-finish-title": "উইকি অ্যাকাউন্ট তৈরি করুন",
+	"googlelogin-form-chooseown": "নিজস্ব বাছাই করুন",
+	"googlelogin-form-merge-title": "ব্যবহারকারী অ্যাকাউন্ট একত্রীকরণ করুন",
+	"googlelogin-form-logout": "আরেকটি গুগল অ্যাকাউন্ট দিয়ে প্রবেশ করুন",
+	"googlelogin-form-backlink": "গুগল লগইনে ফিরুন",
+	"googlelogin-form-create": "অ্যাকাউন্ট তৈরি করুন",
+	"googlelogin-form-merge": "উইকি অ্যাকাউন্ট থেকে গুগলে একত্রীকরণ করুন",
+	"googlelogin-form-unlink": "সংযোগহীন গুগল -> উইকি অ্যাকাউন্ট",
+	"googlelogin-email": "ইমেইল ঠিকানা",
+	"googlelogin-googleuser": "গুগল ব্যবহারকারী",
+	"googlelogin-information-title": "অ্যাকাউন্টের তথ্য"
+}

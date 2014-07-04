@@ -8,6 +8,7 @@
 	"googlelogin-desc": "Дава [[Special:GoogleLogin|специјална страница]] што им овозможува на корисниците да се најавуваат со сметка на Google",
 	"googlelogin-parerror": "Побараната страница не постои. Навратете се и обидете се повторно.",
 	"googlelogin-generic-error": "Се појави неочекувана грешка. Навратете се и обидете се повторно. Порака: $1",
+	"googlelogin-unallowed-domain": "Доменот што го користи главната е-пошта на вашата сметка на Google ($1) нема дозвола за најава на ова вики.",
 	"googlelogin-form-choosename-title": "Одберете корисничко име",
 	"googlelogin-form-choosename": "Одберете корисничко име за да направите сметка на викито",
 	"googlelogin-form-choosename-finish-title": "Направи сметка на викито",
