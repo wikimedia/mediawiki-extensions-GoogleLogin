@@ -317,7 +317,7 @@
 								$logEntry = $user->addNewUserLogEntry( 'create', $createReason );
 								$db->createConnection( $userInfo['id'], $user->getId() );
 								$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
-								$returnTo = $this->getReturnTo();
+								$returnTo = $this->mGoogleLogin->getReturnTo();
 								if ( empty( $returnTo['title'] ) ) {
 									$redirectTo = Title::newMainPage();
 								} else {
