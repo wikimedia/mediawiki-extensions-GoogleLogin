@@ -49,7 +49,7 @@
 	$wgAuth = new GoogleLoginAuth;
 
 	// i18n directory and aliases
-	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = $dir . '/includes/GoogleLogin.alias.php';
+	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = $dir . '/GoogleLogin.alias.php';
 	$wgMessagesDirs['GoogleLogin'] = $dir . '/i18n';
 
 	// Special Page
