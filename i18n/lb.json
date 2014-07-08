@@ -6,6 +6,7 @@
 	},
 	"googlelogin": "Alogge mat Google",
 	"googlelogin-parerror": "Déi ugefrot Säit gëtt et net. Gitt w.e.g. zréck a probéiert déi Aktioun nach eng Kéier.",
+	"googlelogin-generic-error": "Ups, do war e Feeler. Gitt w.e.g. zréck a probéiert nach eng Kéier. Message: $1",
 	"googlelogin-form-choosename-title": "Benotzernumm eraussichen",
 	"googlelogin-form-choosename-existerror": "De Benotzernumm \"$1\" gëtt scho benotzt, sich Iech w.e.g. een aneren.",
 	"googlelogin-form-merge-title": "Benotzerkont fusionéieren",

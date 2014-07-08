@@ -5,6 +5,9 @@
 		]
 	},
 	"googlelogin": "গুগল দিয়ে প্রবেশ",
+	"googlelogin-desc": "ব্যবহারকারীদের তাদের গুগল অ্যাকাউন্ট সহযোগে প্রবেশ করার অনুমতি দিতে একটি [[Special:GoogleLogin|বিশেষ পাতা]] প্রদান করে",
+	"googlelogin-parerror": "অনুরোধ করা পৃষ্ঠা বিদ্যমান নেই। দয়া করে ফিরে যান এবং আবার এই কাজ করার চেষ্টা করুন।",
+	"googlelogin-generic-error": "ওহো, একটি ত্রুটি হয়েছে। দয়া করে ফিরে যান এবং আবার চেষ্টা করুন। বার্তা: $1",
 	"googlelogin-form-choosename-title": "ব্যবহারকারীর নাম বাছাই করুন",
 	"googlelogin-form-choosename": "একটি উইকি অ্যাকাউন্ট তৈরি করতে আপনার ব্যবহারকারীর নাম চয়ন করুন",
 	"googlelogin-form-choosename-finish-title": "উইকি অ্যাকাউন্ট তৈরি করুন",
@@ -17,5 +20,8 @@
 	"googlelogin-form-unlink": "সংযোগহীন গুগল -> উইকি অ্যাকাউন্ট",
 	"googlelogin-email": "ইমেইল ঠিকানা",
 	"googlelogin-googleuser": "গুগল ব্যবহারকারী",
-	"googlelogin-information-title": "অ্যাকাউন্টের তথ্য"
+	"googlelogin-information-title": "অ্যাকাউন্টের তথ্য",
+	"googlelogin-linkstatus": "সংযোগের অবস্থা",
+	"googlelogin-linked": "সংযোগকৃত",
+	"googlelogin-unlinked": "সংযোগ করা হয়নি"
 }
