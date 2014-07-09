@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sayginer"
+		]
+	},
+	"googlelogin": "Google ile oturum aç",
+	"googlelogin-form-choosename-title": "Kullanıcı adı seç",
+	"googlelogin-form-choosename-finish-title": "Viki hesabı oluştur",
+	"googlelogin-email": "E-posta adresi",
+	"googlelogin-googleuser": "Google kullanıcısı"
+}

@@ -3,7 +3,6 @@
  * Aliases for Google Login
  * @ingroup Extensions
  */
-
 // @codingStandardsIgnoreFile
 
 $specialPageAliases = array();
