@@ -8,6 +8,7 @@
 	"googlelogin-desc": "提供[[Special:GoogleLogin|特殊页面]]允许用户使用它们的Google账户登录",
 	"googlelogin-parerror": "请求的页面不存在。请返回并再尝试操作。",
 	"googlelogin-generic-error": "我的天，出现意外错误。请返回重试。信息：$1",
+	"googlelogin-unallowed-domain": "用于您Google账户（$1）的主要邮件地址的域名不允许登录此wiki。",
 	"googlelogin-form-choosename-title": "选择用户名",
 	"googlelogin-form-choosename": "请选择您的用户名以创建wiki帐户",
 	"googlelogin-form-choosename-finish-title": "创建wiki账户",
@@ -30,7 +31,7 @@
 	"googlelogin-linkstatus": "连接状态",
 	"googlelogin-linked": "已链接",
 	"googlelogin-unlinked": "未链接",
-	"googlelogin-link-other": "您的Google账户已连接至其他用户。您的Google账户只能连接一个wiki账户。请取消关联那个wiki账户或联络管理员，如果您没有其他wiki账户的话。",
+	"googlelogin-link-other": "您的Google账户已连接至其他用户。请取消连接或联络管理员，如果您没有其他wiki账户的话。",
 	"googlelogin-success-merge": "祝贺！您的wiki帐户现已关联您的Google账户。",
 	"googlelogin-success-unlink": "祝贺！您的wiki帐户现已取消关联您的Google账户。"
 }
