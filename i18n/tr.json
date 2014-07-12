@@ -5,8 +5,13 @@
 		]
 	},
 	"googlelogin": "Google ile oturum aç",
+	"googlelogin-desc": "Kullanıcıların Google hesaplarıyla giriş yapabilmesi için [[Special:GoogleLogin|özel bir sayfa]] sağlar.",
 	"googlelogin-form-choosename-title": "Kullanıcı adı seç",
 	"googlelogin-form-choosename-finish-title": "Viki hesabı oluştur",
+	"googlelogin-form-choosename-existerror": "''$1'' kullanıcı adı kullanımda; lütfen başka bir ad seçin.",
+	"googlelogin-form-logout": "Başka bir Google hesabıyla giriş yapın.",
+	"googlelogin-form-create": "Hesap oluştur",
 	"googlelogin-email": "E-posta adresi",
-	"googlelogin-googleuser": "Google kullanıcısı"
+	"googlelogin-googleuser": "Google kullanıcısı",
+	"googlelogin-success-unlink": "Tebrikler! Artık viki hesabınız, Google hesabınıza bağlı değil."
 }
