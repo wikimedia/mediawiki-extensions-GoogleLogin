@@ -19,7 +19,7 @@
 	"googlelogin-form-logout": "Iniciar sesión con otra cuenta de Google",
 	"googlelogin-form-backlink": "Volver al inicio de sesión de Google",
 	"googlelogin-form-create": "Crear cuenta",
-	"googlelogin-email": "Correo electrónico",
+	"googlelogin-email": "Dirección de correo electrónico",
 	"googlelogin-googleuser": "Usuario de Google",
 	"googlelogin-information-title": "Información de la cuenta",
 	"googlelogin-information-body": "En la siguiente tabla encontrarás información sobre tu cuenta de Google y si está vinculada a una cuenta en el wiki o no.",

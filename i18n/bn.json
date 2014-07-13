@@ -11,7 +11,11 @@
 	"googlelogin-form-choosename-title": "ব্যবহারকারীর নাম বাছাই করুন",
 	"googlelogin-form-choosename": "একটি উইকি অ্যাকাউন্ট তৈরি করতে আপনার ব্যবহারকারীর নাম চয়ন করুন",
 	"googlelogin-form-choosename-finish-title": "উইকি অ্যাকাউন্ট তৈরি করুন",
+	"googlelogin-form-choosename-error": "আপনাকে একটি ব্যবহারকারীর নাম বাছাই করতে হবে অথবা আমাদের পরামর্শ থেকে একটি বেছে নিন।",
+	"googlelogin-form-choosename-existerror": "ব্যবহারকারীর নাম ''$1'' ইতিমধ্যে ব্যবহার করা হচ্ছে, দয়া করে অন্য আরেকটি বাছাই করুন।",
 	"googlelogin-form-chooseown": "নিজস্ব বাছাই করুন",
+	"googlelogin-form-chooseown-error": "দয়া করে আমাদের আপনার পছন্দসই ব্যবহারকারীর নাম জানান অথবা আমাদের পরামর্শকৃত একটি নিন।",
+	"googlelogin-form-choosename-help": "\"নিজস্ব নাম\" শুধুমাত্র পরিলক্ষিত হবে, যদি আপনি \"{{int:googlelogin-form-chooseown}}\" বাছাই করেন।",
 	"googlelogin-form-merge-title": "ব্যবহারকারী অ্যাকাউন্ট একত্রীকরণ করুন",
 	"googlelogin-form-logout": "আরেকটি গুগল অ্যাকাউন্ট দিয়ে প্রবেশ করুন",
 	"googlelogin-form-backlink": "গুগল লগইনে ফিরুন",
@@ -23,5 +27,7 @@
 	"googlelogin-information-title": "অ্যাকাউন্টের তথ্য",
 	"googlelogin-linkstatus": "সংযোগের অবস্থা",
 	"googlelogin-linked": "সংযোগকৃত",
-	"googlelogin-unlinked": "সংযোগ করা হয়নি"
+	"googlelogin-unlinked": "সংযোগ করা হয়নি",
+	"googlelogin-success-merge": "অভিনন্দন! আপনার উইকি অ্যাকাউন্ট এখন আপনার Google অ্যাকাউন্টের সাথে সংযুক্ত করা হয়েছে।",
+	"googlelogin-success-unlink": "অভিনন্দন! আপনার উইকি অ্যাকাউন্ট এখন আপনার Google অ্যাকাউন্টের সাথে সংযুক্ত নেই।"
 }
