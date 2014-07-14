@@ -12,6 +12,11 @@ $specialPageAliases['en'] = array(
 	'GoogleLogin' => array( 'GoogleLogin', 'Login with Google' ),
 );
 
+/** German (Deutsch) */
+$specialPageAliases['de'] = array(
+	'GoogleLogin' => array( 'Mit_Google_anmelden' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'GoogleLogin' => array( 'НајаваСоGoogle' ),
