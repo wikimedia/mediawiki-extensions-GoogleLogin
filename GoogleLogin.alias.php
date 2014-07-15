@@ -12,6 +12,16 @@ $specialPageAliases['en'] = array(
 	'GoogleLogin' => array( 'GoogleLogin', 'Login with Google' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'GoogleLogin' => array( 'دخول_جوجل', 'دخول_مع_جوجل' ),
+);
+
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'GoogleLogin' => array( 'دخول' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'GoogleLogin' => array( 'Mit_Google_anmelden' ),
