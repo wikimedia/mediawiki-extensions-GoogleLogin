@@ -2,11 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Lokal Profil",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Jopparn"
 		]
 	},
 	"googlelogin": "Logga in med Google",
 	"googlelogin-desc": "Tillhandahåller en [[Special:GoogleLogin|specialsida]] för att låta användare logga in med sina Google-konton",
+	"googlelogin-parerror": "Den begärda sidan finns inte. Gå tillbaka och genomför åtgärden igen.",
+	"googlelogin-generic-error": "Oj, ett fel uppstod. Gå tillbaka och försök igen. Meddelande: $1",
 	"googlelogin-form-choosename-title": "Välj användarnamn",
 	"googlelogin-form-choosename": "Välj ditt användarnamn för att skapa ett wikikonto",
 	"googlelogin-form-choosename-finish-title": "Skapa wikikonto",
@@ -17,5 +20,8 @@
 	"googlelogin-form-create": "Skapa konto",
 	"googlelogin-email": "E-postadress",
 	"googlelogin-googleuser": "Google-användare",
-	"googlelogin-information-title": "Kontoinformation"
+	"googlelogin-information-title": "Kontoinformation",
+	"googlelogin-linkstatus": "Länkstatus",
+	"googlelogin-linked": "länkad",
+	"googlelogin-unlinked": "inte länkad"
 }
