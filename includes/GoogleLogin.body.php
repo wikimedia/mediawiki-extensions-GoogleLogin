@@ -201,7 +201,7 @@
 		 */
 		private function getSpecialPageTitle() {
 			if ( empty( $this->mSpecialPageTitle ) ) {
-				$this->mSpecialPageTitle = Title::makeTitle( -1, 'GoogleLogin' );
+				$this->mSpecialPageTitle = SpecialPage::getTitleFor( 'GoogleLogin' );
 			}
 			return $this->mSpecialPageTitle;
 		}
