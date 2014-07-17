@@ -216,6 +216,7 @@
 			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-' . strtolower( $action ) )->text() );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
 			$htmlForm->setAction( $this->getPageTitle( $action )->getLocalUrl() );
+			$htmlForm->setSubmitCallback( array( 'GoogleLogin', 'submitGeneric' ) );
 			$htmlForm->show();
 		}
 
