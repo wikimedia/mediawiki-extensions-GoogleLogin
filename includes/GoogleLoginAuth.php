@@ -2,23 +2,15 @@
 	// handles only the redirect to Special:GoogleLogin if needed
 	class GoogleLoginAuth extends AuthPlugin {
 		/**
-		 * Normally this handles an auth request with username and password, mediawiki can not identify,
-		 * so it try to use some external sources, if available. We use this to redirect the request
-		 * to our special page, if some parameters in WebRequest are set.
+		 * Normally this handles the check if a domain is valid. We use this
+		 * to get into the login process in an early process to check, if the user
+		 * clicks the Login with Google button or the MediaWiki login button.
 		 *
-		 * @param string $username Username
-		 * @param string $password Password of the USer
-		 * @return boolean Always false, we don't authenticate a user here
+		 * @param string $domain Domain name (unneded)
+		 * @return boolean Always false, we don't check anything here
 		 */
-		public function authenticate( $username, $password ) {
-			global $wgOut, $wgRequest;
-			if ( $wgRequest->getVal( 'googlelogin-submit' ) !== null ) {
-				$googleLogin = new GoogleLogin;
-				$googleLogin->setLoginParameter( $wgRequest );
-				$client = $googleLogin->getClient();
-				$authUrl = $client->createAuthUrl();
-				$wgOut->redirect( $authUrl );
-			}
-			return false;
+		public function validDomain( $domain ) {
+			GoogleLogin::externalLoginAttempt();
+			return true;
 		}
 	}

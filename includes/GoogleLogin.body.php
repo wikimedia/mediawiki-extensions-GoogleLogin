@@ -187,10 +187,11 @@
 			$user = User::newFromId( $id );
 			$user->setCookies( null, null, $this->getKeepLogin() );
 			$returnTo = $this->getReturnTo();
-			if ( empty( $returnTo ) ) {
+			$title = Title::newFromText( $returnTo['title'] );
+			if ( empty( $returnTo ) || !$title ) {
 				$redirectTo = Title::newMainPage()->getFullURL();
 			} else {
-				$redirectTo = Title::newFromText( $returnTo['title'] )->getFullURL( $returnTo['query'] );
+				$redirectTo = $title->getFullURL( $returnTo['query'] );
 			}
 			return $redirectTo;
 		}
@@ -410,5 +411,17 @@
 			global $wgOut;
 			$wgOut->addWikiMsg( 'googlelogin-generic-error', $errorString );
 			return true;
+		}
+
+		public static function externalLoginAttempt() {
+			global $wgOut, $wgRequest;
+			if ( $wgRequest->getVal( 'googlelogin-submit' ) !== null ) {
+				$googleLogin = new GoogleLogin;
+				$googleLogin->setLoginParameter( $wgRequest );
+				$client = $googleLogin->getClient();
+				$authUrl = $client->createAuthUrl();
+				$wgOut->redirect( $authUrl );
+				$wgOut->output();
+			}
 		}
 	}
