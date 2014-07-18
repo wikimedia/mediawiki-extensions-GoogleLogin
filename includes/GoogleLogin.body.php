@@ -397,6 +397,16 @@
 		}
 
 		/**
+		 * Generic callback button (always returns true)
+		 * @param array $data The form data submitted to check
+		 * @return string|boolean Returns a string with error message, when check fails, and boolean
+		 *	for success.
+		 */
+		public static function submitGeneric( $data ) {
+			return true;
+		}
+
+		/**
 		 * Handles all catchable fatal errors
 		 *
 		 * @param integer $errorNo error Level
