@@ -11,14 +11,14 @@
 		 * @param SubPage $par Subpage submitted to this Special page.
 		 */
 		function execute( $par ) {
-			global $wgScriptDir;
+			global $wgScriptPath;
 			// first set our own handler for catchable fatal errors
 			set_error_handler( 'GoogleLogin::catchableFatalHandler', E_RECOVERABLE_ERROR );
 
 			$this->setHeaders();
 			$request = $this->getRequest();
 			$out = $this->getOutput();
-			$out->addStyle( $wgScriptDir . '/extensions/GoogleLogin/style/style.css' );
+			$out->addStyle( $wgScriptPath . '/extensions/GoogleLogin/style/style.css' );
 			$db = new GoogleLoginDB;
 			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 
