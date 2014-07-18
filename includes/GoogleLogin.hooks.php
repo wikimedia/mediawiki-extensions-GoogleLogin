@@ -32,8 +32,19 @@
 		}
 
 		public static function onUserLoginForm( &$tpl ) {
+			global $wgGLShowKeepLogin;
 			// we don't want to delete the output of other extensions, so "extend" header
 			$header = $tpl->get( 'header' );
+
+			$keepLogin = '';
+			if ( $wgGLShowKeepLogin ) {
+				$keepLogin = Html::input(
+					'google-keep-loggedin',
+					'1',
+					'checkbox'
+				) .
+				' ' . wfMessage( 'userlogin-remembermypassword' )->text();
+			}
 
 			$header .=
 				Html::openelement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
@@ -41,13 +52,7 @@
 					'label',
 					array( 'class' => 'mw-ui-checkbox-label' )
 				) .
-				Html::input(
-					'google-keep-loggedin',
-					'1',
-					'checkbox'
-				) .
-				' ' .
-				wfMessage( 'userlogin-remembermypassword' )->text() .
+				$keepLogin .
 				Html::closeElement( 'label' ) .
 				Html::closeElement( 'div') .
 				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .

@@ -92,3 +92,9 @@
 	 * If the user creates an account via GoogleLogin, show this as a reason in log?
 	 */
 	$wgGLShowCreateReason = false;
+
+	/**
+	 * Variable to control if there is an "Keep login" checkbox for GoogleLogin right above the
+	 * "Login with Google" button on the user login form.
+	 */
+	$wgGLShowKeepLogin = true;
