@@ -68,4 +68,35 @@
 
 			$tpl->set( 'header', $header );
 		}
+
+		/**
+		 * Handles the replace of Loginlink and deletion of Create account link in personal tools
+		 * if Loginreplacement is configured.
+		 */
+		public static function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
+			global $wgGLReplaceMWLogin, $wgUser, $wgRequest;
+			if ( $wgGLReplaceMWLogin && array_key_exists( 'login', $personal_urls ) ) {
+				// unset the create account link
+				if ( array_key_exists( 'createaccount', $personal_urls ) ) {
+					unset( $personal_urls['createaccount'] );
+				}
+
+				// Replace login link with GoogleLogin link
+				$googleLogin = new GoogleLogin;
+				$personal_urls['login']['text'] = wfMessage( 'googlelogin' )->text();
+				$personal_urls['login']['href'] = $googleLogin->getLoginUrl( $skin, $title );
+			}
+		}
+
+		/**
+		 * Handles the replace of Special:UserLogin with Special:GoogleLogin if Loginreplacement is
+		 * configured.
+		 */
+		public static function onSpecialPage_initList( &$list ) {
+			global $wgGLReplaceMWLogin;
+			// Replaces the UserLogin special page if configured
+			if ( $wgGLReplaceMWLogin ) {
+				$list['Userlogin'] = 'SpecialGoogleLogin';
+			}
+		}
 	}

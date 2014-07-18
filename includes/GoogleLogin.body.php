@@ -37,6 +37,44 @@
 		}
 
 		/**
+		 * Returns a full login URL to Special:GoogleLogin like normal Login link
+		 * @param SkinTemplate $skin The SkinTemplate Object to create link from
+		 * @param Title|null $title Title object of the actual page or null
+		 * @return string
+		 */
+		public function getLoginUrl( SkinTemplate $skin, $title = null ) {
+			$user = $this->getUser();
+			$request = $this->getRequest();
+			if ( $title === null ) {
+				$title = $this->getTitle();
+			}
+			if ( $user->isAllowed( 'read' ) ) {
+				$page = $title;
+			} else {
+				$page = Title::newFromText( $request->getVal( 'title', '' ) );
+			}
+			$page = $request->getVal( 'returnto', $page );
+			$a = array();
+			if ( strval( $page ) !== '' ) {
+				$a['returnto'] = $page;
+				$query = array();
+				if ( !$request->wasPosted() ) {
+					$query = $request->getValues();
+					unset( $query['title'] );
+					unset( $query['returnto'] );
+					unset( $query['returntoquery'] );
+				}
+				$thisQuery = wfArrayToCgi( $query );
+				$query = $request->getVal( 'returntoquery', $thisQuery );
+				if ( $query != '' ) {
+					$a['returntoquery'] = $query;
+				}
+			}
+			$returnto = wfArrayToCgi( $a );
+			return $skin->makeSpecialUrl( 'GoogleLogin', $returnto );
+		}
+
+		/**
 		 * Provide the URL to navigate to the GL special page
 		 * @return string GL special page local url
 		 */
@@ -118,6 +156,14 @@
 		public function setKeepLogin( $status = false ) {
 			$request = $this->getRequest();
 			$request->setSessionData( 'google-keep-loggedin', $status );
+		}
+
+		/**
+		 * Checks if the user is allowed to create a new account with Google Login.
+		 */
+		public function isCreateAllowed() {
+			global $wgGLAllowAccountCreation;
+			return $wgGLAllowAccountCreation;
 		}
 
 		/**
@@ -413,6 +459,10 @@
 			return true;
 		}
 
+		/**
+		 * Redirects to GoogleLogin login page if called. Actually used for AuthPlugin
+		 * @todo: kill if better solution as AuthPlugin is found
+		 */
 		public static function externalLoginAttempt() {
 			global $wgOut, $wgRequest;
 			if ( $wgRequest->getVal( 'googlelogin-submit' ) !== null ) {

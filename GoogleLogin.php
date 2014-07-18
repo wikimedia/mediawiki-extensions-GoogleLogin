@@ -60,6 +60,8 @@
 	$wgHooks['UserLogoutComplete'][] = 'GoogleLoginHooks::onUserLogoutComplete';
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'GoogleLoginHooks::onLoadExtensionSchemaUpdates';
 	$wgHooks['UserLoginForm'][] = 'GoogleLoginHooks::onUserLoginForm';
+	$wgHooks['PersonalUrls'][] = 'GoogleLoginHooks::onPersonalUrls';
+	$wgHooks['SpecialPage_initList'][] = 'GoogleLoginHooks::onSpecialPage_initList';
 
 	// Configuration settings defaults
 
@@ -98,3 +100,16 @@
 	 * "Login with Google" button on the user login form.
 	 */
 	$wgGLShowKeepLogin = true;
+
+	/**
+	 * If the creation of wiki accounts is allowed with GoogleLogin or not, is handled by this
+	 * variable. Default is the value of $wgGroupPermissions['*']['createaccount'] (user right
+	 * to create a wiki account).
+	 */
+	$wgGLAllowAccountCreation = $wgGroupPermissions['*']['createaccount'];
+
+	/**
+	 * If true, GoogleLogin replaces the MediaWiki Login function (personal links and
+	 * Special:UserLogin) and replace it with GoogleLogin values.
+	 */
+	$wgGLReplaceMWLogin = false;
