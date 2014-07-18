@@ -4,5 +4,6 @@
 			"Liuxinyu970226"
 		]
 	},
-	"googlelogin-generic-error": "啊呀，出現錯誤。請返回並再試。訊息：$1"
+	"googlelogin-generic-error": "啊呀，出現錯誤。請返回並再試。訊息：$1",
+	"googlelogin-form-merge-title": "合併使用者賬戶"
 }
