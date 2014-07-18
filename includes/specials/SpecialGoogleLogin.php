@@ -36,7 +36,7 @@
 						$this->createError( $e->getMessage() );
 						return;
 					}
-					$this->createOrMerge( $userInfo, $db );
+					$this->createOrMerge( $userInfo, $db, true );
 				} catch( Google_Auth_Exception $e ) {
 					$this->createError( $e->getMessage() );
 				}
@@ -108,8 +108,10 @@
 		 * Used to determine what is to do, merge, creata or login the authenticated google user.
 		 * @param array $userInfo array of User information provided by Google OAuth2 G+ Api
 		 * @param DatabaseBase $db DBAL to use for all other actions against db.
+		 * @param boolean $redirect If true, the function will redirect to Special:GoogleLogin if
+		 * 	nothing to display.
 		 */
-		private function createOrMerge( $userInfo, $db ) {
+		private function createOrMerge( $userInfo, $db, $redirect = false ) {
 			$out = $this->getOutput();
 			$request = $this->getRequest();
 			$user = $this->getUser();
@@ -121,7 +123,13 @@
 			) {
 				if ( !$googleIdExists ) {
 					if ( !$user->isLoggedIn() ) {
-						$this->createGoogleUserForm( $userInfo, $db );
+						if ( $this->mGoogleLogin->isCreateAllowed() ) {
+							$this->createGoogleUserForm( $userInfo, $db );
+						} elseif ( $redirect ) {
+							$out->redirect( $this->getPageTitle()->getLocalUrl() );
+						} else {
+							$out->addWikiMsg( 'googlelogin-createnotallowed' );
+						}
 					} else {
 						$this->createSubmitButton( 'Merge' );
 					}
@@ -266,7 +274,7 @@
 					// Handles the creation of a new wikiuser, but before: check, if no-one changed the username
 					// and is still valid
 					// Finish with the creation of connection between user id and google id
-					if ( $this->mGoogleLogin->isValidRequest() ) {
+					if ( $this->mGoogleLogin->isValidRequest() && $this->mGoogleLogin->isCreateAllowed() ) {
 						$userName = '';
 						if ( $request->getVal( 'wpChooseName' ) === null ) {
 							$this->createGoogleUserForm( $userInfo, $db );
@@ -332,7 +340,9 @@
 							}
 						}
 					} else {
-						$this->createError( 'Token failure' );
+						$this->createError(
+							($this->mGoogleLogin->isCreateAllowed() ? 'Token failure' : 'not allowed')
+						);
 					}
 				break;
 				case 'Merge':
