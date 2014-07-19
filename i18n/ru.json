@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"googlelogin": "Войти с помощью Google",
+	"googlelogin-desc": "Создаёт [[Special:GoogleLogin|спецстраницу]], позволяющую пользователям входить в систему с помощью учётных записей Google",
+	"googlelogin-parerror": "Запрашиваемая страница не существует. Пожалуйста, вернитесь назад и повторите операцию.",
+	"googlelogin-form-choosename-title": "Выберите имя пользователя",
+	"googlelogin-form-choosename-finish-title": "Создать вики-аккаунт",
+	"googlelogin-form-create": "Создать учётную запись",
+	"googlelogin-email": "Адрес электронной почты",
+	"googlelogin-information-title": "Сведения об учётной записи",
+	"googlelogin-success-merge": "Поздравляем! Ваш вики-аккаунт теперь привязан к учётной записи Google.",
+	"googlelogin-success-unlink": "Поздравляем! Ваш вики-аккаунт больше не привязан к учётной записи Google."
+}
