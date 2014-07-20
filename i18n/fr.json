@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Orikrin1998"
 		]
 	},
 	"googlelogin": "Connexion avec Google",
@@ -23,7 +24,7 @@
 	"googlelogin-form-backlink": "Retour à la connexion Google",
 	"googlelogin-form-create": "Créer un compte",
 	"googlelogin-form-merge": "Fusionner les comptes Google et wiki",
-	"googlelogin-form-unlink": "Supprimer le lien Google -> compte wiki",
+	"googlelogin-form-unlink": "Dissocier Google du compte wiki",
 	"googlelogin-email": "Adresse de courriel",
 	"googlelogin-googleuser": "Utilisateur Google",
 	"googlelogin-information-title": "Information sur le compte",
