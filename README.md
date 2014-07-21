@@ -1,14 +1,17 @@
 GoogleLogin MediaWiki Extension
 =====================
 
-Extension provide a Google Login Special page to login with Google account to a MediaWiki Installation.
+This Extension provides a Google Login Special page to login with a Google account to a
+the MediaWiki User account.
 
 Requirements
 ==
-* MediaWiki Version 1.22+
+* MediaWiki Version 1.23+
 * MySQL (sorry, no PostgreSQL or SQLite support for now)
 * PHP 5.3+
 * Google Developer Account with Google+ API access
+* Google+ API access
+* API Credentials for Webapplication (Client ID and Client Secret)
 
 Installation and Configuration
 ==
