@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Fengchao"
+			"Fengchao",
+			"Luotiancheng"
 		]
 	},
 	"googlelogin": "使用Google登录",
@@ -24,7 +25,7 @@
 	"googlelogin-form-backlink": "回到Google登录",
 	"googlelogin-form-create": "创建账户",
 	"googlelogin-form-merge": "关联Google账户至wiki账户",
-	"googlelogin-form-unlink": "取消 Google 账户和 wiki 账户的关联",
+	"googlelogin-form-unlink": "取消Google账户和wiki账户的关联",
 	"googlelogin-email": "邮件地址",
 	"googlelogin-googleuser": "Google用户",
 	"googlelogin-information-title": "账户信息",
