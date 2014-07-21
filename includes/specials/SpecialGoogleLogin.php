@@ -22,6 +22,7 @@
 			$db = new GoogleLoginDB;
 			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 
+			$par = (empty( $par ) ? $request->getVal( 'action' ) : $par);
 			$googleLogin->setLoginParameter( $request );
 			$client = $googleLogin->getClient();
 			$plus = $googleLogin->getPlus();
@@ -193,6 +194,7 @@
 				),
 			);
 			$htmlForm = new HTMLForm( $formElements, $this->getContext(), 'googlelogin-form' );
+			$htmlForm->addHiddenField( 'action', 'Create' );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
 			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-create' )->text() );
 			$htmlForm->setAction( $this->getPageTitle( 'Create' )->getLocalUrl() );
@@ -214,6 +216,7 @@
 			);
 
 			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-' . strtolower( $action ) )->text() );
+			$htmlForm->addHiddenField( 'action', $action );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
 			$htmlForm->setAction( $this->getPageTitle( $action )->getLocalUrl() );
 			$htmlForm->setSubmitCallback( array( 'GoogleLogin', 'submitGeneric' ) );
