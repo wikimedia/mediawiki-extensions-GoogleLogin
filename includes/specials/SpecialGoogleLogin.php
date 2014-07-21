@@ -151,7 +151,7 @@
 			} else {
 				$out->addWikiMsg(
 					'googlelogin-unallowed-domain',
-					$this->getHost(
+					$this->mGoogleLogin->getHost(
 						$userInfo['emails'][0]['value']
 					)
 				);

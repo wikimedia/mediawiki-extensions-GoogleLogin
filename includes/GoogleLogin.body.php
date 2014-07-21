@@ -8,6 +8,8 @@
 		private $mGoogleClient;
 		/** @var $mPlusClient Stores an instance of Google Service Plus */
 		private $mPlusClient;
+		/** @var $mHost The Host of E-Mail provided by Google */
+		private $mHost;
 
 		/**
 		 * Returns an prepared instance of Google client to do requests with to Google API
@@ -213,13 +215,17 @@
 		 * @return string The Tld and domain of $domain without subdomains
 		 * @see http://www.programmierer-forum.de/domainnamen-ermitteln-t244185.htm
 		 */
-		private function getHost( $domain = '' ) {
+		public function getHost( $domain = '' ) {
 			global $wgGLAllowedDomainsStrict;
+			if ( !empty( $this->mHost ) ) {
+				return $this->mHost;
+			}
 			$dir = __DIR__ . "/..";
 			if ( $wgGLAllowedDomainsStrict ) {
 				$domain = explode( '@', $domain );
 				// we can trust google to give us only valid email address, so give the last element
-				return array_pop( $domain );
+				$this->mHost = $array_pop( $domain );
+				return $this->mHost;
 			}
 			// for parse_url()
 			$domain =
@@ -276,7 +282,8 @@
 			} else { // first level is TLD
 				$domain = $_2nd;
 			}
-			return $domain;
+			$this->mHost = $domain;
+			return $this->mHost;
 		}
 
 		/**
