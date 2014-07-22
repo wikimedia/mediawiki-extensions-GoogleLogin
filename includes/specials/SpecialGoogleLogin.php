@@ -33,7 +33,7 @@
 					$request->setSessionData( 'access_token', $client->getAccessToken() );
 					try {
 						$userInfo = $plus->people->get("me");
-					} catch ( Google_Service_Exception $e ) {
+					} catch ( Exception $e ) {
 						$this->createError( $e->getMessage() );
 						return;
 					}
@@ -55,7 +55,7 @@
 					} else {
 						try {
 							$userInfo = $plus->people->get("me");
-						} catch ( Google_Service_Exception $e ) {
+						} catch ( Exception $e ) {
 							$this->createError( $e->getMessage() );
 							return;
 						}
@@ -140,11 +140,14 @@
 							}
 						}
 					} else {
-						$loginUser = $this->mGoogleLogin->loginGoogleUser( $googleIdExists['id'] );
-						if ( $loginUser !== false ) {
-							$out->redirect( $loginUser );
+						$loginUser = $this->mGoogleLogin->loginGoogleUser(
+							$googleIdExists['id'],
+							$userInfo['id']
+						);
+						if ( $loginUser->isOk() ) {
+							$out->redirect( $loginUser->getValue() );
 						} else {
-							$this->createError();
+							$out->addHtml( $loginUser->getHTML() );
 						}
 					}
 				}
@@ -257,7 +260,7 @@
 			// get userinfos of google plus api result
 			try {
 				$userInfo = $plus->people->get("me");
-			} catch ( Google_Service_Exception $e ) {
+			} catch ( Exception $e ) {
 				$this->createError( $e->getMessage() );
 				return;
 			}

@@ -181,21 +181,56 @@
 		}
 
 		/**
+		 * Checks if a User in the given user object exists or not.
+		 * @param User $user the User object to check
+		 * @return boolean
+		 */
+		private function userExist( User $user ) {
+			$userName = $user->getName();
+			$checkUser = User::newFromName( $userName );
+			if ( $checkUser ? $checkUser->getId() !== 0 : false ) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		/**
 		 * Handles the login for an authenticated Google User and redirect to the Main page
 		 * @param UserId $id The User id to login
+		 * @param Google-ID $googleId Id f the Googleuser
+		 * @return Status Object of Status with the status of login (and value of redirectto if Ok)
+		   otherwise (in case of Fatal) an error message.
 		 */
-		public function loginGoogleUser( $id ) {
+		public function loginGoogleUser( $id, $googleId ) {
+			$status = new Status;
 			$out = $this->getOutput();
 			$user = User::newFromId( $id );
-			$user->setCookies( null, null, $this->getKeepLogin() );
-			$returnTo = $this->getReturnTo();
-			$title = Title::newFromText( $returnTo['title'] );
-			if ( empty( $returnTo ) || !$title ) {
-				$redirectTo = Title::newMainPage()->getFullURL();
-			} else {
-				$redirectTo = $title->getFullURL( $returnTo['query'] );
+			if ( !$this->userExist( $user ) ) {
+				$status = Status::newFatal( 'googlelogin-error-unknownconnected' );
+				$db = new GoogleLoginDB;
+				$db->terminateConnection( $googleId );
+				return $status;
 			}
-			return $redirectTo;
+			if ( $user->isBlocked() ) {
+				$status = Status::newFatal( 'login-userblocked' );
+				return $status;
+			}
+			$user->setCookies( null, null, $this->getKeepLogin() );
+			if ( $user->isLoggedIn() ) {
+				$returnTo = $this->getReturnTo();
+				$title = Title::newFromText( $returnTo['title'] );
+				if ( empty( $returnTo ) || !$title ) {
+					$returnTo = Title::newMainPage()->getFullURL();
+				} else {
+					$returnTo = $title->getFullURL( $returnTo['query'] );
+				}
+				$status = Status::newGood( $returnTo );
+			} else {
+				$status = Status::newFatal( 'googlelogin-generic-error', 'Unknown' );
+			}
+
+			return $status;
 		}
 
 		/**
