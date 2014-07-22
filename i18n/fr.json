@@ -10,6 +10,7 @@
 	"googlelogin-parerror": "La page demandée n’existe pas. Veuillez revenir en arrière et réessayer l’action.",
 	"googlelogin-generic-error": "Oups, une erreur s’est produite. Veuillez revenir en arrière et réessayer. Message : $1",
 	"googlelogin-unallowed-domain": "Le domaine de courriel utilisé pour l’adresse de courriel principal de votre compte Google ($1) n’est pas autorisée à se connecter à ce wiki.",
+	"googlelogin-error-unknownconnected": "Le compte wiki, connecté avec votre compte Google, n’existe pas (plus). La connexion entre vos comptes sera supprimée. Veuillez créer un nouveau compte wiki ou utiliser un autre existant.",
 	"googlelogin-form-choosename-title": "Choisir un nom d’utilisateur",
 	"googlelogin-form-choosename": "Veuillez choisir votre nom d’utilisateur pour créer un compte wiki",
 	"googlelogin-form-choosename-finish-title": "Créer un compte wiki",

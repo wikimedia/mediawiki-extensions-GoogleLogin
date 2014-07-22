@@ -18,7 +18,7 @@
 	"googlelogin-form-choosename-error": "Du måste välja ett användarnamn eller välja ett av våra förslag.",
 	"googlelogin-form-choosename-existerror": "Användarnamnet ''$1'' är redan i bruk, vänligen välj ett annat.",
 	"googlelogin-form-chooseown": "Välj eget",
-	"googlelogin-form-chooseown-error": "Vänligen låt oss veta ditt önskade användarnamn, eller ta en av våra förslag.",
+	"googlelogin-form-chooseown-error": "Vänligen låt oss veta ditt önskade användarnamn, eller ta ett av våra förslag.",
 	"googlelogin-form-choosename-help": "\"Eget namn\" beaktas endast, om du väljer \"{{int:googlelogin-form-chooseown}}\".",
 	"googlelogin-form-merge-title": "Slå samman användarkonto",
 	"googlelogin-form-logout": "Logga in med ett annat Google-konto",
