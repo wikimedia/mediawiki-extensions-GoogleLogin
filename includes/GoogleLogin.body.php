@@ -465,9 +465,16 @@
 			return true;
 		}
 
+		/**
+		 * Redirects to the Google authenticate URL without any user interaction.
+		 * Used for AuthPlugin
+		 */
 		public static function externalLoginAttempt() {
 			global $wgOut, $wgRequest;
-			if ( $wgRequest->getVal( 'googlelogin-submit' ) !== null ) {
+			if (
+				$wgRequest->getVal( 'googlelogin-submit' ) !== null &&
+				$wgRequest->getVal( 'wpPassword' ) === ''
+			) {
 				$googleLogin = new GoogleLogin;
 				$googleLogin->setLoginParameter( $wgRequest );
 				$client = $googleLogin->getClient();
