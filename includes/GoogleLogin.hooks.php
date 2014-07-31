@@ -1,16 +1,20 @@
 <?php
 	class GoogleLoginHooks {
 		public static function onUserLogoutComplete() {
-			global $wgRequest;
-			if ( $wgRequest->getSessionData( 'access_token' ) !== null ) {
-				$wgRequest->setSessionData( 'access_token', '' );
+			$googleLogin = GoogleLogin::singleton();
+			$request = $googleLogin->getRequest();
+			if ( $request->getSessionData( 'access_token' ) !== null ) {
+				$request->setSessionData( 'access_token', '' );
 			}
 		}
 
 		public static function onLoadExtensionSchemaUpdates( $updater = null ) {
-			global $wgSharedDB, $wgDBname, $wgDBtype;
+			$config = ConfigFactory::getDefaultInstance()->makeConfig( 'main' );
 			// Don't create tables on a shared database
-			if( !empty( $wgSharedDB ) && $wgSharedDB !== $wgDBname ) {
+			if(
+				!empty( $config->get( 'SharedDB' ) ) &&
+				$config->get( 'SharedDB' ) !== $config->get( 'DBname' )
+			) {
 				return true;
 			}
 			// Tables to add to the database
@@ -18,7 +22,7 @@
 			// Sql directory inside the extension folder
 			$sql = dirname( __FILE__ ) . '/sql';
 			// Extension of the table schema file (depending on the database type)
-			switch ( $updater !== null ? $updater->getDB()->getType() : $wgDBtype ) {
+			switch ( $updater !== null ? $updater->getDB()->getType() : $config->get( 'DBtype' ) ) {
 				default:
 					$ext = 'sql';
 			}
@@ -32,12 +36,13 @@
 		}
 
 		public static function onUserLoginForm( &$tpl ) {
-			global $wgGLShowKeepLogin;
+			$googleLogin = GoogleLogin::singleton();
+			$config = $googleLogin->getConfig();
 			// we don't want to delete the output of other extensions, so "extend" header
 			$header = $tpl->get( 'header' );
 
 			$keepLogin = '';
-			if ( $wgGLShowKeepLogin ) {
+			if ( $config->get( 'GLShowKeepLogin' ) ) {
 				$keepLogin = Html::input(
 					'google-keep-loggedin',
 					'1',
@@ -74,15 +79,15 @@
 		 * if Loginreplacement is configured.
 		 */
 		public static function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
-			global $wgGLReplaceMWLogin, $wgUser, $wgRequest;
-			if ( $wgGLReplaceMWLogin && array_key_exists( 'login', $personal_urls ) ) {
+			$googleLogin = GoogleLogin::singleton();
+			$config = $googleLogin->getConfig();
+			if ( $config->get( 'GLReplaceMWLogin' ) && array_key_exists( 'login', $personal_urls ) ) {
 				// unset the create account link
 				if ( array_key_exists( 'createaccount', $personal_urls ) ) {
 					unset( $personal_urls['createaccount'] );
 				}
 
 				// Replace login link with GoogleLogin link
-				$googleLogin = new GoogleLogin;
 				$personal_urls['login']['text'] = wfMessage( 'googlelogin' )->text();
 				$personal_urls['login']['href'] = $googleLogin->getLoginUrl( $skin, $title );
 			}
@@ -93,9 +98,10 @@
 		 * configured.
 		 */
 		public static function onSpecialPage_initList( &$list ) {
-			global $wgGLReplaceMWLogin;
+			$googleLogin = GoogleLogin::singleton();
+			$config = $googleLogin->getConfig();
 			// Replaces the UserLogin special page if configured
-			if ( $wgGLReplaceMWLogin ) {
+			if ( $config->get( 'GLReplaceMWLogin' ) ) {
 				$list['Userlogin'] = 'SpecialGoogleLogin';
 			}
 		}
