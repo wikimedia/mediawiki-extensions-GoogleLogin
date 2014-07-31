@@ -63,6 +63,9 @@
 	$wgHooks['PersonalUrls'][] = 'GoogleLoginHooks::onPersonalUrls';
 	$wgHooks['SpecialPage_initList'][] = 'GoogleLoginHooks::onSpecialPage_initList';
 
+	// Create own instance of Config
+	$wgConfigRegistry['googlelogin'] = 'GlobalVarConfig::newInstance';
+
 	// Configuration settings defaults
 
 	/**
