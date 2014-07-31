@@ -10,6 +10,22 @@
 		private $mPlusClient;
 		/** @var $mHost The Host of E-Mail provided by Google */
 		private $mHost;
+		/** @var $mConfig Config object created for GoogleLogin extension */
+		private $mConfig;
+		/** @var $mInstance Saves an instance of this class */
+		private static $mInstance;
+
+		/**
+		 * Returns a already created instance of GoogleLogin or create a new
+		 *
+		 * @return GoogleLogin
+		 */
+		public static function singleton() {
+			if ( self::$mInstance === null ) {
+				self::$mInstance = new GoogleLogin;
+			}
+			return self::$mInstance;
+		}
 
 		/**
 		 * Returns an prepared instance of Google client to do requests with to Google API
@@ -24,6 +40,19 @@
 				);
 			}
 			return $this->mGoogleClient;
+		}
+
+		/**
+		 * Reimplements standard ContextSource getCOnfig() to return Config object
+		 * for use in GoogleLogin.
+		 *
+		 * @return Config
+		 */
+		public function getConfig() {
+			if ( $this->mConfig === null ) {
+				$this->mConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
+			}
+			return $this->mConfig;
 		}
 
 		/**
@@ -164,8 +193,8 @@
 		 * Checks if the user is allowed to create a new account with Google Login.
 		 */
 		public function isCreateAllowed() {
-			global $wgGLAllowAccountCreation;
-			return $wgGLAllowAccountCreation;
+			$config = $this->getConfig();
+			return $config->get( 'GLAllowAccountCreation' );
 		}
 
 		/**
@@ -194,12 +223,12 @@
 		 * @return boolean
 		 */
 		public function isValidDomain( $mailDomain ) {
-			global $wgGLAllowedDomains;
-			if ( is_array( $wgGLAllowedDomains ) ) {
+			$config = $this->getConfig();
+			if ( is_array( $config->get( 'GLAllowedDomains' ) ) ) {
 				if (
 					in_array(
 						$this->getHost( $mailDomain ),
-						$wgGLAllowedDomains
+						$config->get( 'GLAllowedDomains' )
 					)
 				) {
 					return true;
@@ -297,12 +326,12 @@
 		 * @see http://www.programmierer-forum.de/domainnamen-ermitteln-t244185.htm
 		 */
 		public function getHost( $domain = '' ) {
-			global $wgGLAllowedDomainsStrict;
+			$config = $this->getConfig();
 			if ( !empty( $this->mHost ) ) {
 				return $this->mHost;
 			}
 			$dir = __DIR__ . "/..";
-			if ( $wgGLAllowedDomainsStrict ) {
+			if ( $config->get( 'GLAllowedDomainsStrict' ) ) {
 				$domain = explode( '@', $domain );
 				// we can trust google to give us only valid email address, so give the last element
 				$this->mHost = array_pop( $domain );
@@ -424,9 +453,9 @@
 		 * @return Google_Client A prepared instance of Google Client class
 		 */
 		private function prepareClient( $client, $redirectURI ) {
-			global $wgGLSecret, $wgGLAppId, $wgGLAppName;
-			$client->setClientId( $wgGLAppId );
-			$client->setClientSecret( $wgGLSecret );
+			$config = $this->getConfig();
+			$client->setClientId( $config->get( 'GLAppId' ) );
+			$client->setClientSecret( $config->get( 'GLSecret' ) );
 			$client->setRedirectUri( WebRequest::detectServer().$redirectURI );
 			$client->addScope( "https://www.googleapis.com/auth/userinfo.profile" );
 			$client->addScope( "https://www.googleapis.com/auth/userinfo.email" );
