@@ -10,6 +10,8 @@
 		private $mPlusClient;
 		/** @var $mHost The Host of E-Mail provided by Google */
 		private $mHost;
+		/** @var $mConfig Config object created for GoogleLogin extension */
+		private $mConfig;
 
 		/**
 		 * Returns an prepared instance of Google client to do requests with to Google API
@@ -24,6 +26,18 @@
 				);
 			}
 			return $this->mGoogleClient;
+		}
+
+		/**
+		 * Returns Config object for use in GoogleLogin.
+		 *
+		 * @return Config
+		 */
+		public function getGLConfig() {
+			if ( $this->mConfig === null ) {
+				$this->mConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
+			}
+			return $this->mConfig;
 		}
 
 		/**
@@ -164,8 +178,8 @@
 		 * Checks if the user is allowed to create a new account with Google Login.
 		 */
 		public function isCreateAllowed() {
-			global $wgGLAllowAccountCreation;
-			return $wgGLAllowAccountCreation;
+			$glConfig = $this->getGLConfig();
+			return $glConfig->get( 'GLAllowAccountCreation' );
 		}
 
 		/**
@@ -194,12 +208,12 @@
 		 * @return boolean
 		 */
 		public function isValidDomain( $mailDomain ) {
-			global $wgGLAllowedDomains;
-			if ( is_array( $wgGLAllowedDomains ) ) {
+			$glConfig = $this->getGLConfig();
+			if ( is_array( $glConfig->get( 'GLAllowedDomains' ) ) ) {
 				if (
 					in_array(
 						$this->getHost( $mailDomain ),
-						$wgGLAllowedDomains
+						$glConfig->get( 'GLAllowedDomains' )
 					)
 				) {
 					return true;
@@ -297,12 +311,12 @@
 		 * @see http://www.programmierer-forum.de/domainnamen-ermitteln-t244185.htm
 		 */
 		public function getHost( $domain = '' ) {
-			global $wgGLAllowedDomainsStrict;
+			$glConfig = $this->getGLConfig();
 			if ( !empty( $this->mHost ) ) {
 				return $this->mHost;
 			}
 			$dir = __DIR__ . "/..";
-			if ( $wgGLAllowedDomainsStrict ) {
+			if ( $glConfig->get( 'GLAllowedDomainsStrict' ) ) {
 				$domain = explode( '@', $domain );
 				// we can trust google to give us only valid email address, so give the last element
 				$this->mHost = array_pop( $domain );
@@ -424,9 +438,9 @@
 		 * @return Google_Client A prepared instance of Google Client class
 		 */
 		private function prepareClient( $client, $redirectURI ) {
-			global $wgGLSecret, $wgGLAppId, $wgGLAppName;
-			$client->setClientId( $wgGLAppId );
-			$client->setClientSecret( $wgGLSecret );
+			$glConfig = $this->getGLConfig();
+			$client->setClientId( $glConfig->get( 'GLAppId' ) );
+			$client->setClientSecret( $glConfig->get( 'GLSecret' ) );
 			$client->setRedirectUri( WebRequest::detectServer().$redirectURI );
 			$client->addScope( "https://www.googleapis.com/auth/userinfo.profile" );
 			$client->addScope( "https://www.googleapis.com/auth/userinfo.email" );

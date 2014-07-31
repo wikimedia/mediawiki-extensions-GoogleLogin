@@ -2,6 +2,7 @@
 	class SpecialGoogleLogin extends SpecialPage {
 		/** @var $mGoogleLogin saves an instance of GoogleLogin class */
 		private $mGoogleLogin;
+
 		function __construct() {
 			parent::__construct( 'GoogleLogin' );
 		}
@@ -11,18 +12,18 @@
 		 * @param SubPage $par Subpage submitted to this Special page.
 		 */
 		function execute( $par ) {
-			global $wgScriptPath;
-
 			if ( session_id() == '' ) {
 				wfSetupSession();
 			}
+
+			$config = $this->getConfig();
 			// first set our own handler for catchable fatal errors
 			set_error_handler( 'GoogleLogin::catchableFatalHandler', E_RECOVERABLE_ERROR );
 
 			$this->setHeaders();
 			$request = $this->getRequest();
 			$out = $this->getOutput();
-			$out->addStyle( $wgScriptPath . '/extensions/GoogleLogin/style/style.css' );
+			$out->addStyle( $config->get( 'ScriptPath' ) . '/extensions/GoogleLogin/style/style.css' );
 			$db = new GoogleLoginDB;
 			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 
@@ -265,7 +266,7 @@
 		 * - Unlink Wiki and Google account (Unlink)
 		 */
 		private function finishAction( $par, $client, $plus, $db ) {
-			global $wgGLShowCreateReason;
+			$glConfig = $this->mGoogleLogin->getGLConfig();
 			// prepare MediaWiki variables/classes we need
 			$out = $this->getOutput();
 			$request = $this->getRequest();
@@ -329,7 +330,7 @@
 								$user->setCookies();
 								// create a log entry for the created user - bug 67245
 								$createReason = '';
-								if ( $wgGLShowCreateReason ) {
+								if ( $glConfig->get( 'GLShowCreateReason' ) ) {
 									$createReason =
 										'via [[' . $this->getPageTitle() . '|Google Login]]';
 								}
