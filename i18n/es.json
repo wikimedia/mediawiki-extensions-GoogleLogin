@@ -9,6 +9,7 @@
 	"googlelogin-desc": "Proporciona una [[Special:GoogleLogin|Página especial]] para permitir a los usuarios iniciar sesión con sus cuentas de Google",
 	"googlelogin-parerror": "La página solicitada no existe. Por favor vuelve y prueba la acción otra vez.",
 	"googlelogin-generic-error": "Ocurrió un error. Regresa y vuelve a intentarlo. Mensaje: $1",
+	"googlelogin-error-unknownconnected": "La cuenta en el wiki, conectada con tu cuenta de Google, (ya) no existe. Se eliminará la conexión entre tus cuentas. Crea una nueva cuenta en el wiki o utiliza otra existente.",
 	"googlelogin-form-choosename-title": "Elegir nombre de usuario",
 	"googlelogin-form-choosename": "Elige tu nombre de usuario para crear una cuenta en el wiki",
 	"googlelogin-form-choosename-finish-title": "Crear cuenta en el wiki",

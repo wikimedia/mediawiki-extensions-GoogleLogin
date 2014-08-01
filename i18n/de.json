@@ -3,7 +3,8 @@
 		"authors": [
 			"Florian Schmidt",
 			"Metalhead64",
-			"Thomas Bohn"
+			"Thomas Bohn",
+			"Florian"
 		]
 	},
 	"googlelogin": "Anmelden mit Google",
@@ -31,7 +32,7 @@
 	"googlelogin-email": "E-Mail-Adresse",
 	"googlelogin-googleuser": "Google-Benutzer",
 	"googlelogin-information-title": "Kontoinformationen",
-	"googlelogin-information-body": "In der folgenden Tabelle findest du Informationen zu deinem Google-Konto und ob dieser mit einem Konto verknüpft ist oder nicht.",
+	"googlelogin-information-body": "In der folgenden Tabelle findest du Informationen zu deinem Google-Konto und ob dieses mit einem Wiki-Konto verknüpft ist oder nicht.",
 	"googlelogin-linkstatus": "Status der Verknüpfung",
 	"googlelogin-linked": "verknüpft",
 	"googlelogin-unlinked": "nicht verknüpft",
