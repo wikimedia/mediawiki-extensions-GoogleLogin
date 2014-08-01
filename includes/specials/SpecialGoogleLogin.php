@@ -12,6 +12,10 @@
 		 */
 		function execute( $par ) {
 			global $wgScriptPath;
+
+			if ( session_id() == '' ) {
+				wfSetupSession();
+			}
 			// first set our own handler for catchable fatal errors
 			set_error_handler( 'GoogleLogin::catchableFatalHandler', E_RECOVERABLE_ERROR );
 
