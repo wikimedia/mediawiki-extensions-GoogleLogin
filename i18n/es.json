@@ -20,6 +20,8 @@
 	"googlelogin-form-logout": "Iniciar sesión con otra cuenta de Google",
 	"googlelogin-form-backlink": "Volver al inicio de sesión de Google",
 	"googlelogin-form-create": "Crear cuenta",
+	"googlelogin-form-merge": "Enlazar Google con la cuenta del wiki",
+	"googlelogin-form-unlink": "Desenlazar Google de la cuenta del wiki",
 	"googlelogin-email": "Dirección de correo electrónico",
 	"googlelogin-googleuser": "Usuario de Google",
 	"googlelogin-information-title": "Información de la cuenta",
