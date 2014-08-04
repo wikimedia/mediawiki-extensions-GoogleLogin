@@ -10,6 +10,7 @@
 	"googlelogin-generic-error": "Ocorreu um erro inesperado. Por favor, volte atrás e tente novamente. Mensagem: $1",
 	"googlelogin-createnotallowed": "Não está autorizado a criar uma nova conta com o GoogleLogin.",
 	"googlelogin-unallowed-domain": "O domínio de correio eletrónico utilizado para o endereço primário da sua conta Google ($1) não é permitido para iniciar sessão nesta wiki.",
+	"googlelogin-error-unknownconnected": "A conta wiki, conetada com a sua conta Google, não existe (mais). A conexão entre as suas contas será removida. Por favor, crie uma nova conta wiki ou utilize uma já existente.",
 	"googlelogin-form-choosename-title": "Escolha o nome de utilizador(a)",
 	"googlelogin-form-choosename": "Por favor, escolha o seu nome de utilizador(a) para criar uma conta wiki.",
 	"googlelogin-form-choosename-finish-title": "Criar uma conta wiki",
