@@ -99,4 +99,50 @@
 				$list['Userlogin'] = 'SpecialGoogleLogin';
 			}
 		}
+
+		/**
+		* Show the status in Preferences and add a link to SpecialPage
+		*
+		* @param $user User
+		* @param $preferences array
+		* @return bool
+		*/
+		static function onGetPreferences( $user, &$preferences ) {
+			// GoogleLoginDB instance to check if user is connected
+			$db = new GoogleLoginDB;
+
+			// check if the userid is linked with a google id
+			$userIdExists = $db->UserIdExists( $user->getId() );
+
+			// generate the content for Special:Preferences
+			$status = ( $userIdExists ? wfMessage( 'googlelogin-linked' )->text() :
+				wfMessage( 'googlelogin-unlinked' )->text() );
+			$manageLinkMsg = ( $userIdExists ? wfMessage( 'googlelogin-information-title' )->escaped() :
+				wfMessage( 'googlelogin-form-merge' )->escaped() );
+			$manageLink = Linker::linkKnown( SpecialPage::getTitleFor( 'GoogleLogin' ),
+				$manageLinkMsg );
+			$manageLink = wfMessage( 'parentheses', $manageLink )->text();
+
+			$prefInsert =
+			array( 'googleloginstatus' =>
+				array(
+					'section' => 'personal/info',
+					'label-message' => 'googlelogin-prefs-status',
+					'type' => 'info',
+					'raw' => true,
+					'default' => "<b>$status</b> $manageLink"
+				),
+			);
+
+			// add the content
+			if ( array_key_exists( 'registrationdate', $preferences ) ) {
+				$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'registrationdate' );
+			} elseif  ( array_key_exists( 'editcount', $preferences ) ) {
+				$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'editcount' );
+			} else {
+				$preferences += $prefInsert;
+			}
+
+			return true;
+		}
 	}

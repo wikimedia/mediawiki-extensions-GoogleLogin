@@ -23,6 +23,33 @@
 			return true;
 		}
 
+		/**
+		 * Returns if the userID is connected with a GoogleId
+		 * @todo FIXME: Merge this function with self::GoogleIdExists()?
+		 */
+		public function UserIdExists( $userId, $db = DB_SLAVE ) {
+			$dbr = wfGetDB( $db, array(), self::sharedDB() );
+			$prefix = self::getPrefix();
+			$res = $dbr->select(
+				"user_google_user",
+				array( 'user_googleid' ),
+				'user_id = "' . $userId . '"',
+				__METHOD__
+			);
+			// $res might be null if the table user_fbconnect wasn't created
+			$googleId = array();
+			if ( $res === 0 ) {
+				return false;
+			} else {
+				foreach( $res as $row ) {
+					$googleId['id'] = $row->user_googleid;
+				}
+				$res->free();
+				return $googleId;
+			}
+			return true;
+		}
+
 		public function createConnection( $googleId, $userId ) {
 			$dbr = wfGetDB( DB_MASTER );
 			$prefix = self::getPrefix();

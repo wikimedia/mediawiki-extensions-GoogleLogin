@@ -62,6 +62,7 @@
 	$wgHooks['UserLoginForm'][] = 'GoogleLoginHooks::onUserLoginForm';
 	$wgHooks['PersonalUrls'][] = 'GoogleLoginHooks::onPersonalUrls';
 	$wgHooks['SpecialPage_initList'][] = 'GoogleLoginHooks::onSpecialPage_initList';
+	$wgHooks['GetPreferences'][] = 'GoogleLoginHooks::onGetPreferences';
 
 	// Configuration settings defaults
 

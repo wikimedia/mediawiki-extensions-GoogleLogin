@@ -36,5 +36,6 @@
 	"googlelogin-unlinked": "Google and wiki account aren't linked. (Used in account information table)",
 	"googlelogin-link-other": "The Google account is already linked to a wiki user, but not to the actual logged in wiki user. To link the Google account with the actual wiki account, the user must unlink the connection wit the other wiki account, only one connection per Google account is allowed.",
 	"googlelogin-success-merge": "Successful message, that the wiki account is now linked with the Google account.",
-	"googlelogin-success-unlink": "Successful message, that the wiki account isn't linked anymore with the Google account."
+	"googlelogin-success-unlink": "Successful message, that the wiki account isn't linked anymore with the Google account.",
+	"googlelogin-prefs-status": "Name of the Line in Special:Preferences identifying GoogleLoign status (linked or not linked)."
 }
