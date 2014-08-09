@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_c859fa05",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-09T10:57:40Z",
+      "side": 1,
+      "message": "Status should be in lower case.",
+      "revId": "9f80113c8fff03d8a82cf09216e4e2012f59a178",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
