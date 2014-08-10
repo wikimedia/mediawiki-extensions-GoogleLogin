@@ -1,6 +1,6 @@
 <?php
 	class GoogleLoginDB {
-		public function GoogleIdExists( $googleId, $db = DB_SLAVE ) {
+		public function googleIdExists( $googleId, $db = DB_SLAVE ) {
 			$dbr = wfGetDB( $db, array(), self::sharedDB() );
 			$prefix = self::getPrefix();
 			$res = $dbr->select(
@@ -25,9 +25,9 @@
 
 		/**
 		 * Returns if the userID is connected with a GoogleId
-		 * @todo FIXME: Merge this function with self::GoogleIdExists()?
+		 * @todo FIXME: Merge this function with self::googleIdExists()?
 		 */
-		public function UserIdExists( $userId, $db = DB_SLAVE ) {
+		public function userIdExists( $userId, $db = DB_SLAVE ) {
 			$dbr = wfGetDB( $db, array(), self::sharedDB() );
 			$prefix = self::getPrefix();
 			$res = $dbr->select(

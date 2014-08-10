@@ -63,7 +63,7 @@
 							$this->createError( $e->getMessage() );
 							return;
 						}
-						$googleIdExists = $db->GoogleIdExists( $userInfo['id'] );
+						$googleIdExists = $db->googleIdExists( $userInfo['id'] );
 						$buildTable = array(
 							array(
 								'Google-ID', $userInfo['id']
@@ -120,7 +120,7 @@
 			$out = $this->getOutput();
 			$request = $this->getRequest();
 			$user = $this->getUser();
-			$googleIdExists = $db->GoogleIdExists( $userInfo['id'] );
+			$googleIdExists = $db->googleIdExists( $userInfo['id'] );
 			if (
 				$this->mGoogleLogin->isValidDomain(
 					$userInfo['emails'][0]['value']
@@ -323,7 +323,7 @@
 								'email' => $userInfo['emails'][0]['value'],
 								'real_name' => $userInfo['name']['givenName']
 							);
-							if ( !$db->GoogleIdExists( $userInfo['id'] ) ) {
+							if ( !$db->googleIdExists( $userInfo['id'] ) ) {
 								$user = User::createNew( $userName, $userParam );
 								$user->sendConfirmationMail();
 								$user->setCookies();
@@ -376,7 +376,7 @@
 				case 'Logout':
 					// Reset the access_token (from Google API) and redirect to Special:GoogleLogin
 					// (which redirects to the Google Login page)
-					if ( $this->mGoogleLogin->isValidRequest() && !$db->GoogleIdExists( $userInfo['id'] ) ) {
+					if ( $this->mGoogleLogin->isValidRequest() && !$db->googleIdExists( $userInfo['id'] ) ) {
 						$request->setSessionData( 'access_token', '' );
 						$out->redirect( $this->getPageTitle()->getLocalUrl() );
 					} else {

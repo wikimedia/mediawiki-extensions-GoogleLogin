@@ -112,7 +112,7 @@
 			$db = new GoogleLoginDB;
 
 			// check if the userid is linked with a google id
-			$userIdExists = $db->UserIdExists( $user->getId() );
+			$userIdExists = $db->userIdExists( $user->getId() );
 
 			// generate the content for Special:Preferences
 			$status = ( $userIdExists ? wfMessage( 'googlelogin-linked' )->text() :
