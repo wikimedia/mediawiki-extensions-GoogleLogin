@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Cwlin0416"
 		]
 	},
 	"googlelogin-generic-error": "啊呀，出現錯誤。請返回並再試。訊息：$1",
-	"googlelogin-form-merge-title": "連結使用者賬戶",
+	"googlelogin-form-merge-title": "連結使用者帳號",
 	"googlelogin-form-merge": "連結Google至wiki賬戶",
 	"googlelogin-success-merge": "祝賀！您的 wiki 賬戶現已連結到您的 Google 使用者賬戶。"
 }
