@@ -36,5 +36,6 @@
 	"googlelogin-unlinked": "non lié",
 	"googlelogin-link-other": "Votre compte Google est déjà lié à un autre utilisateur. Veuillez supprimer la connexion ou contacter un administrateur, si vous n’avez aucun autre compte wiki.",
 	"googlelogin-success-merge": "Félicitations ! Votre compte wiki est maintenant lié à votre compte Google.",
-	"googlelogin-success-unlink": "Félicitations ! Votre compte wiki n’est plus lié à votre compte Google."
+	"googlelogin-success-unlink": "Félicitations ! Votre compte wiki n’est plus lié à votre compte Google.",
+	"googlelogin-prefs-status": "État de GoogleLogin :"
 }

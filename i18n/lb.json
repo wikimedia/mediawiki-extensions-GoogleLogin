@@ -20,5 +20,6 @@
 	"googlelogin-googleuser": "Google-Benotzer",
 	"googlelogin-information-title": "Benotzerkontinformatioun",
 	"googlelogin-linked": "verbonn",
-	"googlelogin-unlinked": "net verbonn"
+	"googlelogin-unlinked": "net verbonn",
+	"googlelogin-prefs-status": "GoogleLogin-Status:"
 }

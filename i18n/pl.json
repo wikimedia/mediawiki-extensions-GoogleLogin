@@ -11,5 +11,6 @@
 	"googlelogin-googleuser": "Użytkownik Google",
 	"googlelogin-information-title": "Informacje o koncie",
 	"googlelogin-success-merge": "Gratulacje! Konto wiki jest teraz powiązane z Twoim kontem Google.",
-	"googlelogin-success-unlink": "Gratulacje! Konto wiki nie jest już powiązane z Twoim kontem Google."
+	"googlelogin-success-unlink": "Gratulacje! Konto wiki nie jest już powiązane z Twoim kontem Google.",
+	"googlelogin-prefs-status": "Stan GoogleLogin:"
 }
