@@ -45,8 +45,15 @@
 	$wgAutoloadClasses[ 'GoogleLoginDB' ] = $dir . '/includes/GoogleLoginDB.php';
 	$wgAutoloadClasses[ 'GoogleLoginAuth' ] = $dir . '/includes/GoogleLoginAuth.php';
 
-	// load $wgAuth
-	$wgAuth = new GoogleLoginAuth;
+	// check if we can load wgAuth automatically
+	if ( class_exists( 'GoogleLoginAuth' ) ) {
+		// load $wgAuth
+		$wgAuth = new GoogleLoginAuth;
+	} else {
+		// leave a dbug mark
+		wfDebug( 'Automatic set of wgAuth failed. If you want to use GoogleLogin set
+			"$wgAuth = new GoogleLoginAuth;" in your LocalSettings.php.' );
+	}
 
 	// i18n directory and aliases
 	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = $dir . '/GoogleLogin.alias.php';

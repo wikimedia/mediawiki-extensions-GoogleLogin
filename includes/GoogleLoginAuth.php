@@ -6,7 +6,7 @@
 		 * to get into the login process in an early process to check, if the user
 		 * clicks the Login with Google button or the MediaWiki login button.
 		 *
-		 * @param string $domain Domain name (unneded)
+		 * @param string $domain Domain name (unneeded)
 		 * @return boolean Always false, we don't check anything here
 		 */
 		public function validDomain( $domain ) {
