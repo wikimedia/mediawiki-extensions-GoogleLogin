@@ -45,8 +45,11 @@
 	$wgAutoloadClasses[ 'GoogleLoginDB' ] = $dir . '/includes/GoogleLoginDB.php';
 	$wgAutoloadClasses[ 'GoogleLoginAuth' ] = $dir . '/includes/GoogleLoginAuth.php';
 
-	// load $wgAuth
-	$wgAuth = new GoogleLoginAuth;
+	// check if we can load wgAuth automatically
+	if ( class_exists( 'GoogleLoginAuth' ) ) {
+		// load $wgAuth
+		$wgAuth = new GoogleLoginAuth;
+	}
 
 	// i18n directory and aliases
 	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = $dir . '/GoogleLogin.alias.php';
