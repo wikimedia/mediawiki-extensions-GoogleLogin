@@ -71,6 +71,16 @@
 	$wgHooks['PersonalUrls'][] = 'GoogleLoginHooks::onPersonalUrls';
 	$wgHooks['SpecialPage_initList'][] = 'GoogleLoginHooks::onSpecialPage_initList';
 	$wgHooks['GetPreferences'][] = 'GoogleLoginHooks::onGetPreferences';
+	$wgHooks['BeforePageDisplay'][] = 'GoogleLoginHooks::onBeforePageDisplay';
+
+	// ResourceLoader modules
+	$wgResourceModules['ext.GoogleLogin.style'] = array(
+		'styles' => 'style/ext.GoogleLogin.css',
+		'position' => 'top',
+		'targets' => array( 'desktop', 'mobile' ),
+		'localBasePath' => __DIR__,
+		'remoteExtPath' => 'GoogleLogin'
+	);
 
 	// Create own instance of Config
 	$wgConfigRegistry['googlelogin'] = 'GlobalVarConfig::newInstance';
