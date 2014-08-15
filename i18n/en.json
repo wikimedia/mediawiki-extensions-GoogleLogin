@@ -32,6 +32,7 @@
 	"googlelogin-information-body": "In the following table you find information about your Google account and if it is linked to a wiki account or not.",
 	"googlelogin-linkstatus": "Link status",
 	"googlelogin-linked": "linked",
+	"googlelogin-or": "or",
 	"googlelogin-unlinked": "not linked",
 	"googlelogin-link-other": "Your Google account is already linked to another user. Please unlink the connection or contact an administrator, if you have no other wiki account.",
 	"googlelogin-success-merge": "Congratulations! Your wiki account is now linked to your Google account.",

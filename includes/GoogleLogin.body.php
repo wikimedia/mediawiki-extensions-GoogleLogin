@@ -90,8 +90,8 @@
 		 */
 		public function getKeepLogin() {
 			$request = $this->getRequest();
-			$status = $request->getSessionData( 'google-keep-loggedin' );
-			$request->setSessionData( 'google-keep-loggedin', null );
+			$status = $request->getSessionData( 'wpGoogleLoginRemember' );
+			$request->setSessionData( 'wpGoogleLoginRemember', null );
 			return ( $status ? true : false );
 		}
 
@@ -129,7 +129,7 @@
 		 * Helps to set the correct values for post login redirect, e.g. keep login
 		 */
 		public function setLoginParameter( $request ) {
-			if ( $request->getVal( 'google-keep-loggedin' ) === "1" ) {
+			if ( $request->getVal( 'wpGoogleLoginRemember' ) === "1" ) {
 				$this->setKeepLogin( true );
 			}
 			$returnTo = $request->getVal( 'returnto' );
@@ -157,7 +157,7 @@
 		 */
 		public function setKeepLogin( $status = false ) {
 			$request = $this->getRequest();
-			$request->setSessionData( 'google-keep-loggedin', $status );
+			$request->setSessionData( 'wpGoogleLoginRemember', $status );
 		}
 
 		/**

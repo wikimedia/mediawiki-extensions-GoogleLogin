@@ -22,7 +22,6 @@
 			$this->setHeaders();
 			$request = $this->getRequest();
 			$out = $this->getOutput();
-			$out->addStyle( $wgScriptPath . '/extensions/GoogleLogin/style/style.css' );
 			$db = new GoogleLoginDB;
 			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 
