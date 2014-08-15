@@ -11,8 +11,6 @@
 		 * @param SubPage $par Subpage submitted to this Special page.
 		 */
 		function execute( $par ) {
-			global $wgScriptPath;
-
 			if ( session_id() == '' ) {
 				wfSetupSession();
 			}
@@ -22,7 +20,6 @@
 			$this->setHeaders();
 			$request = $this->getRequest();
 			$out = $this->getOutput();
-			$out->addStyle( $wgScriptPath . '/extensions/GoogleLogin/style/style.css' );
 			$db = new GoogleLoginDB;
 			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 

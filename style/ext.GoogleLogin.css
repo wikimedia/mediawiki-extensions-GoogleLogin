@@ -1,0 +1,22 @@
+.googlelogin-summary td {
+	border: 1px solid grey;
+	padding: 5px;
+}
+.googlelogin-summary {
+	border-collapse:collapse;
+	width: 100%;
+}
+.loginSeperator {
+	border: none;
+	border-top: 1px solid #aaa;
+	display: block;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+.loginSeperator legend {
+	padding: 5px 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
