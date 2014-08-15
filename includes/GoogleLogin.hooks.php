@@ -39,21 +39,23 @@
 			$keepLogin = '';
 			if ( $wgGLShowKeepLogin ) {
 				$keepLogin = Html::input(
-					'google-keep-loggedin',
+					'wpGoogleLoginRemember',
 					'1',
-					'checkbox'
-				) .
-				' ' . wfMessage( 'userlogin-remembermypassword' )->text();
+					'checkbox',
+					array( 'id' => 'wpGoogleLoginRemember' )
+				) . ' ';
 			}
 
 			$header .=
-				Html::openelement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
-				Html::openElement(
-					'label',
-					array( 'class' => 'mw-ui-checkbox-label' )
-				) .
+				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
+				Html::openElement( 'div', array( 'class' => 'mw-ui-checkbox' ) ) .
 				$keepLogin .
-				Html::closeElement( 'label' ) .
+				Html::element(
+					'label',
+					array( 'for' => 'wpGoogleLoginRemember' ),
+					wfMessage( 'userlogin-remembermypassword' )->escaped()
+				) .
+				Html::closeElement( 'div') .
 				Html::closeElement( 'div') .
 				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
 				Html::element( 'input', array(
@@ -64,7 +66,10 @@
 						'value' => wfMessage( 'googlelogin' )->text()
 					), ''
 				) .
-				Html::closeElement( 'div' );
+				Html::closeElement( 'div' ) .
+				Html::openElement( 'fieldset', array( 'class' => 'loginSeperator' ) ) .
+				Html::element( 'legend', array(), wfMessage( 'googlelogin-or' )->escaped() ) .
+				Html::closeElement( 'fieldset' );
 
 			$tpl->set( 'header', $header );
 		}
@@ -144,5 +149,14 @@
 			}
 
 			return true;
+		}
+
+		/**
+		 * Load our css module
+		 * @param OutputPage $out OutputPage object
+		 * @param Skin $skin Skin object that will be used to generate the page
+		 */
+		public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
+			$out->addModules( 'ext.GoogleLogin.style' );
 		}
 	}
