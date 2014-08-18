@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e28a382_2ab5d678",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-08-18T13:32:09Z",
+      "side": 1,
+      "message": "You should use a pattern similar to MediaWiki core\u0027s \"and\" key with value \"\u0026#32;and\".",
+      "revId": "3f9b0404dff7c8edad7f45cccd928fa3d17afdcf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
