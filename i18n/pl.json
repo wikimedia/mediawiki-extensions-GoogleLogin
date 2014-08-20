@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Alan ffm"
 		]
 	},
+	"googlelogin": "Zaloguj się za pomocą Google",
 	"googlelogin-parerror": "Żądana strona nie istnieje. Proszę wrócić i spróbować ponownie.",
 	"googlelogin-form-choosename-title": "Wybierz nazwę użytkownika",
+	"googlelogin-form-choosename-finish-title": "Utworzyć konto w wiki",
 	"googlelogin-form-create": "Utwórz konto",
 	"googlelogin-email": "Adres e‐mail",
 	"googlelogin-googleuser": "Użytkownik Google",
