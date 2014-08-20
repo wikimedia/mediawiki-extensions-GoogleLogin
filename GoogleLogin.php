@@ -48,6 +48,7 @@
 	$wgExtensionFunctions[] = 'efGoogleLoginSetup';
 
 	function efGoogleLoginSetup() {
+		global $wgAuth;
 		// check if we can load wgAuth automatically
 		if ( class_exists( 'GoogleLoginAuth' ) ) {
 			// load $wgAuth
