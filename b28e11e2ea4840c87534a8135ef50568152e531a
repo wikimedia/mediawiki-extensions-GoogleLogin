@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e322bf2_80d76628",
+        "filename": "includes/GoogleLogin.body.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-21T04:13:34Z",
+      "side": 1,
+      "message": "Hmm, it would be really nice if this wasn\u0027t a singleton. Also, this doesn\u0027t actually pass any context to GoogleLogin, so it ends up using global state :/",
+      "revId": "b28e11e2ea4840c87534a8135ef50568152e531a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_40e17efa",
+        "filename": "includes/GoogleLogin.body.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-21T04:13:34Z",
+      "side": 1,
+      "message": "This is now overriding ContextSource::getConfig(), which you shouldn\u0027t do. It\u0027s expected that calling getConfig on any IContextSource will return core\u0027s config class, not an extensions.",
+      "revId": "b28e11e2ea4840c87534a8135ef50568152e531a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_00eb76dc",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2014-08-21T04:13:34Z",
+      "side": 1,
+      "message": "Name this $glConfig so it\u0027s clear it\u0027s not core\u0027s config object.",
+      "revId": "b28e11e2ea4840c87534a8135ef50568152e531a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
