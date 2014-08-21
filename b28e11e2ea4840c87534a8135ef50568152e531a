@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_a0c82278",
+        "filename": "includes/GoogleLogin.body.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-08-21T04:32:44Z",
+      "side": 1,
+      "message": "I see your consideration, i\u0027ll remove it, there is no more need for it after i use ConfigFactory::getDefaultInstance()-\u003emakeConfig( \u0027googlelogin\u0027 );",
+      "parentUuid": "4e322bf2_80d76628",
+      "revId": "b28e11e2ea4840c87534a8135ef50568152e531a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_40e17efa",
         "filename": "includes/GoogleLogin.body.php",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "4e322bf2_e0ce2a86",
+        "filename": "includes/GoogleLogin.body.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-08-21T04:32:44Z",
+      "side": 1,
+      "message": "Ah, ok, i thought that in an Extension context this can be overwritten :)",
+      "parentUuid": "4e322bf2_40e17efa",
+      "revId": "b28e11e2ea4840c87534a8135ef50568152e531a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e322bf2_00eb76dc",
         "filename": "includes/specials/SpecialGoogleLogin.php",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-21T04:13:34Z",
       "side": 1,
       "message": "Name this $glConfig so it\u0027s clear it\u0027s not core\u0027s config object.",
+      "revId": "b28e11e2ea4840c87534a8135ef50568152e531a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e322bf2_c0cb2e74",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-08-21T04:32:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e322bf2_00eb76dc",
       "revId": "b28e11e2ea4840c87534a8135ef50568152e531a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
