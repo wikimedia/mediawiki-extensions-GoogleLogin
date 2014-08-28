@@ -35,6 +35,7 @@
 	"googlelogin-information-body": "In der folgenden Tabelle findest du Informationen zu deinem Google-Konto und ob dieses mit einem Wiki-Konto verknüpft ist oder nicht.",
 	"googlelogin-linkstatus": "Status der Verknüpfung",
 	"googlelogin-linked": "verknüpft",
+	"googlelogin-or": "oder",
 	"googlelogin-unlinked": "nicht verknüpft",
 	"googlelogin-link-other": "Dein Google-Benutzerkonto ist bereits mit einem anderen Benutzer verknüpft. Bitte trenne die Verbindung oder kontaktiere einen Administrator, falls du kein weiteres Wiki-Benutzerkonto hast.",
 	"googlelogin-success-merge": "Glückwunsch! Dein Konto ist nun mit deinem Google-Konto verknüpft.",

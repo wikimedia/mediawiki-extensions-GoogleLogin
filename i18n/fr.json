@@ -33,6 +33,7 @@
 	"googlelogin-information-body": "Dans le tableau suivant, vous trouverez des informations sur votre compte Google et s’il est lié à un compte wiki ou non.",
 	"googlelogin-linkstatus": "État du lien",
 	"googlelogin-linked": "lié",
+	"googlelogin-or": "ou",
 	"googlelogin-unlinked": "non lié",
 	"googlelogin-link-other": "Votre compte Google est déjà lié à un autre utilisateur. Veuillez supprimer la connexion ou contacter un administrateur, si vous n’avez aucun autre compte wiki.",
 	"googlelogin-success-merge": "Félicitations ! Votre compte wiki est maintenant lié à votre compte Google.",

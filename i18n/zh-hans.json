@@ -34,6 +34,7 @@
 	"googlelogin-information-body": "下表中您会发现关于您的Google账户的信息，并且包括连接的wiki账户（如有）。",
 	"googlelogin-linkstatus": "连接状态",
 	"googlelogin-linked": "已链接",
+	"googlelogin-or": "或者",
 	"googlelogin-unlinked": "未链接",
 	"googlelogin-link-other": "您的Google账户已连接至其他用户。请取消连接或联络管理员，如果您没有其他wiki账户的话。",
 	"googlelogin-success-merge": "祝贺！您的wiki帐户现已关联您的Google账户。",
