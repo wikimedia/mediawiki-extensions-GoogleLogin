@@ -1,12 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Y-M D"
+			"Y-M D",
+			"Fohanno"
 		]
 	},
+	"googlelogin": "Kevreañ gant Google",
 	"googlelogin-form-choosename-title": "Dibab an anv implijer",
+	"googlelogin-form-choosename-finish-title": "Krouiñ ur gont wiki",
 	"googlelogin-form-create": "Krouiñ ur gont",
+	"googlelogin-email": "Chomlec'h postel",
 	"googlelogin-googleuser": "Implijer Google",
 	"googlelogin-information-title": "Titouroù diwar-benn ar gont",
-	"googlelogin-linked": "liammet"
+	"googlelogin-linked": "liammet",
+	"googlelogin-or": "pe",
+	"googlelogin-unlinked": "n'eo ket liammet"
 }
