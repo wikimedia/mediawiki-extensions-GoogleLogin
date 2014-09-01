@@ -6,11 +6,17 @@
 	},
 	"googlelogin": "Accedi con Google",
 	"googlelogin-desc": "Fornisce una [[Special:GoogleLogin|pagina speciale]] per consentire agli utenti di accedere con il loro account Google",
+	"googlelogin-parerror": "La pagina richiesta non esiste. Tornare indietro e ritenta di nuovo l'azione.",
+	"googlelogin-generic-error": "Oops, c'è stato un'errore. Torna indietro e riprova. Messaggio: $1",
 	"googlelogin-form-choosename-title": "Scegli nome utente",
 	"googlelogin-form-choosename": "Scegli il tuo nome utente per creare un'utenza wiki",
 	"googlelogin-form-choosename-finish-title": "Crea utenza wiki",
 	"googlelogin-form-create": "Crea utenza",
 	"googlelogin-email": "Indirizzo email",
 	"googlelogin-googleuser": "Utente Google",
-	"googlelogin-information-title": "Informazioni sull'utenza"
+	"googlelogin-information-title": "Informazioni sull'utenza",
+	"googlelogin-linkstatus": "Stato collegamento",
+	"googlelogin-linked": "collegato",
+	"googlelogin-or": "o",
+	"googlelogin-unlinked": "non collegato"
 }
