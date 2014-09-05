@@ -6,6 +6,8 @@
 		]
 	},
 	"googlelogin": "Kevreañ gant Google",
+	"googlelogin-generic-error": "Hopopop, ur fazi a oa. Distroit, mar plij, hag easaeit en-dro. Kemennadenn : $1",
+	"googlelogin-createnotallowed": "N'oc'h ket aotreet da grouiñ ur gont nevez gant GoogleLogin.",
 	"googlelogin-form-choosename-title": "Dibab an anv implijer",
 	"googlelogin-form-choosename": "Choazit hoc'h anv implijer evit krouiñ ur gont wiki, mar plij",
 	"googlelogin-form-choosename-finish-title": "Krouiñ ur gont wiki",
@@ -17,5 +19,6 @@
 	"googlelogin-linkstatus": "Statud al liamm",
 	"googlelogin-linked": "liammet",
 	"googlelogin-or": "pe",
-	"googlelogin-unlinked": "n'eo ket liammet"
+	"googlelogin-unlinked": "n'eo ket liammet",
+	"googlelogin-prefs-status": "Statud GoogleLogin :"
 }
