@@ -30,6 +30,7 @@
 	"googlelogin-information-body": "En la siguiente tabla encontrarás información sobre tu cuenta de Google y si está vinculada a una cuenta en el wiki o no.",
 	"googlelogin-linkstatus": "Estado del enlace",
 	"googlelogin-linked": "vinculado",
+	"googlelogin-or": "o",
 	"googlelogin-unlinked": "no vinculado",
 	"googlelogin-prefs-status": "Estado de GoogleLogin:"
 }
