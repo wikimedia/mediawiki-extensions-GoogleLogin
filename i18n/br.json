@@ -11,6 +11,7 @@
 	"googlelogin-form-choosename-title": "Dibab an anv implijer",
 	"googlelogin-form-choosename": "Choazit hoc'h anv implijer evit krouiñ ur gont wiki, mar plij",
 	"googlelogin-form-choosename-finish-title": "Krouiñ ur gont wiki",
+	"googlelogin-form-choosename-error": "Ret eo deoc'h choaz un anv implijer pe choaz unan eus ar re a ginnigomp deoc'h.",
 	"googlelogin-form-choosename-existerror": "En implij emañ an anv implijer ''$1'' dija, choazit unan all, mar plij.",
 	"googlelogin-form-create": "Krouiñ ur gont",
 	"googlelogin-email": "Chomlec'h postel",
@@ -20,5 +21,7 @@
 	"googlelogin-linked": "liammet",
 	"googlelogin-or": "pe",
 	"googlelogin-unlinked": "n'eo ket liammet",
+	"googlelogin-success-merge": "Gourc'hemennoù deoc'h ! Bremañ eo liammet ho kont wiki ouzh ho kont Google.",
+	"googlelogin-success-unlink": "Gourc'hemennoù deoc'h ! N'eo ket liammet ken ho kont wiki ouzh ho kont Google.",
 	"googlelogin-prefs-status": "Statud GoogleLogin :"
 }
