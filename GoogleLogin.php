@@ -26,6 +26,15 @@
 		die( 'This is an extension for Mediawiki and can not run standalone.' );
 	}
 
+	// master and v2.x requires MediaWiki 1.24
+	if ( version_compare( $wgVersion, '1.24c', '<' ) ) {
+		echo "This version of GoogleLogin requires MediaWiki 1.24, you have $wgVersion.<br>
+		You can <a href='https://www.mediawiki.org/wiki/Upgrade'>upgrade your MediaWiki Installation</a>
+		or <a href='https://www.mediawiki.org/wiki/Special:ExtensionDistributor/GoogleLogin'>download a 
+		version of GoogleLogin</a> which supports your MediaWiki version.";
+		die( -1 );
+	}
+
 	$wgExtensionCredits['specialpage'][] = array(
 		'path' => __FILE__,
 		'name' => 'GoogleLogin',
