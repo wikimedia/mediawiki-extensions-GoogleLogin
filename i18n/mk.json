@@ -5,7 +5,7 @@
 		]
 	},
 	"googlelogin": "Најава со Google",
-	"googlelogin-desc": "Дава [[Special:GoogleLogin|специјална страница]] што им овозможува на корисниците да се најавуваат со сметка на Google",
+	"googlelogin-desc": "Дава [[Special:GoogleLogin|службена страница]] што им овозможува на корисниците да се најавуваат со сметка на Google",
 	"googlelogin-parerror": "Побараната страница не постои. Навратете се и обидете се повторно.",
 	"googlelogin-generic-error": "Се појави неочекувана грешка. Навратете се и обидете се повторно. Порака: $1",
 	"googlelogin-createnotallowed": "Не ви е дозволено да направите нова сметка со GoogleLogin.",
