@@ -42,6 +42,11 @@ $specialPageAliases['ms'] = array(
 	'GoogleLogin' => array( 'Log_masuk_google', 'Log_masuk_dengan_Google' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'GoogleLogin' => array( 'Đăng_nhập_qua_Google' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'GoogleLogin' => array( 'Google登录' ),
