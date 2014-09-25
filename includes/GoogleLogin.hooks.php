@@ -37,46 +37,11 @@
 		}
 
 		public static function onUserLoginForm( &$tpl ) {
-			$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
-			// we don't want to delete the output of other extensions, so "extend" header
-			$header = $tpl->get( 'header' );
+			GoogleLogin::getLoginCreateForm( $tpl );
+		}
 
-			$keepLogin = '';
-			if ( $glConfig->get( 'GLShowKeepLogin' ) ) {
-				$keepLogin = Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
-				Html::openElement( 'div', array( 'class' => 'mw-ui-checkbox' ) ) .
-				Html::input(
-					'wpGoogleLoginRemember',
-					'1',
-					'checkbox',
-					array( 'id' => 'wpGoogleLoginRemember' )
-				) . ' ' .
-				Html::element(
-					'label',
-					array( 'for' => 'wpGoogleLoginRemember' ),
-					wfMessage( 'userlogin-remembermypassword' )->escaped()
-				) .
-				Html::closeElement( 'div') .
-				Html::closeElement( 'div');
-			}
-
-			$header .=
-				$keepLogin .
-				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
-				Html::element( 'input', array(
-						'class' => 'mw-ui-button mw-ui-destructive',
-						'style' => 'width:100%;',
-						'type' => 'submit',
-						'name' => 'googlelogin-submit',
-						'value' => wfMessage( 'googlelogin' )->text()
-					), ''
-				) .
-				Html::closeElement( 'div' ) .
-				Html::openElement( 'fieldset', array( 'class' => 'loginSeperator' ) ) .
-				Html::element( 'legend', array(), wfMessage( 'googlelogin-or' )->escaped() ) .
-				Html::closeElement( 'fieldset' );
-
-			$tpl->set( 'header', $header );
+		public static function onUserCreateForm( &$tpl ) {
+			GoogleLogin::getLoginCreateForm( $tpl, false );
 		}
 
 		/**

@@ -543,4 +543,52 @@
 				$wgOut->output();
 			}
 		}
+
+		public static function getLoginCreateForm( &$tpl, $login = true ) {
+			$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
+			// we don't want to delete the output of other extensions, so "extend" header
+			$header = $tpl->get( 'header' );
+
+			$keepLogin = '';
+			if ( $glConfig->get( 'GLShowKeepLogin' ) && $login ) {
+				$keepLogin = Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
+				Html::openElement( 'div', array( 'class' => 'mw-ui-checkbox' ) ) .
+				Html::input(
+					'wpGoogleLoginRemember',
+					'1',
+					'checkbox',
+					array( 'id' => 'wpGoogleLoginRemember' )
+				) . ' ' .
+				Html::element(
+					'label',
+					array( 'for' => 'wpGoogleLoginRemember' ),
+					wfMessage( 'userlogin-remembermypassword' )->escaped()
+				) .
+				Html::closeElement( 'div') .
+				Html::closeElement( 'div');
+			}
+
+			if ( $login ) {
+				$buttonMsg = wfMessage( 'googlelogin' )->text();
+			} else {
+				$buttonMsg = wfMessage( 'googlelogin-create' )->text();
+			}
+			$header .=
+				$keepLogin .
+				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
+				Html::element( 'input', array(
+						'class' => 'mw-ui-button mw-ui-destructive',
+						'style' => 'width:100%;',
+						'type' => 'submit',
+						'name' => 'googlelogin-submit',
+						'value' => $buttonMsg
+					), ''
+				) .
+				Html::closeElement( 'div' ) .
+				Html::openElement( 'fieldset', array( 'class' => 'loginSeperator' ) ) .
+				Html::element( 'legend', array(), wfMessage( 'googlelogin-or' )->escaped() ) .
+				Html::closeElement( 'fieldset' );
+
+			$tpl->set( 'header', $header );
+		}
 	}
