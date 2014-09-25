@@ -77,6 +77,7 @@
 	$wgHooks['UserLogoutComplete'][] = 'GoogleLoginHooks::onUserLogoutComplete';
 	$wgHooks['LoadExtensionSchemaUpdates'][] = 'GoogleLoginHooks::onLoadExtensionSchemaUpdates';
 	$wgHooks['UserLoginForm'][] = 'GoogleLoginHooks::onUserLoginForm';
+	$wgHooks['UserCreateForm'][] = 'GoogleLoginHooks::onUserCreateForm';
 	$wgHooks['PersonalUrls'][] = 'GoogleLoginHooks::onPersonalUrls';
 	$wgHooks['SpecialPage_initList'][] = 'GoogleLoginHooks::onSpecialPage_initList';
 	$wgHooks['GetPreferences'][] = 'GoogleLoginHooks::onGetPreferences';
