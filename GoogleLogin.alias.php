@@ -27,6 +27,11 @@ $specialPageAliases['de'] = array(
 	'GoogleLogin' => array( 'Mit_Google_anmelden' ),
 );
 
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'GoogleLogin' => array( 'ورود_با_گوگل' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'GoogleLogin' => array( 'Google로그인', '구글로그인', 'Google로_로그인', '구글로_로긍니' ),
