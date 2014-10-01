@@ -43,25 +43,25 @@
 
 			$keepLogin = '';
 			if ( $glConfig->get( 'GLShowKeepLogin' ) ) {
-				$keepLogin = Html::input(
+				$keepLogin = Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
+				Html::openElement( 'div', array( 'class' => 'mw-ui-checkbox' ) ) .
+				Html::input(
 					'wpGoogleLoginRemember',
 					'1',
 					'checkbox',
 					array( 'id' => 'wpGoogleLoginRemember' )
-				) . ' ';
-			}
-
-			$header .=
-				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
-				Html::openElement( 'div', array( 'class' => 'mw-ui-checkbox' ) ) .
-				$keepLogin .
+				) . ' ' .
 				Html::element(
 					'label',
 					array( 'for' => 'wpGoogleLoginRemember' ),
 					wfMessage( 'userlogin-remembermypassword' )->escaped()
 				) .
 				Html::closeElement( 'div') .
-				Html::closeElement( 'div') .
+				Html::closeElement( 'div');
+			}
+
+			$header .=
+				$keepLogin .
 				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
 				Html::element( 'input', array(
 						'class' => 'mw-ui-button mw-ui-destructive',
