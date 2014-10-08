@@ -8,6 +8,7 @@
 		]
 	},
 	"googlelogin": "Anmelden mit Google",
+	"googlelogin-create": "Mit Google erstellen",
 	"googlelogin-desc": "Stellt eine [[Special:GoogleLogin|Spezialseite]] zur Verfügung, die es Nutzern erlaubt, sich mit Ihrem Google-Konto anzumelden.",
 	"googlelogin-parerror": "Die aufgerufene Seite existiert nicht. Bitte gehen Sie zurück und versuchen die Aktion erneut.",
 	"googlelogin-generic-error": "Oops, da war ein Problem. Bitte gehen Sie zurück und versuchen die Aktion erneut. Fehlernachricht: $1",
