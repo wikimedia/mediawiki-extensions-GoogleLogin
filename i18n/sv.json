@@ -7,6 +7,7 @@
 		]
 	},
 	"googlelogin": "Logga in med Google",
+	"googlelogin-create": "Skapa med Google",
 	"googlelogin-desc": "Tillhandahåller en [[Special:GoogleLogin|specialsida]] för att låta användare logga in med sina Google-konton",
 	"googlelogin-parerror": "Den begärda sidan finns inte. Gå tillbaka och genomför åtgärden igen.",
 	"googlelogin-generic-error": "Oj, ett fel uppstod. Gå tillbaka och försök igen. Meddelande: $1",

@@ -34,7 +34,7 @@ $specialPageAliases['fa'] = array(
 
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
-	'GoogleLogin' => array( 'Google로그인', '구글로그인', 'Google로_로그인', '구글로_로긍니' ),
+	'GoogleLogin' => array( 'Google로그인', '구글로그인', 'Google로_로그인', '구글로_로그인' ),
 );
 
 /** Macedonian (македонски) */

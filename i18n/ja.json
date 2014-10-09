@@ -4,6 +4,7 @@
 			"Shirayuki"
 		]
 	},
+	"googlelogin-create": "Google で作成",
 	"googlelogin-desc": "利用者が自身の Google アカウントでログインできるようにする[[Special:GoogleLogin|特別ページ]]を提供する",
 	"googlelogin-form-choosename-title": "利用者名の選択",
 	"googlelogin-form-choosename-finish-title": "ウィキ アカウントの作成",

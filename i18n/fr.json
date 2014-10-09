@@ -6,6 +6,7 @@
 		]
 	},
 	"googlelogin": "Connexion avec Google",
+	"googlelogin-create": "Créé avec Google",
 	"googlelogin-desc": "Fournit une [[Special:GoogleLogin|page spéciale]] pour permettre aux utilisateurs de se connecter avec leur compte Google",
 	"googlelogin-parerror": "La page demandée n’existe pas. Veuillez revenir en arrière et réessayer l’action.",
 	"googlelogin-generic-error": "Oups, une erreur s’est produite. Veuillez revenir en arrière et réessayer. Message : $1",

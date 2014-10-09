@@ -3,10 +3,12 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Fengchao",
-			"Luotiancheng"
+			"Luotiancheng",
+			"Gaoxuewei"
 		]
 	},
 	"googlelogin": "使用Google登录",
+	"googlelogin-create": "使用谷歌创建",
 	"googlelogin-desc": "提供[[Special:GoogleLogin|特殊页面]]允许用户使用它们的Google账户登录",
 	"googlelogin-parerror": "请求的页面不存在。请返回并再尝试操作。",
 	"googlelogin-generic-error": "我的天，出现意外错误。请返回重试。信息：$1",

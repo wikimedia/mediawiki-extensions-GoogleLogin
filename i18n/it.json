@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Baffo"
 		]
 	},
 	"googlelogin": "Accedi con Google",
+	"googlelogin-create": "Creare con Google",
 	"googlelogin-desc": "Fornisce una [[Special:GoogleLogin|pagina speciale]] per consentire agli utenti di accedere con il loro account Google",
 	"googlelogin-parerror": "La pagina richiesta non esiste. Tornare indietro e ritenta di nuovo l'azione.",
 	"googlelogin-generic-error": "Oops, c'è stato un'errore. Torna indietro e riprova. Messaggio: $1",
