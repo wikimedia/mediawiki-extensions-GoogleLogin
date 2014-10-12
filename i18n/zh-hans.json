@@ -12,7 +12,7 @@
 	"googlelogin-desc": "提供[[Special:GoogleLogin|特殊页面]]允许用户使用它们的Google账户登录",
 	"googlelogin-parerror": "请求的页面不存在。请返回并再尝试操作。",
 	"googlelogin-generic-error": "我的天，出现意外错误。请返回重试。信息：$1",
-	"googlelogin-createnotallowed": "您不被允许使用GoogleLogi创建新账户。",
+	"googlelogin-createnotallowed": "您不被允许使用GoogleLogin创建新账户。",
 	"googlelogin-unallowed-domain": "用于您Google账户（$1）的主要邮件地址的域名不允许登录此wiki。",
 	"googlelogin-error-unknownconnected": "连接您Google账户的wiki账户不（再）存在。两者之间的连接将被移除。请创建新wiki账户或使用其他现有账户。",
 	"googlelogin-form-choosename-title": "选择用户名",

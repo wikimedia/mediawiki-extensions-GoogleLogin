@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Romaine"
 		]
 	},
+	"googlelogin-create": "Maak met Google",
 	"googlelogin-email": "E-mailadres",
 	"googlelogin-googleuser": "Googlegebruiker",
 	"googlelogin-information-title": "Gebruikersgegevens",
