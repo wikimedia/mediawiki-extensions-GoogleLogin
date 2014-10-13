@@ -6,6 +6,7 @@
 			"LEEJACK"
 		]
 	},
+	"googlelogin-create": "使用 Google 建立",
 	"googlelogin-generic-error": "啊呀，出現錯誤。請返回並再試。訊息：$1",
 	"googlelogin-form-merge-title": "連結使用者帳號",
 	"googlelogin-form-merge": "連結Google至wiki賬戶",
