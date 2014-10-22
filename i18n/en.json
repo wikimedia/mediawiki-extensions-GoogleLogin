@@ -38,5 +38,7 @@
 	"googlelogin-link-other": "Your Google account is already linked to another user. Please unlink the connection or contact an administrator, if you have no other wiki account.",
 	"googlelogin-success-merge": "Congratulations! Your wiki account is now linked to your Google account.",
 	"googlelogin-success-unlink": "Congratulations! Your wiki account isn't linked to your Google account anymore.",
-	"googlelogin-prefs-status": "GoogleLogin status:"
+	"googlelogin-prefs-status": "GoogleLogin status:",
+	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
+	"tag-googlelogin-description": "Registrations with this tag were made with [[Special:GoogleLogin|GoogleLogin]]"
 }
