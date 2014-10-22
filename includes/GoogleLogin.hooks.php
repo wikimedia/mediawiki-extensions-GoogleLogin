@@ -128,4 +128,21 @@
 		public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
 			$out->addModules( 'ext.GoogleLogin.style' );
 		}
+
+		/**
+		 * Replaces the RC comment with a filterable RC tag
+		 *
+		 * @param RecentChange $recentChange The recentChange object
+		 */
+		public static function onRecentChange_save( $recentChange ) {
+			$performer = $recentChange->getPerformer();
+			$attribs = $recentChange->getAttributes();
+
+			if (
+				$performer->getName() === SpecialGoogleLogin::$performer &&
+				$attribs['rc_log_action'] === 'create'
+			) {
+				ChangeTags::addTags( 'googlelogin', $attribs['rc_id'] );
+			}
+		}
 	}

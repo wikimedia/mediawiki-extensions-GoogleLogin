@@ -3,6 +3,9 @@
 		/** @var $mGoogleLogin saves an instance of GoogleLogin class */
 		private $mGoogleLogin;
 
+		/** @var $performer Saves the username (which is visible in RC) or false */
+		public static $performer = false;
+
 		function __construct() {
 			parent::__construct( 'GoogleLogin' );
 		}
@@ -328,12 +331,10 @@
 								$user->sendConfirmationMail();
 								$user->setCookies();
 								// create a log entry for the created user - bug 67245
-								$createReason = '';
 								if ( $glConfig->get( 'GLShowCreateReason' ) ) {
-									$createReason =
-										'via [[' . $this->getPageTitle() . '|Google Login]]';
+									self::$performer = $userName;
 								}
-								$logEntry = $user->addNewUserLogEntry( 'create', $createReason );
+								$logEntry = $user->addNewUserLogEntry( 'create' );
 								$db->createConnection( $userInfo['id'], $user->getId() );
 								$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
 								$returnTo = $this->mGoogleLogin->getReturnTo();
