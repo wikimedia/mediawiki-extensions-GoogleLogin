@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e936f18_31648ae1",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2014-10-23T16:28:45Z",
+      "side": 1,
+      "message": "Sloppy spelling and capitalisation.",
+      "revId": "8eb68dc45f8699ef252ea13eaaba2aabc05a4e62",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
