@@ -86,7 +86,7 @@
 						$tableAttribs = array(
 							'class' => 'googlelogin-summary'
 						);
-						if ( !$googleIdExists ) $this->createSubmitButton( 'Logout' );
+						if ( !$googleIdExists ) $this->createSubmitButton( 'Logout', 'progressive' );
 						$out->addHtml( Html::openelement( 'fieldset' ) .
 							Html::element( 'legend', null, wfMessage( 'googlelogin-information-title' )->text() ) .
 							Html::element( 'label', null, wfMessage( 'googlelogin-information-body' )->text() ) .
@@ -151,7 +151,7 @@
 								// show the whole special page, not only a button - bug 67486
 								$out->redirect( $this->getPageTitle()->getLocalUrl() );
 							} else {
-								$this->createSubmitButton( 'Unlink' );
+								$this->createSubmitButton( 'Unlink', 'destructive' );
 							}
 						}
 					} else {
@@ -226,12 +226,20 @@
 		 * @param string $action The action the button will link to (note: this string is
 		 *	the suffix for the Message key for the buttons name)
 		 */
-		private function createSubmitButton( $action ) {
+		private function createSubmitButton( $action, $submitClass = null ) {
 			$htmlForm = new HTMLForm(
 				array(),
 				$this->getContext(),
 				'googlelogin-form' . strtolower( $action )
 			);
+			switch( $submitClass ) {
+				case 'progressive':
+					$htmlForm->setSubmitProgressive();
+					break;
+				case 'destructive':
+					$htmlForm->setSubmitDestructive();
+					break;
+			}
 
 			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-' . strtolower( $action ) )->text() );
 			$htmlForm->addHiddenField( 'action', $action );
