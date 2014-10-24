@@ -41,5 +41,7 @@
 	"googlelogin-link-other": "Dein Google-Benutzerkonto ist bereits mit einem anderen Benutzer verknüpft. Bitte trenne die Verbindung oder kontaktiere einen Administrator, falls du kein weiteres Wiki-Benutzerkonto hast.",
 	"googlelogin-success-merge": "Glückwunsch! Dein Konto ist nun mit deinem Google-Konto verknüpft.",
 	"googlelogin-success-unlink": "Glückwunsch! Dein Wiki-Konto ist nicht mehr mit deinem Google-Konto verknüpft.",
-	"googlelogin-prefs-status": "GoogleLogin-Status:"
+	"googlelogin-prefs-status": "GoogleLogin-Status:",
+	"tag-googlelogin": "[[Special:GoogleLogin|Google-Anmeldung]]",
+	"tag-googlelogin-description": "Registrierungen mit dieser Markierung wurden durchgeführt mit [[Special:GoogleLogin|GoogleLogin]]"
 }
