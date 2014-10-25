@@ -41,5 +41,6 @@
 	"googlelogin-link-other": "您的Google账户已连接至其他用户。请取消连接或联络管理员，如果您没有其他wiki账户的话。",
 	"googlelogin-success-merge": "祝贺！您的wiki帐户现已关联您的Google账户。",
 	"googlelogin-success-unlink": "祝贺！您的wiki帐户现已取消关联您的Google账户。",
-	"googlelogin-prefs-status": "Google登录状态："
+	"googlelogin-prefs-status": "Google登录状态：",
+	"tag-googlelogin": "[[Special:GoogleLogin|Google登录]]"
 }

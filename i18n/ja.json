@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"SkyDaisy9"
 		]
 	},
 	"googlelogin-create": "Google で作成",
@@ -15,5 +16,7 @@
 	"googlelogin-form-create": "アカウントを作成",
 	"googlelogin-email": "メールアドレス",
 	"googlelogin-information-title": "アカウント情報",
-	"googlelogin-or": "または"
+	"googlelogin-or": "または",
+	"tag-googlelogin": "[Special:GoogleLogin|Googleログイン]",
+	"tag-googlelogin-description": "このタグを用いての登録は[[Special:GoogleLogin|Googleログイン]]\nによって完了しました。"
 }
