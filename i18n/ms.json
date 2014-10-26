@@ -4,5 +4,7 @@
 			"Anakmalaysia"
 		]
 	},
-	"googlelogin-create": "Buka akaun dengan Google"
+	"googlelogin-create": "Buka akaun dengan Google",
+	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
+	"tag-googlelogin-description": "Pendaftaran dengan tef ini dilakukan dengan [[Special:GoogleLogin|GoogleLogin]]"
 }
