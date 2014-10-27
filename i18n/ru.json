@@ -38,5 +38,7 @@
 	"googlelogin-link-other": "Ваша учётная запись Google уже привязана к другому участнику. Пожалуйста, уберите эту связь или свяжитесь с администратором, если у вас нет других вики-аккаунтов.",
 	"googlelogin-success-merge": "Поздравляем! Ваш вики-аккаунт теперь привязан к учётной записи Google.",
 	"googlelogin-success-unlink": "Поздравляем! Ваш вики-аккаунт больше не привязан к учётной записи Google.",
-	"googlelogin-prefs-status": "Статус GoogleLogin:"
+	"googlelogin-prefs-status": "Статус GoogleLogin:",
+	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
+	"tag-googlelogin-description": "Регистрация с этим тегом была произведена с помощью [[Special:GoogleLogin|GoogleLogin]]"
 }
