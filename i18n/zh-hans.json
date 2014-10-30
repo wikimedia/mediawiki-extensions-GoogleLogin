@@ -42,5 +42,6 @@
 	"googlelogin-success-merge": "祝贺！您的wiki帐户现已关联您的Google账户。",
 	"googlelogin-success-unlink": "祝贺！您的wiki帐户现已取消关联您的Google账户。",
 	"googlelogin-prefs-status": "Google登录状态：",
-	"tag-googlelogin": "[[Special:GoogleLogin|Google登录]]"
+	"tag-googlelogin": "[[Special:GoogleLogin|Google登录]]",
+	"tag-googlelogin-description": "带此标记的注册是通过 [[Special:GoogleLogin|GoogleLogin]] 进行的"
 }
