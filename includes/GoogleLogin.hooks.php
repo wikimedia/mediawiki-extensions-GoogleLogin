@@ -92,6 +92,7 @@
 				}
 
 				// Replace login link with GoogleLogin link
+				$googleLogin = new GoogleLogin;
 				$personal_urls['login']['text'] = wfMessage( 'googlelogin' )->text();
 				$personal_urls['login']['href'] = $googleLogin->getLoginUrl( $skin, $title );
 			}
