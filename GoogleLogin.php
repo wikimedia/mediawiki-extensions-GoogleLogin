@@ -81,7 +81,6 @@
 	$wgHooks['PersonalUrls'][] = 'GoogleLoginHooks::onPersonalUrls';
 	$wgHooks['SpecialPage_initList'][] = 'GoogleLoginHooks::onSpecialPage_initList';
 	$wgHooks['GetPreferences'][] = 'GoogleLoginHooks::onGetPreferences';
-	$wgHooks['BeforePageDisplay'][] = 'GoogleLoginHooks::onBeforePageDisplay';
 	$wgHooks['RecentChange_save'][] = 'GoogleLoginHooks::onRecentChange_save';
 
 	// ResourceLoader modules
