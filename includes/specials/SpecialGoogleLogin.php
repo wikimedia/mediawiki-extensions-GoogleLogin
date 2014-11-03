@@ -29,6 +29,9 @@
 			$db = new GoogleLoginDB;
 			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 
+			// add module styles
+			$out->addModules( 'ext.GoogleLogin.style' );
+
 			$par = (empty( $par ) ? $request->getVal( 'action' ) : $par);
 			$googleLogin->setLoginParameter( $request );
 			$client = $googleLogin->getClient();

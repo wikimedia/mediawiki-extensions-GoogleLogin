@@ -57,6 +57,7 @@
 				}
 
 				// Replace login link with GoogleLogin link
+				$googleLogin = new GoogleLogin;
 				$personal_urls['login']['text'] = wfMessage( 'googlelogin' )->text();
 				$personal_urls['login']['href'] = $googleLogin->getLoginUrl( $skin, $title );
 			}
@@ -118,15 +119,6 @@
 			}
 
 			return true;
-		}
-
-		/**
-		 * Load our css module
-		 * @param OutputPage $out OutputPage object
-		 * @param Skin $skin Skin object that will be used to generate the page
-		 */
-		public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
-			$out->addModules( 'ext.GoogleLogin.style' );
 		}
 
 		/**
