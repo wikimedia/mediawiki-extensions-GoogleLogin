@@ -122,15 +122,6 @@
 		}
 
 		/**
-		 * Load our css module
-		 * @param OutputPage $out OutputPage object
-		 * @param Skin $skin Skin object that will be used to generate the page
-		 */
-		public static function onBeforePageDisplay( OutputPage &$out, Skin &$skin ) {
-			$out->addModules( 'ext.GoogleLogin.style' );
-		}
-
-		/**
 		 * Replaces the RC comment with a filterable RC tag
 		 *
 		 * @param RecentChange $recentChange The recentChange object

@@ -549,6 +549,10 @@
 			// we don't want to delete the output of other extensions, so "extend" header
 			$header = $tpl->get( 'header' );
 
+			// add css module
+			$out = $tpl->getSkin()->getOutput();
+			$out->addModules( 'ext.GoogleLogin.style' );
+
 			$keepLogin = '';
 			if ( $glConfig->get( 'GLShowKeepLogin' ) && $login ) {
 				$keepLogin = Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
