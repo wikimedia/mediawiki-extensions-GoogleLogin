@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "6e936f18_3613605e",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-11-17T22:09:06Z",
+      "side": 1,
+      "message": "This is a mistake on extension page. It should be \"Google Account\", instead of \"Google Accounts\". Sorry for confusing :/",
+      "revId": "59ca6bccb701df8211662ab6bdc735f3e9db1f0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e936f18_f3f0aa63",
         "filename": "composer.json",
         "patchSetId": 1
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "If we want it to be installable via composer, then yes. But for now I\u0027m just doing the minimum to get it to validate.",
       "parentUuid": "6e936f18_f3f0aa63",
+      "revId": "59ca6bccb701df8211662ab6bdc735f3e9db1f0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e936f18_961b5472",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2014-11-17T22:09:06Z",
+      "side": 1,
+      "message": "I agree with legoktm :)",
+      "parentUuid": "6e936f18_b318e285",
       "revId": "59ca6bccb701df8211662ab6bdc735f3e9db1f0f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
