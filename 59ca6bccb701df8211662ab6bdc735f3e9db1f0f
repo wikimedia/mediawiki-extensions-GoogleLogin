@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e936f18_f3f0aa63",
+        "filename": "composer.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2014-11-17T21:56:08Z",
+      "side": 1,
+      "message": "This should have `\"type\": \"mediawiki-extension\",` too shouldn\u0027t it?",
+      "revId": "59ca6bccb701df8211662ab6bdc735f3e9db1f0f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
