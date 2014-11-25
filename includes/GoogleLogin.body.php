@@ -454,19 +454,13 @@
 		 */
 		private function includeAPIFiles() {
 			$dir = __DIR__;
-			if (
-				file_exists( $dir . '/external/Google/Client.php' ) &&
-				file_exists( $dir . '/external/Google/Service/Plus.php' )
-			) {
-				// Add location of Google api in include path to enable includes from Google Client
-				set_include_path(get_include_path() . PATH_SEPARATOR . $dir . '/external/');
-				require_once ( $dir . '/external/Google/Client.php' );
-				require_once ( $dir . '/external/Google/Service/Plus.php' );
-				// yes, we initiate Google client here ;)
+			if ( class_exists( 'Google_Client' ) ) {
 				$client = new Google_Client();
 				return $client;
 			} else {
-				throw new MWException( 'Not all required files exist, please reinstall GoogleLogin' );
+				throw new MWException(
+					'GoogleLogin requires the PHP API Client, which you can install with the Extension:GoogleAPIClient.'
+				);
 			}
 		}
 
