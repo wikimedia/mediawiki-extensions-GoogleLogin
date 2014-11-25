@@ -260,7 +260,7 @@
 		 * @param UserId $id The User id to login
 		 * @param Google-ID $googleId Id f the Googleuser
 		 * @return Status Object of Status with the status of login (and value of redirectto if Ok)
-		   otherwise (in case of Fatal) an error message.
+		 * otherwise (in case of Fatal) an error message.
 		 */
 		public function loginGoogleUser( $id, $googleId ) {
 			$status = new Status;
@@ -405,10 +405,10 @@
 			foreach ( $tlds as $tld ) {
 				$tlds[ $i ] = trim( $tld );
 				/**
-					empty
-					comments
-					top level domains
-					is overboard
+				 *	empty
+				 *	comments
+				 *	top level domains
+				 *	is overboard
 				*/
 				if (
 					!$tlds[ $i ] ||
