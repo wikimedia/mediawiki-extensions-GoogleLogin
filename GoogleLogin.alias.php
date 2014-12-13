@@ -57,6 +57,11 @@ $specialPageAliases['vi'] = array(
 	'GoogleLogin' => array( 'Đăng_nhập_qua_Google' ),
 );
 
+/** Chinese (中文) */
+$specialPageAliases['zh'] = array(
+	'GoogleLogin' => array( 'Google登录', 'Google登入' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'GoogleLogin' => array( 'Google登录' ),
@@ -64,5 +69,5 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'GoogleLogin' => array( 'Google登入' ),
+	'GoogleLogin' => array( 'Google 登入' ),
 );
