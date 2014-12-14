@@ -69,5 +69,5 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'GoogleLogin' => array( 'Google 登入' ),
+	'GoogleLogin' => array( 'Google_登入' ),
 );
