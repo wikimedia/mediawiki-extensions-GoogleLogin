@@ -37,6 +37,11 @@ $specialPageAliases['ko'] = array(
 	'GoogleLogin' => array( 'Google로그인', '구글로그인', 'Google로_로그인', '구글로_로그인' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$specialPageAliases['lb'] = array(
+	'GoogleLogin' => array( 'Mat_Google_aloggen' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'GoogleLogin' => array( 'НајаваСоGoogle' ),
