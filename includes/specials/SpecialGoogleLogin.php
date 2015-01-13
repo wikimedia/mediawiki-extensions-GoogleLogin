@@ -281,7 +281,6 @@
 					// here is nothing to see!
 					$out->addWikiMsg( 'googlelogin-parerror' );
 				break;
-				case 'signup':
 				case 'Create':
 					// Handles the creation of a new wikiuser, but before: check, if no-one changed the username
 					// and is still valid
