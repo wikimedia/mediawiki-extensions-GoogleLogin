@@ -395,6 +395,11 @@
 						$this->createError( 'Token failure' );
 					}
 				break;
+				case 'signup':
+					// When GoogleLogin replaces MW login, Special:CreateAccount will redirect to Special:GoogleLogin/signup,
+					// handle this here correctly.
+					$this->createOrMerge( $userInfo, $db );
+				break;
 			}
 		}
 	}
