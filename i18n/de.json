@@ -23,7 +23,7 @@
 	"googlelogin-form-choosename-existerror": "Der Benutzername ''$1'' ist bereits vergeben. Bitte wähle einen anderen.",
 	"googlelogin-form-chooseown": "Eigener Name",
 	"googlelogin-form-chooseown-error": "Bitte teile uns deinen gewünschten Benutzernamen mit, oder wähle einen unserer Vorschläge.",
-	"googlelogin-form-choosename-help": "'Eigener Name' wird nur beachtet, wenn 'Eigener Name' ausgewählt wurde.",
+	"googlelogin-form-choosename-placeholder": "Dein Benutzername",
 	"googlelogin-form-merge-title": "Benutzerkonto verbinden",
 	"googlelogin-form-logout": "Mit einem anderen Google-Konto anmelden",
 	"googlelogin-form-backlink": "Zurück zum Google-Login",
