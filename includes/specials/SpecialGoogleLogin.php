@@ -195,7 +195,7 @@
 			if ( GoogleLogin::isValidUsername( $userInfo['name']['givenName'] ) ) {
 				$names[$userInfo['name']['givenName']] = 'wpGivenName';
 			}
-			$names[wfMessage( 'googlelogin-form-chooseown' )->text()] = 'wpOwn';
+			$names[wfMessage( 'googlelogin-form-chooseown' )->text() . ':'] = 'wpOwn';
 			$defaultName = ($request->getVal( 'wpChooseName' ) !== null ?
 				$request->getVal( 'wpChooseName' ) : 'wpOwn');
 			$formElements = array(
@@ -210,8 +210,7 @@
 					'section' => 'choosename',
 					'class' => 'HTMLTextField',
 					'default' => $request->getVal( 'wpChooseOwn' ),
-					'label' => wfMessage( 'googlelogin-form-chooseown' )->text() . ':',
-					'help' => wfMessage( 'googlelogin-form-choosename-help' )->text()
+					'placeholder' => wfMessage( 'googlelogin-form-choosename-placeholder' )->text()
 				),
 			);
 			$htmlForm = new HTMLForm( $formElements, $this->getContext(), 'googlelogin-form' );

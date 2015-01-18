@@ -20,7 +20,7 @@
 	"googlelogin-form-choosename-existerror": "The username ''$1'' is already in use, please choose another.",
 	"googlelogin-form-chooseown": "Choose own",
 	"googlelogin-form-chooseown-error": "Please let us know your desired username or take one of our suggestions.",
-	"googlelogin-form-choosename-help": "\"Own name\" is only observed, if you choose \"{{int:googlelogin-form-chooseown}}\".",
+	"googlelogin-form-choosename-placeholder": "Your username",
 	"googlelogin-form-merge-title": "Link user account",
 	"googlelogin-form-logout": "Login with another Google account",
 	"googlelogin-form-backlink": "Back to Google login",
