@@ -560,16 +560,16 @@
 				Html::element(
 					'label',
 					array( 'for' => 'wpGoogleLoginRemember' ),
-					wfMessage( 'userlogin-remembermypassword' )->escaped()
+					$tpl->getMsg( 'userlogin-remembermypassword' )->escaped()
 				) .
 				Html::closeElement( 'div') .
 				Html::closeElement( 'div');
 			}
 
 			if ( $login ) {
-				$buttonMsg = wfMessage( 'googlelogin' )->text();
+				$buttonMsg = $tpl->getMsg( 'googlelogin' )->escaped();
 			} else {
-				$buttonMsg = wfMessage( 'googlelogin-create' )->text();
+				$buttonMsg = $tpl->getMsg( 'googlelogin-create' )->escaped();
 			}
 			$header .=
 				$keepLogin .
@@ -584,7 +584,7 @@
 				) .
 				Html::closeElement( 'div' ) .
 				Html::openElement( 'fieldset', array( 'class' => 'loginSeperator' ) ) .
-				Html::element( 'legend', array(), wfMessage( 'googlelogin-or' )->escaped() ) .
+				Html::element( 'legend', array(), $tpl->getMsg( 'googlelogin-or' )->escaped() ) .
 				Html::closeElement( 'fieldset' );
 
 			$tpl->set( 'header', $header );

@@ -75,15 +75,15 @@
 								'Google-ID', $userInfo['id']
 							),
 							array(
-								wfMessage( 'googlelogin-googleuser' )->text(), $userInfo['displayName']
+								$this->msg( 'googlelogin-googleuser' )->text(), $userInfo['displayName']
 							),
 							array(
-								wfMessage( 'googlelogin-email' )->text(), $userInfo['emails'][0]['value']
+								$this->msg( 'googlelogin-email' )->text(), $userInfo['emails'][0]['value']
 							),
 							array(
-								wfMessage( 'googlelogin-linkstatus' )->text(),
-								( $googleIdExists ? wfMessage( 'googlelogin-linked' )->text() :
-									wfMessage( 'googlelogin-unlinked' )->text() )
+								$this->msg( 'googlelogin-linkstatus' )->text(),
+								( $googleIdExists ? $this->msg( 'googlelogin-linked' )->text() :
+									$this->msg( 'googlelogin-unlinked' )->text() )
 							)
 						);
 						$tableAttribs = array(
@@ -91,8 +91,8 @@
 						);
 						if ( !$googleIdExists ) $this->createSubmitButton( 'Logout', 'progressive' );
 						$out->addHtml( Html::openelement( 'fieldset' ) .
-							Html::element( 'legend', null, wfMessage( 'googlelogin-information-title' )->text() ) .
-							Html::element( 'label', null, wfMessage( 'googlelogin-information-body' )->text() ) .
+							Html::element( 'legend', null, $this->msg( 'googlelogin-information-title' )->text() ) .
+							Html::element( 'label', null, $this->msg( 'googlelogin-information-body' )->text() ) .
 							Xml::buildTable( $buildTable, $tableAttribs ) .
 							Html::closeelement( 'fieldset' )
 						);
@@ -187,7 +187,7 @@
 		 */
 		private function createGoogleUserForm( $userInfo, $db ) {
 			$request = $this->getRequest();
-			$this->getOutput()->setPageTitle( wfMessage( 'googlelogin-form-choosename-title' )->text() );
+			$this->getOutput()->setPageTitle( $this->msg( 'googlelogin-form-choosename-title' )->text() );
 			$names = array();
 			if ( GoogleLogin::isValidUsername( $userInfo['displayName'] ) ) {
 				$names[$userInfo['displayName']] = 'wpDisplayName';
@@ -195,7 +195,7 @@
 			if ( GoogleLogin::isValidUsername( $userInfo['name']['givenName'] ) ) {
 				$names[$userInfo['name']['givenName']] = 'wpGivenName';
 			}
-			$names[wfMessage( 'googlelogin-form-chooseown' )->text()] = 'wpOwn';
+			$names[$this->msg( 'googlelogin-form-chooseown' )->text() . ':'] = 'wpOwn';
 			$defaultName = ($request->getVal( 'wpChooseName' ) !== null ?
 				$request->getVal( 'wpChooseName' ) : 'wpOwn');
 			$formElements = array(
@@ -210,14 +210,13 @@
 					'section' => 'choosename',
 					'class' => 'HTMLTextField',
 					'default' => $request->getVal( 'wpChooseOwn' ),
-					'label' => wfMessage( 'googlelogin-form-chooseown' )->text() . ':',
-					'help' => wfMessage( 'googlelogin-form-choosename-help' )->text()
+					'placeholder' => wfMessage( 'googlelogin-form-choosename-placeholder' )->text()
 				),
 			);
 			$htmlForm = new HTMLForm( $formElements, $this->getContext(), 'googlelogin-form' );
 			$htmlForm->addHiddenField( 'action', 'Create' );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
-			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-create' )->text() );
+			$htmlForm->setSubmitText( $this->msg( 'googlelogin-form-create' )->text() );
 			$htmlForm->setAction( $this->getPageTitle( 'Create' )->getLocalUrl() );
 			$htmlForm->setSubmitCallback( array( 'GoogleLogin', 'submitChooseName' ) );
 
@@ -244,7 +243,7 @@
 					break;
 			}
 
-			$htmlForm->setSubmitText( wfMessage( 'googlelogin-form-' . strtolower( $action ) )->text() );
+			$htmlForm->setSubmitText( $this->msg( 'googlelogin-form-' . strtolower( $action ) )->text() );
 			$htmlForm->addHiddenField( 'action', $action );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
 			$htmlForm->setAction( $this->getPageTitle( $action )->getLocalUrl() );
@@ -265,7 +264,7 @@
 						array(
 							'href' => $this->getPageTitle()->getLocalUrl()
 						),
-						wfMessage( 'googlelogin-form-backlink' )->text()
+						$this->msg( 'googlelogin-form-backlink' )->text()
 					)
 				);
 			}
@@ -331,7 +330,7 @@
 							}
 						}
 						if ( !empty( $userName ) ) {
-							$out->setPageTitle( wfMessage( 'googlelogin-form-choosename-finish-title' )->text() );
+							$out->setPageTitle( $this->msg( 'googlelogin-form-choosename-finish-title' )->text() );
 							$userParam = array(
 								'password' => md5( Rand() ),
 								'email' => $userInfo['emails'][0]['value'],
@@ -359,7 +358,7 @@
 								$redirectQuery = wfCgiToArray( $returnTo['query'] );
 								$out->addReturnTo( $redirectTo, $redirectQuery );
 							} else {
-								$this->createError( wfMessage( 'googlelogin-link-other' )->text() );
+								$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
 							}
 						}
 					} else {

@@ -21,7 +21,7 @@
 	"googlelogin-form-choosename-existerror": "The username the user want to use for their user account already exists, they must use another.\n\nParameters:\n* $1 - username",
 	"googlelogin-form-chooseown": "Label for radio element to choose an own username for the creation of a new user account.",
 	"googlelogin-form-chooseown-error": "The user want to choose an own Username, but the input field for the username is empty. The user must provide a username or choose one of the suggestions.",
-	"googlelogin-form-choosename-help": "Displays a help text under textfield to provide an own username, that this is only observed, if the user selected that they want to use an own username.\n\nRefers to {{msg-mw|Googlelogin-form-chooseown}}.",
+	"googlelogin-form-choosename-placeholder": "Used ad a placeholder for the input field on the user creation form to choose a new user name.\n\nRefers to {{msg-mw|Googlelogin-form-chooseown}}.",
 	"googlelogin-form-merge-title": "Title of button to merge the wiki and Google account.",
 	"googlelogin-form-logout": "Title of button to choose another Google account to merge/create (to/a new) wiki account. (logout the currently Google account in wiki)",
 	"googlelogin-form-backlink": "Used as link text on subpages of Special:GoogleLogin to go back to Main special page [[Special:GoogleLogin]].",
