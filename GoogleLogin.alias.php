@@ -52,6 +52,11 @@ $specialPageAliases['ms'] = array(
 	'GoogleLogin' => array( 'Log_masuk_google', 'Log_masuk_dengan_Google' ),
 );
 
+/** Dutch (Nederlands) */
+$specialPageAliases['nl'] = array(
+	'GoogleLogin' => array( 'GoogleAanmelden' ),
+);
+
 /** Swedish (svenska) */
 $specialPageAliases['sv'] = array(
 	'GoogleLogin' => array( 'Inloggning_med_Google' ),

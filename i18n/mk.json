@@ -20,7 +20,7 @@
 	"googlelogin-form-choosename-existerror": "Корисничкото име ''$1'' е зафатено. Одберете друго.",
 	"googlelogin-form-chooseown": "Одберете ваше",
 	"googlelogin-form-chooseown-error": "Укажете го посакуваното корисничко име или решете се за едно од предложените.",
-	"googlelogin-form-choosename-help": "Ќе се земе предвид само „Свое име“ ако изберете „{{int:googlelogin-form-chooseown}}“.",
+	"googlelogin-form-choosename-placeholder": "Вашето корисничко име",
 	"googlelogin-form-merge-title": "Спој корисничка сметка",
 	"googlelogin-form-logout": "Најава со друга сметка на Google",
 	"googlelogin-form-backlink": "Назад на најавата со Google",

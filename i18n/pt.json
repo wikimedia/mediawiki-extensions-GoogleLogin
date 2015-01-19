@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Imperadeiro90"
 		]
 	},
 	"googlelogin": "Iniciar sessão com Google",
@@ -19,6 +20,7 @@
 	"googlelogin-form-choosename-error": "Deve escolher um nome de utilizador ou escolha um de nossa sugestão.",
 	"googlelogin-form-choosename-existerror": "O nome de utilizador ''$1'' já está em uso, escolha outro por favor.",
 	"googlelogin-form-chooseown-error": "Por favor, deixe-nos saber o seu nome de utilizador(a) desejado(a) ou escolha uma das nossas sugestões.",
+	"googlelogin-form-choosename-placeholder": "O seu nome de utilizador",
 	"googlelogin-form-merge-title": "Ligar contas",
 	"googlelogin-form-logout": "Iniciar sessão com outra conta Google",
 	"googlelogin-form-backlink": "Voltar ao início de sessão Google",

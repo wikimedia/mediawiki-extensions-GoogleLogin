@@ -23,7 +23,7 @@
 	"googlelogin-form-choosename-existerror": "用户名''$1''已被使用，请选择其他。",
 	"googlelogin-form-chooseown": "选择我的",
 	"googlelogin-form-chooseown-error": "请让我们了解您渴望的用户名或选择我们的建议之一。",
-	"googlelogin-form-choosename-help": "“自己的名字”只会被观察，如果您选择“{{int:googlelogin-form-chooseown}}”。",
+	"googlelogin-form-choosename-placeholder": "您的用户名",
 	"googlelogin-form-merge-title": "连接用户账户",
 	"googlelogin-form-logout": "通过另一Google账户登录",
 	"googlelogin-form-backlink": "回到Google登录",
