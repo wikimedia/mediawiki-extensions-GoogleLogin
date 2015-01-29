@@ -82,6 +82,8 @@
 	$wgHooks['SpecialPage_initList'][] = 'GoogleLoginHooks::onSpecialPage_initList';
 	$wgHooks['GetPreferences'][] = 'GoogleLoginHooks::onGetPreferences';
 	$wgHooks['RecentChange_save'][] = 'GoogleLoginHooks::onRecentChange_save';
+	$wgHooks['ListDefinedTags'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
+	$wgHooks['ChangeTagsListActive'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
 
 	// ResourceLoader modules
 	$wgResourceModules['ext.GoogleLogin.style'] = array(
