@@ -68,9 +68,12 @@
 		 * configured.
 		 */
 		public static function onSpecialPage_initList( &$list ) {
+			// FIXME: Find a better way to access the User object!
+			global $wgUser;
+
 			$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
-			// Replaces the UserLogin special page if configured
-			if ( $glConfig->get( 'GLReplaceMWLogin' ) ) {
+			// Replaces the UserLogin special page if configured and user isn't logged in
+			if ( !$wgUser->isLoggedIn() && $glConfig->get( 'GLReplaceMWLogin' ) ) {
 				$list['Userlogin'] = 'SpecialGoogleLogin';
 			}
 		}
