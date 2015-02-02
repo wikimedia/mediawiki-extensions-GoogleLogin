@@ -6,6 +6,20 @@
 		]
 	},
 	"googlelogin": "{{doc-special|GoogleLogin}}\nAlso used as label for the button shown in [[Special:Login]].",
+	"managegooglelogin": "Title of Special:ManageGoogleLogin",
+	"googlelogin-managelegend": "Text used in legend on Special:ManageGoogleLogin.",
+	"googlelogin-manage-usersubmit": "Submit text for find user form on Special:ManageGoogleLogin.",
+	"googlelogin-manage-notexist": "Indicates, that the user to manage does not exist.\n* $1 - The username entered",
+	"googlelogin-username": "Used to indicate a username input field.",
+	"googlelogin-manage-user": "Used on Special:ManageGoogleLogin to show, which user is managed.\n* $1 - The name of the managed user",
+	"googlelogin-manage-linked": "Message, that indicates, that the Wiki user is linked with a Google account.\n* $1 - Google ID of the linked Google account",
+	"googlelogin-manage-notlinked": "Message that indicates, that the Wiki user isn't linked with a Google account.",
+	"googlelogin-manage-changelegend": "Legendmessage for the \"Change Google ID\" form on Special:ManageGoogleLogin.",
+	"googlelogin-manage-noplus": "Notice message, that the passed Google ID doesn't have a Plus profile, including a hint to check a typing error.",
+	"googlelogin-manage-changedsuccess": "Indicates, that the manages user is linked with the Google account now.",
+	"googlelogin-manage-terminatesuccess": "Successmessage when the connection between the User and Google account was removed.",
+	"googlelogin-manage-changederror": "Indicates an error while trying to link the Wiki user and Google account.",
+	"googlelogin-manage-terminatebutton": "Buttonlabel to terminate the connection between Google account and Wiki user.",
 	"googlelogin-create": "Used as label for the button shown in [[Special:CreateAccount]].",
 	"googlelogin-desc": "{{desc|name=Google Login|url=http://www.mediawiki.org/wiki/Extension:GoogleLogin}}",
 	"googlelogin-parerror": "Error message when a Subpage of Special:GoogleLogin is requested, which does not exist.",
@@ -41,5 +55,6 @@
 	"googlelogin-success-unlink": "Successful message, that the wiki account isn't linked anymore with the Google account.",
 	"googlelogin-prefs-status": "Name of the Line in Special:Preferences identifying GoogleLoign status (linked or not linked).",
 	"tag-googlelogin": "Tag in [[Special:RecentChanges]] for user account creations made with GoogleLogin.\n\nSee also:\n* {{msg-mw|Tag-googlelogin-description}}",
-	"tag-googlelogin-description": "Short description, that account creations with this tag are made with GoogleLogin."
+	"tag-googlelogin-description": "Short description, that account creations with this tag are made with GoogleLogin.",
+	"action-managegooglelogin": "Message key for user right \"managegooglelogin\""
 }
