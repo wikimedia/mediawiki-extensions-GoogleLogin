@@ -140,4 +140,15 @@
 				ChangeTags::addTags( 'googlelogin', $attribs['rc_id'] );
 			}
 		}
+
+		/**
+		 * Register, and mark as active, the 'googlelogin' change tag
+		 *
+		 * @param array $tags
+		 * @return bool
+		 */
+		public static function onListDefinedAndActiveTags( array &$tags ) {
+			$tags[] = 'googlelogin';
+			return true;
+		}
 	}
