@@ -50,6 +50,7 @@
 	// Autoload Classes
 	$wgAutoloadClasses[ 'GoogleLogin' ] = $dir . '/includes/GoogleLogin.body.php';
 	$wgAutoloadClasses[ 'SpecialGoogleLogin' ] = $dir . '/includes/specials/SpecialGoogleLogin.php';
+	$wgAutoloadClasses[ 'SpecialManageGoogleLogin' ] = $dir . '/includes/specials/SpecialManageGoogleLogin.php';
 	$wgAutoloadClasses[ 'GoogleLoginHooks' ] = $dir . '/includes/GoogleLogin.hooks.php';
 	$wgAutoloadClasses[ 'GoogleLoginDB' ] = $dir . '/includes/GoogleLoginDB.php';
 	$wgAutoloadClasses[ 'GoogleLoginAuth' ] = $dir . '/includes/GoogleLoginAuth.php';
@@ -69,9 +70,15 @@
 	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = $dir . '/GoogleLogin.alias.php';
 	$wgMessagesDirs['GoogleLogin'] = $dir . '/i18n';
 
+	// new user rights for this extension
+	$wgGroupPermissions['sysop']['managegooglelogin'] = true;
+	$wgAvailableRights[] = 'managegooglelogin';
+
 	// Special Page
 	$wgSpecialPageGroups[ 'GoogleLogin' ] = 'login';
 	$wgSpecialPages[ 'GoogleLogin' ] = 'SpecialGoogleLogin';
+	$wgSpecialPageGroups[ 'ManageGoogleLogin' ] = 'users';
+	$wgSpecialPages[ 'ManageGoogleLogin' ] = 'SpecialManageGoogleLogin';
 
 	// Hooks
 	$wgHooks['UserLogoutComplete'][] = 'GoogleLoginHooks::onUserLogoutComplete';
@@ -145,3 +152,8 @@
 	 * Special:UserLogin) and replace it with GoogleLogin values.
 	 */
 	$wgGLReplaceMWLogin = false;
+
+	/**
+	 * Key for public API access. Used only for admin actions to check, if the user has a plus profile or not.
+	 */
+	$wgGLAPIKey = '';
