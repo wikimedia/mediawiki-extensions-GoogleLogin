@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_b7d65bf5",
+        "filename": "includes/specials/SpecialManageGoogleLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-02-02T08:48:00Z",
+      "side": 1,
+      "message": "No input checks, it should be checked, if the entered google id are only numbers.",
+      "revId": "e3c19d974a73f7bed4c7f10504e1d3c7f6abca01",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
