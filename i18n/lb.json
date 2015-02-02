@@ -11,6 +11,7 @@
 	"googlelogin-error-unknownconnected": "De Wiki Benotzerkont, dee mat Ärem Google Benotzerkont verbonn war gëtt et net (méi). D'Verbindung tëscht Äre Benotzerkonte gët ewechgeholl. Maacht w.e.g. en neie Wiki Benotzerkont op oder benotzt een deen et scho gëtt.",
 	"googlelogin-form-choosename-title": "Benotzernumm eraussichen",
 	"googlelogin-form-choosename-existerror": "De Benotzernumm \"$1\" gëtt scho benotzt, sich Iech w.e.g. een aneren.",
+	"googlelogin-form-choosename-placeholder": "Äre Benotzernumm",
 	"googlelogin-form-merge-title": "Benotzerkont verbannen",
 	"googlelogin-form-logout": "Mat engem anere Google Benotzerkont aloggen",
 	"googlelogin-form-backlink": "Zréck op de Google-Login",
@@ -22,5 +23,6 @@
 	"googlelogin-linked": "verbonn",
 	"googlelogin-or": "oder",
 	"googlelogin-unlinked": "net verbonn",
-	"googlelogin-prefs-status": "GoogleLogin-Status:"
+	"googlelogin-prefs-status": "GoogleLogin-Status:",
+	"tag-googlelogin": "[[Special:GoogleLogin|Google-Login]]"
 }
