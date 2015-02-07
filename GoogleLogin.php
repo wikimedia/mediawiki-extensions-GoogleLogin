@@ -133,6 +133,11 @@
 	$wgGLShowKeepLogin = true;
 
 	/**
+	 * Control, if "Keep login" is always enabled (even if the user doesn't checked the keep login box!).
+	 */
+	$wgGLForceKeepLogin = false;
+
+	/**
 	 * If the creation of wiki accounts is allowed with GoogleLogin or not, is handled by this
 	 * variable. Default is the value of $wgGroupPermissions['*']['createaccount'] (user right
 	 * to create a wiki account).

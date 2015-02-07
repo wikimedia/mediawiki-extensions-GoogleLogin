@@ -103,6 +103,9 @@
 		 * @return boolean
 		 */
 		public function getKeepLogin() {
+			if ( $this->getGLConfig()->get( 'GLForceKeepLogin' ) ) {
+				return true;
+			}
 			$request = $this->getRequest();
 			$status = $request->getSessionData( 'wpGoogleLoginRemember' );
 			$request->setSessionData( 'wpGoogleLoginRemember', null );
