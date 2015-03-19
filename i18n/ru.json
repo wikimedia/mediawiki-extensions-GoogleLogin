@@ -20,7 +20,7 @@
 	"googlelogin-form-choosename-existerror": "Имя участника «$1» уже используется. Пожалуйста, выберите другое.",
 	"googlelogin-form-chooseown": "Выбрать собственное",
 	"googlelogin-form-chooseown-error": "Пожалуйста, укажите, какое имя участника вы хотели бы использовать, или воспользуйтесь одним из наших предложений.",
-	"googlelogin-form-choosename-help": "«Собственное имя» доступно, только если вы выбирите «{{int:googlelogin-form-chooseown}}».",
+	"googlelogin-form-choosename-placeholder": "Ваше имя участника",
 	"googlelogin-form-merge-title": "Связать учётную запись",
 	"googlelogin-form-logout": "Войти с помощью другой учётной записи Google",
 	"googlelogin-form-backlink": "Назад в входу Google",
