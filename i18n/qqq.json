@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Florian Schmidt",
-			"Shirayuki"
+			"Shirayuki",
+			"Umherirrender"
 		]
 	},
 	"googlelogin": "{{doc-special|GoogleLogin}}\nAlso used as label for the button shown in [[Special:Login]].",
 	"googlelogin-create": "Used as label for the button shown in [[Special:CreateAccount]].",
-	"googlelogin-desc": "{{desc|name=Google Login|url=http://www.mediawiki.org/wiki/Extension:GoogleLogin}}",
+	"googlelogin-desc": "{{desc|name=Google Login|url=https://www.mediawiki.org/wiki/Extension:GoogleLogin}}",
 	"googlelogin-parerror": "Error message when a Subpage of Special:GoogleLogin is requested, which does not exist.",
 	"googlelogin-generic-error": "Generic error message for errors with no specific error message.\n\nParameters:\n* $1 - a short description of the error (e.g. Database error)",
 	"googlelogin-createnotallowed": "Error message displayed on [[Special:GoogleLogin]], that the user isn't allowed to create a new wiki user account with GoogleLogin.",
