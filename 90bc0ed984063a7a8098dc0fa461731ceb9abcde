@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6e7c4fa4_dec56b0e",
+        "filename": "includes/api/ApiGoogleLoginInfo.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-03-29T16:02:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_4cafa378",
+      "revId": "90bc0ed984063a7a8098dc0fa461731ceb9abcde",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_acbd17b0",
         "filename": "javascripts/specialpages/ext.GoogleLogin.specialManage.js",
         "patchSetId": 7
