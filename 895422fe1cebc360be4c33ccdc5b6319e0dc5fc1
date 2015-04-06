@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e7c4fa4_216c4931",
+        "filename": "includes/specials/SpecialManageGoogleLogin.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-04-06T10:52:40Z",
+      "side": 1,
+      "message": "Why is this function static? Use the reult of this function directly without a static result var.",
+      "revId": "895422fe1cebc360be4c33ccdc5b6319e0dc5fc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e7c4fa4_4185c5d2",
+        "filename": "includes/specials/SpecialManageGoogleLogin.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-04-06T10:52:40Z",
+      "side": 1,
+      "message": "Remove else closure",
+      "revId": "895422fe1cebc360be4c33ccdc5b6319e0dc5fc1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
