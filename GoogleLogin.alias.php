@@ -22,6 +22,11 @@ $specialPageAliases['arz'] = array(
 	'GoogleLogin' => array( 'دخول' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'GoogleLogin' => array( 'لوگین_گۆ_گوگل' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'GoogleLogin' => array( 'Mit_Google_anmelden' ),
