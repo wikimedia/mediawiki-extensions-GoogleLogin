@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Banjo"
+		]
+	},
+	"googlelogin-form-choosename-title": "Escoller o nome de usuario",
+	"googlelogin-form-choosename": "Por favor, escolla o seu nome de usuario para crear unha conta wiki",
+	"googlelogin-form-choosename-finish-title": "Crear unha conta wiki",
+	"googlelogin-form-choosename-placeholder": "O seu nome de usuario",
+	"googlelogin-form-create": "Crear conta",
+	"googlelogin-or": "ou"
+}
