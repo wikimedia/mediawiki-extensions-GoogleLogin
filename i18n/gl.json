@@ -1,13 +1,44 @@
 {
 	"@metadata": {
 		"authors": [
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
+	"googlelogin": "Acceder ao sistema co Google",
+	"googlelogin-create": "Crear con Google",
+	"googlelogin-desc": "Proporciona unha [[Special:GoogleLogin|Páxina especial]] para permitir ós usuarios iniciar sesión coas súas contas de Google",
+	"googlelogin-parerror": "A páxina solicitada non existe. Por favor volva atrás e probe a acción outra vez.",
+	"googlelogin-generic-error": "Houbo un erro inesperado. Por favor, volte atrás e probe de novo. Mensaxe: $1",
+	"googlelogin-createnotallowed": "Non está autorizado a crear unha nova conta con GoogleLogin.",
+	"googlelogin-unallowed-domain": "O dominio de correo electrónico usado para a dirección primaria da súa conta Google ($1) non está permitido para iniciar sesión nesta wiki.",
+	"googlelogin-error-unknownconnected": "A conta no wiki, conectada coa súa conta de Google, xa non existe. Eliminarase a conexión entre as súas contas. Por favor, cree unha nova conta na wiki ou utilice outra existente.",
 	"googlelogin-form-choosename-title": "Escoller o nome de usuario",
 	"googlelogin-form-choosename": "Por favor, escolla o seu nome de usuario para crear unha conta wiki",
 	"googlelogin-form-choosename-finish-title": "Crear unha conta wiki",
+	"googlelogin-form-choosename-finish-body": "Parabéns! Creou a conta $1 no wiki vinculouna coa súa conta de Google.",
+	"googlelogin-form-choosename-error": "Debe escoller un nome de usuario ou escoller un das nosas suxerencias.",
+	"googlelogin-form-choosename-existerror": "O nome de usuario ''$1'' xa está en uso, por favor, escolla outro.",
+	"googlelogin-form-chooseown-error": "Por favor, díganos o nome de usuario que desexa ou escolla un das nosas suxerencias.",
 	"googlelogin-form-choosename-placeholder": "O seu nome de usuario",
+	"googlelogin-form-merge-title": "Ligar conta de usuario",
+	"googlelogin-form-logout": "Iniciar sesión con outra conta de Google",
+	"googlelogin-form-backlink": "Volver ó comezo de sesión de Google",
 	"googlelogin-form-create": "Crear conta",
-	"googlelogin-or": "ou"
+	"googlelogin-form-merge": "Ligar Google coa conta do wiki",
+	"googlelogin-form-unlink": "Desligar Google da conta do wiki",
+	"googlelogin-email": "Enderezo de correo electrónico",
+	"googlelogin-googleuser": "Usuario de Google",
+	"googlelogin-information-title": "Información da conta",
+	"googlelogin-information-body": "Na seguinte táboa atopará información sobre a súa conta de Google e se está ligada a unha conta da wiki ou non.",
+	"googlelogin-linkstatus": "Estado da ligazón",
+	"googlelogin-linked": "ligado",
+	"googlelogin-or": "ou",
+	"googlelogin-unlinked": "non ligado",
+	"googlelogin-link-other": "A súa conta de Google xa está ligada a outro usuario. Por favor, desligue a conexión ou contacte cun administrador, se non ten outra conta wiki.",
+	"googlelogin-success-merge": "Parabéns! Agora a súa conta wiki está ligada coa súa conta Google.",
+	"googlelogin-success-unlink": "Parabéns! A súa conta wiki xa non está ligada coa súa conta Google.",
+	"googlelogin-prefs-status": "Estado de GoogleLogin:",
+	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
+	"tag-googlelogin-description": "Rexistros con esta etiqueta foron feitos con [[Special:GoogleLogin|GoogleLogin]]"
 }
