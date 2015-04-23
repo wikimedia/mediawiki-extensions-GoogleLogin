@@ -19,6 +19,7 @@
 	"googlelogin-form-choosename-finish-body": "Parabéns! Creou a conta $1 no wiki vinculouna coa súa conta de Google.",
 	"googlelogin-form-choosename-error": "Debe escoller un nome de usuario ou escoller un das nosas suxerencias.",
 	"googlelogin-form-choosename-existerror": "O nome de usuario ''$1'' xa está en uso, por favor, escolla outro.",
+	"googlelogin-form-chooseown": "Escoller propio",
 	"googlelogin-form-chooseown-error": "Por favor, díganos o nome de usuario que desexa ou escolla un das nosas suxerencias.",
 	"googlelogin-form-choosename-placeholder": "O seu nome de usuario",
 	"googlelogin-form-merge-title": "Ligar conta de usuario",
