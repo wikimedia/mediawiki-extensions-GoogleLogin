@@ -41,7 +41,7 @@
 		'author' => 'Florian Schmidt',
 		'url' => 'https://www.mediawiki.org/wiki/Extension:GoogleLogin',
 		'descriptionmsg' => 'googlelogin-desc',
-		'version'  => '0.2.1-git',
+		'version'  => '0.2.1',
 		'license-name' => "MIT",
 	);
 
