@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Guycn2"
+			"Guycn2",
+			"LaG roiL"
 		]
 	},
+	"googlelogin-manage-yes": "כן",
 	"googlelogin-create": "יצירה באמצעות גוגל",
 	"googlelogin-or": "או"
 }

@@ -7,6 +7,13 @@
 		]
 	},
 	"googlelogin": "Zaloguj się za pomocą Google",
+	"googlelogin-manage-notexist": "Nie ma użytkownika o nazwie <strong>$1</ strong>.",
+	"googlelogin-manage-terminatebutton": "Usuń połączenie",
+	"googlelogin-manage-yes": "tak",
+	"googlelogin-manage-no": "nie",
+	"googlelogin-manage-openpluslink": "Otwórz profil Google+",
+	"googlelogin-manage-errorloading": "Błąd ładowania",
+	"googlelogin-username": "Nazwa użytkownika",
 	"googlelogin-create": "Stwórz z Google",
 	"googlelogin-parerror": "Żądana strona nie istnieje. Proszę wrócić i spróbować ponownie.",
 	"googlelogin-form-choosename-title": "Wybierz nazwę użytkownika",

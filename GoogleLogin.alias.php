@@ -33,6 +33,11 @@ $specialPageAliases['de'] = array(
 	'GoogleLogin' => array( 'Mit_Google_anmelden' ),
 );
 
+/** Spanish (español) */
+$specialPageAliases['es'] = array(
+	'GoogleLogin' => array( 'Iniciar_sesión_con_Google' ),
+);
+
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'GoogleLogin' => array( 'ورود_با_گوگل' ),

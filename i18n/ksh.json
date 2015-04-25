@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"googlelogin-manage-usersubmit": "Metmaacher verwallde",
+	"googlelogin-manage-notexist": "Mer han keine Metmaacher mem Nahme „$1“",
+	"googlelogin-manage-changelegend": "De Kännong för <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google</i>\nanndere",
+	"googlelogin-manage-orgtitle": "De Schtäll udder ossizjuhn bem Ärbeide",
+	"googlelogin-manage-orgsince": "Zigg",
+	"googlelogin-manage-yes": "Joh",
+	"googlelogin-manage-no": "näh",
+	"googlelogin-manage-errorloading": "Fähler beim Lahde",
+	"googlelogin-username": "Metmaacher_Nahme"
+}
