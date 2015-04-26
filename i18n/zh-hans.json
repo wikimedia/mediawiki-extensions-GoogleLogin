@@ -16,6 +16,7 @@
 	"googlelogin-manage-linked": "账户已连接Google账户，ID为",
 	"googlelogin-manage-notlinked": "此账户尚未连接一个Google账户。",
 	"googlelogin-manage-changelegend": "更改Google ID",
+	"googlelogin-manage-noplus": "<strong>注意：</strong>您输入的Google ID对应的用户看起来没有Google+个人信息。可能输入有误？",
 	"googlelogin-manage-changedsuccess": "用户现已与Google账户链接。",
 	"googlelogin-manage-terminatesuccess": "用户不再连接一个Google账户。",
 	"googlelogin-manage-changederror": "<strong>当创建/终止wiki用户与Google账户之间的连接时发生错误。</strong>",

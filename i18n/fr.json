@@ -3,10 +3,15 @@
 		"authors": [
 			"Gomoko",
 			"Orikrin1998",
-			"Weft"
+			"Weft",
+			"ChaudLeChocolat"
 		]
 	},
 	"googlelogin": "Connexion avec Google",
+	"managegooglelogin": "Gérer les connexions GoogleLogin",
+	"googlelogin-manage-usersubmit": "Gérer l'utilisateur",
+	"googlelogin-manage-no": "non",
+	"googlelogin-manage-plusinfo-title": "information de profil",
 	"googlelogin-create": "Créé avec Google",
 	"googlelogin-desc": "Fournit une [[Special:GoogleLogin|page spéciale]] pour permettre aux utilisateurs de se connecter avec leur compte Google",
 	"googlelogin-parerror": "La page demandée n’existe pas. Veuillez revenir en arrière et réessayer l’action.",
