@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bijay chaurasia"
+		]
+	},
+	"googlelogin-manage-notlinked": "ई खाता गुगल खातासंग जुडलनै अछि ।",
+	"googlelogin-manage-changelegend": "गुगल आईडी परिवर्तन",
+	"googlelogin-manage-changedsuccess": "प्रयोगकर्ता अब गुगल खाता संग जुडल अछि।",
+	"googlelogin-manage-isplusser": "गूगल प्लस पे पंजीकृतकरु",
+	"googlelogin-manage-orgname": "संस्थाके नाम",
+	"googlelogin-manage-orgtitle": "कामके स्थिति",
+	"googlelogin-manage-orgsince": "बाद में",
+	"googlelogin-manage-yes": "हँ",
+	"googlelogin-manage-dismiss": "खारिज",
+	"googlelogin-manage-errorloading": "भारण त्रुटि"
+}

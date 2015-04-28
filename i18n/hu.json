@@ -6,6 +6,9 @@
 		]
 	},
 	"googlelogin": "Bejelentkezés Google-lel",
+	"googlelogin-manage-yes": "igen",
+	"googlelogin-manage-no": "nem",
+	"googlelogin-username": "Felhasználónév",
 	"googlelogin-parerror": "A kért oldal nem létezik. Kérjük, lépj vissza, és próbáld újra a műveletet.",
 	"googlelogin-generic-error": "Hoppá, valami hiba történt. Kérjük, lépj vissza, és próbáld újra. Üzenet: $1",
 	"googlelogin-form-choosename-title": "Felhasználónév kiválasztása",

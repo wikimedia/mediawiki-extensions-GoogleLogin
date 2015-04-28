@@ -30,6 +30,7 @@
 	"googlelogin-manage-no": "否",
 	"googlelogin-manage-dismiss": "解除",
 	"googlelogin-manage-openpluslink": "打开Google+个人资料",
+	"googlelogin-manage-unknownerror": "当载入您的数据时发生未知错误。也许用户在Google Plus上不存在，或者个人资料ID无效？",
 	"googlelogin-manage-plusinfo-title": "个人信息",
 	"googlelogin-manage-errorloading": "载入错误",
 	"googlelogin-username": "用户名",

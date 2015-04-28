@@ -19,7 +19,7 @@
 	"googlelogin-manage-noplus": "<strong>Hinweis:</strong> Der Benutzer mit der eingegebenen Google-ID scheint kein Google+-Profil zu haben. Vielleicht ein Tippfehler?",
 	"googlelogin-manage-changedsuccess": "Der Benutzer ist jetzt mit dem Google-Konto verknüpft.",
 	"googlelogin-manage-terminatesuccess": "Der Benutzer ist nicht mehr mit einem Google-Konto verknüpft.",
-	"googlelogin-manage-changederror": "<strong>Beim Erstellen/Bestimmen des Links zwischen dem Wiki-Benutzer und dem Google-Konto ist ein Fehler aufgetreten.</strong>",
+	"googlelogin-manage-changederror": "<strong>Beim Erstellen/Entfernen des Links zwischen dem Wiki-Benutzer und dem Google-Konto ist ein Fehler aufgetreten.</strong>",
 	"googlelogin-manage-terminatebutton": "Verbindung entfernen",
 	"googlelogin-manage-invalidid": "Die neue eingegebene Google-ID ist ungültig. Die ID muss numerisch sein.",
 	"googlelogin-manage-isplusser": "Registriert auf Google Plus",
