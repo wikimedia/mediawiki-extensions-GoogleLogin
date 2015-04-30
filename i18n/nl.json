@@ -6,6 +6,9 @@
 			"Robin0van0der0vliet"
 		]
 	},
+	"googlelogin-manage-changelegend": "Google-ID aanpassen",
+	"googlelogin-manage-yes": "ja",
+	"googlelogin-manage-dismiss": "Sluiten",
 	"googlelogin-create": "Maak met Google",
 	"googlelogin-form-choosename-placeholder": "Uw gebruikersnaam",
 	"googlelogin-email": "E-mailadres",
