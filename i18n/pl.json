@@ -3,15 +3,21 @@
 		"authors": [
 			"Chrumps",
 			"Alan ffm",
-			"Py64"
+			"Py64",
+			"Devwebtel"
 		]
 	},
 	"googlelogin": "Zaloguj się za pomocą Google",
+	"googlelogin-managelegend": "Znajdź użytkownika do zarządzania",
+	"googlelogin-manage-usersubmit": "Zarządzaj Użytkownikiem",
 	"googlelogin-manage-notexist": "Nie ma użytkownika o nazwie <strong>$1</ strong>.",
+	"googlelogin-manage-changelegend": "Zmień Google ID",
 	"googlelogin-manage-terminatebutton": "Usuń połączenie",
 	"googlelogin-manage-yes": "tak",
 	"googlelogin-manage-no": "nie",
+	"googlelogin-manage-dismiss": "Odrzuć",
 	"googlelogin-manage-openpluslink": "Otwórz profil Google+",
+	"googlelogin-manage-plusinfo-title": "Dane osobowe",
 	"googlelogin-manage-errorloading": "Błąd ładowania",
 	"googlelogin-username": "Nazwa użytkownika",
 	"googlelogin-create": "Stwórz z Google",
