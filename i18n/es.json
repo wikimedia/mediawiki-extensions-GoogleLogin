@@ -7,8 +7,11 @@
 		]
 	},
 	"googlelogin": "Iniciar sesión con Google",
+	"googlelogin-manage-terminatebutton": "Terminar la conexión",
+	"googlelogin-manage-orgsince": "Desde",
 	"googlelogin-manage-yes": "sí",
 	"googlelogin-manage-no": "no",
+	"googlelogin-username": "Nombre de usuario",
 	"googlelogin-create": "Crear con Google",
 	"googlelogin-desc": "Proporciona una [[Special:GoogleLogin|Página especial]] para permitir a los usuarios iniciar sesión con sus cuentas de Google",
 	"googlelogin-parerror": "La página solicitada no existe. Por favor vuelve y prueba la acción otra vez.",
