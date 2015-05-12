@@ -18,7 +18,7 @@ $specialPageAliases['ar'] = array(
 	'GoogleLogin' => array( 'دخول_جوجل', 'دخول_مع_جوجل' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'GoogleLogin' => array( 'دخول' ),
 );
