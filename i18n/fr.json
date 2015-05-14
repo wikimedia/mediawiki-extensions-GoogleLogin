@@ -4,12 +4,14 @@
 			"Gomoko",
 			"Orikrin1998",
 			"Weft",
-			"ChaudLeChocolat"
+			"ChaudLeChocolat",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Connexion avec Google",
 	"managegooglelogin": "Gérer les connexions GoogleLogin",
 	"googlelogin-manage-usersubmit": "Gérer l'utilisateur",
+	"googlelogin-manage-yes": "oui",
 	"googlelogin-manage-no": "non",
 	"googlelogin-manage-plusinfo-title": "information de profil",
 	"googlelogin-create": "Créé avec Google",
