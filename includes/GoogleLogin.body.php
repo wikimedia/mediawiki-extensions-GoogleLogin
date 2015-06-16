@@ -522,74 +522,76 @@
 			return true;
 		}
 
-		/**
-		 * Redirects to GoogleLogin login page if called. Actually used for AuthPlugin
-		 * @todo: kill if better solution as AuthPlugin is found
-		 */
-		public static function externalLoginAttempt() {
-			global $wgOut, $wgRequest;
-			if (
-				$wgRequest->getVal( 'googlelogin-submit' ) !== null &&
-				$wgRequest->getVal( 'wpPassword' ) === ''
-			) {
-				$googleLogin = new GoogleLogin;
-				$googleLogin->setLoginParameter( $wgRequest );
-				$client = $googleLogin->getClient();
-				$authUrl = $client->createAuthUrl();
-				$wgOut->redirect( $authUrl );
-				$wgOut->output();
-			}
-		}
-
 		public static function getLoginCreateForm( &$tpl, $login = true ) {
 			$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
-			// we don't want to delete the output of other extensions, so "extend" header
-			$header = $tpl->get( 'header' );
-
-			// add css module
 			$out = $tpl->getSkin()->getOutput();
-			$out->addModules( 'ext.GoogleLogin.style' );
+			// actual styling doesn't work on create account page, there's already a nice div using the space
+			$showRight = $login ? $glConfig->get( 'GLShowRight' ) : false;
 
-			$keepLogin = '';
+			// add default css module
+			$modules = array( 'ext.GoogleLogin.style' );
+			// if the administrator requested to show the form at the right side,
+			// add this module, too
+			if ( $showRight ) {
+				$modules[] = 'ext.GoogleLogin.right.style';
+			}
+			$out->addModules( $modules );
+
+			// keep login is only added, if enabled in the configuration
+			$keepLogin = array();
 			if ( $glConfig->get( 'GLShowKeepLogin' ) && $login ) {
-				$keepLogin = Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
-				Html::openElement( 'div', array( 'class' => 'mw-ui-checkbox' ) ) .
-				Html::input(
-					'wpGoogleLoginRemember',
-					'1',
-					'checkbox',
-					array( 'id' => 'wpGoogleLoginRemember' )
-				) . ' ' .
-				Html::element(
-					'label',
-					array( 'for' => 'wpGoogleLoginRemember' ),
-					$tpl->getMsg( 'userlogin-remembermypassword' )->escaped()
-				) .
-				Html::closeElement( 'div') .
-				Html::closeElement( 'div');
+				$keepLogin = array(
+					'wpGoogleLoginRemember' => array(
+						'type' => 'check',
+						'value' => '1',
+						'id' => 'wpGoogleLoginRemember',
+						'name' => 'wpGoogleLoginRemember',
+						'label' => $tpl->getMsg( 'userlogin-remembermypassword' )->escaped()
+					)
+				);
 			}
 
+			// get the correct button value
 			if ( $login ) {
+				// login form value
 				$buttonMsg = $tpl->getMsg( 'googlelogin' )->escaped();
 			} else {
+				// create form value
 				$buttonMsg = $tpl->getMsg( 'googlelogin-create' )->escaped();
 			}
-			$header .=
-				$keepLogin .
-				Html::openElement( 'div', array( 'class' => 'mw-ui-vform-field' ) ) .
-				Html::element( 'input', array(
-						'class' => 'mw-ui-button mw-ui-destructive',
-						'style' => 'width:100%;',
-						'type' => 'submit',
-						'name' => 'googlelogin-submit',
-						'value' => $buttonMsg
-					), ''
-				) .
-				Html::closeElement( 'div' ) .
-				Html::openElement( 'fieldset', array( 'class' => 'loginSeperator' ) ) .
-				Html::element( 'legend', array(), $tpl->getMsg( 'googlelogin-or' )->escaped() ) .
-				Html::closeElement( 'fieldset' );
 
-			$tpl->set( 'header', $header );
+			// google login form button
+			$fields = array(
+				'googleLoginButton' => array(
+					'type' => 'submit',
+					'name' => 'googlelogin-submit',
+					'cssclass' => 'mw-ui-destructive',
+					'default' => $buttonMsg,
+					'flags' => array( 'primary', 'destructive' ),
+				)
+			) + $keepLogin;
+
+			// allow other extensions to add fields, too (e.g. other buttons)
+			// FIXME: Should this live in GoogleLogin? Not really!
+			Hooks::run( 'GoogleLoginFormFields', array( &$fields ) );
+
+			// create a separate vform above the "normal" user login form
+			$htmlForm = HTMLForm::factory( 'ooui', $fields, $tpl->getSkin()->getContext() );
+			// we don't need (and want) a separate submit button
+			$htmlForm->suppressDefaultSubmit();
+			$htmlForm->setId( 'googleloginForm' );
+			// the target isn't Special:UserLogin, set it to be Special:GoogleLogin
+			$htmlForm->setAction( SpecialPage::getTitleFor( 'GoogleLogin' )->getLocalUrl() );
+			// show the form
+			$htmlForm->prepareForm()->displayForm( false );
+
+			// if the form is above the login form, show a separator
+			if ( !$showRight ) {
+				$out->addHtml(
+					Html::openElement( 'fieldset', array( 'class' => 'loginSeperator mw-ui-vform' ) ) .
+					Html::element( 'legend', array(), $tpl->getMsg( 'googlelogin-or' )->escaped() ) .
+					Html::closeElement( 'fieldset' )
+				);
+			}
 		}
 	}
