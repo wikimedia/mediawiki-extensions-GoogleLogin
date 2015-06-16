@@ -15,8 +15,22 @@
 		 * @param SubPage $par Subpage submitted to this Special page.
 		 */
 		function execute( $par ) {
+			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
+			$request = $this->getRequest();
+			$out = $this->getOutput();
+
 			if ( session_id() == '' ) {
 				wfSetupSession();
+			}
+
+			// Check, if a user clicked the login button on the login/create form
+			if ( $request->getVal( 'googlelogin-submit' ) !== null ) {
+				$googleLogin->setLoginParameter( $request );
+				$client = $googleLogin->getClient();
+				$authUrl = $client->createAuthUrl();
+				$out->redirect( $authUrl );
+				$out->output();
+				return;
 			}
 
 			$config = $this->getConfig();
@@ -24,10 +38,7 @@
 			set_error_handler( 'GoogleLogin::catchableFatalHandler', E_RECOVERABLE_ERROR );
 
 			$this->setHeaders();
-			$request = $this->getRequest();
-			$out = $this->getOutput();
 			$db = new GoogleLoginDB;
-			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 
 			// add module styles
 			$out->addModules( 'ext.GoogleLogin.style' );

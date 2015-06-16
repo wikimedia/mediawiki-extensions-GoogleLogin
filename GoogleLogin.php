@@ -45,31 +45,17 @@
 		'license-name' => "MIT",
 	);
 
-	$dir = __DIR__;
-
 	// Autoload Classes
-	$wgAutoloadClasses[ 'GoogleLogin' ] = $dir . '/includes/GoogleLogin.body.php';
-	$wgAutoloadClasses[ 'SpecialGoogleLogin' ] = $dir . '/includes/specials/SpecialGoogleLogin.php';
-	$wgAutoloadClasses[ 'SpecialManageGoogleLogin' ] = $dir . '/includes/specials/SpecialManageGoogleLogin.php';
-	$wgAutoloadClasses[ 'GoogleLoginHooks' ] = $dir . '/includes/GoogleLogin.hooks.php';
-	$wgAutoloadClasses[ 'GoogleLoginDB' ] = $dir . '/includes/GoogleLoginDB.php';
-	$wgAutoloadClasses[ 'GoogleLoginAuth' ] = $dir . '/includes/GoogleLoginAuth.php';
-	$wgAutoloadClasses[ 'ApiGoogleLoginInfo' ] = $dir . '/includes/api/ApiGoogleLoginInfo.php';
-
-	$wgExtensionFunctions[] = 'efGoogleLoginSetup';
-
-	function efGoogleLoginSetup() {
-		global $wgAuth;
-		// check if we can load wgAuth automatically
-		if ( class_exists( 'GoogleLoginAuth' ) ) {
-			// load $wgAuth
-			$wgAuth = new GoogleLoginAuth;
-		}
-	}
+	$wgAutoloadClasses[ 'GoogleLogin' ] = __DIR__ . '/includes/GoogleLogin.body.php';
+	$wgAutoloadClasses[ 'SpecialGoogleLogin' ] = __DIR__ . '/includes/specials/SpecialGoogleLogin.php';
+	$wgAutoloadClasses[ 'SpecialManageGoogleLogin' ] = __DIR__ . '/includes/specials/SpecialManageGoogleLogin.php';
+	$wgAutoloadClasses[ 'GoogleLoginHooks' ] = __DIR__ . '/includes/GoogleLogin.hooks.php';
+	$wgAutoloadClasses[ 'GoogleLoginDB' ] = __DIR__ . '/includes/GoogleLoginDB.php';
+	$wgAutoloadClasses[ 'ApiGoogleLoginInfo' ] = __DIR__ . '/includes/api/ApiGoogleLoginInfo.php';
 
 	// i18n directory and aliases
-	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = $dir . '/GoogleLogin.alias.php';
-	$wgMessagesDirs['GoogleLogin'] = $dir . '/i18n';
+	$wgExtensionMessagesFiles[ 'GoogleLoginAlias' ] = __DIR__ . '/GoogleLogin.alias.php';
+	$wgMessagesDirs['GoogleLogin'] = __DIR__ . '/i18n';
 
 	// new user rights for this extension
 	$wgGroupPermissions['sysop']['managegooglelogin'] = true;
@@ -103,10 +89,16 @@
 		'remoteExtPath' => 'GoogleLogin'
 	);
 
-	$wgResourceModules['ext.GoogleLogin.style'] = $wgGLResourcePath + array(
-		'styles' => 'style/ext.GoogleLogin.css',
-		'position' => 'top',
-		'targets' => array( 'desktop', 'mobile' ),
+	$wgResourceModules += array(
+		'ext.GoogleLogin.style' => $wgGLResourcePath + array(
+			'styles' => 'style/ext.GoogleLogin.css',
+			'position' => 'top',
+			'targets' => array( 'desktop', 'mobile' ),
+		),
+		'ext.GoogleLogin.right.style' => $wgGLResourcePath + array(
+			'styles' => 'style/ext.GoogleLogin.right.css',
+			'position' => 'top',
+		),
 	);
 
 	$wgResourceModules['ext.GoogleLogin.specialManage.scripts'] = $wgGLResourcePath + array(
@@ -199,3 +191,9 @@
 	 * Key for public API access. Used only for admin actions to check, if the user has a plus profile or not.
 	 */
 	$wgGLAPIKey = '';
+
+	/**
+	 * If set to true, the Google Login button will be added to the right side of the login form, instead
+	 * above the normal login form.
+	 */
+	$wgGLShowRight = false;
