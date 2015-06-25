@@ -76,9 +76,7 @@
 	$wgAvailableRights[] = 'managegooglelogin';
 
 	// Special Page
-	$wgSpecialPageGroups[ 'GoogleLogin' ] = 'login';
 	$wgSpecialPages[ 'GoogleLogin' ] = 'SpecialGoogleLogin';
-	$wgSpecialPageGroups[ 'ManageGoogleLogin' ] = 'users';
 	$wgSpecialPages[ 'ManageGoogleLogin' ] = 'SpecialManageGoogleLogin';
 
 	// API Modules

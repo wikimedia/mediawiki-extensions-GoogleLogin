@@ -194,4 +194,8 @@
 		public static function submitGoogleId( $data ) {
 			return false;
 		}
+
+		protected function getGroupName() {
+			return 'users';
+		}
 	}

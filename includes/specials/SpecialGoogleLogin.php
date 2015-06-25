@@ -413,4 +413,8 @@
 				break;
 			}
 		}
+
+		protected function getGroupName() {
+			return 'login';
+		}
 	}
