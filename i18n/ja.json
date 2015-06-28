@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"SkyDaisy9"
+			"SkyDaisy9",
+			"Sujiniku"
 		]
 	},
 	"googlelogin-create": "Google で作成",
@@ -10,7 +11,7 @@
 	"googlelogin-form-choosename-title": "利用者名の選択",
 	"googlelogin-form-choosename-finish-title": "ウィキ アカウントの作成",
 	"googlelogin-form-choosename-existerror": "利用者名 ''$1'' は既に使用されています。他のものを指定してください。",
-	"googlelogin-form-merge-title": "利用者アカウントを統合",
+	"googlelogin-form-merge-title": "利用者アカウントをリンクする",
 	"googlelogin-form-logout": "別の Google アカウントでログイン",
 	"googlelogin-form-backlink": "Google ログインに戻る",
 	"googlelogin-form-create": "アカウントを作成",
