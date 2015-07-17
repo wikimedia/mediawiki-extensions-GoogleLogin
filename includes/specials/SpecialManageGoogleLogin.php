@@ -28,18 +28,21 @@
 				$out->addModules( 'mediawiki.userSuggest' );
 				$formFields = array(
 					'username' => array(
-						'type' => 'text',
+						'type' => 'user',
 						'name' => 'username',
 						'label-message' => 'googlelogin-username',
 						'id' => 'mw-gl-username',
-						'cssclass' => 'mw-autocomplete-user',
 						'autofocus' => true,
-					)
+					),
+					'submit' => array(
+						'type' => 'submit',
+						'default' => $this->msg( 'googlelogin-manage-usersubmit' )->text(),
+						'flags' => array( 'progressive', 'primary' ),
+					),
 				);
-				$htmlForm = new HTMLForm( $formFields, $this->getContext(), 'googlelogin-manage' );
+				$htmlForm = HTMLForm::factory( 'ooui', $formFields, $this->getContext(), 'googlelogin-manage' );
 				$htmlForm->setWrapperLegendMsg( $this->msg( 'googlelogin-managelegend' ) );
-				$htmlForm->setSubmitText( $this->msg( 'googlelogin-manage-usersubmit' )->text() );
-				$htmlForm->setSubmitProgressive();
+				$htmlForm->suppressDefaultSubmit();
 				$htmlForm->setSubmitCallback( array( $this, 'submitUserName' ) );
 				$htmlForm->show();
 			} else {
