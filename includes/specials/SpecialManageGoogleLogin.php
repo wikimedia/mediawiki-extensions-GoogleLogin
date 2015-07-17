@@ -4,7 +4,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	private $mGoogleLogin;
 
 	/** @var User $manageableUser User object of the user to manage */
-	private static $manageableUser = null;
+	private $manageableUser = null;
 
 	function __construct() {
 		parent::__construct( 'ManageGoogleLogin', 'managegooglelogin' );
@@ -24,36 +24,30 @@ class SpecialManageGoogleLogin extends SpecialPage {
 			return;
 		}
 		$this->setHeaders();
-		if ( !$request->getVal( 'glManageableUser' ) ) {
-			$out->addModules( 'mediawiki.userSuggest' );
-			$formFields = array(
-				'username' => array(
-					'type' => 'text',
-					'name' => 'username',
-					'label-message' => 'googlelogin-username',
-					'id' => 'mw-gl-username',
-					'cssclass' => 'mw-autocomplete-user',
-					'autofocus' => true,
-				)
-			);
-			$htmlForm = new HTMLForm( $formFields, $this->getContext(), 'googlelogin-manage' );
-			$htmlForm->setWrapperLegendMsg( $this->msg( 'googlelogin-managelegend' ) );
-			$htmlForm->setSubmitText( $this->msg( 'googlelogin-manage-usersubmit' )->text() );
-			$htmlForm->setSubmitProgressive();
-			$htmlForm->setSubmitCallback( array( $this, 'submitUserName' ) );
-			$htmlForm->show();
-		} else {
-			$this->submitUserName(
-				array(
-					'username' => $request->getVal( 'glManageableUser' )
-				)
-			);
-		}
+		$out->addModules( 'mediawiki.userSuggest' );
+		$formFields = array(
+			'username' => array(
+				'type' => 'user',
+				'name' => 'username',
+				'label-message' => 'googlelogin-username',
+				'id' => 'mw-gl-username',
+				'autofocus' => true,
+				'exists' => true,
+			),
+			'submit' => array(
+				'type' => 'submit',
+				'default' => $this->msg( 'googlelogin-manage-usersubmit' )->text(),
+				'flags' => array( 'progressive', 'primary' ),
+			),
+		);
+		$htmlForm = HTMLForm::factory( 'ooui', $formFields, $this->getContext(), 'googlelogin-manage' );
+		$htmlForm->setWrapperLegendMsg( $this->msg( 'googlelogin-managelegend' ) );
+		$htmlForm->suppressDefaultSubmit();
+		$htmlForm->setSubmitCallback( array( $this, 'submitUserName' ) );
+		$htmlForm->show();
 
-		if ( self::$manageableUser ) {
-			$this->manageUser( self::$manageableUser );
-		} else {
-
+		if ( $this->manageableUser ) {
+			$this->manageUser( $this->manageableUser );
 		}
 	}
 
@@ -63,9 +57,9 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	 * @param array $data Formdata
 	 * @return boolean
 	 */
-	public function submitUserName( $data ) {
-		if ( !isset( $data['username'] ) ) {
-			return false;
+	public function submitUserName( array $data ) {
+		$this->submitForm( $data, false );
+		return true;
 		}
 		$checkUser = User::newFromName( $data['username'] );
 		if ( !$checkUser || $checkUser->isAnon() ) {
@@ -170,17 +164,17 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				'id' => 'mw-gl-username',
 			)
 		);
-		$htmlForm = new HTMLForm( $formFields, $this->getContext(), 'googlelogin-change' );
-		$htmlForm->addHiddenField( 'glManageableUser', $user->getName() );
+		$htmlForm = HTMLForm::factory( 'ooui', $formFields, $this->getContext(), 'googlelogin-change' );
+		$htmlForm->addHiddenField( 'username', $user->getName() );
 		$htmlForm->setWrapperLegendMsg( $this->msg( 'googlelogin-manage-changelegend' ) );
-		$htmlForm->setSubmitCallback( array( 'SpecialManageGoogleLogin', 'submitGoogleId' ) );
+		$htmlForm->setSubmitCallback( array( $this, 'submitForm' ) );
 		if ( $id ) {
 			$htmlForm->addButton(
 				'terminate-link',
 				$this->msg( 'googlelogin-manage-terminatebutton' )->escaped(),
 				null,
 				array(
-					'class' => 'mw-ui-destructive',
+					'flags' => array( 'destructive' ),
 				)
 			);
 		}
@@ -191,9 +185,17 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	 * Submithandler for new google id
 	 *
 	 * @param array $data Formdata
+	 * @param boolean $checkSession If true, checks, if the form was submitted by the user itself
 	 * @return boolean
 	 */
-	public static function submitGoogleId( $data ) {
+	public function submitForm( array $data, $checkSession = true ) {
+		$user = $this->getUser();
+		$request = $this->getRequest();
+		$name = ( isset( $data['username'] ) ? $data['username'] : '' );
+		if ( $checkSession && !$user->matchEditToken( $request->getVal( 'wpEditToken' ), $name ) ) {
+			throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
+		}
+		$this->manageableUser = User::newFromName( $name );
 		return false;
 	}
 
