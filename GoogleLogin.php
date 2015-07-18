@@ -1,7 +1,7 @@
 <?php
 	/**
 	GoogleLogin License
-	Copyright (c) 2014 Florian Schmidt
+	Copyright (c) 2015 Florian Schmidt
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -26,9 +26,9 @@
 		die( 'This is an extension for Mediawiki and can not run standalone.' );
 	}
 
-	// master and v2.x requires MediaWiki 1.24
-	if ( version_compare( $wgVersion, '1.24c', '<' ) ) {
-		echo "This version of GoogleLogin requires MediaWiki 1.24, you have $wgVersion.<br>
+	// master and v2.x requires MediaWiki 1.25
+	if ( version_compare( $wgVersion, '1.25c', '<' ) ) {
+		echo "This version of GoogleLogin requires MediaWiki 1.25, you have $wgVersion.<br>
 		You can <a href='https://www.mediawiki.org/wiki/Upgrade'>upgrade your MediaWiki Installation</a>
 		or <a href='https://www.mediawiki.org/wiki/Special:ExtensionDistributor/GoogleLogin'>download a
 		version of GoogleLogin</a> which supports your MediaWiki version.";
@@ -41,7 +41,7 @@
 		'author' => 'Florian Schmidt',
 		'url' => 'https://www.mediawiki.org/wiki/Extension:GoogleLogin',
 		'descriptionmsg' => 'googlelogin-desc',
-		'version'  => '0.2.1-git',
+		'version'  => '0.2.1',
 		'license-name' => "MIT",
 	);
 
