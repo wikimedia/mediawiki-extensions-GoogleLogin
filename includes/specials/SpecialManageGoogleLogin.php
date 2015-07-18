@@ -68,7 +68,7 @@
 				return false;
 			}
 			$checkUser = User::newFromName( $data['username'] );
-			if ( $checkUser->isAnon() ) {
+			if ( !$checkUser || $checkUser->isAnon() ) {
 				return wfMessage( 'googlelogin-manage-notexist', $data['username'] );
 			}
 			self::$manageableUser = $checkUser;
