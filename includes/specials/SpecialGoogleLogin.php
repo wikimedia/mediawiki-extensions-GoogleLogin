@@ -18,6 +18,7 @@
 			$this->mGoogleLogin = $googleLogin = new GoogleLogin;
 			$request = $this->getRequest();
 			$out = $this->getOutput();
+			$out->enableOOUI();
 
 			if ( session_id() == '' ) {
 				wfSetupSession();
@@ -81,32 +82,44 @@
 							return;
 						}
 						$googleIdExists = $db->googleIdExists( $userInfo['id'] );
-						$buildTable = array(
-							array(
-								'Google-ID', $userInfo['id']
-							),
-							array(
-								$this->msg( 'googlelogin-googleuser' )->text(), $userInfo['displayName']
-							),
-							array(
-								$this->msg( 'googlelogin-email' )->text(), $userInfo['emails'][0]['value']
-							),
-							array(
-								$this->msg( 'googlelogin-linkstatus' )->text(),
-								( $googleIdExists ? $this->msg( 'googlelogin-linked' )->text() :
-									$this->msg( 'googlelogin-unlinked' )->text() )
-							)
+						// data that will be added to the account information box
+						$data = array(
+							'Google-ID' => $userInfo['id'],
+							$this->msg( 'googlelogin-googleuser' )->text() => $userInfo['displayName'],
+							$this->msg( 'googlelogin-email' )->text() => $userInfo['emails'][0]['value'],
+							$this->msg( 'googlelogin-linkstatus' )->text() => ( $googleIdExists ?
+								$this->msg( 'googlelogin-linked' )->text() : $this->msg( 'googlelogin-unlinked' )->text() ),
 						);
-						$tableAttribs = array(
-							'class' => 'googlelogin-summary'
+						$items = array();
+						// expand the data to ooui elements
+						foreach ( $data as $label => $d ) {
+							$items[] = new OOUI\FieldLayout(
+								new OOUI\LabelWidget( array(
+									'label' => $d
+								) ),
+								array(
+									'align' => 'left',
+									'label' => $label
+								)
+							);
+						}
+
+						// create a wrapper panel
+						$container = new OOUI\PanelLayout( array(
+							'padded' => true,
+							'expanded' => false,
+							'framed' => true,
+							'infusable' => true,
+						) );
+						// add the fieldset to the wrapper panel and output it
+						$container->appendContent(
+							new OOUI\FieldsetLayout( array(
+								'infusable' => true,
+								'label' => $this->msg( 'googlelogin-information-title' )->text(),
+								'items' => $items,
+							) )
 						);
-						if ( !$googleIdExists ) $this->createSubmitButton( 'Logout', 'progressive' );
-						$out->addHtml( Html::openelement( 'fieldset' ) .
-							Html::element( 'legend', null, $this->msg( 'googlelogin-information-title' )->text() ) .
-							Html::element( 'label', null, $this->msg( 'googlelogin-information-body' )->text() ) .
-							Xml::buildTable( $buildTable, $tableAttribs ) .
-							Html::closeelement( 'fieldset' )
-						);
+						$out->addHtml( $container );
 						$this->createOrMerge( $userInfo, $db );
 					}
 				} else {
@@ -211,22 +224,20 @@
 				$request->getVal( 'wpChooseName' ) : 'wpOwn');
 			$formElements = array(
 				'ChooseName' => array(
-					'section' => 'choosename',
-					'class' => 'HTMLRadioField',
 					'type' => 'radio',
 					'options' => $names,
 					'default' => $defaultName,
 				),
 				'ChooseOwn' => array(
-					'section' => 'choosename',
 					'class' => 'HTMLTextField',
 					'default' => $request->getVal( 'wpChooseOwn' ),
 					'placeholder' => $this->msg( 'googlelogin-form-choosename-placeholder' )->text()
 				),
 			);
-			$htmlForm = new HTMLForm( $formElements, $this->getContext(), 'googlelogin-form' );
+			$htmlForm = HTMLForm::factory( 'ooui', $formElements, $this->getContext(), 'googlelogin-form' );
 			$htmlForm->addHiddenField( 'action', 'Create' );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
+			$htmlForm->setWrapperLegendMsg( 'googlelogin-form-choosename' );
 			$htmlForm->setSubmitText( $this->msg( 'googlelogin-form-create' )->text() );
 			$htmlForm->setAction( $this->getPageTitle( 'Create' )->getLocalUrl() );
 			$htmlForm->setSubmitCallback( array( 'GoogleLogin', 'submitChooseName' ) );
@@ -240,7 +251,8 @@
 		 *	the suffix for the Message key for the buttons name)
 		 */
 		private function createSubmitButton( $action, $submitClass = null ) {
-			$htmlForm = new HTMLForm(
+			$htmlForm = HTMLForm::factory(
+				'ooui',
 				array(),
 				$this->getContext(),
 				'googlelogin-form' . strtolower( $action )
