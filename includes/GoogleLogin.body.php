@@ -419,7 +419,24 @@ class GoogleLogin extends ContextSource {
 				strpos( $tld, '.' ) === false ||
 				substr_count( $tld, '.' ) >= $max_tl
 			) {
+<<<<<<< HEAD
 				unset( $tlds[ $i ] );
+=======
+				return wfMessage( 'googlelogin-form-choosename-error' )->text();
+			} elseif ( $data['ChooseOwn'] === 'wpAlreadyRegistered' ) {
+				return true;
+			} else {
+				if ( $data['ChooseName'] == 'wpOwn' && empty( $data['ChooseOwn'] ) ) {
+					return wfMessage( 'googlelogin-form-chooseown-error' )->text();
+				}
+				if (
+					$data['ChooseName'] == 'wpOwn' &&
+					!empty( $data['ChooseOwn'] ) &&
+					!GoogleLogin::isValidUserName( $data['ChooseOwn'] )
+				) {
+					return wfMessage( 'googlelogin-form-choosename-existerror', $data['ChooseOwn'] )->text();
+				}
+>>>>>>> Enable to link a new Google account with an existing wiki account
 			}
 			$i++;
 		}
@@ -468,6 +485,7 @@ class GoogleLogin extends ContextSource {
 		}
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Callback-function for create form to check, if needed data is set.
 	 * @see SpecialGoogleLogin::createGoogleUserForm()
@@ -484,6 +502,25 @@ class GoogleLogin extends ContextSource {
 		} else {
 			if ( $data['ChooseName'] == 'wpOwn' && empty( $data['ChooseOwn'] ) ) {
 				return wfMessage( 'googlelogin-form-chooseown-error' )->text();
+=======
+		public static function getLoginCreateForm( &$tpl, $login = true ) {
+			$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
+			$request = $tpl->getSkin()->getRequest();
+			$out = $tpl->getSkin()->getOutput();
+			// actual styling doesn't work on create account page, there's already a nice div using the space
+			$showRight = $login ? $glConfig->get( 'GLShowRight' ) : false;
+
+			// disallow login with google, if the user has to login to link the google account with the wiki account
+			if ( $request->getVal( 'loginmerge' ) === '1' ) {
+				return;
+			}
+			// add default css module
+			$modules = array( 'ext.GoogleLogin.style' );
+			// if the administrator requested to show the form at the right side,
+			// add this module, too
+			if ( $showRight ) {
+				$modules[] = 'ext.GoogleLogin.right.style';
+>>>>>>> Enable to link a new Google account with an existing wiki account
 			}
 			if (
 				$data['ChooseName'] == 'wpOwn' &&
