@@ -151,4 +151,13 @@
 			$tags[] = 'googlelogin';
 			return true;
 		}
+
+		/**
+		 * Adds a custom valid error message to the login page, used when the user want
+		 * to link an account with the google account and isn't logged in so far.
+		 * @param array $messages Already added messages
+		 */
+		public static function onLoginFormValidErrorMessages( array &$messages ) {
+			$messages[] = 'googlelogin-login-merge-warning';
+		}
 	}

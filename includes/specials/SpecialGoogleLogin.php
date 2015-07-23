@@ -212,7 +212,9 @@
 		private function createGoogleUserForm( $userInfo, $db ) {
 			$request = $this->getRequest();
 			$this->getOutput()->setPageTitle( $this->msg( 'googlelogin-form-choosename-title' )->text() );
-			$names = array();
+			$names = array(
+				$this->msg( 'googlelogin-login-already-registered' )->text() => 'wpAlreadyRegistered'
+			);
 			if ( GoogleLogin::isValidUsername( $userInfo['displayName'] ) ) {
 				$names[$userInfo['displayName']] = 'wpDisplayName';
 			}
@@ -238,7 +240,7 @@
 			$htmlForm->addHiddenField( 'action', 'Create' );
 			$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
 			$htmlForm->setWrapperLegendMsg( 'googlelogin-form-choosename' );
-			$htmlForm->setSubmitText( $this->msg( 'googlelogin-form-create' )->text() );
+			$htmlForm->setSubmitText( $this->msg( 'googlelogin-form-next' )->text() );
 			$htmlForm->setAction( $this->getPageTitle( 'Create' )->getLocalUrl() );
 			$htmlForm->setSubmitCallback( array( 'GoogleLogin', 'submitChooseName' ) );
 
@@ -318,15 +320,45 @@
 					$out->addWikiMsg( 'googlelogin-parerror' );
 				break;
 				case 'Create':
+					if ( !$this->mGoogleLogin->isValidRequest() ) {
+						$this->createError( 'Token failure' );
+					}
 					// Handles the creation of a new wikiuser, but before: check, if no-one changed the username
 					// and is still valid
 					// Finish with the creation of connection between user id and google id
-					if ( $this->mGoogleLogin->isValidRequest() && $this->mGoogleLogin->isCreateAllowed() ) {
+					if ( $this->mGoogleLogin->isCreateAllowed() ) {
 						$userName = '';
-						if ( $request->getVal( 'wpChooseName' ) === null ) {
+						$chooseOwn = $request->getVal( 'wpChooseName' );
+						if ( $chooseOwn === null ) {
 							$this->createGoogleUserForm( $userInfo, $db );
 						}
-						if ( $request->getVal( 'wpChooseName' ) === 'wpOwn' ) {
+						// if the user selected the "i have an account" option, redirect to the login page
+						// with all required parameter
+						if ( $chooseOwn === 'wpAlreadyRegistered' ) {
+							// target page query
+							$query = array(
+								// to redirect the user to the link function directly after login
+								'action' => 'Merge',
+								// with this parameter, the user doesn't get an error message because of the
+								// missing form token
+								'fromLogin' => 1
+							);
+
+							$out->redirect(
+								// redirect to Special:UserLogin
+								SpecialPage::getTitleFor( 'UserLogin' )->getFullUrl( array(
+									'returnto' => 'Special:GoogleLogin',
+									'returntoquery' => wfArrayToCgi( $query ),
+									// this parameter disables the "Login with Google" option, it would be
+									// pointless here
+									'loginmerge' => 1,
+									// a custom warning message, if you change the mesasge key, change it in
+									// GoogleLoginHooks::onLoginFormValidErrorMessages, too
+									'warning' => 'googlelogin-login-merge-warning',
+								) )
+							);
+						}
+						if ( $chooseOwn === 'wpOwn' ) {
 							if ( $request->getVal( 'wpChooseOwn' ) === '' ) {
 								$this->createGoogleUserForm( $userInfo, $db );
 							} elseif(
@@ -338,14 +370,14 @@
 								$userName = $request->getVal( 'wpChooseOwn' );
 							}
 						}
-						if ( $request->getVal( 'wpChooseName' ) === 'wpDisplayName' ) {
+						if ( $chooseOwn === 'wpDisplayName' ) {
 							if ( GoogleLogin::isValidUsername( $userInfo['displayName'] ) ) {
 								$userName = $userInfo['displayName'];
 							} else {
 								$this->createGoogleUserForm( $userInfo, $db );
 							}
 						}
-						if ( $request->getVal( 'wpChooseName' ) === 'wpGivenName' ) {
+						if ( $chooseOwn === 'wpGivenName' ) {
 							if ( GoogleLogin::isValidUsername( $userInfo['name']['givenName'] ) ) {
 								$userName = $userInfo['name']['givenName'];
 							} else {
@@ -385,9 +417,7 @@
 							}
 						}
 					} else {
-						$this->createError(
-							($this->mGoogleLogin->isCreateAllowed() ? 'Token failure' : 'not allowed')
-						);
+						$this->createError( 'not allowed' );
 					}
 				break;
 				case 'Merge':
@@ -403,6 +433,8 @@
 								$this->createError( 'Database error' );
 							}
 						}
+					} elseif ( $request->getBool( 'fromLogin' ) === true ) {
+						$this->createOrMerge( $userInfo, $db );
 					} else {
 						$this->createError( 'Token failure' );
 					}

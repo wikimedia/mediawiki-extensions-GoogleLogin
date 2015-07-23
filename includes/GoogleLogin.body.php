@@ -480,6 +480,8 @@
 				empty( $data['ChooseName'] )
 			) {
 				return wfMessage( 'googlelogin-form-choosename-error' )->text();
+			} elseif ( $data['ChooseOwn'] === 'wpAlreadyRegistered' ) {
+				return true;
 			} else {
 				if ( $data['ChooseName'] == 'wpOwn' && empty( $data['ChooseOwn'] ) ) {
 					return wfMessage( 'googlelogin-form-chooseown-error' )->text();
@@ -524,10 +526,15 @@
 
 		public static function getLoginCreateForm( &$tpl, $login = true ) {
 			$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
+			$request = $tpl->getSkin()->getRequest();
 			$out = $tpl->getSkin()->getOutput();
 			// actual styling doesn't work on create account page, there's already a nice div using the space
 			$showRight = $login ? $glConfig->get( 'GLShowRight' ) : false;
 
+			// disallow login with google, if the user has to login to link the google account with the wiki account
+			if ( $request->getVal( 'loginmerge' ) === '1' ) {
+				return;
+			}
 			// add default css module
 			$modules = array( 'ext.GoogleLogin.style' );
 			// if the administrator requested to show the form at the right side,
