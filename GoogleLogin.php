@@ -80,6 +80,7 @@ $wgHooks['GetPreferences'][] = 'GoogleLoginHooks::onGetPreferences';
 $wgHooks['RecentChange_save'][] = 'GoogleLoginHooks::onRecentChange_save';
 $wgHooks['ListDefinedTags'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
 $wgHooks['ChangeTagsListActive'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
+$wgHooks['LoginFormValidErrorMessages'][] = 'GoogleLoginHooks::onLoginFormValidErrorMessages';
 
 // ResourceLoader modules
 // path template
