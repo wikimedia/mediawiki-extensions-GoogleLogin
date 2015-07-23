@@ -3,6 +3,13 @@
 	"description": "Allow users to login to MediaWiki with their Google Account",
 	"license": "MIT",
 	"require-dev": {
-		"squizlabs/php_codesniffer": "1.*"
+		"mediawiki/mediawiki-codesniffer": "0.3.0",
+		"jakub-onderka/php-parallel-lint": "0.9"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpcs --standard=vendor/mediawiki/mediawiki-codesniffer/MediaWiki --extensions=php,php5,inc --ignore=vendor -p ."
+		]
 	}
 }
