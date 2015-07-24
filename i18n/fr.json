@@ -6,12 +6,15 @@
 			"Weft",
 			"ChaudLeChocolat",
 			"Macofe",
-			"Lucky"
+			"Lucky",
+			"Wladek92"
 		]
 	},
 	"googlelogin": "Connexion avec Google",
 	"managegooglelogin": "Gérer les connexions GoogleLogin",
 	"googlelogin-manage-usersubmit": "Gérer l'utilisateur",
+	"googlelogin-manage-changelegend": "Changer le Google ID",
+	"googlelogin-manage-terminatebutton": "Supprimer la connexion",
 	"googlelogin-manage-orgsince": "Depuis",
 	"googlelogin-manage-yes": "oui",
 	"googlelogin-manage-no": "non",
