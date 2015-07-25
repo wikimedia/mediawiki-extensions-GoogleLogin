@@ -15,9 +15,12 @@
 	"googlelogin-manage-usersubmit": "Gérer l'utilisateur",
 	"googlelogin-manage-changelegend": "Changer le Google ID",
 	"googlelogin-manage-terminatebutton": "Supprimer la connexion",
+	"googlelogin-manage-orgtitle": "Activité professionnelle",
 	"googlelogin-manage-orgsince": "Depuis",
 	"googlelogin-manage-yes": "oui",
 	"googlelogin-manage-no": "non",
+	"googlelogin-manage-dismiss": "Rejeter",
+	"googlelogin-manage-openpluslink": "Ouvrir le profil Google+",
 	"googlelogin-manage-plusinfo-title": "information de profil",
 	"googlelogin-manage-errorloading": "Erreur de chargement",
 	"googlelogin-username": "Nom d’utilisateur",
@@ -55,5 +58,6 @@
 	"googlelogin-success-merge": "Félicitations ! Votre compte wiki est maintenant lié à votre compte Google.",
 	"googlelogin-success-unlink": "Félicitations ! Votre compte wiki n’est plus lié à votre compte Google.",
 	"googlelogin-prefs-status": "État de GoogleLogin :",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]"
+	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
+	"action-managegooglelogin": "Gérer les connexions GoogleLogin"
 }
