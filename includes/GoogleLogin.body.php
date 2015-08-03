@@ -227,20 +227,16 @@ class GoogleLogin extends ContextSource {
 	}
 
 	/**
-	 * Checks, if the Username is valid to register
+	 * Checks, if the Username is valid and createable
 	 * @param string $name The username to check
 	 * @return boolean
 	 */
 	public static function isValidUserName( $name ) {
-		if (
-			User::isCreatableName( $name ) &&
-			User::isValidUserName( $name ) &&
-			User::idFromName( $name ) === null
-		) {
-			return true;
-		} else {
+		$user = User::newFromName( $name, 'creatable' );
+		if ( !$user ) {
 			return false;
 		}
+		return true;
 	}
 
 	/**

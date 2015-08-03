@@ -70,5 +70,6 @@
 	"googlelogin-prefs-status": "Name of the Line in Special:Preferences identifying GoogleLoign status (linked or not linked).",
 	"tag-googlelogin": "Tag in [[Special:RecentChanges]] for user account creations made with GoogleLogin.\n\nSee also:\n* {{msg-mw|Tag-googlelogin-description}}",
 	"tag-googlelogin-description": "Short description, that account creations with this tag are made with GoogleLogin.",
-	"action-managegooglelogin": "Message key for user right \"managegooglelogin\""
+	"action-managegooglelogin": "Message key for user right \"managegooglelogin\"",
+	"right-managegooglelogin": "Description of user right to view, edit and remove Google Login connections.\n\n{{Doc-right|mf-uploadbutton}}"
 }
