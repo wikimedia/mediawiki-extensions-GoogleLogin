@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_a16e2f28",
+        "filename": "includes/GoogleLogin.body.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-08-03T22:28:21Z",
+      "side": 1,
+      "message": "The whole function should probably be rewritten to use the same logic as Special:Userlogin (which takes care about this problem already). See: https://github.com/wikimedia/mediawiki/blob/master/includes/specials/SpecialUserlogin.php#L541-L546 :)",
+      "revId": "f794b32d99f5bb5f01a3a649310e4238f9095fdd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
