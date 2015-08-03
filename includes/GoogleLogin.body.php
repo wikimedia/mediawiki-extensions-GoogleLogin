@@ -232,6 +232,7 @@ class GoogleLogin extends ContextSource {
 	 * @return boolean
 	 */
 	public static function isValidUserName( $name ) {
+		$name = ucfirst($name);
 		if (
 			User::isCreatableName( $name ) &&
 			User::isValidUserName( $name ) &&
