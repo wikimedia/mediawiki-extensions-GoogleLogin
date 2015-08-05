@@ -1,4 +1,6 @@
 <?php
+use GoogleLogin\GoogleUser as User;
+
 class SpecialManageGoogleLogin extends SpecialPage {
 	/** @var $mGoogleLogin saves an instance of GoogleLogin class */
 	private $mGoogleLogin;
@@ -79,12 +81,12 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		);
 		$out->addBackLinkSubtitle( $this->getPageTitle() );
 		$db = new GoogleLoginDB;
-		$id = $db->userIdExists( $user->getId() );
+		$id = $user->getGoogleId();
 		$googleId = $request->getVal( 'googleid' );
 		$terminateLink = $request->getVal( 'terminate-link' );
-		if ( isset( $terminateLink ) && $id ) {
+		if ( isset( $terminateLink ) && $user->hasConnectedGoogleAccount() ) {
 			// terminate the connection
-			if ( $db->terminateConnection( $id['id'] ) ) {
+			if ( $user->terminateGoogleConnection() ) {
 				$out->addWikiMsg( 'googlelogin-manage-terminatesuccess' );
 				$id = false;
 			} else {
@@ -109,12 +111,12 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				}
 				// FIXME: Really need to terminate and then create a
 				// new connection, how about an update routine?
-				if ( !empty( $id ) ) {
-					$db->terminateConnection( $id['id'] );
+				if ( $id === 0 ) {
+					$user->terminateGoogleConnection();
 				}
 				if ( $db->createConnection( $googleId, $user->getId() ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-changedsuccess' );
-					$id = $db->userIdExists( $user->getId() );
+					$id = $user->getGoogleId();
 				} else {
 					$out->addWikiMsg( 'googlelogin-manage-changederror' );
 				}
@@ -130,20 +132,20 @@ class SpecialManageGoogleLogin extends SpecialPage {
 					array(
 						'class' => 'googlelogin-googleid',
 					),
-					$id['id']
+					$id
 				) .
 				Html::element( 'a',
 					array(
 						'href' => 'javascript:void(0)',
 						'class' => 'googlelogin-googleid hidden',
-						'data-googleid' => $id['id'],
+						'data-googleid' => $id,
 					),
-					$id['id']
+					$id
 				) .
 				Html::closeElement( 'strong' ) .
 				Html::closeElement( 'div' )
 			);
-			$formId = $id['id'];
+			$formId = $id;
 		} else {
 			$out->addWikiMsg( 'googlelogin-manage-notlinked' );
 			$formId = '';
