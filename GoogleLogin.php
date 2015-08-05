@@ -51,7 +51,7 @@ $wgAutoloadClasses[ 'SpecialGoogleLogin' ] = __DIR__ . '/includes/specials/Speci
 $wgAutoloadClasses[ 'SpecialManageGoogleLogin' ] =
 	__DIR__ . '/includes/specials/SpecialManageGoogleLogin.php';
 $wgAutoloadClasses[ 'GoogleLoginHooks' ] = __DIR__ . '/includes/GoogleLogin.hooks.php';
-$wgAutoloadClasses[ 'GoogleLoginDB' ] = __DIR__ . '/includes/GoogleLoginDB.php';
+$wgAutoloadClasses[ 'GoogleLogin\\GoogleUser' ] = __DIR__ . '/includes/GoogleUser.php';
 $wgAutoloadClasses[ 'ApiGoogleLoginInfo' ] = __DIR__ . '/includes/api/ApiGoogleLoginInfo.php';
 
 // i18n directory and aliases
@@ -81,7 +81,6 @@ $wgHooks['RecentChange_save'][] = 'GoogleLoginHooks::onRecentChange_save';
 $wgHooks['ListDefinedTags'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
 $wgHooks['ChangeTagsListActive'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
 $wgHooks['LoginFormValidErrorMessages'][] = 'GoogleLoginHooks::onLoginFormValidErrorMessages';
-$wgHooks['UnitTestsList'][] = 'GoogleLoginHooks::onUnitTestsList';
 
 // ResourceLoader modules
 // path template
