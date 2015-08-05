@@ -1,4 +1,6 @@
 <?php
+use GoogleLogin\GoogleUser as User;
+
 class GoogleLoginHooks {
 	public static function onUserLogoutComplete() {
 		$googleLogin = new GoogleLogin;
@@ -86,11 +88,9 @@ class GoogleLoginHooks {
 	* @return bool
 	*/
 	static function onGetPreferences( $user, &$preferences ) {
-		// GoogleLoginDB instance to check if user is connected
-		$db = new GoogleLoginDB;
-
 		// check if the userid is linked with a google id
-		$userIdExists = $db->userIdExists( $user->getId() );
+		$googleUser = User::newFromId( $user->getId() );
+		$userIdExists = $googleUser->hasConnectedGoogleAccount();
 
 		// generate the content for Special:Preferences
 		$status = ( $userIdExists ? wfMessage( 'googlelogin-linked' )->text() :
