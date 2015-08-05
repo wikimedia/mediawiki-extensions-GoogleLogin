@@ -1,4 +1,7 @@
 <?php
+use GoogleLogin\GoogleUser as User;
+use \User as MWUser;
+
 class SpecialGoogleLogin extends SpecialPage {
 	/** @var $mGoogleLogin saves an instance of GoogleLogin class */
 	private $mGoogleLogin;
@@ -141,14 +144,15 @@ class SpecialGoogleLogin extends SpecialPage {
 			$this->createError( $e->getMessage() );
 			return;
 		}
-		$googleIdExists = $db->googleIdExists( $userInfo['id'] );
+		$user = User::newFromGoogleId( $userInfo['id'] );
+
 		// data that will be added to the account information box
 		$data = array(
 			'Google-ID' => $userInfo['id'],
 			$this->msg( 'googlelogin-googleuser' )->text() => $userInfo['displayName'],
 			$this->msg( 'googlelogin-email' )->text() => $userInfo['emails'][0]['value'],
-			$this->msg( 'googlelogin-linkstatus' )->text() => ( $googleIdExists ?
-			$this->msg( 'googlelogin-linked' )->text() : $this->msg( 'googlelogin-unlinked' )->text() ),
+			$this->msg( 'googlelogin-linkstatus' )->text() => ( $user->hasConnectedGoogleAccount() ?
+				$this->msg( 'googlelogin-linked' )->text() : $this->msg( 'googlelogin-unlinked' )->text() ),
 		);
 
 		$items = array();
@@ -183,7 +187,7 @@ class SpecialGoogleLogin extends SpecialPage {
 		);
 
 		$out->addHtml( $container );
-		$this->createOrMerge( $userInfo );
+		$this->createOrMerge( $userInfo, false, $user );
 	}
 
 	/**
@@ -201,17 +205,22 @@ class SpecialGoogleLogin extends SpecialPage {
 	 * @param boolean $redirect If true, the function will redirect to Special:GoogleLogin if
 	 * 	nothing to display.
 	 */
-	private function createOrMerge( $userInfo, $redirect = false ) {
+	private function createOrMerge( $userInfo, $redirect = false, $gluser = null ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 		$user = $this->getUser();
-		$googleIdExists = $this->mGLDB->googleIdExists( $userInfo['id'] );
+
+		if ( $gluser === null ) {
+			$gluser = User::newFromGoogleId( 0 );
+		}
+		$googleId = $gluser->getGoogleId();
+
 		if (
 			$this->mGoogleLogin->isValidDomain(
 				$userInfo['emails'][0]['value']
 			)
 		) {
-			if ( !$googleIdExists ) {
+			if ( !$gluser->hasConnectedGoogleAccount() ) {
 				if ( !$user->isLoggedIn() ) {
 					if ( $this->mGoogleLogin->isCreateAllowed() ) {
 						$this->createGoogleUserForm( $userInfo );
@@ -225,7 +234,7 @@ class SpecialGoogleLogin extends SpecialPage {
 				}
 			} else {
 				if ( $user->isLoggedIn() ) {
-					if ( $user->getId() != $googleIdExists['id'] ) {
+					if ( $user->getId() != $gluser->getId() ) {
 						$out->addWikiMsg( 'googlelogin-link-other' );
 					} else {
 						if ( $request->getVal( 'code' ) !== null ) {
@@ -238,7 +247,7 @@ class SpecialGoogleLogin extends SpecialPage {
 					}
 				} else {
 					$loginUser = $this->mGoogleLogin->loginGoogleUser(
-						$googleIdExists['id'],
+						$googleId,
 						$userInfo['id']
 					);
 					if ( $loginUser->isOk() ) {
@@ -367,6 +376,8 @@ class SpecialGoogleLogin extends SpecialPage {
 			$this->createError( $e->getMessage() );
 			return;
 		}
+		$user = User::newFromGoogleId( $userInfo['id'] );
+		$isGoogleIdFree = User::isGoogleIdFree( $userInfo['id'] );
 
 		switch ( $par ) {
 			default:
@@ -415,8 +426,8 @@ class SpecialGoogleLogin extends SpecialPage {
 							'email' => $userInfo['emails'][0]['value'],
 							'real_name' => $userInfo['name']['givenName']
 						);
-						if ( !$db->googleIdExists( $userInfo['id'] ) ) {
-							$user = User::createNew( $userName, $userParam );
+						if ( !$isGoogleIdFree ) {
+							$user = MWUser::createNew( $userName, $userParam );
 							$user->sendConfirmationMail();
 							$user->setCookies();
 							// create a log entry for the created user - bug 67245
@@ -466,7 +477,7 @@ class SpecialGoogleLogin extends SpecialPage {
 			case 'Logout':
 				// Reset the access_token (from Google API) and redirect to Special:GoogleLogin
 				// (which redirects to the Google Login page)
-				if ( $this->mGoogleLogin->isValidRequest() && !$db->googleIdExists( $userInfo['id'] ) ) {
+				if ( $this->mGoogleLogin->isValidRequest() && !$isGoogleIdFree ) {
 					$request->setSessionData( 'access_token', '' );
 					$out->redirect( $this->getPageTitle()->getLocalUrl() );
 				} else {
@@ -476,7 +487,7 @@ class SpecialGoogleLogin extends SpecialPage {
 			case 'Unlink':
 				// Remove the connection between user id and google id
 				if ( $this->mGoogleLogin->isValidRequest() ) {
-					if ( $db->terminateConnection( $userInfo['id'] ) ) {
+					if ( $user->terminateGoogleConnection() ) {
 						$out->addWikiMsg( 'googlelogin-success-unlink' );
 					} else {
 						$this->createError( 'Database error' );

@@ -52,6 +52,7 @@ $wgAutoloadClasses[ 'SpecialManageGoogleLogin' ] =
 	__DIR__ . '/includes/specials/SpecialManageGoogleLogin.php';
 $wgAutoloadClasses[ 'GoogleLoginHooks' ] = __DIR__ . '/includes/GoogleLogin.hooks.php';
 $wgAutoloadClasses[ 'GoogleLoginDB' ] = __DIR__ . '/includes/GoogleLoginDB.php';
+$wgAutoloadClasses[ 'GoogleLogin\\GoogleUser' ] = __DIR__ . '/includes/GoogleUser.php';
 $wgAutoloadClasses[ 'ApiGoogleLoginInfo' ] = __DIR__ . '/includes/api/ApiGoogleLoginInfo.php';
 
 // i18n directory and aliases

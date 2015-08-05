@@ -1,4 +1,7 @@
 <?php
+use GoogleLogin\GoogleUser as User;
+use \User as MWUser;
+
 class GoogleLogin extends ContextSource {
 	/** @var $mSpecialPageTitle stores the Title object for GL special page */
 	private $mSpecialPageTitle;
@@ -233,9 +236,9 @@ class GoogleLogin extends ContextSource {
 	 */
 	public static function isValidUserName( $name ) {
 		if (
-			User::isCreatableName( $name ) &&
-			User::isValidUserName( $name ) &&
-			User::idFromName( $name ) === null
+			MWUser::isCreatableName( $name ) &&
+			MWUser::isValidUserName( $name ) &&
+			MWUser::idFromName( $name ) === null
 		) {
 			return true;
 		} else {
@@ -248,9 +251,9 @@ class GoogleLogin extends ContextSource {
 	 * @param User $user the User object to check
 	 * @return boolean
 	 */
-	private function userExist( User $user ) {
+	private function userExist( MWUser $user ) {
 		$userName = $user->getName();
-		$checkUser = User::newFromName( $userName );
+		$checkUser = MWUser::newFromName( $userName );
 		if ( $checkUser ? $checkUser->getId() !== 0 : false ) {
 			return true;
 		} else {
@@ -268,11 +271,11 @@ class GoogleLogin extends ContextSource {
 	public function loginGoogleUser( $id, $googleId ) {
 		$status = new Status;
 		$out = $this->getOutput();
-		$user = User::newFromId( $id );
+		$user = MWUser::newFromId( $id );
 		if ( !$this->userExist( $user ) ) {
 			$status = Status::newFatal( 'googlelogin-error-unknownconnected' );
-			$db = new GoogleLoginDB;
-			$db->terminateConnection( $googleId );
+			$gluser = User::newFromGoogleId( $googleId );
+			$gluser->terminateGoogleConnection();
 			return $status;
 		}
 		if ( $user->isBlocked() ) {
