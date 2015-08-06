@@ -536,7 +536,7 @@ class GoogleLogin extends ContextSource {
 		if ( $showRight ) {
 			$modules[] = 'ext.GoogleLogin.right.style';
 		}
-		$out->addModules( $modules );
+		$out->addModuleStyles( $modules );
 
 		// keep login is only added, if enabled in the configuration
 		$keepLogin = array();
