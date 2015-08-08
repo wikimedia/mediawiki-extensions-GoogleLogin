@@ -458,16 +458,7 @@ class SpecialGoogleLogin extends SpecialPage {
 							$logEntry = $user->addNewUserLogEntry( 'create' );
 							$db->createConnection( $userInfo['id'], $user->getId() );
 							$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
-							$returnTo = $this->mGoogleLogin->getReturnTo();
-							if ( empty( $returnTo['title'] ) ) {
-								$redirectTo = Title::newMainPage();
-							} else {
-								$redirectTo = Title::newFromText(
-									$returnTo['title']
-								);
-							}
-							$redirectQuery = wfCgiToArray( $returnTo['query'] );
-							$out->addReturnTo( $redirectTo, $redirectQuery );
+							$this->addReturnTo();
 						} else {
 							$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
 						}
@@ -485,6 +476,7 @@ class SpecialGoogleLogin extends SpecialPage {
 					if ( !empty( $userInfo['id'] ) && !empty( $userId ) ) {
 						if ( $db->createConnection( $userInfo['id'], $user->getId() ) ) {
 							$out->addWikiMsg( 'googlelogin-success-merge' );
+							$this->addReturnTo();
 						} else {
 							$this->createError( 'Database error' );
 						}
@@ -524,6 +516,24 @@ class SpecialGoogleLogin extends SpecialPage {
 				$this->createOrMerge( $userInfo );
 			break;
 		}
+	}
+
+	/**
+	 * If there is a return to target, add a backlink to it.
+	 */
+	private function addReturnTo() {
+		$out = $this->getOutput();
+
+		$returnTo = $this->mGoogleLogin->getReturnTo();
+		if ( empty( $returnTo['title'] ) ) {
+			$redirectTo = Title::newMainPage();
+		} else {
+			$redirectTo = Title::newFromText(
+				$returnTo['title']
+			);
+		}
+		$redirectQuery = wfCgiToArray( $returnTo['query'] );
+		$out->addReturnTo( $redirectTo, $redirectQuery );
 	}
 
 	protected function getGroupName() {

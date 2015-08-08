@@ -579,6 +579,11 @@ class GoogleLogin extends ContextSource {
 			)
 		) + $keepLogin;
 
+		$hiddenFields = array(
+			'returnto' => $request->getVal( 'returnto' ),
+			'returntoquery' => $request->getVal( 'returntoquery' ),
+		);
+
 		// create a separate vform above the "normal" user login form
 		// this could be converted to ooui, after the core login form uses ooui elements and styling
 		$htmlForm = HTMLForm::factory( 'vform', $fields, $tpl->getSkin()->getContext() );
@@ -587,6 +592,8 @@ class GoogleLogin extends ContextSource {
 		$htmlForm->setId( 'googleloginForm' );
 		// the target isn't Special:UserLogin, set it to be Special:GoogleLogin
 		$htmlForm->setAction( SpecialPage::getTitleFor( 'GoogleLogin' )->getLocalUrl() );
+		// add hidden fields
+		$htmlForm->addHiddenFields( $hiddenFields );
 		// show the form
 		$htmlForm->prepareForm()->displayForm( false );
 
