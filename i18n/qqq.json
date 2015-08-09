@@ -4,7 +4,8 @@
 			"Florian Schmidt",
 			"Shirayuki",
 			"Umherirrender",
-			"George Animal"
+			"George Animal",
+			"Liuxinyu970226"
 		]
 	},
 	"googlelogin": "{{doc-special|GoogleLogin}}\nAlso used as label for the button shown in [[Special:Login]].",
@@ -53,7 +54,7 @@
 	"googlelogin-form-merge-title": "Title of button to merge the wiki and Google account.",
 	"googlelogin-form-logout": "Title of button to choose another Google account to merge/create (to/a new) wiki account. (logout the currently Google account in wiki)",
 	"googlelogin-form-backlink": "Used as link text on subpages of Special:GoogleLogin to go back to Main special page [[Special:GoogleLogin]].",
-	"googlelogin-form-next": "Next button",
+	"googlelogin-form-next": "Next button\n{{Identical|Next}}",
 	"googlelogin-form-merge": "Title of button to merge the wikiaccount and Google account, if the user is logged into a wikiaccount (and not connected to a Google account) and navigates to Special:GoogleLogin.",
 	"googlelogin-form-unlink": "Title of button to unlink the connection between the wiki user account and Google account.",
 	"googlelogin-email": "Title of value email address in account information table on [[Special:GoogleLogin]].\n{{Identical|E-mail address}}",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Vitorvicentevalente",
-			"Imperadeiro90"
+			"Imperadeiro90",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Iniciar sessão com Google",
@@ -49,7 +50,7 @@
 	"googlelogin-form-merge-title": "Ligar contas",
 	"googlelogin-form-logout": "Iniciar sessão com outra conta Google",
 	"googlelogin-form-backlink": "Voltar ao início de sessão Google",
-	"googlelogin-form-create": "Criar conta",
+	"googlelogin-form-next": "Seguinte",
 	"googlelogin-form-merge": "Ligar Google à conta wiki",
 	"googlelogin-form-unlink": "Desvincular Google da conta wiki",
 	"googlelogin-email": "Endereço de correio electrónico",
