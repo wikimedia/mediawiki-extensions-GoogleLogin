@@ -3,7 +3,8 @@
 		"authors": [
 			"Ата",
 			"Andriykopanytsia",
-			"Olion"
+			"Olion",
+			"Translatemyname"
 		]
 	},
 	"googlelogin": "Увійти з Google",
@@ -52,7 +53,7 @@
 	"googlelogin-form-merge-title": "Приєднати обліковий запис",
 	"googlelogin-form-logout": "Вхід у систему з іншого облікового запису Google",
 	"googlelogin-form-backlink": "Назад до входження через Google",
-	"googlelogin-form-create": "Створити обліковий запис",
+	"googlelogin-form-next": "Далі",
 	"googlelogin-form-merge": "Приєднати Google до облікового запису вікі",
 	"googlelogin-form-unlink": "Від'єднати Google від облікового запису вікі",
 	"googlelogin-email": "Адреса електронної пошти",
@@ -61,6 +62,8 @@
 	"googlelogin-information-body": "У поданій таблиці ви знайдете інформацію про свій обліковий запис Google, а також пов'язаний він з обліковим записом у вікі чи ні.",
 	"googlelogin-linkstatus": "Статус зв'язаності",
 	"googlelogin-linked": "пов'язано",
+	"googlelogin-login-already-registered": "У мене вже є аккаунт {{SITENAME}}",
+	"googlelogin-login-merge-warning": "Будь ласка, увійдіть, щоб приєднати ваш акаунт Google з акаунтом {{SITENAME}}.",
 	"googlelogin-or": "або",
 	"googlelogin-unlinked": "не пов'язано",
 	"googlelogin-link-other": "Ваш обліковий запис Google уже зв'язано з іншим користувачем. Будь ласка, від'єднайте підключення або зверніться до адміністратора, якщо у вас немає іншого облікового запису вікі.",
