@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hym411",
-			"Revi"
+			"Revi",
+			"SeoJeongHo"
 		]
 	},
 	"googlelogin": "구글로 로그인하기",
@@ -17,5 +18,8 @@
 	"googlelogin-form-choosename-error": "당신은 사용자 이름을 선택하거나 우리가 추천하는 사용자 이름을 골라야 합니다.",
 	"googlelogin-form-choosename-existerror": "사용자 이름 \"$1\"은 이미 사용되고 있습니다. 다른 계정을 선택해 주세요.",
 	"googlelogin-form-chooseown": "나만의 이름 고르기",
-	"googlelogin-form-chooseown-error": "당신이 원하는 이름을 정하거나, 우리가 추천하는 이름을 사용하세요."
+	"googlelogin-form-chooseown-error": "당신이 원하는 이름을 정하거나, 우리가 추천하는 이름을 사용하세요.",
+	"googlelogin-form-next": "다음",
+	"googlelogin-login-already-registered": "나는 이미 {{SITENAME}} 계정을 가지고 있습니다",
+	"googlelogin-login-merge-warning": "구글 계정을 {{SITENAME}} 계정과 연결 하기 위해 로그인 해주십시오."
 }

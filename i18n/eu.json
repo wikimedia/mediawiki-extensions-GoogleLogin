@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Subi",
-			"An13sa"
+			"An13sa",
+			"Sator"
 		]
 	},
 	"googlelogin": "Saioa hasi Googlekin",
@@ -19,6 +20,7 @@
 	"googlelogin-manage-plusinfo-title": "Profileko informazioa",
 	"googlelogin-create": "Googlekin sortu",
 	"googlelogin-form-choosename-finish-title": "Wiki kontua sortu",
+	"googlelogin-form-next": "Hurrengoa",
 	"googlelogin-email": "Helbide elektronikoa",
 	"googlelogin-googleuser": "Google erabiltzailea",
 	"googlelogin-or": "edo"

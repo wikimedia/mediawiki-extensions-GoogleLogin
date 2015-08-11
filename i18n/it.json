@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"Baffo",
-			"Macofe"
+			"Macofe",
+			"Statix64"
 		]
 	},
 	"googlelogin": "Accedi con Google",
@@ -22,6 +23,8 @@
 	"googlelogin-information-title": "Informazioni sull'utenza",
 	"googlelogin-linkstatus": "Stato collegamento",
 	"googlelogin-linked": "collegato",
+	"googlelogin-login-already-registered": "Ho già un account {{SITENAME}}",
+	"googlelogin-login-merge-warning": "Effettua il login per collegare il tuo account Google con il tuo account {{SITENAME}}.",
 	"googlelogin-or": "o",
 	"googlelogin-unlinked": "non collegato"
 }
