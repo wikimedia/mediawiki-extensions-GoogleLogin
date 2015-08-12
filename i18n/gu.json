@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sushant savla"
+			"Sushant savla",
+			"Nisargjhaveri"
 		]
 	},
 	"googlelogin-manage-notexist": "<strong>$1</strong> નામ ધરાવતો કોઈ સભ્ય નથી.",
@@ -13,5 +14,6 @@
 	"googlelogin-manage-orgsince": "થી",
 	"googlelogin-manage-yes": "હા",
 	"googlelogin-manage-dismiss": "વિસર્જન",
-	"googlelogin-manage-errorloading": "લોડિંગ ત્રુટિ"
+	"googlelogin-manage-errorloading": "લોડિંગ ત્રુટિ",
+	"googlelogin-form-next": "આગળ"
 }
