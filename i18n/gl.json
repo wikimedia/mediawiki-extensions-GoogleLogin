@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"googlelogin": "Acceder ao sistema co Google",
@@ -51,7 +52,7 @@
 	"googlelogin-form-merge-title": "Ligar conta de usuario",
 	"googlelogin-form-logout": "Iniciar sesión con outra conta de Google",
 	"googlelogin-form-backlink": "Volver ó comezo de sesión de Google",
-	"googlelogin-form-create": "Crear conta",
+	"googlelogin-form-next": "Seguinte",
 	"googlelogin-form-merge": "Ligar Google coa conta do wiki",
 	"googlelogin-form-unlink": "Desligar Google da conta do wiki",
 	"googlelogin-email": "Enderezo de correo electrónico",
@@ -60,6 +61,8 @@
 	"googlelogin-information-body": "Na seguinte táboa atopará información sobre a súa conta de Google e se está ligada a unha conta da wiki ou non.",
 	"googlelogin-linkstatus": "Estado da ligazón",
 	"googlelogin-linked": "ligado",
+	"googlelogin-login-already-registered": "Xa teño unha conta en {{SITENAME}}",
+	"googlelogin-login-merge-warning": "Acceda ao sistema para ligar a súa conta do Google coa súa conta de {{SITENAME}}.",
 	"googlelogin-or": "ou",
 	"googlelogin-unlinked": "non ligado",
 	"googlelogin-link-other": "A súa conta de Google xa está ligada a outro usuario. Por favor, desligue a conexión ou contacte cun administrador, se non ten outra conta wiki.",
