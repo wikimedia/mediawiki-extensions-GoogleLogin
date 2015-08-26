@@ -4,7 +4,8 @@
 			"Ата",
 			"Andriykopanytsia",
 			"Olion",
-			"Translatemyname"
+			"Translatemyname",
+			"Dars"
 		]
 	},
 	"googlelogin": "Увійти з Google",
@@ -72,5 +73,6 @@
 	"googlelogin-prefs-status": "Стан GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Реєстрації з цим теґом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
-	"action-managegooglelogin": "Управляти зв'язками GoogleLogin"
+	"action-managegooglelogin": "Управляти зв'язками GoogleLogin",
+	"right-managegooglelogin": "Можливість додати, видалити або оглянути зв'язки із GoogleLogin"
 }

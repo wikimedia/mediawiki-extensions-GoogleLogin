@@ -72,5 +72,6 @@
 	"googlelogin-prefs-status": "GoogleLogin-Status:",
 	"tag-googlelogin": "[[Special:GoogleLogin|Google-Anmeldung]]",
 	"tag-googlelogin-description": "Registrierungen mit dieser Markierung wurden durchgeführt mit [[Special:GoogleLogin|GoogleLogin]]",
-	"action-managegooglelogin": "GoogleLogin-Verbindungen zu verwalten"
+	"action-managegooglelogin": "GoogleLogin-Verbindungen zu verwalten",
+	"right-managegooglelogin": "Kann GoogleLogin-Verbindungen hinzufügen, entfernen und einsehen"
 }

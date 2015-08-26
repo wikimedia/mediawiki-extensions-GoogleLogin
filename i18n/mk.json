@@ -69,5 +69,6 @@
 	"googlelogin-prefs-status": "Статус на GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|Најава со Google]]",
 	"tag-googlelogin-description": "Регистрациите со оваа ознака се направени со [[Special:GoogleLogin|Најава со Google]]",
-	"action-managegooglelogin": "Раководство на поврзувања со GoogleLogin"
+	"action-managegooglelogin": "Раководство на поврзувања со GoogleLogin",
+	"right-managegooglelogin": "Можност за додавање, отстранување и преглед на врски со GoogleLogin"
 }
