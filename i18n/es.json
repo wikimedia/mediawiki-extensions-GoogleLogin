@@ -72,5 +72,6 @@
 	"googlelogin-prefs-status": "Estado de GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Los registros con esta etiqueta se han hecho con [[Special:GoogleLogin|GoogleLogin]]",
-	"action-managegooglelogin": "Administrar conexiones GoogleLogin"
+	"action-managegooglelogin": "Administrar conexiones GoogleLogin",
+	"right-managegooglelogin": "Capaz de añadir, eliminar y ver conexiones de GoogleLogin"
 }
