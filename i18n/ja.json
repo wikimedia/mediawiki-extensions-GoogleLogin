@@ -3,9 +3,14 @@
 		"authors": [
 			"Shirayuki",
 			"SkyDaisy9",
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
+	"googlelogin": "Google を使用してログイン",
+	"managegooglelogin": "GoogleLogin 接続の管理",
+	"googlelogin-manage-usersubmit": "ユーザー管理",
+	"googlelogin-manage-notexist": "<strong>$1</strong> という名前の利用者は存在しません。",
 	"googlelogin-create": "Google で作成",
 	"googlelogin-desc": "利用者が自身の Google アカウントでログインできるようにする[[Special:GoogleLogin|特別ページ]]を提供する",
 	"googlelogin-form-choosename-title": "利用者名の選択",
@@ -14,7 +19,6 @@
 	"googlelogin-form-merge-title": "利用者アカウントをリンクする",
 	"googlelogin-form-logout": "別の Google アカウントでログイン",
 	"googlelogin-form-backlink": "Google ログインに戻る",
-	"googlelogin-form-create": "アカウントを作成",
 	"googlelogin-email": "メールアドレス",
 	"googlelogin-information-title": "アカウント情報",
 	"googlelogin-or": "または",
