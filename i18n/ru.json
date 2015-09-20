@@ -5,6 +5,8 @@
 		]
 	},
 	"googlelogin": "Войти с помощью Google",
+	"googlelogin-manage-yes": "да",
+	"googlelogin-manage-no": "нет",
 	"googlelogin-create": "Создать с помощью Google",
 	"googlelogin-desc": "Создаёт [[Special:GoogleLogin|спецстраницу]], позволяющую пользователям входить в систему с помощью учётных записей Google",
 	"googlelogin-parerror": "Запрашиваемая страница не существует. Пожалуйста, вернитесь назад и повторите операцию.",
@@ -24,7 +26,7 @@
 	"googlelogin-form-merge-title": "Связать учётную запись",
 	"googlelogin-form-logout": "Войти с помощью другой учётной записи Google",
 	"googlelogin-form-backlink": "Назад в входу Google",
-	"googlelogin-form-create": "Создать учётную запись",
+	"googlelogin-form-next": "Далее",
 	"googlelogin-form-merge": "Связать учётную запись Google c вики",
 	"googlelogin-form-unlink": "Отменить связь учётной записи Google c вики",
 	"googlelogin-email": "Адрес электронной почты",
