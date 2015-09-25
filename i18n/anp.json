@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Angpradesh"
+		]
+	},
+	"googlelogin": "गूगल केरऽ साथ लॉगिन",
+	"managegooglelogin": "गूगल लॉग-इन कनेक्शन मैनेज करऽ",
+	"googlelogin-managelegend": "प्रबंधन लेली यूजर",
+	"googlelogin-manage-usersubmit": "यूजर केरऽ प्रबंधन करऽ",
+	"googlelogin-manage-notexist": "<strong>$1</strong> नाम के कोनो यूजर नै छै.",
+	"googlelogin-manage-user": "तोंय<strong>$1</strong> यूजर प्रबंधित करी रहलऽ छहऽ.",
+	"googlelogin-manage-linked": "अकांउंट गूगल केरऽ अकाउंट आई.डी. सं॑ जुड़लऽ छै",
+	"googlelogin-manage-notlinked": "इ अकाउंट वास्तव मं॑ गूगल केरऽ अकाउंट सं॑ नै जुड़लऽ छै",
+	"googlelogin-manage-changelegend": "गूगल आई.डी. बदलऽ",
+	"googlelogin-manage-noplus": "<strong>सूचना:</strong>ऐन्हऽ लगै छै कि तोरऽ द्वारा डाललऽ गेलऽ इ गूगल आई.डी. वाला यूजर के गूगल+ प्रोफाइल नै छै. टाइपिंग केरऽ गलती भी हुअ॑ सकै छै  ?",
+	"googlelogin-manage-changedsuccess": "यूजर आब॑ गूगल अकॉउंट सं॑ जुड़ी गेलऽ छै.",
+	"googlelogin-manage-terminatesuccess": "यूजर अब॑ गूगल अकॉउंट सं॑ नै जुड़लऽ छै.",
+	"googlelogin-manage-changederror": "<strong>विकि यूजर आरू गूगल अकॉउंट केरऽ बीच केरऽ कड़ी क॑ बनाबै/समाप्त करै घड़ी होलऽ त्रुटि ।</strong>",
+	"googlelogin-manage-terminatebutton": "कनेक्शन खतम करऽ",
+	"googlelogin-manage-invalidid": "आपन॑ द्वारा दर्ज नया गूगल आईडी अमान्य छै. आईडी संख्यात्मक होना चाहियऽ.",
+	"googlelogin-manage-isplusser": "गूगल प्लस पर रजिस्टर करऽ",
+	"googlelogin-manage-orgname": "संगठन केरऽ नाम",
+	"googlelogin-manage-orgtitle": "पद",
+	"googlelogin-manage-orgsince": "कब सं॑",
+	"googlelogin-manage-yes": "हाँ",
+	"googlelogin-manage-no": "नै",
+	"googlelogin-manage-dismiss": "बर्खास्त",
+	"googlelogin-manage-openpluslink": "गूगल+ प्रोफाईल खोलऽ"
+}
