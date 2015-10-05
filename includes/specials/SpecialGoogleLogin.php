@@ -447,8 +447,7 @@ class SpecialGoogleLogin extends SpecialPage {
 							'email' => $userInfo['emails'][0]['value'],
 							'real_name' => $userInfo['name']['givenName']
 						);
-						if ( !$db->googleIdExists( $userInfo['id'] ) ) {
-							$user = User::createNew( $userName, $userParam );
+						if ( !$db->googleIdExists( $userInfo['id'] ) && $user = User::createNew( $userName, $userParam ) ) {
 							$user->sendConfirmationMail();
 							$user->setCookies();
 							// create a log entry for the created user - bug 67245
