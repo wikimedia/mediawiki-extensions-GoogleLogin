@@ -19,6 +19,7 @@
 	"googlelogin-manage-changederror": "<strong>An error occured while create/terminate the link between the wiki user and the Google account.</strong>",
 	"googlelogin-manage-terminatebutton": "Remove connection",
 	"googlelogin-manage-invalidid": "The new Google ID you entered is invalid. The ID needs to be numeric.",
+	"googlelogin-manage-givenid": "The new Google ID you entered is already given.",
 	"googlelogin-manage-isplusser": "Registered on Google Plus",
 	"googlelogin-manage-orgname": "Organization name",
 	"googlelogin-manage-orgtitle": "Job position",
