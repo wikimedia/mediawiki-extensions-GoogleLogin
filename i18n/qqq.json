@@ -23,6 +23,7 @@
 	"googlelogin-manage-changederror": "Indicates an error while trying to link the Wiki user and Google account.",
 	"googlelogin-manage-terminatebutton": "Buttonlabel to terminate the connection between Google account and Wiki user.",
 	"googlelogin-manage-invalidid": "Notice, that the given Google ID is invalid and needs to be numeric.",
+	"googlelogin-manage-givenid": "Notice, that the given Google ID is already connected with another user.\n* $1 - Username of the other user",
 	"googlelogin-manage-isplusser": "Label for a field that indicates, if the User is registered in Google Plus.",
 	"googlelogin-manage-orgname": "Label for field that shows the actual organization the User works in.",
 	"googlelogin-manage-orgtitle": "Name of the job position of the User.",

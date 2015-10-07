@@ -82,6 +82,9 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$out->addBackLinkSubtitle( $this->getPageTitle() );
 		$id = $user->getGoogleId();
 		$googleId = $request->getVal( 'googleid' );
+		// try to create a new GoogleUser object with the given id to check, if there's
+		// already an user with this google id.
+		$newGoogleUser = User::newFromGoogleId( $googleId );
 		$terminateLink = $request->getVal( 'terminate-link' );
 		if ( isset( $terminateLink ) && $user->hasConnectedGoogleAccount() ) {
 			// terminate the connection
@@ -94,6 +97,9 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		} elseif ( $googleId ) {
 			if ( !is_numeric( $googleId ) ) {
 				$out->wrapWikiMsg( '<div class="error">$1</div>', 'googlelogin-manage-invalidid' );
+			} elseif ( $newGoogleUser->getId() !== 0 ) {
+				// if the ID is already given to another user, it can't be associtated with this user
+				$out->wrapWikiMsg( '<div class="error">$1</div>', array( 'googlelogin-manage-givenid', $newGoogleUser->getName() ) );
 			} else {
 				// check, if the google id has a google plus profile
 				$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
