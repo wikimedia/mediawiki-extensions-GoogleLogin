@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_7fdc334c",
+        "filename": "includes/specials/SpecialManageGoogleLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-10-08T21:10:26Z",
+      "side": 1,
+      "message": "This is a potential privacy leak. Please consider dropping the username disclosure.",
+      "revId": "a8a16cce42df477a1dd7248d68f438079760cfab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
