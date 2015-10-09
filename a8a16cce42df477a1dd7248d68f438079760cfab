@@ -16,6 +16,24 @@
       "revId": "a8a16cce42df477a1dd7248d68f438079760cfab",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_c59309a5",
+        "filename": "includes/specials/SpecialManageGoogleLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-10-09T14:51:36Z",
+      "side": 1,
+      "message": "It\u0027s only visible with a special user right, but you\u0027re right, I\u0027ll remove it :)",
+      "parentUuid": "0ebaf39b_7fdc334c",
+      "revId": "a8a16cce42df477a1dd7248d68f438079760cfab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
