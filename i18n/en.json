@@ -1,25 +1,25 @@
 {
-    "@metadata": {
-        "authors": [
-            "Florian Schmidt"
-        ]
-    },
+	"@metadata": {
+		"authors": [
+			"Florian Schmidt"
+		]
+	},
 	"googlelogin": "Login with Google",
 	"managegooglelogin": "Manage GoogleLogin connections",
-	"googlelogin-managelegend": "Find User to manage",
-	"googlelogin-manage-usersubmit": "Manage User",
-	"googlelogin-manage-notexist": "There is no User with name <strong>$1</strong>.",
+	"googlelogin-managelegend": "Find user to manage",
+	"googlelogin-manage-usersubmit": "Manage user",
+	"googlelogin-manage-notexist": "There is no user with name <strong>$1</strong>.",
 	"googlelogin-manage-user": "You manage the user <strong>$1</strong>.",
 	"googlelogin-manage-linked": "The account is linked with a Google account with the ID ",
 	"googlelogin-manage-notlinked": "The account is actually not linked with a Google account.",
 	"googlelogin-manage-changelegend": "Change Google ID",
-	"googlelogin-manage-noplus": "<strong>Notice:</strong> The User with the Google ID you entered seems to have no Google+ profile. Maybe a typing error?",
-	"googlelogin-manage-changedsuccess": "The User is now linked with the Google account.",
-	"googlelogin-manage-terminatesuccess": "The User isn't linked with a Google account anymore.",
+	"googlelogin-manage-noplus": "<strong>Notice:</strong> The user with the Google ID you entered seems to have no Google+ profile. Maybe a typing error?",
+	"googlelogin-manage-changedsuccess": "The user is now linked with the Google account.",
+	"googlelogin-manage-terminatesuccess": "The user isn't linked with a Google account anymore.",
 	"googlelogin-manage-changederror": "<strong>An error occured while create/terminate the link between the wiki user and the Google account.</strong>",
 	"googlelogin-manage-terminatebutton": "Remove connection",
 	"googlelogin-manage-invalidid": "The new Google ID you entered is invalid. The ID needs to be numeric.",
-	"googlelogin-manage-isplusser": "Registered on Google Plus",
+	"googlelogin-manage-isplusser": "Registered on Google+",
 	"googlelogin-manage-orgname": "Organization name",
 	"googlelogin-manage-orgtitle": "Job position",
 	"googlelogin-manage-orgsince": "Since",
@@ -27,12 +27,12 @@
 	"googlelogin-manage-no": "no",
 	"googlelogin-manage-dismiss": "Dismiss",
 	"googlelogin-manage-openpluslink": "Open Google+ profile",
-	"googlelogin-manage-unknownerror": "There was an unknown error while loading your data. Maybe the user doesn't exist on Google Plus or the profile Id is false?",
+	"googlelogin-manage-unknownerror": "There was an unknown error while loading your data. Maybe the user doesn't exist on Google+ or the profile ID is false?",
 	"googlelogin-manage-plusinfo-title": "Profile information",
 	"googlelogin-manage-errorloading": "Loading error",
 	"googlelogin-username": "Username",
 	"googlelogin-create": "Create with Google",
-	"googlelogin-desc": "Provides a [[Special:GoogleLogin|Special page]] to allow users to login with their Google accounts",
+	"googlelogin-desc": "Allow users to [[Special:GoogleLogin|login with their Google account]]",
 	"googlelogin-parerror": "The requested page doesn't exist. Please go back and try the action again.",
 	"googlelogin-generic-error": "Oops, there was an error. Please go back and try again. Message: $1",
 	"googlelogin-createnotallowed": "You are not allowed to create a new account with GoogleLogin.",
@@ -64,11 +64,11 @@
 	"googlelogin-or": "or",
 	"googlelogin-unlinked": "not linked",
 	"googlelogin-link-other": "Your Google account is already linked to another user. Please unlink the connection or contact an administrator, if you have no other wiki account.",
-	"googlelogin-success-merge": "Congratulations! Your wiki account is now linked to your Google account.",
-	"googlelogin-success-unlink": "Congratulations! Your wiki account isn't linked to your Google account anymore.",
+	"googlelogin-success-merge": "Your wiki account is now linked to your Google account.",
+	"googlelogin-success-unlink": "Your wiki account is no longer linked to your Google account.",
 	"googlelogin-prefs-status": "GoogleLogin status:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registrations with this tag were made with [[Special:GoogleLogin|GoogleLogin]]",
-	"action-managegooglelogin": "Manage GoogleLogin connections",
-	"right-managegooglelogin": "Able to add, remove and view GoogleLogin connections"
+	"action-managegooglelogin": "manage GoogleLogin connections",
+	"right-managegooglelogin": "Can add, remove and view GoogleLogin connections"
 }
