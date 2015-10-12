@@ -158,13 +158,11 @@ class SpecialGoogleLogin extends SpecialPage {
 			'padded' => true,
 			'expanded' => false,
 			'framed' => true,
-			'infusable' => true,
 		) );
 
 		// add the fieldset to the wrapper panel and output it
 		$container->appendContent(
 			new OOUI\FieldsetLayout( array(
-				'infusable' => true,
 				'label' => $this->msg( 'googlelogin-information-title' )->text(),
 				'items' => $items,
 			) )
