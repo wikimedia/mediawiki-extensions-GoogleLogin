@@ -5,8 +5,6 @@ use \User as MWUser;
 class SpecialGoogleLogin extends SpecialPage {
 	/** @var $mGoogleLogin saves an instance of GoogleLogin class */
 	private $mGoogleLogin;
-	/** @var $mGLDB saves an instance of GoogleLoginDB class */
-	private $mGLDB;
 
 	/** @var $performer Saves the username (which is visible in RC) or false */
 	public static $performer = false;
@@ -21,7 +19,6 @@ class SpecialGoogleLogin extends SpecialPage {
 	 */
 	function execute( $par ) {
 		$this->mGoogleLogin = $googleLogin = new GoogleLogin;
-		$db = $this->getGoogleLoginDB();
 		$request = $this->getRequest();
 		$out = $this->getOutput();
 		$config = $this->getConfig();
@@ -94,18 +91,6 @@ class SpecialGoogleLogin extends SpecialPage {
 	}
 
 	/**
-	 * Returns an instance of GoogleLoginDB.
-	 *
-	 * @return GoogleLoginDB
-	 */
-	private function getGoogleLoginDB() {
-		if ( $this->mGLDB === null ) {
-			$this->mGLDB = new GoogleLoginDB();
-		}
-		return $this->mGLDB;
-	}
-
-	/**
 	 * Helper function to authenticate a user against google plus api
 	 * @param String $code The auth code to use
 	 * @param Google_Client $client
@@ -136,7 +121,6 @@ class SpecialGoogleLogin extends SpecialPage {
 	private function showSummary( Google_Client $client, Google_Service_Plus $plus ) {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
-		$db = $this->mGLDB;
 
 		try {
 			$userInfo = $plus->people->get( "me" );
@@ -367,7 +351,6 @@ class SpecialGoogleLogin extends SpecialPage {
 	 */
 	private function finishAction( $par, $client, $plus ) {
 		$glConfig = $this->mGoogleLogin->getGLConfig();
-		$db = $this->getGoogleLoginDB();
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 
@@ -498,7 +481,7 @@ class SpecialGoogleLogin extends SpecialPage {
 						}
 					}
 				} elseif ( $request->getBool( 'fromLogin' ) === true ) {
-					$this->createOrMerge( $userInfo, $db );
+					$this->createOrMerge( $userInfo );
 				} else {
 					$this->createError( 'Token failure' );
 				}
