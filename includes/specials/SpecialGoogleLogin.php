@@ -193,9 +193,9 @@ class SpecialGoogleLogin extends SpecialPage {
 		$user = $this->getUser();
 
 		if ( $gluser === null ) {
-			$gluser = User::newFromGoogleId( 0 );
+			$gluser = User::newFromGoogleId( $userInfo['id'] );
 		}
-		$googleId = $gluser->getGoogleId();
+		$userId = $gluser->getId();
 
 		if (
 			$this->mGoogleLogin->isValidDomain(
@@ -229,7 +229,7 @@ class SpecialGoogleLogin extends SpecialPage {
 					}
 				} else {
 					$loginUser = $this->mGoogleLogin->loginGoogleUser(
-						$googleId,
+						$userId,
 						$userInfo['id']
 					);
 					if ( $loginUser->isOk() ) {
