@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_2e3d16b9",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-10-12T06:40:30Z",
+      "side": 1,
+      "message": "Maybe update this message to be more clear?\n\n The Google ID you entered is already linked to another wiki user.",
+      "revId": "d55ee08226054cd745d2ae7b7e93e92f1778af2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
