@@ -1,0 +1,8 @@
+Verified+2: jenkins-bot
+Code-Review+1: Siebrand <siebrand@kitano.nl>
+Code-Review+2: Florianschmidtwelzow <florian.schmidt.stargatewissen@gmail.com>
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 13 Oct 2015 12:10:52 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/244189
+Project: mediawiki/extensions/GoogleLogin
+Branch: refs/heads/master
