@@ -23,8 +23,8 @@
 	"googlelogin-manage-changederror": "Indicates an error while trying to link the Wiki user and Google account.",
 	"googlelogin-manage-terminatebutton": "Buttonlabel to terminate the connection between Google account and Wiki user.",
 	"googlelogin-manage-invalidid": "Notice, that the given Google ID is invalid and needs to be numeric.",
-	"googlelogin-manage-givenid": "Notice, that the given Google ID is already connected with another user.",
 	"googlelogin-manage-isplusser": "Label for a field that indicates, if the User is registered in Google Plus.",
+	"googlelogin-manage-givenid": "Notice, that the given Google ID is already connected with another user.",
 	"googlelogin-manage-orgname": "Label for field that shows the actual organization the User works in.",
 	"googlelogin-manage-orgtitle": "Name of the job position of the User.",
 	"googlelogin-manage-orgsince": "Since when the User works in the organization.\n* {{msg-mw|Googlelogin-manage-orgname}}",
@@ -74,6 +74,6 @@
 	"googlelogin-prefs-status": "Name of the Line in Special:Preferences identifying GoogleLoign status (linked or not linked).",
 	"tag-googlelogin": "Tag in [[Special:RecentChanges]] for user account creations made with GoogleLogin.\n\nSee also:\n* {{msg-mw|Tag-googlelogin-description}}",
 	"tag-googlelogin-description": "Short description, that account creations with this tag are made with GoogleLogin.",
-	"action-managegooglelogin": "Message key for user right \"managegooglelogin\"",
-	"right-managegooglelogin": "Description of user right to view, edit and remove Google Login connections.\n\n{{Doc-right|mf-uploadbutton}}"
+	"action-managegooglelogin": "Message key for user right \"managegooglelogin\"\n\n{{doc-action|managegooglelogin}}",
+	"right-managegooglelogin": "Description of user right to view, edit and remove Google Login connections.\n\n{{Doc-right|managegooglelogin}}"
 }

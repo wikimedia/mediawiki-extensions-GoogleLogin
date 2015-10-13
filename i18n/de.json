@@ -23,6 +23,7 @@
 	"googlelogin-manage-terminatebutton": "Verbindung entfernen",
 	"googlelogin-manage-invalidid": "Die neue eingegebene Google-ID ist ungültig. Die ID muss numerisch sein.",
 	"googlelogin-manage-isplusser": "Registriert auf Google+",
+	"googlelogin-manage-givenid": "Die eingegebene Google-ID ist bereits mit einem anderen Wiki-Benutzer verknüpft.",
 	"googlelogin-manage-orgname": "Name der Organisation",
 	"googlelogin-manage-orgtitle": "Arbeitsstelle",
 	"googlelogin-manage-orgsince": "Seit",

@@ -22,6 +22,7 @@
 	"googlelogin-manage-dismiss": "Fott domet",
 	"googlelogin-manage-errorloading": "Fähler beim Lahde",
 	"googlelogin-username": "Metmaacher_Nahme",
+	"googlelogin-desc": "Määd et müjjelesch, dat sesch Metmaacher met ierem [[Special:GoogleLogin|lZohjng zoh \n<i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google</i>]] heh aanmälde künne.",
 	"googlelogin-form-next": "Wigger",
 	"googlelogin-login-already-registered": "Esch hann ald ene Zohjang op {{GRAMMAR:Dat|{{ucfirst:{{SITENAME}}}}}}.",
 	"googlelogin-login-merge-warning": "Donn Desch ennlogge, öm Dinge Zohjang op <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google</i>met Dingem Zohjang {{GRAMMAR:em|{{ucfirst:{{SITENAME}}}}}} zesamme ze bränge",
