@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Csega",
-			"ViDam"
+			"ViDam",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Bejelentkezés Google-lel",
@@ -20,7 +21,6 @@
 	"googlelogin-form-merge-title": "Felhasználói fiókok összekapcsolása",
 	"googlelogin-form-logout": "Bejelentkezés egy másik Google fiókkal",
 	"googlelogin-form-backlink": "Vissza a Google bejelentkezéshez",
-	"googlelogin-form-create": "Fiók létrehozása",
 	"googlelogin-form-merge": "A Google fiók összekapcsolása a wikissel",
 	"googlelogin-form-unlink": "Google fiók leválasztása a wikisről",
 	"googlelogin-email": "Email cím",
@@ -30,6 +30,6 @@
 	"googlelogin-linked": "összekapcsolva",
 	"googlelogin-unlinked": "nincs összekapcsolva",
 	"googlelogin-link-other": "A Google fiókod már egy másik felhasználóhoz van hozzákapcsolva. Egy Google fiók csak egy wikis fiókhoz lehet hozzákapcsolva. Kérlek, válaszd szét az összeköttetést a másik wikis fiókoddal, vagy ha nincs másik wikis fiókod, akkor lépj kapcsolatba egy rendszergazdával.",
-	"googlelogin-success-merge": "Gratulálunk! A wikis fiókod összekötöttük a Google fiókoddal.",
+	"googlelogin-success-merge": "A wikis fiókod összekötöttük a Google fiókoddal.",
 	"googlelogin-success-unlink": "Gratulálunk! A wikis fiókodat szétválasztottuk a Google fiókodtól."
 }

@@ -5,7 +5,8 @@
 			"Andriykopanytsia",
 			"Olion",
 			"Translatemyname",
-			"Dars"
+			"Dars",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Увійти з Google",
@@ -23,7 +24,7 @@
 	"googlelogin-manage-changederror": "<strong>Під час створення/завершення зв'язку між користувачем вікі та обліковим записом Google сталася помилка.</strong>",
 	"googlelogin-manage-terminatebutton": "Вилучити зв'язок",
 	"googlelogin-manage-invalidid": "Новий введений Google ID недійсний. ID має складатися з цифр.",
-	"googlelogin-manage-isplusser": "Зареєстрований у Google Plus",
+	"googlelogin-manage-isplusser": "Зареєстрований у Google+",
 	"googlelogin-manage-orgname": "Назва організації",
 	"googlelogin-manage-orgtitle": "Посада",
 	"googlelogin-manage-orgsince": "З",
@@ -31,7 +32,7 @@
 	"googlelogin-manage-no": "ні",
 	"googlelogin-manage-dismiss": "Відхилити",
 	"googlelogin-manage-openpluslink": "Відкрити профіль Google+",
-	"googlelogin-manage-unknownerror": "Сталася невідома помилка під час завантаження Ваших даних. Можливо, користувач не існує у Google Plus або ідентифікатор профілю неправильний?",
+	"googlelogin-manage-unknownerror": "Сталася невідома помилка під час завантаження Ваших даних. Можливо, користувач не існує у Google+ або ідентифікатор профілю неправильний?",
 	"googlelogin-manage-plusinfo-title": "Інформація профілю",
 	"googlelogin-manage-errorloading": "Помилка завантаження",
 	"googlelogin-username": "Ім'я користувача",
@@ -68,7 +69,7 @@
 	"googlelogin-or": "або",
 	"googlelogin-unlinked": "не пов'язано",
 	"googlelogin-link-other": "Ваш обліковий запис Google уже зв'язано з іншим користувачем. Будь ласка, від'єднайте підключення або зверніться до адміністратора, якщо у вас немає іншого облікового запису вікі.",
-	"googlelogin-success-merge": "Вітаємо! Ваш обліковий запису у вікі тепер пов'язано з вашим обліковим записом Google.",
+	"googlelogin-success-merge": "Ваш обліковий запису у вікі тепер пов'язано з вашим обліковим записом Google.",
 	"googlelogin-success-unlink": "Вітаємо! Ваш обліковий запису у вікі більше не пов'язано з вашим обліковим записом Google.",
 	"googlelogin-prefs-status": "Стан GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",

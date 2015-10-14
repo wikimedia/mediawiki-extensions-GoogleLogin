@@ -3,13 +3,14 @@
 		"authors": [
 			"Subi",
 			"An13sa",
-			"Sator"
+			"Sator",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Saioa hasi Googlekin",
 	"managegooglelogin": "Kudeatu GoogleLogin konexioak",
 	"googlelogin-manage-changelegend": "Google ID aldatu",
-	"googlelogin-manage-isplusser": "Google Plusen erregistratua",
+	"googlelogin-manage-isplusser": "Google+ erregistratua",
 	"googlelogin-manage-orgname": "Erakundearen izena",
 	"googlelogin-manage-orgtitle": "Lanpostua",
 	"googlelogin-manage-orgsince": "Noiztik",

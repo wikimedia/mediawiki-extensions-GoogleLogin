@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Macofe"
 		]
 	},
 	"managegooglelogin": "Verbendonge för et Ennlogge övver <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google</i> verwallde",
@@ -14,7 +15,7 @@
 	"googlelogin-manage-terminatesuccess": "Dä Metmaacher es nit mih med enem Zohjang noh <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google</i> verbonge.",
 	"googlelogin-manage-terminatebutton": "Schmiiß di Verbendong fott",
 	"googlelogin-manage-invalidid": "De ennjejovve neue Kännong för <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google</i> es nit jöltesch. Se mööd en Zahl sin.",
-	"googlelogin-manage-isplusser": "Op <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google Plus</i> ennjedrahre.",
+	"googlelogin-manage-isplusser": "Op <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Google es de jrühßte Söhkmaschihn em Internet\">Google+</i> ennjedrahre.",
 	"googlelogin-manage-orgtitle": "De Schtäll udder ossizjuhn bem Ärbeide",
 	"googlelogin-manage-orgsince": "Zigg",
 	"googlelogin-manage-yes": "Joh",

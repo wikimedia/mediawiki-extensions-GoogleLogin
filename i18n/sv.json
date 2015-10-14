@@ -3,7 +3,8 @@
 		"authors": [
 			"Lokal Profil",
 			"WikiPhoenix",
-			"Jopparn"
+			"Jopparn",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Logga in med Google",
@@ -38,7 +39,7 @@
 	"googlelogin-or": "eller",
 	"googlelogin-unlinked": "inte länkad",
 	"googlelogin-link-other": "Ditt Google-konto är redan länkat till en annan användare. Vänligen avlänka denna koppling eller kontakta en administratör, om du inte har något annat wikikonto.",
-	"googlelogin-success-merge": "Grattis! Ditt wikikonto är nu kopplat till ditt Google-konto.",
+	"googlelogin-success-merge": "Ditt wikikonto är nu kopplat till ditt Google-konto.",
 	"googlelogin-success-unlink": "Grattis! Din wikikonto är inte längre kopplat till ditt Google-konto.",
 	"googlelogin-prefs-status": "GoogleLogin-status:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Y-M D",
-			"Fohanno"
+			"Fohanno",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Kevreañ gant Google",
@@ -16,7 +17,6 @@
 	"googlelogin-form-merge-title": "Liammañ kont an implijer",
 	"googlelogin-form-logout": "Kevreañ gant ur gont Google all",
 	"googlelogin-form-backlink": "Distreiñ d'ar c'hevreañ Google",
-	"googlelogin-form-create": "Krouiñ ur gont",
 	"googlelogin-email": "Chomlec'h postel",
 	"googlelogin-googleuser": "Implijer Google",
 	"googlelogin-information-title": "Titouroù diwar-benn ar gont",
@@ -24,7 +24,7 @@
 	"googlelogin-linked": "liammet",
 	"googlelogin-or": "pe",
 	"googlelogin-unlinked": "n'eo ket liammet",
-	"googlelogin-success-merge": "Gourc'hemennoù deoc'h ! Bremañ eo liammet ho kont wiki ouzh ho kont Google.",
+	"googlelogin-success-merge": "Bremañ eo liammet ho kont wiki ouzh ho kont Google.",
 	"googlelogin-success-unlink": "Gourc'hemennoù deoc'h ! N'eo ket liammet ken ho kont wiki ouzh ho kont Google.",
 	"googlelogin-prefs-status": "Statud GoogleLogin :"
 }

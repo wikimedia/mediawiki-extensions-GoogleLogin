@@ -9,6 +9,7 @@
 	},
 	"googlelogin": "구글로 로그인하기",
 	"googlelogin-managelegend": "관리할 사용자 찾기",
+	"googlelogin-manage-givenid": "당신이 입력한 구글 아이디는 이미 다른 이용자에 의해 쓰이고 있습니다.",
 	"googlelogin-desc": "[[Special:GoogleLogin|특수 문서]]를 통해 구글 계정으로 로그인 할 수 있게 허용",
 	"googlelogin-parerror": "요청된 문서가 존재하지 않습니다. 뒤로 간 후 다시 시도해 주십시오.",
 	"googlelogin-generic-error": "죄송합니다, 오류가 있었습니다. 뒤로 간 후 다시 시도해 주세요.\n메시지: $1",

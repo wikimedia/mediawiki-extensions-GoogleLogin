@@ -1,14 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras"
+			"Okras",
+			"Kaganer"
 		]
 	},
 	"googlelogin": "Войти с помощью Google",
+	"googlelogin-manage-noplus": "<strong>Обратите внимание:</strong> у пользователя с введённым вами идентификатором Google ID (Google ID), кажется, нет профиля Google+. Может быть, опечатка?",
+	"googlelogin-manage-terminatesuccess": "Участник больше не связан ни с какой учётной записью Google.",
+	"googlelogin-manage-givenid": "Введённый идентификатор Google (Google ID) уже используется другим участником этой вики.",
 	"googlelogin-manage-yes": "да",
 	"googlelogin-manage-no": "нет",
+	"googlelogin-manage-unknownerror": "Произошла неизвестная ошибка во время загрузки ваших данных. Возможно, в Google+ не существует такого пользователя или идентификатор профиля указан неверно?",
 	"googlelogin-create": "Создать с помощью Google",
-	"googlelogin-desc": "Создаёт [[Special:GoogleLogin|спецстраницу]], позволяющую пользователям входить в систему с помощью учётных записей Google",
+	"googlelogin-desc": "Позволяет участникам [[Special:GoogleLogin|входить в систему с помощью учётных записей Google]]",
 	"googlelogin-parerror": "Запрашиваемая страница не существует. Пожалуйста, вернитесь назад и повторите операцию.",
 	"googlelogin-generic-error": "К сожалению, произошла ошибка. Пожалуйста, вернитесь назад и повторите попытку. Сообщение: $1",
 	"googlelogin-createnotallowed": "У вас нет разрешения на создание учётной записи с помощью GoogleLogin.",
@@ -38,8 +43,8 @@
 	"googlelogin-or": "или",
 	"googlelogin-unlinked": "не связаны",
 	"googlelogin-link-other": "Ваша учётная запись Google уже привязана к другому участнику. Пожалуйста, уберите эту связь или свяжитесь с администратором, если у вас нет других вики-аккаунтов.",
-	"googlelogin-success-merge": "Поздравляем! Ваш вики-аккаунт теперь привязан к учётной записи Google.",
-	"googlelogin-success-unlink": "Поздравляем! Ваш вики-аккаунт больше не привязан к учётной записи Google.",
+	"googlelogin-success-merge": "Ваша учётная запись в вики теперь привязана к учётной записи Google.",
+	"googlelogin-success-unlink": "Ваша учётная запись в вики больше не привязана к учётной записи Google.",
 	"googlelogin-prefs-status": "Статус GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Регистрация с этим тегом была произведена с помощью [[Special:GoogleLogin|GoogleLogin]]"

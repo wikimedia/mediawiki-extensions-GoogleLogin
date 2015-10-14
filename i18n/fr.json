@@ -25,7 +25,7 @@
 	"googlelogin-manage-changederror": "<strong>Une erreur s’est produite lors de la création/suppression du lien entre l’utilisateur du wiki et le compte Google.</strong>",
 	"googlelogin-manage-terminatebutton": "Supprimer la connexion",
 	"googlelogin-manage-invalidid": "Le nouvel ID Google que vous avez saisi n’est pas valide. L’ID doit être numérique.",
-	"googlelogin-manage-isplusser": "Inscrit sur Google Plus",
+	"googlelogin-manage-isplusser": "Inscrit sur Google+",
 	"googlelogin-manage-orgname": "Nom de l'organisation",
 	"googlelogin-manage-orgtitle": "Activité professionnelle",
 	"googlelogin-manage-orgsince": "Depuis",
@@ -70,11 +70,11 @@
 	"googlelogin-or": "ou",
 	"googlelogin-unlinked": "non lié",
 	"googlelogin-link-other": "Votre compte Google est déjà lié à un autre utilisateur. Veuillez supprimer la connexion ou contacter un administrateur, si vous n’avez aucun autre compte wiki.",
-	"googlelogin-success-merge": "Félicitations ! Votre compte wiki est maintenant lié à votre compte Google.",
+	"googlelogin-success-merge": "Votre compte wiki est maintenant lié à votre compte Google.",
 	"googlelogin-success-unlink": "Félicitations ! Votre compte wiki n’est plus lié à votre compte Google.",
 	"googlelogin-prefs-status": "État de GoogleLogin :",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Les inscriptions avec cette balise ont été faites avec [[Special:GoogleLogin|GoogleLogin]]",
-	"action-managegooglelogin": "Gérer les connexions GoogleLogin",
+	"action-managegooglelogin": "gérer les connexions GoogleLogin",
 	"right-managegooglelogin": "Droit d’ajouter, supprimer et afficher des connexions GoogleLogin"
 }

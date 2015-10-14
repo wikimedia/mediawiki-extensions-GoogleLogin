@@ -4,7 +4,8 @@
 			"Sjoerddebruin",
 			"Romaine",
 			"Robin0van0der0vliet",
-			"Esketti"
+			"Esketti",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Aanmelden met Google",
@@ -30,7 +31,7 @@
 	"googlelogin-manage-no": "nee",
 	"googlelogin-manage-dismiss": "Sluiten",
 	"googlelogin-manage-openpluslink": "Google+-profiel openen",
-	"googlelogin-manage-unknownerror": "Er is een onbekende fout opgetreden tijdens het laden van uw gegevens. Misschien is de gebruiker niet bestaat op Google Plus of de profiel-Id is onjuist?",
+	"googlelogin-manage-unknownerror": "Er is een onbekende fout opgetreden tijdens het laden van uw gegevens. Misschien is de gebruiker niet bestaat op Google+ of de profiel-ID is onjuist?",
 	"googlelogin-manage-plusinfo-title": "Profielgegevens",
 	"googlelogin-manage-errorloading": "Laden fout",
 	"googlelogin-username": "Gebruikersnaam",
@@ -64,7 +65,7 @@
 	"googlelogin-or": "of",
 	"googlelogin-unlinked": "niet gekoppeld",
 	"googlelogin-link-other": "Uw Google-account al gekoppeld aan een andere gebruiker. Gelieve te ontkoppelen van de verbinding of neem contact op met een beheerder als u geen ander account.",
-	"googlelogin-success-merge": "Van harte gefeliciteerd! Uw account is nu gekoppeld aan uw Google-account.",
+	"googlelogin-success-merge": "Uw account is nu gekoppeld aan uw Google-account.",
 	"googlelogin-success-unlink": "Van harte gefeliciteerd! Uw account is niet gekoppeld aan uw Google-account niet meer.",
 	"googlelogin-prefs-status": "GoogleLogin status:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",

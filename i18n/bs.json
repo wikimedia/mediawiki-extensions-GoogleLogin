@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Semso98"
+			"Semso98",
+			"Macofe"
 		]
 	},
 	"managegooglelogin": "Upravljanje GoogleLogin vezama",
@@ -13,7 +14,7 @@
 	"googlelogin-manage-terminatesuccess": "Korisnik više nije povezan sa Google računom.",
 	"googlelogin-manage-terminatebutton": "Ukloni pričključak",
 	"googlelogin-manage-invalidid": "Novi Google ID koji ste unijeli je nevažeći. ID mora biti numerički.",
-	"googlelogin-manage-isplusser": "Registriran na Google Plus",
+	"googlelogin-manage-isplusser": "Registriran na Google+",
 	"googlelogin-manage-orgname": "Ime organizacije",
 	"googlelogin-manage-orgtitle": "Poslovna pozicija",
 	"googlelogin-manage-orgsince": "Pošto",

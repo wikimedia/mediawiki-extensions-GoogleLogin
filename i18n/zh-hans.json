@@ -4,7 +4,8 @@
 			"Liuxinyu970226",
 			"Fengchao",
 			"Luotiancheng",
-			"Gaoxuewei"
+			"Gaoxuewei",
+			"Macofe"
 		]
 	},
 	"googlelogin": "使用Google登录",
@@ -22,7 +23,7 @@
 	"googlelogin-manage-changederror": "<strong>当创建/终止wiki用户与Google账户之间的连接时发生错误。</strong>",
 	"googlelogin-manage-terminatebutton": "移除连接",
 	"googlelogin-manage-invalidid": "您输入的新的Google ID无效。ID应该是数字。",
-	"googlelogin-manage-isplusser": "在Google Plus上注册",
+	"googlelogin-manage-isplusser": "在Google+上注册",
 	"googlelogin-manage-orgname": "组织名称",
 	"googlelogin-manage-orgtitle": "岗位",
 	"googlelogin-manage-orgsince": "自",
@@ -30,7 +31,7 @@
 	"googlelogin-manage-no": "否",
 	"googlelogin-manage-dismiss": "解除",
 	"googlelogin-manage-openpluslink": "打开Google+个人资料",
-	"googlelogin-manage-unknownerror": "当载入您的数据时发生未知错误。也许用户在Google Plus上不存在，或者个人资料ID无效？",
+	"googlelogin-manage-unknownerror": "当载入您的数据时发生未知错误。也许用户在Google+上不存在，或者个人资料ID无效？",
 	"googlelogin-manage-plusinfo-title": "个人信息",
 	"googlelogin-manage-errorloading": "载入错误",
 	"googlelogin-username": "用户名",
@@ -67,7 +68,7 @@
 	"googlelogin-or": "或者",
 	"googlelogin-unlinked": "未链接",
 	"googlelogin-link-other": "您的Google账户已连接至其他用户。请取消连接或联络管理员，如果您没有其他wiki账户的话。",
-	"googlelogin-success-merge": "祝贺！您的wiki帐户现已关联您的Google账户。",
+	"googlelogin-success-merge": "您的wiki帐户现已关联您的Google账户。",
 	"googlelogin-success-unlink": "祝贺！您的wiki帐户现已取消关联您的Google账户。",
 	"googlelogin-prefs-status": "Google登录状态：",
 	"tag-googlelogin": "[[Special:GoogleLogin|Google登录]]",

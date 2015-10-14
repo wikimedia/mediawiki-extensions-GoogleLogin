@@ -3,7 +3,8 @@
 		"authors": [
 			"Banjo",
 			"Elisardojm",
-			"Toliño"
+			"Toliño",
+			"Macofe"
 		]
 	},
 	"googlelogin": "Acceder ao sistema co Google",
@@ -21,7 +22,7 @@
 	"googlelogin-manage-changederror": "<strong>Houbo un erro ó crear/rematar a ligazón entre o usuario wiki e a conta de Google.</strong>",
 	"googlelogin-manage-terminatebutton": "Eliminar conexión",
 	"googlelogin-manage-invalidid": "O novo identificador de Google que indicou é inválido. O identificador ten que ser numérico.",
-	"googlelogin-manage-isplusser": "Rexistrado en Google Plus",
+	"googlelogin-manage-isplusser": "Rexistrado en Google+",
 	"googlelogin-manage-orgname": "Nome de organización",
 	"googlelogin-manage-orgtitle": "Posto",
 	"googlelogin-manage-orgsince": "Desde",
@@ -29,7 +30,7 @@
 	"googlelogin-manage-no": "non",
 	"googlelogin-manage-dismiss": "Rexeitar",
 	"googlelogin-manage-openpluslink": "Abrir perfil de Google+",
-	"googlelogin-manage-unknownerror": "Houbo un erro descoñecido ó subir os seus datos. Podería ser que o usuario non exista en Google Plus ou que o identificador de perfil sexa falso?",
+	"googlelogin-manage-unknownerror": "Houbo un erro descoñecido ó subir os seus datos. Podería ser que o usuario non exista en Google+ ou que o identificador de perfil sexa falso?",
 	"googlelogin-manage-plusinfo-title": "Información do perfil",
 	"googlelogin-manage-errorloading": "Erro de carga",
 	"googlelogin-username": "Nome de usuario",
@@ -66,11 +67,11 @@
 	"googlelogin-or": "ou",
 	"googlelogin-unlinked": "non ligado",
 	"googlelogin-link-other": "A súa conta de Google xa está ligada a outro usuario. Por favor, desligue a conexión ou contacte cun administrador, se non ten outra conta wiki.",
-	"googlelogin-success-merge": "Parabéns! Agora a súa conta wiki está ligada coa súa conta Google.",
+	"googlelogin-success-merge": "Agora a súa conta wiki está ligada coa súa conta Google.",
 	"googlelogin-success-unlink": "Parabéns! A súa conta wiki xa non está ligada coa súa conta Google.",
 	"googlelogin-prefs-status": "Estado de GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Rexistros con esta etiqueta foron feitos con [[Special:GoogleLogin|GoogleLogin]]",
-	"action-managegooglelogin": "Xestionar conexións de GoogleLogin",
+	"action-managegooglelogin": "xestionar conexións de GoogleLogin",
 	"right-managegooglelogin": "Con dereitos para engadir, eliminar e ver conexións de GoogleLogin"
 }
