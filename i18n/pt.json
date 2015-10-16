@@ -63,6 +63,6 @@
 	"googlelogin-unlinked": "não vinculada",
 	"googlelogin-link-other": "A sua conta Google já está vinculada a outro utilizador(a). Por favor, desconete a sua outra wiki conta ou entre em contato com um administrador, se não tiver outra conta wiki.",
 	"googlelogin-success-merge": "A sua conta wiki está agora ligada à sua conta Google.",
-	"googlelogin-success-unlink": "Parabéns! A sua conta wiki já não está ligada à sua conta Google.",
-	"action-managegooglelogin": "gerir conexões GoogleLogin"
+	"googlelogin-success-unlink": "A sua conta wiki já não está ligada à sua conta Google.",
+	"action-managegooglelogin": "gerir conexões da sua conta Google"
 }
