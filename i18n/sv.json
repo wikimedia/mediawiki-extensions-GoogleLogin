@@ -8,6 +8,9 @@
 		]
 	},
 	"googlelogin": "Logga in med Google",
+	"googlelogin-managelegend": "Hitta användare att hantera",
+	"googlelogin-manage-usersubmit": "Hantera användare",
+	"googlelogin-manage-isplusser": "Registrerad på Google+",
 	"googlelogin-create": "Skapa med Google",
 	"googlelogin-desc": "Tillhandahåller en [[Special:GoogleLogin|specialsida]] för att låta användare logga in med sina Google-konton",
 	"googlelogin-parerror": "Den begärda sidan finns inte. Gå tillbaka och genomför åtgärden igen.",
