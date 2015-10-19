@@ -5,7 +5,8 @@
 			"Romaine",
 			"Robin0van0der0vliet",
 			"Esketti",
-			"Macofe"
+			"Macofe",
+			"Siebrand"
 		]
 	},
 	"googlelogin": "Aanmelden met Google",
@@ -36,11 +37,11 @@
 	"googlelogin-manage-errorloading": "Laden fout",
 	"googlelogin-username": "Gebruikersnaam",
 	"googlelogin-create": "Maak met Google",
-	"googlelogin-desc": "Biedt een [[Special:GoogleLogin|Speciale pagina]] om gebruikers te laten inloggen met hun Google-accounts",
+	"googlelogin-desc": "Laat gebruikers [[Special:GoogleLogin|aanmelden met hun Google-account]]",
 	"googlelogin-parerror": "De gevraagde pagina bestaat niet. Ga terug en probeer het opnieuw.",
-	"googlelogin-generic-error": "Oops, there was an error. Please go back and try again. Message: $1",
+	"googlelogin-generic-error": "Er is een fout opgetreden. Probeer het opnieuw. Bericht: $1",
 	"googlelogin-createnotallowed": "You are not allowed to create a new account with GoogleLogin.",
-	"googlelogin-unallowed-domain": "The email domain used for the primary email address of your Google account ($1) isn't allowed to login into this wiki.",
+	"googlelogin-unallowed-domain": "Het e-maildomein dat wordt gebruikt voor het primaire e-mailadres van uw Googleaccount ($1) mag niet aanmelden bij deze wiki.",
 	"googlelogin-error-unknownconnected": "De wiki-account, gekoppeld aan uw Google-account bestaat niet (meer). De verbinding tussen uw rekeningen zullen worden verwijderd. Maak een nieuwe account of het gebruik van een andere aanwezige.",
 	"googlelogin-form-choosename-title": "Kies een gebruikersnaam",
 	"googlelogin-form-choosename": "Kies uw gebruikersnaam een account aanmaken",
@@ -52,7 +53,7 @@
 	"googlelogin-form-chooseown-error": "Laat het ons weten wat uw gewenste gebruikersnaam of neem één van onze suggesties.",
 	"googlelogin-form-choosename-placeholder": "Uw gebruikersnaam",
 	"googlelogin-form-merge-title": "Link user account",
-	"googlelogin-form-logout": "Inloggen met een ander Google-account",
+	"googlelogin-form-logout": "Aanmelden met een andere Google-account",
 	"googlelogin-form-backlink": "Terug naar Google-login",
 	"googlelogin-form-merge": "Koppeling Google account",
 	"googlelogin-form-unlink": "Ontkoppelen Google account",
@@ -64,11 +65,11 @@
 	"googlelogin-linked": "gekoppeld",
 	"googlelogin-or": "of",
 	"googlelogin-unlinked": "niet gekoppeld",
-	"googlelogin-link-other": "Uw Google-account al gekoppeld aan een andere gebruiker. Gelieve te ontkoppelen van de verbinding of neem contact op met een beheerder als u geen ander account.",
+	"googlelogin-link-other": "Uw Google-account is al gekoppeld aan een andere gebruiker. Ontkoppel deze of neem contact op met een beheerder als u geen andere account hebt op deze wiki.",
 	"googlelogin-success-merge": "Uw account is nu gekoppeld aan uw Google-account.",
 	"googlelogin-success-unlink": "Van harte gefeliciteerd! Uw account is niet gekoppeld aan uw Google-account niet meer.",
 	"googlelogin-prefs-status": "GoogleLogin status:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
-	"tag-googlelogin-description": "Registraties met deze tag zijn gemaakt met [[Special:GoogleLogin|GoogleLogin]]",
+	"tag-googlelogin-description": "Registraties met dit label zijn gemaakt met [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "Beheren GoogleLogin verbindingen"
 }
