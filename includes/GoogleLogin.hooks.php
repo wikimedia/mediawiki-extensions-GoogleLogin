@@ -6,7 +6,7 @@ class GoogleLoginHooks {
 		$googleLogin = new GoogleLogin;
 		$request = $googleLogin->getRequest();
 		if ( $request->getSessionData( 'access_token' ) !== null ) {
-			$request->setSessionData( 'access_token', '' );
+			$request->setSessionData( 'access_token', null );
 		}
 	}
 
