@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_aa072b84",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-10-27T19:12:44Z",
+      "side": 1,
+      "message": "it\u0027s an object, not an array.",
+      "revId": "bf5f239558476f7409f226fd432c61a6564a397a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_4af8ef79",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-10-27T19:12:44Z",
+      "side": 1,
+      "message": "object",
+      "revId": "bf5f239558476f7409f226fd432c61a6564a397a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_4a378f4a",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 534,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2015-10-27T19:12:44Z",
+      "side": 1,
+      "message": "object",
+      "revId": "bf5f239558476f7409f226fd432c61a6564a397a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
