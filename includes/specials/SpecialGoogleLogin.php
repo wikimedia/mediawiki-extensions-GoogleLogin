@@ -273,7 +273,10 @@ class SpecialGoogleLogin extends SpecialPage {
 	 */
 	private function createGoogleUserForm( $userInfo ) {
 		$request = $this->getRequest();
-		$this->getOutput()->setPageTitle( $this->msg( 'googlelogin-form-choosename-title' )->text() );
+		$out = $this->getOutput();
+
+		$out->addModules( array( 'ext.GoogleLogin.specialGoogleLogin.chooseown' ) );
+		$out->setPageTitle( $this->msg( 'googlelogin-form-choosename-title' )->text() );
 
 		// create an array of possible usernames
 		$names = array(
@@ -288,21 +291,25 @@ class SpecialGoogleLogin extends SpecialPage {
 		// "Choose own", so the user can pass it's own username
 		$names[$this->msg( 'googlelogin-form-chooseown' )->text() . ':'] = 'wpOwn';
 
+		$co = $request->getVal( 'wpChooseName' );
+
 		$formElements = array(
 			'ChooseName' => array(
 				'type' => 'radio',
 				'options' => $names,
-				'default' => ( $request->getVal( 'wpChooseName' ) !== null ?
-					$request->getVal( 'wpChooseName' ) : 'wpOwn' ),
+				'default' => ( $co !== null ? $co : 'wpOwn' ),
 			),
 			'ChooseOwn' => array(
 				'class' => 'HTMLTextField',
-				'default' => $request->getVal( 'wpChooseOwn' ),
+				'default' => $co,
+				'cssclass' => 'mw-googlelogin-wpOwninput ' .
+					( $co === 'wpOwn' || $co === null ? '' : 'hidden' ),
 				'placeholder' => $this->msg( 'googlelogin-form-choosename-placeholder' )->text()
 			),
 		);
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formElements, $this->getContext(), 'googlelogin-form' );
+		$htmlForm->setId( 'googlelogin-createform' );
 		$htmlForm->addHiddenField( 'action', 'Create' );
 		$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
 		$htmlForm->setWrapperLegendMsg( 'googlelogin-form-choosename' );

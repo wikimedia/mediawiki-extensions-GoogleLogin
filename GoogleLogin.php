@@ -102,30 +102,41 @@ $wgResourceModules += array(
 	),
 );
 
-$wgResourceModules['ext.GoogleLogin.specialManage.scripts'] = $wgGLResourcePath + array(
-	'dependencies' => array(
-		'mediawiki.api',
-		'oojs-ui'
+$wgResourceModules += array(
+	'ext.GoogleLogin.specialManage.scripts' => $wgGLResourcePath + array(
+		'dependencies' => array(
+			'mediawiki.api',
+			'oojs-ui'
+		),
+		'scripts' => array(
+			'javascripts/specialpages/ext.GoogleLogin.specialManage.js'
+		),
+		'styles' => array(
+			'style/ext.GoogleLogin.specialManage.css'
+		),
+		'messages' => array(
+			'googlelogin-googleuser',
+			'googlelogin-manage-isplusser',
+			'googlelogin-manage-orgname',
+			'googlelogin-manage-orgtitle',
+			'googlelogin-manage-orgsince',
+			'googlelogin-manage-yes',
+			'googlelogin-manage-no',
+			'googlelogin-manage-errorloading',
+			'googlelogin-manage-dismiss',
+			'googlelogin-manage-openpluslink',
+			'googlelogin-manage-unknownerror',
+			'googlelogin-manage-plusinfo-title',
+		),
 	),
-	'scripts' => array(
-		'javascripts/specialpages/ext.GoogleLogin.specialManage.js'
-	),
-	'styles' => array(
-		'style/ext.GoogleLogin.specialManage.css'
-	),
-	'messages' => array(
-		'googlelogin-googleuser',
-		'googlelogin-manage-isplusser',
-		'googlelogin-manage-orgname',
-		'googlelogin-manage-orgtitle',
-		'googlelogin-manage-orgsince',
-		'googlelogin-manage-yes',
-		'googlelogin-manage-no',
-		'googlelogin-manage-errorloading',
-		'googlelogin-manage-dismiss',
-		'googlelogin-manage-openpluslink',
-		'googlelogin-manage-unknownerror',
-		'googlelogin-manage-plusinfo-title',
+	'ext.GoogleLogin.specialGoogleLogin.chooseown' => $wgGLResourcePath + array(
+		'dependencies' => array(
+			'oojs-ui',
+		),
+		'scripts' => array(
+			'javascripts/specialpages/ext.GoogleLogin.specialGoogleLogin.chooseown.js',
+		),
+		'targets' => array( 'desktop', 'mobile' ),
 	),
 );
 
