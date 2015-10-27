@@ -443,19 +443,22 @@ class SpecialGoogleLogin extends SpecialPage {
 						if ( !$isGoogleIdFree ) {
 							// FIXME: Maybe report upstream, that User shouldn't use hardcoded class name for
 							// factory methods
-							$user = MWUser::createNew( $userName, $userParam );
-							$user = User::newFromId( $user->getId() );
-
-							$user->sendConfirmationMail();
-							$user->setCookies();
-							// create a log entry for the created user - bug 67245
-							if ( $glConfig->get( 'GLShowCreateReason' ) ) {
-								self::$performer = $userName;
+							$mwuser = MWUser::createNew( $userName, $userParam );
+							$user = User::newFromId( $mwuser->getId() );
+							if ( !$user ) {
+								$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
+							} else {
+								$user->sendConfirmationMail();
+								$user->setCookies();
+								// create a log entry for the created user - bug 67245
+								if ( $glConfig->get( 'GLShowCreateReason' ) ) {
+									self::$performer = $userName;
+								}
+								$logEntry = $user->addNewUserLogEntry( 'create' );
+								$user->connectWithGoogle( $userInfo['id'] );
+								$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
+								$this->addReturnTo();
 							}
-							$logEntry = $user->addNewUserLogEntry( 'create' );
-							$user->connectWithGoogle( $userInfo['id'] );
-							$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
-							$this->addReturnTo();
 						} else {
 							$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
 						}
