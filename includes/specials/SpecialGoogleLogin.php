@@ -22,8 +22,10 @@ class SpecialGoogleLogin extends SpecialPage {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
 		$config = $this->getConfig();
+		$client = $googleLogin->getClient();
 
 		$this->setHeaders();
+		$googleLogin->setLoginParameter( $request );
 
 		// every time enable OOUI on this special page
 		$out->enableOOUI();
@@ -37,48 +39,34 @@ class SpecialGoogleLogin extends SpecialPage {
 			wfSetupSession();
 		}
 
-		// Check, if a user clicked the login button on the login/create form
-		if ( $request->getVal( 'googlelogin-submit' ) !== null ) {
-			// ... and redirect them directly to the auth url from google
-			$googleLogin->setLoginParameter( $request );
-			$client = $googleLogin->getClient();
-			$authUrl = $client->createAuthUrl();
-			$out->redirect( $authUrl );
-			$out->output();
-			return;
-		}
+		$this->redirectFromLoginForm( $request, $client );
 
 		// first set our own handler for catchable fatal errors
 		set_error_handler( 'GoogleLogin::catchableFatalHandler', E_RECOVERABLE_ERROR );
 
 		// if there is no subpage, use the value of action
 		$par = ( empty( $par ) ? $request->getVal( 'action' ) : $par );
-		$googleLogin->setLoginParameter( $request );
-		// initialize google api client and the client for google plus api
-		$client = $googleLogin->getClient();
+		// initialize the client for google plus api
 		$plus = $googleLogin->getPlus();
 
 		// if the user is redirected back from google, try to authenticate
 		$authCode = $request->getVal( 'code' );
 		if ( $authCode !== null ) {
 			$this->tryAuthenticate( $authCode, $client, $plus );
-		} elseif ( $request->getVal( 'error' )  !== null ) {
+		} elseif ( $request->getVal( 'error' ) !== null ) {
 			// if there was an error reported from google, show this to the user
 			// FIXME: This should be a localized message!
 			$this->createError( 'Authentication failed' );
 		} else {
 			$access_token = $request->getSessionData( 'access_token' );
-			if (
-				$access_token !== null &&
-				$access_token
-			) {
+			if ( $access_token !== null	) {
 				$client->setAccessToken( $access_token );
 				$request->setSessionData( 'access_token', $client->getAccessToken() );
 
 				if ( !empty( $par ) ) {
 					$this->finishAction( $par, $client, $plus );
 				} else {
-					$this->showSummary( $client, $plus );
+					$this->showSummary( $plus );
 				}
 			} else {
 				$authUrl = $client->createAuthUrl();
@@ -91,7 +79,43 @@ class SpecialGoogleLogin extends SpecialPage {
 	}
 
 	/**
+	 * Checks, if a user clicked the login with Google button on the login/create form
+	 * and redirects the user directly to the auth request of Google.
+	 *
+	 * @param WebRequest $request
+	 * @param Google_Client $client
+	 */
+	protected function redirectFromLoginForm( WebRequest $request, Google_Client $client ) {
+		if ( $request->getBool( 'googlelogin-submit' ) ) {
+			$out = $this->getOutput();
+			$googleLogin = $this->mGoogleLogin;
+
+			// redirect them directly to the auth url from google
+			$authUrl = $client->createAuthUrl();
+			$out->redirect( $authUrl );
+			$out->output();
+		}
+	}
+
+	/**
+	 * Tries to get the user information of the passed plus object and
+	 * fails savely by adding an error message, if an Exception occurs.
+	 *
+	 * @param Google_Service_Plus $plus
+	 * @return bool|array
+	 */
+	private function getPlusUserInfo( Google_Service_Plus $plus ) {
+		try {
+			return $userInfo = $plus->people->get( "me" );
+		} catch ( Exception $e ) {
+			$this->createError( $e->getMessage() );
+			return false;
+		}
+	}
+
+	/**
 	 * Helper function to authenticate a user against google plus api
+	 *
 	 * @param String $code The auth code to use
 	 * @param Google_Client $client
 	 * @param Google_Service_Plus $plus
@@ -101,13 +125,10 @@ class SpecialGoogleLogin extends SpecialPage {
 		try {
 			$client->authenticate( $authCode );
 			$request->setSessionData( 'access_token', $client->getAccessToken() );
-			try {
-				$userInfo = $plus->people->get( "me" );
-			} catch ( Exception $e ) {
-				$this->createError( $e->getMessage() );
-				return;
+			$userInfo = $this->getPlusUserInfo( $plus );
+			if ( $userInfo ) {
+				$this->createOrMerge( $userInfo, User::newFromGoogleId( $userInfo['id'] ), true );
 			}
-			$this->createOrMerge( $userInfo, true );
 		} catch ( Google_Auth_Exception $e ) {
 			$this->createError( $e->getMessage() );
 		}
@@ -115,19 +136,18 @@ class SpecialGoogleLogin extends SpecialPage {
 
 	/**
 	 * Show a summary about the actual logged in google user.
-	 * @param Google_Client $client
+	 *
 	 * @param Google_Service_Plus $plus
 	 */
-	private function showSummary( Google_Client $client, Google_Service_Plus $plus ) {
+	private function showSummary( Google_Service_Plus $plus ) {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
 
-		try {
-			$userInfo = $plus->people->get( "me" );
-		} catch ( Exception $e ) {
-			$this->createError( $e->getMessage() );
+		$userInfo = $this->getPlusUserInfo( $plus );
+		if ( !$userInfo ) {
 			return;
 		}
+
 		$user = User::newFromGoogleId( $userInfo['id'] );
 
 		// data that will be added to the account information box
@@ -169,7 +189,7 @@ class SpecialGoogleLogin extends SpecialPage {
 		);
 
 		$out->addHtml( $container );
-		$this->createOrMerge( $userInfo, false, $user );
+		$this->createOrMerge( $userInfo, $user );
 	}
 
 	/**
@@ -183,24 +203,20 @@ class SpecialGoogleLogin extends SpecialPage {
 
 	/**
 	 * Used to determine what is to do, merge, creata or login the authenticated google user.
-	 * @param array $userInfo array of User information provided by Google OAuth2 G+ Api
+	 * @param object $userInfo Object of User information provided by Google OAuth2 G+ Api
 	 * @param boolean $redirect If true, the function will redirect to Special:GoogleLogin if
 	 * 	nothing to display.
 	 */
-	private function createOrMerge( $userInfo, $redirect = false, $gluser = null ) {
+	private function createOrMerge( $userInfo, User $gluser, $redirect = false ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 		$user = $this->getUser();
 
-		if ( $gluser === null ) {
-			$gluser = User::newFromGoogleId( $userInfo['id'] );
-		}
 		$userId = $gluser->getId();
 
 		if (
-			$this->mGoogleLogin->isValidDomain(
-				$userInfo['emails'][0]['value']
-			)
+			isset( $userInfo['emails'][0]['value'] ) &&
+			$this->mGoogleLogin->isValidDomain( $userInfo['emails'][0]['value'] )
 		) {
 			if ( !$gluser->hasConnectedGoogleAccount() ) {
 				if ( !$user->isLoggedIn() ) {
@@ -228,14 +244,14 @@ class SpecialGoogleLogin extends SpecialPage {
 						}
 					}
 				} else {
-					$loginUser = $this->mGoogleLogin->loginGoogleUser(
+					$loginUserStatus = $this->mGoogleLogin->loginGoogleUser(
 						$userId,
 						$userInfo['id']
 					);
-					if ( $loginUser->isOk() ) {
-						$out->redirect( $loginUser->getValue() );
+					if ( $loginUserStatus->isOk() ) {
+						$out->redirect( $loginUserStatus->getValue() );
 					} else {
-						$out->addHtml( $loginUser->getHTML() );
+						$out->addHtml( $loginUserStatus->getHTML() );
 					}
 				}
 			}
@@ -252,11 +268,13 @@ class SpecialGoogleLogin extends SpecialPage {
 	/**
 	 * Create and show a Form to for the user to create a new Wiki user account. Called after
 	 * Google user logged in and Google id not linked to an existing wiki user.
-	 * @param array $userInfo An array of user information provided by Google Plus API
+	 * @param object $userInfo An array of user information provided by Google Plus API
 	 */
 	private function createGoogleUserForm( $userInfo ) {
 		$request = $this->getRequest();
 		$this->getOutput()->setPageTitle( $this->msg( 'googlelogin-form-choosename-title' )->text() );
+
+		// create an array of possible usernames
 		$names = array(
 			$this->msg( 'googlelogin-login-already-registered' )->text() => 'wpAlreadyRegistered'
 		);
@@ -266,14 +284,15 @@ class SpecialGoogleLogin extends SpecialPage {
 		if ( GoogleLogin::isValidUsername( $userInfo['name']['givenName'] ) ) {
 			$names[$userInfo['name']['givenName']] = 'wpGivenName';
 		}
+		// "Choose own", so the user can pass it's own username
 		$names[$this->msg( 'googlelogin-form-chooseown' )->text() . ':'] = 'wpOwn';
-		$defaultName = ( $request->getVal( 'wpChooseName' ) !== null ?
-			$request->getVal( 'wpChooseName' ) : 'wpOwn' );
+
 		$formElements = array(
 			'ChooseName' => array(
 				'type' => 'radio',
 				'options' => $names,
-				'default' => $defaultName,
+				'default' => ( $request->getVal( 'wpChooseName' ) !== null ?
+					$request->getVal( 'wpChooseName' ) : 'wpOwn' ),
 			),
 			'ChooseOwn' => array(
 				'class' => 'HTMLTextField',
@@ -281,6 +300,7 @@ class SpecialGoogleLogin extends SpecialPage {
 				'placeholder' => $this->msg( 'googlelogin-form-choosename-placeholder' )->text()
 			),
 		);
+
 		$htmlForm = HTMLForm::factory( 'ooui', $formElements, $this->getContext(), 'googlelogin-form' );
 		$htmlForm->addHiddenField( 'action', 'Create' );
 		$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
@@ -353,12 +373,11 @@ class SpecialGoogleLogin extends SpecialPage {
 		$request = $this->getRequest();
 
 		// get userinfos of google plus api result
-		try {
-			$userInfo = $plus->people->get( "me" );
-		} catch ( Exception $e ) {
-			$this->createError( $e->getMessage() );
+		$userInfo = $this->getPlusUserInfo( $plus );
+		if ( !$userInfo ) {
 			return;
 		}
+
 		$user = User::newFromGoogleId( $userInfo['id'] );
 		$isGoogleIdFree = User::isGoogleIdFree( $userInfo['id'] );
 
@@ -371,98 +390,12 @@ class SpecialGoogleLogin extends SpecialPage {
 				if ( !$this->mGoogleLogin->isValidRequest() ) {
 					$this->createError( 'Token failure' );
 				}
+
 				// Handles the creation of a new wikiuser, but before: check, if no-one changed the username
 				// and is still valid
 				// Finish with the creation of connection between user id and google id
 				if ( $this->mGoogleLogin->isCreateAllowed() ) {
-					$userName = '';
-					$chooseOwn = $request->getVal( 'wpChooseName' );
-					if ( $chooseOwn === null ) {
-						$this->createGoogleUserForm( $userInfo );
-					}
-					// if the user selected the "i have an account" option, redirect to the login page
-					// with all required parameter
-					if ( $chooseOwn === 'wpAlreadyRegistered' ) {
-						// target page query
-						$query = array(
-							// to redirect the user to the link function directly after login
-							'action' => 'Merge',
-							// with this parameter, the user doesn't get an error message because of the
-							// missing form token
-							'fromLogin' => 1
-						);
-
-						$out->redirect(
-							// redirect to Special:UserLogin
-							SpecialPage::getTitleFor( 'UserLogin' )->getFullUrl( array(
-								'returnto' => 'Special:GoogleLogin',
-								'returntoquery' => wfArrayToCgi( $query ),
-								// this parameter disables the "Login with Google" option, it would be
-								// pointless here
-								'loginmerge' => 1,
-								// a custom warning message, if you change the mesasge key, change it in
-								// GoogleLoginHooks::onLoginFormValidErrorMessages, too
-								'warning' => 'googlelogin-login-merge-warning',
-							) )
-						);
-					}
-					if ( $chooseOwn === 'wpOwn' ) {
-						if ( $request->getVal( 'wpChooseOwn' ) === '' ) {
-							$this->createGoogleUserForm( $userInfo );
-						} elseif(
-							$request->getVal( 'wpChooseOwn' ) !== '' &&
-							!GoogleLogin::isValidUsername( $request->getVal( 'wpChooseOwn' ) )
-						) {
-							$this->createGoogleUserForm( $userInfo );
-						} else {
-							$userName = $request->getVal( 'wpChooseOwn' );
-						}
-					}
-					if ( $chooseOwn === 'wpDisplayName' ) {
-						if ( GoogleLogin::isValidUsername( $userInfo['displayName'] ) ) {
-							$userName = $userInfo['displayName'];
-						} else {
-							$this->createGoogleUserForm( $userInfo );
-						}
-					}
-					if ( $chooseOwn === 'wpGivenName' ) {
-						if ( GoogleLogin::isValidUsername( $userInfo['name']['givenName'] ) ) {
-							$userName = $userInfo['name']['givenName'];
-						} else {
-							$this->createGoogleUserForm( $userInfo );
-						}
-					}
-					if ( !empty( $userName ) ) {
-						$out->setPageTitle( $this->msg( 'googlelogin-form-choosename-finish-title' )
-							->text() );
-						$userParam = array(
-							'password' => md5( Rand() ),
-							'email' => $userInfo['emails'][0]['value'],
-							'real_name' => $userInfo['name']['givenName']
-						);
-						if ( $isGoogleIdFree ) {
-							// FIXME: Maybe report upstream, that User shouldn't use hardcoded class name for
-							// factory methods
-							$mwuser = MWUser::createNew( $userName, $userParam );
-							$user = User::newFromId( $mwuser->getId() );
-							if ( !$user ) {
-								$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
-							} else {
-								$user->sendConfirmationMail();
-								$user->setCookies();
-								// create a log entry for the created user - bug 67245
-								if ( $glConfig->get( 'GLShowCreateReason' ) ) {
-									self::$performer = $userName;
-								}
-								$logEntry = $user->addNewUserLogEntry( 'create' );
-								$user->connectWithGoogle( $userInfo['id'] );
-								$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
-								$this->addReturnTo();
-							}
-						} else {
-							$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
-						}
-					}
+					$this->onActionCreate( $userInfo, $isGoogleIdFree );
 				} else {
 					$this->createError( 'not allowed' );
 				}
@@ -482,7 +415,7 @@ class SpecialGoogleLogin extends SpecialPage {
 						}
 					}
 				} elseif ( $request->getBool( 'fromLogin' ) === true ) {
-					$this->createOrMerge( $userInfo );
+					$this->createOrMerge( $userInfo, User::newFromGoogleId( $userInfo['id'] ) );
 				} else {
 					$this->createError( 'Token failure' );
 				}
@@ -513,8 +446,126 @@ class SpecialGoogleLogin extends SpecialPage {
 				// When GoogleLogin replaces MW login, Special:CreateAccount will
 				// redirect to Special:GoogleLogin/signup,
 				// handle this here correctly.
-				$this->createOrMerge( $userInfo );
+				$this->createOrMerge( $userInfo, User::newFromGoogleId( $userInfo['id'] ) );
 			break;
+		}
+	}
+
+	/**
+	 * Get the username for the local MediaWiki account, based on the user selection,
+	 * and teh given Google Plus user info object.
+	 *
+	 * @param object $userInfo
+	 * @return bool|string Returns the username or false, if something went wrong.
+	 */
+	private function getChooseName( $userInfo ) {
+		$userName = false;
+		$request = $this->getRequest();
+		$out = $this->getOutput();
+
+		switch( $request->getVal( 'wpChooseName' ) ) {
+			default:
+				$this->createGoogleUserForm( $userInfo );
+				break;
+			case 'wpAlreadyRegistered':
+				// if the user selected the "i have an account" option, redirect to the login page
+				// with all required parameter
+
+				// target page query
+				$query = array(
+					// to redirect the user to the link function directly after login
+					'action' => 'Merge',
+					// with this parameter, the user doesn't get an error message because of the
+					// missing form token
+					'fromLogin' => 1
+				);
+
+				$out->redirect(
+					// redirect to Special:UserLogin
+					SpecialPage::getTitleFor( 'UserLogin' )->getFullUrl( array(
+						'returnto' => 'Special:GoogleLogin',
+						'returntoquery' => wfArrayToCgi( $query ),
+						// this parameter disables the "Login with Google" option, it would be
+						// pointless here
+						'loginmerge' => 1,
+						// a custom warning message, if you change the mesasge key, change it in
+						// GoogleLoginHooks::onLoginFormValidErrorMessages, too
+						'warning' => 'googlelogin-login-merge-warning',
+					) )
+				);
+				break;
+			case 'wpOwn':
+				if ( $request->getVal( 'wpChooseOwn' ) === '' ) {
+					$this->createGoogleUserForm( $userInfo );
+				} elseif(
+					$request->getVal( 'wpChooseOwn' ) !== '' &&
+					!GoogleLogin::isValidUsername( $request->getVal( 'wpChooseOwn' ) )
+				) {
+					$this->createGoogleUserForm( $userInfo );
+				} else {
+					$userName = $request->getVal( 'wpChooseOwn' );
+				}
+				break;
+			case 'wpDisplayName':
+				if ( GoogleLogin::isValidUsername( $userInfo['displayName'] ) ) {
+					$userName = $userInfo['displayName'];
+				} else {
+					$this->createGoogleUserForm( $userInfo );
+				}
+				break;
+			case 'wpGivenName':
+				if ( GoogleLogin::isValidUsername( $userInfo['name']['givenName'] ) ) {
+					$userName = $userInfo['name']['givenName'];
+				} else {
+					$this->createGoogleUserForm( $userInfo );
+				}
+				break;
+		}
+
+		return $userName;
+	}
+
+	/**
+	 * "Create" handler for FinishAction.
+	 *
+	 * @param object $userInfo
+	 * @param bool $isGoogleIdFree
+	 */
+	private function onActionCreate( $userInfo, $isGoogleIdFree ) {
+		$out = $this->getOutput();
+		$glConfig = $this->mGoogleLogin->getGLConfig();
+		$userName = $this->getChooseName( $userInfo );
+
+		if ( $userName ) {
+			$out->setPageTitle( $this->msg( 'googlelogin-form-choosename-finish-title' )
+				->text() );
+			$userParam = array(
+				'password' => md5( Rand() ),
+				'email' => $userInfo['emails'][0]['value'],
+				'real_name' => $userInfo['name']['givenName']
+			);
+			if ( $isGoogleIdFree ) {
+				// FIXME: Maybe report upstream, that User shouldn't use hardcoded class name for
+				// factory methods
+				$mwuser = MWUser::createNew( $userName, $userParam );
+				$user = User::newFromId( $mwuser->getId() );
+				if ( !$user ) {
+					$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
+				} else {
+					$user->sendConfirmationMail();
+					$user->setCookies();
+					// create a log entry for the created user - bug 67245
+					if ( $glConfig->get( 'GLShowCreateReason' ) ) {
+						self::$performer = $userName;
+					}
+					$logEntry = $user->addNewUserLogEntry( 'create' );
+					$user->connectWithGoogle( $userInfo['id'] );
+					$out->addWikiMsg( 'googlelogin-form-choosename-finish-body', $userName );
+					$this->addReturnTo();
+				}
+			} else {
+				$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
+			}
 		}
 	}
 
