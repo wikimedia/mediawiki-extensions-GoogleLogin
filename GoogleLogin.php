@@ -200,3 +200,9 @@ $wgGLAPIKey = '';
  * the right side of the login form, instead above the normal login form.
  */
 $wgGLShowRight = false;
+
+/**
+ * Whether the user needs to confirm the google mail adress after registration
+ * of a new local MediaWiki account, or not.
+ */
+$wgGLNeedsConfirmEmail = true;
