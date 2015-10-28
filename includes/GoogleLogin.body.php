@@ -236,10 +236,10 @@ class GoogleLogin extends ContextSource {
 	 */
 	public static function isValidUserName( $name ) {
 		$user = MWUser::newFromName( $name, 'creatable' );
-		if ( !$user ) {
-			return false;
+		if ( $user && $user->getId() === 0 ) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
@@ -491,7 +491,7 @@ class GoogleLogin extends ContextSource {
 				!empty( $data['ChooseOwn'] ) &&
 				!GoogleLogin::isValidUserName( $data['ChooseOwn'] )
 			) {
-				return wfMessage( 'googlelogin-form-choosename-existerror', $data['ChooseOwn'] )->text();
+				return wfMessage( 'googlelogin-form-choosename-existerror', $data['ChooseOwn'] );
 			}
 		}
 		return true;

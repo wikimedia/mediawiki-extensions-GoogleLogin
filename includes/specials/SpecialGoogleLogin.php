@@ -440,7 +440,7 @@ class SpecialGoogleLogin extends SpecialPage {
 							'email' => $userInfo['emails'][0]['value'],
 							'real_name' => $userInfo['name']['givenName']
 						);
-						if ( !$isGoogleIdFree ) {
+						if ( $isGoogleIdFree ) {
 							// FIXME: Maybe report upstream, that User shouldn't use hardcoded class name for
 							// factory methods
 							$mwuser = MWUser::createNew( $userName, $userParam );
