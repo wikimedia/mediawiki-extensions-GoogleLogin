@@ -41,7 +41,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => 'Florian Schmidt',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GoogleLogin',
 	'descriptionmsg' => 'googlelogin-desc',
-	'version'  => '0.3.0-git',
+	'version'  => '0.3.0',
 	'license-name' => "MIT",
 );
 
