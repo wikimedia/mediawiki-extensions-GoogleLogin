@@ -448,7 +448,12 @@ class SpecialGoogleLogin extends SpecialPage {
 							if ( !$user ) {
 								$this->createError( $this->msg( 'googlelogin-link-other' )->text() );
 							} else {
-								$user->sendConfirmationMail();
+								if ( $glConfig->get( 'GLNeedsConfirmEmail' ) ) {
+									$user->sendConfirmationMail();
+								} else {
+									$user->confirmEmail();
+									$user->saveSettings();
+								}
 								$user->setCookies();
 								// create a log entry for the created user - bug 67245
 								if ( $glConfig->get( 'GLShowCreateReason' ) ) {
