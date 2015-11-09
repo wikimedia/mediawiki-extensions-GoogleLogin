@@ -37,7 +37,7 @@
 	"googlelogin-manage-errorloading": "Помилка завантаження",
 	"googlelogin-username": "Ім'я користувача",
 	"googlelogin-create": "Створити обліковий запис із Google",
-	"googlelogin-desc": "Надає [[Special:GoogleLogin|спеціальну сторінку]], щоб користувачі могли увійти з їхніх облікових записів Google",
+	"googlelogin-desc": "Дозволяє користувачам [[Special:GoogleLogin|входити у систему з допомогою своїх облікових записів Google]]",
 	"googlelogin-parerror": "Запитувана сторінка не існує. Будь ласка, поверніться назад і повторіть операцію.",
 	"googlelogin-generic-error": "Ой, сталася помилка. Будь ласка, поверніться назад і спробуйте ще раз. Повідомлення: $1",
 	"googlelogin-createnotallowed": "Ви не зможете створити новий обліковий запис з GoogleLogin.",
@@ -70,10 +70,10 @@
 	"googlelogin-unlinked": "не пов'язано",
 	"googlelogin-link-other": "Ваш обліковий запис Google уже зв'язано з іншим користувачем. Будь ласка, від'єднайте підключення або зверніться до адміністратора, якщо у вас немає іншого облікового запису вікі.",
 	"googlelogin-success-merge": "Ваш обліковий запису у вікі тепер пов'язано з вашим обліковим записом Google.",
-	"googlelogin-success-unlink": "Вітаємо! Ваш обліковий запису у вікі більше не пов'язано з вашим обліковим записом Google.",
+	"googlelogin-success-unlink": "Ваш обліковий запис у вікі більше не пов'язано з Вашим обліковим записом Google.",
 	"googlelogin-prefs-status": "Стан GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Реєстрації з цим теґом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
-	"action-managegooglelogin": "Управляти зв'язками GoogleLogin",
+	"action-managegooglelogin": "керування зв'язками GoogleLogin",
 	"right-managegooglelogin": "Можливість додати, видалити або оглянути зв'язки із GoogleLogin"
 }
