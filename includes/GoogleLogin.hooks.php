@@ -173,4 +173,44 @@ class GoogleLoginHooks {
 
 		return true;
 	}
+
+	/**
+	 * Handles Updates to the UserMergeAccountFields of the UserMerge extension.
+	 *
+	 * @param array &$updateFields
+	 */
+	public static function onMergeAccountFromTo( &$fromUser, &$toUser ) {
+		$oldUser = \GoogleLogin\GoogleUser::newFromId( $fromUser->getId() );
+		$newUser = \GoogleLogin\GoogleUser::newFromId( $toUser->getId() );
+		// check, if
+		if (
+			// the new user exists (e.g. is not Anonymous)
+			!$newUser->isAnon() &&
+			// the new user doesn't has a google connection already
+			!$newUser->hasConnectedGoogleAccount() &&
+			// the old user has a google connection
+			$oldUser->hasConnectedGoogleAccount()
+		) {
+			// save the google id of the old account
+			$googleId = $oldUser->getGoogleId();
+			// delete the connection between the google and the old wiki account
+			$oldUser->terminateGoogleConnection();
+			// add the google id to the new account
+			$newUser->connectWithGoogle( $googleId );
+		}
+
+		return true;
+	}
+
+	/**
+	 * Handle, what data needs to be deleted from the GoogleLogin tables when a user is
+	 * deleted through the UserMerge extension.
+	 *
+	 * @param array &$tablesToDelete
+	 */
+	public static function onUserMergeAccountDeleteTables( &$tablesToDelete ) {
+		$tablesToDelete['user_google_user'] = 'user_id';
+
+		return true;
+	}
 }

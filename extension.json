@@ -135,6 +135,12 @@
 		],
 		"UnitTestsList": [
 			"GoogleLoginHooks::onUnitTestsList"
+		],
+		"MergeAccountFromTo": [
+			"GoogleLoginHooks::onMergeAccountFromTo"
+		],
+		"UserMergeAccountDeleteTables": [
+			"GoogleLoginHooks::onUserMergeAccountDeleteTables"
 		]
 	},
 	"config": {
