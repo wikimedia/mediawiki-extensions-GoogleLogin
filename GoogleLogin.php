@@ -82,6 +82,8 @@ $wgHooks['ListDefinedTags'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
 $wgHooks['ChangeTagsListActive'][] = 'GoogleLoginHooks::onListDefinedAndActiveTags';
 $wgHooks['LoginFormValidErrorMessages'][] = 'GoogleLoginHooks::onLoginFormValidErrorMessages';
 $wgHooks['UnitTestsList'][] = 'GoogleLoginHooks::onUnitTestsList';
+$wgHooks['MergeAccountFromTo'][] = 'GoogleLoginHooks::onMergeAccountFromTo';
+$wgHooks['UserMergeAccountDeleteTables'][] = 'GoogleLoginHooks::onUserMergeAccountDeleteTables';
 
 // ResourceLoader modules
 // path template
