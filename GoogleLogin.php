@@ -83,6 +83,9 @@ $wgHooks['ChangeTagsListActive'][] = 'GoogleLoginHooks::onListDefinedAndActiveTa
 $wgHooks['LoginFormValidErrorMessages'][] = 'GoogleLoginHooks::onLoginFormValidErrorMessages';
 $wgHooks['UnitTestsList'][] = 'GoogleLoginHooks::onUnitTestsList';
 
+// extension function (setup for vendor dir)
+$wgExtensionFunctions[] = 'GoogleLoginHooks::onRegistration';
+
 // ResourceLoader modules
 // path template
 $wgGLResourcePath = array(
