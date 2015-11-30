@@ -2,6 +2,9 @@
 	"name": "mediawiki/googlelogin",
 	"description": "Allow users to login to MediaWiki with their Google Account",
 	"license": "MIT",
+	"require": {
+		"google/apiclient": "^2.0.0@RC"
+	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2",
 		"mediawiki/mediawiki-codesniffer": "0.5.1"
