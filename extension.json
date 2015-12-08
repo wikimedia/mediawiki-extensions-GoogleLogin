@@ -1,0 +1,156 @@
+{
+	"name": "GoogleLogin",
+	"version": "0.3.1-git",
+	"author": "Florian Schmidt",
+	"url": "https://www.mediawiki.org/wiki/Extension:GoogleLogin",
+	"descriptionmsg": "googlelogin-desc",
+	"license-name": "MIT",
+	"type": "specialpage",
+	"GroupPermissions": {
+		"sysop": {
+			"managegooglelogin": true
+		}
+	},
+	"AvailableRights": [
+		"managegooglelogin"
+	],
+	"ConfigRegistry": {
+		"googlelogin": "GlobalVarConfig::newInstance"
+	},
+	"SpecialPages": {
+		"GoogleLogin": "SpecialGoogleLogin",
+		"ManageGoogleLogin": "SpecialManageGoogleLogin"
+	},
+	"APIModules": {
+		"googleplusprofileinfo": "ApiGoogleLoginInfo"
+	},
+	"MessagesDirs": {
+		"GoogleLogin": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"GoogleLoginAlias": "GoogleLogin.alias.php"
+	},
+	"AutoloadClasses": {
+		"GoogleLogin": "includes/GoogleLogin.body.php",
+		"SpecialGoogleLogin": "includes/specials/SpecialGoogleLogin.php",
+		"SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
+		"GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
+		"GoogleLogin\\GoogleUser": "includes/GoogleUser.php",
+		"ApiGoogleLoginInfo": "includes/api/ApiGoogleLoginInfo.php"
+	},
+	"ResourceModules": {
+		"ext.GoogleLogin.style": {
+			"styles": "style/ext.GoogleLogin.css",
+			"position": "top",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		},
+		"ext.GoogleLogin.right.style": {
+			"styles": "style/ext.GoogleLogin.right.css",
+			"position": "top"
+		},
+		"ext.GoogleLogin.specialManage.scripts": {
+			"dependencies": [
+				"mediawiki.api",
+				"oojs-ui"
+			],
+			"scripts": [
+				"javascripts/specialpages/ext.GoogleLogin.specialManage.js"
+			],
+			"styles": [
+				"style/ext.GoogleLogin.specialManage.css"
+			],
+			"messages": [
+				"googlelogin-googleuser",
+				"googlelogin-manage-isplusser",
+				"googlelogin-manage-orgname",
+				"googlelogin-manage-orgtitle",
+				"googlelogin-manage-orgsince",
+				"googlelogin-manage-yes",
+				"googlelogin-manage-no",
+				"googlelogin-manage-errorloading",
+				"googlelogin-manage-dismiss",
+				"googlelogin-manage-openpluslink",
+				"googlelogin-manage-unknownerror",
+				"googlelogin-manage-plusinfo-title"
+			]
+		},
+		"ext.GoogleLogin.specialGoogleLogin.chooseown": {
+			"dependencies": [
+				"oojs-ui"
+			],
+			"scripts": [
+				"javascripts/specialpages/ext.GoogleLogin.specialGoogleLogin.chooseown.js"
+			],
+			"targets": [
+				"desktop",
+				"mobile"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "GoogleLogin"
+	},
+	"Hooks": {
+		"UserLogoutComplete": [
+			"GoogleLoginHooks::onUserLogoutComplete"
+		],
+		"LoadExtensionSchemaUpdates": [
+			"GoogleLoginHooks::onLoadExtensionSchemaUpdates"
+		],
+		"UserLoginForm": [
+			"GoogleLoginHooks::onUserLoginForm"
+		],
+		"UserCreateForm": [
+			"GoogleLoginHooks::onUserCreateForm"
+		],
+		"PersonalUrls": [
+			"GoogleLoginHooks::onPersonalUrls"
+		],
+		"SpecialPage_initList": [
+			"GoogleLoginHooks::onSpecialPage_initList"
+		],
+		"GetPreferences": [
+			"GoogleLoginHooks::onGetPreferences"
+		],
+		"RecentChange_save": [
+			"GoogleLoginHooks::onRecentChange_save"
+		],
+		"ListDefinedTags": [
+			"GoogleLoginHooks::onListDefinedAndActiveTags"
+		],
+		"ChangeTagsListActive": [
+			"GoogleLoginHooks::onListDefinedAndActiveTags"
+		],
+		"LoginFormValidErrorMessages": [
+			"GoogleLoginHooks::onLoginFormValidErrorMessages"
+		],
+		"UnitTestsList": [
+			"GoogleLoginHooks::onUnitTestsList"
+		]
+	},
+	"config": {
+		"GLResourcePath": {
+			"localBasePath": "/var/www/html/media/extensions/GoogleLogin",
+			"remoteExtPath": "GoogleLogin"
+		},
+		"GLSecret": "",
+		"GLAppId": "",
+		"GLAllowedDomains": "",
+		"GLAllowedDomainsStrict": false,
+		"GLShowCreateReason": false,
+		"GLShowKeepLogin": true,
+		"GLForceKeepLogin": false,
+		"GLAllowAccountCreation": null,
+		"GLReplaceMWLogin": false,
+		"GLAPIKey": "",
+		"GLShowRight": false,
+		"GLNeedsConfirmEmail": true
+	},
+	"manifest_version": 1
+}
