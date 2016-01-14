@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6eaa8f54_170e84e8",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-01-14T21:25:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eaa8f54_ec475b7a",
+      "revId": "1684ba2f7cf7f00710af652b6590873603d2ebe0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eaa8f54_8c7fc7a5",
         "filename": "includes/specials/SpecialGoogleLogin.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-01-14T21:00:54Z",
       "side": 1,
       "message": "You can skip the condition, persist() doesn\u0027t do much if it\u0027s already persisted.",
+      "revId": "1684ba2f7cf7f00710af652b6590873603d2ebe0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_f70ac8d3",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-01-14T21:25:34Z",
+      "side": 1,
+      "message": "Ah, ok, thanks for the hint.",
+      "parentUuid": "6eaa8f54_8c7fc7a5",
       "revId": "1684ba2f7cf7f00710af652b6590873603d2ebe0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
