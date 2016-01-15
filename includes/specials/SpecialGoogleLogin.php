@@ -13,6 +13,10 @@ class SpecialGoogleLogin extends SpecialPage {
 		parent::__construct( 'GoogleLogin' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * First function after call of special page, handles what is need to do and is simply magic!
 	 * @param SubPage $par Subpage submitted to this Special page.

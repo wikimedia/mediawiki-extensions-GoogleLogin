@@ -13,6 +13,10 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$this->listed = true;
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * Special page executer
 	 * @param SubPage $par Subpage
