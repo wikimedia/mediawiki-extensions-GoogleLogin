@@ -35,9 +35,7 @@ class SpecialGoogleLogin extends SpecialPage {
 
 		// it's possible, that the session isn't started yet (if GoogleLogin
 		// replaces MediaWiki login, e.g.)
-		if ( session_id() == '' ) {
-			wfSetupSession();
-		}
+		$this->getRequest()->getSession()->persist();
 
 		$this->redirectFromLoginForm( $request, $client );
 
