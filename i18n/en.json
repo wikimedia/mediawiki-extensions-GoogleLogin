@@ -9,7 +9,7 @@
 	"googlelogin-managelegend": "Find user to manage",
 	"googlelogin-manage-usersubmit": "Manage user",
 	"googlelogin-manage-notexist": "There is no user with name <strong>$1</strong>.",
-	"googlelogin-manage-user": "You manage the user <strong>$1</strong>.",
+	"googlelogin-manage-user": "You manage the {{GENDER:$1|user}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "The account is linked with a Google account with the ID ",
 	"googlelogin-manage-notlinked": "The account is actually not linked with a Google account.",
 	"googlelogin-manage-changelegend": "Change Google ID",
