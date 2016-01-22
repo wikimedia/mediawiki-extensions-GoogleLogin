@@ -4,6 +4,8 @@
 			"Florian Schmidt"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Makes a request to the Google+ api to find our some personal information about a given user.",
+	"apihelp-googleplusprofileinfo-param-googleid": "The Google ID of the user.",
 	"googlelogin": "Login with Google",
 	"managegooglelogin": "Manage GoogleLogin connections",
 	"googlelogin-managelegend": "Find user to manage",
