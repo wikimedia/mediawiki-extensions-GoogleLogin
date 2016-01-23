@@ -13,7 +13,7 @@
 	"googlelogin-managelegend": "查找需要管理的用户",
 	"googlelogin-manage-usersubmit": "管理用户",
 	"googlelogin-manage-notexist": "这里没有叫做<strong>$1</strong>的用户。",
-	"googlelogin-manage-user": "您管理了用户<strong>$1</strong>。",
+	"googlelogin-manage-user": "您管理{{GENDER:$1|用户}}<strong>$1</strong>。",
 	"googlelogin-manage-linked": "账户已连接Google账户，ID为",
 	"googlelogin-manage-notlinked": "此账户尚未连接一个Google账户。",
 	"googlelogin-manage-changelegend": "更改Google ID",

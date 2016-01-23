@@ -4,7 +4,8 @@
 			"Florian Schmidt",
 			"Metalhead64",
 			"Thomas Bohn",
-			"Florian"
+			"Florian",
+			"Tehabe"
 		]
 	},
 	"googlelogin": "Anmelden mit Google",
@@ -12,7 +13,7 @@
 	"googlelogin-managelegend": "Zu verwaltenden Benutzer suchen",
 	"googlelogin-manage-usersubmit": "Benutzer verwalten",
 	"googlelogin-manage-notexist": "Es gibt keinen Benutzer mit dem Namen <strong>$1</strong>.",
-	"googlelogin-manage-user": "Du verwaltest den Benutzer <strong>$1</strong>.",
+	"googlelogin-manage-user": "Du verwaltest {{GENDER:$1|den Benutzer|die Benutzerin}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Das Benutzerkonto ist mit einem Google-Konto verknüpft mit der ID",
 	"googlelogin-manage-notlinked": "Das Benutzerkonto ist nicht mit einem Google-Konto verknüpft.",
 	"googlelogin-manage-changelegend": "Google-ID ändern",
