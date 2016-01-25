@@ -6,7 +6,8 @@
 			"Robin0van0der0vliet",
 			"Esketti",
 			"Macofe",
-			"Siebrand"
+			"Siebrand",
+			"Robin van der Vliet"
 		]
 	},
 	"googlelogin": "Aanmelden met Google",
@@ -14,7 +15,7 @@
 	"googlelogin-managelegend": "Het vinden van de Gebruiker te beheren",
 	"googlelogin-manage-usersubmit": "Gebruiker beheren",
 	"googlelogin-manage-notexist": "Er is geen Gebruiker met de naam <strong>$1</strong>.",
-	"googlelogin-manage-user": "U beheert de gebruiker <strong>$1</strong>.",
+	"googlelogin-manage-user": "U beheert de {{GENDER:$1|gebruiker}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "De account is gekoppeld aan een Google-account met de ID",
 	"googlelogin-manage-notlinked": "Het account is toch niet gelinkt met een google account",
 	"googlelogin-manage-changelegend": "Google-ID aanpassen",

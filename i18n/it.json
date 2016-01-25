@@ -8,6 +8,7 @@
 		]
 	},
 	"googlelogin": "Accedi con Google",
+	"googlelogin-manage-user": "Gestisci {{GENDER:$1|l'utente}} <strong>$1</strong>.",
 	"googlelogin-manage-isplusser": "Registrato su Google+",
 	"googlelogin-manage-yes": "sì",
 	"googlelogin-manage-no": "no",
