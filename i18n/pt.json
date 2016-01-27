@@ -11,7 +11,7 @@
 	"googlelogin-managelegend": "Localizar utilizador para gerir",
 	"googlelogin-manage-usersubmit": "Gerir utilizador",
 	"googlelogin-manage-notexist": "Não existe nenhum utilizador com o nome <strong>$1</strong>.",
-	"googlelogin-manage-user": "Está a gerir o utilizador <strong>$1</strong>.",
+	"googlelogin-manage-user": "Está a gerir o {{GENDER:$1|utilizador|utilizadora|utilizador(a)}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "A conta está ligada com uma conta Google com o ID",
 	"googlelogin-manage-notlinked": "Esta conta não está ligada a nenhuma conta Google.",
 	"googlelogin-manage-changelegend": "Alterar o ID Google",
