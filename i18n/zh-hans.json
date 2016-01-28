@@ -8,6 +8,7 @@
 			"Macofe"
 		]
 	},
+	"apihelp-googleplusprofileinfo-param-googleid": "用户的Google ID。",
 	"googlelogin": "使用Google登录",
 	"managegooglelogin": "管理GoogleLogin连接",
 	"googlelogin-managelegend": "查找需要管理的用户",

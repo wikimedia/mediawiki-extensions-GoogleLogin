@@ -10,6 +10,8 @@
 			"Wladek92"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Fait une requête à l’API de Google+ pour trouver des informations personnelles sur un utilisateur donné.",
+	"apihelp-googleplusprofileinfo-param-googleid": "L’ID Google de l’utilisateur.",
 	"googlelogin": "Connexion avec Google",
 	"managegooglelogin": "Gérer les connexions GoogleLogin",
 	"googlelogin-managelegend": "Trouver l'utilisateur à gérer",
