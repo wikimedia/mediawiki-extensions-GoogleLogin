@@ -10,6 +10,7 @@
 	"googlelogin": "Logga in med Google",
 	"googlelogin-managelegend": "Hitta användare att hantera",
 	"googlelogin-manage-usersubmit": "Hantera användare",
+	"googlelogin-manage-user": "Du hanterar {{GENDER:$1|användaren}} <strong>$1</strong>.",
 	"googlelogin-manage-isplusser": "Registrerad på Google+",
 	"googlelogin-create": "Skapa med Google",
 	"googlelogin-desc": "Tillhandahåller en [[Special:GoogleLogin|specialsida]] för att låta användare logga in med sina Google-konton",
