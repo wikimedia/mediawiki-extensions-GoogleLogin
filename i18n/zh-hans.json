@@ -8,6 +8,7 @@
 			"Macofe"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "向Google+ api发送请求以找到我们有关指定用户的一些个人信息。",
 	"apihelp-googleplusprofileinfo-param-googleid": "用户的Google ID。",
 	"googlelogin": "使用Google登录",
 	"managegooglelogin": "管理GoogleLogin连接",
