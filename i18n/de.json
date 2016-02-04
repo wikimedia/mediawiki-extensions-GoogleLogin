@@ -8,6 +8,7 @@
 			"Tehabe"
 		]
 	},
+	"apihelp-googleplusprofileinfo-param-googleid": "Die Google-ID des Benutzers.",
 	"googlelogin": "Anmelden mit Google",
 	"managegooglelogin": "GoogleLogin-Verbindungen verwalten",
 	"googlelogin-managelegend": "Zu verwaltenden Benutzer suchen",

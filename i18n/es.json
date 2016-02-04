@@ -4,9 +4,11 @@
 			"Macofe",
 			"Fitoschido",
 			"Amitie 10g",
-			"Ryo567"
+			"Ryo567",
+			"YoViajo"
 		]
 	},
+	"apihelp-googleplusprofileinfo-param-googleid": "El ID Google del usuario.",
 	"googlelogin": "Iniciar sesión con Google",
 	"managegooglelogin": "Administrar conexiones GoogleLogin",
 	"googlelogin-managelegend": "Buscar usuario para administrar",
