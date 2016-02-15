@@ -44,7 +44,7 @@
 	"googlelogin-generic-error": "Er is een fout opgetreden. Probeer het opnieuw. Bericht: $1",
 	"googlelogin-createnotallowed": "You are not allowed to create a new account with GoogleLogin.",
 	"googlelogin-unallowed-domain": "Het e-maildomein dat wordt gebruikt voor het primaire e-mailadres van uw Googleaccount ($1) mag niet aanmelden bij deze wiki.",
-	"googlelogin-error-unknownconnected": "De wiki-account, gekoppeld aan uw Google-account bestaat niet (meer). De verbinding tussen uw rekeningen zullen worden verwijderd. Maak een nieuwe account of het gebruik van een andere aanwezige.",
+	"googlelogin-error-unknownconnected": "De wikiaccount die is gekoppeld aan uw Google-account bestaat niet (meer). De koppeling tussen uw accounts wordt verwijderd. Maak een nieuwe account of gebruik een andere bestaande account.",
 	"googlelogin-form-choosename-title": "Kies een gebruikersnaam",
 	"googlelogin-form-choosename": "Kies uw gebruikersnaam een account aanmaken",
 	"googlelogin-form-choosename-finish-title": "Gebruiker aanmaken",
