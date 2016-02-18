@@ -6,15 +6,18 @@
 			"Olion",
 			"Translatemyname",
 			"Dars",
-			"Macofe"
+			"Macofe",
+			"Piramidion"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Робить запит до API Google+, аби отримати деяку особову інформацію про вказаного користувача.",
+	"apihelp-googleplusprofileinfo-param-googleid": "Google-ідентифікатор користувача.",
 	"googlelogin": "Увійти з Google",
 	"managegooglelogin": "Управляти зв'язками GoogleLogin",
 	"googlelogin-managelegend": "Шукати користувача для управління",
 	"googlelogin-manage-usersubmit": "Управління користувачем",
 	"googlelogin-manage-notexist": "Немає користувача з іменем <strong>$1</strong>.",
-	"googlelogin-manage-user": "Ви управляєте користувачем <strong>$1</strong>.",
+	"googlelogin-manage-user": "Ви управляєте {{GENDER:$1|користувачем}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Обліковий запис зв'язано з обліковим записом Google з ID",
 	"googlelogin-manage-notlinked": "Обліковий запис не зв'язано з обілковим записом Google.",
 	"googlelogin-manage-changelegend": "Змінити Google ID",
@@ -25,6 +28,7 @@
 	"googlelogin-manage-terminatebutton": "Вилучити зв'язок",
 	"googlelogin-manage-invalidid": "Новий введений Google ID недійсний. ID має складатися з цифр.",
 	"googlelogin-manage-isplusser": "Зареєстрований у Google+",
+	"googlelogin-manage-givenid": "Google-ідентифікатор, який Ви ввели, вже прив'язаний до іншого користувача вікі.",
 	"googlelogin-manage-orgname": "Назва організації",
 	"googlelogin-manage-orgtitle": "Посада",
 	"googlelogin-manage-orgsince": "З",
