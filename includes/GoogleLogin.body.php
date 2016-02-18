@@ -462,7 +462,7 @@ class GoogleLogin extends ContextSource {
 		} else {
 			throw new MWException(
 				'GoogleLogin requires the PHP API Client, which you
-					can install with the Extension:GoogleAPIClient.'
+					can install with the Extension:GoogleAPIClient or by running composer update.'
 			);
 		}
 	}
