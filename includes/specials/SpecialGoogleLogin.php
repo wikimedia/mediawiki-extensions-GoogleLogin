@@ -265,6 +265,7 @@ class SpecialGoogleLogin extends SpecialPage {
 					$userInfo['emails'][0]['value']
 				)
 			);
+			GoogleLoginHooks::onUserLogoutComplete();
 		}
 	}
 
