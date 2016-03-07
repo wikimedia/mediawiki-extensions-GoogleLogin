@@ -18,7 +18,6 @@ module.exports = function ( grunt ) {
 		},
 		jsonlint: {
 			all: [
-				'*.json',
 				'**/*.json',
 				'!node_modules/**'
 			]
