@@ -164,7 +164,7 @@ $( function ( mw ) {
 	// Append the window manager.
 	$( 'body' ).append( windowManager.$element );
 
-	$( '.googlelogin-googleid' ).toggleClass( 'hidden' ).on( 'click', function ( ev ) {
+	$( '.googlelogin-googleid' ).toggleClass( 'hidden' ).on( 'click', function () {
 		mw.GoogleLogin.showInfoDialog( $( this ).data( 'googleid' ) );
 	} );
 }( mediaWiki ) );
