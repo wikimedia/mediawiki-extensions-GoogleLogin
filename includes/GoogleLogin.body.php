@@ -444,8 +444,8 @@ class GoogleLogin extends ContextSource {
 		$client->setClientId( $glConfig->get( 'GLAppId' ) );
 		$client->setClientSecret( $glConfig->get( 'GLSecret' ) );
 		$client->setRedirectUri( WebRequest::detectServer().$redirectURI );
-		$client->addScope( "https://www.googleapis.com/auth/userinfo.profile" );
-		$client->addScope( "https://www.googleapis.com/auth/userinfo.email" );
+		$client->addScope( 'profile' );
+		$client->addScope( 'email' );
 		return $client;
 	}
 
