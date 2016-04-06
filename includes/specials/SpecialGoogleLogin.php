@@ -276,15 +276,18 @@ class SpecialGoogleLogin extends SpecialPage {
 	 */
 	private function createGoogleUserForm( $userInfo ) {
 		$request = $this->getRequest();
+		$glConfig = $this->mGoogleLogin->getGLConfig();
 		$out = $this->getOutput();
 
 		$out->addModules( array( 'ext.GoogleLogin.specialGoogleLogin.chooseown' ) );
 		$out->setPageTitle( $this->msg( 'googlelogin-form-choosename-title' )->text() );
 
 		// create an array of possible usernames
-		$names = array(
-			$this->msg( 'googlelogin-login-already-registered' )->text() => 'wpAlreadyRegistered'
-		);
+		$names = array();
+		if ( !$glConfig->get( 'GLReplaceMWLogin' ) ) {
+			$names[$this->msg( 'googlelogin-login-already-registered' )->text()] =
+				'wpAlreadyRegistered';
+		}
 		if ( GoogleLogin::isValidUsername( $userInfo['displayName'] ) ) {
 			$names[$userInfo['displayName']] = 'wpDisplayName';
 		}
