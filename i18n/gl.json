@@ -42,7 +42,7 @@
 	"googlelogin-parerror": "A páxina solicitada non existe. Por favor volva atrás e probe a acción outra vez.",
 	"googlelogin-generic-error": "Houbo un erro inesperado. Por favor, volte atrás e probe de novo. Mensaxe: $1",
 	"googlelogin-createnotallowed": "Non está autorizado a crear unha nova conta con GoogleLogin.",
-	"googlelogin-unallowed-domain": "O dominio de correo electrónico usado para a dirección primaria da súa conta Google ($1) non está permitido para iniciar sesión nesta wiki.",
+	"googlelogin-unallowed-domain": "O dominio de correo electrónico usado para o enderezo primario da súa conta do Google ($1) non está permitido para iniciar sesión neste wiki.",
 	"googlelogin-error-unknownconnected": "A conta no wiki, conectada coa súa conta de Google, xa non existe. Eliminarase a conexión entre as súas contas. Por favor, cree unha nova conta na wiki ou utilice outra existente.",
 	"googlelogin-form-choosename-title": "Escoller o nome de usuario",
 	"googlelogin-form-choosename": "Por favor, escolla o seu nome de usuario para crear unha conta wiki",
