@@ -583,15 +583,14 @@ class GoogleLogin extends ContextSource {
 		// create a separate vform above the "normal" user login form
 		// this could be converted to ooui, after the core login form uses ooui elements and styling
 		$htmlForm = HTMLForm::factory( 'vform', $fields, $tpl->getSkin()->getContext() );
-		// we don't need (and want) a separate submit button
-		$htmlForm->suppressDefaultSubmit();
-		$htmlForm->setId( 'googleloginForm' );
-		// the target isn't Special:UserLogin, set it to be Special:GoogleLogin
-		$htmlForm->setAction( SpecialPage::getTitleFor( 'GoogleLogin' )->getLocalUrl() );
-		// add hidden fields
-		$htmlForm->addHiddenFields( $hiddenFields );
-		// show the form
-		$htmlForm->prepareForm()->displayForm( false );
+
+		$htmlForm
+			->suppressDefaultSubmit()
+			->setId( 'googleloginForm' )
+			->setTitle( SpecialPage::getTitleFor( 'GoogleLogin' ) )
+			->addHiddenFields( $hiddenFields )
+			->prepareForm()
+			->displayForm( false );
 
 		// if the form is above the login form, show a separator
 		if ( !$showRight ) {
