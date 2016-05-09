@@ -14,12 +14,12 @@ class GoogleLoginTest extends MediaWikiTestCase {
 	}
 
 	public function provideTestNames() {
-		return array(
-			array( 'ValidTestUser', true ),
-			array( 'lowerCaseBegin', true ),
-			array( 'InvalidTestUser#', false ),
-			array( ' trailing ', true ),
-			array( ' back / slash ', false ),
-		);
+		return [
+			[ 'ValidTestUser', true ],
+			[ 'lowerCaseBegin', true ],
+			[ 'InvalidTestUser#', false ],
+			[ ' trailing ', true ],
+			[ ' back / slash ', false ],
+		];
 	}
 }

@@ -31,25 +31,25 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		}
 		$this->setHeaders();
 		$out->addModules( 'mediawiki.userSuggest' );
-		$formFields = array(
-			'username' => array(
+		$formFields = [
+			'username' => [
 				'type' => 'user',
 				'name' => 'username',
 				'label-message' => 'googlelogin-username',
 				'id' => 'mw-gl-username',
 				'autofocus' => true,
 				'exists' => true,
-			),
-			'submit' => array(
+			],
+			'submit' => [
 				'type' => 'submit',
 				'default' => $this->msg( 'googlelogin-manage-usersubmit' )->text(),
-				'flags' => array( 'progressive', 'primary' ),
-			),
-		);
+				'flags' => [ 'progressive', 'primary' ],
+			],
+		];
 		$htmlForm = HTMLForm::factory( 'ooui', $formFields, $this->getContext(), 'googlelogin-manage' );
 		$htmlForm->setWrapperLegendMsg( $this->msg( 'googlelogin-managelegend' ) );
 		$htmlForm->suppressDefaultSubmit();
-		$htmlForm->setSubmitCallback( array( $this, 'submitUserName' ) );
+		$htmlForm->setSubmitCallback( [ $this, 'submitUserName' ] );
 		$htmlForm->show();
 
 		if ( $this->manageableUser ) {
@@ -78,10 +78,10 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModules(
-			array(
+			[
 				'ext.GoogleLogin.specialManage.scripts',
 				'ext.GoogleLogin.style',
-			)
+			]
 		);
 		$out->addBackLinkSubtitle( $this->getPageTitle() );
 		$id = $user->getGoogleId();
@@ -134,17 +134,17 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				$this->msg( 'googlelogin-manage-linked' )->escaped() .
 				Html::openElement( 'strong' ) .
 				Html::element( 'span',
-					array(
+					[
 						'class' => 'googlelogin-googleid',
-					),
+					],
 					$id
 				) .
 				Html::element( 'a',
-					array(
+					[
 						'href' => 'javascript:void(0)',
 						'class' => 'googlelogin-googleid hidden',
 						'data-googleid' => $id,
-					),
+					],
 					$id
 				) .
 				Html::closeElement( 'strong' ) .
@@ -155,27 +155,27 @@ class SpecialManageGoogleLogin extends SpecialPage {
 			$out->addWikiMsg( 'googlelogin-manage-notlinked' );
 			$formId = '';
 		}
-		$formFields = array(
-			'googleid' => array(
+		$formFields = [
+			'googleid' => [
 				'type' => 'text',
 				'name' => 'googleid',
 				'label-raw' => 'Google-ID:',
 				'default' => $formId,
 				'id' => 'mw-gl-username',
-			)
-		);
+			]
+		];
 		$htmlForm = HTMLForm::factory( 'ooui', $formFields, $this->getContext(), 'googlelogin-change' );
 		$htmlForm->addHiddenField( 'username', $user->getName() );
 		$htmlForm->setWrapperLegendMsg( $this->msg( 'googlelogin-manage-changelegend' ) );
-		$htmlForm->setSubmitCallback( array( $this, 'submitForm' ) );
+		$htmlForm->setSubmitCallback( [ $this, 'submitForm' ] );
 		if ( $id ) {
 			$htmlForm->addButton(
 				'terminate-link',
 				$this->msg( 'googlelogin-manage-terminatebutton' )->escaped(),
 				null,
-				array(
-					'flags' => array( 'destructive' ),
-				)
+				[
+					'flags' => [ 'destructive' ],
+				]
 			);
 		}
 		$htmlForm->show();

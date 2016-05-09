@@ -2,7 +2,7 @@
 
 class SpecialGoogleLoginTest extends MediaWikiTestCase {
 	private function redirect( $val ) {
-		$request = new FauxRequest( array( 'googlelogin-submit' => $val, 'error' => '000' ) );
+		$request = new FauxRequest( [ 'googlelogin-submit' => $val, 'error' => '000' ] );
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$output = new OutputPage( $context );
 		$output->disable();

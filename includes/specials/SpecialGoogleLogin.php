@@ -153,41 +153,41 @@ class SpecialGoogleLogin extends SpecialPage {
 		$user = User::newFromGoogleId( $userInfo['id'] );
 
 		// data that will be added to the account information box
-		$data = array(
+		$data = [
 			'Google-ID' => $userInfo['id'],
 			$this->msg( 'googlelogin-googleuser' )->text() => $userInfo['displayName'],
 			$this->msg( 'googlelogin-email' )->text() => $userInfo['emails'][0]['value'],
 			$this->msg( 'googlelogin-linkstatus' )->text() => ( $user->hasConnectedGoogleAccount() ?
 				$this->msg( 'googlelogin-linked' )->text() : $this->msg( 'googlelogin-unlinked' )->text() ),
-		);
+		];
 
-		$items = array();
+		$items = [];
 		// expand the data to ooui elements
 		foreach ( $data as $label => $d ) {
 			$items[] = new OOUI\FieldLayout(
-				new OOUI\LabelWidget( array(
+				new OOUI\LabelWidget( [
 					'label' => $d
-				) ),
-				array(
+				] ),
+				[
 					'align' => 'left',
 					'label' => $label
-				)
+				]
 			);
 		}
 
 		// create a wrapper panel
-		$container = new OOUI\PanelLayout( array(
+		$container = new OOUI\PanelLayout( [
 			'padded' => true,
 			'expanded' => false,
 			'framed' => true,
-		) );
+		] );
 
 		// add the fieldset to the wrapper panel and output it
 		$container->appendContent(
-			new OOUI\FieldsetLayout( array(
+			new OOUI\FieldsetLayout( [
 				'label' => $this->msg( 'googlelogin-information-title' )->text(),
 				'items' => $items,
-			) )
+			] )
 		);
 
 		$out->addHtml( $container );
@@ -279,11 +279,11 @@ class SpecialGoogleLogin extends SpecialPage {
 		$glConfig = $this->mGoogleLogin->getGLConfig();
 		$out = $this->getOutput();
 
-		$out->addModules( array( 'ext.GoogleLogin.specialGoogleLogin.chooseown' ) );
+		$out->addModules( [ 'ext.GoogleLogin.specialGoogleLogin.chooseown' ] );
 		$out->setPageTitle( $this->msg( 'googlelogin-form-choosename-title' )->text() );
 
 		// create an array of possible usernames
-		$names = array();
+		$names = [];
 		if ( !$glConfig->get( 'GLReplaceMWLogin' ) ) {
 			$names[$this->msg( 'googlelogin-login-already-registered' )->text()] =
 				'wpAlreadyRegistered';
@@ -299,20 +299,20 @@ class SpecialGoogleLogin extends SpecialPage {
 
 		$co = $request->getVal( 'wpChooseName' );
 
-		$formElements = array(
-			'ChooseName' => array(
+		$formElements = [
+			'ChooseName' => [
 				'type' => 'radio',
 				'options' => $names,
 				'default' => ( $co !== null ? $co : 'wpOwn' ),
-			),
-			'ChooseOwn' => array(
+			],
+			'ChooseOwn' => [
 				'class' => 'HTMLTextField',
 				'default' => $co,
 				'cssclass' => 'mw-googlelogin-wpOwninput ' .
 					( $co === 'wpOwn' || $co === null ? '' : 'hidden' ),
 				'placeholder' => $this->msg( 'googlelogin-form-choosename-placeholder' )->text()
-			),
-		);
+			],
+		];
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formElements, $this->getContext(), 'googlelogin-form' );
 		$htmlForm->setId( 'googlelogin-createform' );
@@ -321,7 +321,7 @@ class SpecialGoogleLogin extends SpecialPage {
 		$htmlForm->setWrapperLegendMsg( 'googlelogin-form-choosename' );
 		$htmlForm->setSubmitText( $this->msg( 'googlelogin-form-next' )->text() );
 		$htmlForm->setAction( $this->getPageTitle( 'Create' )->getLocalUrl() );
-		$htmlForm->setSubmitCallback( array( 'GoogleLogin', 'submitChooseName' ) );
+		$htmlForm->setSubmitCallback( [ 'GoogleLogin', 'submitChooseName' ] );
 
 		$htmlForm->show();
 	}
@@ -334,7 +334,7 @@ class SpecialGoogleLogin extends SpecialPage {
 	private function createSubmitButton( $action, $submitClass = null ) {
 		$htmlForm = HTMLForm::factory(
 			'ooui',
-			array(),
+			[],
 			$this->getContext(),
 			'googlelogin-form' . strtolower( $action )
 		);
@@ -351,7 +351,7 @@ class SpecialGoogleLogin extends SpecialPage {
 		$htmlForm->addHiddenField( 'action', $action );
 		$htmlForm->addHiddenField( 'wpSecureHash', $this->mGoogleLogin->getRequestToken() );
 		$htmlForm->setAction( $this->getPageTitle( $action )->getLocalUrl() );
-		$htmlForm->setSubmitCallback( array( 'GoogleLogin', 'submitGeneric' ) );
+		$htmlForm->setSubmitCallback( [ 'GoogleLogin', 'submitGeneric' ] );
 		$htmlForm->show();
 	}
 
@@ -365,9 +365,9 @@ class SpecialGoogleLogin extends SpecialPage {
 			$out->addHtml(
 				Html::element( 'br' ) .
 				Html::element( 'a',
-					array(
+					[
 						'href' => $this->getPageTitle()->getLocalUrl()
-					),
+					],
 					$this->msg( 'googlelogin-form-backlink' )->text()
 				)
 			);
@@ -486,17 +486,17 @@ class SpecialGoogleLogin extends SpecialPage {
 				// with all required parameter
 
 				// target page query
-				$query = array(
+				$query = [
 					// to redirect the user to the link function directly after login
 					'action' => 'Merge',
 					// with this parameter, the user doesn't get an error message because of the
 					// missing form token
 					'fromLogin' => 1
-				);
+				];
 
 				$out->redirect(
 					// redirect to Special:UserLogin
-					SpecialPage::getTitleFor( 'UserLogin' )->getFullUrl( array(
+					SpecialPage::getTitleFor( 'UserLogin' )->getFullUrl( [
 						'returnto' => 'Special:GoogleLogin',
 						'returntoquery' => wfArrayToCgi( $query ),
 						// this parameter disables the "Login with Google" option, it would be
@@ -505,13 +505,13 @@ class SpecialGoogleLogin extends SpecialPage {
 						// a custom warning message, if you change the mesasge key, change it in
 						// GoogleLoginHooks::onLoginFormValidErrorMessages, too
 						'warning' => 'googlelogin-login-merge-warning',
-					) )
+					] )
 				);
 				break;
 			case 'wpOwn':
 				if ( $request->getVal( 'wpChooseOwn' ) === '' ) {
 					$this->createGoogleUserForm( $userInfo );
-				} elseif(
+				} elseif (
 					$request->getVal( 'wpChooseOwn' ) !== '' &&
 					!GoogleLogin::isValidUsername( $request->getVal( 'wpChooseOwn' ) )
 				) {
@@ -553,11 +553,11 @@ class SpecialGoogleLogin extends SpecialPage {
 		if ( $userName ) {
 			$out->setPageTitle( $this->msg( 'googlelogin-form-choosename-finish-title' )
 				->text() );
-			$userParam = array(
+			$userParam = [
 				'password' => md5( Rand() ),
 				'email' => $userInfo['emails'][0]['value'],
 				'real_name' => $userInfo['name']['givenName']
-			);
+			];
 			if ( $isGoogleIdFree ) {
 				// FIXME: Maybe report upstream, that User shouldn't use hardcoded class name for
 				// factory methods
