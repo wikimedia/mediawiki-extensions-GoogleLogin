@@ -30,7 +30,7 @@ class ApiGoogleLoginInfo extends ApiBase {
 			$this->dieUsage( 'Google user not found or false api key.', 'unknownuser' );
 		}
 		$plusCheck = json_decode( $plusCheck, true );
-		$result = array();
+		$result = [];
 		if ( $plusCheck['displayName'] ) {
 			$result[$this->msg( 'googlelogin-googleuser' )->text()] = $plusCheck['displayName'];
 		}
@@ -53,19 +53,19 @@ class ApiGoogleLoginInfo extends ApiBase {
 			}
 		}
 		// build result array
-		$r = array(
+		$r = [
 			'success' => true,
 			'result' => $result
-		);
+		];
 		// add result to API output
 		$apiResult->addValue( null, $this->getModuleName(), $r );
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'googleid' => array(
+		return [
+			'googleid' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-		);
+			],
+		];
 	}
 }

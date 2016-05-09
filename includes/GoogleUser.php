@@ -110,12 +110,12 @@ class GoogleUser extends \User {
 
 		$s = $db->selectRow(
 			'user_google_user',
-			array( 'user_id' ),
-			array( 'user_googleid' => $this->mGoogleId ),
+			[ 'user_id' ],
+			[ 'user_googleid' => $this->mGoogleId ],
 			__METHOD__,
 			( ( $flags & self::READ_LOCKING ) == self::READ_LOCKING )
-				? array( 'LOCK IN SHARE MODE' )
-				: array()
+				? [ 'LOCK IN SHARE MODE' ]
+				: []
 		);
 
 		$this->queryFlagsUsed = $flags;
@@ -146,12 +146,12 @@ class GoogleUser extends \User {
 
 		$s = $db->selectRow(
 			'user_google_user',
-			array( 'user_googleid' ),
-			array( 'user_id' => $this->mId ),
+			[ 'user_googleid' ],
+			[ 'user_id' => $this->mId ],
 			__METHOD__,
 			( ( $flags & self::READ_LOCKING ) == self::READ_LOCKING )
-				? array( 'LOCK IN SHARE MODE' )
-				: array()
+				? [ 'LOCK IN SHARE MODE' ]
+				: []
 		);
 
 		$this->queryFlagsUsed = $flags;
@@ -268,20 +268,20 @@ class GoogleUser extends \User {
 		if ( $this->hasConnectedGoogleAccount() ) {
 			return $dbr->update(
 				'user_google_user',
-				array(
+				[
 					'user_googleid' => $googleId
-				),
-				array(
+				],
+				[
 					'user_id' => $this->getId()
-				)
+				]
 			);
 		} else {
 			return $dbr->insert(
 				"user_google_user",
-				array(
+				[
 					'user_id' => $this->getId(),
 					'user_googleid' => $googleId
-				)
+				]
 			);
 		}
 	}

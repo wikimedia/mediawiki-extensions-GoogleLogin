@@ -73,10 +73,10 @@ class GoogleLogin extends ContextSource {
 			$page = Title::newFromText( $request->getVal( 'title', '' ) );
 		}
 		$page = $request->getVal( 'returnto', $page );
-		$a = array();
+		$a = [];
 		if ( strval( $page ) !== '' ) {
 			$a['returnto'] = $page;
-			$query = array();
+			$query = [];
 			if ( !$request->wasPosted() ) {
 				$query = $request->getValues();
 				unset( $query['title'] );
@@ -134,7 +134,7 @@ class GoogleLogin extends ContextSource {
 	 */
 	public function getReturnTo() {
 		$request = $this->getRequest();
-		$returnTo = array();
+		$returnTo = [];
 		$returnTo['title'] = $request->getSessionData( 'google-returnto' );
 		$query = $request->getSessionData( 'google-returntoquery' );
 		$returnTo['query'] = '';
@@ -426,7 +426,7 @@ class GoogleLogin extends ContextSource {
 		file_put_contents(
 			$cacheFile,
 			"<?php\n" . '$tlds = ' . str_replace(
-				array( ' ', "\n" ),
+				[ ' ', "\n" ],
 				'',
 				var_export( $tlds, true )
 			) . ";\n?" . ">"
@@ -537,7 +537,7 @@ class GoogleLogin extends ContextSource {
 			return;
 		}
 		// add default css module
-		$modules = array( 'ext.GoogleLogin.style' );
+		$modules = [ 'ext.GoogleLogin.style' ];
 		// if the administrator requested to show the form at the right side,
 		// add this module, too
 		if ( $showRight ) {
@@ -546,17 +546,17 @@ class GoogleLogin extends ContextSource {
 		$out->addModuleStyles( $modules );
 
 		// keep login is only added, if enabled in the configuration
-		$keepLogin = array();
+		$keepLogin = [];
 		if ( $glConfig->get( 'GLShowKeepLogin' ) && $login ) {
-			$keepLogin = array(
-				'wpGoogleLoginRemember' => array(
+			$keepLogin = [
+				'wpGoogleLoginRemember' => [
 					'type' => 'check',
 					'value' => '1',
 					'id' => 'wpGoogleLoginRemember',
 					'name' => 'wpGoogleLoginRemember',
 					'label' => $tpl->getMsg( 'userlogin-remembermypassword' )->escaped()
-				)
-			);
+				]
+			];
 		}
 
 		// get the correct button value
@@ -569,19 +569,19 @@ class GoogleLogin extends ContextSource {
 		}
 
 		// google login form button
-		$fields = array(
-			'googleLoginButton' => array(
+		$fields = [
+			'googleLoginButton' => [
 				'type' => 'submit',
 				'name' => 'googlelogin-submit',
 				'default' => $buttonMsg,
-				'flags' => array( 'primary', 'destructive' ),
-			)
-		) + $keepLogin;
+				'flags' => [ 'primary', 'destructive' ],
+			]
+		] + $keepLogin;
 
-		$hiddenFields = array(
+		$hiddenFields = [
 			'returnto' => $request->getVal( 'returnto' ),
 			'returntoquery' => $request->getVal( 'returntoquery' ),
-		);
+		];
 
 		// create a separate vform above the "normal" user login form
 		// this could be converted to ooui, after the core login form uses ooui elements and styling
@@ -598,13 +598,13 @@ class GoogleLogin extends ContextSource {
 		// if the form is above the login form, show a separator
 		if ( !$showRight ) {
 			$out->addHtml(
-				Html::openElement( 'fieldset', array( 'class' => 'loginSeperator mw-ui-vform' ) ) .
-				Html::element( 'legend', array(), $tpl->getMsg( 'googlelogin-or' )->escaped() ) .
+				Html::openElement( 'fieldset', [ 'class' => 'loginSeperator mw-ui-vform' ] ) .
+				Html::element( 'legend', [], $tpl->getMsg( 'googlelogin-or' )->escaped() ) .
 				Html::closeElement( 'fieldset' )
 			);
 		}
 
 		// allow other extensions to add fields, too (e.g. other buttons)
-		Hooks::run( 'GoogleLoginAfterForm', array( &$tpl ) );
+		Hooks::run( 'GoogleLoginAfterForm', [ &$tpl ] );
 	}
 }

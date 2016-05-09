@@ -21,7 +21,7 @@ class GoogleLoginHooks {
 			return true;
 		}
 		// Tables to add to the database
-		$tables = array( 'user_google_user' );
+		$tables = [ 'user_google_user' ];
 		// Sql directory inside the extension folder
 		$sql = __DIR__ . '/sql';
 		// Extension of the table schema file (depending on the database type)
@@ -33,7 +33,7 @@ class GoogleLoginHooks {
 		foreach ( $tables as $table ) {
 			// Location of the table schema file
 			$schema = "$sql/$table.$ext";
-			$updater->addExtensionUpdate( array( 'addTable', $table, $schema, true ) );
+			$updater->addExtensionUpdate( [ 'addTable', $table, $schema, true ] );
 		}
 		return true;
 	}
@@ -102,20 +102,20 @@ class GoogleLoginHooks {
 		$manageLink = wfMessage( 'parentheses', $manageLink )->text();
 
 		$prefInsert =
-		array( 'googleloginstatus' =>
-			array(
+		[ 'googleloginstatus' =>
+			[
 				'section' => 'personal/info',
 				'label-message' => 'googlelogin-prefs-status',
 				'type' => 'info',
 				'raw' => true,
 				'default' => "<b>$status</b> $manageLink"
-			),
-		);
+			],
+		];
 
 		// add the content
 		if ( array_key_exists( 'registrationdate', $preferences ) ) {
 			$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'registrationdate' );
-		} elseif  ( array_key_exists( 'editcount', $preferences ) ) {
+		} elseif ( array_key_exists( 'editcount', $preferences ) ) {
 			$preferences = wfArrayInsertAfter( $preferences, $prefInsert, 'editcount' );
 		} else {
 			$preferences += $prefInsert;
