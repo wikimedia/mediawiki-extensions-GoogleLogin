@@ -16,6 +16,58 @@
       "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_44ec66b8",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-16T23:29:34Z",
+      "side": 1,
+      "message": "Use $req-\u003ereturnToUrl (keep the query parameters it has and have Google add anything you need back from it). Instead of $req use something that can take an access_token (don\u0027t try to access the request directly; rememeber that this might happen through the API in which case $req-\u003ereturnToUrl will point to some third party site, or some URL capturable by a mobile app, in which case it\u0027s their responsibility to construct the AuthenticationRequest). See https://gerrit.wikimedia.org/r/#/c/251930/23/auth/OAuthPrimaryAuthenticationProvider.php for an example. (I wonder if a request type for an OAuth response is ubiquitous enough to be included in core.)",
+      "parentUuid": "ae564743_a4bbc2dc",
+      "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_64840ad9",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-16T23:29:34Z",
+      "side": 1,
+      "message": "How you use it is up to you. You should at least allow unlinking google accounts by returning one request for each linked account on ACTION_REMOVE, and then handling those requests here. This is also used for linking-on-login, but that\u0027s experimental and disabled by default. You can see an example at https://gerrit.wikimedia.org/r/#/c/251930/23/auth/OAuthPrimaryAuthenticationProvider.php",
+      "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_244852ce",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-16T23:29:34Z",
+      "side": 1,
+      "message": "More likely this is TYPE_LINK (are you actually creating a Google account?)",
+      "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
