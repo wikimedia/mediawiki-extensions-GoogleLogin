@@ -1,12 +1,20 @@
 <?php
-use GoogleLogin\GoogleUser as User;
+
+namespace GoogleLogin;
+
+use ConfigFactory;
+use Linker;
+use SpecialPage;
+use ChangeTags;
+
+use GoogleLogin\Specials\SpecialGoogleLogin;
 
 class GoogleLoginHooks {
 	public static function onUserLogoutComplete() {
-		$googleLogin = new GoogleLogin;
-		$request = $googleLogin->getRequest();
-		if ( $request->getSessionData( 'access_token' ) !== null ) {
-			$request->setSessionData( 'access_token', null );
+		global $wgRequest;
+
+		if ( $wgRequest->getSessionData( 'access_token' ) !== null ) {
+			$wgRequest->setSessionData( 'access_token', null );
 		}
 	}
 
@@ -38,55 +46,6 @@ class GoogleLoginHooks {
 		return true;
 	}
 
-	public static function onUserLoginForm( &$tpl ) {
-		GoogleLogin::getLoginCreateForm( $tpl );
-	}
-
-	public static function onUserCreateForm( &$tpl ) {
-		GoogleLogin::getLoginCreateForm( $tpl, false );
-	}
-
-	/**
-	 * Handles the replace of Loginlink and deletion of Create account link in personal tools
-	 * if Loginreplacement is configured.
-	 */
-	public static function onPersonalUrls( array &$personal_urls, Title $title, SkinTemplate $skin ) {
-		$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
-		if ( $glConfig->get( 'GLReplaceMWLogin' ) && array_key_exists( 'login', $personal_urls ) ) {
-			// unset the create account link
-			if ( array_key_exists( 'createaccount', $personal_urls ) ) {
-				unset( $personal_urls['createaccount'] );
-			}
-
-			// Replace login link with GoogleLogin link
-			$googleLogin = new GoogleLogin;
-			$personal_urls['login']['text'] = $skin->msg( 'googlelogin' )->text();
-			$personal_urls['login']['href'] = $googleLogin->getLoginUrl( $skin, $title );
-		}
-	}
-
-	/**
-	 * Handles the replace of Special:UserLogin with Special:GoogleLogin if Loginreplacement is
-	 * configured.
-	 */
-	public static function onSpecialPage_initList( &$list ) {
-		// FIXME: Find a better way to access the User object!
-		global $wgUser;
-
-		$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
-		// Replaces the UserLogin special page if configured and user isn't logged in
-		// TODO: The check for the MW_NO_SESSION constant is an ugly workaround for T135445
-		// given, that the replacement of the user login special page isn't needed after GoogleLogin
-		// was converted to to AuthManager (and the own Special page isn't needed anymore). Task T110294
-		if (
-			!defined( 'MW_NO_SESSION' ) &&
-			!$wgUser->isLoggedIn() &&
-			$glConfig->get( 'GLReplaceMWLogin' )
-		) {
-			$list['Userlogin'] = 'SpecialGoogleLogin';
-		}
-	}
-
 	/**
 	* Show the status in Preferences and add a link to SpecialPage
 	*
@@ -96,8 +55,7 @@ class GoogleLoginHooks {
 	*/
 	static function onGetPreferences( $user, &$preferences ) {
 		// check if the userid is linked with a google id
-		$googleUser = User::newFromId( $user->getId() );
-		$userIdExists = $googleUser->hasConnectedGoogleAccount();
+		$userIdExists = GoogleUser::hasConnectedGoogleAccount( $user );
 
 		// generate the content for Special:Preferences
 		$status = ( $userIdExists ? wfMessage( 'googlelogin-linked' )->text() :
@@ -132,43 +90,6 @@ class GoogleLoginHooks {
 	}
 
 	/**
-	 * Replaces the RC comment with a filterable RC tag
-	 *
-	 * @param RecentChange $recentChange The recentChange object
-	 */
-	public static function onRecentChange_save( $recentChange ) {
-		$performer = $recentChange->getPerformer();
-		$attribs = $recentChange->getAttributes();
-
-		if (
-			$performer->getName() === SpecialGoogleLogin::$performer &&
-			$attribs['rc_log_action'] === 'create'
-		) {
-			ChangeTags::addTags( 'googlelogin', $attribs['rc_id'] );
-		}
-	}
-
-	/**
-	 * Register, and mark as active, the 'googlelogin' change tag
-	 *
-	 * @param array $tags
-	 * @return bool
-	 */
-	public static function onListDefinedAndActiveTags( array &$tags ) {
-		$tags[] = 'googlelogin';
-		return true;
-	}
-
-	/**
-	 * Adds a custom valid error message to the login page, used when the user want
-	 * to link an account with the google account and isn't logged in so far.
-	 * @param array $messages Already added messages
-	 */
-	public static function onLoginFormValidErrorMessages( array &$messages ) {
-		$messages[] = 'googlelogin-login-merge-warning';
-	}
-
-	/**
 	 * UnitTestsList hook handler
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
 	 *
@@ -186,9 +107,7 @@ class GoogleLoginHooks {
 	 *
 	 * @param array &$updateFields
 	 */
-	public static function onMergeAccountFromTo( &$fromUser, &$toUser ) {
-		$oldUser = \GoogleLogin\GoogleUser::newFromId( $fromUser->getId() );
-		$newUser = \GoogleLogin\GoogleUser::newFromId( $toUser->getId() );
+	public static function onMergeAccountFromTo( &$oldUser, &$newUser ) {
 		// check, if
 		if (
 			// the new user exists (e.g. is not Anonymous)
@@ -199,11 +118,11 @@ class GoogleLoginHooks {
 			$oldUser->hasConnectedGoogleAccount()
 		) {
 			// save the google id of the old account
-			$googleId = $oldUser->getGoogleId();
+			$googleId = GoogleUser::getGoogleIdFromUser( $oldUser );
 			// delete the connection between the google and the old wiki account
-			$oldUser->terminateGoogleConnection();
+			GoogleUser::terminateGoogleConnection( $oldUser );
 			// add the google id to the new account
-			$newUser->connectWithGoogle( $googleId );
+			GoogleUser::connectWithGoogle( $newUser, $googleId );
 		}
 
 		return true;

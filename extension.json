@@ -1,6 +1,6 @@
 {
 	"name": "GoogleLogin",
-	"version": "0.3.1-git",
+	"version": "0.4.0-git",
 	"author": "Florian Schmidt",
 	"url": "https://www.mediawiki.org/wiki/Extension:GoogleLogin",
 	"descriptionmsg": "googlelogin-desc",
@@ -21,8 +21,9 @@
 		"googlelogin": "GlobalVarConfig::newInstance"
 	},
 	"SpecialPages": {
-		"GoogleLogin": "SpecialGoogleLogin",
-		"ManageGoogleLogin": "SpecialManageGoogleLogin"
+		"GoogleLogin": "GoogleLogin\\Specials\\SpecialGoogleLogin",
+		"GoogleLoginReturn": "GoogleLogin\\Specials\\SpecialGoogleLoginReturn",
+		"ManageGoogleLogin": "GoogleLogin\\Specials\\SpecialManageGoogleLogin"
 	},
 	"APIModules": {
 		"googleplusprofileinfo": "ApiGoogleLoginInfo"
@@ -36,11 +37,14 @@
 		"GoogleLoginAlias": "GoogleLogin.alias.php"
 	},
 	"AutoloadClasses": {
-		"GoogleLogin": "includes/GoogleLogin.body.php",
-		"SpecialGoogleLogin": "includes/specials/SpecialGoogleLogin.php",
-		"SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
-		"GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
+		"GoogleLogin\\GoogleLogin": "includes/GoogleLogin.body.php",
+		"GoogleLogin\\Specials\\SpecialGoogleLogin": "includes/specials/SpecialGoogleLogin.php",
+		"GoogleLogin\\Specials\\SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
+		"GoogleLogin\\Specials\\SpecialGoogleLoginReturn": "includes/specials/SpecialGoogleLoginReturn.php",
+		"GoogleLogin\\GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
 		"GoogleLogin\\GoogleUser": "includes/GoogleUser.php",
+		"GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+		"GoogleLogin\\Auth\\GoogleServerAuthenticationRequest": "includes/auth/GoogleServerAuthenticationRequest.php",
 		"ApiGoogleLoginInfo": "includes/api/ApiGoogleLoginInfo.php"
 	},
 	"ResourceModules": {
@@ -101,46 +105,22 @@
 	},
 	"Hooks": {
 		"UserLogoutComplete": [
-			"GoogleLoginHooks::onUserLogoutComplete"
+			"GoogleLogin\\GoogleLoginHooks::onUserLogoutComplete"
 		],
 		"LoadExtensionSchemaUpdates": [
-			"GoogleLoginHooks::onLoadExtensionSchemaUpdates"
-		],
-		"UserLoginForm": [
-			"GoogleLoginHooks::onUserLoginForm"
-		],
-		"UserCreateForm": [
-			"GoogleLoginHooks::onUserCreateForm"
-		],
-		"PersonalUrls": [
-			"GoogleLoginHooks::onPersonalUrls"
-		],
-		"SpecialPage_initList": [
-			"GoogleLoginHooks::onSpecialPage_initList"
+			"GoogleLogin\\GoogleLoginHooks::onLoadExtensionSchemaUpdates"
 		],
 		"GetPreferences": [
-			"GoogleLoginHooks::onGetPreferences"
-		],
-		"RecentChange_save": [
-			"GoogleLoginHooks::onRecentChange_save"
-		],
-		"ListDefinedTags": [
-			"GoogleLoginHooks::onListDefinedAndActiveTags"
-		],
-		"ChangeTagsListActive": [
-			"GoogleLoginHooks::onListDefinedAndActiveTags"
-		],
-		"LoginFormValidErrorMessages": [
-			"GoogleLoginHooks::onLoginFormValidErrorMessages"
+			"GoogleLogin\\GoogleLoginHooks::onGetPreferences"
 		],
 		"UnitTestsList": [
-			"GoogleLoginHooks::onUnitTestsList"
+			"GoogleLogin\\GoogleLoginHooks::onUnitTestsList"
 		],
 		"MergeAccountFromTo": [
-			"GoogleLoginHooks::onMergeAccountFromTo"
+			"GoogleLogin\\GoogleLoginHooks::onMergeAccountFromTo"
 		],
 		"UserMergeAccountDeleteTables": [
-			"GoogleLoginHooks::onUserMergeAccountDeleteTables"
+			"GoogleLogin\\GoogleLoginHooks::onUserMergeAccountDeleteTables"
 		]
 	},
 	"config": {
@@ -156,7 +136,6 @@
 		"GLShowKeepLogin": true,
 		"GLForceKeepLogin": false,
 		"GLAllowAccountCreation": null,
-		"GLReplaceMWLogin": false,
 		"GLAPIKey": "",
 		"GLShowRight": false,
 		"GLNeedsConfirmEmail": true

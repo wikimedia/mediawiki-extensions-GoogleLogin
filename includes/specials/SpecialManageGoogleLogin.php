@@ -1,10 +1,18 @@
 <?php
-use GoogleLogin\GoogleUser as User;
+
+namespace Googlelogin\Specials;
+
+use SpecialPage;
+use Html;
+use HTMLForm;
+use User;
+use ConfigFactory;
+use Http;
+use ErrorPageError;
+
+use GoogleLogin\GoogleUser;
 
 class SpecialManageGoogleLogin extends SpecialPage {
-	/** @var $mGoogleLogin saves an instance of GoogleLogin class */
-	private $mGoogleLogin;
-
 	/** @var User $manageableUser User object of the user to manage */
 	private $manageableUser = null;
 
@@ -84,15 +92,15 @@ class SpecialManageGoogleLogin extends SpecialPage {
 			]
 		);
 		$out->addBackLinkSubtitle( $this->getPageTitle() );
-		$id = $user->getGoogleId();
+		$id = GoogleUser::getGoogleIdFromUser( $user );
 		$googleId = $request->getVal( 'googleid' );
 		// try to create a new GoogleUser object with the given id to check, if there's
 		// already an user with this google id.
-		$newGoogleUser = User::newFromGoogleId( $googleId );
+		$newGoogleUser = GoogleUser::isGoogleIdFree( $googleId );
 		$terminateLink = $request->getVal( 'terminate-link' );
-		if ( isset( $terminateLink ) && $user->hasConnectedGoogleAccount() ) {
+		if ( isset( $terminateLink ) && GoogleUser::hasConnectedGoogleAccount( $user ) ) {
 			// terminate the connection
-			if ( $user->terminateGoogleConnection() ) {
+			if ( GoogleUser::terminateGoogleConnection( $user ) ) {
 				$out->addWikiMsg( 'googlelogin-manage-terminatesuccess' );
 				$id = false;
 			} else {
@@ -101,7 +109,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		} elseif ( $googleId ) {
 			if ( !is_numeric( $googleId ) ) {
 				$out->wrapWikiMsg( '<div class="error">$1</div>', 'googlelogin-manage-invalidid' );
-			} elseif ( $newGoogleUser->getId() !== 0 ) {
+			} elseif ( !$newGoogleUser ) {
 				// if the ID is already given to another user, it can't be associtated with this user
 				$out->wrapWikiMsg( '<div class="error">$1</div>', 'googlelogin-manage-givenid' );
 			} else {
@@ -119,9 +127,9 @@ class SpecialManageGoogleLogin extends SpecialPage {
 					$out->addWikiMsg( 'googlelogin-manage-noplus' );
 				}
 
-				if ( $user->connectWithGoogle( $googleId ) ) {
+				if ( GoogleUser::connectWithGoogle( $user, $googleId ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-changedsuccess' );
-					$id = $user->getGoogleId();
+					$id = $googleId;
 				} else {
 					$out->addWikiMsg( 'googlelogin-manage-changederror' );
 				}
