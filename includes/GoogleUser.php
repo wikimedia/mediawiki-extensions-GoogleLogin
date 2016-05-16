@@ -1,240 +1,179 @@
 <?php
 namespace GoogleLogin;
 
-class GoogleUser extends \User {
-	/** @var Integer */
-	public $mGoogleId;
+use User;
 
-	/** @var Boolean */
-	private $mFromGoogleId = false;
+class GoogleUser {
+	/**
+	 * @var string The Google ID of this GoogleUser object
+	 */
+	private $googleId = '';
+	private $userData = null;
 
-	public static function isGoogleIdFree( $id ) {
-		$u = self::newFromGoogleId( $id );
-		return $u->getId() === 0;
+	/**
+	 * GoogleUser constructor.
+	 * @param $googleId The Google ID which this GoogleUser object represents
+	 */
+	public function __construct( $googleId ) {
+		$this->googleId = $googleId;
+		$this->initGoogleUserFromPlus();
 	}
 
 	/**
-	 * Create a new GoogleUser object from a Google ID.
-	 *
-	 * @param int $id Google ID to load from
-	 * @return GoogleLogin::GoogleUser
+	 * Loads the data of the person represented by the Google ID.
 	 */
-	public static function newFromGoogleId( $id ) {
-		$u = new self;
-		$u->mGoogleId = $id;
-		// isn't really the truth, but will be handled later
-		$u->mFrom = 'id';
-		$u->mFromGoogleId = true;
-		$u->setItemLoaded( 'gid' );
-		return $u;
-	}
-
-	/**
-	 * Static factory method for creation from username.
-	 *
-	 * This is slightly less efficient than newFromId(), so use newFromId() if
-	 * you have both an ID and a name handy.
-	 *
-	 * @param string $name Username, validated by Title::newFromText()
-	 * @param string|Bool $validate Validate username. Takes the same parameters as
-	 *    User::getCanonicalName(), except that true is accepted as an alias
-	 *    for 'valid', for BC.
-	 *
-	 * @return GoogleUser|bool GoogleUser object, or false if the
-	 *    username is invalid (e.g. if it contains illegal characters or is an IP address).
-	 *    If the username is not present in the database, the result will be a user object
-	 *    with a name, zero user ID and default settings.
-	 */
-	public static function newFromName( $name, $validate = 'valid' ) {
-		if ( $validate === true ) {
-			$validate = 'valid';
+	private function initGoogleUserFromPlus() {
+		$glConfig = GoogleLogin::getGLConfig();
+		if ( !$glConfig->get( 'GLAPIKey' ) ) {
+			wfDebug( 'GoogleLogin: Requested to load data for Google ID without setting an' .
+				' API key to access Google Plus data ($wgGLAPIKey).' );
+			return;
 		}
-		$name = self::getCanonicalName( $name, $validate );
-		if ( $name === false ) {
-			return false;
-		} else {
-			# Create unloaded user object
-			$u = new self;
-			$u->mName = $name;
-			$u->mFrom = 'name';
-			$u->setItemLoaded( 'name' );
-			return $u;
+		$requestUrl = 'https://www.googleapis.com/plus/v1/people/' . $this->googleId;
+		$requestUrl = wfAppendQuery( $requestUrl, [ 'key' => $glConfig->get( 'GLAPIKey' ) ] );
+		$plusCheck = \Http::get( $requestUrl );
+		if ( $plusCheck ) {
+			$this->userData = json_decode( $plusCheck, true );
 		}
 	}
 
 	/**
-	 * Static factory method for creation from a given user ID.
+	 * Returns the requested user data of the person with the Google ID represented by this
+	 * GoogleUser object or null, if the data is not available.
 	 *
-	 * @param int $id Valid user ID
-	 * @return User The corresponding User object
+	 * @param $data The data to retrieve
+	 * @return null
 	 */
-	public static function newFromId( $id ) {
-		$u = new self;
-		$u->mId = $id;
-		$u->mFrom = 'id';
-		$u->setItemLoaded( 'id' );
-		return $u;
+	public function getData( $data ) {
+		if ( $this->userData !== null && isset( $this->userData[$data] ) ) {
+			return $this->userData[$data];
+		}
+		return null;
 	}
 
 	/**
-	 * Same as User::loadFromId(), but if this object is created from a GoogleId,
-	 * the function will try to load the Google ID first, before the other data
-	 * is loaded.
+	 * Checks, if the full name of the person who owns the Google ID represented by this GoogleUser
+	 * object is available and builds a string in the format "Full Name (Google ID)" and returns it,
+	 * otherwise returns the Google ID only.
 	 *
-	 * @param integer $flags User::READ_* constant bitfield
-	 * @return bool False if the ID does not exist, true otherwise
+	 * @return string The full name with the Google ID in parentheses, or the Google ID only
 	 */
-	public function loadFromId( $flags = self::READ_NORMAL ) {
-		if ( $this->mFromGoogleId === true ) {
-			if ( $this->mGoogleId == 0 ) {
-				$this->loadDefaults();
-				return false;
-			}
-			$this->loadFromGoogleId( $flags );
+	public function getFullNameWithId() {
+		if ( $this->getData( 'displayName' ) ) {
+			return $this->getData( 'displayName' ) . ' ' . wfMessage( 'parentheses', $this->googleId );
 		}
-
-		return parent::loadFromId( $flags );
+		return $this->googleId;
 	}
 
 	/**
-	 * Helper function for load* functions. Loads the UserId from a
-	 * GoogleId set to this object.
-	 *
-	 * @param integer $flags User::READ_* constant bitfield
-	 * @return bool False, if no User ID connected with this GoogleId, true otherwise
+	 * Check, if the data for the Google ID could be loaded.
+	 * @return bool Returns true, if data could be loaded, false otherwise
 	 */
-	private function loadFromGoogleId( $flags = self::READ_LATEST ) {
-		$db = ( $flags & self::READ_LATEST )
-			? wfGetDB( DB_MASTER )
-			: wfGetDB( DB_SLAVE );
+	public function isDataLoaded() {
+		return $this->userData !== null;
+	}
 
-		$s = $db->selectRow(
-			'user_google_user',
-			[ 'user_id' ],
-			[ 'user_googleid' => $this->mGoogleId ],
-			__METHOD__,
-			( ( $flags & self::READ_LOCKING ) == self::READ_LOCKING )
-				? [ 'LOCK IN SHARE MODE' ]
-				: []
-		);
-
-		$this->queryFlagsUsed = $flags;
-
-		if ( $s !== false ) {
-			// Initialise user table data
-			$this->mId = $s->user_id;
-			return true;
-		} else {
-			// Invalid user_id
-			$this->mId = 0;
-			$this->loadDefaults();
-			return false;
-		}
+	/**
+	 * Check, if the Google ID is already connected to another wiki account or not.
+	 *
+	 * @param $id
+	 * @param int $flags
+	 * @return bool
+	 */
+	public static function isGoogleIdFree( $googleId, $flags = User::READ_LATEST ) {
+		return $user = self::getUserFromGoogleId( $googleId, $flags ) === null;
 	}
 
 	/**
 	 * Helper function for load* functions. Loads the Google Id from a
 	 * User Id set to this object.
 	 *
+	 * @param User $user The user to get the Google Id for
 	 * @param integer $flags User::READ_* constant bitfield
 	 * @return bool False, if no Google ID connected with this User ID, true otherwise
 	 */
-	private function loadGoogleIdFromId( $flags = self::READ_LATEST ) {
-		$db = ( $flags & self::READ_LATEST )
+	public static function getGoogleIdFromUser( User $user, $flags = User::READ_LATEST ) {
+		$db = ( $flags & User::READ_LATEST )
+			? wfGetDB( DB_MASTER )
+			: wfGetDB( DB_SLAVE );
+
+		$s = $db->select(
+			'user_google_user',
+			[ 'user_googleid' ],
+			[ 'user_id' => $user->getId() ],
+			__METHOD__,
+			( ( $flags & User::READ_LOCKING ) == User::READ_LOCKING )
+				? [ 'LOCK IN SHARE MODE' ]
+				: []
+		);
+
+		if ( $s !== false ) {
+			$ids = [];
+			foreach ( $s as $obj ) {
+				$ids[] = $obj->user_googleid;
+			}
+			return $ids;
+		}
+		// Invalid user_id
+		return null;
+	}
+
+	/**
+	 * Helper function for load* functions. Loads the Google Id from a
+	 * User Id set to this object.
+	 *
+	 * @param string $googleId The Google ID to get the user to
+	 * @param integer $flags User::READ_* constant bitfield
+	 * @return null|User The local User account connected with the Google ID if
+	 * the Google ID is connected to an User, null otherwise.
+	 */
+	public static function getUserFromGoogleId( $googleId, $flags = User::READ_LATEST ) {
+		$db = ( $flags & User::READ_LATEST )
 			? wfGetDB( DB_MASTER )
 			: wfGetDB( DB_SLAVE );
 
 		$s = $db->selectRow(
 			'user_google_user',
-			[ 'user_googleid' ],
-			[ 'user_id' => $this->mId ],
+			[ 'user_id' ],
+			[ 'user_googleid' => $googleId ],
 			__METHOD__,
-			( ( $flags & self::READ_LOCKING ) == self::READ_LOCKING )
+			( ( $flags & User::READ_LOCKING ) == User::READ_LOCKING )
 				? [ 'LOCK IN SHARE MODE' ]
 				: []
 		);
 
-		$this->queryFlagsUsed = $flags;
-
 		if ( $s !== false ) {
-			// Initialise user table data
-			$this->mGoogleId = $s->user_googleid;
-			$this->setItemLoaded( 'gid' );
-			return true;
-		} else {
-			// Invalid user_id
-			$this->mGoogleId = null;
-			return false;
+			// Initialise user table data;
+			return User::newFromId( $s->user_id );
 		}
-	}
-
-	/**
-	 * Load the user table data for this object from the source given by mFrom.
-	 *
-	 * @param integer $flags User::READ_* constant bitfield
-	 * @return boolean
-	 */
-	public function load( $flags = self::READ_NORMAL ) {
-		// check, if Google ID is already loaded
-		$loadGoogleId = $this->isItemLoaded( 'gid' );
-
-		// load all data (google id isn't loaded there)
-		$retval = parent::load( $flags );
-
-		// if Google Id wasn't loaded, load it now
-		if ( !$loadGoogleId ) {
-			$retval = $this->loadGoogleIdFromId( $flags ) && $retval;
-		}
-
-		return $retval;
-	}
-
-	/**
-	 * Get the Google Id for this user
-	 *
-	 * @return int
-	 */
-	public function getGoogleId() {
-		if ( !$this->isItemLoaded( 'gid' ) ) {
-			// Don't load if this was initialized from a GoogleID
-			$this->load();
-		}
-		return $this->mGoogleId;
+		// Invalid user_id
+		return null;
 	}
 
 	/**
 	 * Returns true, if this user object is connected with a google account,
 	 * otherwise false.
 	 *
+	 * @param User $user The user to check
 	 * @return bool
 	 */
-	public function hasConnectedGoogleAccount() {
-		// clear the cache, if this instance was loaded from a Google ID
-		// otherwise, this will be true everytime
-		if ( $this->mFromGoogleId !== false ) {
-			$this->clearInstanceCache( 'id' );
-		}
-
-		if ( !$this->isItemLoaded( 'gid' ) ) {
-			$this->load();
-		}
-		return $this->mGoogleId !== null;
+	public static function hasConnectedGoogleAccount( User $user ) {
+		return (bool)self::getGoogleIdFromUser( $user );
 	}
 
 	/**
 	 * Terminates a connection between this wiki account and the
 	 * connected Google account.
 	 *
+	 * @param User $user The user to connect from where to remove the connection
+	 * @param string $googleId The Google ID to remove
 	 * @return bool
 	 */
-	public function terminateGoogleConnection() {
-		if ( $this->isItemLoaded( 'gid' ) ) {
-			$this->load();
-		}
-
+	public static function terminateGoogleConnection( User $user, $googleId ) {
+		$connectedIds = self::getGoogleIdFromUser( $user );
 		// make sure, that the user has a connected user account
-		if ( !$this->hasConnectedGoogleAccount() ) {
-			// already terminate
+		if ( $connectedIds === null || !in_array( $googleId, $connectedIds ) ) {
+			// already terminated
 			return true;
 		}
 
@@ -244,7 +183,7 @@ class GoogleUser extends \User {
 		if (
 			$dbr->delete(
 				"user_google_user",
-				"user_googleid = " . $this->mGoogleId,
+				"user_googleid = " . $googleId,
 				__METHOD__
 			)
 		) {
@@ -258,31 +197,19 @@ class GoogleUser extends \User {
 	/**
 	 * Insert's or update's the Google ID connected with this user account.
 	 *
-	 * @param $googleId The new Google ID
+	 * @param User $user The user to connect the Google ID with
+	 * @param String $googleId The new Google ID
 	 * @return bool Whether the insert/update statement was successful
 	 */
-	public function connectWithGoogle( $googleId ) {
+	public static function connectWithGoogle( User $user, $googleId ) {
 		$dbr = wfGetDB( DB_MASTER );
-		// if the user already has a connected google account, update the row, instead
-		// of trying to insert a new one
-		if ( $this->hasConnectedGoogleAccount() ) {
-			return $dbr->update(
-				'user_google_user',
-				[
-					'user_googleid' => $googleId
-				],
-				[
-					'user_id' => $this->getId()
-				]
-			);
-		} else {
-			return $dbr->insert(
-				"user_google_user",
-				[
-					'user_id' => $this->getId(),
-					'user_googleid' => $googleId
-				]
-			);
-		}
+
+		return $dbr->insert(
+			"user_google_user",
+			[
+				'user_id' => $user->getId(),
+				'user_googleid' => $googleId
+			]
+		);
 	}
 }
