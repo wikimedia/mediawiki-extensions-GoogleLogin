@@ -75,7 +75,10 @@ class GoogleLoginHooks {
 
 		$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
 		// Replaces the UserLogin special page if configured and user isn't logged in
-		if ( !$wgUser->isLoggedIn() && $glConfig->get( 'GLReplaceMWLogin' ) ) {
+		// TODO: The check for the MW_NO_SESSION constant is an ugly workaround for T135445
+		// given, that the replacement of the user login special page isn't needed after GoogleLogin
+		// was converted to to AuthManager (and the own Special page isn't needed anymore). Task T110294
+		if ( !defined( 'MW_NO_SESSION' ) && !$wgUser->isLoggedIn() && $glConfig->get( 'GLReplaceMWLogin' ) ) {
 			$list['Userlogin'] = 'SpecialGoogleLogin';
 		}
 	}
