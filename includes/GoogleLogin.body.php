@@ -98,7 +98,7 @@ class GoogleLogin extends ContextSource {
 	 * @return string GL special page local url
 	 */
 	public function getSpecialPageUri() {
-		return $this->getSpecialPageTitle()->getLocalUrl();
+		return SpecialPage::getTitleFor( 'UserLogin' )->getLocalUrl();
 	}
 
 	/**
