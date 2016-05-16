@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_a4bbc2dc",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-16T23:02:35Z",
+      "side": 1,
+      "message": "currently, I don\u0027t know what happens after that? In the auth url for Google I need to set a redirect url (where google should the user redirect after he\u0027s authenticated and allowed us to read the data). This is currently the Special:UserLogin url. This redirect url has a one-time access_token in the url, which needs to be set to the client in order to be able to access the users data.\n\nHowever, if I allow the application to read the data I get redirected to Special:UserLogin (with the access_token in the url), but unfortunately, AuthManager doesn\u0027t recognize this request as an already initiated authentication request and starts a new one (with the well-known form, where I could click \"login with google\" again).\n\nMaybe it\u0027s just too late and I don\u0027t see what I do false or I really don\u0027t see, what I need to do :/ Maybe someone can give a hint? :)",
+      "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
