@@ -22,6 +22,7 @@
 	},
 	"SpecialPages": {
 		"GoogleLogin": "SpecialGoogleLogin",
+		"GoogleLoginReturn": "GoogleLogin\\Specials\\SpecialGoogleLoginReturn",
 		"ManageGoogleLogin": "SpecialManageGoogleLogin"
 	},
 	"APIModules": {
@@ -41,6 +42,9 @@
 		"SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
 		"GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
 		"GoogleLogin\\GoogleUser": "includes/GoogleUser.php",
+		"GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+		"GoogleLogin\\Auth\\GoogleServerAuthenticationRequest": "includes/auth/GoogleServerAuthenticationRequest.php",
+		"GoogleLogin\\Specials\\SpecialGoogleLoginReturn": "includes/specials/SpecialGoogleLoginReturn.php",
 		"ApiGoogleLoginInfo": "includes/api/ApiGoogleLoginInfo.php"
 	},
 	"ResourceModules": {

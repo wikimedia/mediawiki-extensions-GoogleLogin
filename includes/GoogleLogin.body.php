@@ -20,12 +20,13 @@ class GoogleLogin extends ContextSource {
 	 * Returns an prepared instance of Google client to do requests with to Google API
 	 * @return Google_Client
 	 */
-	public function getClient() {
+	public function getClient( $returnToUrl, $token ) {
 		if ( empty( $this->mGoogleClient ) ) {
 			$client = $this->includeAPIFiles();
 			$this->mGoogleClient = $this->prepareClient(
 				$client,
-				$this->getSpecialPageUri()
+				$returnToUrl,
+				$token
 			);
 		}
 		return $this->mGoogleClient;
@@ -91,14 +92,6 @@ class GoogleLogin extends ContextSource {
 		}
 		$returnto = wfArrayToCgi( $a );
 		return $skin->makeSpecialUrl( 'GoogleLogin', $returnto );
-	}
-
-	/**
-	 * Provide the URL to navigate to the GL special page
-	 * @return string GL special page local url
-	 */
-	public function getSpecialPageUri() {
-		return $this->getSpecialPageTitle()->getLocalUrl();
 	}
 
 	/**
@@ -439,13 +432,14 @@ class GoogleLogin extends ContextSource {
 	 * @param Google_Client $client The Google_Client Object to prepare for
 	 * @return Google_Client A prepared instance of Google Client class
 	 */
-	private function prepareClient( $client, $redirectURI ) {
+	private function prepareClient( $client, $redirectURI, $token ) {
 		$glConfig = $this->getGLConfig();
 		$client->setClientId( $glConfig->get( 'GLAppId' ) );
 		$client->setClientSecret( $glConfig->get( 'GLSecret' ) );
-		$client->setRedirectUri( WebRequest::detectServer().$redirectURI );
+		$client->setRedirectUri( $redirectURI );
 		$client->addScope( 'profile' );
 		$client->addScope( 'email' );
+		$client->setState( $token );
 		return $client;
 	}
 
