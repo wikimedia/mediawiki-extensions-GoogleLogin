@@ -10,6 +10,7 @@ $specialPageAliases = array();
 /** English (English) */
 $specialPageAliases['en'] = array(
 	'GoogleLogin' => array( 'GoogleLogin', 'Login with Google' ),
+	'GoogleLoginReturn' => array( 'GoogleLoginReturn', 'GoogleLoginReturn' ),
 	'ManageGoogleLogin' => array( 'ManageGoogleLogin', 'Manage GoogleLogin connections' ),
 );
 
