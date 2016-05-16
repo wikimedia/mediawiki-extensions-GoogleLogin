@@ -18,30 +18,23 @@ class ApiGoogleLoginInfo extends ApiBase {
 			);
 		}
 
-		// check, if the api is protected and if the key is correct
-		$plusCheck = Http::get(
-			'https://www.googleapis.com/plus/v1/people/' .
-			$params['googleid'] .
-			'?key=' .
-			$glConfig->get( 'GLAPIKey' )
-		);
-
-		if ( !$plusCheck ) {
+		$googleUser = \GoogleLogin\GoogleUser::newFromGoogleId( $params['googleid'] );
+		if ( !$googleUser->isDataLoaded() ) {
 			$this->dieUsage( 'Google user not found or false api key.', 'unknownuser' );
 		}
-		$plusCheck = json_decode( $plusCheck, true );
 		$result = [];
-		if ( $plusCheck['displayName'] ) {
-			$result[$this->msg( 'googlelogin-googleuser' )->text()] = $plusCheck['displayName'];
+		if ( $googleUser->getData( 'displayName' ) ) {
+			$result[$this->msg( 'googlelogin-googleuser' )->text()] = $googleUser->getData( 'displayName' );
 		}
-		if ( $plusCheck['image'] ) {
-			$result['profileimage'] = $plusCheck['image']['url'];
+		if ( $googleUser->getData( 'image' ) ) {
+			$result['profileimage'] = $googleUser->getData( 'image' )['url'];
 		}
-		if ( $plusCheck['isPlusUser'] ) {
-			$result[$this->msg( 'googlelogin-manage-isplusser' )->text()] = $plusCheck['isPlusUser'];
+		if ( $googleUser->getData( 'isPlusUser' ) ) {
+			$result[$this->msg( 'googlelogin-manage-isplusser' )->text()] =
+				$googleUser->getData( 'isPlusUser' );
 		}
-		if ( is_array( $plusCheck['organizations'] ) ) {
-			$org = $plusCheck['organizations'][0];
+		if ( is_array( $googleUser->getData( 'organizations' ) ) ) {
+			$org = $googleUser->getData( 'organizations' )[0];
 			if ( $org['primary'] ) {
 				$result[$this->msg( 'googlelogin-manage-orgname' )->text()] = $org['name'];
 			}

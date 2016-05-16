@@ -1,11 +1,11 @@
 {
 	"name": "GoogleLogin",
-	"version": "0.3.1-git",
+	"version": "0.4.0-git",
 	"author": "Florian Schmidt",
 	"url": "https://www.mediawiki.org/wiki/Extension:GoogleLogin",
-	"descriptionmsg": "googlelogin-desc",
+	"descriptionmsg": "googlelogin-desc-authmanager",
 	"license-name": "MIT",
-	"type": "specialpage",
+	"type": "auth",
 	"GroupPermissions": {
 		"sysop": {
 			"managegooglelogin": true
@@ -21,8 +21,9 @@
 		"googlelogin": "GlobalVarConfig::newInstance"
 	},
 	"SpecialPages": {
-		"GoogleLogin": "SpecialGoogleLogin",
-		"ManageGoogleLogin": "SpecialManageGoogleLogin"
+		"GoogleLogin": "GoogleLogin\\Specials\\SpecialGoogleLogin",
+		"GoogleLoginReturn": "GoogleLogin\\Specials\\SpecialGoogleLoginReturn",
+		"ManageGoogleLogin": "GoogleLogin\\Specials\\SpecialManageGoogleLogin"
 	},
 	"APIModules": {
 		"googleplusprofileinfo": "ApiGoogleLoginInfo"
@@ -36,12 +37,27 @@
 		"GoogleLoginAlias": "GoogleLogin.alias.php"
 	},
 	"AutoloadClasses": {
-		"GoogleLogin": "includes/GoogleLogin.body.php",
-		"SpecialGoogleLogin": "includes/specials/SpecialGoogleLogin.php",
-		"SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
-		"GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
+		"GoogleLogin\\GoogleLogin": "includes/GoogleLogin.body.php",
+		"GoogleLogin\\HTMLGoogleLoginButtonField": "includes/htmlform/HTMLGoogleLoginButtonField.php",
+		"GoogleLogin\\Specials\\SpecialGoogleLogin": "includes/specials/SpecialGoogleLogin.php",
+		"GoogleLogin\\Specials\\SpecialGoogleLoginReturn": "includes/specials/SpecialGoogleLoginReturn.php",
+		"GoogleLogin\\Specials\\SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
+		"GoogleLogin\\GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
 		"GoogleLogin\\GoogleUser": "includes/GoogleUser.php",
+		"GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+		"GoogleLogin\\Auth\\GoogleServerAuthenticationRequest": "includes/auth/GoogleServerAuthenticationRequest.php",
+		"GoogleLogin\\Auth\\GoogleAuthenticationRequest": "includes/auth/GoogleAuthenticationRequest.php",
+		"GoogleLogin\\Auth\\GoogleRemoveAuthenticationRequest": "includes/auth/GoogleRemoveAuthenticationRequest.php",
+		"GoogleLogin\\Auth\\GoogleUserInfoAuthenticationRequest": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
 		"ApiGoogleLoginInfo": "includes/api/ApiGoogleLoginInfo.php"
+	},
+	"AuthManagerAutoConfig": {
+		"primaryauth": {
+			"GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider": {
+				"class": "GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider",
+				"sort": 101
+			}
+		}
 	},
 	"ResourceModules": {
 		"ext.GoogleLogin.style": {
@@ -52,9 +68,13 @@
 				"mobile"
 			]
 		},
-		"ext.GoogleLogin.right.style": {
-			"styles": "style/ext.GoogleLogin.right.css",
-			"position": "top"
+		"ext.GoogleLogin.userlogincreate.style": {
+			"styles": "style/ext.GoogleLogin.userlogincreate.less",
+			"position": "top",
+			"targets": [
+				"desktop",
+				"mobile"
+			]
 		},
 		"ext.GoogleLogin.specialManage.scripts": {
 			"dependencies": [
@@ -81,18 +101,6 @@
 				"googlelogin-manage-unknownerror",
 				"googlelogin-manage-plusinfo-title"
 			]
-		},
-		"ext.GoogleLogin.specialGoogleLogin.chooseown": {
-			"dependencies": [
-				"oojs-ui"
-			],
-			"scripts": [
-				"javascripts/specialpages/ext.GoogleLogin.specialGoogleLogin.chooseown.js"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -100,66 +108,28 @@
 		"remoteExtPath": "GoogleLogin"
 	},
 	"Hooks": {
+		"AuthChangeFormFields": [
+			"GoogleLogin\\GoogleLoginHooks::onAuthChangeFormFields"
+		],
 		"UserLogoutComplete": [
-			"GoogleLoginHooks::onUserLogoutComplete"
+			"GoogleLogin\\GoogleLoginHooks::onUserLogoutComplete"
 		],
 		"LoadExtensionSchemaUpdates": [
-			"GoogleLoginHooks::onLoadExtensionSchemaUpdates"
-		],
-		"UserLoginForm": [
-			"GoogleLoginHooks::onUserLoginForm"
-		],
-		"UserCreateForm": [
-			"GoogleLoginHooks::onUserCreateForm"
-		],
-		"PersonalUrls": [
-			"GoogleLoginHooks::onPersonalUrls"
-		],
-		"SpecialPage_initList": [
-			"GoogleLoginHooks::onSpecialPage_initList"
-		],
-		"GetPreferences": [
-			"GoogleLoginHooks::onGetPreferences"
-		],
-		"RecentChange_save": [
-			"GoogleLoginHooks::onRecentChange_save"
-		],
-		"ListDefinedTags": [
-			"GoogleLoginHooks::onListDefinedAndActiveTags"
-		],
-		"ChangeTagsListActive": [
-			"GoogleLoginHooks::onListDefinedAndActiveTags"
-		],
-		"LoginFormValidErrorMessages": [
-			"GoogleLoginHooks::onLoginFormValidErrorMessages"
-		],
-		"UnitTestsList": [
-			"GoogleLoginHooks::onUnitTestsList"
+			"GoogleLogin\\GoogleLoginHooks::onLoadExtensionSchemaUpdates"
 		],
 		"MergeAccountFromTo": [
-			"GoogleLoginHooks::onMergeAccountFromTo"
+			"GoogleLogin\\GoogleLoginHooks::onMergeAccountFromTo"
 		],
 		"UserMergeAccountDeleteTables": [
-			"GoogleLoginHooks::onUserMergeAccountDeleteTables"
+			"GoogleLogin\\GoogleLoginHooks::onUserMergeAccountDeleteTables"
 		]
 	},
 	"config": {
-		"GLResourcePath": {
-			"localBasePath": "/var/www/html/media/extensions/GoogleLogin",
-			"remoteExtPath": "GoogleLogin"
-		},
 		"GLSecret": "",
 		"GLAppId": "",
 		"GLAllowedDomains": "",
 		"GLAllowedDomainsStrict": false,
-		"GLShowCreateReason": false,
-		"GLShowKeepLogin": true,
-		"GLForceKeepLogin": false,
-		"GLAllowAccountCreation": null,
-		"GLReplaceMWLogin": false,
-		"GLAPIKey": "",
-		"GLShowRight": false,
-		"GLNeedsConfirmEmail": true
+		"GLAPIKey": ""
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 1
