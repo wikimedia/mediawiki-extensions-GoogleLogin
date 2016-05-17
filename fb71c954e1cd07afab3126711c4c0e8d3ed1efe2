@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_d4f2df95",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-17T17:06:22Z",
+      "side": 1,
+      "message": "If you need a constant return URL, make a hidden special page (e.g. \"Special:GoogleLoginReturn\").\n\nThen here you stash $req (using $this-\u003emanager-\u003esetAuthenticationSessionData()) and send the user off to Google. Google eventually comes back to Special:GoogleLoginReturn, which pulls $req back out (with $this-\u003emanager-\u003egetAuthenticationSessionData()) and does the redirect to $req-\u003ereturnToUrl with any appropriate additional parameters. Those additional parameters don\u0027t need to be the data Google passed to Special:GoogleLoginReturn, BTW, you could use the same method to stash them in Special:GoogleLoginReturn and then pull them back out in continuePrimaryAuthentication() below.\n\nIdeally you\u0027d be able to have Google pass back some arbitrary token when it calls Special:GoogleLoginReturn that you could use as part of the stash key, so you could avoid having multiple parallel authentication attempts stomping on each other.",
+      "parentUuid": "ae564743_f4c9e3ae",
+      "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_64840ad9",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "Ok, I thought it\u0027s meant, if I want to allow the creation of local wiki accounts based on the data from Google. But, of course, this extension doesn\u0027t create Google accounts.",
       "parentUuid": "ae564743_244852ce",
+      "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_f44443bf",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-17T17:06:22Z",
+      "side": 1,
+      "message": "The overview of what you\u0027d do here is probably something like this:\n\n* Redirect the user to Google, exactly like for authentication.\n* When you get back in continuePrimaryAccountCreation(), you\u0027d verify that the authentication was successful, then return a PASS AuthenticationResponse with an additional property set with the Google credentials.\n* Then in finishAccountCreation(), you\u0027d actually update your database table mapping local user to Google account.\n\nYou\u0027ll also want to implement the linking flow, beginPrimaryAccountLink() and continuePrimaryAccountLink(), which would do about the same thing except that the second and third bullets would be combined in continuePrimaryAccountLink().",
+      "parentUuid": "ae564743_34c07b7e",
       "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
