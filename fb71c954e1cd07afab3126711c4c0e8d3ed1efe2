@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_94e4e70b",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-17T16:26:36Z",
+      "side": 1,
+      "message": "For web-based authentication, the return URL is Special:UserLogin/return; the problem is it requires a CSRF token, which is included in returnToUrl. Maybe we should allow providers to opt out from using a CSRF token, sounds a bit sketchy though.",
+      "parentUuid": "ae564743_f4c9e3ae",
+      "revId": "fb71c954e1cd07afab3126711c4c0e8d3ed1efe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_64840ad9",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 1
