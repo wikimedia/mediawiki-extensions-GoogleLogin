@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_7e400539",
+        "filename": "includes/specials/SpecialGoogleLogin.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-18T19:55:31Z",
+      "side": 1,
+      "message": "needs an unlink button, too.",
+      "revId": "0b17d4c22e4a00acdb8cc786b897b37fa668c4c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
