@@ -194,6 +194,24 @@
       "revId": "90be02827884b4dfa764423498135dcc13796e02",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_091a75d0",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-18T21:37:28Z",
+      "side": 1,
+      "message": "You should return a custom class that returns something meaningful on describeCredentials(). (Special:UnlinkAccounts does not use that but Special:RemoveCredentials does. Those two pages overlap a lot and one might get end up being axed at some point.) Also, do you really want to handle button requests in providerChangeAuthenticationData? That seems like invitation for trouble.\n\nNevertheless, you should see *something*; that sounds like a bug. I\u0027ll look into it.",
+      "parentUuid": "ae564743_c9cb5d73",
+      "revId": "90be02827884b4dfa764423498135dcc13796e02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
