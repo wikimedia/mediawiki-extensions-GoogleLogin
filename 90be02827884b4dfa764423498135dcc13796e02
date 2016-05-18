@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_29bbf9de",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-18T21:20:21Z",
+      "side": 1,
+      "message": "I can\u0027t omit it, because it\u0027s defined in the PrimaryAuthenticationProvider and not implemented in any abstract class, so I have to do anything with it. Currently I\u0027m returning false :)",
+      "parentUuid": "ae564743_febb756e",
+      "revId": "90be02827884b4dfa764423498135dcc13796e02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_8d1fba5d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 4
@@ -155,6 +173,24 @@
       "side": 1,
       "message": "There is nothing to unlink and the UI is not very polished. Try returning something from getAuthenticationRequests on ACTION_REMOVE. (Or do you mean empty as in white screen of death?)",
       "parentUuid": "ae564743_9e2a3972",
+      "revId": "90be02827884b4dfa764423498135dcc13796e02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c9cb5d73",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-18T21:20:21Z",
+      "side": 1,
+      "message": "It\u0027s an empty special page (so no white page of death), and I already return a ButtonAuthenticationRequest, but still white:\nhttps://gerrit.wikimedia.org/r/#/c/289099/6/includes/auth/GooglePrimaryAuthenticationProvider.php",
+      "parentUuid": "ae564743_7eaf6527",
       "revId": "90be02827884b4dfa764423498135dcc13796e02",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
