@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_3e716ddd",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-18T20:35:45Z",
+      "side": 1,
+      "message": "You can try it out by uncommenting the commented-out stuff in $wgAuthManagerAutoConfig. login-then-signup doesn\u0027t work yet but login-then-login does.",
+      "parentUuid": "ae564743_3e05ed13",
+      "revId": "90be02827884b4dfa764423498135dcc13796e02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_ed10f654",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 4
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_febb756e",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-18T20:35:45Z",
+      "side": 1,
+      "message": "The local DB will be checked by LocalPasswordPrimaryAuthenticationProvider. Theoretically it\u0027s possible to set up the wiki so that that provider is not used but this one is, so I\u0027m not sure what would be the correct behavior here. OTOH if that provider is not used, what is userExists even needed for? The login page would not have any username in that case and signup would not work at all since there would be no non-abstaining provider. So IMO just omitting this method is the best choice.",
+      "parentUuid": "ae564743_1e1f495f",
+      "revId": "90be02827884b4dfa764423498135dcc13796e02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_8d1fba5d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 4
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "It\u0027s a 1:1 connection, but I think, that changing the ID is possible by unlinking and linking the account, it\u0027s already done in this way (with the current implementation).\n\nBtw.: With my latest change I get an empty page when I call Special:UnlinkAccounts. I haven\u0027t looked into it too much, yet, but will do. Maybe you have already an idea ad hoc? :)",
       "parentUuid": "ae564743_8d1fba5d",
+      "revId": "90be02827884b4dfa764423498135dcc13796e02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_7eaf6527",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-18T20:35:45Z",
+      "side": 1,
+      "message": "There is nothing to unlink and the UI is not very polished. Try returning something from getAuthenticationRequests on ACTION_REMOVE. (Or do you mean empty as in white screen of death?)",
+      "parentUuid": "ae564743_9e2a3972",
       "revId": "90be02827884b4dfa764423498135dcc13796e02",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
