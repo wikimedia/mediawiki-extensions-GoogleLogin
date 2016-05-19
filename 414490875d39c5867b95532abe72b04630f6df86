@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ae564743_07c53964",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "Oh, one thing we forgot for this to work: this AuthenticationResponse needs a value for -\u003elinkRequest. See line 159 for details on what that value should be. Then providerChangeAuthenticationData() needs to accept that request and link the account.\n\nThen you should also put it in $response-\u003ecreateRequest too and have beginPrimaryAccountCreation() test for it and skip right to continuePrimaryAccountCreation() if it\u0027s present.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_e75005db",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -72,6 +89,40 @@
     },
     {
       "key": {
+        "uuid": "ae564743_27379dad",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "Shouldn\u0027t that be GoogleUser::newFromName( $username )-\u003eexists()?",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_673d158a",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "That won\u0027t work. get_class( $req ) !\u003d\u003d GoogleAuthenticationRequest::class would probably be best.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_470e11e9",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -107,6 +158,40 @@
     },
     {
       "key": {
+        "uuid": "ae564743_a74a8d28",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "StatusValue::newFatal( \u0027ignored\u0027 ) isn\u0027t right. Either StatusValue::newGood( \u0027ignored\u0027 ), or pass a message key that exists to StatusValue::newFatal().",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c74b412a",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "(see line 106)",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_47257155",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -136,6 +221,91 @@
       "side": 1,
       "message": "oops, copy-paste-error :/",
       "parentUuid": "ae564743_47257155",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_0761b9a3",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "This method isn\u0027t supposed to return anything.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c7a34195",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "This isn\u0027t a good way to pass the data from continuePrimaryAccountCreation() to finishAccountCreation(). Instead, you should set $response-\u003elinkRequest.\n\nOption 1 is to use the same GoogleServerAuthenticationRequest that continuePrimaryAccountLink() accepts, and hope the re-authentication doesn\u0027t decide to suddenly fail. It would need a describeCredentials() method.\n\nOption 2 is to use something like this instead:\n\n class GoogleUserInfoAuthenticationRequest extends AuthenticationRequest {\n     public $required \u003d self::OPTIONAL;\n     public $userInfo;\n\n     public function getFieldInfo() {\n         return [];\n     }\n\n     public function describeCredentials() {\n         // return the same as GoogleAuthenticationRequest\n     }\n }\n\nThen you just pull out $response-\u003elinkRequest-\u003euserInfo and link it up without reauthenticating, just repeat the GoogleUser::isGoogleIdFree() check.\n\nThe only caveat is if $userInfo isn\u0027t serializable, then you\u0027d have to pull out just the bits you need instead of dumping the whole thing in there.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_8797894a",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "Throwing an exception is probably the best thing in this case.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_a783ad04",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "This method should return null explicitly.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_a7f72d87",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:37Z",
+      "side": 1,
+      "message": "You seem to be repeating this same general code (lines 191–204) several times: here, in continuePrimaryAccountCreation(), and you\u0027ll probably need to do it again in providerChangeAuthenticationData(). It would probably be a good idea to move it out to a private method.",
       "revId": "414490875d39c5867b95532abe72b04630f6df86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
