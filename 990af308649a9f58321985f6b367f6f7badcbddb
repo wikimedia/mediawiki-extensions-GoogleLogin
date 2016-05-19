@@ -265,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_47ac51eb",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:09:55Z",
+      "side": 1,
+      "message": "AuthManager will support (but it\u0027s currently buggy) link-then-signup: go to login, log in with Google account, get a message saying this was a valid login but no local account exists, do signup (handled by LocalPasswordPAP, so this provider wouldn\u0027t have to deal with signups), account gets autolinked. That has two issues though:\n- what if there is no other provider? Something has to be able to handle signups.\n- how will the user discover this path? Most pages have a \"sign up with Google\" button on their registration page, the user might not think of going to the login page to look for it.",
+      "parentUuid": "ae564743_acd55215",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_691a111d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 6
@@ -556,6 +574,24 @@
       "writtenOn": "2016-05-19T17:17:05Z",
       "side": 1,
       "message": "Done",
+      "parentUuid": "ae564743_496aadb1",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_e9f0e163",
+        "filename": "includes/auth/GoogleServerAuthenticationRequest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:09:55Z",
+      "side": 1,
+      "message": "Also, these probably need to be optional, unless Google always returns non-empty values for both options.",
       "parentUuid": "ae564743_496aadb1",
       "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
