@@ -283,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_27a95d8e",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T18:26:11Z",
+      "side": 1,
+      "message": "@Gergő: Yeah, now I understood what you mean and where my fault was: I haven\u0027t thought about creating an account as such, because I thought this would \"break\" login-signup-link in any way (login-signup-link was the account creation workflow for the current GoogleLogin authentication).\n\nIf GoogleLogin is the only provider I think the logic operation would be to abort the account creation. I\u0027m not sure, why a wiki administrator want to configure AuthManager in this way, but ok :P",
+      "parentUuid": "ae564743_47ac51eb",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_691a111d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 6
@@ -593,6 +611,24 @@
       "side": 1,
       "message": "Also, these probably need to be optional, unless Google always returns non-empty values for both options.",
       "parentUuid": "ae564743_496aadb1",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_07ac199c",
+        "filename": "includes/auth/GoogleServerAuthenticationRequest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T18:26:11Z",
+      "side": 1,
+      "message": "they are optional, but at least one need to set (error _or_ code, but not both).",
+      "parentUuid": "ae564743_e9f0e163",
       "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
