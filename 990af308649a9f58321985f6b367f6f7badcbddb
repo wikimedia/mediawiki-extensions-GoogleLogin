@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_acd55215",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T17:15:22Z",
+      "side": 1,
+      "message": "\"Creating accounts\" here means creating a local wiki account. For something like CentralAuth that includes adding the same user to CentralAuth\u0027s database, but for GoogleLogin it just means that we immediately link the just-created local account to an existing Google account.\n\nIf the user needs to create a Google account too, hopefully Google include a create account link on their \"authenticate\" page that we redirect to. We probably shouldn\u0027t worry about that.",
+      "parentUuid": "ae564743_ec674ab2",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_691a111d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 6
@@ -468,6 +486,24 @@
       "side": 1,
       "message": "I\u0027m not sure, what you mean, sorry :/ Why should the token be part of the RETURNURL_SESSION_KEY?",
       "parentUuid": "ae564743_89c96560",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_6c95fa34",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T17:15:22Z",
+      "side": 1,
+      "message": "One more bit of security, mostly. That way it can\u0027t be spoofed somehow by a return-from-Google with a different token.",
+      "parentUuid": "ae564743_eceaaa03",
       "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
