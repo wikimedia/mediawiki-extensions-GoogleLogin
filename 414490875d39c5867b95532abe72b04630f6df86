@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_879dc95d",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T19:19:16Z",
+      "side": 1,
+      "message": "Currently you can have only one Google account connected with your wiki account, but your use case sounds valid, so I\u0027ll think about a 1:n relationship for wiki:google accounts. Thanks for the input!",
+      "parentUuid": "ae564743_e75005db",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_073a5993",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-19T18:23:20Z",
       "side": 1,
       "message": "requests have a $action property which will be set by the manager, you can use that instead of injecting the messages.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_6716b55b",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T19:19:16Z",
+      "side": 1,
+      "message": "I\u0027ll create a new AuthenticationRequest to handle these removes :)",
+      "parentUuid": "ae564743_073a5993",
       "revId": "414490875d39c5867b95532abe72b04630f6df86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_27903d4e",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T19:19:16Z",
+      "side": 1,
+      "message": "Ah, I missed to change this, thanks.",
+      "parentUuid": "ae564743_470e11e9",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_47257155",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2016-05-19T18:23:20Z",
       "side": 1,
       "message": "This method does not return anything currently (althogh see T132329); there is definitely no need to say if something is ignored. That\u0027s only used in Allows* to show an error if nothing denies but nothing is willing to accept either.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_4789f125",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T19:19:16Z",
+      "side": 1,
+      "message": "oops, copy-paste-error :/",
+      "parentUuid": "ae564743_47257155",
       "revId": "414490875d39c5867b95532abe72b04630f6df86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
