@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_81bf74a6",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T23:11:51Z",
+      "side": 1,
+      "message": "\u003e I assume that account creation after login with another provider isn\u0027t supported, yet, right?\n\nYeah, you can do that via the API but not via the web interface.",
+      "parentUuid": "ae564743_c1732cae",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_e75005db",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
