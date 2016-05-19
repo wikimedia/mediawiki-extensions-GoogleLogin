@@ -301,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_07b9b9c6",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:37:52Z",
+      "side": 1,
+      "message": "\u003e If GoogleLogin is the only provider I think the logic operation would be to abort the account creation.\n\nIf you are fine with that, you can ignore ACTION_CREATE (return an empty array here and abstain in beginAccountCreation). You can use the AuthChangeFormFields hook to add a \"use Google account\" button to the signup screen, if you want.",
+      "parentUuid": "ae564743_27a95d8e",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_691a111d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 6
@@ -629,6 +647,24 @@
       "side": 1,
       "message": "they are optional, but at least one need to set (error _or_ code, but not both).",
       "parentUuid": "ae564743_e9f0e163",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_278f9d28",
+        "filename": "includes/auth/GoogleServerAuthenticationRequest.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:37:52Z",
+      "side": 1,
+      "message": "As in, you need to set \u0027optional\u0027 \u003d\u003e true. (Well, you don\u0027t really need it, because you have overridden loadFromSubmission (which would reject when non-optional fields are left empty) and this request will never be used to build an UI, but it\u0027s good form nevertheless.)",
+      "parentUuid": "ae564743_07ac199c",
       "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
