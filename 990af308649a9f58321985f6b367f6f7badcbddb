@@ -355,6 +355,42 @@
     },
     {
       "key": {
+        "uuid": "ae564743_42139fb8",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T20:15:41Z",
+      "side": 1,
+      "message": "It hasn\u0027t, there is no way to switch from the login to the signup page while preserving the create request.",
+      "parentUuid": "ae564743_e22f5383",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_a2f71b87",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T20:15:41Z",
+      "side": 1,
+      "message": "Some link to the login page styled like a button, I mean.\n\nIt might actually make sense to embed login buttons into the signup page so the login-then-signup flow can start from there, but that would be handled by the special page by getting the auth requests from ACTION_LOGIN, filtering them somehow and creating a separate form for them.",
+      "parentUuid": "ae564743_e2463353",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_691a111d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 6
