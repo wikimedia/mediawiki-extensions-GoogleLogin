@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_c1732cae",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Ok, I think I got it, but I unfortunately does not understand the part with the createRequest :/ I\u0027ll upload my changes so you see what I did, maybe I already did what you mean? :)\n\n@tgr: I assume that account creation after login with another provider isn\u0027t supported, yet, right? Because I\u0027ve the possiblility to login with a wiki account after successfully loggin in with a non-connected Google account, but I can\u0027t create a new account).\n\nBtw.: The interface message authprovider-confirmlink-failure-line is not defined: https://github.com/wikimedia/mediawiki/blob/1b855688586f29206a64eb975c2dd3d4e252ad84/includes/auth/ConfirmLinkSecondaryAuthenticationProvider.php#L137",
+      "parentUuid": "ae564743_c21e8fbd",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_e75005db",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -124,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_dd502edb",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Hmm, I expect that we run into this problem. GoogleUser seems to isn\u0027t what you expect that it is (I think the name is a bit confusing). It\u0027s a class that inherits from User and implements some methods around the \"normal\" MediaWiki User object. So, calling newFromName() would create a new User object and exists would check, if the user exists in the MediaWiki database.\n\nBut with this change, GoogleUser is minimized to what it needs to do (get Google account Ids connected with the User, connect and terminate connections). So, GoogleUser::newFromName() is unimplemented currently.",
+      "parentUuid": "ae564743_27379dad",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_673d158a",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -135,6 +171,24 @@
       "writtenOn": "2016-05-19T19:25:37Z",
       "side": 1,
       "message": "That won\u0027t work. get_class( $req ) !\u003d\u003d GoogleAuthenticationRequest::class would probably be best.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_1d5e26ed",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_673d158a",
       "revId": "414490875d39c5867b95532abe72b04630f6df86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -193,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_a176f89c",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_a74a8d28",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_c74b412a",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -204,6 +276,24 @@
       "writtenOn": "2016-05-19T19:25:37Z",
       "side": 1,
       "message": "(see line 106)",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_5d541ec9",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_c74b412a",
       "revId": "414490875d39c5867b95532abe72b04630f6df86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -262,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_e16c70cd",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_0761b9a3",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_c7a34195",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -273,6 +381,24 @@
       "writtenOn": "2016-05-19T19:25:37Z",
       "side": 1,
       "message": "This isn\u0027t a good way to pass the data from continuePrimaryAccountCreation() to finishAccountCreation(). Instead, you should set $response-\u003elinkRequest.\n\nOption 1 is to use the same GoogleServerAuthenticationRequest that continuePrimaryAccountLink() accepts, and hope the re-authentication doesn\u0027t decide to suddenly fail. It would need a describeCredentials() method.\n\nOption 2 is to use something like this instead:\n\n class GoogleUserInfoAuthenticationRequest extends AuthenticationRequest {\n     public $required \u003d self::OPTIONAL;\n     public $userInfo;\n\n     public function getFieldInfo() {\n         return [];\n     }\n\n     public function describeCredentials() {\n         // return the same as GoogleAuthenticationRequest\n     }\n }\n\nThen you just pull out $response-\u003elinkRequest-\u003euserInfo and link it up without reauthenticating, just repeat the GoogleUser::isGoogleIdFree() check.\n\nThe only caveat is if $userInfo isn\u0027t serializable, then you\u0027d have to pull out just the bits you need instead of dumping the whole thing in there.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_41671ce6",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_c7a34195",
       "revId": "414490875d39c5867b95532abe72b04630f6df86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -296,6 +422,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_815db41c",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_8797894a",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_a783ad04",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -307,6 +451,24 @@
       "writtenOn": "2016-05-19T19:25:37Z",
       "side": 1,
       "message": "This method should return null explicitly.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_2162e8d4",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T21:59:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_a783ad04",
       "revId": "414490875d39c5867b95532abe72b04630f6df86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
