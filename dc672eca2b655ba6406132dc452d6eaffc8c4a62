@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_a1b8b8c3",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T23:12:02Z",
+      "side": 1,
+      "message": "You can drop this line. createRequest is basically for saying \"I want to handle this user in beginAccountCreation instead\". Ie. you have all data (incl. a username) needed to pass your provider\u0027s account creation logic. For TYPE_LINK providers, linkRequest is probably the better option.",
+      "revId": "dc672eca2b655ba6406132dc452d6eaffc8c4a62",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
