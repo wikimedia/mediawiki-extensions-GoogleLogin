@@ -510,6 +510,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_cc47e6bd",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-19T18:08:46Z",
+      "side": 1,
+      "message": "Ah, ok, the token is already checked in Special:GoogleLoginReturn and the user gets redirected to this special page only, if the token returned by Google matches :)",
+      "parentUuid": "ae564743_6c95fa34",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_496aadb1",
         "filename": "includes/auth/GoogleServerAuthenticationRequest.php",
         "patchSetId": 6
