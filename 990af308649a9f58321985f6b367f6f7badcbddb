@@ -319,6 +319,42 @@
     },
     {
       "key": {
+        "uuid": "ae564743_e22f5383",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:27Z",
+      "side": 1,
+      "message": "Login-then-signup should theoretically work: go to login, get the RESTART response, take the CreateFromLoginAuthenticationRequest included as $response-\u003ecreateRequest, fill in a username, and pass it to AuthManager::beginAccountCreation(), and continue from there. I don\u0027t know if the web UI has support for that though.",
+      "parentUuid": "ae564743_47ac51eb",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_e2463353",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-19T19:25:27Z",
+      "side": 1,
+      "message": "Err, what? I\u0027d say *never* use AuthChangeFormFields to add buttons or form fields to the signup screen. What would that button even do if you\u0027re not supporting ACTION_CREATE?",
+      "parentUuid": "ae564743_07b9b9c6",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_691a111d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 6
