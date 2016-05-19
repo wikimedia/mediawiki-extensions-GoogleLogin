@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_e75005db",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:23:20Z",
+      "side": 1,
+      "message": "On remove, you should only return this if the account is actually linked. (Use $options[\u0027username\u0027] to check.)\n\nAlso, do you want to limit it to one account? (E.g. if I have a separate work and fun browser with different google accounts logged in, I could only log in in one of those.) If not, you should enumerate all linked accounts here.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_073a5993",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:23:20Z",
+      "side": 1,
+      "message": "requests have a $action property which will be set by the manager, you can use that instead of injecting the messages.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_470e11e9",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:23:20Z",
+      "side": 1,
+      "message": "Was this meant to be newGood? Returning a fatal is better, it\u0027s unlikely that anything else would handle a GoogleAuthenticationRequest and the error message the user gets when everything ignores the request is less helpful than an \"account not linked\" error.\n\n(There should be no way for the user to trigger this if you don\u0027t return any requests on ACTION_REMOVE for unlinked accounts, but still.)",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_47257155",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-19T18:23:20Z",
+      "side": 1,
+      "message": "This method does not return anything currently (althogh see T132329); there is definitely no need to say if something is ignored. That\u0027s only used in Allows* to show an error if nothing denies but nothing is willing to accept either.",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
