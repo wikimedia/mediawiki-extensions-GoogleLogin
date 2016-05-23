@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_ceb1878e",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:40:55Z",
+      "side": 1,
+      "message": "This still needs changing to indicate whether the user can authenticate with *this* provider. GoogleUser::hasConnectedGoogleAccount() looks like it\u0027ll do the right thing.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_aeb4137d",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:40:55Z",
+      "side": 1,
+      "message": "This should check that $req-\u003egetGoogleId() is actually attached to this user.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_6e6ddb00",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:40:55Z",
+      "side": 1,
+      "message": "Check that $req-\u003euserInfo[\u0027id\u0027] isn\u0027t already attached to some user. You might even want different messages for \"already attached to this user\" versus \"already attached to some other user\".",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_4e8457a3",
+        "filename": "includes/auth/GoogleRemoveAuthenticationRequest.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:40:55Z",
+      "side": 1,
+      "message": "Is this intended to be used with any action other than REMOVE? If not, skip the test and just return [] always.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_6e54bb2a",
+        "filename": "includes/specials/SpecialGoogleLoginReturn.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:40:55Z",
+      "side": 1,
+      "message": "SMW\\SpecialPage? Looks like you can use core\u0027s SpecialPage instead.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_ae189385",
+        "filename": "includes/sql/user_google_user.sql",
+        "patchSetId": 20
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:40:55Z",
+      "side": 1,
+      "message": "Why remove this primary key? You still want each Google ID to be attached to just 1 user.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_4e09f732",
+        "filename": "includes/sql/user_google_user.sql",
+        "patchSetId": 20
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:40:55Z",
+      "side": 1,
+      "message": "This table should probably have an additional index on user_id to speed up lookups by user_id, otherwise it has to scan the whole table.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
