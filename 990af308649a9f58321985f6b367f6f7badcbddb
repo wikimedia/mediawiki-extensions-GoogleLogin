@@ -391,6 +391,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_ae3b7334",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T18:59:25Z",
+      "side": 1,
+      "message": "The login-then-signup flow is for someone who comes to the wiki and tries to log in with their third-party account without realizing they haven\u0027t created a local account yet.\n\nTrying to use it to replace creating an account directly seems like it would be rather confusing: you go to the account creation page, but you have to ignore the actual form in favor of a link that takes you to try to log in, then you have to log in with the right thing (don\u0027t use the password login!) so it\u0027ll kick you *back* to the account creation page?",
+      "parentUuid": "ae564743_a2f71b87",
+      "revId": "990af308649a9f58321985f6b367f6f7badcbddb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_691a111d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 6
