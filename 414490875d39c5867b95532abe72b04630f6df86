@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_2e1e43be",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-23T19:04:11Z",
+      "side": 1,
+      "message": "I just copied what you had in PS4. What you need here is to indicate whether it\u0027s possible that the user could somehow authenticate using this provider, i.e. whether there\u0027s a Google ID linked to $username.",
+      "parentUuid": "ae564743_dd502edb",
+      "revId": "414490875d39c5867b95532abe72b04630f6df86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_673d158a",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 7
