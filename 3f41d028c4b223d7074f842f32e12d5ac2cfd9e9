@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_f161ccd0",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-23T20:29:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_ceb1878e",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_aeb4137d",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-23T19:40:55Z",
       "side": 1,
       "message": "This should check that $req-\u003egetGoogleId() is actually attached to this user.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_31b7c436",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-23T20:29:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_aeb4137d",
       "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_51c19881",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-23T20:29:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_6e6ddb00",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_4e8457a3",
         "filename": "includes/auth/GoogleRemoveAuthenticationRequest.php",
         "patchSetId": 20
@@ -64,6 +118,24 @@
       "writtenOn": "2016-05-23T19:40:55Z",
       "side": 1,
       "message": "Is this intended to be used with any action other than REMOVE? If not, skip the test and just return [] always.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_515078d8",
+        "filename": "includes/auth/GoogleRemoveAuthenticationRequest.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-23T20:29:40Z",
+      "side": 1,
+      "message": "hmm, you\u0027re right :)",
+      "parentUuid": "ae564743_4e8457a3",
       "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_b15634cf",
+        "filename": "includes/specials/SpecialGoogleLoginReturn.php",
+        "patchSetId": 20
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-23T20:29:40Z",
+      "side": 1,
+      "message": "arghh, I hit my return key too fast without checking, that PhpStorm selected the correct class :P",
+      "parentUuid": "ae564743_6e54bb2a",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_ae189385",
         "filename": "includes/sql/user_google_user.sql",
         "patchSetId": 20
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_71c49c68",
+        "filename": "includes/sql/user_google_user.sql",
+        "patchSetId": 20
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-23T20:29:40Z",
+      "side": 1,
+      "message": "hmm, that\u0027s a logic error on my side :/ You\u0027re totally right!",
+      "parentUuid": "ae564743_ae189385",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_4e09f732",
         "filename": "includes/sql/user_google_user.sql",
         "patchSetId": 20
@@ -115,6 +223,24 @@
       "writtenOn": "2016-05-23T19:40:55Z",
       "side": 1,
       "message": "This table should probably have an additional index on user_id to speed up lookups by user_id, otherwise it has to scan the whole table.",
+      "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_51f7d855",
+        "filename": "includes/sql/user_google_user.sql",
+        "patchSetId": 20
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-23T20:29:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_4e09f732",
       "revId": "3f41d028c4b223d7074f842f32e12d5ac2cfd9e9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
