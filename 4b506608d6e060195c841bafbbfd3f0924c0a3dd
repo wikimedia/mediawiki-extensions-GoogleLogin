@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_9ad209d2",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T21:06:26Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure this is the one needed for the login -\u003e redirect -\u003e create account -\u003e login workflow (see my other comments).",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_fadfc5d9",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T21:06:26Z",
+      "side": 1,
+      "message": "but I\u0027m not sure, if this is needed. I think no, because the continuePrimaryAccountCreation, when passed, should already created an account, right? :)",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_5ae87177",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T21:06:26Z",
+      "side": 1,
+      "message": "btw.: Is finishAccountCreation only called on this provider who created the account? Otherwise I should check, if the response includes a linkRequest which has the userInfo member. I\u0027m pretty sure, that AUthManager doesn\u0027t call this function in GooglePrimaryAuthenticationProvider when an account is created with Username password, but I want to be sure, that I\u0027m understanding the thing correctly :]",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
