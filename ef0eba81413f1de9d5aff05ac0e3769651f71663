@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_bd28a7df",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-26T22:28:10Z",
+      "side": 1,
+      "message": "I\u0027m still not sure relying on createRequest is a good idea (granted,  without I726d79de not having one would cause errors). maybeLink has a clear security model - finish login or account creation, get a confirmation screen. What happens when someone leaves a machine after an unsuccessful login which has returned a createRequest?",
+      "parentUuid": "ae564743_9527810c",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_35f035fa",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 23
