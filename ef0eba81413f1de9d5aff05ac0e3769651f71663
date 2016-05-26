@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_77e0f0f7",
+        "filename": "includes/auth/GoogleAuthenticationRequest.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_75046d17",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_9527810c",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-26T18:24:17Z",
       "side": 1,
       "message": "The login → RESTART response → login → link-during-login flow seems to work correctly, good!\n\nIf you want login → RESTART response → create to work right, you do need to also set $resp-\u003ecreateRequest here. It can (and probably should) be the same request object. beginPrimaryAccountCreation() will need to handle that request without redirecting to Google again. I know Gergő said differently in PS10, but he was wrong.\n\nTo test this with the API, do the following:\n\n* Checkout I726d79de, I fixed some stuff.\n* Submit an action\u003dclientlogin request with googlelogin\u003d1. Get a REDIRECT.\n* Follow the redirect, do Google interaction, get the code\n* Submit an action\u003dclientlogin request (with logincontinue\u003d1) and the code. Get a RESTART.\n* Submit an action\u003dcreateaccount request with createpreservestate\u003d1. Include a \u0027username\u0027 field, but no password or googlelogin. The account should be created, linked to the Google ID from step 3, without an additional redirect to Google.",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_3a15bda0",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "Yay, that works great, thanks! :) But unfortunately, that\u0027s not something that is useable through the UI, right?",
+      "parentUuid": "ae564743_9527810c",
       "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_57bcccd5",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_35f035fa",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_15f37107",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 23
@@ -64,6 +118,24 @@
       "writtenOn": "2016-05-26T18:24:17Z",
       "side": 1,
       "message": "(see line 82)",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_b7d0c824",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_15f37107",
       "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_97cdc48c",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_75f62df7",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_d529f97f",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 23
@@ -98,6 +188,24 @@
       "writtenOn": "2016-05-26T18:24:17Z",
       "side": 1,
       "message": "Typo, you missed the \"\u003e\" in \"$req-\u003egetGoogleId()\". But GoogleUserInfoAuthenticationRequest doesn\u0027t even have that method anyway.",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_d7c73c66",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "oops.",
+      "parentUuid": "ae564743_d529f97f",
       "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_17a9b48d",
+        "filename": "includes/auth/GoogleServerAuthenticationRequest.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_75cd8dbb",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_1501b107",
         "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
         "patchSetId": 23
@@ -132,6 +258,24 @@
       "writtenOn": "2016-05-26T18:24:17Z",
       "side": 1,
       "message": "This results in a display something like\n\n* Google (123456789012345678901)\n\nwhich is probably meaningless to the user. Ideally this would be the email address or display name instead.",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_d7757c2e",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-26T20:56:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_1501b107",
       "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
