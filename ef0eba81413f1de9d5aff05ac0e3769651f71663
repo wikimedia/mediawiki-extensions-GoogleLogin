@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_76e749e0",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-27T19:52:46Z",
+      "side": 1,
+      "message": "The same thing that happens if someone leaves a machine after a login attempt that set \"maybeLink\" without trying to log in with a different method.",
+      "parentUuid": "ae564743_bd28a7df",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_35f035fa",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 23
