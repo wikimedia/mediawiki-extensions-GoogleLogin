@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "ae564743_5615e59e",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-27T19:56:07Z",
+      "side": 1,
+      "message": "Looks right to me.",
+      "parentUuid": "ae564743_9ad209d2",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_167a4de7",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-27T19:56:07Z",
+      "side": 1,
+      "message": "Is there a reason not to just do\n\n $resp-\u003elinkRequest \u003d $request;\n\n?",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_fadfc5d9",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 24
@@ -36,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_368151c9",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-27T19:56:07Z",
+      "side": 1,
+      "message": "Not needed here. In this case the only thing that cares about either -\u003elinkRequest or -\u003ecreateRequest is line 237 just below.",
+      "parentUuid": "ae564743_fadfc5d9",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_5ae87177",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 24
@@ -47,6 +100,41 @@
       "writtenOn": "2016-05-26T21:06:26Z",
       "side": 1,
       "message": "btw.: Is finishAccountCreation only called on this provider who created the account? Otherwise I should check, if the response includes a linkRequest which has the userInfo member. I\u0027m pretty sure, that AUthManager doesn\u0027t call this function in GooglePrimaryAuthenticationProvider when an account is created with Username password, but I want to be sure, that I\u0027m understanding the thing correctly :]",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_d66f3526",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-27T19:56:07Z",
+      "side": 1,
+      "message": "Yes, finishAccountCreation is only called on the provider that was used for the account creation. Its whole reason for existence is because providers sometimes need to do stuff after the local user is created to finish their part of the creation.\n\nIf a provider wants to know about account creations through other providers, it can use postAccountCreation() or the LocalUserCreated hook.",
+      "parentUuid": "ae564743_5ae87177",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_f64d19c9",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-27T19:56:07Z",
+      "side": 1,
+      "message": "Would it save a query to Google\u0027s API to make a GoogleUser::newFromUserInfo() method, since you already have the info here? Or is the info here different from what GoogleUser uses?",
       "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
