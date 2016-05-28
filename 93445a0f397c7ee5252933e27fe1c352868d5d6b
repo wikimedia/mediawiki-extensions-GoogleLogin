@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_85fbc1dd",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-28T14:41:49Z",
+      "side": 1,
+      "message": "gitignore needs cleanup... topic for a follow up :)",
+      "revId": "93445a0f397c7ee5252933e27fe1c352868d5d6b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
