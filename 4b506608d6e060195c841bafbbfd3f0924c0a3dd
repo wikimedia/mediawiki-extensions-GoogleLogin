@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_458fe926",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-28T16:05:27Z",
+      "side": 1,
+      "message": "thanks for the feedback :)",
+      "parentUuid": "ae564743_5615e59e",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_167a4de7",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 24
@@ -48,6 +66,24 @@
       "writtenOn": "2016-05-27T19:56:07Z",
       "side": 1,
       "message": "Is there a reason not to just do\n\n $resp-\u003elinkRequest \u003d $request;\n\n?",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_e5971d4b",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-28T16:05:27Z",
+      "side": 1,
+      "message": "öhm.. no, good catch, thanks! :)",
+      "parentUuid": "ae564743_167a4de7",
       "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_c5949949",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-28T16:05:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_368151c9",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_5ae87177",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 24
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_25a2b5a4",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-28T16:05:27Z",
+      "side": 1,
+      "message": "So, it\u0027s correct here, because we can link both accounts only, if the local user already exists, since we need the user id for it :)",
+      "parentUuid": "ae564743_d66f3526",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_f64d19c9",
         "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
         "patchSetId": 24
@@ -135,6 +207,24 @@
       "writtenOn": "2016-05-27T19:56:07Z",
       "side": 1,
       "message": "Would it save a query to Google\u0027s API to make a GoogleUser::newFromUserInfo() method, since you already have the info here? Or is the info here different from what GoogleUser uses?",
+      "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_858aa11a",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-05-28T16:05:27Z",
+      "side": 1,
+      "message": "good idea! The return values of the API are slightly different (since it contains the public information of the user, only), but the displayName is returned in both cases :)",
+      "parentUuid": "ae564743_f64d19c9",
       "revId": "4b506608d6e060195c841bafbbfd3f0924c0a3dd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
