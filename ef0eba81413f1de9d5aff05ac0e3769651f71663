@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_e5627dd5",
+        "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-28T14:06:59Z",
+      "side": 1,
+      "message": "maybeLink asks for confirmation, createRequest does not.\n\nThen again, maybeLink can be used to backdoor an existing account, createRequest could backdoor a newly created account at most, and it\u0027s hard to imagine a realistic attack scenario based on that.",
+      "parentUuid": "ae564743_76e749e0",
+      "revId": "ef0eba81413f1de9d5aff05ac0e3769651f71663",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_35f035fa",
         "filename": "includes/auth/GooglePrimaryAuthenticationProvider.php",
         "patchSetId": 23
