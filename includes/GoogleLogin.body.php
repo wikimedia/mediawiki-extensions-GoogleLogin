@@ -5,6 +5,11 @@ namespace GoogleLogin;
 use ConfigFactory;
 
 use Google_Client;
+use MediaWiki\MediaWikiServices;
+use Stash\Driver\FileSystem;
+use Stash\Driver\Memcache;
+use Stash\Driver\Redis;
+use Stash\Pool;
 
 class GoogleLogin {
 	/** @var $mGoogleClient Stores an instance of GoogleClient */
@@ -21,7 +26,29 @@ class GoogleLogin {
 	public static function getClient( $returnToUrl, $token ) {
 		if ( empty( self::$mGoogleClient ) ) {
 			$glConfig = self::getGLConfig();
+			$config = MediaWikiServices::getInstance()->getMainConfig();
+			$objectCaches = $config->get( 'ObjectCaches' );
+			$cache = null;
+			if ( $config->get( 'MainCacheType' ) === CACHE_MEMCACHED ) {
+				$memcachedServers = $config->get( 'MemCachedServers' );
+				$servers = [];
+				foreach ( $memcachedServers as $host ) {
+					$servers[] = \IP::splitHostAndPort( $host );
+				}
+				$cache = new Pool( new Memcache( $servers ) );
+			} elseif ( isset( $objectCaches['redis'] ) ) {
+				$redisServers = $objectCaches['redis']['servers'];
+				$servers = [];
+				foreach ( $redisServers as $host ) {
+					$servers[] = \IP::splitHostAndPort( $host );
+				}
+				$cache = new Pool( new Redis( $servers ) );
+			}
+
 			$client = new Google_Client();
+			if ( $cache ) {
+				$client->setCache( $cache );
+			}
 			$client->setClientId( $glConfig->get( 'GLAppId' ) );
 			$client->setClientSecret( $glConfig->get( 'GLSecret' ) );
 			$client->setRedirectUri( $returnToUrl );
