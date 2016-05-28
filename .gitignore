@@ -1,6 +1,5 @@
-node_modules/*
-vendor/*
+node_modules
+vendor
 composer.phar
-cache/*
+cache
 composer.lock
-vendor/
