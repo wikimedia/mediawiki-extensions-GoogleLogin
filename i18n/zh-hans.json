@@ -50,7 +50,7 @@
 	"googlelogin-form-choosename-finish-title": "创建wiki账户",
 	"googlelogin-form-choosename-finish-body": "祝贺！您创建了wiki账户$1并关联到您的Google账户。",
 	"googlelogin-form-choosename-error": "您必须选择用户名或选择我们的建议之一。",
-	"googlelogin-form-choosename-existerror": "用户名''$1''已被使用，请选择其他。",
+	"googlelogin-form-choosename-existerror": "用户名“$1”已被使用，请选择其他。",
 	"googlelogin-form-chooseown": "选择我的",
 	"googlelogin-form-chooseown-error": "请让我们了解您渴望的用户名或选择我们的建议之一。",
 	"googlelogin-form-choosename-placeholder": "您的用户名",
@@ -77,5 +77,5 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|Google登录]]",
 	"tag-googlelogin-description": "带此标记的注册是通过 [[Special:GoogleLogin|GoogleLogin]] 进行的",
 	"action-managegooglelogin": "管理GoogleLogin连接",
-	"right-managegooglelogin": "能够添加，移除和查看GoogleLogin连接"
+	"right-managegooglelogin": "可以添加，移除和查看GoogleLogin连接"
 }
