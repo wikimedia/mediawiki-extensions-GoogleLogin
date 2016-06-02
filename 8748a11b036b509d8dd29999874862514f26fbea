@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_39915053",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-02T17:51:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e68cf02_01d4cdeb",
+      "revId": "8748a11b036b509d8dd29999874862514f26fbea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e68cf02_a1fa3971",
         "filename": "extension.json",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-01T16:19:35Z",
       "side": 1,
       "message": "It\u0027s not from this patch, but having this path here seems wrong.\n\nBut the GLResourcePath configuration setting seems to be unused now, so we can fix it by just removing it entirely.",
+      "revId": "8748a11b036b509d8dd29999874862514f26fbea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_39903046",
+        "filename": "extension.json",
+        "patchSetId": 25
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-02T17:51:34Z",
+      "side": 1,
+      "message": "Ahh, my fault, I haven\u0027t checked the conversion to the extension.json correctly :/ Can be removed :)",
+      "parentUuid": "6e68cf02_a1fa3971",
       "revId": "8748a11b036b509d8dd29999874862514f26fbea",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_d99e4459",
+        "filename": "extension.json",
+        "patchSetId": 25
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-02T17:51:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e68cf02_e1f3919a",
+      "revId": "8748a11b036b509d8dd29999874862514f26fbea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e68cf02_617dc1e4",
         "filename": "includes/GoogleLogin.hooks.php",
         "patchSetId": 25
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-01T16:19:35Z",
       "side": 1,
       "message": "This hook seems to be mostly vestigial from when Special:GoogleLogin actually handled logging in.",
+      "revId": "8748a11b036b509d8dd29999874862514f26fbea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_f9a5089c",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-02T17:51:34Z",
+      "side": 1,
+      "message": "not entirely. It depends on if Special:GoogleLogin will exists after this commit or not, as it actually sets the access_token, so an user doesn\u0027t get redirected to Google twice when opening Special:GoogleLogin again.",
+      "parentUuid": "6e68cf02_617dc1e4",
       "revId": "8748a11b036b509d8dd29999874862514f26fbea",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_59b254e5",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-02T17:51:34Z",
+      "side": 1,
+      "message": "Hmm, you\u0027re right, that\u0027s not a really good flow. But I think I\u0027ll leave the Special:GoogleLogin page for now, as it can show some useful information to the user (but without any interaction like link or unlink).\n\nI\u0027ll also remove this hook, as it doesn\u0027t add a value for the user, currently :)",
+      "parentUuid": "6e68cf02_e1d6f1c7",
+      "revId": "8748a11b036b509d8dd29999874862514f26fbea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e68cf02_01bdedad",
         "filename": "includes/GoogleUser.php",
         "patchSetId": 25
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_39b790d5",
+        "filename": "includes/GoogleUser.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-02T17:51:34Z",
+      "side": 1,
+      "message": "That\u0027s a good hint! Done :)",
+      "parentUuid": "6e68cf02_01bdedad",
+      "revId": "8748a11b036b509d8dd29999874862514f26fbea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e68cf02_e1cc3169",
         "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
         "patchSetId": 25
@@ -115,6 +223,24 @@
       "writtenOn": "2016-06-01T16:19:35Z",
       "side": 1,
       "message": "This is probably going to break things. The method should always return an array with \u0027provider\u0027 and \u0027account\u0027 keys.\n\nInstead, you\u0027d probably want to have \u0027account\u0027 be something like wfMessage( \u0027googlelogin-auth-service-unknown-account\u0027 ) when !$googleUser, or maybe just do $googleUser ? $googleUser-\u003egetFullNameWithId() : \u0027\u0027 on line 35.",
+      "revId": "8748a11b036b509d8dd29999874862514f26fbea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_99acbc86",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-02T17:51:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e68cf02_e1cc3169",
       "revId": "8748a11b036b509d8dd29999874862514f26fbea",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
