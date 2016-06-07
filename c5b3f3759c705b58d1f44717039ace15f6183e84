@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_6caade83",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 31
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-06-07T15:37:53Z",
+      "side": 1,
+      "message": "You can just use ReqestContext::getMain()-\u003egetOutput() although the nice solution is to define your own HTMLFormField subclass, make sure the googlelogin field uses that, then call $this-\u003emParent-\u003egetOutput() in the form field\u0027s getInputHTML() method.",
+      "parentUuid": "0efd9372_cce14afd",
+      "revId": "c5b3f3759c705b58d1f44717039ace15f6183e84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_b14d419e",
         "filename": "style/ext.GoogleLogin.userlogincreate.less",
         "patchSetId": 31
