@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_2c59f65d",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-07T16:39:09Z",
+      "side": 1,
+      "message": "The GoogleLogin 0.4.0 version will require MediaWiki 1.28, which depends on php 5.5.9, so let\u0027s do it! :)",
+      "parentUuid": "0efd9372_2cf5764d",
+      "revId": "76e36bb4b65e0727d0356092f46c540b5c638001",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_4c8f1ad2",
         "filename": "includes/GoogleLogin.hooks.php",
         "patchSetId": 32
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-07T16:28:12Z",
       "side": 1,
       "message": "I don\u0027t think this is needed (although doesn\u0027t hurt either), class takes precedence over type.",
+      "revId": "76e36bb4b65e0727d0356092f46c540b5c638001",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_ec5ece47",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-07T16:39:09Z",
+      "side": 1,
+      "message": "Yep, I know, but in my opinion it\u0027s nicer to cleanup the array :)",
+      "parentUuid": "0efd9372_4c8f1ad2",
       "revId": "76e36bb4b65e0727d0356092f46c540b5c638001",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
