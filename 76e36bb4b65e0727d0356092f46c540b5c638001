@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_2cf5764d",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-06-07T16:28:12Z",
+      "side": 1,
+      "message": "If you don\u0027t care about pre-PHP-5.5 compatibility, you can write HTMLGoogleLoginButtonField::class. It\u0027s neat because you get IDE syntax checking, class rename support etc.",
+      "revId": "76e36bb4b65e0727d0356092f46c540b5c638001",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_4c8f1ad2",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 32
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-06-07T16:28:12Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed (although doesn\u0027t hurt either), class takes precedence over type.",
+      "revId": "76e36bb4b65e0727d0356092f46c540b5c638001",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
