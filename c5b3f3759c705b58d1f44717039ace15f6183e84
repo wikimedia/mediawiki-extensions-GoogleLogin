@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_117b6dbe",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 31
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-07T14:36:36Z",
+      "side": 1,
+      "message": "Would it be better to use the \u0027AuthChangeFormFields\u0027 hook for this?",
+      "revId": "c5b3f3759c705b58d1f44717039ace15f6183e84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_b14d419e",
+        "filename": "style/ext.GoogleLogin.userlogincreate.less",
+        "patchSetId": 31
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-07T14:36:36Z",
+      "side": 1,
+      "message": "I note this import would probably be an issue for the extension being used on Wikimedia sites. If you care about that possibility.",
+      "revId": "c5b3f3759c705b58d1f44717039ace15f6183e84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
