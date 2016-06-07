@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_eebd23d3",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 34
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-07T18:04:54Z",
+      "side": 1,
+      "message": "hmm, damn, this will result in an extra submit button \"Link accounts\", because of:\nhttps://github.com/wikimedia/mediawiki/blob/801db2a0e2be2b14a6f997b127b5880eade5cd2a/includes/specialpage/AuthManagerSpecialPage.php#L540\n\n...",
+      "revId": "41a027f64baf1bbe14f35023507dfa5ec4f391fe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
