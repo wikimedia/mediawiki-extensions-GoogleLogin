@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_8e756c95",
+        "filename": "includes/GoogleUser.php",
+        "patchSetId": 36
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-09T15:12:28Z",
+      "side": 1,
+      "message": "The one place this gets called, it\u0027s actually getting passed a Google_Service_Plus_Person object rather than an array, which makes PHP fatal.\n\nThe simplest fix is probably to remove the type-hinting here, and maybe manually check is_array() || instanceof Google_Service_Plus_Person (throwing an InvalidArgumentException if the test fails).",
+      "revId": "775bc7e5b243fb3afeb1e2e91769efc22bd8b1e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_6e476851",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 36
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-09T15:12:28Z",
+      "side": 1,
+      "message": "I note both times you use this class, $userInfo is actually a Google_Service_Plus_Person object rather than an array.",
+      "revId": "775bc7e5b243fb3afeb1e2e91769efc22bd8b1e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_ee80784d",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 36
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-09T15:12:28Z",
+      "side": 1,
+      "message": "Variable is $googleUser, not $googleuser.",
+      "revId": "775bc7e5b243fb3afeb1e2e91769efc22bd8b1e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
