@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_0e7dfc17",
+        "filename": "includes/GoogleUser.php",
+        "patchSetId": 36
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-09T15:43:11Z",
+      "side": 1,
+      "message": "hmm, you\u0027re right.",
+      "parentUuid": "0efd9372_8e756c95",
+      "revId": "775bc7e5b243fb3afeb1e2e91769efc22bd8b1e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_6e476851",
         "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
         "patchSetId": 36
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_4ea0a49a",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 36
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-09T15:43:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_6e476851",
+      "revId": "775bc7e5b243fb3afeb1e2e91769efc22bd8b1e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_ee80784d",
         "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
         "patchSetId": 36
@@ -47,6 +83,24 @@
       "writtenOn": "2016-06-09T15:12:28Z",
       "side": 1,
       "message": "Variable is $googleUser, not $googleuser.",
+      "revId": "775bc7e5b243fb3afeb1e2e91769efc22bd8b1e5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_2e99e080",
+        "filename": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+        "patchSetId": 36
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-06-09T15:43:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_ee80784d",
       "revId": "775bc7e5b243fb3afeb1e2e91769efc22bd8b1e5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
