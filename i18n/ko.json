@@ -5,7 +5,8 @@
 			"Revi",
 			"SeoJeongHo",
 			"Yearning",
-			"Hwangjy9"
+			"Hwangjy9",
+			"Ykhwong"
 		]
 	},
 	"googlelogin": "구글로 로그인하기",
@@ -25,5 +26,5 @@
 	"googlelogin-form-chooseown-error": "당신이 원하는 이름을 정하거나, 우리가 추천하는 이름을 사용하세요.",
 	"googlelogin-form-next": "다음",
 	"googlelogin-login-already-registered": "나는 이미 {{SITENAME}} 계정을 가지고 있습니다",
-	"googlelogin-login-merge-warning": "구글 계정을 {{SITENAME}} 계정과 연결 하기 위해 로그인 해주십시오."
+	"googlelogin-login-merge-warning": "구글 계정을 {{SITENAME}} 계정과 연결하기 위해 로그인해 주십시오."
 }

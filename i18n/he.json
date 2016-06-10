@@ -7,5 +7,6 @@
 	},
 	"googlelogin-manage-yes": "כן",
 	"googlelogin-create": "יצירה באמצעות גוגל",
-	"googlelogin-or": "או"
+	"googlelogin-or": "או",
+	"right-managegooglelogin": "הוספה, הסרה וצפייה בחיבורים של GoogleLogin"
 }
