@@ -5,9 +5,24 @@
 			"LaG roiL"
 		]
 	},
+	"googlelogin": "כניסה עם חשבון Google",
+	"googlelogin-manage-linked": "החשבון מקושר עם חשבון (או חשבונות) Google באמצעות המזהה או המזהים הבאים:",
+	"googlelogin-manage-notlinked": "החשבון לא מקושר עם שום חשבון Google.",
 	"googlelogin-manage-yes": "כן",
+	"googlelogin-manage-addlabel": "הוספת מזהה Google",
 	"googlelogin-create": "יצירה באמצעות גוגל",
-	"googlelogin-or": "או",
+	"googlelogin-desc-authmanager": "אפשרות להיכנס לחשבון עם חשבון Google מקושר.",
+	"googlelogin-link-same": "חשבון ה־Google שלך כבר מקושר למשתמש שלך, ולא ניתן לקשר אותו שוב.",
+	"googlelogin-error-no-authentication-workflow": "ביקשת להמשיך בתהליך האימות של Google, אבל לא התחיל שום תהליך כזה. נא להתחיל תהליך אימות חדש על־ידי כניסה לחשבון מחדש.",
+	"googlelogin-loginbutton-help": "אימות המשתמש שלך באמצעות חשבון ה־Google שלך.",
+	"googlelogin-link-help": "קישור חשבון הוויקי שלך עם חשבון ה־Google שלך.",
+	"googlelogin-param-error-label": "הוחזר קוד שגיאה מ־Google",
+	"googlelogin-param-error-help": "אם האימות נכשל, קוד השגיאה מוחזר מ־Google.",
+	"googlelogin-param-code-label": "אסימון הגישה מ־Google",
+	"googlelogin-param-code-help": "אם האימות מצליח, אסימון הגישה מוחזר מ־Google.",
+	"googlelogin-change-account-not-linked": "לא ניתן להסיר חיבור של חשבון Google, כי החשבון שלך לא מקושר עם שום חשבון Google.",
+	"googlelogin-auth-service-unknown-account": "חשבון Google לא ידוע",
+	"googlelogin-access-denied": "אין אפשרות להיכנס לחשבון. דחית את הגישה למידע על חשבון ה־Google שלך.",
 	"action-managegooglelogin": "לנהל חיבורים של GoogleLogin",
 	"right-managegooglelogin": "הוספה, הסרה וצפייה בחיבורים של GoogleLogin"
 }

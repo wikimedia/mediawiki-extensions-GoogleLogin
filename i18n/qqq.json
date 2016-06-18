@@ -5,7 +5,8 @@
 			"Shirayuki",
 			"Umherirrender",
 			"George Animal",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Metalhead64"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Description for api module googleplusprofileinfo.",
@@ -37,8 +38,8 @@
 	"googlelogin-manage-unknownerror": "Error message, when the Google Plus profile data could not be loaded.",
 	"googlelogin-manage-plusinfo-title": "Title of the information dialog on [[Special:ManageGoogleLogin]].",
 	"googlelogin-manage-errorloading": "Title of an error dialog with a generic \"There was an error\" message.",
-	"googlelogin-username": "Used to indicate a username input field.\n{{Identical|Username}}",
 	"googlelogin-manage-addlabel": "Label of an input box on [[Special:ManageGoogleLogin]] to add a Google ID to a wiki account.",
+	"googlelogin-username": "Used to indicate a username input field.\n{{Identical|Username}}",
 	"googlelogin-create": "Used as label for the button shown in [[Special:CreateAccount]].",
 	"googlelogin-desc-authmanager": "{{desc|name=Google Login|url=https://www.mediawiki.org/wiki/Extension:GoogleLogin}}",
 	"googlelogin-generic-error": "Generic error message for errors with no specific error message.\n\nParameters:\n* $1 - a short description of the error (e.g. Database error)",
@@ -59,9 +60,9 @@
 	"googlelogin-loginbutton-help": "Help message used for the Login with Google button on [[Special:UserLogin]].",
 	"googlelogin-link-help": "Help message used for the Link with Google button on [[Special:LinkAccounts]].",
 	"googlelogin-param-error-label": "Label for the input field for an error code returned by Google in case of an authentication failure.",
-	"googlelogin-param-error-help": "Help message for the input field, which is described in {{mw-msg|googlelogin-param-error-label}}.",
+	"googlelogin-param-error-help": "Help message for the input field, which is described in {{msg-mw|googlelogin-param-error-label}}.",
 	"googlelogin-param-code-label": "Label for the input field for an access token returned by Google when the user was authenticated successfully.",
-	"googlelogin-param-code-help": "Help message for the input field, which is described in {{mw-msg|googlelogin-param-code-label}}.",
+	"googlelogin-param-code-help": "Help message for the input field, which is described in {{msg-mw|googlelogin-param-code-label}}.",
 	"googlelogin-change-account-not-linked": "Error message when an user tries to remove a Google account connection, but the wiki account has no connected Google accounts.",
 	"googlelogin-auth-service-unknown-account": "Used in the very rare case, that the Google ID connected with the MediaWiki User isn't known anymore.",
 	"googlelogin-access-denied": "Message returned to the user, when the access to the Google account information was rejected.",
