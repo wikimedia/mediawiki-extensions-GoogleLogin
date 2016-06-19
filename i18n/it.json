@@ -12,11 +12,13 @@
 	"apihelp-googleplusprofileinfo-param-googleid": "L'ID Google dell'utente.",
 	"googlelogin": "Accedi con Google",
 	"googlelogin-manage-user": "Gestisci {{GENDER:$1|l'utente}} <strong>$1</strong>.",
+	"googlelogin-manage-linked": "L'utenza è collegata con account Google con i seguenti ID:",
 	"googlelogin-manage-isplusser": "Registrato su Google+",
 	"googlelogin-manage-yes": "sì",
 	"googlelogin-manage-no": "no",
-	"googlelogin-manage-addlabel": "Aggiungi una tessera Google.",
+	"googlelogin-manage-addlabel": "Aggiungi ID Google",
 	"googlelogin-create": "Crea con Google",
+	"googlelogin-desc-authmanager": "Consente agli utenti di effettuare l'accesso con il proprio account Google.",
 	"googlelogin-generic-error": "Oops, c'è stato un'errore. Torna indietro e riprova. Messaggio: $1",
 	"googlelogin-email": "Indirizzo email",
 	"googlelogin-googleuser": "Utente Google",
@@ -25,5 +27,7 @@
 	"googlelogin-linked": "collegato",
 	"googlelogin-unlinked": "non collegato",
 	"googlelogin-link-help": "Collega la tua utenza wiki con il tuo account Google.",
+	"googlelogin-param-error-label": "Codice di errore restituito da Google",
+	"googlelogin-param-code-label": "Token di accesso da Google",
 	"googlelogin-auth-service-unknown-account": "Utenza Google sconosciuta"
 }
