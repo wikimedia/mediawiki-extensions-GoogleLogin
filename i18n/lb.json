@@ -34,9 +34,11 @@
 	"googlelogin-information-title": "Benotzerkontinformatioun",
 	"googlelogin-linked": "verbonn",
 	"googlelogin-unlinked": "net verbonn",
+	"googlelogin-link-same": "Äre Google-Benotzerkont ass scho mat ärem Benotzerkont verbonn, Dir kënnt dat net nach eng Kéier maachen.",
 	"googlelogin-prefs-status": "GoogleLogin-Status:",
 	"googlelogin-loginbutton-help": "Authentifizéiert Iech mat Ärem Google-Benotzerkont",
 	"googlelogin-link-help": "Verbannt Äre Wiki-Benotzerkont mat Ärem Google-Benotzerkont",
+	"googlelogin-param-error-label": "Feelercode dee vu Google zréck koum",
 	"googlelogin-auth-service-unknown-account": "Onbekannte Google-Benotzerkont",
 	"tag-googlelogin": "[[Special:GoogleLogin|Google-Login]]"
 }

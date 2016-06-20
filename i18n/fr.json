@@ -7,7 +7,8 @@
 			"ChaudLeChocolat",
 			"Macofe",
 			"Lucky",
-			"Wladek92"
+			"Wladek92",
+			"Trial"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fait une requête à l’API de Google+ pour trouver des informations personnelles sur un utilisateur donné.",
@@ -18,7 +19,7 @@
 	"googlelogin-manage-usersubmit": "Gérer l'utilisateur",
 	"googlelogin-manage-user": "Vous gérez {{GENDER:$1|l’utilisateur|l’utilisatrice}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Le compte est lié au(x) compte(s) Google avec le ou les IDs suivants :",
-	"googlelogin-manage-notlinked": "Le compte n’est actuellement pas lié avec un compte Google.",
+	"googlelogin-manage-notlinked": "Le compte n'est actuellement lié à aucun compte Google.",
 	"googlelogin-manage-changelegend": "Changer le Google ID",
 	"googlelogin-manage-noplus": "<strong>Note :</strong> L’utilisateur avec l’ID Google que vous avez saisi ne semble pas avoir de profil Google+. Peut-être une erreur de frappe ?",
 	"googlelogin-manage-changedsuccess": "L'Utilisateur est désormais lié avec le compte Google.",

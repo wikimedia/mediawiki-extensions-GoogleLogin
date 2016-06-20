@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"googlelogin": "Aperir session con Google",
+	"googlelogin-manage-linked": "Le conto es ligate al conto(s) Google con le sequente ID(s):",
+	"googlelogin-manage-addlabel": "Adder ID Google",
+	"googlelogin-desc-authmanager": "Permitter que usatores aperi session con lor conto Google.",
+	"googlelogin-link-same": "Tu conto de Google es jam ligate a tu usator. Non es possibile ligar lo de novo.",
+	"googlelogin-error-no-authentication-workflow": "Tu ha demandate a continuar un processo de authentication Google, ma il non ha alcun tal processo actualmente in curso. Per favor comencia un nove processo de authentication per aperir session de novo.",
+	"googlelogin-loginbutton-help": "Te authentica con tu conto Google.",
+	"googlelogin-link-help": "Ligar tu conto wiki a tu conto Google.",
+	"googlelogin-param-error-label": "Codice de error retornate ab Google",
+	"googlelogin-param-error-help": "In caso de un fallimento de authentication, le codice de error retornate ab Google.",
+	"googlelogin-param-code-label": "Indicio de accesso ab Google",
+	"googlelogin-param-code-help": "In caso de un authentication succedite, le indicio de accesso retornate ab Google.",
+	"googlelogin-change-account-not-linked": "Tu non pote remover un connexion a un conto Google perque tu conto non es connectite a un conto Google.",
+	"googlelogin-auth-service-unknown-account": "Conto Google incognite",
+	"googlelogin-access-denied": "Impossibile aperir session. Tu ha refusate le accesso al information de tu conto Google."
+}
