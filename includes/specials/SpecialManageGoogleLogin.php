@@ -102,26 +102,25 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$out->addWikiMsg( 'googlelogin-manage-user', $user->getName() );
 		$googleIds = GoogleUser::getGoogleIdFromUser( $user );
 		if ( $googleIds ) {
-			$out->addHTML(
-				Html::openElement( 'div' ) .
-				$this->msg( 'googlelogin-manage-linked' )->escaped() .
-				Html::openElement( 'strong' )
-			);
-
+			$googleIdLinks = '';
 			foreach ( $googleIds as $count => $googleId ) {
+				$googleIdCount = $count + 1;
 				if ( $count !== 0 ) {
-					$out->addHTML( ', ' );
+					$googleIdLinks .= ', ';
 				}
-				$out->addHTML(
-					Html::element( 'a',
-						[
-							'href' => 'javascript:void(0)',
-							'data-googleid' => $googleId,
-						],
-						$googleId
-					) );
+				$googleIdLinks .= Html::element( 'a',
+					[
+						'href' => 'javascript:void(0)',
+						'data-googleid' => $googleId,
+					],
+					$googleId
+				);
 			}
 			$out->addHTML(
+				Html::openElement( 'div' ) .
+				$this->msg( 'googlelogin-manage-linked', $googleIdCount )->escaped() .
+				Html::openElement( 'strong' ) .
+				$googleIdLinks .
 				Html::closeElement( 'strong' ) .
 				Html::closeElement( 'div' )
 			);
