@@ -12,7 +12,7 @@
 	"googlelogin-managelegend": "Find user to manage",
 	"googlelogin-manage-usersubmit": "Manage user",
 	"googlelogin-manage-user": "You manage the {{GENDER:$1|user}} <strong>$1</strong>.",
-	"googlelogin-manage-linked": "The account is linked with Google account(s) with the following ID(s): ",
+	"googlelogin-manage-linked": "The account is linked with {{PLURAL:$1|a|}} Google {{PLURAL:$1|account|accounts}} with the following {{PLURAL:$1|ID|IDs}}: ",
 	"googlelogin-manage-notlinked": "The account is actually not linked with any Google account.",
 	"googlelogin-manage-changelegend": "Change Google ID",
 	"googlelogin-manage-noplus": "<strong>Notice:</strong> The user with the Google ID you entered seems to have no Google+ profile. Maybe a typing error?",
