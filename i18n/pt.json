@@ -46,7 +46,10 @@
 	"googlelogin-linked": "ligadas",
 	"googlelogin-unlinked": "não vinculada",
 	"googlelogin-link-other": "A sua conta Google já está vinculada a outro utilizador(a). Por favor, desconete a sua outra wiki conta ou entre em contato com um administrador, se não tiver outra conta wiki.",
+	"googlelogin-loginbutton-help": "Inicia a sessão através da sua conta Google",
 	"googlelogin-link-help": "Faça ligação da sua conta wiki à sua conta Google.",
+	"googlelogin-param-error-label": "Código de erro retornado do Google",
+	"googlelogin-param-code-label": "Chave de acesso do Google",
 	"googlelogin-auth-service-unknown-account": "Conta Google desconhecida",
 	"action-managegooglelogin": "gerir conexões da sua conta Google"
 }

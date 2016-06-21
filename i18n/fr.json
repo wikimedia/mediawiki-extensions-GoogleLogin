@@ -66,7 +66,7 @@
 	"googlelogin-param-code-help": "En cas d'authentification réussie, le jeton d'accès retourné par Google.",
 	"googlelogin-change-account-not-linked": "Vous ne pouvez pas supprimer la connexion d'un compte Google, parce que votre compte n'est pas connecté sous un compte Google.",
 	"googlelogin-auth-service-unknown-account": "Compte Google inconnu",
-	"googlelogin-access-denied": "Impossible de se connecter. Vous avez refusé l'accès à vos informations de compte Google.",
+	"googlelogin-access-denied": "Impossible de se connecter. Vous avez refusé l'accès aux informations de votre compte Google.",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Les inscriptions avec cette balise ont été faites avec [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gérer les connexions GoogleLogin",
