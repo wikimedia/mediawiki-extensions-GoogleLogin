@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_1bece38d",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2016-06-22T11:18:58Z",
+      "side": 1,
+      "message": "It\u0027s probably clearer to write this as follows, even though there is some extra duplication:\n\n {{PLURAL:$1|a Google account|Google accounts}}",
+      "revId": "17bd8a42931231a46678bdde4844ca609dfb5eef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
