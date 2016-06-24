@@ -11,6 +11,7 @@
 	"googlelogin": "Zaloguj się za pomocą Google",
 	"googlelogin-managelegend": "Znajdź użytkownika do zarządzania",
 	"googlelogin-manage-usersubmit": "Zarządzaj Użytkownikiem",
+	"googlelogin-manage-linked": "Konto jest połączone z kontem/kontami Google o następującym identyfikatorze/następujących identyfikatorach:",
 	"googlelogin-manage-notlinked": "Konto nie jest obecnie połączone z żadnym kontem Google.",
 	"googlelogin-manage-changelegend": "Zmień Google ID",
 	"googlelogin-manage-noplus": "<strong>Uwaga:</strong> Użytkownik o podanym identyfikatorze nie ma profilu Google+. Być może wystąpiła pomyłka przy wpisywaniu?",
@@ -32,9 +33,14 @@
 	"googlelogin-information-title": "Informacje o koncie",
 	"googlelogin-link-same": "Twoje konto Google jest już połączone z użytkownikiem, więc nie można połączyć go ponownie.",
 	"googlelogin-prefs-status": "Stan GoogleLogin:",
+	"googlelogin-link-help": "Połącz swoje konto wiki z kontem Google.",
 	"googlelogin-param-error-label": "Kod błędu zwrócony z Google",
+	"googlelogin-param-error-help": "W przypadku niepowodzenia uwierzytelnienia, kod błędu zwrócony z Google.",
+	"googlelogin-param-code-label": "Token dostępu z Google",
+	"googlelogin-param-code-help": "W przypadku pomyślnego uwierzytelnienia, token dostępu zwrócony z Google.",
 	"googlelogin-change-account-not-linked": "Nie można usunąć połączenie z kontem Google, ponieważ Twoje konto nie jest z nim połączone.",
 	"googlelogin-auth-service-unknown-account": "Nieznane konto Google",
+	"googlelogin-access-denied": "Nie można się zalogować. Odmówiono dostępu do informacji o koncie Google.",
 	"action-managegooglelogin": "zarządzaj powiązaniem kont użytkowników z Google",
 	"right-managegooglelogin": "Umożliwia dodawania, usuwanie i przeglądanie połączeń GoogleLogin"
 }

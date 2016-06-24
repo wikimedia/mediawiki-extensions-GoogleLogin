@@ -59,6 +59,7 @@
 	"googlelogin-param-error-help": "En caso de erro de autenticación, o código de erro devolto por Google.",
 	"googlelogin-param-code-label": "Identificador de acceso de Google",
 	"googlelogin-auth-service-unknown-account": "Conta de Google descoñecida",
+	"googlelogin-access-denied": "Non se pode conectar. Vostede denegou o acceso á información da súa conta de Google.",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Rexistros con esta etiqueta foron feitos con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "xestionar conexións de GoogleLogin",

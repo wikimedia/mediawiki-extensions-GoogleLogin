@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bluegram"
+		]
+	},
+	"googlelogin": "เข้าสู่ระบบโดยบัญชี Google",
+	"googlelogin-manage-linked": "บัญชีนี้เชื่อมต่อกับบัญชี Google ด้วยบัญชีต่อไปนี้:",
+	"googlelogin-manage-addlabel": "เพิ่มบัญชี Google",
+	"googlelogin-link-same": "บัญชี Google ของคุณเชื่อมต่อไปยังบัญชีผู้ใช้ของคุณเรียบร้อยแล้ว คุณไม่สามารถเชื่อมต่อได้อีก",
+	"googlelogin-link-help": "เชื่อมต่อบัญชี Wiki ไปยังบัญชี Google ของคุณ"
+}

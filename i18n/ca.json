@@ -1,10 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardo Martinez"
+			"Eduardo Martinez",
+			"Medol"
 		]
 	},
-	"googlelogin-form-next": "Següent",
-	"googlelogin-login-already-registered": "Ja tinc un compte {{SITENAME}}",
-	"googlelogin-login-merge-warning": "Si us plau, entreu a l'enllaç del vostre compte de Google amb el compte {{SITENAME}}."
+	"googlelogin": "Inicieu la sessió amb Google",
+	"googlelogin-manage-notlinked": "El compte no està enllaçat amb cap compte de Google.",
+	"googlelogin-manage-addlabel": "Afegir la ID de Google",
+	"googlelogin-desc-authmanager": "Permetre als usuaris que accedeixin amb el seu compte de Google.",
+	"googlelogin-link-same": "El vostre compte de Google ja està enllaçat al vostre usuari, així que no es pot enllaçar un altre cop.",
+	"googlelogin-loginbutton-help": "L'autentificació ha de ser amb el teu compte de Google.",
+	"googlelogin-link-help": "Enllaça el teu compte wiki amb el teu compte de Google.",
+	"googlelogin-param-error-label": "Codi d'error retornat de Google",
+	"googlelogin-param-error-help": "Si fracassa l'autentificació, el codi d'error de Google retorna.",
+	"googlelogin-auth-service-unknown-account": "Aquest compte de Google és desconegut",
+	"googlelogin-access-denied": "No pots entrar. S'ha denegat l'accés a la informació del vostre compte de Google."
 }
