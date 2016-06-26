@@ -11,7 +11,7 @@
 	"googlelogin": "Zaloguj się za pomocą Google",
 	"googlelogin-managelegend": "Znajdź użytkownika do zarządzania",
 	"googlelogin-manage-usersubmit": "Zarządzaj Użytkownikiem",
-	"googlelogin-manage-linked": "Konto jest połączone z kontem/kontami Google o następującym identyfikatorze/następujących identyfikatorach:",
+	"googlelogin-manage-linked": "Konto jest połączone z {{PLURAL:$1|kontem|kontami}} Google o {{PLURAL:$1|następującym identyfikatorze|następujących identyfikatorach}}:",
 	"googlelogin-manage-notlinked": "Konto nie jest obecnie połączone z żadnym kontem Google.",
 	"googlelogin-manage-changelegend": "Zmień Google ID",
 	"googlelogin-manage-noplus": "<strong>Uwaga:</strong> Użytkownik o podanym identyfikatorze nie ma profilu Google+. Być może wystąpiła pomyłka przy wpisywaniu?",

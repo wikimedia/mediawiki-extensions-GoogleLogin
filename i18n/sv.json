@@ -4,7 +4,8 @@
 			"Lokal Profil",
 			"WikiPhoenix",
 			"Jopparn",
-			"Macofe"
+			"Macofe",
+			"Josve05a"
 		]
 	},
 	"apihelp-googleplusprofileinfo-param-googleid": "Användarens Google-ID.",
@@ -16,6 +17,7 @@
 	"googlelogin-manage-isplusser": "Registrerad på Google+",
 	"googlelogin-manage-addlabel": "Lägg till Google-ID",
 	"googlelogin-create": "Skapa med Google",
+	"googlelogin-desc-authmanager": "Tillåta användare att logga in med sitt Google-konto.",
 	"googlelogin-generic-error": "Oj, ett fel uppstod. Gå tillbaka och försök igen. Meddelande: $1",
 	"googlelogin-unallowed-domain": "Den e-postdomän som används för den primära e-postadressen till ditt Google-konto ($1) är inte tillåten att logga in på denna wiki.",
 	"googlelogin-form-merge": "Länka Googlekonto till wikikonto",

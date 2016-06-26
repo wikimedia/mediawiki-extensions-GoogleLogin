@@ -14,7 +14,7 @@
 	"googlelogin-managelegend": "Zu verwaltenden Benutzer suchen",
 	"googlelogin-manage-usersubmit": "Benutzer verwalten",
 	"googlelogin-manage-user": "Du verwaltest {{GENDER:$1|den Benutzer|die Benutzerin}} <strong>$1</strong>.",
-	"googlelogin-manage-linked": "Das Benutzerkonto ist mit dem Google-Konto/den Google-Konten mit der folgenden ID/den folgenden IDs verknüpft:",
+	"googlelogin-manage-linked": "Das Benutzerkonto ist mit {{PLURAL:$1|dem Google-Konto mit der folgenden ID|den Google-Konten mit den folgenden IDs}} verknüpft:",
 	"googlelogin-manage-notlinked": "Das Benutzerkonto ist mit keinem Google-Konto verknüpft.",
 	"googlelogin-manage-changelegend": "Google-ID ändern",
 	"googlelogin-manage-noplus": "<strong>Hinweis:</strong> Der Benutzer mit der eingegebenen Google-ID scheint kein Google+-Profil zu haben. Vielleicht ein Tippfehler?",

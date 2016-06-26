@@ -6,7 +6,7 @@
 		]
 	},
 	"googlelogin": "כניסה עם חשבון Google",
-	"googlelogin-manage-linked": "החשבון מקושר עם חשבון (או חשבונות) Google באמצעות המזהה או המזהים הבאים:",
+	"googlelogin-manage-linked": "החשבון מקושר עם {{PLURAL:$1|חשבון Google|חשבונות Google}} באמצעות ה{{PLURAL:$1|מזהה הבא|מזהים הבאים}}:",
 	"googlelogin-manage-notlinked": "החשבון לא מקושר עם שום חשבון Google.",
 	"googlelogin-manage-yes": "כן",
 	"googlelogin-manage-addlabel": "הוספת מזהה Google",
