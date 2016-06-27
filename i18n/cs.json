@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cvanca"
+			"Cvanca",
+			"Dvorapa"
 		]
 	},
 	"googlelogin-manage-usersubmit": "Spravovat uživatele",
-	"googlelogin-manage-notlinked": "Účet není propojen s účtem u Google.",
+	"googlelogin-manage-notlinked": "Tento účet není propojen s žádným Google účtem.",
 	"googlelogin-manage-changelegend": "Změnit Google ID",
 	"googlelogin-manage-orgname": "Název společnosti",
 	"googlelogin-manage-orgtitle": "Pracovní pozice",

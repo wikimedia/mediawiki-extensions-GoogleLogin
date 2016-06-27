@@ -31,6 +31,7 @@
 	"googlelogin-unlinked": "inte länkad",
 	"googlelogin-link-other": "Ditt Google-konto är redan länkat till en annan användare. Vänligen avlänka denna koppling eller kontakta en administratör, om du inte har något annat wikikonto.",
 	"googlelogin-prefs-status": "GoogleLogin-status:",
+	"googlelogin-loginbutton-help": "Verifierar dig med ditt Google-konto.",
 	"googlelogin-link-help": "Länka ditt wikikonto med ditt Google-konto.",
 	"googlelogin-param-error-label": "Felkod returnerades från Google",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",

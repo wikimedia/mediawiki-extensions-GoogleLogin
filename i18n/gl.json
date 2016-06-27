@@ -14,7 +14,7 @@
 	"googlelogin-managelegend": "Atopar Usuario a xestionar",
 	"googlelogin-manage-usersubmit": "Xestionar o usuario",
 	"googlelogin-manage-user": "Vostede xestiona {{GENDER:$1|o usuario|a usuaria}}  <strong>$1</strong>.",
-	"googlelogin-manage-linked": "A conta está ligada á(s) conta(s) de Google co(s) identificador(es) seguinte(s):",
+	"googlelogin-manage-linked": "A conta está ligada á(s) {{PLURAL:$1|á conta|ás contas}} de Google {{PLURAL:$1|co seguinte identificador|cos seguintes identificadores}}:",
 	"googlelogin-manage-notlinked": "A conta non está ligada actualmente a ningunha conta de Google.",
 	"googlelogin-manage-changelegend": "Cambiar identificador de Google",
 	"googlelogin-manage-noplus": "<strong>Aviso:</strong> O usuario co identificador de Google que indicou parece que non ten perfil Google+. Podería ser un erro de escritura?",

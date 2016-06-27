@@ -11,7 +11,7 @@
 	"googlelogin-managelegend": "Localizar utilizador para gerir",
 	"googlelogin-manage-usersubmit": "Gerir utilizador",
 	"googlelogin-manage-user": "Está a gerir o {{GENDER:$1|utilizador|utilizadora|utilizador(a)}} <strong>$1</strong>.",
-	"googlelogin-manage-linked": "A conta está ligada com conta(s) Google com o(s) seguinte(s) ID:",
+	"googlelogin-manage-linked": "A conta está ligada com {{PLURAL:$1|conta|contas}} Google com o(s) seguinte(s) ID:",
 	"googlelogin-manage-notlinked": "Esta conta não está ligada atualmente a nenhuma conta Google.",
 	"googlelogin-manage-changelegend": "Alterar o ID Google",
 	"googlelogin-manage-noplus": "<strong>Aviso:</strong> O utilizador com o ID Google que inseriu parece não ter perfil Google+. Talvez se tenha enganado a escrever?",

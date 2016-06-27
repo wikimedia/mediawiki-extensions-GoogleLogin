@@ -12,7 +12,7 @@
 	"apihelp-googleplusprofileinfo-param-googleid": "L'ID Google dell'utente.",
 	"googlelogin": "Accedi con Google",
 	"googlelogin-manage-user": "Gestisci {{GENDER:$1|l'utente}} <strong>$1</strong>.",
-	"googlelogin-manage-linked": "L'utenza è collegata con account Google con i seguenti ID:",
+	"googlelogin-manage-linked": "L'utenza è collegata con {{PLURAL:$1|un|}} account Google con {{PLURAL:$1|il seguente|i seguenti}} ID:",
 	"googlelogin-manage-isplusser": "Registrato su Google+",
 	"googlelogin-manage-yes": "sì",
 	"googlelogin-manage-no": "no",

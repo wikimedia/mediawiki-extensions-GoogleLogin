@@ -11,7 +11,7 @@
 	"googlelogin": "Google を使用してログイン",
 	"managegooglelogin": "GoogleLogin 接続の管理",
 	"googlelogin-manage-usersubmit": "ユーザー管理",
-	"googlelogin-manage-linked": "現在のアカウントには、以下のIDのGoogleアカウントが連携されています：",
+	"googlelogin-manage-linked": "現在のアカウントには、以下の{{PLURAL:$1|ID}}の{{PLURAL:$1|Googleアカウント}}が連携されています：",
 	"googlelogin-manage-notlinked": "現在のアカウントには、どのGoogleアカウントも連携されていません。",
 	"googlelogin-manage-changedsuccess": "この利用者は今、Google アカウントでリンクされています。",
 	"googlelogin-manage-isplusser": "Google+ に登録済み",

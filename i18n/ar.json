@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"محمد أحمد عبد الفتاح"
+		]
+	},
+	"googlelogin-manage-addlabel": "إضافة معرف Google",
+	"googlelogin-link-help": "ربط حسابك في الويكي بحسابك في Google.",
+	"googlelogin-auth-service-unknown-account": "حساب Google غير معروف"
+}
