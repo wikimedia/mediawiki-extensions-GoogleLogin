@@ -34,6 +34,7 @@
 	"googlelogin-loginbutton-help": "Verifierar dig med ditt Google-konto.",
 	"googlelogin-link-help": "Länka ditt wikikonto med ditt Google-konto.",
 	"googlelogin-param-error-label": "Felkod returnerades från Google",
+	"googlelogin-auth-service-unknown-account": "Okänt Google-konto",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registreringar med den här taggen gjordes med [[Special:GoogleLogin|GoogleLogin]]"
 }

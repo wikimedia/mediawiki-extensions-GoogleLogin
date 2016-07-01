@@ -5,6 +5,7 @@
 			"Dvorapa"
 		]
 	},
+	"googlelogin": "Přihlašte se pomocí Google",
 	"googlelogin-manage-usersubmit": "Spravovat uživatele",
 	"googlelogin-manage-notlinked": "Tento účet není propojen s žádným Google účtem.",
 	"googlelogin-manage-changelegend": "Změnit Google ID",
@@ -14,5 +15,10 @@
 	"googlelogin-manage-yes": "ano",
 	"googlelogin-manage-no": "ne",
 	"googlelogin-manage-dismiss": "Zavřít",
-	"googlelogin-username": "Uživatelské jméno"
+	"googlelogin-manage-addlabel": "Přidat Google ID",
+	"googlelogin-username": "Uživatelské jméno",
+	"googlelogin-link-help": "Spojte váš wiki-účet s vaším účtem Google",
+	"googlelogin-param-error-label": "Kód chyby obdržený od Google",
+	"googlelogin-param-code-label": "Přístupový token od Google",
+	"googlelogin-auth-service-unknown-account": "Neznámý účet Google"
 }
