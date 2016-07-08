@@ -18,9 +18,11 @@
 	"googlelogin-manage-addlabel": "Přidat Google ID",
 	"googlelogin-username": "Uživatelské jméno",
 	"googlelogin-desc-authmanager": "Dovolí uživatelům přihlašovat se pomocí jejich účtu Google.",
+	"googlelogin-link-same": "Váš účet Google již je spojen s vaším uživatelem, nemůžete jej tedy spojit znovu.",
 	"googlelogin-loginbutton-help": "Přihlásí vás pomocí vašeho účtu Google.",
 	"googlelogin-link-help": "Spojte váš wiki-účet s vaším účtem Google",
 	"googlelogin-param-error-label": "Kód chyby obdržený od Google",
+	"googlelogin-param-error-help": "Kód chyby získaný od Google v případě chyby ověření.",
 	"googlelogin-param-code-label": "Přístupový token od Google",
 	"googlelogin-auth-service-unknown-account": "Neznámý účet Google"
 }
