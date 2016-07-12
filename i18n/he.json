@@ -5,6 +5,7 @@
 			"LaG roiL"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "לשלוח בקשה ל־api של Google+ כדי למצוא מידע אישי על משתמש מסוים.",
 	"googlelogin": "כניסה עם חשבון Google",
 	"googlelogin-manage-linked": "החשבון מקושר עם {{PLURAL:$1|חשבון Google|חשבונות Google}} באמצעות ה{{PLURAL:$1|מזהה הבא|מזהים הבאים}}:",
 	"googlelogin-manage-notlinked": "החשבון לא מקושר עם שום חשבון Google.",
