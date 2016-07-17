@@ -11,7 +11,7 @@
 	},
 	"googlelogin": "구글로 로그인하기",
 	"googlelogin-managelegend": "관리할 사용자 찾기",
-	"googlelogin-manage-linked": "이 계정은 다음의 ID로 구글 계정과 연동합니다:",
+	"googlelogin-manage-linked": "이 계정은 다음의 {{PLURAL:$1|ID|ID들}}로 {{PLURAL:$1|구글 계정|구글 계정들}}과 연동합니다:",
 	"googlelogin-manage-notlinked": "이 계정은 실제로 어떠한 Google 계정과도 연결되어 있지 않습니다.",
 	"googlelogin-manage-givenid": "당신이 입력한 구글 아이디는 이미 다른 이용자에 의해 쓰이고 있습니다.",
 	"googlelogin-manage-addlabel": "구글 ID 추가",

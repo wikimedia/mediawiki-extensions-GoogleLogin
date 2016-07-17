@@ -9,7 +9,7 @@
 	"googlelogin-manage-addlabel": "Google ID-ни эп",
 	"googlelogin-link-same": "Эн Google аккаунуҥ бэйэҥ туттааччыгын кытта холбонуллубут, онон хаттаан холбуур кыаллыбат.",
 	"googlelogin-link-help": "Биикигэ бэлиэ-ааккын Google-га бэлиэ-ааккын кытта ситимнээ.",
-	"googlelogin-param-error-label": "Google сыыһар",
+	"googlelogin-param-error-label": "Google куодун алҕаһа төнүннэ",
 	"googlelogin-param-error-help": "Аутентификация табыллыбатах түбэлтэтигэр Google-тан сыыһыы кодун төнүннэрэбит.",
 	"googlelogin-param-code-label": "Google-тан киирии маркера",
 	"googlelogin-param-code-help": "Аутентификация табыллыбыт түгэнигэр Google-тан киирии маркера кэлэр.",

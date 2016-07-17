@@ -1,13 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zygimantus"
+			"Zygimantus",
+			"Eitvys200"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Atlieka Google+ api užklausą, kad sužinotu asmeninės informacijos apie nurodytą vartotoją.",
+	"googlelogin": "Prisijungti su Google",
 	"googlelogin-manage-usersubmit": "Tvarkyti vartotoją",
+	"googlelogin-manage-linked": "Paskyra susieta su {{PLURAL:$1|Google paskyra|Google paskyromis}} su {{PLURAL:$1|šiuo ID|šiais ID}}:",
+	"googlelogin-manage-notlinked": "Paskyra nėra sujungta su Google paskyra.",
 	"googlelogin-manage-isplusser": "Registruota „Google+“",
 	"googlelogin-manage-givenid": "„Google“ ID, kurį įvedėte, jau yra susietas su kitu viki naudotoju.",
-	"googlelogin-success-merge": "Jūsų viki paskyra dabar yra susieta su jūsu „Google“ paskyra.",
-	"googlelogin-success-unlink": "Jūsų viki paskyra nebėra susieta su jūsų „Google“ paskyra.",
+	"googlelogin-manage-addlabel": "Pridėti Google ID",
+	"googlelogin-desc-authmanager": "Leisti vartotojams prisijungti su Google paskyra.",
+	"googlelogin-link-help": "Susiekite savo viki paskyra su Google paskyra.",
+	"googlelogin-param-error-label": "Gautas klaidos kodas iš Google",
+	"googlelogin-param-code-label": "Prieigos raktas iš Google",
+	"googlelogin-change-account-not-linked": "Jūs negalite pašalinti Google paskyros prisijungimo, nes jūsų paskyra nėra susieta su Google paskyra.",
+	"googlelogin-access-denied": "Prisijungti negalima. Jūs uždraudėte prieigą prie jūsų Google paskyros informacijos.",
 	"right-managegooglelogin": "Galite pridėti, pašalinti ir peržiūrėti „GoogleLogin“ ryšius"
 }
