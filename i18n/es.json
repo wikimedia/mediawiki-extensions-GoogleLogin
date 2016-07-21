@@ -15,7 +15,7 @@
 	"googlelogin-managelegend": "Buscar usuario para administrar",
 	"googlelogin-manage-usersubmit": "Administrar usuario",
 	"googlelogin-manage-user": "Administras {{GENDER:$1|al usuario|a la usuaria}} <strong>$1</strong>.",
-	"googlelogin-manage-linked": "La cuenta está vinculada con una cuenta de Google con el identificador",
+	"googlelogin-manage-linked": "La cuenta está vinculada con {{PLURAL:$1|una cuenta de Google|cuentas de Google}} con {{PLURAL:$1|el identificador|los identificadores}}:",
 	"googlelogin-manage-notlinked": "La cuenta no está vinculada a ninguna cuenta de Google.",
 	"googlelogin-manage-changelegend": "Cambiar el identificador de Google",
 	"googlelogin-manage-noplus": "<strong>Aviso:</strong> el usuario con el identificador de Google que has escrito parece no tener perfil en Google+. ¿Te has equivocado?",
