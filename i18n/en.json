@@ -51,7 +51,7 @@
 	"googlelogin-link-other": "Your Google account is already linked to another user. Please unlink the connection or contact an administrator, if you have no other wiki account.",
 	"googlelogin-link-same": "Your Google account is already linked to your user, so you can't link it again.",
 	"googlelogin-prefs-status": "GoogleLogin status:",
-	"googlelogin-error-no-authentication-workflow": "You requested to continue an already started Google authentication workflow, but there's no already running one. Please start a new authentication workflow by trying to login again.",
+	"googlelogin-error-no-authentication-workflow": "You requested to continue an already started Google authentication workflow, but there's no one that is already started. Please start a new authentication workflow by trying to login again.",
 	"googlelogin-loginbutton-help": "Authenticates you with your Google account.",
 	"googlelogin-link-help": "Link your wiki account with your Google account.",
 	"googlelogin-param-error-label": "Error code returned from Google",
