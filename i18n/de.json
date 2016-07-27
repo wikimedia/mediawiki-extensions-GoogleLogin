@@ -53,7 +53,7 @@
 	"googlelogin-link-other": "Dein Google-Benutzerkonto ist bereits mit einem anderen Benutzer verknüpft. Bitte trenne die Verbindung oder kontaktiere einen Administrator, falls du kein weiteres Wiki-Benutzerkonto hast.",
 	"googlelogin-link-same": "Dein Google-Konto ist bereits mit deinem Benutzer verknüpft, so dass du es nicht erneut verknüpfen kannst.",
 	"googlelogin-prefs-status": "GoogleLogin-Status:",
-	"googlelogin-error-no-authentication-workflow": "Du hast eine Fortführung eines bereits gestarteten Google-Authentifikations-Workflows angefordert, aber es gibt keine bereits laufenden. Starte bitte ein neues Authentifikations-Workflow, indem du dich erneut anmeldest.",
+	"googlelogin-error-no-authentication-workflow": "Du hast eine Fortführung eines bereits gestarteten Google-Authentifikations-Workflows angefordert, aber es gibt keinen, der bereits gestartet ist. Starte bitte ein neues Authentifikations-Workflow, indem du dich erneut anmeldest.",
 	"googlelogin-loginbutton-help": "Authentifiziert dich mit deinem Google-Konto.",
 	"googlelogin-link-help": "Verknüpfe dein Wiki-Benutzerkonto mit deinem Google-Konto.",
 	"googlelogin-param-error-label": "Von Google zurückgegebener Fehlercode",
