@@ -54,7 +54,7 @@
 	"googlelogin-link-other": "您的Google账户已连接至其他用户。请取消连接或联络管理员，如果您没有其他wiki账户的话。",
 	"googlelogin-link-same": "您的Google账户已链接至您的用户，所以您不能再次链接它。",
 	"googlelogin-prefs-status": "Google登录状态：",
-	"googlelogin-error-no-authentication-workflow": "您请求了继续已经开始的Google身份验证工作流，但这里没有已经在运行的。请通过尝试重新登录，开始新的身份验证工作流。",
+	"googlelogin-error-no-authentication-workflow": "您请求了继续已经开始的Google身份验证工作流，但这里没有已经开始的工作流。请通过尝试重新登录，开始新的身份验证工作流。",
 	"googlelogin-loginbutton-help": "通过您的Google账户鉴别您。",
 	"googlelogin-link-help": "将您的wiki账户与您的Google账户链接。",
 	"googlelogin-param-error-label": "从Google返回的错误代码",

@@ -57,7 +57,7 @@
 	"googlelogin-link-other": "Votre compte Google est déjà lié à un autre utilisateur. Veuillez supprimer la connexion ou contacter un administrateur, si vous n’avez aucun autre compte wiki.",
 	"googlelogin-link-same": "Votre compte Google est déjà lié à votre utilisateur, par conséquent vous ne pouvez pas le lier à nouveau.",
 	"googlelogin-prefs-status": "État de GoogleLogin :",
-	"googlelogin-error-no-authentication-workflow": "Vous avez demandé à poursuivre un flux de travail d'authentification Google déjà commencé, mais il n'y en a pas en cours d'exécution. S'il vous plaît redémarrez un nouveau flux de travail d'authentification en essayant de vous reconnecter.",
+	"googlelogin-error-no-authentication-workflow": "Vous avez demandé à poursuivre un flux de travail d’authentification Google déjà démarré, mais il n’y en aucun de démarré. Veuillez démarrer un nouveau flux de travail d’authentification en essayant de vous reconnecter.",
 	"googlelogin-loginbutton-help": "Vous authentifie avec votre compte Google.",
 	"googlelogin-link-help": "Lier votre compte wiki à votre compte Google.",
 	"googlelogin-param-error-label": "Code d'erreur renvoyé par Google",
