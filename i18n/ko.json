@@ -16,7 +16,7 @@
 	"googlelogin-manage-notlinked": "이 계정은 실제로 어떠한 Google 계정과도 연결되어 있지 않습니다.",
 	"googlelogin-manage-givenid": "당신이 입력한 구글 아이디는 이미 다른 이용자에 의해 쓰이고 있습니다.",
 	"googlelogin-manage-addlabel": "구글 ID 추가",
-	"googlelogin-desc-authmanager": "사용자가 자신의 구글 계정과 로그인할 수 있게 허용합니다.",
+	"googlelogin-desc-authmanager": "사용자가 자신의 Google 계정과 로그인할 수 있게 허용합니다.",
 	"googlelogin-generic-error": "죄송합니다, 오류가 있었습니다. 뒤로 간 후 다시 시도해 주세요.\n메시지: $1",
 	"googlelogin-unallowed-domain": "당신의 구글 계정의 기본 이메일 주소에서 사용된 이메일 도메인 ($1)은 이 위키에 로그인하도록 허용되지 않았습니다.",
 	"googlelogin-link-same": "사용자의 Google 계정이 이미 사용자와 연결되어 있기 때문에 다시 연결할 수 없습니다.",
