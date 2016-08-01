@@ -96,7 +96,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				if ( !$user || !GoogleUser::hasConnectedGoogleAccount( $user ) ) {
 					return [];
 				}
-				$googleIds = Googleuser::getGoogleIdFromUser( $user );
+				$googleIds = GoogleUser::getGoogleIdFromUser( $user );
 				$reqs = [];
 				foreach ( $googleIds as $key => $id ) {
 					$reqs[] = new GoogleRemoveAuthenticationRequest( $id );
