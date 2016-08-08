@@ -104,4 +104,59 @@ class GoogleLoginHooks {
 			unset( $formDescriptor['googlelogin']['type'] );
 		}
 	}
+
+	/**
+	 * Add GoogleLogin management events to Echo
+	 *
+	 * @param array $notifications Echo notifications
+	 * @param array $notificationCategories Echo categories
+	 * @param array $icons Echo icons
+	 * @return bool
+	 */
+	public static function onBeforeCreateEchoEvent(
+		&$notifications, &$notificationCategories, &$icons
+	) {
+		if ( GoogleLogin::getGLConfig()->get( 'GLEnableEchoEvents' ) ) {
+			$notificationCategories['change-googlelogin'] = [
+				'priority' => 1,
+				'tooltip' => 'echo-pref-tooltip-change-googlelogin',
+			];
+			$notifications['change-googlelogin'] = [
+				\EchoAttributeManager::ATTR_LOCATORS => [
+					[ 'EchoUserLocator::locateFromEventExtra', [ 'user' ] ],
+				],
+				'category' => 'change-googlelogin',
+				'group' => 'neutral',
+				'section' => 'alert',
+				'presentation-model' => 'GoogleLogin\\EchoGoogleLoginPresentationModel',
+				'bundle' => [
+					'web' => true,
+					'expandable' => true,
+				],
+			];
+		}
+		return true;
+	}
+
+	/**
+	 * Bundle GoogleLogin echo notifications if they're made from the same administrator.
+	 *
+	 * @param \EchoEvent $event
+	 * @param String $bundleString
+	 * @return boolean
+	 */
+	public static function onEchoGetBundleRules( \EchoEvent $event, &$bundleString ) {
+		if (
+			$event->getType() === 'change-googlelogin' &&
+			GoogleLogin::getGLConfig()->get( 'GLEnableEchoEvents' )
+		) {
+			$bundleString = 'change-googlelogin';
+			$agentUser = $event->getAgent();
+			if ( $agentUser ) {
+				$bundleString .= $agentUser->getId();
+			}
+		}
+
+		return true;
+	}
 }
