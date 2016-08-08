@@ -36,7 +36,7 @@ class GoogleLogin {
 	/**
 	 * Returns Config object for use in GoogleLogin.
 	 *
-	 * @return Config
+	 * @return \Config
 	 */
 	public static function getGLConfig() {
 		if ( self::$mConfig === null ) {
