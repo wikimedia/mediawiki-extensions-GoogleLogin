@@ -179,11 +179,14 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		if ( isset( $data['addgoogleid'] ) ) {
 			$requestAddGoogleId = $data['addgoogleid'];
 		}
-		if ( isset( $requestGoogleId ) && GoogleUser::hasConnectedGoogleAccount( $user ) ) {
+		if (
+			isset( $requestGoogleId ) &&
+			GoogleUser::hasConnectedGoogleAccount( $this->manageableUser )
+		) {
 			// terminate the connection
 			foreach ( $requestGoogleId as $count => $googleId ) {
 				$id = str_replace( 'google-', '', $googleId );
-				if ( GoogleUser::terminateGoogleConnection( $user, $id ) ) {
+				if ( GoogleUser::terminateGoogleConnection( $this->manageableUser, $id ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-terminatesuccess' );
 				} else {
 					$out->addWikiMsg( 'googlelogin-manage-changederror' );
@@ -215,7 +218,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 					$out->addWikiMsg( 'googlelogin-manage-noplus' );
 				}
 
-				if ( GoogleUser::connectWithGoogle( $user, $requestAddGoogleId ) ) {
+				if ( GoogleUser::connectWithGoogle( $this->manageableUser, $requestAddGoogleId ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-changedsuccess' );
 				} else {
 					$out->addWikiMsg( 'googlelogin-manage-changederror' );
