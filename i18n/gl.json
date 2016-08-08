@@ -58,6 +58,7 @@
 	"googlelogin-param-error-label": "Código de erro devolto por Google",
 	"googlelogin-param-error-help": "En caso de erro de autenticación, o código de erro devolto por Google.",
 	"googlelogin-param-code-label": "Identificador de acceso de Google",
+	"googlelogin-change-account-not-linked": "Non podes eliminar unha conexión cunha conta de Google xa que a túa conta non está conectada cunha conta de Google.",
 	"googlelogin-auth-service-unknown-account": "Conta de Google descoñecida",
 	"googlelogin-access-denied": "Non se pode conectar. Vostede denegou o acceso á información da súa conta de Google.",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
