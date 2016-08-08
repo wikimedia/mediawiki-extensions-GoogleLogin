@@ -25,6 +25,10 @@
 		"GoogleLoginReturn": "GoogleLogin\\Specials\\SpecialGoogleLoginReturn",
 		"ManageGoogleLogin": "GoogleLogin\\Specials\\SpecialManageGoogleLogin"
 	},
+	"DefaultUserOptions": {
+		"echo-subscriptions-web-change-googlelogin": true,
+		"echo-subscriptions-email-change-googlelogin": true
+	},
 	"APIModules": {
 		"googleplusprofileinfo": "ApiGoogleLoginInfo"
 	},
@@ -38,6 +42,7 @@
 	},
 	"AutoloadClasses": {
 		"GoogleLogin\\GoogleLogin": "includes/GoogleLogin.body.php",
+		"GoogleLogin\\EchoGoogleLoginPresentationModel": "includes/EchoGoogleLoginPresentationModel.php",
 		"GoogleLogin\\HTMLGoogleLoginButtonField": "includes/htmlform/HTMLGoogleLoginButtonField.php",
 		"GoogleLogin\\Specials\\SpecialGoogleLogin": "includes/specials/SpecialGoogleLogin.php",
 		"GoogleLogin\\Specials\\SpecialGoogleLoginReturn": "includes/specials/SpecialGoogleLoginReturn.php",
@@ -130,6 +135,12 @@
 		],
 		"UserMergeAccountDeleteTables": [
 			"GoogleLogin\\GoogleLoginHooks::onUserMergeAccountDeleteTables"
+		],
+		"BeforeCreateEchoEvent": [
+			"GoogleLogin\\GoogleLoginHooks::onBeforeCreateEchoEvent"
+		],
+		"EchoGetBundleRules": [
+			"GoogleLogin\\GoogleLoginHooks::onEchoGetBundleRules"
 		]
 	},
 	"config": {
@@ -137,7 +148,8 @@
 		"GLAppId": "",
 		"GLAllowedDomains": "",
 		"GLAllowedDomainsStrict": false,
-		"GLAPIKey": ""
+		"GLAPIKey": "",
+		"GLEnableEchoEvents": true
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 1
