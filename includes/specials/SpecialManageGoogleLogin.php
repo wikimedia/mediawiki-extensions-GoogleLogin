@@ -5,6 +5,7 @@
 
 namespace GoogleLogin\Specials;
 
+use GoogleLogin\GoogleLogin;
 use SpecialPage;
 use Html;
 use HTMLForm;
@@ -161,6 +162,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$user = $this->getUser();
 		$request = $this->getRequest();
 		$out = $this->getOutput();
+		$glConfig = GoogleLogin::getGLConfig();
 		$name = ( isset( $data['username'] ) ? $data['username'] : '' );
 		if ( $checkSession && !$user->matchEditToken( $request->getVal( 'wpEditToken' ), $name ) ) {
 			throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
@@ -188,6 +190,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				$id = str_replace( 'google-', '', $googleId );
 				if ( GoogleUser::terminateGoogleConnection( $this->manageableUser, $id ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-terminatesuccess' );
+					$this->notifyUser( $glConfig );
 				} else {
 					$out->addWikiMsg( 'googlelogin-manage-changederror' );
 				}
@@ -205,7 +208,6 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				$out->wrapWikiMsg( '<div class="error">$1</div>', 'googlelogin-manage-givenid' );
 			} else {
 				// check, if the google id has a google plus profile
-				$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
 				$plusCheck = Http::get(
 					'https://www.googleapis.com/plus/v1/people/' .
 					$requestAddGoogleId .
@@ -220,6 +222,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 
 				if ( GoogleUser::connectWithGoogle( $this->manageableUser, $requestAddGoogleId ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-changedsuccess' );
+					$this->notifyUser( $glConfig );
 				} else {
 					$out->addWikiMsg( 'googlelogin-manage-changederror' );
 				}
@@ -230,5 +233,17 @@ class SpecialManageGoogleLogin extends SpecialPage {
 
 	protected function getGroupName() {
 		return 'users';
+	}
+
+	protected function notifyUser( \Config $config ) {
+		if ( $config->get( 'GLEnableEchoEvents' ) ) {
+			\EchoEvent::create( [
+				'type' => 'change-googlelogin',
+				'extra' => [
+					'user' => $this->manageableUser->getID(),
+				],
+				'agent' => $this->getUser(),
+			] );
+		}
 	}
 }
