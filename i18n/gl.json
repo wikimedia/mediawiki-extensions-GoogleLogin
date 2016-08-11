@@ -53,6 +53,7 @@
 	"googlelogin-link-other": "A súa conta de Google xa está ligada a outro usuario. Por favor, desligue a conexión ou contacte cun administrador, se non ten outra conta wiki.",
 	"googlelogin-link-same": "A súa conta de Google xa está ligada ó seu usuario, polo que non a pode ligar de novo.",
 	"googlelogin-prefs-status": "Estado de GoogleLogin:",
+	"googlelogin-error-no-authentication-workflow": "Solicitou continuar cun fluxo de traballo de autenticación Google xa comezado, pero non hai ningún comezado. Por favor, comece un novo fluxo de traballo de autenticación tentando conectarse de novo.",
 	"googlelogin-loginbutton-help": "Autentifícao coa súa conta de Google.",
 	"googlelogin-link-help": "Ligar a súa conta wiki coa súa conta de Google.",
 	"googlelogin-param-error-label": "Código de erro devolto por Google",
