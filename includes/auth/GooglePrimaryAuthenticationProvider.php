@@ -316,7 +316,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	 */
 	public function getGoogleClient() {
 		$client = GoogleLogin::getClient(
-			SpecialPage::getTitleFor( 'GoogleLoginReturn' )->getFullURL(),
+			SpecialPage::getTitleFor( 'GoogleLoginReturn' )->getFullURL( '', false, PROTO_CURRENT ),
 			$this->manager->getRequest()->getSession()->getToken( self::TOKEN_SALT )->toString()
 		);
 

@@ -27,7 +27,10 @@ class SpecialGoogleLogin extends \SpecialPage {
 	function execute( $par ) {
 		$request = $this->getRequest();
 		$out = $this->getOutput();
-		$client = GoogleLogin::getClient( $this->getTitle()->getFullURL(), null );
+		$client = GoogleLogin::getClient(
+			$this->getTitle()->getFullURL( '', false, PROTO_CURRENT ),
+			null
+		);
 
 		$this->setHeaders();
 
