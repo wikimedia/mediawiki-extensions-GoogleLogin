@@ -66,5 +66,11 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|Google-Anmeldung]]",
 	"tag-googlelogin-description": "Registrierungen mit dieser Markierung wurden durchgeführt mit [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "GoogleLogin-Verbindungen zu verwalten",
-	"right-managegooglelogin": "Kann GoogleLogin-Verbindungen hinzufügen, entfernen und einsehen"
+	"right-managegooglelogin": "Kann GoogleLogin-Verbindungen hinzufügen, entfernen und einsehen",
+	"echo-category-title-change-googlelogin": "Änderungen an verbundenen Google-Konten",
+	"notification-header-change-googlelogin": "Deine verbundenen Google-Konten wurden geändert",
+	"notification-change-googlelogin": "{{GENDER:$2|Der GoogleLogin-Administrator|Die GoogleLogin-Administratorin}} $1 änderte deine verbundenen Google-Konten.",
+	"notification-add-googlelogin": "{{PLURAL:$2|Das folgende Google-Konto ist|Die folgenden Google-Konten sind}} jetzt mit deinem Wiki-Benutzerkonto verbunden: $1.",
+	"notification-remove-googlelogin": "{{PLURAL:$2|Das folgende Google-Konto ist|Die folgenden Google-Konten sind}} nicht mehr mit deinem Wiki-Benutzerkonto verbunden: $1.",
+	"echo-pref-tooltip-change-googlelogin": "Benachrichtige mich, wenn ein GoogleLogin-Administrator meine verbundenen Google-Konten ändert."
 }

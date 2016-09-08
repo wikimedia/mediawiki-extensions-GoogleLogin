@@ -70,5 +70,11 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Les inscriptions avec cette balise ont été faites avec [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gérer les connexions GoogleLogin",
-	"right-managegooglelogin": "Droit d’ajouter, supprimer et afficher des connexions GoogleLogin"
+	"right-managegooglelogin": "Droit d’ajouter, supprimer et afficher des connexions GoogleLogin",
+	"echo-category-title-change-googlelogin": "Modifications des comptes Google connectés",
+	"notification-header-change-googlelogin": "Vos comptes de connexion à Google ont été changés",
+	"notification-change-googlelogin": "L'{{GENDER:$2|administrateur GoogleLogin}} $1 a changé vos  comptes Google connectés.",
+	"notification-add-googlelogin": "{{PLURAL:$2|Le compte Google suivant est relié|Les comptes Google suivants sont reliés}} maintenant à votre compte  wiki: $1.",
+	"notification-remove-googlelogin": "{{PLURAL:$2|Le compte Google suivant n'est plus relié|Les comptes Google suivants ne sont plus reliés}} à votre compte wiki: $1.",
+	"echo-pref-tooltip-change-googlelogin": "M'avertir lorsqu'un administrateur GoogleLogin modifie mes comptes connectés à Google."
 }

@@ -70,10 +70,10 @@
 	"tag-googlelogin-description": "Short description, that account creations with this tag are made with GoogleLogin.",
 	"action-managegooglelogin": "Message key for user right \"managegooglelogin\"\n\n{{doc-action|managegooglelogin}}",
 	"right-managegooglelogin": "Description of user right to view, edit and remove Google Login connections.\n\n{{Doc-right|managegooglelogin}}",
-	"echo-pref-tooltip-change-googlelogin": "This is a short description of the change-googlelogin notification category.\n{{Related|Echo-pref-tooltip}}",
 	"echo-category-title-change-googlelogin": "Message in {{Special:Preferences}} for if the user wants to get notified with an Echo alert, if the connected Google accounts are changed by a GoogleLogin administrator.",
 	"notification-header-change-googlelogin": "Title of the GoogleLogin changed Echo alert.",
 	"notification-change-googlelogin": "Generic message of the GoogleLogin changed Echo alert.\n\nParameters:\n* $1 - Username of the agent in wikitext\n* $2 - Username of the agent in plain text (for GENDER support)",
 	"notification-add-googlelogin": "Echo alert message when a new connection with one or more Google account(s) was created.\n\nParameters:\n* $1 - A comma seperated list of added Google account IDs\n* $2 - The amount of Google IDs added (for {{PLURAL}} support)",
-	"notification-remove-googlelogin": "Echo alert message when the connection to one or more Google account(s) was removed.\n\nParameters:\n* $1 - A comma seperated list of removed Google account IDs\n* $2 - The amount of Google IDs added (for {{PLURAL}} support)."
+	"notification-remove-googlelogin": "Echo alert message when the connection to one or more Google account(s) was removed.\n\nParameters:\n* $1 - A comma seperated list of removed Google account IDs\n* $2 - The amount of Google IDs added (for {{PLURAL}} support).",
+	"echo-pref-tooltip-change-googlelogin": "This is a short description of the change-googlelogin notification category.\n{{Related|Echo-pref-tooltip}}"
 }
