@@ -25,5 +25,6 @@
 	"googlelogin-auth-service-unknown-account": "חשבון Google לא ידוע",
 	"googlelogin-access-denied": "אין אפשרות להיכנס לחשבון. דחית את הגישה למידע על חשבון ה־Google שלך.",
 	"action-managegooglelogin": "לנהל חיבורים של GoogleLogin",
-	"right-managegooglelogin": "הוספה, הסרה וצפייה בחיבורים של GoogleLogin"
+	"right-managegooglelogin": "הוספה, הסרה וצפייה בחיבורים של GoogleLogin",
+	"notification-add-googlelogin": "{{PLURAL:$2|חשבון ה־Google הבא|חשבונות ה־Google הבאים}} מחוברים עם חשבון הוויקי שלך: $1."
 }

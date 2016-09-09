@@ -67,5 +67,11 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|Google登录]]",
 	"tag-googlelogin-description": "带此标记的注册是通过 [[Special:GoogleLogin|GoogleLogin]] 进行的",
 	"action-managegooglelogin": "管理GoogleLogin连接",
-	"right-managegooglelogin": "可以添加，移除和查看GoogleLogin连接"
+	"right-managegooglelogin": "可以添加，移除和查看GoogleLogin连接",
+	"echo-category-title-change-googlelogin": "连接的Google账户更改",
+	"notification-header-change-googlelogin": "您连接的Google账户已被更改",
+	"notification-change-googlelogin": "{{GENDER:$2|GoogleLogin管理员}}$1更改了您连接的Google账户。",
+	"notification-add-googlelogin": "以下Google{{PLURAL:$2|账户}}现已连接至您的wiki账户：$1。",
+	"notification-remove-googlelogin": "以下Google{{PLURAL:$2|账户}}现已不再连接至您的wiki账户：$1。",
+	"echo-pref-tooltip-change-googlelogin": "当GoogleLogin管理员更改了我连接的Google账户时通知我。"
 }
