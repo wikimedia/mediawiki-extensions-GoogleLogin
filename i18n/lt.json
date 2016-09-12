@@ -19,5 +19,11 @@
 	"googlelogin-param-code-label": "Prieigos raktas iš Google",
 	"googlelogin-change-account-not-linked": "Jūs negalite pašalinti Google paskyros prisijungimo, nes jūsų paskyra nėra susieta su Google paskyra.",
 	"googlelogin-access-denied": "Prisijungti negalima. Jūs uždraudėte prieigą prie jūsų Google paskyros informacijos.",
-	"right-managegooglelogin": "Galite pridėti, pašalinti ir peržiūrėti „GoogleLogin“ ryšius"
+	"right-managegooglelogin": "Galite pridėti, pašalinti ir peržiūrėti „GoogleLogin“ ryšius",
+	"echo-category-title-change-googlelogin": "Prijungtos Google paskyros pakeitimai",
+	"notification-header-change-googlelogin": "Jūsų prijungtos Google paskyros buvo pakeistos",
+	"notification-change-googlelogin": "{{GENDER:$2|GoogleLogin administratorius|GoogleLogin administratorė}} $1 pakeitė jūsų prijungtas Google paskyras.",
+	"notification-add-googlelogin": "{{PLURAL:$2|Ši Google paskyra|Šios Google paskyros}} dabar yra prijungtos prie jūsų viki paskyros: $1.",
+	"notification-remove-googlelogin": "{{PLURAL:$2|Ši Google paskyra|Šios Google paskyros}} nebėra susietos su jūsų viki paskyra: $1.",
+	"echo-pref-tooltip-change-googlelogin": "Pranešti man, kai GoogleLogin administratorius pakeičia mano prijungtas Google paskyras."
 }

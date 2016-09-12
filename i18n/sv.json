@@ -38,5 +38,8 @@
 	"googlelogin-change-account-not-linked": "Du kan inte ta bort en anslutning till ett Google-konto eftersom ditt konto är inte ansluten till ett Google-konto.",
 	"googlelogin-auth-service-unknown-account": "Okänt Google-konto",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
-	"tag-googlelogin-description": "Registreringar med den här taggen gjordes med [[Special:GoogleLogin|GoogleLogin]]"
+	"tag-googlelogin-description": "Registreringar med den här taggen gjordes med [[Special:GoogleLogin|GoogleLogin]]",
+	"notification-header-change-googlelogin": "Dina anslutna Google-konton har ändrats",
+	"notification-add-googlelogin": "Följande {{PLURAL:$2|Google-konto är nu anslutet|Google-konton är nu anslutna}} till ditt wikikonto: $1.",
+	"notification-remove-googlelogin": "Följande {{PLURAL:$2|Google-konto är inte längre anslutet|Google-konton är inte längre anslutna}} till ditt wikikonto längre: $1."
 }
