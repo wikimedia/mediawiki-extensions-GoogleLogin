@@ -6,7 +6,8 @@
 			"Umherirrender",
 			"George Animal",
 			"Liuxinyu970226",
-			"Metalhead64"
+			"Metalhead64",
+			"Guycn2"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Description for api module googleplusprofileinfo.",
@@ -74,6 +75,6 @@
 	"notification-header-change-googlelogin": "Title of the GoogleLogin changed Echo alert.",
 	"notification-change-googlelogin": "Generic message of the GoogleLogin changed Echo alert.\n\nParameters:\n* $1 - Username of the agent in wikitext\n* $2 - Username of the agent in plain text (for GENDER support)",
 	"notification-add-googlelogin": "Echo alert message when a new connection with one or more Google account(s) was created.\n\nParameters:\n* $1 - A comma seperated list of added Google account IDs\n* $2 - The amount of Google IDs added (for {{PLURAL}} support)",
-	"notification-remove-googlelogin": "Echo alert message when the connection to one or more Google account(s) was removed.\n\nParameters:\n* $1 - A comma seperated list of removed Google account IDs\n* $2 - The amount of Google IDs added (for {{PLURAL}} support).",
+	"notification-remove-googlelogin": "Echo alert message when the connection to one or more Google account(s) was removed.\n\nParameters:\n* $1 - A comma seperated list of removed Google account IDs\n* $2 - The amount of Google IDs added (for <nowiki>{{PLURAL}}</nowiki> support).",
 	"echo-pref-tooltip-change-googlelogin": "This is a short description of the change-googlelogin notification category.\n{{Related|Echo-pref-tooltip}}"
 }
