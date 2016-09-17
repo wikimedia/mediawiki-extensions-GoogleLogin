@@ -51,5 +51,9 @@
 	"googlelogin-param-error-label": "Código de erro retornado do Google",
 	"googlelogin-param-code-label": "Chave de acesso do Google",
 	"googlelogin-auth-service-unknown-account": "Conta Google desconhecida",
-	"action-managegooglelogin": "gerir conexões da sua conta Google"
+	"action-managegooglelogin": "gerir conexões da sua conta Google",
+	"echo-category-title-change-googlelogin": "Alterações na conta Google associada",
+	"notification-change-googlelogin": "{{GENDER:$2|O administrador|A administradora}} GoogleLogin $1 alterou as suas contas Google conectadas.",
+	"notification-add-googlelogin": "{{PLURAL:$2|A seguinte conta|As seguintes contas}} Google {{PLURAL:$2|está agora conectada|estão agora conectadas}} com a sua conta wiki: $1.",
+	"notification-remove-googlelogin": "{{PLURAL:$2|A seguinte conta|As seguintes contas}} Google {{PLURAL:$2|não está mais conectada|não estão mais conectadas}} com a sua conta wiki: $1."
 }
