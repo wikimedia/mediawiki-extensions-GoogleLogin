@@ -66,5 +66,11 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Rexistros con esta etiqueta foron feitos con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "xestionar conexións de GoogleLogin",
-	"right-managegooglelogin": "Con dereitos para engadir, eliminar e ver conexións de GoogleLogin"
+	"right-managegooglelogin": "Con dereitos para engadir, eliminar e ver conexións de GoogleLogin",
+	"echo-category-title-change-googlelogin": "Modificacións da conta Google conectada",
+	"notification-header-change-googlelogin": "As súas contas de Google conectadas foron modificadas",
+	"notification-change-googlelogin": "O {{GENDER:$2|administrador GoogleLogin}} $1 cambiou as súas contas de Google conectadas.",
+	"notification-add-googlelogin": "{{PLURAL:$2|A conta de Google seguinte está conectada|As contas de Google seguintes están conectadas}} coa súa conta wiki: $1.",
+	"notification-remove-googlelogin": "{{PLURAL:$2|A conta de Google seguinte xa non está conectada|As contas de Google seguintes xa non están conectadas}} á súa conta wiki: $1.",
+	"echo-pref-tooltip-change-googlelogin": "Avisarme cando un administrador GoogleLogin cambie as miñas contas Google conectadas."
 }
