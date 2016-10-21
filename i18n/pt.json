@@ -3,9 +3,12 @@
 		"authors": [
 			"Vitorvicentevalente",
 			"Imperadeiro90",
-			"Macofe"
+			"Macofe",
+			"Hamilton Abreu"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um utilizador.",
+	"apihelp-googleplusprofileinfo-param-googleid": "ID Google do utilizador.",
 	"googlelogin": "Iniciar sessão com Google",
 	"managegooglelogin": "Gerir conexões GoogleLogin",
 	"googlelogin-managelegend": "Localizar utilizador para gerir",
@@ -21,6 +24,7 @@
 	"googlelogin-manage-terminatebutton": "Remover conexão",
 	"googlelogin-manage-invalidid": "O novo ID Google que inseriu é inválido. O ID precisa de ser numérico.",
 	"googlelogin-manage-isplusser": "Registado no Google+",
+	"googlelogin-manage-givenid": "O ID Google que especificou já está ligado a outro utilizador da wiki.",
 	"googlelogin-manage-orgname": "Nome da organização",
 	"googlelogin-manage-orgtitle": "Posto de trabalho",
 	"googlelogin-manage-orgsince": "Desde",
@@ -47,11 +51,16 @@
 	"googlelogin-linked": "ligadas",
 	"googlelogin-unlinked": "não vinculada",
 	"googlelogin-link-other": "A sua conta Google já está vinculada a outro utilizador(a). Por favor, desconete a sua outra wiki conta ou entre em contato com um administrador, se não tiver outra conta wiki.",
+	"googlelogin-link-same": "A sua conta Google já está ligada a outro utilizador, por isso não pode ligá-la de novo.",
 	"googlelogin-prefs-status": "Estado de GoogleLogin:",
+	"googlelogin-error-no-authentication-workflow": "Pediu a continuação de um processo de autenticação através da Google que já estava em progresso. Inicie um novo processo de autenticação, tentando entrar outra vez, por favor.",
 	"googlelogin-loginbutton-help": "Inicia a sessão através da sua conta Google",
 	"googlelogin-link-help": "Faça ligação da sua conta wiki à sua conta Google.",
 	"googlelogin-param-error-label": "Código de erro retornado do Google",
+	"googlelogin-param-error-help": "Em caso de falha na autenticação, o código de erro devolvido pela Google.",
 	"googlelogin-param-code-label": "Chave de acesso do Google",
+	"googlelogin-param-code-help": "No caso de uma autenticação com sucesso, a chave de acesso devolvida pela Google.",
+	"googlelogin-change-account-not-linked": "Não pode eliminar a ligação a uma conta Google, porque a sua conta não está associada a uma conta Google.",
 	"googlelogin-auth-service-unknown-account": "Conta Google desconhecida",
 	"googlelogin-access-denied": "Não foi possível iniciar sessão. Negou o acesso à informação da sua conta Google.",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
