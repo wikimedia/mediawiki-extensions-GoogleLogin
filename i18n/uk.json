@@ -69,5 +69,11 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Реєстрації з цим теґом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "керування зв'язками GoogleLogin",
-	"right-managegooglelogin": "Можливість додати, видалити або оглянути зв'язки із GoogleLogin"
+	"right-managegooglelogin": "Можливість додати, видалити або оглянути зв'язки із GoogleLogin",
+	"echo-category-title-change-googlelogin": "Зміни пов'язаного облікового запису Google",
+	"notification-header-change-googlelogin": "Ваші пов'язані облікові записи Google було змінено",
+	"notification-change-googlelogin": "{{GENDER:$2|GoogleLogin-адміністратор $1 змінив|GoogleLogin-адміністраторка $1 змінила}} Ваші пов'язані облікові записи Google.",
+	"notification-add-googlelogin": "{{PLURAL:$2|Такий обліковий запис|Такі облікові записи}} Google тепер пов'язані з Вашим обліковим записом у вікі: $1.",
+	"notification-remove-googlelogin": "{{PLURAL:$2|Такий обліковий запис|Такі облікові записи}} Google більше не пов'язані з Вашим обліковим записом у вікі: $1.",
+	"echo-pref-tooltip-change-googlelogin": "Повідомляти мене, коли GoogleLogin-адміністратор змінює мої пов'язані облікові записи Google."
 }
