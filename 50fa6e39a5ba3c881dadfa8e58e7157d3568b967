@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ceb9bbfa_7844961c",
+        "filename": "includes/specials/SpecialGoogleLoginReturn.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3033
+      },
+      "writtenOn": "2016-11-20T01:28:04Z",
+      "side": 1,
+      "message": "Can we just use ?: instead? PHP documentation says that it\u0027s supported for PHP 5.3+ http://php.net/manual/en/language.operators.comparison.php",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 11
+      },
+      "revId": "50fa6e39a5ba3c881dadfa8e58e7157d3568b967",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
