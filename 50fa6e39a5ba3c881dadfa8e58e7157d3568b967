@@ -46,6 +46,30 @@
       "revId": "50fa6e39a5ba3c881dadfa8e58e7157d3568b967",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ceb9bbfa_78d496be",
+        "filename": "includes/specials/SpecialGoogleLoginReturn.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3033
+      },
+      "writtenOn": "2016-11-20T13:28:18Z",
+      "side": 1,
+      "message": "I understand. Thank you for the explanation. :)",
+      "parentUuid": "ceb9bbfa_d8ccc23a",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 11
+      },
+      "revId": "50fa6e39a5ba3c881dadfa8e58e7157d3568b967",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
