@@ -22,6 +22,30 @@
       "revId": "50fa6e39a5ba3c881dadfa8e58e7157d3568b967",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ceb9bbfa_d8ccc23a",
+        "filename": "includes/specials/SpecialGoogleLoginReturn.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2016-11-20T13:24:21Z",
+      "side": 1,
+      "message": "That would work, however, it would not have the expected output :) The ternary operator ?: returns the expression 1, if expression evaluates to true, and otherwise the expresseion 2. However, expression 1 is a boolean (as isset() returns a boolean), so we would get a boolean true, instead of the value of $authData[GooglePrimaryAuthenticationProvider::RETURNURL_SESSION_KEY]. This is not what we want here :) So, we need to use the \"longer\" version of the short ternary operator :)",
+      "parentUuid": "ceb9bbfa_7844961c",
+      "range": {
+        "startLine": 34,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 11
+      },
+      "revId": "50fa6e39a5ba3c881dadfa8e58e7157d3568b967",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
