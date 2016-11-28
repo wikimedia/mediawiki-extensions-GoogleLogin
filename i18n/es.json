@@ -39,6 +39,7 @@
 	"googlelogin-manage-addlabel": "Añadir ID de Google",
 	"googlelogin-username": "Nombre de usuario",
 	"googlelogin-create": "Crear con Google",
+	"googlelogin-desc-authmanager": "Permitir a los usuarios acceder con su cuenta de Google.",
 	"googlelogin-generic-error": "Ocurrió un error. Regresa y vuelve a intentarlo. Mensaje: $1",
 	"googlelogin-unallowed-domain": "El dominio del correo electrónico utilizado en la dirección de correo principal de tu cuenta de Google ($1) no tiene permitido acceder en esta wiki.",
 	"googlelogin-form-merge": "Vincular la cuenta de Google con la del wiki",
