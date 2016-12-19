@@ -14,6 +14,7 @@
 	"googlelogin-manage-usersubmit": "Hantera användare",
 	"googlelogin-manage-user": "Du hanterar {{GENDER:$1|användaren}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Kontot är länkat till Google-konton med följande ID:",
+	"googlelogin-manage-notlinked": "Kontot är för tillfället inte länkat med ett Google-konto.",
 	"googlelogin-manage-isplusser": "Registrerad på Google+",
 	"googlelogin-manage-addlabel": "Lägg till Google-ID",
 	"googlelogin-create": "Skapa med Google",
