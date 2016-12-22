@@ -11,7 +11,7 @@
 	"googlelogin-managelegend": "পরিচালনা করতে ব্যবহারকারীকে খুঁজুন",
 	"googlelogin-manage-usersubmit": "ব্যবহারকারী পরিচালনা",
 	"googlelogin-manage-user": "আপনি {{GENDER:$1|ব্যবহারকারী}} <strong>$1</strong> পরিচালনা করেন।",
-	"googlelogin-manage-notlinked": "এই অ্যাকাউন্টটি আসলে কোন গুগল অ্যাকাউন্টের সাথে সংযুক্ত করা হয়নি।",
+	"googlelogin-manage-notlinked": "এই অ্যাকাউন্টটি বর্তমানে কোন গুগল অ্যাকাউন্টের সাথে সংযুক্ত করা হয়নি।",
 	"googlelogin-manage-changelegend": "গুগল আইডি পরিবর্তন করুন",
 	"googlelogin-manage-noplus": "<strong>বিজ্ঞপ্তি:</strong> আপনি যেই গুগল আইডি দিয়ে প্রবেশ করেছেন, সেই ব্যবহারকারীর কোন গুগল+ প্রোফাইল আছে বলে মনে হয় না। টাইপিং-এও ভুল হতে পারে?",
 	"googlelogin-manage-changedsuccess": "এই ব্যবহারকারী এখন গুগল অ্যাকাউন্টের সথে সংযুক্ত।",

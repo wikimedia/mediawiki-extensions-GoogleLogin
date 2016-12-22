@@ -9,7 +9,7 @@
 	"googlelogin": "Prisijungti su Google",
 	"googlelogin-manage-usersubmit": "Tvarkyti vartotoją",
 	"googlelogin-manage-linked": "Paskyra susieta su {{PLURAL:$1|Google paskyra|Google paskyromis}} su {{PLURAL:$1|šiuo ID|šiais ID}}:",
-	"googlelogin-manage-notlinked": "Paskyra nėra sujungta su Google paskyra.",
+	"googlelogin-manage-notlinked": "Šiuo metu paskyra nėra susieta su Google paskyra.",
 	"googlelogin-manage-isplusser": "Registruota „Google+“",
 	"googlelogin-manage-givenid": "„Google“ ID, kurį įvedėte, jau yra susietas su kitu viki naudotoju.",
 	"googlelogin-manage-addlabel": "Pridėti Google ID",

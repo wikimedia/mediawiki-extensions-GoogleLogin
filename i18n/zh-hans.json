@@ -16,7 +16,7 @@
 	"googlelogin-manage-usersubmit": "管理用户",
 	"googlelogin-manage-user": "您管理{{GENDER:$1|用户}}<strong>$1</strong>。",
 	"googlelogin-manage-linked": "账户已连接具有以下{{PLURAL:$1|ID}}的{{PLURAL:$1|Google账户}}：",
-	"googlelogin-manage-notlinked": "此账户尚未连接任何Google账户。",
+	"googlelogin-manage-notlinked": "账户目前未链接任何Google账户。",
 	"googlelogin-manage-changelegend": "更改Google ID",
 	"googlelogin-manage-noplus": "<strong>注意：</strong>您输入的Google ID对应的用户看起来没有Google+个人信息。可能输入有误？",
 	"googlelogin-manage-changedsuccess": "用户现已与Google账户链接。",

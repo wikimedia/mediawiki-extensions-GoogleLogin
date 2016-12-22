@@ -18,7 +18,7 @@
 	"googlelogin-manage-usersubmit": "Управління користувачем",
 	"googlelogin-manage-user": "Ви управляєте {{GENDER:$1|користувачем}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Обліковий запис зв'язано з {{PLURAL:$1|обліковим записом|обліковими записами}} Google з {{PLURAL:$1|таким ID|такими ID}}:",
-	"googlelogin-manage-notlinked": "Обліковий запис не зв'язано з жодним обліковим записом Google.",
+	"googlelogin-manage-notlinked": "Цей обліковий запис наразі не зв'язано з жодним обліковим записом Google.",
 	"googlelogin-manage-changelegend": "Змінити Google ID",
 	"googlelogin-manage-noplus": "<strong>Примітка:</strong> Користувач з вказаним Google ID, здається, не має профілю Google+. Можливо, є помилка у наборі?",
 	"googlelogin-manage-changedsuccess": "Користувач тепер зв'язаний з обліковим записом Google.",

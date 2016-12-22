@@ -8,7 +8,7 @@
 	"googlelogin-managelegend": "Benotzer fanne fir ze geréieren",
 	"googlelogin-manage-usersubmit": "Benotzer geréieren",
 	"googlelogin-manage-linked": "De Benotzerkont ass mat  {{PLURAL:$1|engem Google-Benotzerkont|$1 Google-Benotzerkonte}} verbonn mat  {{PLURAL:$1|dëser ID|dësen IDën}}:",
-	"googlelogin-manage-notlinked": "De Benotzerkont ass elo net mat engem Google-Benotzerkont verbonn.",
+	"googlelogin-manage-notlinked": "De Benotzerkont ass elo net mat engem Google-Benotzerkont verbonnen.",
 	"googlelogin-manage-changelegend": "Google-ID änneren",
 	"googlelogin-manage-changedsuccess": "De Benotzer ass elo mam Google-Benotzerkont verbonn.",
 	"googlelogin-manage-terminatesuccess": "De  Benotzer ass net méi mat engem Google-Benotzerkont verbonn.",
