@@ -7,7 +7,8 @@
 			"Esketti",
 			"Macofe",
 			"Siebrand",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Mainframe98"
 		]
 	},
 	"googlelogin": "Aanmelden met Google",
@@ -16,7 +17,7 @@
 	"googlelogin-manage-usersubmit": "Gebruiker beheren",
 	"googlelogin-manage-user": "U beheert de {{GENDER:$1|gebruiker}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "De account is gekoppeld aan een Google-account met de ID",
-	"googlelogin-manage-notlinked": "Het account is toch niet gelinkt met een google account",
+	"googlelogin-manage-notlinked": "Het account is op het moment niet gelinkt met een Google account.",
 	"googlelogin-manage-changelegend": "Google-ID aanpassen",
 	"googlelogin-manage-noplus": "<strong>Notice:</strong> The User with the Google ID you entered seems to have no Google+ profile. Maybe a typing error?",
 	"googlelogin-manage-changedsuccess": "De Gebruiker is nu gekoppeld met het Google-account.",
