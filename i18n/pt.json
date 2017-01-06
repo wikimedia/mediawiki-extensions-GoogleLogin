@@ -4,7 +4,8 @@
 			"Vitorvicentevalente",
 			"Imperadeiro90",
 			"Macofe",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"McDutchie"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um utilizador.",
@@ -53,7 +54,7 @@
 	"googlelogin-link-other": "A sua conta Google já está vinculada a outro utilizador(a). Por favor, desconete a sua outra wiki conta ou entre em contato com um administrador, se não tiver outra conta wiki.",
 	"googlelogin-link-same": "A sua conta Google já está ligada a outro utilizador, por isso não pode ligá-la de novo.",
 	"googlelogin-prefs-status": "Estado de GoogleLogin:",
-	"googlelogin-error-no-authentication-workflow": "Pediu a continuação de um processo de autenticação através da Google que já estava em progresso. Inicie um novo processo de autenticação, tentando entrar outra vez, por favor.",
+	"googlelogin-error-no-authentication-workflow": "Pediu a continuação de um processo de autenticação através da Google, mas não há nenhum que já esteja em progresso. Inicie um novo processo de autenticação, tentando entrar outra vez, por favor.",
 	"googlelogin-loginbutton-help": "Inicia a sessão através da sua conta Google",
 	"googlelogin-link-help": "Faça ligação da sua conta wiki à sua conta Google.",
 	"googlelogin-param-error-label": "Código de erro retornado do Google",

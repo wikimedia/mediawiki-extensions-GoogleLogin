@@ -5,7 +5,7 @@
 		]
 	},
 	"googlelogin": "Aperir session con Google",
-	"googlelogin-manage-linked": "Le conto es ligate al conto(s) Google con le sequente ID(s):",
+	"googlelogin-manage-linked": "Le conto es ligate {{PLURAL:$1|a un conto|al contos}} Google con le sequente {{PLURAL:$1|ID|IDs}}:",
 	"googlelogin-manage-addlabel": "Adder ID Google",
 	"googlelogin-desc-authmanager": "Permitter que usatores aperi session con lor conto Google.",
 	"googlelogin-link-same": "Tu conto de Google es jam ligate a tu usator. Non es possibile ligar lo de novo.",
