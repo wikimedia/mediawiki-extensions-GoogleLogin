@@ -9,7 +9,8 @@
 			"Lucky",
 			"Wladek92",
 			"Trial",
-			"Fitoschido"
+			"Fitoschido",
+			"The RedBurn"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fait une requête à l’API de Google+ pour trouver des informations personnelles sur un utilisateur donné.",
@@ -35,7 +36,7 @@
 	"googlelogin-manage-orgsince": "Depuis",
 	"googlelogin-manage-yes": "oui",
 	"googlelogin-manage-no": "non",
-	"googlelogin-manage-dismiss": "Rejeter",
+	"googlelogin-manage-dismiss": "Fermer",
 	"googlelogin-manage-openpluslink": "Ouvrir le profil Google+",
 	"googlelogin-manage-unknownerror": "Il y a eu une erreur inconnue lors du chargement de vos données. Peut-être que l’utilisateur n’existe pas sur Google+ ou l’ID du profil est erroné ?",
 	"googlelogin-manage-plusinfo-title": "information de profil",
