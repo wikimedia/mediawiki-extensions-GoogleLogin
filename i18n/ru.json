@@ -22,7 +22,7 @@
 	"googlelogin-manage-unknownerror": "Произошла неизвестная ошибка во время загрузки ваших данных. Возможно, в Google+ не существует такого пользователя или идентификатор профиля указан неверно?",
 	"googlelogin-manage-plusinfo-title": "Информация о профиле",
 	"googlelogin-manage-errorloading": "Ошибка загрузки",
-	"googlelogin-username": "Имя пользователя",
+	"googlelogin-username": "Имя участника",
 	"googlelogin-create": "Создать с помощью Google",
 	"googlelogin-generic-error": "К сожалению, произошла ошибка. Пожалуйста, вернитесь назад и повторите попытку. Сообщение: $1",
 	"googlelogin-unallowed-domain": "Домен электронной почты, используемой в качестве основного адреса в вашей учётной записи Google ($1) не разрешён для входа в этой вики.",
