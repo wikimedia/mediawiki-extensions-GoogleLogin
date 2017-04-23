@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Rodrigo codignoli",
-			"Guilhermemau"
+			"Guilhermemau",
+			"Felipe L. Ewald"
 		]
 	},
+	"googlelogin-username": "Nome de usuário",
 	"googlelogin-create": "Criar com o Google",
 	"googlelogin-prefs-status": "Status do login Google:"
 }
