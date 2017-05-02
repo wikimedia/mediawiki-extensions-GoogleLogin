@@ -36,7 +36,7 @@
 	"googlelogin-manage-unknownerror": "Se ha producido un error desconocido al cargar tus datos. ¿Puede que el usuario no tenga perfil de Google+ o el identificador no sea correcto?",
 	"googlelogin-manage-plusinfo-title": "Información del perfil",
 	"googlelogin-manage-errorloading": "Error al cargar",
-	"googlelogin-manage-addlabel": "Añadir ID de Google",
+	"googlelogin-manage-addlabel": "Añadir identificador de Google",
 	"googlelogin-username": "Nombre de usuario",
 	"googlelogin-create": "Crear con Google",
 	"googlelogin-desc-authmanager": "Permitir a los usuarios acceder con su cuenta de Google.",

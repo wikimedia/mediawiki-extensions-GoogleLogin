@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Semso98",
-			"Macofe"
+			"Macofe",
+			"Srdjan m"
 		]
 	},
 	"managegooglelogin": "Upravljanje GoogleLogin vezama",
-	"googlelogin-manage-notexist": "Ne postoji Korisnik sa imenom $1.",
-	"googlelogin-manage-linked": "Račun je povezan sa Google računom i sa ID-om",
-	"googlelogin-manage-notlinked": "Račun zapravo nije povezan sa Google računom.",
+	"googlelogin-manage-linked": "Račun je povezan s {{PLURAL:$1|Google računom|Google računima}} sa {{PLURAL:$1|sljedećom ID-om|sljedećim ID-jima}}:",
+	"googlelogin-manage-notlinked": "Račun trenutno nije povezan ni sa jednim Google računom.",
 	"googlelogin-manage-changelegend": "Promijeni Google ID",
 	"googlelogin-manage-changedsuccess": "Korisnik je sada povezan sa Google računom.",
 	"googlelogin-manage-terminatesuccess": "Korisnik više nije povezan sa Google računom.",
@@ -23,5 +23,5 @@
 	"googlelogin-manage-dismiss": "Odbaci",
 	"googlelogin-manage-plusinfo-title": "Profilne informacije",
 	"googlelogin-manage-errorloading": "Greška pri učitavanju",
-	"action-managegooglelogin": "Upravljanje GoogleLogin vezama"
+	"action-managegooglelogin": "upravljate GoogleLogin vezama"
 }
