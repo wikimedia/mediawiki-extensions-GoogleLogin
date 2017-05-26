@@ -11,6 +11,7 @@
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "{{doc-apihelp-description|googleplusprofileinfo}}",
+	"apihelp-googleplusprofileinfo-summary": "{{doc-apihelp-summary|googleplusprofileinfo}}",
 	"apihelp-googleplusprofileinfo-param-googleid": "{{doc-apihelp-param|googleplusprofileinfo|googleid}}",
 	"googlelogin": "{{doc-special|GoogleLogin}}\nAlso used as label for the button shown in [[Special:Login]].",
 	"googlelogin-auth-service-name": "The name of the service used to authenticate an user.",

@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Makes a request to the Google+ api to find out some personal information about a given user.",
+	"apihelp-googleplusprofileinfo-summary": "Makes a request to the Google+ api to find out some personal information about a given user.",
 	"apihelp-googleplusprofileinfo-param-googleid": "The Google ID of the user.",
 	"googlelogin": "Log in with Google",
 	"googlelogin-auth-service-name": "Google",
