@@ -19,6 +19,11 @@ class GoogleLoginHooks {
 	}
 
 	public static function onLoadExtensionSchemaUpdates( \DatabaseUpdater $updater = null ) {
+		// Check db type
+		$sql_db_type = $updater->getDB()->getType();
+		if ( !in_array( $sql_db_type, [ 'mysql', 'postgres' ] ) ) {
+			throw new MWException("Unsupported DB: $sql_db_type. Only MySQL & PostgreSQL are supported.");
+		}
 		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'main' );
 		// Don't create tables on a shared database
 		$sharedDB = $config->get( 'SharedDB' );
@@ -31,12 +36,12 @@ class GoogleLoginHooks {
 
 		// Sql directory inside the extension folder
 		$sql = __DIR__ . '/sql';
-		$schema = "$sql/user_google_user.sql";
+		$schema = "$sql/user_google_user-$sql_db_type.sql";
 		$updater->addExtensionUpdate( [ 'addTable', 'user_google_user', $schema, true ] );
 		if ( !$updater->getDB()->indexExists( 'user_google_user', 'user_id' ) ) {
 			$updater->modifyExtensionField( 'user_google_user',
 				'user_id',
-				"$sql/user_google_user_user_id_index.sql" );
+				"$sql/user_google_user_user_id_index-$sql_db_type.sql" );
 		}
 		return true;
 	}
