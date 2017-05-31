@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_2922ddfc",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-05-31T16:53:49Z",
+      "side": 1,
+      "message": "I would probably change this whole thing to the following:\n\n$sql_db_type \u003d $updater-\u003egetDB()-\u003egetType();\nif ( !in_array( $sql_db_type, [ \u0027mysql\u0027, \u0027postgres\u0027 ] ) ) {\n  throw new Exception(\u0027whatever\u0027);\n}\n\nIn this way, we would also exit, whenever another db type is used. What do you think? :)",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "7581c933d122be580c6413a96c8cc8f15de0582c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_89f3e99a",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-05-31T16:53:49Z",
+      "side": 1,
+      "message": "please use \u0027mysql\u0027 instead.",
+      "range": {
+        "startLine": 23,
+        "startChar": 17,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "7581c933d122be580c6413a96c8cc8f15de0582c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_c9fc816f",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-05-31T16:53:49Z",
+      "side": 1,
+      "message": "hmm, why not \u003d\u003d\u003d?",
+      "range": {
+        "startLine": 24,
+        "startChar": 36,
+        "endLine": 24,
+        "endChar": 38
+      },
+      "revId": "7581c933d122be580c6413a96c8cc8f15de0582c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_49e951a6",
+        "filename": "includes/GoogleLogin.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-05-31T16:53:49Z",
+      "side": 1,
+      "message": "same as mysql, please use \u0027 :)",
+      "range": {
+        "startLine": 24,
+        "startChar": 39,
+        "endLine": 24,
+        "endChar": 49
+      },
+      "revId": "7581c933d122be580c6413a96c8cc8f15de0582c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
