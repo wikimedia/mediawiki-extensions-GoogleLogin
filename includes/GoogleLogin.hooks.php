@@ -20,7 +20,7 @@ class GoogleLoginHooks {
 
 	public static function onLoadExtensionSchemaUpdates( \DatabaseUpdater $updater = null ) {
 		// Check db type
-		$sql_db_type = $update->getDB()->getType();
+		$sql_db_type = $updater->getDB()->getType();
 		if ( !in_array ( $sql_db_type, [ 'mysql', 'postgres' ] ) ) {
 			throw new MWException("Unsupported DB: $sql_db_type. Only MySQL & PostgreSQL are supported.");
 		}
