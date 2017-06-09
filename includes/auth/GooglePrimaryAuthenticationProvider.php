@@ -57,9 +57,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			$userInfo = $plus->people->get( "me" );
 			$user = GoogleUser::getUserFromGoogleId( $userInfo['id'] );
 			if ( $user ) {
-				if ( !GoogleLogin::isValidDomain( $userInfo['emails'][0]['value'] ) ) {
+				$email = $userInfo['emails'][0]['value'];
+				if ( !GoogleLogin::isValidDomain( $email ) ) {
 					return AuthenticationResponse::newFail(
-						wfMessage( 'googlelogin-unallowed-domain', GoogleLogin::getHost() )
+						wfMessage( 'googlelogin-unallowed-domain', $email )
 					);
 				}
 				return AuthenticationResponse::newPass( $user->getName() );
@@ -218,9 +219,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			$userInfo = $plus->people->get( "me" );
 			$isGoogleIdFree = GoogleUser::isGoogleIdFree( $userInfo['id'] );
 			if ( $isGoogleIdFree ) {
-				if ( !GoogleLogin::isValidDomain( $userInfo['emails'][0]['value'] ) ) {
+				$email = $userInfo['emails'][0]['value'];
+				if ( !GoogleLogin::isValidDomain( $email ) ) {
 					return AuthenticationResponse::newFail(
-						wfMessage( 'googlelogin-unallowed-domain', GoogleLogin::getHost() )
+						wfMessage( 'googlelogin-unallowed-domain', $email )
 					);
 				}
 				$resp = AuthenticationResponse::newPass();
@@ -268,9 +270,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			} elseif ( $potentialUser ) {
 				return AuthenticationResponse::newFail( wfMessage( 'googlelogin-link-same' ) );
 			} else {
-				if ( !GoogleLogin::isValidDomain( $userInfo['emails'][0]['value'] ) ) {
+				$email = $userInfo['emails'][0]['value'];
+				if ( !GoogleLogin::isValidDomain( $email ) ) {
 					return AuthenticationResponse::newFail(
-						wfMessage( 'googlelogin-unallowed-domain', GoogleLogin::getHost() )
+						wfMessage( 'googlelogin-unallowed-domain', $email )
 					);
 				}
 				$result = GoogleUser::connectWithGoogle( $user, $googleId );
