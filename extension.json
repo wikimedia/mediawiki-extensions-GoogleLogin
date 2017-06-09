@@ -49,12 +49,17 @@
 		"GoogleLogin\\Specials\\SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
 		"GoogleLogin\\GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
 		"GoogleLogin\\GoogleUser": "includes/GoogleUser.php",
+		"GoogleLogin\\Constants": "includes/Constants.php",
 		"GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider": "includes/auth/GooglePrimaryAuthenticationProvider.php",
 		"GoogleLogin\\Auth\\GoogleServerAuthenticationRequest": "includes/auth/GoogleServerAuthenticationRequest.php",
 		"GoogleLogin\\Auth\\GoogleAuthenticationRequest": "includes/auth/GoogleAuthenticationRequest.php",
 		"GoogleLogin\\Auth\\GoogleRemoveAuthenticationRequest": "includes/auth/GoogleRemoveAuthenticationRequest.php",
 		"GoogleLogin\\Auth\\GoogleUserInfoAuthenticationRequest": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
 		"GoogleLogin\\AllowedDomains\\AllowedDomainsStore": "includes/alloweddomains/AllowedDomainsStore.php",
+		"GoogleLogin\\AllowedDomains\\MutableAllowedDomainsStore": "includes/alloweddomains/MutableAllowedDomainsStore.php",
+		"GoogleLogin\\AllowedDomains\\ArrayAllowedDomainsStore": "includes/alloweddomains/ArrayAllowedDomainsStore.php",
+		"GoogleLogin\\AllowedDomains\\DBAllowedDomainsStore": "includes/alloweddomains/DBAllowedDomainsStore.php",
+		"GoogleLogin\\AllowedDomains\\CachedAllowedDomainsStore": "includes/alloweddomains/CachedAllowedDomainsStore.php",
 		"GoogleLogin\\AllowedDomains\\EmailDomain": "includes/alloweddomains/EmailDomain.php",
 		"ApiGoogleLoginInfo": "includes/api/ApiGoogleLoginInfo.php"
 	},
@@ -150,9 +155,13 @@
 		"GLAppId": "",
 		"GLAllowedDomains": "",
 		"GLAllowedDomainsStrict": false,
+		"GLAllowedDomainsDB": false,
 		"GLAPIKey": "",
 		"GLEnableEchoEvents": true
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"load_composer_autoloader": true,
 	"manifest_version": 1
 }
