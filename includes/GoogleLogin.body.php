@@ -5,7 +5,11 @@ namespace GoogleLogin;
 use ConfigFactory;
 
 use Google_Client;
+use GoogleLogin\AllowedDomains\AllowedDomainsStore;
+use GoogleLogin\AllowedDomains\CachedAllowedDomainsStore;
 use GoogleLogin\AllowedDomains\EmailDomain;
+use GoogleLogin\AllowedDomains\MutableAllowedDomainsStore;
+use MediaWiki\MediaWikiServices;
 
 class GoogleLogin {
 	/** @var $mGoogleClient Stores an instance of GoogleClient */
@@ -51,13 +55,13 @@ class GoogleLogin {
 	 */
 	public static function isValidDomain( $mailDomain ) {
 		$glConfig = self::getGLConfig();
-		if ( is_array( $glConfig->get( 'GLAllowedDomains' ) ) ) {
+		/** @var AllowedDomainsStore $allowedDomainsStore */
+		$allowedDomainsStore = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_ALLOWED_DOMAINS_STORE );
+		if ( $allowedDomainsStore !== null ) {
 			$domain = new EmailDomain( $mailDomain, $glConfig->get( 'GLAllowedDomainsStrict' ) );
 			if (
-				in_array(
-					$domain->getHost(),
-					$glConfig->get( 'GLAllowedDomains' )
-				)
+				$allowedDomainsStore->contains( $domain )
 			) {
 				return true;
 			}
