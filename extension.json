@@ -54,6 +54,8 @@
 		"GoogleLogin\\Auth\\GoogleAuthenticationRequest": "includes/auth/GoogleAuthenticationRequest.php",
 		"GoogleLogin\\Auth\\GoogleRemoveAuthenticationRequest": "includes/auth/GoogleRemoveAuthenticationRequest.php",
 		"GoogleLogin\\Auth\\GoogleUserInfoAuthenticationRequest": "includes/auth/GoogleUserInfoAuthenticationRequest.php",
+		"GoogleLogin\\AllowedDomains\\AllowedDomainsStore": "includes/alloweddomains/AllowedDomainsStore.php",
+		"GoogleLogin\\AllowedDomains\\EmailDomain": "includes/alloweddomains/EmailDomain.php",
 		"ApiGoogleLoginInfo": "includes/api/ApiGoogleLoginInfo.php"
 	},
 	"AuthManagerAutoConfig": {
