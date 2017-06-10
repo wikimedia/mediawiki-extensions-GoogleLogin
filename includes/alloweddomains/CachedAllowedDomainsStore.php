@@ -62,11 +62,22 @@ class CachedAllowedDomainsStore implements AllowedDomainsStore, MutableAllowedDo
 			throw new \InvalidArgumentException(
 				'The backend domain store does not support to change the store data.' );
 		}
-		$this->rawStore->add( $domain );
+		return $this->rawStore->add( $domain );
 	}
 
 	public function clear() {
 		$this->cache->delete( $this->getCacheKey() );
 		$this->allowedDomains = null;
+	}
+
+	public function remove( EmailDomain $domain ) {
+		if ( !$this->rawStore instanceof MutableAllowedDomainsStore ) {
+			throw new \InvalidArgumentException(
+				'The backend domain store does not support to remove stored data.' );
+		}
+		$ok = $this->rawStore->remove( $domain );
+		$this->clear();
+
+		return $ok;
 	}
 }
