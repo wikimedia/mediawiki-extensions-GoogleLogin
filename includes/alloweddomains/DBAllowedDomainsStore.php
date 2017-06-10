@@ -14,7 +14,7 @@ use Wikimedia\Rdbms\LoadBalancer;
  *
  * @package GoogleLogin\AllowedDomains
  */
-class DBAllowedDomainsStore implements AllowedDomainsStore {
+class DBAllowedDomainsStore implements AllowedDomainsStore, MutableAllowedDomainsStore {
 	private $dbLoadBalancer;
 	private $allowedDomains;
 
@@ -78,5 +78,14 @@ class DBAllowedDomainsStore implements AllowedDomainsStore {
 		$this->allowedDomains = null;
 
 		return $ok;
+	}
+
+	public function remove( EmailDomain $domain ) {
+		if ( !$this->contains( $domain ) ) {
+			return true;
+		}
+		$dbw = $this->dbLoadBalancer->getConnection( DB_MASTER );
+		return (bool)$dbw->delete( 'googlelogin_allowed_domains', [ 'gl_allowed_domain' =>
+			$domain->getHost() ], __METHOD__ );
 	}
 }
