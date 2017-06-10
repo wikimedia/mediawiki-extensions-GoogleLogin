@@ -24,7 +24,8 @@
 	"SpecialPages": {
 		"GoogleLogin": "GoogleLogin\\Specials\\SpecialGoogleLogin",
 		"GoogleLoginReturn": "GoogleLogin\\Specials\\SpecialGoogleLoginReturn",
-		"ManageGoogleLogin": "GoogleLogin\\Specials\\SpecialManageGoogleLogin"
+		"ManageGoogleLogin": "GoogleLogin\\Specials\\SpecialManageGoogleLogin",
+		"GoogleLoginAllowedDomains": "GoogleLogin\\Specials\\SpecialGoogleLoginAllowedDomains"
 	},
 	"DefaultUserOptions": {
 		"echo-subscriptions-web-change-googlelogin": true,
@@ -49,6 +50,7 @@
 		"GoogleLogin\\Specials\\SpecialGoogleLogin": "includes/specials/SpecialGoogleLogin.php",
 		"GoogleLogin\\Specials\\SpecialGoogleLoginReturn": "includes/specials/SpecialGoogleLoginReturn.php",
 		"GoogleLogin\\Specials\\SpecialManageGoogleLogin": "includes/specials/SpecialManageGoogleLogin.php",
+		"GoogleLogin\\Specials\\SpecialGoogleLoginAllowedDomains": "includes/specials/SpecialGoogleLoginAllowedDomains.php",
 		"GoogleLogin\\GoogleLoginHooks": "includes/GoogleLogin.hooks.php",
 		"GoogleLogin\\GoogleUser": "includes/GoogleUser.php",
 		"GoogleLogin\\Constants": "includes/Constants.php",
