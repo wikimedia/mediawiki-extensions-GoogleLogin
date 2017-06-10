@@ -9,7 +9,7 @@ namespace GoogleLogin\AllowedDomains;
  *
  * @package GoogleLogin\AllowedDomains
  */
-interface MutableAllowedDomainsStore {
+interface MutableAllowedDomainsStore extends AllowedDomainsStore {
 	/**
 	 * Adds the host of the given EmailDomain to the store.
 	 *
