@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Доставува барање до прилогот на Гугл+ за добивање на информации за даден корисник.",
+	"apihelp-googleplusprofileinfo-summary": "Доставува барање до прилогот на Гугл+ за добивање на информации за даден корисник.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Корисничка назнака на Гугл.",
 	"googlelogin": "Најава со Гугл",
 	"googlelogin-auth-service-name": "Гугл",
@@ -13,7 +14,7 @@
 	"googlelogin-manage-usersubmit": "Раководење со корисник",
 	"googlelogin-manage-user": "Раководите со {{GENDER:$1|корисникот}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Оваа сметка е поврана со {{PLURAL:$1|сметка на Гугл|сметки на Гугл}} преку {{PLURAL:$1|следнава назнака|следниве назнаки}}:",
-	"googlelogin-manage-notlinked": "Сметката впрочем не е сврзана со ниедна сметка на Гугл.",
+	"googlelogin-manage-notlinked": "Сметката тековно не е сврзана со ниедна сметка на Гугл.",
 	"googlelogin-manage-changelegend": "Смени назнака на Гугл",
 	"googlelogin-manage-noplus": "<strong>Напомена:</strong> Овој корисник со назнаката на Google што ја внесовте нема профил на Гугл+. Можеби сте згрешиле во пишувањето?",
 	"googlelogin-manage-changedsuccess": "Корисникот сега е сврзан со сметката на Гугл.",
