@@ -9,6 +9,7 @@
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um utilizador.",
+	"apihelp-googleplusprofileinfo-summary": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um utilizador.",
 	"apihelp-googleplusprofileinfo-param-googleid": "ID Google do utilizador.",
 	"googlelogin": "Iniciar sessão com Google",
 	"managegooglelogin": "Gerir conexões GoogleLogin",
