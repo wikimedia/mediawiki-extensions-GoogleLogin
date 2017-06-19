@@ -38,16 +38,16 @@ class GoogleUser {
 	 * function will not start a request to the Google+ API and takes the
 	 * information given in the $userInfo array as they are.
 	 *
-	 * @param array|Google_Service_Plus_Person $userInfo An array or Google_Service_Plus_Person
+	 * @param array|\Google_Service_Plus_Person $userInfo An array or Google_Service_Plus_Person
 	 * 	of information about the user returned by the Google+ sign in api
 	 * @return GoogleUser|null Returns the GoogleUser object or null, if the
 	 *  $userInfo array does not contain an "id" key.
 	 */
 	public static function newFromUserInfo( $userInfo ) {
-		if ( !is_array( $userInfo ) && !$userinfo instanceof Google_Service_Plus_Person ) {
+		if ( !is_array( $userInfo ) && !$userInfo instanceof \Google_Service_Plus_Person ) {
 			throw new \InvalidArgumentException( 'The first paramater of ' . __METHOD__ .
 				' is required to be an array or an instance of Google_Service_Plus_Person, ' .
-				get_class( $userinfo ) . ' given.' );
+				get_class( $userInfo ) . ' given.' );
 		}
 		if ( !isset( $userInfo['id'] ) ) {
 			return null;
