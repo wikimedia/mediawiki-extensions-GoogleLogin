@@ -15,7 +15,8 @@
 		"MediaWiki": ">= 1.28.0"
 	},
 	"AvailableRights": [
-		"managegooglelogin"
+		"managegooglelogin",
+		"managegooglelogindomains"
 	],
 	"ConfigRegistry": {
 		"googlelogin": "GlobalVarConfig::newInstance"
@@ -30,7 +31,8 @@
 		"echo-subscriptions-email-change-googlelogin": true
 	},
 	"APIModules": {
-		"googleplusprofileinfo": "ApiGoogleLoginInfo"
+		"googleplusprofileinfo": "ApiGoogleLoginInfo",
+		"googleloginmanagealloweddomain": "GoogleLogin\\Api\\ApiGoogleLoginManageAllowedDomains"
 	},
 	"MessagesDirs": {
 		"GoogleLogin": [
@@ -61,6 +63,7 @@
 		"GoogleLogin\\AllowedDomains\\DBAllowedDomainsStore": "includes/alloweddomains/DBAllowedDomainsStore.php",
 		"GoogleLogin\\AllowedDomains\\CachedAllowedDomainsStore": "includes/alloweddomains/CachedAllowedDomainsStore.php",
 		"GoogleLogin\\AllowedDomains\\EmailDomain": "includes/alloweddomains/EmailDomain.php",
+		"GoogleLogin\\Api\\ApiGoogleLoginManageAllowedDomains": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
 		"ApiGoogleLoginInfo": "includes/api/ApiGoogleLoginInfo.php"
 	},
 	"AuthManagerAutoConfig": {
