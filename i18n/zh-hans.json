@@ -10,6 +10,7 @@
 	},
 	"apihelp-googleplusprofileinfo-description": "向Google+ api发出请求以找出有关指定用户的一些个人信息。",
 	"apihelp-googleplusprofileinfo-param-googleid": "用户的Google ID。",
+	"apihelp-googleloginmanagealloweddomain-param-domain": "要添加到列表，或从列表中移除的域名。",
 	"googlelogin": "使用Google登录",
 	"managegooglelogin": "管理GoogleLogin连接",
 	"googlelogin-managelegend": "查找需要管理的用户",

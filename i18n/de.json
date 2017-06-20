@@ -11,7 +11,7 @@
 	"apihelp-googleplusprofileinfo-param-googleid": "Die Google-ID des Benutzers.",
 	"apihelp-googleloginmanagealloweddomain-description": "Erlaubt die Verwaltung der Liste der Domains, die zur Anmeldung mit Google verwendet werden dürfen.",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Die Methode der Ausführung, entweder Entfernung oder Hinzufügung einer Domain von oder zur Liste.",
-	"apihelp-googleloginmanagealloweddomain-param-domain": "Die zur Liste hinzuzufügende oder aus der Liste zu entfernende Domain.",
+	"apihelp-googleloginmanagealloweddomain-param-domain": "Die zur Liste hinzuzufügende oder aus ihr zu entfernende Domain.",
 	"googlelogin": "Anmelden mit Google",
 	"managegooglelogin": "GoogleLogin-Verbindungen verwalten",
 	"googlelogin-managelegend": "Zu verwaltenden Benutzer suchen",
