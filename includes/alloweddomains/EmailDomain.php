@@ -79,7 +79,7 @@ class EmailDomain {
 		if ( !file_exists( "$dir/cache/tld.txt" ) ) {
 			$this->createTLDCache( "$dir/cache/tld.txt" );
 		}
-		require ( "$dir/cache/tld.txt" );
+		require "$dir/cache/tld.txt";
 		$tlds = array_flip( $tlds );
 		if ( // fourth level is TLD
 			$_4th &&
