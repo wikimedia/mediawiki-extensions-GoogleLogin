@@ -15,7 +15,6 @@ use MediaWiki\Auth\ButtonAuthenticationRequest;
  */
 class GoogleAuthenticationRequest extends ButtonAuthenticationRequest {
 	public function __construct( \Message $label, \Message $help ) {
-
 		parent::__construct(
 			GooglePrimaryAuthenticationProvider::GOOGLELOGIN_BUTTONREQUEST_NAME,
 			$label,
