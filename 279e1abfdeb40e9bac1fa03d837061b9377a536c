@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce8a9b6b_2134d145",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "\"apihelp-*-description\" methods are deprecated. You\u0027ll want to make a \"apihelp-*-summary\" message instead.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8a9b6b_c1ab856c",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "You should just mark the parameter as ApiBase::PARAM_REQUIRED \u003d\u003e true in getAllowedParams().",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8a9b6b_01d98d2c",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "The first parameter to dieWithError() is a Message, a message key, or an array of message key + parameters. This looks like you\u0027re passing a hard-coded English string, as with the deprecated dieUsage().",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8a9b6b_a1ca0149",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "You probably should just use $this-\u003echeckUserRightsAny( \u0027managegooglelogindomains\u0027 ) instead of rolling your own similar check with a different error code.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8a9b6b_21de1115",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "Same as line 25.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8a9b6b_0100ad6c",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "Same as line 25.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8a9b6b_2105b17c",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "Same as line 25.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce8a9b6b_812a5dd6",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-06-21T16:50:47Z",
+      "side": 1,
+      "message": "It might be a good idea to not even bother registering the API module if either of these two checks are going to fail.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
