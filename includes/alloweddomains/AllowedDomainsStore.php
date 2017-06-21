@@ -15,7 +15,8 @@ interface AllowedDomainsStore {
 	/**
 	 * Checks, if the given EmailDomain is allowed to be used for login or not.
 	 *
-	 * @param EmailDomain $domain
+	 * @param EmailDomain $domain The e-mail-address as an EmailDomain object to check if it is
+	 * contained in the store.
 	 * @return boolean
 	 */
 	function contains( EmailDomain $domain );

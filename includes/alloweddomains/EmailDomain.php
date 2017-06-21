@@ -16,7 +16,7 @@ class EmailDomain {
 	/**
 	 * EmailDomain constructor.
 	 *
-	 * @param $mail String The whole e-mail address, which is represented by this object
+	 * @param String $mail The whole e-mail address, which is represented by this object
 	 * @param bool $strict If the domain should be parsed strictly or not (e.g.
 	 *  test@test.example.com will be converted to example.com if this is false)
 	 */
@@ -66,10 +66,13 @@ class EmailDomain {
 		// remove "/path/file.html", "/:80", etc.
 		$domain = parse_url( $domain, PHP_URL_HOST );
 		// separate domain level
-		$lvl = explode( '.', $domain ); // 0 => www, 1 => example, 2 => co, 3 => uk
+		// 0 => www, 1 => example, 2 => co, 3 => uk
+		$lvl = explode( '.', $domain );
 		// set levels
-		krsort( $lvl ); // 3 => uk, 2 => co, 1 => example, 0 => www
-		$lvl = array_values( $lvl ); // 0 => uk, 1 => co, 2 => example, 3 => www
+		// 3 => uk, 2 => co, 1 => example, 0 => www
+		krsort( $lvl );
+		// 0 => uk, 1 => co, 2 => example, 3 => www
+		$lvl = array_values( $lvl );
 		$_1st = $lvl[0];
 		$_2nd = isset( $lvl[1] ) ? $lvl[1] . '.' . $_1st : false;
 		$_3rd = isset( $lvl[2] ) ? $lvl[2] . '.' . $_2nd : false;
@@ -81,7 +84,8 @@ class EmailDomain {
 		}
 		require "$dir/cache/tld.txt";
 		$tlds = array_flip( $tlds );
-		if ( // fourth level is TLD
+		// fourth level is TLD
+		if (
 			$_4th &&
 			!isset( $tlds[ '!' . $_4th ] ) &&
 			(
@@ -90,7 +94,8 @@ class EmailDomain {
 			)
 		) {
 			$domain = isset( $lvl[4] ) ? $lvl[4] . '.' . $_4th : false;
-		} elseif ( // third level is TLD
+			// third level is TLD
+		} elseif (
 			$_3rd &&
 			!isset( $tlds[ '!' . $_3rd ] ) &&
 			(
@@ -99,7 +104,8 @@ class EmailDomain {
 			)
 		) {
 			$domain = $_4th;
-		} elseif ( // second level is TLD
+			// second level is TLD
+		} elseif (
 			!isset( $tlds[ '!' . $_2nd ] ) &&
 			(
 				isset( $tlds[ $_2nd ] ) ||
@@ -107,7 +113,8 @@ class EmailDomain {
 			)
 		) {
 			$domain = $_3rd;
-		} else { // first level is TLD
+			// first level is TLD
+		} else {
 			$domain = $_2nd;
 		}
 		return $domain;
