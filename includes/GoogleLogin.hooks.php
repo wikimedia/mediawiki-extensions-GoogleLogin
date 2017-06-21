@@ -48,9 +48,11 @@ class GoogleLoginHooks {
 	}
 
 	/**
-	 * Handles Updates to the UserMergeAccountFields of the UserMerge extension.
+	 * MergeAccountFromTo hook handler
 	 *
-	 * @param array &$updateFields
+	 * @param \User &$oldUser The user to "merge from"
+	 * @param \User &$newUser The user to "merge to"
+	 * @return bool
 	 */
 	public static function onMergeAccountFromTo( &$oldUser, &$newUser ) {
 		// check, if
@@ -58,9 +60,9 @@ class GoogleLoginHooks {
 			// the new user exists (e.g. is not Anonymous)
 			!$newUser->isAnon() &&
 			// the new user doesn't has a google connection already
-			!$newUser->hasConnectedGoogleAccount() &&
+			!GoogleUser::hasConnectedGoogleAccount( $newUser ) &&
 			// the old user has a google connection
-			$oldUser->hasConnectedGoogleAccount()
+			GoogleUser::hasConnectedGoogleAccount( $oldUser )
 		) {
 			// save the google id of the old account
 			$googleIds = GoogleUser::getGoogleIdFromUser( $oldUser );
@@ -79,7 +81,8 @@ class GoogleLoginHooks {
 	 * Handle, what data needs to be deleted from the GoogleLogin tables when a user is
 	 * deleted through the UserMerge extension.
 	 *
-	 * @param array &$tablesToDelete
+	 * @param array &$tablesToDelete Array of table => user_id_field to delete
+	 * @return bool
 	 */
 	public static function onUserMergeAccountDeleteTables( &$tablesToDelete ) {
 		$tablesToDelete['user_google_user'] = 'user_id';
@@ -91,10 +94,10 @@ class GoogleLoginHooks {
 	 * AuthChangeFormFields hook handler. Give the "Login with Google" button a larger
 	 * weight as the LocalPasswordAuthentication Log in button.
 	 *
-	 * @param array $requests
-	 * @param array $fieldInfo
-	 * @param array $formDescriptor
-	 * @param $action
+	 * @param array $requests AuthenticationRequests for the current auth attempt
+	 * @param array $fieldInfo Array of field information
+	 * @param array &$formDescriptor Array of fields in a descriptor format
+	 * @param string $action one of the AuthManager::ACTION_* constants.
 	 */
 	public static function onAuthChangeFormFields( array $requests, array $fieldInfo,
 		array &$formDescriptor, $action
@@ -114,9 +117,9 @@ class GoogleLoginHooks {
 	/**
 	 * Add GoogleLogin management events to Echo
 	 *
-	 * @param array $notifications Echo notifications
-	 * @param array $notificationCategories Echo categories
-	 * @param array $icons Echo icons
+	 * @param array &$notifications Echo notifications
+	 * @param array &$notificationCategories Echo categories
+	 * @param array &$icons Echo icons
 	 * @return bool
 	 */
 	public static function onBeforeCreateEchoEvent(
@@ -147,8 +150,8 @@ class GoogleLoginHooks {
 	/**
 	 * Bundle GoogleLogin echo notifications if they're made from the same administrator.
 	 *
-	 * @param \EchoEvent $event
-	 * @param String $bundleString
+	 * @param \EchoEvent $event The triggering event
+	 * @param String &$bundleString The message of the bundle
 	 * @return boolean
 	 */
 	public static function onEchoGetBundleRules( \EchoEvent $event, &$bundleString ) {

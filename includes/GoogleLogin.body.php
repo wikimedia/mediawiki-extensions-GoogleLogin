@@ -6,19 +6,19 @@ use ConfigFactory;
 
 use Google_Client;
 use GoogleLogin\AllowedDomains\AllowedDomainsStore;
-use GoogleLogin\AllowedDomains\CachedAllowedDomainsStore;
 use GoogleLogin\AllowedDomains\EmailDomain;
-use GoogleLogin\AllowedDomains\MutableAllowedDomainsStore;
 use MediaWiki\MediaWikiServices;
 
 class GoogleLogin {
-	/** @var $mGoogleClient Stores an instance of GoogleClient */
+	/** @var Google_Client $mGoogleClient Stores an instance of GoogleClient */
 	private static $mGoogleClient;
-	/** @var $mConfig Config object created for GoogleLogin extension */
+	/** @var $mConfig \Config object created for GoogleLogin extension */
 	private static $mConfig;
 
 	/**
 	 * Returns an prepared instance of Google client to do requests with to Google API
+	 * @param string $returnToUrl The URL to set for the redirectURI
+	 * @param string $token The token to set for the Goolge_Client state
 	 * @return Google_Client
 	 */
 	public static function getClient( $returnToUrl, $token ) {
