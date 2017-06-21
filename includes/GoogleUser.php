@@ -23,7 +23,7 @@ class GoogleUser {
 	 * will start a request to the Google+ API to find out the information about
 	 * the person who owns the given Google ID.
 	 *
-	 * @param $googleId The Google ID for the new GoogleUser object
+	 * @param int $googleId The Google ID for the new GoogleUser object
 	 * @return GoogleUser
 	 */
 	public static function newFromGoogleId( $googleId ) {
@@ -80,7 +80,7 @@ class GoogleUser {
 	 * Returns the requested user data of the person with the Google ID represented by this
 	 * GoogleUser object or null, if the data is not available.
 	 *
-	 * @param $data The data to retrieve
+	 * @param string $data The data to retrieve
 	 * @return null
 	 */
 	public function getData( $data ) {
@@ -115,8 +115,8 @@ class GoogleUser {
 	/**
 	 * Check, if the Google ID is already connected to another wiki account or not.
 	 *
-	 * @param $id
-	 * @param int $flags
+	 * @param int $googleId The Google ID to check for
+	 * @param int $flags A bit mask of flags, see User::READ_*
 	 * @return bool
 	 */
 	public static function isGoogleIdFree( $googleId, $flags = User::READ_LATEST ) {
@@ -129,7 +129,7 @@ class GoogleUser {
 	 *
 	 * @param User $user The user to get the Google Id for
 	 * @param integer $flags User::READ_* constant bitfield
-	 * @return bool False, if no Google ID connected with this User ID, true otherwise
+	 * @return null|array An array of user IDs, null if an error occurred or no IDs was found
 	 */
 	public static function getGoogleIdFromUser( User $user, $flags = User::READ_LATEST ) {
 		$db = ( $flags & User::READ_LATEST )
