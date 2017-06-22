@@ -12,6 +12,7 @@
 	"apihelp-googleplusprofileinfo-summary": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um utilizador.",
 	"apihelp-googleplusprofileinfo-param-googleid": "ID Google do utilizador.",
 	"apihelp-googleloginmanagealloweddomain-description": "Permite-lhe gerir a lista de domínios, que podem ser usados para iniciar sessão com o Google.",
+	"apihelp-googleloginmanagealloweddomain-summary": "Gerir domínios permitidos para o GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "O método a executar, quer removendo quer adicionando um domínio à lista.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "O domínio a adicionar ou remover da lista.",
 	"googlelogin": "Iniciar sessão com Google",

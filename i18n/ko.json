@@ -10,6 +10,7 @@
 			"아라"
 		]
 	},
+	"apihelp-googleloginmanagealloweddomain-summary": "GoogleLogin에 허용된 도메인을 관리합니다",
 	"googlelogin": "구글로 로그인하기",
 	"googlelogin-managelegend": "관리할 사용자 찾기",
 	"googlelogin-manage-linked": "계정은 다음의 {{PLURAL:$1|ID}}로 {{PLURAL:$1|Google 계정}}과 연동되어 있습니다:",

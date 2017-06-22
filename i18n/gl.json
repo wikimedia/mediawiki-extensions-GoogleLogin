@@ -9,6 +9,7 @@
 	},
 	"apihelp-googleplusprofileinfo-description": "Facer unha petición á API de Google+ para atopar a información persoal sobre o usuario indicado.",
 	"apihelp-googleplusprofileinfo-param-googleid": "O identificador Google do usuario.",
+	"apihelp-googleloginmanagealloweddomain-summary": "Xestionar dominios permitidos para GoogleLogin",
 	"googlelogin": "Acceder ao sistema co Google",
 	"managegooglelogin": "Xestionar conexións de GoogleLogin",
 	"googlelogin-managelegend": "Atopar Usuario a xestionar",
