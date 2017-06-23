@@ -9,6 +9,7 @@
 		]
 	},
 	"apihelp-googleplusprofileinfo-param-googleid": "Användarens Google-ID.",
+	"apihelp-googleloginmanagealloweddomain-summary": "Hantera tillåtna domäner för GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Metoden att köra, antingen ta bort eller lägga till en domän i listan.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Domänen att lägga till eller ta bort från listan.",
 	"googlelogin": "Logga in med Google",
