@@ -46,7 +46,7 @@
 	"googlelogin-create": "Criar com Google",
 	"googlelogin-desc-authmanager": "Permitir que os utilizadores iniciem sessão com a sua conta Google.",
 	"googlelogin-generic-error": "Ocorreu um erro inesperado. Volte atrás e tente novamente, por favor. Mensagem: $1",
-	"googlelogin-unallowed-domain": "O domínio de correio eletrónico utilizado para o endereço primário da sua conta Google ($1) não é permitido para iniciar sessão nesta wiki.",
+	"googlelogin-unallowed-domain": "O domínio do endereço de correio eletrónico principal da sua conta Google ($1) não é permitido para iniciar sessões nesta wiki.",
 	"googlelogin-form-merge": "Ligar Google à conta wiki",
 	"googlelogin-form-unlink": "Desligar Google da conta wiki",
 	"googlelogin-email": "Endereço de correio eletrónico",
