@@ -11,6 +11,7 @@
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Робить запит до API Google+, аби отримати деяку особову інформацію про вказаного користувача.",
+	"apihelp-googleplusprofileinfo-summary": "Робить запит до API Google+, аби отримати деяку особову інформацію про вказаного користувача.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Google-ідентифікатор користувача.",
 	"googlelogin": "Увійти з Google",
 	"managegooglelogin": "Управляти зв'язками GoogleLogin",
