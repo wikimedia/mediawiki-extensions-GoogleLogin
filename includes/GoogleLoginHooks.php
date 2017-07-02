@@ -4,6 +4,7 @@ namespace GoogleLogin;
 
 use ConfigFactory;
 use GoogleLogin\HtmlForm\HTMLGoogleLoginButtonField;
+use GoogleLogin\Api\ApiGoogleLoginManageAllowedDomains;
 
 class GoogleLoginHooks {
 	public static function onUserLogoutComplete() {
@@ -162,6 +163,14 @@ class GoogleLoginHooks {
 			}
 		}
 
+		return true;
+	}
+
+	public static function onApiMainModuleManager( \ApiModuleManager $moduleManager ) {
+		if ( GoogleLogin::getGLConfig()->get( 'GLAllowedDomainsDB' ) ) {
+			$moduleManager->addModule( 'googleloginmanagealloweddomain', 'action',
+				ApiGoogleLoginManageAllowedDomains::class );
+		}
 		return true;
 	}
 }
