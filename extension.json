@@ -31,8 +31,7 @@
 		"echo-subscriptions-email-change-googlelogin": true
 	},
 	"APIModules": {
-		"googleplusprofileinfo": "ApiGoogleLoginInfo",
-		"googleloginmanagealloweddomain": "GoogleLogin\\Api\\ApiGoogleLoginManageAllowedDomains"
+		"googleplusprofileinfo": "ApiGoogleLoginInfo"
 	},
 	"MessagesDirs": {
 		"GoogleLogin": [
@@ -151,6 +150,9 @@
 		],
 		"EchoGetBundleRules": [
 			"GoogleLogin\\GoogleLoginHooks::onEchoGetBundleRules"
+		],
+		"ApiMain::moduleManager": [
+			"GoogleLogin\\GoogleLoginHooks::onApiMainModuleManager"
 		]
 	},
 	"config": {

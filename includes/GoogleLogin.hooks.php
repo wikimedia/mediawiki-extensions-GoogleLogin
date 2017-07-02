@@ -3,7 +3,10 @@
 namespace GoogleLogin;
 
 use ConfigFactory;
+use GoogleLogin\AllowedDomains\MutableAllowedDomainsStore;
+use GoogleLogin\Api\ApiGoogleLoginManageAllowedDomains;
 use Linker;
+use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use ChangeTags;
 
@@ -163,6 +166,14 @@ class GoogleLoginHooks {
 			}
 		}
 
+		return true;
+	}
+
+	public static function onApiMainModuleManager( \ApiModuleManager $moduleManager ) {
+		if ( GoogleLogin::getGLConfig()->get( 'GLAllowedDomainsDB' ) ) {
+			$moduleManager->addModule( 'googleloginmanagealloweddomain', 'action',
+				ApiGoogleLoginManageAllowedDomains::class );
+		}
 		return true;
 	}
 }
