@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_3bf28e98",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-07-02T13:22:47Z",
+      "side": 1,
+      "message": "It\u0027d probably be more straightforward to use the ApiMain::moduleManager hook.",
+      "revId": "2de0125eb90ad01959c245d20ba3826faf11bdd1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
