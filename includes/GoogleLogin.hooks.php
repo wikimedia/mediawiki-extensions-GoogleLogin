@@ -58,9 +58,9 @@ class GoogleLoginHooks {
 			// the new user exists (e.g. is not Anonymous)
 			!$newUser->isAnon() &&
 			// the new user doesn't has a google connection already
-			!$newUser->hasConnectedGoogleAccount() &&
+			!GoogleUser::hasConnectedGoogleAccount( $newUser ) &&
 			// the old user has a google connection
-			$oldUser->hasConnectedGoogleAccount()
+			GoogleUser::hasConnectedGoogleAccount( $oldUser )
 		) {
 			// save the google id of the old account
 			$googleIds = GoogleUser::getGoogleIdFromUser( $oldUser );
