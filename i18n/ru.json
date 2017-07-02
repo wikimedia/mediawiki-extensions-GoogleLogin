@@ -3,9 +3,13 @@
 		"authors": [
 			"Okras",
 			"Kaganer",
-			"Kareyac"
+			"Kareyac",
+			"Facenapalm"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Совершает запрос к API Google+ для получения личной информации о данном участнике.",
+	"apihelp-googleplusprofileinfo-summary": "Совершает запрос к API Google+ для получения личной информации о данном участнике.",
+	"apihelp-googleplusprofileinfo-param-googleid": "Google ID участника.",
 	"googlelogin": "Войти с помощью Google",
 	"googlelogin-manage-notlinked": "Учетная запись в настоящее время не связана с каким-либо аккаунтом Google.",
 	"googlelogin-manage-changelegend": "Изменить Google ID",
@@ -38,5 +42,6 @@
 	"googlelogin-link-other": "Ваша учётная запись Google уже привязана к другому участнику. Пожалуйста, уберите эту связь или свяжитесь с администратором, если у вас нет других вики-аккаунтов.",
 	"googlelogin-prefs-status": "Статус GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
-	"tag-googlelogin-description": "Регистрация с этим тегом была произведена с помощью [[Special:GoogleLogin|GoogleLogin]]"
+	"tag-googlelogin-description": "Регистрация с этим тегом была произведена с помощью [[Special:GoogleLogin|GoogleLogin]]",
+	"echo-pref-tooltip-change-googlelogin": "Уведомить меня, когда администратор GoogleLogin меняет мои присоединённые аккаунты Google."
 }

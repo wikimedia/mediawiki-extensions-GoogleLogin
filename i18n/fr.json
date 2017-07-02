@@ -14,8 +14,10 @@
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fait une requête à l’API de Google+ pour trouver des informations personnelles sur un utilisateur donné.",
+	"apihelp-googleplusprofileinfo-summary": "Fait des requêtes vers l'API Google+ pour extraire des informations personnelles concernant un utilisateur donné.",
 	"apihelp-googleplusprofileinfo-param-googleid": "L’ID Google de l’utilisateur.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Gérer les domaines autorisés pour GoogleLogin",
+	"apihelp-googleloginmanagealloweddomain-param-method": "Méthode à exécuter, pour soit enlever (ou ajouter) un domaine de (ou à) la liste.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Le domaine à ajouter ou à retirer de la liste.",
 	"googlelogin": "Connexion avec Google",
 	"managegooglelogin": "Gérer les connexions GoogleLogin",
