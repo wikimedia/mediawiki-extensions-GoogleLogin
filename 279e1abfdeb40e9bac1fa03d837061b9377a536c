@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e742343_bbc3de60",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-07-02T11:53:10Z",
+      "side": 1,
+      "message": "Fixed already in a follow up :)",
+      "parentUuid": "ce8a9b6b_2134d145",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce8a9b6b_c1ab856c",
         "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2017-06-21T16:50:47Z",
       "side": 1,
       "message": "You should just mark the parameter as ApiBase::PARAM_REQUIRED \u003d\u003e true in getAllowedParams().",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_5bb8bae2",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-07-02T11:53:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce8a9b6b_c1ab856c",
       "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "8e742343_7bbd76d0",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-07-02T11:53:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce8a9b6b_a1ca0149",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce8a9b6b_21de1115",
         "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
         "patchSetId": 3
@@ -81,6 +135,24 @@
       "writtenOn": "2017-06-21T16:50:47Z",
       "side": 1,
       "message": "Same as line 25.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_1bd31232",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-07-02T11:53:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce8a9b6b_21de1115",
       "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "8e742343_3bd04e22",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-07-02T11:53:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce8a9b6b_0100ad6c",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce8a9b6b_2105b17c",
         "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
         "patchSetId": 3
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "8e742343_dbccaa8e",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-07-02T11:53:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce8a9b6b_2105b17c",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce8a9b6b_812a5dd6",
         "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
         "patchSetId": 3
@@ -132,6 +240,24 @@
       "writtenOn": "2017-06-21T16:50:47Z",
       "side": 1,
       "message": "It might be a good idea to not even bother registering the API module if either of these two checks are going to fail.",
+      "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_fbc9667c",
+        "filename": "includes/api/ApiGoogleLoginManageAllowedDomains.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2017-07-02T11:53:10Z",
+      "side": 1,
+      "message": "Hmm, that\u0027s probably a better idea, thanks for the suggestion! :)",
+      "parentUuid": "ce8a9b6b_812a5dd6",
       "revId": "279e1abfdeb40e9bac1fa03d837061b9377a536c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
