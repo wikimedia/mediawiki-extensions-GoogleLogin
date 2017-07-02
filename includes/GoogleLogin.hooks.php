@@ -3,7 +3,9 @@
 namespace GoogleLogin;
 
 use ConfigFactory;
+use GoogleLogin\AllowedDomains\MutableAllowedDomainsStore;
 use Linker;
+use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use ChangeTags;
 
@@ -164,5 +166,25 @@ class GoogleLoginHooks {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Checks, if the AllowedDomains feature is enabled and if the list of allowed domains is
+	 * mutable through the MediaWiki interface. If so, the API module for manageing the list is
+	 * registered.
+	 */
+	public static function setup() {
+		global $wgAPIModules;
+
+		$allowedDomainsStore = MediaWikiServices::getInstance()->getService(
+			Constants::SERVICE_ALLOWED_DOMAINS_STORE );
+		if (
+			$allowedDomainsStore === null ||
+			!$allowedDomainsStore instanceof MutableAllowedDomainsStore
+		) {
+			return;
+		}
+		$wgAPIModules["googleloginmanagealloweddomain"] =
+			"GoogleLogin\\Api\\ApiGoogleLoginManageAllowedDomains";
 	}
 }

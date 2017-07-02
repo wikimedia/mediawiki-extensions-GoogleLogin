@@ -14,6 +14,9 @@
 	"requires": {
 		"MediaWiki": ">= 1.28.0"
 	},
+	"ExtensionFunctions": [
+		"GoogleLogin\\GoogleLoginHooks::setup"
+	],
 	"AvailableRights": [
 		"managegooglelogin",
 		"managegooglelogindomains"
@@ -31,8 +34,7 @@
 		"echo-subscriptions-email-change-googlelogin": true
 	},
 	"APIModules": {
-		"googleplusprofileinfo": "ApiGoogleLoginInfo",
-		"googleloginmanagealloweddomain": "GoogleLogin\\Api\\ApiGoogleLoginManageAllowedDomains"
+		"googleplusprofileinfo": "ApiGoogleLoginInfo"
 	},
 	"MessagesDirs": {
 		"GoogleLogin": [
