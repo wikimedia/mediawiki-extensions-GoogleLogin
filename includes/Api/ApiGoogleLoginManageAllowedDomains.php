@@ -4,7 +4,6 @@ namespace GoogleLogin\Api;
 
 use ApiBase;
 use GoogleLogin\AllowedDomains\EmailDomain;
-use GoogleLogin\AllowedDomains\MutableAllowedDomainsStore;
 use GoogleLogin\Constants;
 use MediaWiki\MediaWikiServices;
 
@@ -16,38 +15,19 @@ use MediaWiki\MediaWikiServices;
  * @package GoogleLogin\Api
  */
 class ApiGoogleLoginManageAllowedDomains extends ApiBase {
+	/**
+	 * @throws \ApiUsageException
+	 */
 	public function execute() {
 		$apiResult = $this->getResult();
 		$params = $this->extractRequestParams();
-		$user = $this->getUser();
 
-		if ( !isset( $params['domain'] ) ) {
-			$this->dieWithError( 'Invalid domain', 'domain_invalid' );
-		}
+		$this->checkUserRightsAny( 'managegooglelogindomains' );
 
-		if ( !$user->isAllowed( 'managegooglelogindomains' ) ) {
-			$this->dieWithError(
-				'Insufficient permissions. You need the managegooglelogindomains ' .
-				'permission to use this API module',
-				'insufficientpermissions'
-			);
-		}
-
+		// this API module is not registered, if the AllowedDomain store is null or not mutable
 		$allowedDomainsStore = MediaWikiServices::getInstance()->getService(
 			Constants::SERVICE_ALLOWED_DOMAINS_STORE );
-		if ( $allowedDomainsStore === null ) {
-			$this->dieWithError(
-				'The allowed domains feature of GoogleLogin is not enabled for this wiki.',
-				'not_enabled'
-			);
-		}
-		if ( !$allowedDomainsStore instanceof MutableAllowedDomainsStore ) {
-			$this->dieWithError(
-				'The configured backend for the allowed domains feature does' .
-				' not allow changes through this api.',
-				'not_mutable'
-			);
-		}
+
 		$emailAddress = new EmailDomain( $params['domain'] );
 		if ( $params['method'] === 'add' ) {
 			$result = $allowedDomainsStore->add( $emailAddress );
@@ -70,6 +50,7 @@ class ApiGoogleLoginManageAllowedDomains extends ApiBase {
 			],
 			'domain' => [
 				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => true,
 			],
 		];
 	}
