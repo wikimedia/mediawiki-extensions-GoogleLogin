@@ -5,10 +5,12 @@
 			"Alan ffm",
 			"Py64",
 			"Devwebtel",
-			"Saper"
+			"Saper",
+			"InternerowyGołąb"
 		]
 	},
 	"googlelogin": "Zaloguj się za pomocą Google",
+	"googleloginalloweddomains": "Zarządzaj dozwolonymi domenami dla GoogleLogin",
 	"googlelogin-managelegend": "Znajdź użytkownika do zarządzania",
 	"googlelogin-manage-usersubmit": "Zarządzaj Użytkownikiem",
 	"googlelogin-manage-linked": "Konto jest połączone z {{PLURAL:$1|kontem|kontami}} Google o {{PLURAL:$1|następującym identyfikatorze|następujących identyfikatorach}}:",
@@ -41,6 +43,10 @@
 	"googlelogin-change-account-not-linked": "Nie można usunąć połączenie z kontem Google, ponieważ Twoje konto nie jest z nim połączone.",
 	"googlelogin-auth-service-unknown-account": "Nieznane konto Google",
 	"googlelogin-access-denied": "Nie można się zalogować. Odmówiono dostępu do informacji o koncie Google.",
+	"googlelogin-alloweddomain-terminatebutton": "Usuń",
+	"googlelogin-alloweddomain-addlabel": "Dodaj dozwoloną domenę",
+	"googlelogin-alloweddomain-added-success": "Domena $1 została pomyślnie dodana do listy dozwolonych domen.",
+	"googlelogin-alloweddomain-removed-success": "Domena $1 została pomyślnie usunięta z listy dozwolonych domen.",
 	"action-managegooglelogin": "zarządzaj powiązaniem kont użytkowników z Google",
 	"right-managegooglelogin": "Umożliwia dodawania, usuwanie i przeglądanie połączeń GoogleLogin"
 }

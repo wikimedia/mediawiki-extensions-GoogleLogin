@@ -7,7 +7,8 @@
 			"George Animal",
 			"Liuxinyu970226",
 			"Metalhead64",
-			"Guycn2"
+			"Guycn2",
+			"Robby"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "{{doc-apihelp-description|googleplusprofileinfo}}",
@@ -74,7 +75,7 @@
 	"googlelogin-auth-service-unknown-account": "Used in the very rare case, that the Google ID connected with the MediaWiki User isn't known anymore.",
 	"googlelogin-access-denied": "Message returned to the user, when the access to the Google account information was rejected.",
 	"googlelogin-alloweddomains-notmanageable": "A message that informs the user, that the list of allowed domains, which can be used to login with GoogleLogin, can not be changed/managed using the user interface, e.g. because it is managed using an array in the LocalSettings.php.",
-	"googlelogin-alloweddomain-terminatebutton": "Label of a column with checkboxes to remove, when selected, a specific allowed domain from the list of allowed domains.",
+	"googlelogin-alloweddomain-terminatebutton": "Label of a column with checkboxes to remove, when selected, a specific allowed domain from the list of allowed domains.\n{{Identical|Remove}}",
 	"googlelogin-alloweddomain-addlabel": "Label of a text field, which can be used to add a domain to the list of allowed domains.",
 	"googlelogin-alloweddomain-added-success": "Message, which is printed when a domain was successfully added to the list of allowed domains.\n\nParameters:\n* $1 - The domain, which was added",
 	"googlelogin-alloweddomain-removed-success": "Message, which is printed when a domain was successfully removed from the list of allowed domains.\n\nParameters:\n* $1 - The domain, which was removed",

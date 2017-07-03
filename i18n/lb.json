@@ -41,6 +41,9 @@
 	"googlelogin-link-help": "Verbannt Äre Wiki-Benotzerkont mat Ärem Google-Benotzerkont",
 	"googlelogin-param-error-label": "Feelercode dee vu Google zréck koum",
 	"googlelogin-auth-service-unknown-account": "Onbekannte Google-Benotzerkont",
+	"googlelogin-alloweddomain-terminatebutton": "Ewechhuelen",
+	"googlelogin-alloweddomain-added-success": "Den Domain $1 gouf op d'Lëscht vun den erlaabten Domainen dobäigesat.",
+	"googlelogin-alloweddomain-removed-success": "Den Domain $1 gouf vun der Lëscht vun den erlaabten Domainen erofgeholl.",
 	"tag-googlelogin": "[[Special:GoogleLogin|Google-Login]]",
 	"notification-header-change-googlelogin": "Är Google-Benotzerkonten déi mat dësem Kont verbonn si goufe geännert"
 }

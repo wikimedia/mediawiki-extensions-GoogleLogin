@@ -4,5 +4,6 @@
 			"Joetaras"
 		]
 	},
-	"googlelogin-manage-notlinked": "'U cunde non ge ste collegate a nisciune cunde de Google."
+	"googlelogin-manage-notlinked": "'U cunde non ge ste collegate a nisciune cunde de Google.",
+	"googlelogin-alloweddomain-terminatebutton": "Live"
 }
