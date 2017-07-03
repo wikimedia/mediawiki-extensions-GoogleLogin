@@ -3,3 +3,4 @@ vendor
 composer.phar
 cache
 composer.lock
+publicSuffixArray.php
