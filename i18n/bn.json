@@ -49,6 +49,7 @@
 	"googlelogin-link-other": "আপনার Google অ্যাকাউন্ট ইতিমধ্যেই অন্য ব্যবহারকারীর সাথে সংযুক্ত করা আছে। দয়া করে সংযোগ লিঙ্কমুক্ত করুন অথবা একজন সাথে যোগাযোগ করুন, যদি না আপনার অন্য কোন উইকি অ্যাকাউন্ট না থাকে।",
 	"googlelogin-link-same": "আপনার গুগল অ্যাকাউন্ট ইতিমধ্যে আপনার ব্যবহারকারীর সাথে সংযুক্ত হয়েছে। সেহেতু তা আবার সংযুক্ত হবে না।",
 	"googlelogin-prefs-status": "গুগলপ্রবেশ অবস্থা:",
+	"googlelogin-alloweddomain-terminatebutton": "সরান",
 	"tag-googlelogin": "[[Special:GoogleLogin|গুগল প্রবেশ]]",
 	"action-managegooglelogin": "গুগল-প্রবেশ সংযোগ পরিচালনা করার",
 	"notification-header-change-googlelogin": "আপনার সংযুক্ত গুগল অ্যাকাউন্টে পরিবর্তন করা হয়েছে"

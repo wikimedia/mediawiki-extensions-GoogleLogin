@@ -5,7 +5,8 @@
 			"WikiPhoenix",
 			"Jopparn",
 			"Macofe",
-			"Josve05a"
+			"Josve05a",
+			"Umeaboy"
 		]
 	},
 	"apihelp-googleplusprofileinfo-param-googleid": "Användarens Google-ID.",
@@ -59,6 +60,8 @@
 	"googlelogin-change-account-not-linked": "Du kan inte ta bort en anslutning till ett Google-konto eftersom ditt konto är inte ansluten till ett Google-konto.",
 	"googlelogin-auth-service-unknown-account": "Okänt Google-konto",
 	"googlelogin-access-denied": "Kunde inte logga in. Du nekades åtkomst till din Google-kontoinformation.",
+	"googlelogin-alloweddomain-terminatebutton": "Ta bort",
+	"googlelogin-alloweddomain-addlabel": "Lägg till en tillåten domän",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registreringar med den här taggen gjordes med [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "hantera GoogleLogin-anslutningar",
