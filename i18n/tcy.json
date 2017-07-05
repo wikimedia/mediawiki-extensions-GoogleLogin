@@ -8,5 +8,6 @@
 	"googlelogin": "Googleಟ್ಟು ಲಾಗಿನ್ ಅಲೇ",
 	"googlelogin-manage-addlabel": "Google IDನ್ ಸೇರಲೇ",
 	"googlelogin-link-help": "ಇರೇನಾ Google accountನ್ Wiki accountತೊಟ್ಟು ಜೋಡಿಸಲೇ.",
-	"googlelogin-auth-service-unknown-account": "ಗೊತ್ತಿಜ್ಜಂತಿನ Google ಕಾತೆ"
+	"googlelogin-auth-service-unknown-account": "ಗೊತ್ತಿಜ್ಜಂತಿನ Google ಕಾತೆ",
+	"googlelogin-alloweddomain-terminatebutton": "ದೆಪ್ಪುಲೆ"
 }
