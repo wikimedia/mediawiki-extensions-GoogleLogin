@@ -4,7 +4,8 @@
 			"Shirayuki",
 			"SkyDaisy9",
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"Omotecho"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "指定された利用者についての一部個人情報を取得するために、Google+ APIへの要求を行います。",
@@ -12,7 +13,7 @@
 	"managegooglelogin": "GoogleLogin 接続の管理",
 	"googlelogin-manage-usersubmit": "ユーザー管理",
 	"googlelogin-manage-linked": "現在のアカウントには、以下の{{PLURAL:$1|ID}}の{{PLURAL:$1|Googleアカウント}}が連携されています：",
-	"googlelogin-manage-notlinked": "現在のアカウントには、どのGoogleアカウントも連携されていません。",
+	"googlelogin-manage-notlinked": "アカウントには現在、どのGoogleアカウントも連携していません。",
 	"googlelogin-manage-changedsuccess": "この利用者は今、Google アカウントでリンクされています。",
 	"googlelogin-manage-isplusser": "Google+ に登録済み",
 	"googlelogin-manage-givenid": "あなたの入力した Google ID は、既に他のウィキ利用者にリンクされています。",
