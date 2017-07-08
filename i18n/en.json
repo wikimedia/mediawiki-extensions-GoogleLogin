@@ -67,7 +67,7 @@
 	"googlelogin-change-account-not-linked": "You can not remove a Google account connection, because your account isn't connected with a Google account.",
 	"googlelogin-auth-service-unknown-account": "Unknown Google account",
 	"googlelogin-access-denied": "Unable to log in. You denied the access to your Google account information.",
-	"googlelogin-alloweddomains-notmanageable": "Allowed domains an not be managed using this interface for this wiki. To enable to manage the allowed domains for GoogleLogin, you need to enable the list to be stored in the database.",
+	"googlelogin-alloweddomains-notmanageable": "Allowed domains can not be managed using this interface. To enable to manage the allowed domains for GoogleLogin, you need to enable the list to be stored in the database.",
 	"googlelogin-alloweddomain-terminatebutton": "Remove",
 	"googlelogin-alloweddomain-addlabel": "Add allowed domain",
 	"googlelogin-alloweddomain-added-success": "The domain $1 was successfully added to the list of allowed domains.",
