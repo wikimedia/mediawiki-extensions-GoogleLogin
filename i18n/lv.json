@@ -8,5 +8,7 @@
 	"googlelogin-manage-addlabel": "Pievienot Google ID",
 	"googlelogin-email": "E-pasta adrese",
 	"googlelogin-link-help": "Sasaistīt savu vikivietnes kontu ar savu Google kontu.",
-	"googlelogin-auth-service-unknown-account": "Nezināms Google konts"
+	"googlelogin-auth-service-unknown-account": "Nezināms Google konts",
+	"googlelogin-alloweddomain-terminatebutton": "Noņemt",
+	"googlelogin-alloweddomain-addlabel": "Pievienot atļauto domēnu"
 }
