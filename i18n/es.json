@@ -58,6 +58,7 @@
 	"googlelogin-link-help": "Vincular tu cuenta en el wiki con tu cuenta de Google.",
 	"googlelogin-param-error-label": "Código de error devuelto por Google",
 	"googlelogin-auth-service-unknown-account": "Cuenta de Google desconocida",
+	"googlelogin-alloweddomain-terminatebutton": "Eliminar",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Los registros con esta etiqueta se han hecho con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "administrar conexiones de GoogleLogin",

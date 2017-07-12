@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kirsan"
+			"Kirsan",
+			"Kaszeba"
 		]
 	},
-	"googlelogin-username": "Pòzwa brëkòwnika"
+	"googlelogin-username": "Pòzwa brëkòwnika",
+	"googlelogin-alloweddomain-terminatebutton": "Rëmôj"
 }
