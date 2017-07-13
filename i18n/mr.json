@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"V.narsikar",
-			"अभय नातू"
+			"अभय नातू",
+			"Rupalichinchure"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "दिलेल्या सदस्याबाबत काही वैयक्तिक माहिती शोधण्यास गूगल+एपीआयला विनंती करते.",
@@ -23,5 +24,6 @@
 	"googlelogin-param-code-label": "गूगल मार्फत पोहोच बिल्ला",
 	"googlelogin-change-account-not-linked": "आपण गूगल खात्याचा अनुबंध हटवू शकत नाही, कारण आपले खाते गूगल खात्याशी जोडल्या गेलेले नाही.",
 	"googlelogin-auth-service-unknown-account": "अनोळखी गूगल खाते",
-	"googlelogin-access-denied": "सनोंद-प्रवेशास अक्षम.आपण आपल्या गूगल खात्याच्या माहितीस पोहोच देण्यास नकार दिलेला आहे."
+	"googlelogin-access-denied": "सनोंद-प्रवेशास अक्षम.आपण आपल्या गूगल खात्याच्या माहितीस पोहोच देण्यास नकार दिलेला आहे.",
+	"googlelogin-alloweddomain-addlabel": "अनुमत डोमेन जोडा"
 }
