@@ -23,5 +23,6 @@
 	"googlelogin-create": "Googlekin sortu",
 	"googlelogin-email": "Helbide elektronikoa",
 	"googlelogin-googleuser": "Google erabiltzailea",
-	"googlelogin-alloweddomain-terminatebutton": "Ezabatu"
+	"googlelogin-alloweddomain-terminatebutton": "Ezabatu",
+	"googlelogin-alloweddomain-addlabel": "Onartutako arloa gehitu"
 }
