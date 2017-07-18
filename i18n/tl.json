@@ -4,5 +4,6 @@
 			"Emem.calist"
 		]
 	},
+	"googlelogin-alloweddomain-addlabel": "Mga pwedeng gamitin sa paggawa ng 'domain'",
 	"notification-header-change-googlelogin": "Ang iyong mga konektadong 'Google account' ay nabago"
 }

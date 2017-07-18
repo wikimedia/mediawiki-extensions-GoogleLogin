@@ -24,5 +24,6 @@
 	"googlelogin-email": "Helbide elektronikoa",
 	"googlelogin-googleuser": "Google erabiltzailea",
 	"googlelogin-alloweddomain-terminatebutton": "Ezabatu",
-	"googlelogin-alloweddomain-addlabel": "Onartutako arloa gehitu"
+	"googlelogin-alloweddomain-addlabel": "Onartutako arloa gehitu",
+	"googlelogin-alloweddomain-change-error": "Oker bat gertatu da onartutako arloen zerrenda aldatzerakoan."
 }

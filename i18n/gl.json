@@ -66,6 +66,7 @@
 	"googlelogin-change-account-not-linked": "Non podes eliminar unha conexión cunha conta de Google xa que a túa conta non está conectada cunha conta de Google.",
 	"googlelogin-auth-service-unknown-account": "Conta de Google descoñecida",
 	"googlelogin-access-denied": "Non se pode conectar. Vostede denegou o acceso á información da súa conta de Google.",
+	"googlelogin-alloweddomain-terminatebutton": "Eliminar",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Rexistros con esta etiqueta foron feitos con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "xestionar conexións de GoogleLogin",

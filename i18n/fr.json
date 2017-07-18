@@ -75,7 +75,7 @@
 	"googlelogin-change-account-not-linked": "Vous ne pouvez pas supprimer la connexion d'un compte Google, parce que votre compte n'est pas connecté sous un compte Google.",
 	"googlelogin-auth-service-unknown-account": "Compte Google inconnu",
 	"googlelogin-access-denied": "Impossible de se connecter. Vous avez refusé l'accès aux informations de votre compte Google.",
-	"googlelogin-alloweddomains-notmanageable": "Les domaines autorisés ne sont pas gérés en utilisant cette interface pour ce wiki. Pour permettre la gestion des domaines autorisés pour GoogleLogin, vous devez permettre à la liste d’être stockée dans la base de données.",
+	"googlelogin-alloweddomains-notmanageable": "Les domaines autorisés ne sont pas gérables en utilisant cette interface pour ce wiki. Pour permettre la gestion des domaines autorisés pour GoogleLogin, vous devez permettre à la liste d’être stockée dans la base de données.",
 	"googlelogin-alloweddomain-terminatebutton": "Supprimer",
 	"googlelogin-alloweddomain-addlabel": "Ajouter un domaine autorisé",
 	"googlelogin-alloweddomain-added-success": "Le domaine $1 a été ajouté avec succès à la liste des domaines autorisés.",
