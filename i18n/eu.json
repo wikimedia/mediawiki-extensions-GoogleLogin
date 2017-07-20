@@ -10,6 +10,7 @@
 	},
 	"googlelogin": "Saioa hasi Googlekin",
 	"managegooglelogin": "Kudeatu GoogleLogin konexioak",
+	"googleloginalloweddomains": "Onartutako dominioak kudeatu GoogleLoginentzat",
 	"googlelogin-manage-changelegend": "Google ID aldatu",
 	"googlelogin-manage-isplusser": "Google+ erregistratua",
 	"googlelogin-manage-orgname": "Erakundearen izena",
@@ -25,5 +26,7 @@
 	"googlelogin-googleuser": "Google erabiltzailea",
 	"googlelogin-alloweddomain-terminatebutton": "Ezabatu",
 	"googlelogin-alloweddomain-addlabel": "Onartutako arloa gehitu",
+	"googlelogin-alloweddomain-added-success": "$1 dominioa onartutako dominioen zerrendara gehitu da.",
+	"googlelogin-alloweddomain-removed-success": "$1 dominioa onartutako dominioen zerrendatik ezabatu da.",
 	"googlelogin-alloweddomain-change-error": "Oker bat gertatu da onartutako arloen zerrenda aldatzerakoan."
 }
