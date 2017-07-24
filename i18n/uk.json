@@ -7,7 +7,8 @@
 			"Translatemyname",
 			"Dars",
 			"Macofe",
-			"Piramidion"
+			"Piramidion",
+			"SimondR"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Робить запит до API Google+, аби отримати деяку особову інформацію про вказаного користувача.",
@@ -67,6 +68,7 @@
 	"googlelogin-change-account-not-linked": "Ви не можете вилучити зв'язок з обліковим записом Google, тому що Ваша обліковка не пов'язана з обліковим записом Google.",
 	"googlelogin-auth-service-unknown-account": "Невідомий обліковий запис Google",
 	"googlelogin-access-denied": "Не вдалося увійти в систему. Ви закрили доступ до інформації про свій обліковий запис Google.",
+	"googlelogin-alloweddomain-terminatebutton": "Вилучити",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Реєстрації з цим теґом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "керування зв'язками GoogleLogin",
