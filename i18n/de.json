@@ -68,7 +68,7 @@
 	"googlelogin-change-account-not-linked": "Du kannst keine Google-Kontenverbindung entfernen, da dein Benutzerkonto nicht mit einem Google-Konto verbunden ist.",
 	"googlelogin-auth-service-unknown-account": "Unbekanntes Google-Konto",
 	"googlelogin-access-denied": "Du konntest nicht angemeldet werden. Du hast den Zugriff auf die Informationen deines Google-Kontos abgelehnt.",
-	"googlelogin-alloweddomains-notmanageable": "Erlaubte Domains können nicht mithilfe dieser Oberfläche für dieses Wiki verwaltet werden. Um die erlaubten Domains für GoogleLogin zu verwalten, musst du die in der Datenbank gespeicherte Liste aktivieren.",
+	"googlelogin-alloweddomains-notmanageable": "Erlaubte Domains können nicht mithilfe dieser Oberfläche verwaltet werden. Um die erlaubten Domains für GoogleLogin zu verwalten, musst du die in der Datenbank gespeicherte Liste aktivieren.",
 	"googlelogin-alloweddomain-terminatebutton": "Entfernen",
 	"googlelogin-alloweddomain-addlabel": "Erlaubte Domain hinzufügen",
 	"googlelogin-alloweddomain-added-success": "Die Domain $1 wurde erfolgreich zur Liste der erlaubten Domains hinzugefügt.",
