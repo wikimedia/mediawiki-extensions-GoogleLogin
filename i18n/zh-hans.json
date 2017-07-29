@@ -70,7 +70,7 @@
 	"googlelogin-change-account-not-linked": "您不能移除Google账户连接，因为您的账户未与Google账户相连接。",
 	"googlelogin-auth-service-unknown-account": "未知Google账户",
 	"googlelogin-access-denied": "无法登录。您拒绝了对您Google账户信息的访问。",
-	"googlelogin-alloweddomains-notmanageable": "允许的域名是此wiki上不受该界面管理的域名。要启用管理允许用于GoogleLogin的域名，您需要让列表存储在数据库中。",
+	"googlelogin-alloweddomains-notmanageable": "允许的域名不能通过该界面管理。要启用管理允许用于GoogleLogin的域名，您需要让列表存储在数据库中。",
 	"googlelogin-alloweddomain-terminatebutton": "移除",
 	"googlelogin-alloweddomain-addlabel": "添加允许的域名",
 	"googlelogin-alloweddomain-added-success": "域名$1已成功添加到允许的域名列表中。",

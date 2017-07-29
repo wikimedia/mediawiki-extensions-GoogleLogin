@@ -8,7 +8,8 @@
 			"Macofe",
 			"Siebrand",
 			"Robin van der Vliet",
-			"Mainframe98"
+			"Mainframe98",
+			"Festina90"
 		]
 	},
 	"googlelogin": "Aanmelden met Google",
@@ -53,6 +54,7 @@
 	"googlelogin-link-other": "Uw Google-account is al gekoppeld aan een andere gebruiker. Ontkoppel deze of neem contact op met een beheerder als u geen andere account hebt op deze wiki.",
 	"googlelogin-prefs-status": "GoogleLogin status:",
 	"googlelogin-auth-service-unknown-account": "Onbekend Google-account",
+	"googlelogin-alloweddomains-notmanageable": "De toegestane domeinen kunnen niet beheerd worden in deze interface. Om deze domeinen toch toe te staan voor uw GoogleLogin, hoeft u deze lijst toe te voegen in de database.",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registraties met dit label zijn gemaakt met [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "Beheren GoogleLogin verbindingen"
