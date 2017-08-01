@@ -77,7 +77,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	 * Checks, if a user with the entered username exists.
 	 *
 	 * @param array $data Formdata
-	 * @return boolean
+	 * @return bool
 	 */
 	public function submitUserName( array $data ) {
 		$this->submitForm( $data, false );
@@ -156,7 +156,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	 *
 	 * @param array $data Formdata
 	 * @param boolean $checkSession If true, checks, if the form was submitted by the user itself
-	 * @return boolean
+	 * @return bool
 	 */
 	public function submitForm( array $data, $checkSession = true ) {
 		$user = $this->getUser();

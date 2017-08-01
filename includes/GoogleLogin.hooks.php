@@ -152,7 +152,7 @@ class GoogleLoginHooks {
 	 *
 	 * @param \EchoEvent $event The triggering event
 	 * @param String &$bundleString The message of the bundle
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onEchoGetBundleRules( \EchoEvent $event, &$bundleString ) {
 		if (

@@ -51,7 +51,7 @@ class GoogleLogin {
 	/**
 	 * If restriction of domains is enabled, check if the user E-Mail is valid before do anything.
 	 * @param string $mailDomain The domain of email address
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function isValidDomain( $mailDomain ) {
 		$glConfig = self::getGLConfig();
