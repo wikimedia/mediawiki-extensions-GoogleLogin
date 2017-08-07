@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Corainn"
+			"Corainn",
+			"Akamycoco"
 		]
 	},
+	"googlelogin-email": "Zyusyo na e-meyo’",
 	"googlelogin-alloweddomain-terminatebutton": "laxan"
 }
