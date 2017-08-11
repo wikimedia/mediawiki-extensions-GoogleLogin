@@ -130,7 +130,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		}
 		$formFields = [];
 		if ( $googleIds ) {
-			$formFields['googleids'] =  [
+			$formFields['googleids'] = [
 				'type' => 'checkmatrix',
 				'columns' => [
 					$this->msg( 'googlelogin-manage-terminatebutton' )->escaped() => 'google'
@@ -155,7 +155,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	 * Submithandler for new google id
 	 *
 	 * @param array $data Formdata
-	 * @param boolean $checkSession If true, checks, if the form was submitted by the user itself
+	 * @param bool $checkSession If true, checks, if the form was submitted by the user itself
 	 * @return bool
 	 */
 	public function submitForm( array $data, $checkSession = true ) {

@@ -128,7 +128,7 @@ class GoogleUser {
 	 * User Id set to this object.
 	 *
 	 * @param User $user The user to get the Google Id for
-	 * @param integer $flags User::READ_* constant bitfield
+	 * @param int $flags User::READ_* constant bitfield
 	 * @return null|array An array of user IDs, null if an error occurred or no IDs was found
 	 */
 	public static function getGoogleIdFromUser( User $user, $flags = User::READ_LATEST ) {
@@ -162,7 +162,7 @@ class GoogleUser {
 	 * User Id set to this object.
 	 *
 	 * @param string $googleId The Google ID to get the user to
-	 * @param integer $flags User::READ_* constant bitfield
+	 * @param int $flags User::READ_* constant bitfield
 	 * @return null|User The local User account connected with the Google ID if
 	 * the Google ID is connected to an User, null otherwise.
 	 */
