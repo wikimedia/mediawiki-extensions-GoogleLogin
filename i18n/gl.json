@@ -67,6 +67,7 @@
 	"googlelogin-auth-service-unknown-account": "Conta de Google descoñecida",
 	"googlelogin-access-denied": "Non se pode conectar. Vostede denegou o acceso á información da súa conta de Google.",
 	"googlelogin-alloweddomain-terminatebutton": "Eliminar",
+	"googlelogin-alloweddomain-addlabel": "Engadir dominio permitido",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Rexistros con esta etiqueta foron feitos con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "xestionar conexións de GoogleLogin",
