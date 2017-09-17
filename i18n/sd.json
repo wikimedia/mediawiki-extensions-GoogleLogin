@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Mehtab ahmed",
-			"Aursani"
+			"Aursani",
+			"Indus Asia"
 		]
 	},
 	"googlelogin": "گوگل سان داخل ٿيو",
-	"googlelogin-managelegend": "انتظام ڪرڻ لاءِ واھپ ڳوليو",
+	"googlelogin-managelegend": "انتظام ڪرڻ لاءِ واھپ (يوزر) ڳوليو",
 	"googlelogin-manage-notlinked": "ھي کاتو اصل ۾ ھينئر ڪنھن بہ گوگل کاتي سان ڳنڍيل نہ آھي.",
 	"googlelogin-manage-changedsuccess": "يوزر هاڻي گوگل کاتي سان ڳنڍيو ويو آهي.",
 	"googlelogin-manage-terminatesuccess": "اهو يوزر هاڻي گوگل کاتي سان ڳنڍيل نہ آهي.",
