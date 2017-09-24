@@ -3,11 +3,6 @@
 namespace GoogleLogin;
 
 use ConfigFactory;
-use Linker;
-use SpecialPage;
-use ChangeTags;
-
-use GoogleLogin\Specials\SpecialGoogleLogin;
 
 class GoogleLoginHooks {
 	public static function onUserLogoutComplete() {

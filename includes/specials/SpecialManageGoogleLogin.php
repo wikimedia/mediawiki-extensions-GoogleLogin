@@ -10,7 +10,6 @@ use SpecialPage;
 use Html;
 use HTMLForm;
 use User;
-use ConfigFactory;
 use Http;
 use ErrorPageError;
 

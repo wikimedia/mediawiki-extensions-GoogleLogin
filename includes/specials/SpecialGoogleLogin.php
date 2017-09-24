@@ -12,7 +12,6 @@ use GoogleLogin\GoogleUser as User;
 
 use Google_Client;
 use Google_Service_Plus;
-use SpecialPage;
 
 /**
  * Implements a special page that gives information about a specific Google user, after

@@ -5,7 +5,6 @@
 
 namespace GoogleLogin\Auth;
 
-use GoogleLogin\GoogleUser;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
 

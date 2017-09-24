@@ -2,8 +2,6 @@
 
 namespace GoogleLogin\AllowedDomains;
 
-use Config;
-
 /**
  * Class GlobalAllowedDomainsStore
  *

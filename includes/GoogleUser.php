@@ -134,7 +134,7 @@ class GoogleUser {
 	public static function getGoogleIdFromUser( User $user, $flags = User::READ_LATEST ) {
 		$db = ( $flags & User::READ_LATEST )
 			? wfGetDB( DB_MASTER )
-			: wfGetDB( DB_SLAVE );
+			: wfGetDB( DB_REPLICA );
 
 		$s = $db->select(
 			'user_google_user',
@@ -169,7 +169,7 @@ class GoogleUser {
 	public static function getUserFromGoogleId( $googleId, $flags = User::READ_LATEST ) {
 		$db = ( $flags & User::READ_LATEST )
 			? wfGetDB( DB_MASTER )
-			: wfGetDB( DB_SLAVE );
+			: wfGetDB( DB_REPLICA );
 
 		$s = $db->selectRow(
 			'user_google_user',

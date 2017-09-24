@@ -7,7 +7,6 @@ namespace GoogleLogin\Auth;
 
 use GoogleLogin\GoogleUser;
 use MediaWiki\Auth\AuthenticationRequest;
-use MediaWiki\Auth\AuthManager;
 
 /**
  * Implementation of an AuthenticationReuqest that is used to remove a
