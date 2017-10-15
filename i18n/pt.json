@@ -70,7 +70,7 @@
 	"googlelogin-change-account-not-linked": "Não pode eliminar a ligação a uma conta Google, porque a sua conta não está associada a uma conta Google.",
 	"googlelogin-auth-service-unknown-account": "Conta Google desconhecida",
 	"googlelogin-access-denied": "Não foi possível iniciar sessão. Negou o acesso à informação da sua conta Google.",
-	"googlelogin-alloweddomains-notmanageable": "Os domínios permitidos não podem ser geridos usando esta interface desta wiki. Para ativar a gestão dos domínios permitidos no GoogleLogin, tem de permitir que a lista seja armazenada na base de dados.",
+	"googlelogin-alloweddomains-notmanageable": "Os domínios permitidos não podem ser geridos usando esta interface. Para ativar a gestão dos domínios permitidos no GoogleLogin, tem de permitir que a lista seja armazenada na base de dados.",
 	"googlelogin-alloweddomain-terminatebutton": "Remover",
 	"googlelogin-alloweddomain-addlabel": "Adicionar um domínio permitido",
 	"googlelogin-alloweddomain-added-success": "O domínio $1 foi adicionado à lista de domínios permitidos.",
