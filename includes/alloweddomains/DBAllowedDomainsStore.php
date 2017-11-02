@@ -46,13 +46,16 @@ class DBAllowedDomainsStore implements AllowedDomainsStore, MutableAllowedDomain
 	public function getAllowedDomains() {
 		$this->loadDomains();
 
+		if ( $this->allowedDomains === null ) {
+		    return [];
+        }
 		return $this->allowedDomains;
 	}
 
 	public function contains( EmailDomain $domain ) {
 		$this->loadDomains();
 
-		return in_array( $domain->getHost(), $this->allowedDomains );
+		return in_array( $domain->getHost(), $this->getAllowedDomains() );
 	}
 
 	public function add( EmailDomain $domain ) {
