@@ -5,7 +5,6 @@
 			"Nisargjhaveri"
 		]
 	},
-	"googlelogin-manage-notexist": "<strong>$1</strong> નામ ધરાવતો કોઈ સભ્ય નથી.",
 	"googlelogin-manage-notlinked": "આ ખાતું ગુગલ ખાતા સાથે જોડાયેલું નથી.",
 	"googlelogin-manage-changelegend": "Google ID બદલો",
 	"googlelogin-manage-changedsuccess": "આ ખાતું હવે ગુગલ ખાતા સાથે સાંકળી લેવાયું છે.",
@@ -14,6 +13,5 @@
 	"googlelogin-manage-orgsince": "થી",
 	"googlelogin-manage-yes": "હા",
 	"googlelogin-manage-dismiss": "વિસર્જન",
-	"googlelogin-manage-errorloading": "લોડિંગ ત્રુટિ",
-	"googlelogin-form-next": "આગળ"
+	"googlelogin-manage-errorloading": "લોડિંગ ત્રુટિ"
 }
