@@ -1,4 +1,5 @@
 <?php
+
 namespace GoogleLogin;
 
 class EchoGoogleLoginPresentationModel extends \EchoEventPresentationModel {
