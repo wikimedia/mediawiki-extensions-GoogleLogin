@@ -1,5 +1,6 @@
 <?php
-namespace GoogleLogin;
+
+namespace GoogleLogin\HtmlForm;
 
 /**
  * Same as HTMLSubmitField, the only difference is, that the style module to

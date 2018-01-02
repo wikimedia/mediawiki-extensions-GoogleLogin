@@ -1,9 +1,13 @@
 <?php
+
+namespace GoogleLogin\Api;
+
+use ApiBase;
+
 class ApiGoogleLoginInfo extends ApiBase {
 	public function execute() {
 		$apiResult = $this->getResult();
 		$params = $this->extractRequestParams();
-		$glConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
 		$user = $this->getUser();
 
 		if ( !isset( $params['googleid'] ) ) {

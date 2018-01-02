@@ -3,6 +3,7 @@
 namespace GoogleLogin;
 
 use ConfigFactory;
+use GoogleLogin\HtmlForm\HTMLGoogleLoginButtonField;
 
 class GoogleLoginHooks {
 	public static function onUserLogoutComplete() {
