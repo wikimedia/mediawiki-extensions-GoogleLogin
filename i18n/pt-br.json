@@ -3,9 +3,22 @@
 		"authors": [
 			"Rodrigo codignoli",
 			"Guilhermemau",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um usuário.",
+	"apihelp-googleplusprofileinfo-summary": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um usuário.",
+	"apihelp-googleplusprofileinfo-param-googleid": "ID Google do usuário.",
+	"apihelp-googleloginmanagealloweddomain-description": "Permite-lhe gerir a lista de domínios, que podem ser usados para iniciar sessão com o Google.",
+	"apihelp-googleloginmanagealloweddomain-summary": "Gerir domínios permitidos para o GoogleLogin",
+	"apihelp-googleloginmanagealloweddomain-param-method": "O método a executar, quer removendo quer adicionando um domínio à lista.",
+	"apihelp-googleloginmanagealloweddomain-param-domain": "O domínio a adicionar ou remover da lista.",
+	"googlelogin": "Iniciar sessão com Google",
+	"managegooglelogin": "Gerenciar ligações GoogleLogin",
+	"googleloginalloweddomains": "Administrar domínios permitidos para o GoogleLogin",
+	"googlelogin-managelegend": "Localizar usuário para gerenciar",
+	"googlelogin-manage-usersubmit": "Gerir usuário",
 	"googlelogin-manage-yes": "sim",
 	"googlelogin-manage-no": "não",
 	"googlelogin-username": "Nome de usuário",
