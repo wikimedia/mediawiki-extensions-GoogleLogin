@@ -11,6 +11,7 @@
 	},
 	"apihelp-googleloginmanagealloweddomain-param-method": "執行的方式：增加、或從列表中刪除網域。",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "要添加、或從列表中刪除的網域。",
+	"googlelogin-username": "使用者名稱",
 	"googlelogin-create": "使用 Google 建立",
 	"googlelogin-generic-error": "啊呀，出現錯誤。請返回並再試。訊息：$1",
 	"googlelogin-form-merge": "連結 Google 至 wiki 帳號",
