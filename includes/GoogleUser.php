@@ -120,7 +120,7 @@ class GoogleUser {
 	 * @return bool
 	 */
 	public static function isGoogleIdFree( $googleId, $flags = User::READ_LATEST ) {
-		return $user = self::getUserFromGoogleId( $googleId, $flags ) === null;
+		return self::getUserFromGoogleId( $googleId, $flags ) === null;
 	}
 
 	/**

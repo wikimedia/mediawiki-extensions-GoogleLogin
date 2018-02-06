@@ -77,7 +77,7 @@ class SpecialGoogleLogin extends \SpecialPage {
 	 */
 	private function getPlusUserInfo( Google_Service_Plus $plus ) {
 		try {
-			return $userInfo = $plus->people->get( "me" );
+			return $plus->people->get( "me" );
 		} catch ( Exception $e ) {
 			$this->createError( $e->getMessage() );
 			return false;
