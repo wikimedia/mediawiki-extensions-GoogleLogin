@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08b30ce1_4b922fd6",
+        "filename": "extension.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2018-02-12T14:37:50Z",
+      "side": 1,
+      "message": "Add ,",
+      "revId": "23e1a3f1de4a1c6586ed8c62880136938377c0e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61365f5d_311e9a60",
+        "filename": "extension.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2018-02-12T14:37:50Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "23e1a3f1de4a1c6586ed8c62880136938377c0e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "819f32cf_2c081260",
+        "filename": "extension.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2018-02-12T14:37:50Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "23e1a3f1de4a1c6586ed8c62880136938377c0e0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
