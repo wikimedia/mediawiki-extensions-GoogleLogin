@@ -239,7 +239,9 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	}
 
 	protected function notifyUser( \Config $config, $action, array $googleId ) {
-		if ( $config->get( 'GLEnableEchoEvents' ) && class_exists( 'EchoEvent' ) ) {
+		if ( $config->get( 'GLEnableEchoEvents' ) &&
+			ExtensionRegistry::getInstance()->isLoaded( 'Echo' )
+		) {
 			\EchoEvent::create( [
 				'type' => 'change-googlelogin',
 				'extra' => [
