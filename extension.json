@@ -57,7 +57,6 @@
 	"ResourceModules": {
 		"ext.GoogleLogin.style": {
 			"styles": "style/ext.GoogleLogin.css",
-			"position": "top",
 			"targets": [
 				"desktop",
 				"mobile"
@@ -65,7 +64,6 @@
 		},
 		"ext.GoogleLogin.userlogincreate.style": {
 			"styles": "style/ext.GoogleLogin.userlogincreate.less",
-			"position": "top",
 			"targets": [
 				"desktop",
 				"mobile"
@@ -73,7 +71,6 @@
 		},
 		"ext.GoogleLogin.userlogincreate.ooui.style": {
 			"styles": "style/ext.GoogleLogin.userlogincreate.ooui.less",
-			"position": "top",
 			"targets": [
 				"desktop",
 				"mobile"
