@@ -1,0 +1,7 @@
+Code-Review+2: Libraryupgrader <tools.libraryupgrader@tools.wmflabs.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Sun, 25 Feb 2018 08:52:19 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/414330
+Project: mediawiki/extensions/GoogleLogin
+Branch: refs/heads/master
