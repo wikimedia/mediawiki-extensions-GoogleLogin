@@ -9,7 +9,10 @@
 			"Rubentl134"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Realiza una solicitud a la API de Google+ para obtener información personal sobre alguien.",
+	"apihelp-googleplusprofileinfo-summary": "Realiza una solicitud a la API de Google+ para obtener información personal sobre alguien.",
 	"apihelp-googleplusprofileinfo-param-googleid": "El ID Google del usuario.",
+	"apihelp-googleloginmanagealloweddomain-description": "Permite gestionar la lista de dominios permitidos para autenticarse con Google.",
 	"googlelogin": "Iniciar sesión con Google",
 	"managegooglelogin": "Administrar conexiones GoogleLogin",
 	"googlelogin-managelegend": "Buscar usuario para administrar",
@@ -59,6 +62,10 @@
 	"googlelogin-param-error-label": "Código de error devuelto por Google",
 	"googlelogin-auth-service-unknown-account": "Cuenta de Google desconocida",
 	"googlelogin-alloweddomain-terminatebutton": "Eliminar",
+	"googlelogin-alloweddomain-addlabel": "Añadir dominio permitido",
+	"googlelogin-alloweddomain-added-success": "Se añadió correctamente el dominio $1 a la lista de dominios permitidos.",
+	"googlelogin-alloweddomain-removed-success": "Se quitó correctamente el dominio $1 de la lista de dominios permitidos.",
+	"googlelogin-alloweddomain-change-error": "Se produjo un error al modificar la lista de dominios permitidos.",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Los registros con esta etiqueta se han hecho con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "administrar conexiones de GoogleLogin",
