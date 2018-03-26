@@ -60,7 +60,7 @@
 	"googlelogin-information-title": "Title of fieldset containing the table with account information.\n{{Identical|Account information}}",
 	"googlelogin-information-body": "Information text above account information table, that the following table contains information about the Google and wiki account and the link status (linked, not linked).",
 	"googlelogin-linkstatus": "Title of value Link status in account information table on Special:GoogleLogin (is wiki account linked to Google account?).",
-	"googlelogin-linked": "Google and wiki account are linked. (Used in account information table)",
+	"googlelogin-linked": "Google and wiki account are linked. (Used in account information table)\n{{Identical|Linked}}",
 	"googlelogin-unlinked": "Google and wiki account aren't linked. (Used in account information table)",
 	"googlelogin-link-other": "The Google account is already linked to a wiki user, but not to the actual logged in wiki user. To link the Google account with the actual wiki account, the user must unlink the connection wit the other wiki account, only one connection per Google account is allowed.",
 	"googlelogin-link-same": "The Google account is already linked to the currently logged in wiki user.",
