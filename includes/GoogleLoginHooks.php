@@ -16,18 +16,6 @@ class GoogleLoginHooks {
 	}
 
 	public static function onLoadExtensionSchemaUpdates( \DatabaseUpdater $updater = null ) {
-		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'main' );
-		$extConfig = GoogleLogin::getGLConfig();
-		// Don't create tables on a shared database
-		$sharedDB = $config->get( 'SharedDB' );
-		if (
-			!empty( $sharedDB ) &&
-			$sharedDB !== $config->get( 'DBname' )
-		) {
-			return true;
-		}
-
-		// Sql directory inside the extension folder
 		$sql = __DIR__ . '/sql';
 		$schema = "$sql/user_google_user.sql";
 		$updater->addExtensionUpdate( [ 'addTable', 'user_google_user', $schema, true ] );
@@ -36,11 +24,9 @@ class GoogleLoginHooks {
 				'user_id',
 				"$sql/user_google_user_user_id_index.sql" );
 		}
+		$schema = "$sql/googlelogin_allowed_domains.sql";
+		$updater->addExtensionUpdate( [ 'addTable', 'googlelogin_allowed_domains', $schema, true ] );
 
-		if ( $extConfig->get( 'GLAllowedDomainsDB' ) ) {
-			$schema = "$sql/googlelogin_allowed_domains.sql";
-			$updater->addExtensionUpdate( [ 'addTable', 'googlelogin_allowed_domains', $schema, true ] );
-		}
 		return true;
 	}
 
