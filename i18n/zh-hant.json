@@ -8,7 +8,8 @@
 			"Macofe",
 			"Corainn",
 			"Kly",
-			"Sanmosa"
+			"Sanmosa",
+			"A2093064"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "向 Google+ api 建立找出所指定使用者個人資訊的請求。",
@@ -54,7 +55,7 @@
 	"googlelogin-form-merge": "連結 Google 至 wiki 帳號",
 	"googlelogin-form-unlink": "取消 Google 與 wiki 帳號之間的連結",
 	"googlelogin-email": "電子郵件地址",
-	"googlelogin-googleuser": "Google用戶",
+	"googlelogin-googleuser": "Google使用者",
 	"googlelogin-information-title": "帳號資訊",
 	"googlelogin-information-body": "若您的 Google 帳戶有連結至 wiki 帳戶，在以下表格可找出關於該 Google 帳戶的資訊。",
 	"googlelogin-linkstatus": "連結狀態",
