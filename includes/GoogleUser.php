@@ -12,7 +12,7 @@ class GoogleUser {
 
 	/**
 	 * GoogleUser constructor.
-	 * @param $googleId The Google ID which this GoogleUser object represents
+	 * @param $googleId string The Google ID which this GoogleUser object represents
 	 */
 	private function __construct( $googleId ) {
 		$this->googleId = $googleId;
@@ -23,7 +23,7 @@ class GoogleUser {
 	 * will start a request to the Google+ API to find out the information about
 	 * the person who owns the given Google ID.
 	 *
-	 * @param int $googleId The Google ID for the new GoogleUser object
+	 * @param string $googleId The Google ID for the new GoogleUser object
 	 * @return GoogleUser
 	 */
 	public static function newFromGoogleId( $googleId ) {
@@ -44,15 +44,14 @@ class GoogleUser {
 	 *  $userInfo array does not contain an "id" key.
 	 */
 	public static function newFromUserInfo( $userInfo ) {
-		if ( !is_array( $userInfo ) && !$userInfo instanceof \Google_Service_Plus_Person ) {
+		if ( !is_array( $userInfo ) ) {
 			throw new \InvalidArgumentException( 'The first paramater of ' . __METHOD__ .
-				' is required to be an array or an instance of Google_Service_Plus_Person, ' .
-				get_class( $userInfo ) . ' given.' );
+				' is required to be an array, ' . get_class( $userInfo ) . ' given.' );
 		}
-		if ( !isset( $userInfo['id'] ) ) {
+		if ( !isset( $userInfo['sub'] ) ) {
 			return null;
 		}
-		$user = new self( $userInfo['id'] );
+		$user = new self( $userInfo['sub'] );
 		$user->userData = $userInfo;
 
 		return $user;
@@ -91,17 +90,30 @@ class GoogleUser {
 	}
 
 	/**
-	 * Checks, if the full name of the person who owns the Google ID represented by this GoogleUser
-	 * object is available and builds a string in the format "Full Name (Google ID)" and returns it,
-	 * otherwise returns the Google ID only.
-	 *
+	 * @return string The email address with the Google ID in parentheses, or the Google ID
+	 * only
+	 */
+	public function getEmailWithId() {
+		return $this->getWithGoogleId( 'email' );
+	}
+
+	/**
+	 * @param $data string
+	 * @return string
+	 */
+	private function getWithGoogleId( $data ) {
+		if ( $this->getData( $data ) ) {
+			return $this->getData( $data ) . ' ' . wfMessage( 'parentheses', $this->googleId );
+		}
+
+		return $this->googleId;
+	}
+
+	/**
 	 * @return string The full name with the Google ID in parentheses, or the Google ID only
 	 */
 	public function getFullNameWithId() {
-		if ( $this->getData( 'displayName' ) ) {
-			return $this->getData( 'displayName' ) . ' ' . wfMessage( 'parentheses', $this->googleId );
-		}
-		return $this->googleId;
+		return $this->getWithGoogleId( 'displayName' );
 	}
 
 	/**
