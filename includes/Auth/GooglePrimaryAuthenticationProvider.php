@@ -11,6 +11,7 @@ use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\AuthenticationResponse;
+use MWException;
 use User;
 
 use GoogleLogin\GoogleUser;
@@ -48,16 +49,16 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				wfMessage( 'googlelogin-error-no-authentication-workflow' )
 			);
 		}
-		$plus = $this->getAuthenticatedGooglePlusFromRequest( $request );
-		if ( $plus instanceof AuthenticationResponse ) {
-			return $plus;
-		}
 
 		try {
-			$userInfo = $plus->people->get( "me" );
-			$user = GoogleUser::getUserFromGoogleId( $userInfo['id'] );
+			$verifiedToken = $this->getVerifiedToken( $request );
+			if ( $verifiedToken instanceof AuthenticationResponse ) {
+				return $verifiedToken;
+			}
+
+			$user = GoogleUser::getUserFromGoogleId( $verifiedToken['sub'] );
 			if ( $user ) {
-				$email = $userInfo['emails'][0]['value'];
+				$email = $verifiedToken['email'];
 				if ( !GoogleLogin::isValidDomain( $email ) ) {
 					return AuthenticationResponse::newFail(
 						wfMessage( 'googlelogin-unallowed-domain', $email )
@@ -66,7 +67,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				return AuthenticationResponse::newPass( $user->getName() );
 			} else {
 				$resp = AuthenticationResponse::newPass( null );
-				$resp->linkRequest = new GoogleUserInfoAuthenticationRequest( $userInfo );
+				$resp->linkRequest = new GoogleUserInfoAuthenticationRequest( $verifiedToken );
 				$resp->createRequest = $resp->linkRequest;
 				return $resp;
 			}
@@ -151,7 +152,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			$req->action === AuthManager::ACTION_CHANGE
 		) {
 			$user = User::newFromName( $req->username );
-			$potentialUser = GoogleUser::getUserFromGoogleId( $req->userInfo['id'] );
+			$potentialUser = GoogleUser::getUserFromGoogleId( $req->userInfo['sub'] );
 			if ( $potentialUser && !$potentialUser->equals( $user ) ) {
 				return StatusValue::newFatal( 'googlelogin-link-other1' );
 			} elseif ( $potentialUser ) {
@@ -178,7 +179,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			$req->action === AuthManager::ACTION_CHANGE
 		) {
 			$user = User::newFromName( $req->username );
-			GoogleUser::connectWithGoogle( $user, $req->userInfo['id'] );
+			GoogleUser::connectWithGoogle( $user, $req->userInfo['sub'] );
 		}
 	}
 
@@ -194,7 +195,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 		$request = AuthenticationRequest::getRequestByClass( $reqs,
 			GoogleUserInfoAuthenticationRequest::class );
 		if ( $request ) {
-			if ( GoogleUser::isGoogleIdFree( $request->userInfo['id'] ) ) {
+			if ( GoogleUser::isGoogleIdFree( $request->userInfo['sub'] ) ) {
 				$resp = AuthenticationResponse::newPass();
 				$resp->linkRequest = $request;
 				return $resp;
@@ -211,22 +212,23 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				wfMessage( 'googlelogin-error-no-authentication-workflow' )
 			);
 		}
-		$plus = $this->getAuthenticatedGooglePlusFromRequest( $request );
-		if ( $plus instanceof AuthenticationResponse ) {
-			return $plus;
-		}
+
 		try {
-			$userInfo = $plus->people->get( "me" );
-			$isGoogleIdFree = GoogleUser::isGoogleIdFree( $userInfo['id'] );
+			$verifiedToken = $this->getVerifiedToken( $request );
+			if ( $verifiedToken instanceof AuthenticationResponse ) {
+				return $verifiedToken;
+			}
+
+			$isGoogleIdFree = GoogleUser::isGoogleIdFree( $verifiedToken['sub'] );
 			if ( $isGoogleIdFree ) {
-				$email = $userInfo['emails'][0]['value'];
+				$email = $verifiedToken['email'];
 				if ( !GoogleLogin::isValidDomain( $email ) ) {
 					return AuthenticationResponse::newFail(
 						wfMessage( 'googlelogin-unallowed-domain', $email )
 					);
 				}
 				$resp = AuthenticationResponse::newPass();
-				$resp->linkRequest = new GoogleUserInfoAuthenticationRequest( $userInfo );
+				$resp->linkRequest = new GoogleUserInfoAuthenticationRequest( $verifiedToken );
 				return $resp;
 			}
 			return AuthenticationResponse::newFail( wfMessage( 'googlelogin-link-other' ) );
@@ -239,9 +241,9 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 
 	public function finishAccountCreation( $user, $creator, AuthenticationResponse $response ) {
 		$userInfo = $response->linkRequest->userInfo;
-		$user->setEmail( $userInfo['emails'][0]['value'] );
+		$user->setEmail( $userInfo['email'] );
 		$user->saveSettings();
-		GoogleUser::connectWithGoogle( $user, $userInfo['id'] );
+		GoogleUser::connectWithGoogle( $user, $userInfo['sub'] );
 
 		return null;
 	}
@@ -259,18 +261,22 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			);
 		}
 		$client = $this->getGoogleClient();
-		$client->authenticate( $request->accessToken );
-		$plus = new Google_Service_Plus( $client );
+		$client->fetchAccessTokenWithAuthCode( $request->accessToken );
+		$verifiedToken = $client->verifyIdToken();
+
 		try {
-			$userInfo = $plus->people->get( "me" );
-			$googleId = $userInfo['id'];
+			if ( $verifiedToken === false ) {
+				throw new MWException( 'access_token could not be verified.' );
+			}
+
+			$googleId = $verifiedToken['sub'];
 			$potentialUser = GoogleUser::getUserFromGoogleId( $googleId );
 			if ( $potentialUser && !$potentialUser->equals( $user ) ) {
 				return AuthenticationResponse::newFail( wfMessage( 'googlelogin-link-other' ) );
 			} elseif ( $potentialUser ) {
 				return AuthenticationResponse::newFail( wfMessage( 'googlelogin-link-same' ) );
 			} else {
-				$email = $userInfo['emails'][0]['value'];
+				$email = $verifiedToken['email'];
 				if ( !GoogleLogin::isValidDomain( $email ) ) {
 					return AuthenticationResponse::newFail(
 						wfMessage( 'googlelogin-unallowed-domain', $email )
@@ -330,16 +336,15 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	 * Creates a new authenticated Google Plus Service from a GoogleServerAuthenticationRequest.
 	 *
 	 * @param $request
-	 * @return Google_Service_Plus|AuthenticationResponse
+	 * @return array|AuthenticationResponse
+	 * @throws MWException
 	 */
-	private function getAuthenticatedGooglePlusFromRequest( GoogleServerAuthenticationRequest
-		$request
-	) {
+	private function getVerifiedToken( GoogleServerAuthenticationRequest $request ) {
 		if ( !$request->accessToken || $request->errorCode ) {
 			switch ( $request->errorCode ) {
 				case 'access_denied':
-					return AuthenticationResponse::newFail( wfMessage( 'googlelogin-access-denied'
-						) );
+					return AuthenticationResponse::newFail(
+						wfMessage( 'googlelogin-access-denied' ) );
 					break;
 				default:
 					return AuthenticationResponse::newFail( wfMessage(
@@ -348,9 +353,13 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			}
 		}
 		$client = $this->getGoogleClient();
-		$client->authenticate( $request->accessToken );
-		$plus = new Google_Service_Plus( $client );
+		$client->fetchAccessTokenWithAuthCode( $request->accessToken );
+		$verifiedToken = $client->verifyIdToken();
 
-		return $plus;
+		if ( $verifiedToken === false ) {
+			throw new MWException( 'The access_token could not be verified.' );
+		}
+
+		return $verifiedToken;
 	}
 }
