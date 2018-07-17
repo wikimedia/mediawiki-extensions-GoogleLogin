@@ -20,7 +20,7 @@
 	"googlelogin-manage-linked": "La cuenta ta asociada con {{PLURAL:$1|una cuenta de Google|cuentes de Google}} {{PLURAL:$1|col siguiente identificador|colos siguientes identificadores}}:",
 	"googlelogin-manage-notlinked": "La cuenta nun ta asociada anguaño con nenguna cuenta de Google.",
 	"googlelogin-manage-changelegend": "Cambiar l'identificador de Google",
-	"googlelogin-manage-noplus": "<strong>Avisu</strong>: l'usuariu col identificador de Google qu'escribisti paez que nun tien perfil en Google+. ¿Pué ser por un error al escribilu?",
+	"googlelogin-manage-noplus": "<strong>Avisu</strong>: l'usuariu col identificador de Google qu'escribisti paez que nun tien perfil en Google+. ¿Puede ser por un error al escribilu?",
 	"googlelogin-manage-changedsuccess": "L'usuariu agora ta asociáu cola cuenta de Google.",
 	"googlelogin-manage-terminatesuccess": "L'usuariu yá nun ta asociáu con una cuenta de Google.",
 	"googlelogin-manage-changederror": "<strong>Hebo un error al crear/terminar l'asociación ente l'usuariu wiki y la cuenta de Google.</strong>",
