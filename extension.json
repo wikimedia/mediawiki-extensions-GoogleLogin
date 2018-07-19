@@ -49,7 +49,7 @@
 		"primaryauth": {
 			"GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider": {
 				"class": "GoogleLogin\\Auth\\GooglePrimaryAuthenticationProvider",
-				"sort": 101
+				"sort": 0
 			}
 		}
 	},
