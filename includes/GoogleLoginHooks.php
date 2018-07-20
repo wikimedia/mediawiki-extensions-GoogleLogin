@@ -4,6 +4,7 @@ namespace GoogleLogin;
 
 use GoogleLogin\HtmlForm\HTMLGoogleLoginButtonField;
 use GoogleLogin\Api\ApiGoogleLoginManageAllowedDomains;
+use MediaWiki\MediaWikiServices;
 
 class GoogleLoginHooks {
 	public static function onUserLogoutComplete() {
@@ -37,22 +38,26 @@ class GoogleLoginHooks {
 	 * @return bool
 	 */
 	public static function onMergeAccountFromTo( &$oldUser, &$newUser ) {
-		// check, if
+		/** @var GoogleIdProvider $googleIdProvider */
+		$googleIdProvider = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+		$oldUserGoogleIds = $googleIdProvider->getFromUser( $oldUser );
+		$newUserGoogleIds = $googleIdProvider->getFromUser( $oldUser );
 		if (
 			// the new user exists (e.g. is not Anonymous)
 			!$newUser->isAnon() &&
 			// the new user doesn't has a google connection already
-			!GoogleUser::hasConnectedGoogleAccount( $newUser ) &&
-			// the old user has a google connection
-			GoogleUser::hasConnectedGoogleAccount( $oldUser )
+			empty( $newUserGoogleIds ) &&
+			!empty( $oldUserGoogleIds )
 		) {
-			// save the google id of the old account
-			$googleIds = GoogleUser::getGoogleIdFromUser( $oldUser );
-			foreach ( $googleIds as $i => $id ) {
-				// delete the connection between the google and the old wiki account
-				GoogleUser::terminateGoogleConnection( $oldUser, $id );
-				// add the google id to the new account
-				GoogleUser::connectWithGoogle( $newUser, $id );
+			foreach ( $oldUserGoogleIds as $i => $id ) {
+				/** @var GoogleUserMatching $userMatchingService */
+				$userMatchingService = MediaWikiServices::getInstance()
+					->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
+				$token = [ 'sub' => $id ];
+
+				$userMatchingService->unmatch( $oldUser, $token );
+				$userMatchingService->match( $newUser, $token );
 			}
 		}
 

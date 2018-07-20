@@ -7,11 +7,13 @@ namespace GoogleLogin\Specials;
 
 use Exception;
 
+use GoogleLogin\Constants;
+use GoogleLogin\GoogleIdProvider;
 use GoogleLogin\GoogleLogin;
-use GoogleLogin\GoogleUser as User;
 
 use Google_Client;
 use Google_Service_Plus;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Implements a special page that gives information about a specific Google user, after
@@ -118,7 +120,10 @@ class SpecialGoogleLogin extends \SpecialPage {
 			return;
 		}
 
-		$isLinked = !User::isGoogleIdFree( $userInfo['id'] );
+		/** @var GoogleIdProvider $googleIdProvider */
+		$googleIdProvider = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+		$isLinked = $googleIdProvider->isAssociated( $userInfo['id'] );
 		// data that will be added to the account information box
 		$data = [
 			'Google-ID' => $userInfo['id'],
