@@ -5,7 +5,13 @@
 
 namespace GoogleLogin\Specials;
 
+use const bar\foo\baz\CONST2;
+use ExtensionRegistry;
+use GoogleLogin\Constants;
+use GoogleLogin\GoogleIdProvider;
 use GoogleLogin\GoogleLogin;
+use GoogleLogin\GoogleUserMatching;
+use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use Html;
 use HTMLForm;
@@ -100,7 +106,10 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$out->addBackLinkSubtitle( $this->getPageTitle() );
 
 		$out->addWikiMsg( 'googlelogin-manage-user', $user->getName() );
-		$googleIds = GoogleUser::getGoogleIdFromUser( $user );
+		/** @var GoogleIdProvider $googleidProvider */
+		$googleidProvider = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+		$googleIds = $googleidProvider->getFromUser( $user );
 		if ( $googleIds ) {
 			$googleIdLinks = '';
 			foreach ( $googleIds as $count => $googleId ) {
@@ -163,6 +172,13 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$out = $this->getOutput();
 		$glConfig = GoogleLogin::getGLConfig();
 		$name = ( isset( $data['username'] ) ? $data['username'] : '' );
+		/** @var GoogleUserMatching $userMatchingService */
+		$userMatchingService = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
+		/** @var GoogleIdProvider $userMatchingService */
+		$googleIdProvider = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+
 		if ( $checkSession && !$user->matchEditToken( $request->getVal( 'wpEditToken' ), $name ) ) {
 			throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
 		}
@@ -182,13 +198,13 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		}
 		if (
 			isset( $requestGoogleId ) &&
-			GoogleUser::hasConnectedGoogleAccount( $this->manageableUser )
+			!empty( $googleIdProvider->getFromUser( $this->manageableUser ) )
 		) {
 			// terminate the connection
 			$success = [];
 			foreach ( $requestGoogleId as $count => $googleId ) {
 				$id = str_replace( 'google-', '', $googleId );
-				if ( GoogleUser::terminateGoogleConnection( $this->manageableUser, $id ) ) {
+				if ( $userMatchingService->unmatch( $this->manageableUser, [ 'sub' => $id ] ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-terminatesuccess' );
 					$success[] = $id;
 				} else {
@@ -203,7 +219,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		if ( $requestAddGoogleId ) {
 			// try to create a new GoogleUser object with the given id to check, if there's
 			// already an user with this google id.
-			$newGoogleUser = GoogleUser::isGoogleIdFree( $requestAddGoogleId );
+			$newGoogleUser = !$googleIdProvider->isAssociated( $requestAddGoogleId );
 			if ( !is_numeric( $requestAddGoogleId ) ) {
 				$out->wrapWikiMsg( '<div class="error">$1</div>', 'googlelogin-manage-invalidid' );
 			} elseif ( !$newGoogleUser ) {
@@ -223,7 +239,10 @@ class SpecialManageGoogleLogin extends SpecialPage {
 					$out->addWikiMsg( 'googlelogin-manage-noplus' );
 				}
 
-				if ( GoogleUser::connectWithGoogle( $this->manageableUser, $requestAddGoogleId ) ) {
+				$matchResult = $userMatchingService->match( $this->manageableUser,
+					[ 'sub' => $requestAddGoogleId ] );
+
+				if ( $matchResult ) {
 					$out->addWikiMsg( 'googlelogin-manage-changedsuccess' );
 					$this->notifyUser( $glConfig, 'add', [ $requestAddGoogleId ] );
 				} else {

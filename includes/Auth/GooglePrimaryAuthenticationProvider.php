@@ -5,12 +5,17 @@
 
 namespace GoogleLogin\Auth;
 
+use const bar\foo\baz\CONST2;
 use Exception;
 
+use GoogleLogin\Constants;
+use GoogleLogin\GoogleIdProvider;
+use GoogleLogin\GoogleUserMatching;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use User;
 
@@ -54,7 +59,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				return $verifiedToken;
 			}
 
-			$user = GoogleUser::getUserFromGoogleId( $verifiedToken['sub'] );
+			/** @var GoogleUserMatching $userMatchingService */
+			$userMatchingService = MediaWikiServices::getInstance()
+				->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
+			$user = $userMatchingService->getUserFromToken( $verifiedToken );
 			if ( $user ) {
 				$email = $verifiedToken['email'];
 				if ( !GoogleLogin::isValidDomain( $email ) ) {
@@ -93,10 +101,16 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				break;
 			case AuthManager::ACTION_REMOVE:
 				$user = User::newFromName( $options['username'] );
-				if ( !$user || !GoogleUser::hasConnectedGoogleAccount( $user ) ) {
+
+				/** @var GoogleIdProvider $googleIdProvider */
+				$googleIdProvider = MediaWikiServices::getInstance()
+					->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+				$googleIds = $googleIdProvider->getFromUser( $user );
+
+				if ( !$user || empty( $googleIds ) ) {
 					return [];
 				}
-				$googleIds = GoogleUser::getGoogleIdFromUser( $user );
+
 				$reqs = [];
 				foreach ( $googleIds as $key => $id ) {
 					$reqs[] = new GoogleRemoveAuthenticationRequest( $id );
@@ -124,10 +138,12 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 
 	public function testUserCanAuthenticate( $username ) {
 		$user = \User::newFromName( $username );
-		if ( $user ) {
-			return GoogleUser::hasConnectedGoogleAccount( $user );
-		}
-		return false;
+
+		/** @var GoogleIdProvider $googleIdProvider */
+		$googleIdProvider = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+
+		return $user && !empty( $googleIdProvider->getFromUser( $user ) );
 	}
 
 	public function providerAllowsAuthenticationDataChange(
@@ -138,7 +154,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			$req->action === AuthManager::ACTION_REMOVE
 		) {
 			$user = User::newFromName( $req->username );
-			if ( $user && in_array( $req->getGoogleId(), GoogleUser::getGoogleIdFromUser( $user ) ) ) {
+			/** @var GoogleIdProvider $googleIdProvider */
+			$googleIdProvider = MediaWikiServices::getInstance()
+				->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+			if ( $user && in_array( $req->getGoogleId(), $googleIdProvider->getFromUser( $user ) ) ) {
 				return StatusValue::newGood();
 			} else {
 				return StatusValue::newFatal( wfMessage( 'googlelogin-change-account-not-linked' ) );
@@ -150,7 +169,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			$req->action === AuthManager::ACTION_CHANGE
 		) {
 			$user = User::newFromName( $req->username );
-			$potentialUser = GoogleUser::getUserFromGoogleId( $req->userInfo['sub'] );
+			/** @var GoogleUserMatching $userMatchingService */
+			$userMatchingService = MediaWikiServices::getInstance()
+				->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
+			$potentialUser = $userMatchingService->getUserFromToken( $req->userInfo );
 			if ( $potentialUser && !$potentialUser->equals( $user ) ) {
 				return StatusValue::newFatal( 'googlelogin-link-other1' );
 			} elseif ( $potentialUser ) {
@@ -164,12 +186,15 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	}
 
 	public function providerChangeAuthenticationData( AuthenticationRequest $req ) {
+		/** @var GoogleUserMatching $userMatchingService */
+		$userMatchingService = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
 		if (
 			get_class( $req ) === GoogleRemoveAuthenticationRequest::class &&
 			$req->action === AuthManager::ACTION_REMOVE
 		) {
 			$user = User::newFromName( $req->username );
-			GoogleUser::terminateGoogleConnection( $user, $req->getGoogleId() );
+			$userMatchingService->unmatch( $user, [ 'sub' => $req->getGoogleId() ] );
 		}
 
 		if (
@@ -177,7 +202,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			$req->action === AuthManager::ACTION_CHANGE
 		) {
 			$user = User::newFromName( $req->username );
-			GoogleUser::connectWithGoogle( $user, $req->userInfo['sub'] );
+			$userMatchingService->match( $user, $req->userInfo );
 		}
 	}
 
@@ -192,8 +217,12 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	public function beginPrimaryAccountCreation( $user, $creator, array $reqs ) {
 		$request = AuthenticationRequest::getRequestByClass( $reqs,
 			GoogleUserInfoAuthenticationRequest::class );
+
+		/** @var GoogleIdProvider $googleIdProvider */
+		$googleIdProvider = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
 		if ( $request ) {
-			if ( GoogleUser::isGoogleIdFree( $request->userInfo['sub'] ) ) {
+			if ( !$googleIdProvider->isAssociated( $request->userInfo['sub'] ) ) {
 				$resp = AuthenticationResponse::newPass();
 				$resp->linkRequest = $request;
 				return $resp;
@@ -217,8 +246,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				return $verifiedToken;
 			}
 
-			$isGoogleIdFree = GoogleUser::isGoogleIdFree( $verifiedToken['sub'] );
-			if ( $isGoogleIdFree ) {
+			/** @var GoogleIdProvider $googleIdProvider */
+			$googleIdProvider = MediaWikiServices::getInstance()
+				->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+			if ( !$googleIdProvider->isAssociated( $verifiedToken['sub'] ) ) {
 				$email = $verifiedToken['email'];
 				if ( !GoogleLogin::isValidDomain( $email ) ) {
 					return AuthenticationResponse::newFail(
@@ -241,7 +272,11 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 		$userInfo = $response->linkRequest->userInfo;
 		$user->setEmail( $userInfo['email'] );
 		$user->saveSettings();
-		GoogleUser::connectWithGoogle( $user, $userInfo['sub'] );
+
+		/** @var GoogleUserMatching $userMatchingService */
+		$userMatchingService = MediaWikiServices::getInstance()
+			->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
+		$userMatchingService->match( $user, $userInfo );
 
 		return null;
 	}
@@ -267,8 +302,10 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				throw new MWException( 'access_token could not be verified.' );
 			}
 
-			$googleId = $verifiedToken['sub'];
-			$potentialUser = GoogleUser::getUserFromGoogleId( $googleId );
+			/** @var GoogleUserMatching $userMatchingService */
+			$userMatchingService = MediaWikiServices::getInstance()
+				->getService( Constants::SERVICE_GOOGLE_USER_MATCHING);
+			$potentialUser = $userMatchingService->getUserFromToken( $verifiedToken );
 			if ( $potentialUser && !$potentialUser->equals( $user ) ) {
 				return AuthenticationResponse::newFail( wfMessage( 'googlelogin-link-other' ) );
 			} elseif ( $potentialUser ) {
@@ -280,7 +317,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 						wfMessage( 'googlelogin-unallowed-domain', $email )
 					);
 				}
-				$result = GoogleUser::connectWithGoogle( $user, $googleId );
+				$result = $userMatchingService->match( $user, $verifiedToken );
 				if ( $result ) {
 					return AuthenticationResponse::newPass();
 				} else {

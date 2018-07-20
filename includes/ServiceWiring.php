@@ -1,5 +1,7 @@
 <?php
 
+use GoogleLogin\GoogleIdProvider;
+use GoogleLogin\GoogleUserMatching;
 use MediaWiki\MediaWikiServices;
 use GoogleLogin\GoogleLogin;
 use GoogleLogin\AllowedDomains\CachedAllowedDomainsStore;
@@ -22,5 +24,13 @@ return [
 			return new CachedAllowedDomainsStore( $dbBackedStore, $cache );
 		}
 		return null;
+	},
+
+	Constants::SERVICE_GOOGLE_USER_MATCHING => function ( MediaWikiServices $services ) {
+		return new GoogleUserMatching( $services->getDBLoadBalancer() );
+	},
+
+	Constants::SERVICE_GOOGLE_ID_PROVIDER => function ( MediaWikiServices $services ) {
+		return new GoogleIdProvider( $services->getDBLoadBalancer() );
 	}
 ];
