@@ -51,7 +51,7 @@ class GoogleLoginHooks {
 			!empty( $oldUserGoogleIds )
 		) {
 			foreach ( $oldUserGoogleIds as $i => $id ) {
-				/** @var GoogleUserMatching $userMatchingService */
+				/** @var UserMatching\GoogleUserMatching $userMatchingService */
 				$userMatchingService = MediaWikiServices::getInstance()
 					->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
 				$token = [ 'sub' => $id ];
