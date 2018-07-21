@@ -1,6 +1,6 @@
 <?php
 
-use GoogleLogin\GoogleUserMatching;
+use GoogleLogin\UserMatching\GoogleUserMatching;
 use MediaWiki\MediaWikiServices;
 
 class GoogleUserMatchingTest extends MediaWikiTestCase {
@@ -30,7 +30,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::getUserFromToken()
 	 */
 	public function testGetUserFromTokenEmptyArray() {
 		$matchingService =
@@ -40,7 +40,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::getUserFromToken()
 	 */
 	public function testGetUserFromTokenTokenNotAssociated() {
 		$this->dbConnection->expects( $this->once() )
@@ -52,7 +52,70 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::getUserFromToken()
+	 */
+	public function testGetUserFromTokenNoEmailAttribute() {
+		$this->dbConnection->expects( $this->once() )
+			->method( 'selectRow' )
+			->willReturn( false );
+		$this->dbConnection->expects( $this->never() )->method( 'select' );
+		$matchingService = new GoogleUserMatching( $this->loadBalancer );
+
+		$this->assertNull( $matchingService->getUserFromToken( [ 'sub' => '123' ] ) );
+	}
+
+	/**
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::getUserFromToken()
+	 */
+	public function testGetUserFromTokenOneEmailLinked() {
+		$aResult = new StdClass();
+		$aResult->user_id = 1;
+		$this->dbConnection->expects( $this->once() )
+			->method( 'selectRow' )
+			->willReturn( false );
+		$this->dbConnection->expects( $this->once() )
+			->method( 'select' )
+			->with(
+				'user',
+				[ 'user_id' ],
+				[ 'user_email' => 'test@example.com', 'user_email_authenticated IS NOT NULL' ]
+			)
+			->willReturn( new FakeResultWrapper( [ $aResult ] ) );
+		$matchingService = new GoogleUserMatching( $this->loadBalancer );
+
+		$user = $matchingService
+			->getUserFromToken( [ 'sub' => '123', 'email' => 'test@example.com' ] );
+		$this->assertEquals( 1, $user->getId() );
+	}
+
+	/**
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::getUserFromToken()
+	 */
+	public function testGetUserFromTokenMultipleEmailsLinked() {
+		$aResult = new StdClass();
+		$aResult->user_id = 1;
+		$anotherResult = new StdClass();
+		$anotherResult->user_id = 1;
+		$this->dbConnection->expects( $this->once() )
+			->method( 'selectRow' )
+			->willReturn( false );
+		$this->dbConnection->expects( $this->once() )
+			->method( 'select' )
+			->with(
+				'user',
+				[ 'user_id' ],
+				[ 'user_email' => 'test@example.com', 'user_email_authenticated IS NOT NULL' ]
+			)
+			->willReturn( new FakeResultWrapper( [ $aResult, $anotherResult ] ) );
+		$matchingService = new GoogleUserMatching( $this->loadBalancer );
+
+		$this->assertNull(
+			$matchingService->getUserFromToken( [ 'sub' => '123', 'email' => 'test@example.com' ] )
+		);
+	}
+
+	/**
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::getUserFromToken()
 	 */
 	public function testGetUserFromTokenTokenAssociated() {
 		$userConnection = new StdClass();
@@ -64,13 +127,13 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 			->willReturn( $userConnection );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$user = $matchingService->getUserFromToken( [ 'sub' => '123' ] );
+		$user = $matchingService->getUserFromToken( [ 'sub' => '123', 'email' => 'test@example.com' ] );
 
 		$this->assertEquals( 100, $user->getId() );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::match()
 	 */
 	public function testMatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
@@ -79,7 +142,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::match()
 	 */
 	public function testMatchWithoutTokenId() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
@@ -88,7 +151,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::match()
 	 */
 	public function testMatchWithTokenIdAndUser() {
 		$this->dbConnection->expects( $this->once() )
@@ -104,7 +167,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::unmatch()
 	 */
 	public function testUnmatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
@@ -113,7 +176,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::unmatch()
 	 */
 	public function testUnmatchWithoutTokenId() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
@@ -122,7 +185,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\UserMatching\GoogleUserMatching::unmatch()
 	 */
 	public function testUnmatchWithTokenIdAndUser() {
 		$this->dbConnection->expects( $this->once() )

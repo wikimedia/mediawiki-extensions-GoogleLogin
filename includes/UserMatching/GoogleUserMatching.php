@@ -1,6 +1,6 @@
 <?php
 
-namespace GoogleLogin;
+namespace GoogleLogin\UserMatching;
 
 use LoadBalancer;
 use User;
@@ -10,30 +10,25 @@ class GoogleUserMatching {
 	 * @var LoadBalancer
 	 */
 	private $loadBalancer;
+	private $matchers = [];
 
 	public function __construct( LoadBalancer $loadBalancer ) {
 		$this->loadBalancer = $loadBalancer;
+		$this->matchers[] = new UserIdMatcher( $loadBalancer );
+		$this->matchers[] = new AuthenticatedEmailMatcher( $loadBalancer );
 	}
 
 	/**
 	 * @param array $token A verified token provided from Google after authenticating a user
 	 * @return User|null The user associated with the token or null if no user associated
 	 */
-	public function getUserFromToken( $token ) {
-		if ( !isset( $token['sub'] ) ) {
-			return null;
-		}
-		$db = $this->loadBalancer->getConnection( DB_MASTER );
-
-		$s = $db->selectRow(
-			'user_google_user',
-			[ 'user_id' ],
-			[ 'user_googleid' => $token['sub'] ],
-			__METHOD__
-		);
-
-		if ( $s !== false ) {
-			return User::newFromId( $s->user_id );
+	public function getUserFromToken( array $token ) {
+		/** @var IUserMatcher $matcher */
+		foreach ( $this->matchers as $matcher ) {
+			$user = $matcher->match( $token );
+			if ( $user !== null ) {
+				return $user;
+			}
 		}
 		return null;
 	}
@@ -43,7 +38,7 @@ class GoogleUserMatching {
 	 * @param array $token A verified token provided from Google after authenticating a user
 	 * @return bool True, if matching was successful, false otehrwise
 	 */
-	public function match( User $user, $token ) {
+	public function match( User $user, array $token ) {
 		if ( $user->isAnon() ) {
 			return false;
 		}
@@ -56,7 +51,7 @@ class GoogleUserMatching {
 			'user_google_user',
 			[
 				'user_id' => $user->getId(),
-				'user_googleid' => $token['sub']
+				'user_googleid' => $token['sub'],
 			]
 		);
 	}
@@ -66,7 +61,7 @@ class GoogleUserMatching {
 	 * @param array $token
 	 * @return bool True, if unmatching was successful, false otherwise
 	 */
-	public function unmatch( User $user, $token ) {
+	public function unmatch( User $user, array $token ) {
 		if ( $user->isAnon() ) {
 			return false;
 		}
