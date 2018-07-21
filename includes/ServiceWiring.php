@@ -1,7 +1,7 @@
 <?php
 
 use GoogleLogin\GoogleIdProvider;
-use GoogleLogin\GoogleUserMatching;
+use GoogleLogin\UserMatching\GoogleUserMatching;
 use MediaWiki\MediaWikiServices;
 use GoogleLogin\GoogleLogin;
 use GoogleLogin\AllowedDomains\CachedAllowedDomainsStore;
