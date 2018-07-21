@@ -9,7 +9,7 @@ use ExtensionRegistry;
 use GoogleLogin\Constants;
 use GoogleLogin\GoogleIdProvider;
 use GoogleLogin\GoogleLogin;
-use GoogleLogin\GoogleUserMatching;
+use GoogleLogin\UserMatching\GoogleUserMatching;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use Html;

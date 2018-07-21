@@ -14,6 +14,12 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	 */
 	private $loggedInUser;
 
+	private $validToken = [
+		'sub' => '123',
+		'email' => 'test@example.com',
+		'email_verified' => true,
+	];
+
 	protected function setUp() {
 		parent::setUp();
 
@@ -48,7 +54,82 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 			->willReturn( false );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
+		$this->assertNull( $matchingService->getUserFromToken( $this->validToken ) );
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
+	 */
+	public function testGetUserFromTokenNoEmailAttribute() {
+		$this->dbConnection->expects( $this->once() )
+			->method( 'selectRow' )
+			->willReturn( false );
+		$this->dbConnection->expects( $this->never() )->method( 'select' );
+		$matchingService = new GoogleUserMatching( $this->loadBalancer );
+
 		$this->assertNull( $matchingService->getUserFromToken( [ 'sub' => '123' ] ) );
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
+	 */
+	public function testGetUserFromTokenEmailNotVerified() {
+		$this->dbConnection->expects( $this->once() )
+			->method( 'selectRow' )
+			->willReturn( false );
+		$this->dbConnection->expects( $this->never() )->method( 'select' );
+		$matchingService = new GoogleUserMatching( $this->loadBalancer );
+
+		$token = $this->validToken;
+		$token['email_verified'] = false;
+		$this->assertNull( $matchingService->getUserFromToken( $token ) );
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
+	 */
+	public function testGetUserFromTokenOneEmailLinked() {
+		$aResult = new StdClass();
+		$aResult->user_id = 1;
+		$this->dbConnection->expects( $this->once() )
+			->method( 'selectRow' )
+			->willReturn( false );
+		$this->dbConnection->expects( $this->once() )
+			->method( 'select' )
+			->with(
+				'user',
+				[ 'user_id' ],
+				[ 'user_email' => 'test@example.com', 'user_email_authenticated IS NOT NULL' ]
+			)
+			->willReturn( new FakeResultWrapper( [ $aResult ] ) );
+		$matchingService = new GoogleUserMatching( $this->loadBalancer );
+
+		$user = $matchingService->getUserFromToken( $this->validToken );
+		$this->assertEquals( 1, $user->getId() );
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
+	 */
+	public function testGetUserFromTokenMultipleEmailsLinked() {
+		$aResult = new StdClass();
+		$aResult->user_id = 1;
+		$anotherResult = new StdClass();
+		$anotherResult->user_id = 1;
+		$this->dbConnection->expects( $this->once() )
+			->method( 'selectRow' )
+			->willReturn( false );
+		$this->dbConnection->expects( $this->once() )
+			->method( 'select' )
+			->with(
+				'user',
+				[ 'user_id' ],
+				[ 'user_email' => 'test@example.com', 'user_email_authenticated IS NOT NULL' ]
+			)
+			->willReturn( new FakeResultWrapper( [ $aResult, $anotherResult ] ) );
+		$matchingService = new GoogleUserMatching( $this->loadBalancer );
+
+		$this->assertNull( $matchingService->getUserFromToken( $this->validToken ) );
 	}
 
 	/**
@@ -64,7 +145,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 			->willReturn( $userConnection );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$user = $matchingService->getUserFromToken( [ 'sub' => '123' ] );
+		$user = $matchingService->getUserFromToken( $this->validToken );
 
 		$this->assertEquals( 100, $user->getId() );
 	}
@@ -100,7 +181,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 			->willReturn( true );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertTrue( $matchingService->match( $this->loggedInUser, [ 'sub' => '123' ] ) );
+		$this->assertTrue( $matchingService->match( $this->loggedInUser, $this->validToken ) );
 	}
 
 	/**
@@ -134,6 +215,6 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 			->willReturn( true );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertTrue( $matchingService->unmatch( $this->loggedInUser, [ 'sub' => '123' ] ) );
+		$this->assertTrue( $matchingService->unmatch( $this->loggedInUser, $this->validToken ) );
 	}
 }
