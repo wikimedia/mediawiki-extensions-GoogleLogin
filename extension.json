@@ -22,7 +22,6 @@
 		"googlelogin": "GlobalVarConfig::newInstance"
 	},
 	"SpecialPages": {
-		"GoogleLogin": "GoogleLogin\\Specials\\SpecialGoogleLogin",
 		"GoogleLoginReturn": "GoogleLogin\\Specials\\SpecialGoogleLoginReturn",
 		"ManageGoogleLogin": "GoogleLogin\\Specials\\SpecialManageGoogleLogin",
 		"GoogleLoginAllowedDomains": "GoogleLogin\\Specials\\SpecialGoogleLoginAllowedDomains"
