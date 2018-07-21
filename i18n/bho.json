@@ -7,10 +7,5 @@
 	"googlelogin": "गूगल से लॉग इन करीं",
 	"googlelogin-form-merge": "गूगल के विकी खाता में मर्ज करीं",
 	"googlelogin-form-unlink": "गूगल के बदला में -> विकी खाता",
-	"googlelogin-email": "ई-मेल पता",
-	"googlelogin-googleuser": "गूगल सदस्य",
-	"googlelogin-information-title": "खाता के बारे में जानकारी",
-	"googlelogin-linkstatus": "लिंक स्थिती",
-	"googlelogin-linked": "जुड़ गईल",
-	"googlelogin-unlinked": "पसंद नईखे"
+	"googlelogin-googleuser": "गूगल सदस्य"
 }

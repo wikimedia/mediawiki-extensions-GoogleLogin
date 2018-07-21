@@ -46,13 +46,8 @@
 	"googlelogin-unallowed-domain": "Epostdomenet som brukes for den primære epostadressen til Google-kontoen din ($1) tillates ikke innlogging på denne wikien.",
 	"googlelogin-form-merge": "Knytt Google-konto til wikikonto",
 	"googlelogin-form-unlink": "Fjern tilknytting mellom Google- og wikikonto",
-	"googlelogin-email": "Epostadresse",
 	"googlelogin-googleuser": "Google-bruker",
-	"googlelogin-information-title": "Kontoinformasjon",
 	"googlelogin-information-body": "I følgende tabell finner du informasjon om Google-kontoen din og hvorvidt den er knyttet til en wikikonto.",
-	"googlelogin-linkstatus": "Tilknyttingsstatus",
-	"googlelogin-linked": "tilknyttet",
-	"googlelogin-unlinked": "ikke tilknyttet",
 	"googlelogin-link-other": "Google-kontoen din er allerede tilknyttet en annen bruker. Fjern tilknyttingen eller kontakt en administrator om du ikke har en annen wikikonto.",
 	"googlelogin-link-same": "Google-kontoen din er allerede tilknyttet brukerkontoen din, så du kan ikke tilknytte den igjen.",
 	"googlelogin-prefs-status": "GoogleLogin-status:"

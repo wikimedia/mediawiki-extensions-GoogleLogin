@@ -16,8 +16,6 @@
 	"googlelogin-username": "Käyttäjänimi",
 	"googlelogin-form-merge": "Linkitä Google wiki-tiliin",
 	"googlelogin-form-unlink": "Pura linkitys wiki-tiliin",
-	"googlelogin-email": "Sähköpostiosoite",
 	"googlelogin-googleuser": "Google-käyttäjä",
-	"googlelogin-information-title": "Tunnuksen tiedot",
 	"googlelogin-auth-service-unknown-account": "Tuntematon Google-tili"
 }

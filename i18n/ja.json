@@ -24,8 +24,6 @@
 	"googlelogin-manage-addlabel": "Google IDを追加",
 	"googlelogin-create": "Google で作成",
 	"googlelogin-desc-authmanager": "利用者が、自身のGoogleアカウントと連携させ、ログインすることを許可する",
-	"googlelogin-email": "メールアドレス",
-	"googlelogin-information-title": "アカウント情報",
 	"googlelogin-link-help": "Googleアカウントをウィキのアカウントと連携します",
 	"googlelogin-param-error-label": "Googleから返されたエラーコード",
 	"googlelogin-param-code-label": "Googleからのアクセストークン",

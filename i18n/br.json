@@ -10,11 +10,6 @@
 	"googlelogin": "Kevreañ gant Google",
 	"googlelogin-manage-dismiss": "Disteurel",
 	"googlelogin-generic-error": "Hopopop, ur fazi a oa. Distroit, mar plij, hag esaeit en-dro. Kemennadenn : $1",
-	"googlelogin-email": "Chomlec'h postel",
 	"googlelogin-googleuser": "Implijer Google",
-	"googlelogin-information-title": "Titouroù diwar-benn ar gont",
-	"googlelogin-linkstatus": "Statud al liamm",
-	"googlelogin-linked": "liammet",
-	"googlelogin-unlinked": "n'eo ket liammet",
 	"googlelogin-prefs-status": "Statud GoogleLogin :"
 }
