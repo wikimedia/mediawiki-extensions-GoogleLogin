@@ -9,7 +9,7 @@ use Exception;
 
 use GoogleLogin\Constants;
 use GoogleLogin\GoogleIdProvider;
-use GoogleLogin\GoogleUserMatching;
+use GoogleLogin\UserMatching\GoogleUserMatching;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthManager;
