@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9c9ac9b2_34985e07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-07-23T15:55:03Z",
+      "side": 1,
+      "message": "typo, email",
+      "range": {
+        "startLine": 7,
+        "startChar": 21,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "3d2e633e07d2d03b8eb839574bd1155e4242978d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cfb8be59_39759cc2",
         "filename": "includes/UserMatching/AuthenticatedEmailMatcher.php",
         "patchSetId": 4
