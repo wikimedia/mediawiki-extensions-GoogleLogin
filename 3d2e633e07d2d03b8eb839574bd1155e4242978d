@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cfb8be59_39759cc2",
+        "filename": "includes/UserMatching/AuthenticatedEmailMatcher.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2018-07-23T12:42:44Z",
+      "side": 1,
+      "message": "No need to create own classes and an interface for it, it\u0027s very unlikely, that there will be more matchers. And if so, it should be implemented then.",
+      "revId": "3d2e633e07d2d03b8eb839574bd1155e4242978d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
