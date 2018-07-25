@@ -3,7 +3,8 @@
 		"authors": [
 			"Mehtab ahmed",
 			"Aursani",
-			"Indus Asia"
+			"Indus Asia",
+			"Tweety"
 		]
 	},
 	"googlelogin": "گوگل سان داخل ٿيو",
@@ -13,6 +14,7 @@
 	"googlelogin-manage-terminatesuccess": "اهو واپرائيندڙ هاڻي گوگل کاتي سان ڳنڍيل نہ آهي.",
 	"googlelogin-manage-isplusser": "گوگل+ جا کاتيدار",
 	"googlelogin-manage-givenid": "توهان جي داخل ڪيل گوگل سڃاڻپ اڳ ئي ٻي وڪي واپرائيندڙ سان ڳنڍيل آهي.",
+	"googlelogin-username": "واپرائيندڙ-نانءُ:",
 	"googlelogin-desc-authmanager": "واپرائيندڙن کي سندن گوگل کاتي ذريعي داخل ٿيڻ ڏيو",
 	"googlelogin-link-help": "پنھنجي وڪي کاتي کي گوگل کاتي سان ڳنڍيو.",
 	"googlelogin-auth-service-unknown-account": "اڻڄاتل گوگل کاتو.",
