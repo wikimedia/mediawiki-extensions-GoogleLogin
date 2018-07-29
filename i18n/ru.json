@@ -4,7 +4,8 @@
 			"Okras",
 			"Kaganer",
 			"Kareyac",
-			"Facenapalm"
+			"Facenapalm",
+			"Vlad5250"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Совершает запрос к API Google+ для получения личной информации о данном участнике.",
@@ -38,5 +39,6 @@
 	"googlelogin-prefs-status": "Статус GoogleLogin:",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Регистрация с этим тегом была произведена с помощью [[Special:GoogleLogin|GoogleLogin]]",
+	"right-managegooglelogindomains": "управление разрешёнными доменами GoogleLogin",
 	"echo-pref-tooltip-change-googlelogin": "Уведомить меня, когда администратор GoogleLogin меняет мои присоединённые аккаунты Google."
 }

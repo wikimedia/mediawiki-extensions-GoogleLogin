@@ -72,6 +72,7 @@
 	"tag-googlelogin-description": "Регистрациите со оваа ознака се направени со [[Special:GoogleLogin|Најава со Гугл]]",
 	"action-managegooglelogin": "раководење со поврзувања со Гугл",
 	"right-managegooglelogin": "Можност за додавање, отстранување и преглед на врски со Гугл",
+	"right-managegooglelogindomains": "Раководење со допуштени домени за најава со Гугл",
 	"echo-category-title-change-googlelogin": "Промени во поврзаноста со Гугл",
 	"notification-header-change-googlelogin": "Поврзаноста на вашата сметка со Гугл е изменета",
 	"notification-change-googlelogin": "{{GENDER:$2|Администраторот на Најава со Гугл}} $1 направи измена во поврзаноста со Гугл.",

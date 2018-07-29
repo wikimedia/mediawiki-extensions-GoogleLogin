@@ -80,6 +80,7 @@
 	"tag-googlelogin-description": "Les inscriptions avec cette balise ont été faites avec [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gérer les connexions GoogleLogin",
 	"right-managegooglelogin": "Droit d’ajouter, supprimer et afficher des connexions GoogleLogin",
+	"right-managegooglelogindomains": "Gérer des domaines GoogleLogin autorisés",
 	"echo-category-title-change-googlelogin": "Modifications des comptes Google connectés",
 	"notification-header-change-googlelogin": "Vos comptes de connexion à Google ont été changés",
 	"notification-change-googlelogin": "L'{{GENDER:$2|administrateur GoogleLogin}} $1 a changé vos  comptes Google connectés.",

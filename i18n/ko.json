@@ -37,6 +37,7 @@
 	"googlelogin-alloweddomain-added-success": "$1 도메인은 허용된 도메인 목록에 성공적으로 추가되었습니다.",
 	"googlelogin-alloweddomain-removed-success": "$1 도메인은 허용된 도메인 목록에서 성공적으로 제거되었습니다.",
 	"googlelogin-alloweddomain-change-error": "허용된 도메인 목록을 변경하는 동안 오류가 발생했습니다.",
+	"right-managegooglelogindomains": "허용된 구글로그인 도메인을 관리합니다",
 	"echo-category-title-change-googlelogin": "연결된 구글 계정 변경사항",
 	"notification-header-change-googlelogin": "연결된 구글 계정이 변경되었습니다",
 	"echo-pref-tooltip-change-googlelogin": "연결된 구글 계정을 관리자가 변경할 때 내게 알립니다."

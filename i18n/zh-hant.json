@@ -79,6 +79,7 @@
 	"tag-googlelogin-description": "帶此標籤的註冊是以[[Special:GoogleLogin| Google 登入]]建立",
 	"action-managegooglelogin": "管理 Google 登入連接",
 	"right-managegooglelogin": "可添加、移除，和檢視 Google 登入的連接",
+	"right-managegooglelogindomains": "管理已允許的 Google 登入網域",
 	"echo-category-title-change-googlelogin": "連線的 Google 帳戶變更",
 	"notification-header-change-googlelogin": "您連線的 Google 帳戶已變更",
 	"notification-change-googlelogin": "{{GENDER:$2|Google 登入管理員}} $1 已更改了您所連接的 Google 帳戶。",
