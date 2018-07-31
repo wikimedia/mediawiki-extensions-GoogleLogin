@@ -74,6 +74,7 @@
 	"tag-googlelogin-description": "Registos com esta marca foram feitos com o [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gerenciar ligações GoogleLogin",
 	"right-managegooglelogin": "Pode adicionar, remover e ver ligações GoogleLogin",
+	"right-managegooglelogindomains": "Gerenciar domínios permitidos para o GoogleLogin",
 	"echo-category-title-change-googlelogin": "Alterações na conta Google ligada",
 	"notification-header-change-googlelogin": "As suas contas Google ligadas foram modificadas",
 	"notification-change-googlelogin": "{{GENDER:$2|O administrador|A administradora}} GoogleLogin $1 alterou as suas contas Google ligadas.",
