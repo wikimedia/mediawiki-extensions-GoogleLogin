@@ -6,7 +6,8 @@
 			"Amitie 10g",
 			"Ryo567",
 			"YoViajo",
-			"Rubentl134"
+			"Rubentl134",
+			"MarcoAurelio"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Realiza una solicitud a la API de Google+ para obtener información personal sobre alguien.",
@@ -64,5 +65,6 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Los registros con esta etiqueta se han hecho con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "administrar conexiones de GoogleLogin",
-	"right-managegooglelogin": "Capaz de añadir, eliminar y ver conexiones de GoogleLogin"
+	"right-managegooglelogin": "Capaz de añadir, eliminar y ver conexiones de GoogleLogin",
+	"right-managegooglelogindomains": "Gestionar dominios de GoogleLogin autorizados"
 }

@@ -71,6 +71,7 @@
 	"tag-googlelogin-description": "Los rexistros con esta etiqueta fixéronse con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "alministrar conexones de GoogleLogin",
 	"right-managegooglelogin": "Puede amestar, desaniciar y ver conexones de GoogleLogin",
+	"right-managegooglelogindomains": "Xestionar los dominios de GoogleLogin autorizaos",
 	"echo-category-title-change-googlelogin": "Cambios na cuenta de Google conectada",
 	"notification-header-change-googlelogin": "Cambiáronse les tos cuentes de Google conectaes",
 	"notification-change-googlelogin": "L'{{GENDER:$2|alministrador de GoogleLogin|alministradora de GoogleLogin}} $1 cambió les tos cuentes de Google coneutaes.",

@@ -61,6 +61,7 @@
 	"tag-googlelogin-description": "Registreringar med den här taggen gjordes med [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "hantera GoogleLogin-anslutningar",
 	"right-managegooglelogin": "Kan inte lägga till, ta bort och visa GoogleLogin-anslutningar",
+	"right-managegooglelogindomains": "Hantera tillåtna GoogleLogin-domäner",
 	"echo-category-title-change-googlelogin": "Ändringar i anslutna Google-konton",
 	"notification-header-change-googlelogin": "Dina anslutna Google-konton har ändrats",
 	"notification-change-googlelogin": "{{GENDER:$2|GoogleLogin-administratören}} $1 ändrade dina anslutna Google-konton.",
