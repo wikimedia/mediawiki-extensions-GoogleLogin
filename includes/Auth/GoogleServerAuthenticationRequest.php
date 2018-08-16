@@ -45,7 +45,7 @@ class GoogleServerAuthenticationRequest extends AuthenticationRequest {
 	/**
 	 * Load data from query parameters in an OAuth return URL
 	 * @param array $data Submitted data as an associative array
-	 * @return AuthenticationRequest|null
+	 * @return bool
 	 */
 	public function loadFromSubmission( array $data ) {
 		if ( isset( $data['code'] ) ) {
