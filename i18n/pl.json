@@ -6,7 +6,8 @@
 			"Py64",
 			"Devwebtel",
 			"Saper",
-			"InternerowyGołąb"
+			"InternerowyGołąb",
+			"Railfail536"
 		]
 	},
 	"googlelogin": "Zaloguj się za pomocą Google",
@@ -14,7 +15,7 @@
 	"googlelogin-managelegend": "Znajdź użytkownika do zarządzania",
 	"googlelogin-manage-usersubmit": "Zarządzaj Użytkownikiem",
 	"googlelogin-manage-linked": "Konto jest połączone z {{PLURAL:$1|kontem|kontami}} Google o {{PLURAL:$1|następującym identyfikatorze|następujących identyfikatorach}}:",
-	"googlelogin-manage-notlinked": "Konto nie jest obecnie połączone z żadnym kontem Google.",
+	"googlelogin-manage-notlinked": "Konto obecnie nie jest połączone z żadnym kontem Google.",
 	"googlelogin-manage-changelegend": "Zmień Google ID",
 	"googlelogin-manage-noplus": "<strong>Uwaga:</strong> Użytkownik o podanym identyfikatorze nie ma profilu Google+. Być może wystąpiła pomyłka przy wpisywaniu?",
 	"googlelogin-manage-changedsuccess": "Ten użytkownik został powiązany z kontem Google.",
@@ -28,8 +29,12 @@
 	"googlelogin-manage-unknownerror": "Podczas pobierania Twoich danych wystąpił nierozpoznany błąd. Być może podano niepoprawny numer profilu albo konto nie istnieje w Google+?",
 	"googlelogin-manage-plusinfo-title": "Dane osobowe",
 	"googlelogin-manage-errorloading": "Błąd ładowania",
+	"googlelogin-manage-addlabel": "Dodaj ID Google",
 	"googlelogin-username": "Nazwa użytkownika",
 	"googlelogin-create": "Stwórz z Google",
+	"googlelogin-desc-authmanager": "Umożliwia użytkownikom logowanie za pośrednictwem ich kont Google",
+	"googlelogin-generic-error": "Ups, wystąpił błąd. Proszę wrócić i spróbować jeszcze raz. Komunikat: $1",
+	"googlelogin-unallowed-domain": "Domena adresu e-mail wykorzystywana przez twoje podstawowe konto Google ($1) nie jest akceptowana przy logowaniu się na tą wiki.",
 	"googlelogin-googleuser": "Użytkownik Google",
 	"googlelogin-link-same": "Twoje konto Google jest już połączone z użytkownikiem, więc nie można połączyć go ponownie.",
 	"googlelogin-prefs-status": "Stan GoogleLogin:",
@@ -45,6 +50,12 @@
 	"googlelogin-alloweddomain-addlabel": "Dodaj dozwoloną domenę",
 	"googlelogin-alloweddomain-added-success": "Domena $1 została pomyślnie dodana do listy dozwolonych domen.",
 	"googlelogin-alloweddomain-removed-success": "Domena $1 została pomyślnie usunięta z listy dozwolonych domen.",
+	"tag-googlelogin": "[[Special:GoogleLogin|Konto Google]]",
+	"tag-googlelogin-description": "Rejestracje kont z tym znacznikiem zostały wykonane za pośrednictwem [[Special:GoogleLogin|Konta Google]]",
 	"action-managegooglelogin": "zarządzaj powiązaniem kont użytkowników z Google",
-	"right-managegooglelogin": "Umożliwia dodawania, usuwanie i przeglądanie połączeń GoogleLogin"
+	"right-managegooglelogin": "Umożliwia dodawania, usuwanie i przeglądanie połączeń GoogleLogin",
+	"notification-header-change-googlelogin": "Twoje połączone konta Google zostały zmienione",
+	"notification-change-googlelogin": "{{PLURAL:$2|Administrator|Administratorka}} GoogleLogin, $1, {{PLURAL:$2|zmienił|zmieniła}} twoje połączone konta Google.",
+	"notification-add-googlelogin": "Następujące {{PLURAL:$2|konto|konta}} Google {{PLURAL:$1|jest|są}} teraz połączone z twoim kontem wiki: $1.",
+	"notification-remove-googlelogin": "Następujące {{PLURAL:$2|konto|konta}} Google nie {{PLURAL:$2|jest|są}} już połączone z twoim kontem wiki: $1."
 }
