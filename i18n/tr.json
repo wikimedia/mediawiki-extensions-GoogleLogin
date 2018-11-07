@@ -73,6 +73,7 @@
 	"tag-googlelogin-description": "Bu etikete yapılan kayıtlar [[Special:GoogleLogin|GoogleGiriş]] ile yapıldı",
 	"action-managegooglelogin": "GoogleGiriş bağlantılarını yönetin",
 	"right-managegooglelogin": "GoogleGiriş bağlantılarını ekleyebilir, kaldırabilir ve görüntüleyebilir",
+	"right-managegooglelogindomains": "İzin verilen GoogleLogin alanlarını yönetin",
 	"echo-category-title-change-googlelogin": "Bağlı Google hesabı değişiklikleri",
 	"notification-header-change-googlelogin": "Bağlı olan Google hesaplarınız değiştirildi",
 	"notification-change-googlelogin": "{{GENDER:$2|GoogleGiriş yöneticisi}} $1, Google hesaplarıyla olan bağlantınızı değiştirdi.",
