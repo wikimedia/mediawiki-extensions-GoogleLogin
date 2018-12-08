@@ -13,6 +13,7 @@ $( function ( mw ) {
 		 * @param {Integer} plusid The Google Plus ID to load the data from
 		 */
 		showInfoDialog: function ( plusid ) {
+			var infoDialog;
 			// Create an information overlay to show basics about a google plus id
 			function InfoDialog( config ) {
 				InfoDialog.super.call( this, config );
@@ -41,8 +42,7 @@ $( function ( mw ) {
 
 			// Make an api request to get the data and show the dialog.
 			InfoDialog.prototype.initialize = function () {
-				var self = this;
-
+				var self = this, fieldset, messageDialog;
 				InfoDialog.super.prototype.initialize.apply( this, arguments );
 				this.content = new OO.ui.PanelLayout( {
 					$: this.$,
@@ -56,7 +56,7 @@ $( function ( mw ) {
 					googleid: plusid
 				} ).done( function ( data ) {
 					if ( data && data.googleplusprofileinfo && data.googleplusprofileinfo.result ) {
-						$.each( data.googleplusprofileinfo.result, function ( index, value ) {
+						$.forEach( data.googleplusprofileinfo.result, function ( index, value ) {
 							var element;
 
 							if ( index !== 'profileimage' ) {
@@ -69,8 +69,8 @@ $( function ( mw ) {
 								if ( value === true || value === false ) {
 									value = (
 										value === true ?
-										mw.msg( 'googlelogin-manage-yes' ) :
-										mw.msg( 'googlelogin-manage-no' )
+											mw.msg( 'googlelogin-manage-yes' ) :
+											mw.msg( 'googlelogin-manage-no' )
 									);
 								}
 								element.addItems( [
@@ -83,14 +83,13 @@ $( function ( mw ) {
 								// add the profile image if there exists one
 								element = new OO.ui.LabelWidget( {
 									$: self.$,
-									label: $( '<img src="' + value + '">'  ),
+									label: $( '<img src="' + value + '">' ),
 									classes: [ 'googlelogin-profilepicture' ]
 								} );
 								self.content.$element.prepend( element.$element );
 							}
 						} );
 					} else {
-						var fieldset;
 						fieldset = new OO.ui.FieldsetLayout( {
 							$: self.$, label: 'Data could not be loaded', icon: 'alert'
 						} );
@@ -114,17 +113,17 @@ $( function ( mw ) {
 						msg = mw.msg( 'googlelogin-manage-unknownerror' );
 					}
 					self.close();
-					var messageDialog = new OO.ui.MessageDialog();
+					messageDialog = new OO.ui.MessageDialog();
 
 					// Add the dialog to the window manager.
 					windowManager.addWindows( [ messageDialog ] );
 
-					// Configure the message dialog when it is opened with the window manager's openWindow() method.
+					// Configure message dialog when opened with the window manager's openWindow()
 					windowManager.openWindow( messageDialog, {
 						title: mw.msg( 'googlelogin-manage-errorloading' ),
 						message: msg,
 						actions: [
-							// the user should have the chance to easily open the google plus profile, here is the link
+							// the user should be able to easily open the google plus profile
 							{
 								action: 'pluslink',
 								label: mw.msg( 'googlelogin-manage-openpluslink' ),
@@ -135,7 +134,7 @@ $( function ( mw ) {
 							// just close the dialog
 							{ action: 'reject', label: mw.msg( 'googlelogin-manage-dismiss' ), flags: 'safe' }
 						]
-					});
+					} );
 				} );
 			};
 
@@ -153,7 +152,7 @@ $( function ( mw ) {
 			};
 
 			// Create a new instance of InfoDialog
-			var infoDialog = new InfoDialog();
+			infoDialog = new InfoDialog();
 
 			// and add it to the window manager
 			windowManager.addWindows( [ infoDialog ] );

@@ -1,0 +1,18 @@
+{
+	"root": true,
+	"extends": [
+		"wikimedia/client",
+		"wikimedia/jquery"
+	],
+	"env": {
+		"browser": true,
+		"jquery": true
+	},
+	"globals": {
+		"mw": false,
+		"OO": false
+	},
+	"rules": {
+		"no-undef": 0
+	}
+}
