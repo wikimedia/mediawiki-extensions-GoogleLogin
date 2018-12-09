@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e9eb550f_8b39c6ee",
+        "filename": ".eslintrc.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6491
+      },
+      "writtenOn": "2018-12-09T12:35:16Z",
+      "side": 1,
+      "message": "In gruntfile.js I think I fixed it the right way. I also added another global because in ext.GoogleLogin.specialManage.js mediaWiki was undefined but I\u0027m not sure if adding as global is the right way of fixing that?",
+      "parentUuid": "4970e520_fe7b511f",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 15
+      },
+      "revId": "55377504bb6a392ed3710df2ab9b49aa1f38df52",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ff38cc5f_d103d77e",
         "filename": ".stylelintrc",
         "patchSetId": 2
