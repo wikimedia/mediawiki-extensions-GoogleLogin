@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e54d9d4_09a3b066",
+        "filename": "javascripts/specialpages/ext.GoogleLogin.specialManage.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-12-10T09:06:56Z",
+      "side": 1,
+      "message": "Confusingly, the call signatures of Array.forEach is different. $.each is ( index, value ) while Array.forEach is ( value, index ) - so you\u0027ll need to switch that.",
+      "range": {
+        "startLine": 59,
+        "startChar": 6,
+        "endLine": 59,
+        "endChar": 13
+      },
+      "revId": "4f8b85f1e9053d4ea8c08411c9fcba60b6b82f6e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
