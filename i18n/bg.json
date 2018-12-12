@@ -4,5 +4,7 @@
 			"StanProg"
 		]
 	},
+	"googlelogin-manage-yes": "да",
+	"googlelogin-manage-no": "не",
 	"googlelogin-username": "Потребителско име"
 }
