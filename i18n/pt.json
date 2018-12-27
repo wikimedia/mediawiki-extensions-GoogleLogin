@@ -61,7 +61,7 @@
 	"googlelogin-param-error-label": "Código de erro devolvido pela Google",
 	"googlelogin-param-error-help": "Em caso de falha na autenticação, o código de erro devolvido pela Google.",
 	"googlelogin-param-code-label": "Chave de acesso da Google",
-	"googlelogin-param-code-help": "No caso de uma autenticação com sucesso, a chave de acesso devolvida pela Google.",
+	"googlelogin-param-code-help": "No caso de uma autenticação com êxito, a chave de acesso devolvida pela Google.",
 	"googlelogin-change-account-not-linked": "Não pode eliminar a ligação a uma conta Google, porque a sua conta não está associada a uma conta Google.",
 	"googlelogin-auth-service-unknown-account": "Conta Google desconhecida",
 	"googlelogin-access-denied": "Não foi possível iniciar sessão. Negou o acesso à informação da sua conta Google.",
