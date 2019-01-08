@@ -78,6 +78,7 @@
 	"tag-googlelogin-description": "Реєстрації з цим теґом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "керування зв'язками GoogleLogin",
 	"right-managegooglelogin": "Можливість додати, видалити або оглянути зв'язки із GoogleLogin",
+	"right-managegooglelogindomains": "Керувати дозволеними доменами GoogleLogin",
 	"echo-category-title-change-googlelogin": "Зміни пов'язаного облікового запису Google",
 	"notification-header-change-googlelogin": "Ваші пов'язані облікові записи Google було змінено",
 	"notification-change-googlelogin": "{{GENDER:$2|GoogleLogin-адміністратор $1 змінив|GoogleLogin-адміністраторка $1 змінила}} Ваші пов'язані облікові записи Google.",
