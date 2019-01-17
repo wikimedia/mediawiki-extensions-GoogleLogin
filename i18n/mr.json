@@ -3,7 +3,8 @@
 		"authors": [
 			"V.narsikar",
 			"अभय नातू",
-			"Rupalichinchure"
+			"Rupalichinchure",
+			"Sureshkhole"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "दिलेल्या सदस्याबाबत काही वैयक्तिक माहिती शोधण्यास गूगल+एपीआयला विनंती करते.",
@@ -16,7 +17,7 @@
 	"googlelogin-manage-notlinked": "हे खाते खरेतर कोणत्याही गूगल खात्याशी जोडल्या गेलेले नाही.",
 	"googlelogin-manage-givenid": "आपण टाकलेली गूगलची ओळखण दुसऱ्या विकिसदस्याशी निगडीत आहे.",
 	"googlelogin-manage-addlabel": "गूगल ओळखण जोडा",
-	"googlelogin-desc-authmanager": "सदस्यांना त्यांच्या गूगल खात्याने सनोंद-प्रवेश करण्यास परवानगी द्या.",
+	"googlelogin-desc-authmanager": "सदस्यांना त्यांच्या गूगल खात्याने आल्याची नोंद करण्यास परवानगी द्या.",
 	"googlelogin-link-same": "आपले गूगल खाते पूर्वीच आपल्या सदस्यत्वाशी जोडले आहे, म्हणून आपण ते पुन्हा जोडू शकत नाही.",
 	"googlelogin-loginbutton-help": "आपल्या गूगल खात्याने आपले अधिप्रमाणन करते.",
 	"googlelogin-link-help": "आपले विकिखाते गूगल खात्याशी जोडा.",
@@ -24,6 +25,6 @@
 	"googlelogin-param-code-label": "गूगल मार्फत पोहोच बिल्ला",
 	"googlelogin-change-account-not-linked": "आपण गूगल खात्याचा अनुबंध हटवू शकत नाही, कारण आपले खाते गूगल खात्याशी जोडल्या गेलेले नाही.",
 	"googlelogin-auth-service-unknown-account": "अनोळखी गूगल खाते",
-	"googlelogin-access-denied": "सनोंद-प्रवेशास अक्षम.आपण आपल्या गूगल खात्याच्या माहितीस पोहोच देण्यास नकार दिलेला आहे.",
+	"googlelogin-access-denied": "आल्याची नोंद झाली नाही. आपण आपल्या गूगल खात्याच्या माहितीस पोहोच देण्यास नकार दिलेला आहे.",
 	"googlelogin-alloweddomain-addlabel": "अनुमत डोमेन जोडा"
 }
