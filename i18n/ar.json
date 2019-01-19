@@ -3,7 +3,8 @@
 		"authors": [
 			"محمد أحمد عبد الفتاح",
 			"علاء",
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "يقدم طلبا إلى api جوجل+ لاكتشاف بعض المعلومات الشخصية عن مستخدم معين.",
@@ -14,6 +15,7 @@
 	"apihelp-googleloginmanagealloweddomain-param-method": "طريقة التنفيذ، إما إزالة أو إضافة نطاق من/إلى القائمة.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "النطاق لإضافته أو إزالته إلى القائمة.",
 	"googlelogin": "تسجيل الدخول باستخدام جوجل",
+	"googlelogin-auth-service-name": "جوجل",
 	"managegooglelogin": "إدارة اتصالات GoogleLogin",
 	"googleloginalloweddomains": "إدارة النطاقات المسموح بها لـGoogleLogin",
 	"googlelogin-managelegend": "ابحث عن مستخدم لإدارته",
