@@ -1,4 +1,4 @@
-{
+
 	"@metadata": {
 		"authors": [
 			"Florian Schmidt"
@@ -24,7 +24,7 @@
 	"googlelogin-manage-noplus": "<strong>Notice:</strong> The user with the Google ID you entered seems to have no Google+ profile. Maybe a typing error?",
 	"googlelogin-manage-changedsuccess": "The user is now linked with the Google account.",
 	"googlelogin-manage-terminatesuccess": "The user isn't linked with a Google account anymore.",
-	"googlelogin-manage-changederror": "<strong>An error occured while create/terminate the link between the wiki user and the Google account.</strong>",
+	"googlelogin-manage-changederror": "<strong>An error occurred while create/terminate the link between the wiki user and the Google account.</strong>",
 	"googlelogin-manage-terminatebutton": "Remove connection",
 	"googlelogin-manage-invalidid": "The new Google ID you entered is invalid. The ID needs to be numeric.",
 	"googlelogin-manage-isplusser": "Registered on Google+",
