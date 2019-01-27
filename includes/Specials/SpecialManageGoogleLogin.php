@@ -5,6 +5,7 @@
 
 namespace GoogleLogin\Specials;
 
+use ExtensionRegistry;
 use GoogleLogin\GoogleLogin;
 use SpecialPage;
 use Html;
