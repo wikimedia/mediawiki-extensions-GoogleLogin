@@ -28,7 +28,6 @@ class GoogleLogin {
 			$client->setClientId( $glConfig->get( 'GLAppId' ) );
 			$client->setClientSecret( $glConfig->get( 'GLSecret' ) );
 			$client->setRedirectUri( $returnToUrl );
-			$client->addScope( 'profile' );
 			$client->addScope( 'email' );
 			$client->setState( $token );
 			self::$mGoogleClient = $client;
