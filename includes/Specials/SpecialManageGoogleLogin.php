@@ -140,7 +140,10 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				'columns' => [
 					$this->msg( 'googlelogin-manage-terminatebutton' )->escaped() => 'google'
 				],
-				'rows' => array_combine( $googleIds, $googleIds ),
+				'rows' => array_combine(
+					array_map( [ $this, 'strval' ], $googleIds ),
+					$googleIds
+				),
 				'label-raw' => 'Google ID',
 				'id' => 'mw-gl-username',
 			];
@@ -154,6 +157,10 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$htmlForm->setWrapperLegendMsg( $this->msg( 'googlelogin-manage-changelegend' ) );
 		$htmlForm->setSubmitCallback( [ $this, 'submitForm' ] );
 		$htmlForm->show();
+	}
+
+	public function strval( $val ) {
+		return 'ID ' . $val;
 	}
 
 	/**
