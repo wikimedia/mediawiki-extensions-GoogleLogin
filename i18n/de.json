@@ -8,6 +8,8 @@
 			"Tehabe"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Macht eine Anfrage an die Google+-API, um einige persönliche Informationen über einen angegebenen Benutzer herauszufinden.",
+	"apihelp-googleplusprofileinfo-summary": "Macht eine Anfrage an die Google+-API, um einige persönliche Informationen über einen angegebenen Benutzer herauszufinden.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Die Google-ID des Benutzers.",
 	"apihelp-googleloginmanagealloweddomain-description": "Erlaubt die Verwaltung der Liste der Domains, die zur Anmeldung mit Google verwendet werden dürfen.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Verwaltet erlaubte Domains für GoogleLogin",
