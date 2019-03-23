@@ -5,7 +5,8 @@
 			"Kaganer",
 			"Kareyac",
 			"Facenapalm",
-			"Vlad5250"
+			"Vlad5250",
+			"Diralik"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Совершает запрос к приложению Google+ для получения личной информации о данном участнике.",
@@ -22,7 +23,7 @@
 	"googlelogin-manage-usersubmit": "Управление пользователем",
 	"googlelogin-manage-user": "Вы управляете {{GENDER:$1|участником|участницей}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Эта учётная запись связана с {{PLURAL:$1|учётной записью Google|учётными записями Google}} со {{PLURAL:$1|следующим ID|следующими ID}}:",
-	"googlelogin-manage-notlinked": "Учетная запись в настоящее время не связана с каким-либо аккаунтом Google.",
+	"googlelogin-manage-notlinked": "Учётная запись в настоящее время не связана с каким-либо аккаунтом Google.",
 	"googlelogin-manage-changelegend": "Изменить Google ID",
 	"googlelogin-manage-noplus": "<strong>Обратите внимание:</strong> у пользователя с введённым вами идентификатором Google ID нет профиля Google+. Может быть, опечатка?",
 	"googlelogin-manage-changedsuccess": "Теперь участник связан с учётной записью Google.",
