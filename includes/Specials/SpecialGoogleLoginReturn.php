@@ -34,7 +34,7 @@ class SpecialGoogleLoginReturn extends UnlistedSpecialPage {
 				? $authData[GooglePrimaryAuthenticationProvider::RETURNURL_SESSION_KEY]
 				: false;
 		if ( !$redirectUrl || !$token->match( $request->getVal( 'state' ) ) ) {
-			$out->redirect( SpecialPage::getTitleFor( 'UserLogin' )->getLocalURL() );
+			$out->redirect( SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL() );
 			return;
 		}
 		$code = $request->getVal( 'code' );
