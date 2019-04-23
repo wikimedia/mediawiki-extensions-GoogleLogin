@@ -75,6 +75,7 @@
 	"tag-googlelogin-description": "Registrierungen mit dieser Markierung wurden durchgeführt mit [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "GoogleLogin-Verbindungen zu verwalten",
 	"right-managegooglelogin": "Kann GoogleLogin-Verbindungen hinzufügen, entfernen und einsehen",
+	"action-managegooglelogindomains": "erlaubte GoogleLogin-Domains zu verwalten",
 	"right-managegooglelogindomains": "Erlaubte GoogleLogin-Domains verwalten",
 	"echo-category-title-change-googlelogin": "Änderungen an verbundenen Google-Konten",
 	"notification-header-change-googlelogin": "Deine verbundenen Google-Konten wurden geändert",
