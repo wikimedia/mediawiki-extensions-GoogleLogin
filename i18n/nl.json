@@ -50,6 +50,7 @@
 	"googlelogin-prefs-status": "GoogleLogin status:",
 	"googlelogin-auth-service-unknown-account": "Onbekend Google-account",
 	"googlelogin-alloweddomains-notmanageable": "De toegestane domeinen kunnen niet beheerd worden in deze interface. Om deze domeinen toch toe te staan voor uw GoogleLogin, hoeft u deze lijst toe te voegen in de database.",
+	"googlelogin-alloweddomain-terminatebutton": "Verwijderen",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registraties met dit label zijn gemaakt met [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "Beheren GoogleLogin verbindingen"

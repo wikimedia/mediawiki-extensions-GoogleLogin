@@ -58,6 +58,7 @@
 	"tag-googlelogin-description": "Rejestracje kont z tym znacznikiem zostały wykonane za pośrednictwem [[Special:GoogleLogin|Konta Google]]",
 	"action-managegooglelogin": "zarządzaj powiązaniem kont użytkowników z Google",
 	"right-managegooglelogin": "Umożliwia dodawania, usuwanie i przeglądanie połączeń GoogleLogin",
+	"action-managegooglelogindomains": "zarządzania dozwolonymi domenami GoogleLogin",
 	"notification-header-change-googlelogin": "Twoje połączone konta Google zostały zmienione",
 	"notification-change-googlelogin": "{{PLURAL:$2|Administrator|Administratorka}} GoogleLogin, $1, {{PLURAL:$2|zmienił|zmieniła}} twoje połączone konta Google.",
 	"notification-add-googlelogin": "Następujące {{PLURAL:$2|konto|konta}} Google {{PLURAL:$1|jest|są}} teraz połączone z twoim kontem wiki: $1.",
