@@ -5,7 +5,8 @@
 			"Baffo",
 			"Macofe",
 			"Statix64",
-			"Einreiher"
+			"Einreiher",
+			"Senpremì"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Effettua una richiesta alle API Google+ per trovare alcune informazioni personali su di un determinato utente.",
@@ -33,5 +34,6 @@
 	"googlelogin-alloweddomain-addlabel": "Aggiungi dominio consentito",
 	"googlelogin-alloweddomain-added-success": "Il dominio $1 è stato aggiunto con successo nell'elenco dei domini consentiti.",
 	"googlelogin-alloweddomain-removed-success": "Il dominio $1 è stato rimosso con successo dall'elenco dei domini consentiti.",
-	"googlelogin-alloweddomain-change-error": "Si è verificato un errore durante la modifica dell'elenco dei domini consentiti."
+	"googlelogin-alloweddomain-change-error": "Si è verificato un errore durante la modifica dell'elenco dei domini consentiti.",
+	"action-managegooglelogindomains": "gestire i domini GoogleLogin consentiti"
 }
