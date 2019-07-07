@@ -13,7 +13,7 @@
 		]
 	},
 	"googlelogin": "Aanmelden met Google",
-	"managegooglelogin": "Beheren GoogleLogin verbindingen",
+	"managegooglelogin": "GoogleLogin verbindingen beheren",
 	"googlelogin-managelegend": "Het vinden van de Gebruiker te beheren",
 	"googlelogin-manage-usersubmit": "Gebruiker beheren",
 	"googlelogin-manage-user": "U beheert de {{GENDER:$1|gebruiker}} <strong>$1</strong>.",
@@ -22,7 +22,7 @@
 	"googlelogin-manage-changelegend": "Google-ID aanpassen",
 	"googlelogin-manage-noplus": "<strong>Notice:</strong> The User with the Google ID you entered seems to have no Google+ profile. Maybe a typing error?",
 	"googlelogin-manage-changedsuccess": "De Gebruiker is nu gekoppeld met het Google-account.",
-	"googlelogin-manage-terminatesuccess": "De Gebruiker die niet gekoppeld is aan een Google-account niet meer.",
+	"googlelogin-manage-terminatesuccess": "De gebruiker niet langer aan een Google-account gekoppeld.",
 	"googlelogin-manage-changederror": "<strong>Er is een fout opgetreden tijdens het maken/beëindiging van de koppeling tussen de wiki-gebruiker en de Google-account.</strong>",
 	"googlelogin-manage-terminatebutton": "Verbinding verwijderen",
 	"googlelogin-manage-invalidid": "De nieuwe Google-ID die u hebt opgegeven is ongeldig. De ID moet numeriek zijn.",
