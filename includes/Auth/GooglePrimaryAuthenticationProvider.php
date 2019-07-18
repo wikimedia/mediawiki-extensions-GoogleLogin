@@ -100,6 +100,9 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			case AuthManager::ACTION_REMOVE:
 				$user = User::newFromName( $options['username'] );
 
+				if ( $user === false || $user->isAnon() ) {
+					return [];
+				}
 				/** @var GoogleIdProvider $googleIdProvider */
 				$googleIdProvider = MediaWikiServices::getInstance()
 					->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
