@@ -2,8 +2,10 @@
 
 namespace GoogleLogin;
 
-use GoogleLogin\HtmlForm\HTMLGoogleLoginButtonField;
+use Config;
 use GoogleLogin\Api\ApiGoogleLoginManageAllowedDomains;
+use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
+use GoogleLogin\HtmlForm\HTMLGoogleLoginButtonField;
 use MediaWiki\MediaWikiServices;
 
 class GoogleLoginHooks {
@@ -20,12 +22,16 @@ class GoogleLoginHooks {
 		$schema = "$sql/user_google_user.sql";
 		$updater->addExtensionUpdate( [ 'addTable', 'user_google_user', $schema, true ] );
 		if ( !$updater->getDB()->indexExists( 'user_google_user', 'user_id' ) ) {
-			$updater->modifyExtensionField( 'user_google_user',
-				'user_id',
+			$updater->modifyExtensionField( 'user_google_user', 'user_id',
 				"$sql/user_google_user_user_id_index.sql" );
 		}
 		$schema = "$sql/googlelogin_allowed_domains.sql";
-		$updater->addExtensionUpdate( [ 'addTable', 'googlelogin_allowed_domains', $schema, true ] );
+		$updater->addExtensionUpdate( [
+			'addTable',
+			'googlelogin_allowed_domains',
+			$schema,
+			true,
+		] );
 
 		return true;
 	}
@@ -39,21 +45,18 @@ class GoogleLoginHooks {
 	 */
 	public static function onMergeAccountFromTo( &$oldUser, &$newUser ) {
 		/** @var GoogleIdProvider $googleIdProvider */
-		$googleIdProvider = MediaWikiServices::getInstance()
-			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
+		$googleIdProvider =
+			MediaWikiServices::getInstance()->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
 		$oldUserGoogleIds = $googleIdProvider->getFromUser( $oldUser );
 		$newUserGoogleIds = $googleIdProvider->getFromUser( $oldUser );
-		if (
-			// the new user exists (e.g. is not Anonymous)
-			!$newUser->isAnon() &&
-			// the new user doesn't has a google connection already
-			empty( $newUserGoogleIds ) &&
-			!empty( $oldUserGoogleIds )
-		) {
+		if ( // the new user exists (e.g. is not Anonymous)
+			!$newUser->isAnon() && // the new user doesn't has a google connection already
+			empty( $newUserGoogleIds ) && !empty( $oldUserGoogleIds ) ) {
 			foreach ( $oldUserGoogleIds as $i => $id ) {
 				/** @var GoogleUserMatching $userMatchingService */
-				$userMatchingService = MediaWikiServices::getInstance()
-					->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
+				$userMatchingService =
+					MediaWikiServices::getInstance()
+						->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
 				$token = [ 'sub' => $id ];
 
 				$userMatchingService->unmatch( $oldUser, $token );
@@ -86,17 +89,15 @@ class GoogleLoginHooks {
 	 * @param array &$formDescriptor Array of fields in a descriptor format
 	 * @param string $action one of the AuthManager::ACTION_* constants.
 	 */
-	public static function onAuthChangeFormFields( array $requests, array $fieldInfo,
-		array &$formDescriptor, $action
+	public static function onAuthChangeFormFields(
+		array $requests, array $fieldInfo, array &$formDescriptor, $action
 	) {
 		if ( isset( $formDescriptor['googlelogin'] ) ) {
-			$formDescriptor['googlelogin'] = array_merge( $formDescriptor['googlelogin'],
-				[
-					'weight' => 101,
-					'flags' => [],
-					'class' => HTMLGoogleLoginButtonField::class
-				]
-			);
+			$formDescriptor['googlelogin'] = array_merge( $formDescriptor['googlelogin'], [
+				'weight' => 101,
+				'flags' => [],
+				'class' => HTMLGoogleLoginButtonField::class,
+			] );
 			unset( $formDescriptor['googlelogin']['type'] );
 		}
 	}
@@ -131,6 +132,7 @@ class GoogleLoginHooks {
 				],
 			];
 		}
+
 		return true;
 	}
 
@@ -142,10 +144,8 @@ class GoogleLoginHooks {
 	 * @return bool
 	 */
 	public static function onEchoGetBundleRules( \EchoEvent $event, &$bundleString ) {
-		if (
-			$event->getType() === 'change-googlelogin' &&
-			GoogleLogin::getGLConfig()->get( 'GLEnableEchoEvents' )
-		) {
+		if ( $event->getType() === 'change-googlelogin' &&
+			GoogleLogin::getGLConfig()->get( 'GLEnableEchoEvents' ) ) {
 			$bundleString = 'change-googlelogin';
 			$agentUser = $event->getAgent();
 			if ( $agentUser ) {
@@ -161,6 +161,36 @@ class GoogleLoginHooks {
 			$moduleManager->addModule( 'googleloginmanagealloweddomain', 'action',
 				ApiGoogleLoginManageAllowedDomains::class );
 		}
+
 		return true;
+	}
+
+	/**
+	 * @throws ConfigurationError
+	 */
+	public static function onSetup() {
+		$services = MediaWikiServices::getInstance();
+		$config = $services->getConfigFactory()->makeConfig( 'googlelogin' );
+		if ( !$config->get( 'GLAuthoritativeMode' ) ) {
+			return;
+		}
+
+		$mainConfig = $services->getMainConfig();
+		if ( self::isOnlyPrimaryProvider( self::authManagerConfig( $mainConfig ) ) ) {
+			throw new ConfigurationError( "GoogleLogin runs in authoritative mode, but multiple primary authentication providers where found." );
+		}
+		if ( strpos( $mainConfig->get( 'InvalidUsernameCharacters' ), '@' ) !== false ) {
+			throw new ConfigurationError( "GoogleLogin runs in authoritative mode, but the @ sign is not allowed to be used in usernames." );
+		}
+	}
+
+	private static function isOnlyPrimaryProvider( $authManagerConfig ) {
+		return count( $authManagerConfig['primaryauth'] ) !== 1 ||
+			!isset( $authManagerConfig['primaryauth'][GooglePrimaryAuthenticationProvider::class] );
+	}
+
+	private static function authManagerConfig( Config $mainConfig ) {
+		return $mainConfig->get( 'AuthManagerConfig' )
+			?: $mainConfig->get( 'AuthManagerAutoConfig' );
 	}
 }

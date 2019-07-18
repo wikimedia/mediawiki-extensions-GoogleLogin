@@ -105,6 +105,7 @@
 		"localBasePath": "",
 		"remoteExtPath": "GoogleLogin"
 	},
+	"callback": "GoogleLogin\\GoogleLoginHooks::onSetup",
 	"Hooks": {
 		"AuthChangeFormFields": [
 			"GoogleLogin\\GoogleLoginHooks::onAuthChangeFormFields"
@@ -138,7 +139,8 @@
 		"GLAllowedDomainsStrict": false,
 		"GLAllowedDomainsDB": false,
 		"GLAPIKey": "",
-		"GLEnableEchoEvents": true
+		"GLEnableEchoEvents": true,
+		"GLAuthoritativeMode": true
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"

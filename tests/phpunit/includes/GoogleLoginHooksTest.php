@@ -2,6 +2,9 @@
 
 namespace GoogleLogin;
 
+use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
+use mysql_xdevapi\Exception;
+
 class GoogleLoginHooksTest extends \MediaWikiTestCase {
 
 	/**
@@ -104,6 +107,128 @@ class GoogleLoginHooksTest extends \MediaWikiTestCase {
 			} ) );
 
 		$this->assertTrue( GoogleLoginHooks::onLoadExtensionSchemaUpdates( $dbUpdaterMock ) );
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 */
+	public function testOnSetupAuthoritativeOtherProviders() {
+		$this->setMwGlobals([
+			'wgGLAuthoritativeMode' => true,
+			'wgAuthManagerConfig' => [
+				'primaryauth' => [
+					'AnyOtherProvider' => [],
+					GooglePrimaryAuthenticationProvider::class => []
+				]
+			]
+		]);
+		$this->expectException(ConfigurationError::class);
+
+		GoogleLoginHooks::onSetup();
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 */
+	public function testOnSetupAuthoritativeNoOtherProviders() {
+		$this->setMwGlobals([
+			'wgGLAuthoritativeMode' => true,
+			'wgAuthManagerConfig' => [
+				'primaryauth' => [
+					GooglePrimaryAuthenticationProvider::class => []
+				]
+			],
+			'wgInvalidUsernameCharacters' => ':'
+		]);
+
+		try {
+			$this->assertNull(GoogleLoginHooks::onSetup());
+		} catch (ConfigurationError $exception) {
+			$this->fail('Exception should not be thrown');
+		}
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 */
+	public function testOnSetupNonAuthoritativeOtherProviders() {
+		$this->setMwGlobals([
+			'wgGLAuthoritativeMode' => false,
+			'wgAuthManagerConfig' => [
+				'primaryauth' => [
+					'AnyOtherProvider' => [],
+					GooglePrimaryAuthenticationProvider::class => []
+				]
+			]
+		]);
+
+		try {
+			$this->assertNull(GoogleLoginHooks::onSetup());
+		} catch (ConfigurationError $exception) {
+			$this->fail('Exception should not be thrown');
+		}
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 */
+	public function testOnSetupNonAuthoritativeAtDisallowedUserChar() {
+		$this->setMwGlobals([
+			'wgGLAuthoritativeMode' => false,
+			'wgAuthManagerConfig' => [
+				'primaryauth' => [
+					'AnyOtherProvider' => [],
+					GooglePrimaryAuthenticationProvider::class => []
+				]
+			],
+			'wgInvalidUsernameCharacters' => '@'
+		]);
+
+		try {
+			$this->assertNull(GoogleLoginHooks::onSetup());
+		} catch (ConfigurationError $exception) {
+			$this->fail('Exception should not be thrown');
+		}
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 */
+	public function testOnSetupAuthoritativeAtDisallowedUserChar() {
+		$this->setMwGlobals([
+			'wgGLAuthoritativeMode' => true,
+			'wgAuthManagerConfig' => [
+				'primaryauth' => [
+					GooglePrimaryAuthenticationProvider::class => []
+				]
+			],
+			'wgInvalidUsernameCharacters' => '@'
+		]);
+
+		$this->expectException(ConfigurationError::class);
+
+		GoogleLoginHooks::onSetup();
+	}
+
+	/**
+	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 */
+	public function testOnSetupAuthoritativeNoAtDisallowedUserChar() {
+		$this->setMwGlobals([
+			'wgGLAuthoritativeMode' => true,
+			'wgAuthManagerConfig' => [
+				'primaryauth' => [
+					GooglePrimaryAuthenticationProvider::class => []
+				]
+			],
+			'wgInvalidUsernameCharacters' => ':'
+		]);
+
+		try {
+			$this->assertNull(GoogleLoginHooks::onSetup());
+		} catch (ConfigurationError $exception) {
+			$this->fail('Exception should not be thrown');
+		}
 	}
 
 	public function provideAllowedDomainsConfig() {
