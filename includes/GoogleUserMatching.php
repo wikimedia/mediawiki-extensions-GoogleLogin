@@ -2,17 +2,17 @@
 
 namespace GoogleLogin;
 
-use LoadBalancer;
 use User;
+use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class GoogleUserMatching {
 	/**
-	 * @var LoadBalancer
+	 * @var ILoadBalancer
 	 */
 	private $loadBalancer;
 
-	public function __construct( LoadBalancer $loadBalancer ) {
+	public function __construct( ILoadBalancer $loadBalancer ) {
 		$this->loadBalancer = $loadBalancer;
 	}
 
