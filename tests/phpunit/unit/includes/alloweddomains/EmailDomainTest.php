@@ -2,7 +2,9 @@
 
 namespace GoogleLogin\AllowedDomains;
 
-class EmailDomainTest extends \MediaWikiTestCase {
+use MediaWikiUnitTestCase;
+
+class EmailDomainTest extends MediaWikiUnitTestCase {
 	private static $preDefinedSuffixes = [
 		'com',
 		'us.co',
