@@ -2,16 +2,23 @@
 
 namespace GoogleLogin;
 
-class GoogleLoginHooksTest extends \MediaWikiTestCase {
+use ApiMain;
+use ApiModuleManager;
+use MediaWikiIntegrationTestCase;
+
+/**
+ * @group Database
+ */
+class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 	/**
-	 * @var \ApiModuleManager
+	 * @var ApiModuleManager
 	 */
 	private $moduleManager;
 
 	public function setup() {
 		parent::setUp();
-		$this->moduleManager = new \ApiModuleManager( new \ApiMain() );
+		$this->moduleManager = new ApiModuleManager( new ApiMain() );
 	}
 
 	/**

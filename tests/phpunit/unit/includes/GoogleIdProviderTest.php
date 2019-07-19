@@ -1,8 +1,15 @@
 <?php
 
-use GoogleLogin\GoogleIdProvider;
+namespace GoogleLogin;
 
-class GoogleIdProviderTest extends MediaWikiTestCase {
+use Database;
+use LoadBalancer;
+use MediaWikiUnitTestCase;
+use PHPUnit_Framework_MockObject_MockObject;
+use stdClass;
+use User;
+
+class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 	/**
 	 * @var PHPUnit_Framework_MockObject_MockObject
 	 */
@@ -12,11 +19,10 @@ class GoogleIdProviderTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 
-		$this->dbConnection =
-			$this->getMockBuilder( Database::class )->disableOriginalConstructor()->getMock();
+		$this->dbConnection = $this->getMock( Database::class, [], [], '', false );
 
 		$this->loadBalancer =
-			$this->getMockBuilder( LoadBalancer::class )->disableOriginalConstructor()->getMock();
+			$this->getMock( LoadBalancer::class, [], [], '', false );
 		$this->loadBalancer->method( 'getConnection' )->willReturn( $this->dbConnection );
 	}
 

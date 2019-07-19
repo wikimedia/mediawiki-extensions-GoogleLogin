@@ -3,8 +3,8 @@
 namespace GoogleLogin;
 
 use LoadBalancer;
-use ResultWrapper;
 use User;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class GoogleUserMatching {
 	/**
@@ -120,8 +120,8 @@ class GoogleUserMatching {
 			__METHOD__
 		);
 
-		if ( $s instanceof ResultWrapper && $s->numRows() === 1 ) {
-			return User::newFromId( $s->next()->user_id );
+		if ( $s instanceof IResultWrapper && $s->numRows() === 1 ) {
+			return User::newFromId( $s->current()->user_id );
 		}
 		return null;
 	}
