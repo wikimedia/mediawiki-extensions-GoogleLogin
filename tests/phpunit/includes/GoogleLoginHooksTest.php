@@ -2,7 +2,9 @@
 
 namespace GoogleLogin;
 
-class GoogleLoginHooksTest extends \MediaWikiTestCase {
+use MediaWikiTestCase;
+
+class GoogleLoginHooksTest extends MediaWikiTestCase {
 
 	/**
 	 * @var \ApiModuleManager
