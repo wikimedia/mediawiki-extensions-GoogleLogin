@@ -1,6 +1,13 @@
 <?php
 
-use GoogleLogin\GoogleIdProvider;
+namespace GoogleLogin;
+
+use Database;
+use LoadBalancer;
+use MediaWikiTestCase;
+use PHPUnit_Framework_MockObject_MockObject;
+use stdClass;
+use User;
 
 class GoogleIdProviderTest extends MediaWikiTestCase {
 	/**

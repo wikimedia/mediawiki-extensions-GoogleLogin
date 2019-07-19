@@ -1,7 +1,15 @@
 <?php
 
-use GoogleLogin\GoogleUserMatching;
+namespace GoogleLogin;
+
+use Database;
+use LoadBalancer;
 use MediaWiki\MediaWikiServices;
+use MediaWikiTestCase;
+use PHPUnit_Framework_MockObject_MockObject;
+use stdClass;
+use User;
+use Wikimedia\Rdbms\FakeResultWrapper;
 
 class GoogleUserMatchingTest extends MediaWikiTestCase {
 	/**
