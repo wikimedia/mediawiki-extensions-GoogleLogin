@@ -1,9 +1,16 @@
 <?php
 
-use GoogleLogin\GoogleUserMatching;
-use MediaWiki\MediaWikiServices;
+namespace GoogleLogin;
 
-class GoogleUserMatchingTest extends MediaWikiTestCase {
+use Database;
+use LoadBalancer;
+use MediaWikiUnitTestCase;
+use PHPUnit_Framework_MockObject_MockObject;
+use stdClass;
+use User;
+use Wikimedia\Rdbms\FakeResultWrapper;
+
+class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 	/**
 	 * @var PHPUnit_Framework_MockObject_MockObject
 	 */
@@ -40,7 +47,7 @@ class GoogleUserMatchingTest extends MediaWikiTestCase {
 	 */
 	public function testGetUserFromTokenEmptyArray() {
 		$matchingService =
-			new GoogleUserMatching( MediaWikiServices::getInstance()->getDBLoadBalancer() );
+			new GoogleUserMatching( $this->loadBalancer );
 
 		$this->assertNull( $matchingService->getUserFromToken( [] ) );
 	}
