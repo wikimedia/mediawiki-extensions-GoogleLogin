@@ -18,7 +18,7 @@ class UpdatePublicSuffixArray extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->mDescription = 'Updates the list of public suffixes used for domain recognition.';
+		$this->addDescription( 'Updates the list of public suffixes used for domain recognition.' );
 		$this->requireExtension( 'GoogleLogin' );
 	}
 
