@@ -4,6 +4,7 @@ namespace GoogleLogin;
 
 use ApiMain;
 use ApiModuleManager;
+use MediaWiki\MediaWikiServices;
 use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
 use MediaWikiIntegrationTestCase;
 
@@ -19,7 +20,10 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 	public function setup() {
 		parent::setUp();
-		$this->moduleManager = new ApiModuleManager( new ApiMain() );
+		$this->moduleManager = new ApiModuleManager(
+			new ApiMain(),
+			MediaWikiServices::getInstance()->getObjectFactory()
+		);
 	}
 
 	/**
