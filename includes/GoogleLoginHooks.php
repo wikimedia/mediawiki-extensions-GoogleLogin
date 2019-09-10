@@ -178,9 +178,10 @@ class GoogleLoginHooks {
 		}
 
 		$mainConfig = $services->getMainConfig();
-		if ( self::isOnlyPrimaryProvider( self::authManagerConfig( $mainConfig ) ) ) {
+		if ( !self::isOnlyPrimaryProvider( self::authManagerConfig( $mainConfig ) ) ) {
 			throw new ConfigurationError( "GoogleLogin runs in authoritative mode, " .
-			"but multiple primary authentication providers where found." );
+				"but multiple primary authentication providers where found. Found the following providers: " .
+				self::primaryProviderNames( self::authManagerConfig( $mainConfig ) ) );
 		}
 		if ( strpos( $mainConfig->get( 'InvalidUsernameCharacters' ), '@' ) !== false ) {
 			throw new ConfigurationError( "GoogleLogin runs in authoritative mode, " .
@@ -189,12 +190,26 @@ class GoogleLoginHooks {
 	}
 
 	private static function isOnlyPrimaryProvider( $authManagerConfig ) {
-		return count( $authManagerConfig['primaryauth'] ) !== 1 ||
-			!isset( $authManagerConfig['primaryauth'][GooglePrimaryAuthenticationProvider::class] );
+		return count( $authManagerConfig['primaryauth'] ) === 1 ||
+			self::firstPrimaryProviderClass( $authManagerConfig ) ===
+			GooglePrimaryAuthenticationProvider::class;
 	}
 
 	private static function authManagerConfig( Config $mainConfig ) {
 		return $mainConfig->get( 'AuthManagerConfig' )
 			?: $mainConfig->get( 'AuthManagerAutoConfig' );
+	}
+
+	private static function primaryProviderNames( $authManagerConfig ) {
+		return implode( ',', array_keys( $authManagerConfig['primaryauth'] ) );
+	}
+
+	private static function firstPrimaryProviderClass( $authManagerConfig ) {
+		$primaryProviders = array_values( $authManagerConfig['primaryauth'] );
+
+		if ( isset( $primaryProviders[0]['class'] ) ) {
+			return $primaryProviders[0]['class'];
+		}
+		return null;
 	}
 }

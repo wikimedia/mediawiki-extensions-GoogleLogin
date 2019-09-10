@@ -4,8 +4,8 @@ namespace GoogleLogin;
 
 use ApiMain;
 use ApiModuleManager;
-use MediaWikiIntegrationTestCase;
 use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
+use MediaWikiIntegrationTestCase;
 
 /**
  * @group Database
@@ -120,7 +120,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgAuthManagerConfig' => [
 				'primaryauth' => [
 					'AnyOtherProvider' => [],
-					GooglePrimaryAuthenticationProvider::class => [],
+					GooglePrimaryAuthenticationProvider::class => [
+						'class' => GooglePrimaryAuthenticationProvider::class,
+					],
 				],
 			],
 		] );
@@ -137,7 +139,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgGLAuthoritativeMode' => true,
 			'wgAuthManagerConfig' => [
 				'primaryauth' => [
-					GooglePrimaryAuthenticationProvider::class => [],
+					GooglePrimaryAuthenticationProvider::class => [
+						'class' => GooglePrimaryAuthenticationProvider::class,
+					],
 				],
 			],
 			'wgInvalidUsernameCharacters' => ':',
@@ -160,7 +164,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgAuthManagerConfig' => [
 				'primaryauth' => [
 					'AnyOtherProvider' => [],
-					GooglePrimaryAuthenticationProvider::class => [],
+					GooglePrimaryAuthenticationProvider::class => [
+						'class' => GooglePrimaryAuthenticationProvider::class,
+					],
 				],
 			],
 		] );
@@ -182,7 +188,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgAuthManagerConfig' => [
 				'primaryauth' => [
 					'AnyOtherProvider' => [],
-					GooglePrimaryAuthenticationProvider::class => [],
+					GooglePrimaryAuthenticationProvider::class => [
+						'class' => GooglePrimaryAuthenticationProvider::class,
+					],
 				],
 			],
 			'wgInvalidUsernameCharacters' => '@',
@@ -204,7 +212,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgGLAuthoritativeMode' => true,
 			'wgAuthManagerConfig' => [
 				'primaryauth' => [
-					GooglePrimaryAuthenticationProvider::class => [],
+					GooglePrimaryAuthenticationProvider::class => [
+						'class' => GooglePrimaryAuthenticationProvider::class,
+					],
 				],
 			],
 			'wgInvalidUsernameCharacters' => '@',
@@ -223,7 +233,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgGLAuthoritativeMode' => true,
 			'wgAuthManagerConfig' => [
 				'primaryauth' => [
-					GooglePrimaryAuthenticationProvider::class => [],
+					GooglePrimaryAuthenticationProvider::class => [
+						'class' => GooglePrimaryAuthenticationProvider::class,
+					],
 				],
 			],
 			'wgInvalidUsernameCharacters' => ':',
