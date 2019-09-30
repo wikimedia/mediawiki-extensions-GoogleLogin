@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pyscowicz"
+			"Pyscowicz",
+			"Silvonen"
 		]
 	},
 	"googlelogin": "Kirjaudu sisään käyttämällä Google-tunnusta",
@@ -17,5 +18,6 @@
 	"googlelogin-form-merge": "Linkitä Google wiki-tiliin",
 	"googlelogin-form-unlink": "Pura linkitys wiki-tiliin",
 	"googlelogin-googleuser": "Google-käyttäjä",
-	"googlelogin-auth-service-unknown-account": "Tuntematon Google-tili"
+	"googlelogin-auth-service-unknown-account": "Tuntematon Google-tili",
+	"googlelogin-alloweddomain-terminatebutton": "Poista"
 }
