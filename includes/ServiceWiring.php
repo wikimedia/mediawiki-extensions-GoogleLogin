@@ -19,7 +19,7 @@ return [
 			return new ArrayAllowedDomainsStore( $glConfig->get( 'GLAllowedDomains' ) );
 		} elseif ( $glConfig->get( 'GLAllowedDomainsDB' ) ) {
 			$dbBackedStore = new DBAllowedDomainsStore( $services->getDBLoadBalancer() );
-			$cache = wfGetCache( wfIsHHVM() ? CACHE_ACCEL : CACHE_ANYTHING );
+			$cache = wfGetCache( CACHE_ANYTHING );
 
 			return new CachedAllowedDomainsStore( $dbBackedStore, $cache );
 		}
