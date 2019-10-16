@@ -4,7 +4,8 @@
 			"Sayginer",
 			"Watermelon juice",
 			"HakanIST",
-			"Hedda"
+			"Hedda",
+			"BaRaN6161 TURK"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Belirli bir kullanıcı hakkındaki bazı kişisel bilgileri öğrenmek için Google+ API'sine bir istek yapar.",
@@ -33,6 +34,7 @@
 	"googlelogin-manage-givenid": "Girdiğiniz Google kimliği başka bir viki kullanıcısına bağlı.",
 	"googlelogin-manage-orgname": "Kuruluş adı",
 	"googlelogin-manage-orgtitle": "İş pozisyonu",
+	"googlelogin-manage-orgsince": "Beri",
 	"googlelogin-manage-yes": "evet",
 	"googlelogin-manage-no": "hayır",
 	"googlelogin-manage-dismiss": "Reddet",
@@ -73,6 +75,7 @@
 	"tag-googlelogin-description": "Bu etikete yapılan kayıtlar [[Special:GoogleLogin|GoogleGiriş]] ile yapıldı",
 	"action-managegooglelogin": "GoogleGiriş bağlantılarını yönetin",
 	"right-managegooglelogin": "GoogleGiriş bağlantılarını ekleyebilir, kaldırabilir ve görüntüleyebilir",
+	"action-managegooglelogindomains": "izin verilen GoogleLogin alanlarını yönet",
 	"right-managegooglelogindomains": "İzin verilen GoogleLogin alanlarını yönetin",
 	"echo-category-title-change-googlelogin": "Bağlı Google hesabı değişiklikleri",
 	"notification-header-change-googlelogin": "Bağlı olan Google hesaplarınız değiştirildi",
