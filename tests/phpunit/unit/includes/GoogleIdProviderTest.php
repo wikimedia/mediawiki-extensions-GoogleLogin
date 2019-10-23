@@ -16,7 +16,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 	private $dbConnection;
 	private $loadBalancer;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->dbConnection = $this->getMockBuilder( IDatabase::class )

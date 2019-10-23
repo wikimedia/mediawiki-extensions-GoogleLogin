@@ -30,7 +30,7 @@ class EmailDomainTest extends MediaWikiUnitTestCase {
 	 */
 	private $twoSuffixMail;
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		$this->googleMail = new EmailDomain( 'test@gmail.com', false, self::$preDefinedSuffixes );
 		$this->emptyMail = new EmailDomain( '', false, self::$preDefinedSuffixes );

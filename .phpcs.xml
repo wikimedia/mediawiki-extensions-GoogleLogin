@@ -3,6 +3,7 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationProtected" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
+		<exclude name="PSR12.Properties.ConstantVisibility.NotFound" />
 		<exclude name="Squiz.PHP.NonExecutableCode.Unreachable" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
 	</rule>
