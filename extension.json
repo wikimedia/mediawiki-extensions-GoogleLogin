@@ -5,7 +5,7 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:GoogleLogin",
 	"descriptionmsg": "googlelogin-desc-authmanager",
 	"license-name": "MIT",
-	"type": "auth",
+	"type": "other",
 	"GroupPermissions": {
 		"sysop": {
 			"managegooglelogin": true
