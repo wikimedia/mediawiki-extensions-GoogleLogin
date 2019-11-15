@@ -14,8 +14,8 @@
 	"googlelogin-link-help": "Ligar tu conto wiki a tu conto Google.",
 	"googlelogin-param-error-label": "Codice de error retornate ab Google",
 	"googlelogin-param-error-help": "In caso de un fallimento de authentication, le codice de error retornate ab Google.",
-	"googlelogin-param-code-label": "Indicio de accesso ab Google",
-	"googlelogin-param-code-help": "In caso de un authentication succedite, le indicio de accesso retornate ab Google.",
+	"googlelogin-param-code-label": "Token de accesso ab Google",
+	"googlelogin-param-code-help": "In caso de un authentication succedite, le token de accesso retornate ab Google.",
 	"googlelogin-change-account-not-linked": "Tu non pote remover un connexion a un conto Google perque tu conto non es connectite a un conto Google.",
 	"googlelogin-auth-service-unknown-account": "Conto Google incognite",
 	"googlelogin-access-denied": "Impossibile aperir session. Tu ha refusate le accesso al information de tu conto Google."
