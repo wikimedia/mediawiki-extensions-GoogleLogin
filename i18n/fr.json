@@ -10,7 +10,8 @@
 			"Wladek92",
 			"Trial",
 			"Fitoschido",
-			"The RedBurn"
+			"The RedBurn",
+			"Thibaut120094"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fait une requête à l’API de Google+ pour trouver des informations personnelles sur un utilisateur donné.",
@@ -29,7 +30,7 @@
 	"googlelogin-manage-linked": "Le compte est lié avec {{PLURAL:$1|un compte|les comptes}} Google ayant pour {{PLURAL:$1|ID|IDs}}:",
 	"googlelogin-manage-notlinked": "Le compte n’est actuellement lié à aucun compte Google.",
 	"googlelogin-manage-changelegend": "Changer le Google ID",
-	"googlelogin-manage-noplus": "<strong>Note :</strong> L’utilisateur avec l’ID Google que vous avez saisi ne semble pas avoir de profil Google+. Peut-être une erreur de frappe ?",
+	"googlelogin-manage-noplus": "<strong>Note :</strong> L’utilisateur avec l’ID Google que vous avez saisi ne semble pas avoir de profil Google+. Peut-être une erreur de frappe ?",
 	"googlelogin-manage-changedsuccess": "L'Utilisateur est désormais lié avec le compte Google.",
 	"googlelogin-manage-terminatesuccess": "L’utilisateur n’est plus lié avec un compte Google.",
 	"googlelogin-manage-changederror": "<strong>Une erreur s’est produite lors de la création/suppression du lien entre l’utilisateur du wiki et le compte Google.</strong>",
@@ -44,7 +45,7 @@
 	"googlelogin-manage-no": "non",
 	"googlelogin-manage-dismiss": "Fermer",
 	"googlelogin-manage-openpluslink": "Ouvrir le profil Google+",
-	"googlelogin-manage-unknownerror": "Il y a eu une erreur inconnue lors du chargement de vos données. Peut-être que l’utilisateur n’existe pas sur Google+ ou l’ID du profil est erroné ?",
+	"googlelogin-manage-unknownerror": "Il y a eu une erreur inconnue lors du chargement de vos données. Peut-être que l’utilisateur n’existe pas sur Google+ ou l’ID du profil est erroné ?",
 	"googlelogin-manage-plusinfo-title": "information de profil",
 	"googlelogin-manage-errorloading": "Erreur de chargement",
 	"googlelogin-manage-addlabel": "Ajouter le Google ID",
