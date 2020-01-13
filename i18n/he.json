@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Guycn2",
-			"LaG roiL"
+			"LaG roiL",
+			"Ghsuvr"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "לשלוח בקשה ל־api של Google+ כדי למצוא מידע אישי על משתמש מסוים.",
 	"googlelogin": "כניסה עם חשבון Google",
 	"googlelogin-manage-linked": "החשבון מקושר עם {{PLURAL:$1|חשבון Google|חשבונות Google}} באמצעות ה{{PLURAL:$1|מזהה הבא|מזהים הבאים}}:",
-	"googlelogin-manage-notlinked": "החשבון לא מקושר עם שום חשבון Google.",
+	"googlelogin-manage-notlinked": "החשבון לא מקושר כרגע עם אף חשבון Google.",
 	"googlelogin-manage-yes": "כן",
 	"googlelogin-manage-addlabel": "הוספת מזהה Google",
 	"googlelogin-create": "יצירה באמצעות גוגל",
