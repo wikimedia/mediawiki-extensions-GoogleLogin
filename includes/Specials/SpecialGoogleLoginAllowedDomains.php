@@ -6,9 +6,9 @@ use GoogleLogin\AllowedDomains\AllowedDomainsStore;
 use GoogleLogin\AllowedDomains\EmailDomain;
 use GoogleLogin\AllowedDomains\MutableAllowedDomainsStore;
 use GoogleLogin\Constants;
+use HTMLForm;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
-use HTMLForm;
 
 class SpecialGoogleLoginAllowedDomains extends SpecialPage {
 

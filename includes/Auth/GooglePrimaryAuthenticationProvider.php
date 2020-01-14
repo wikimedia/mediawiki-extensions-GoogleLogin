@@ -30,7 +30,8 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	/** Session inside of the auth session data where the original redirect URL is saved */
 	const RETURNURL_SESSION_KEY = 'googleLoginReturnToUrl';
 	/** Token salt for CSRF token used by GoogleLogin when a user gets
-	 * redirected from Google */
+	 * redirected from Google
+	 */
 	const TOKEN_SALT = 'GooglePrimaryAuthenticationProvider:redirect';
 	/** Name of the button of the GoogleAuthenticationRequest */
 	const GOOGLELOGIN_BUTTONREQUEST_NAME = 'googlelogin';
@@ -441,7 +442,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	private function isAuthoritative() {
 		return MediaWikiServices::getInstance()

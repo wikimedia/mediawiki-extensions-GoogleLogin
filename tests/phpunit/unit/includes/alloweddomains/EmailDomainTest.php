@@ -45,7 +45,7 @@ class EmailDomainTest extends MediaWikiUnitTestCase {
 	 */
 	public function testGetEMail() {
 		$this->assertEquals( 'test@gmail.com', $this->googleMail->getEmail() );
-		$this->assertEquals( '', $this->emptyMail->getEmail() );
+		$this->assertSame( '', $this->emptyMail->getEmail() );
 		$this->assertEquals( 'test@my.subdomain.com', $this->subdomainMail->getEmail() );
 		$this->assertEquals( 'test@my.subdomain.co.us', $this->twoSuffixMail->getEmail() );
 	}
@@ -54,7 +54,7 @@ class EmailDomainTest extends MediaWikiUnitTestCase {
 	 * @covers \GoogleLogin\AllowedDomains\EmailDomain::getHost()
 	 */
 	public function testGetHost() {
-		$this->assertEquals( '', $this->emptyMail->getHost() );
+		$this->assertSame( '', $this->emptyMail->getHost() );
 		$this->assertEquals( 'gmail.com', $this->googleMail->getHost() );
 		$this->assertEquals( 'subdomain.com', $this->subdomainMail->getHost() );
 		$this->assertEquals( 'subdomain.co.us', $this->twoSuffixMail->getHost() );
@@ -70,7 +70,7 @@ class EmailDomainTest extends MediaWikiUnitTestCase {
 			new EmailDomain( 'test@my.subdomain.com', true, self::$preDefinedSuffixes );
 		$twoSuffixMailStrict =
 			new EmailDomain( 'test@my.subdomain.co.us', true, self::$preDefinedSuffixes );
-		$this->assertEquals( '', $emptyMailStrict->getHost() );
+		$this->assertSame( '', $emptyMailStrict->getHost() );
 		$this->assertEquals( 'gmail.com', $googleMailStrict->getHost() );
 		$this->assertEquals( 'my.subdomain.com', $subdomainMailStrict->getHost() );
 		$this->assertEquals( 'my.subdomain.co.us', $twoSuffixMailStrict->getHost() );

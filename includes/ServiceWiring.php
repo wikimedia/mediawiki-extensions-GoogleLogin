@@ -1,13 +1,13 @@
 <?php
 
-use GoogleLogin\GoogleIdProvider;
-use GoogleLogin\GoogleUserMatching;
-use MediaWiki\MediaWikiServices;
-use GoogleLogin\GoogleLogin;
+use GoogleLogin\AllowedDomains\ArrayAllowedDomainsStore;
 use GoogleLogin\AllowedDomains\CachedAllowedDomainsStore;
 use GoogleLogin\AllowedDomains\DBAllowedDomainsStore;
-use GoogleLogin\AllowedDomains\ArrayAllowedDomainsStore;
 use GoogleLogin\Constants;
+use GoogleLogin\GoogleIdProvider;
+use GoogleLogin\GoogleLogin;
+use GoogleLogin\GoogleUserMatching;
+use MediaWiki\MediaWikiServices;
 
 return [
 	Constants::SERVICE_ALLOWED_DOMAINS_STORE => function ( MediaWikiServices $services ) {

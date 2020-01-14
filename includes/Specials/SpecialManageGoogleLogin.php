@@ -5,18 +5,18 @@
 
 namespace GoogleLogin\Specials;
 
+use ErrorPageError;
 use ExtensionRegistry;
 use GoogleLogin\Constants;
 use GoogleLogin\GoogleIdProvider;
 use GoogleLogin\GoogleLogin;
 use GoogleLogin\GoogleUserMatching;
-use MediaWiki\MediaWikiServices;
-use SpecialPage;
 use Html;
 use HTMLForm;
-use User;
 use Http;
-use ErrorPageError;
+use MediaWiki\MediaWikiServices;
+use SpecialPage;
+use User;
 
 /**
  * Special page implementation that allows a permitted user to manage

@@ -4,8 +4,8 @@ namespace GoogleLogin;
 
 use ApiMain;
 use ApiModuleManager;
-use MediaWiki\MediaWikiServices;
 use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
+use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
 /**
