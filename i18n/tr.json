@@ -43,7 +43,7 @@
 	"googlelogin-manage-plusinfo-title": "Profil bilgileri",
 	"googlelogin-manage-errorloading": "Yükleme hatası",
 	"googlelogin-manage-addlabel": "Google Kimliği ekle",
-	"googlelogin-username": "Kullanıcı",
+	"googlelogin-username": "Kullanıcı adı",
 	"googlelogin-create": "Google ile oluştur",
 	"googlelogin-desc-authmanager": "Kullanıcıların Google hesaplarıyla giriş yapmasına izin ver",
 	"googlelogin-generic-error": "Maalesef bir hata oluştu. Lütfen geri dön ve tekrar dene. Mesaj: $1",
