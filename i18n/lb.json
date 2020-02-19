@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Soued031"
 		]
 	},
 	"googlelogin": "Alogge mat Google",
@@ -27,7 +28,7 @@
 	"googlelogin-manage-addlabel": "Google ID dobäisetzen",
 	"googlelogin-username": "Benotzernumm",
 	"googlelogin-desc-authmanager": "Benotzer erlabe sech mat hirem Google Benotzerkont anzeloggen",
-	"googlelogin-generic-error": "Ups, do war e Feeler. Gitt w.e.g. zréck a probéiert nach eng Kéier. Message: $1",
+	"googlelogin-generic-error": "Ups, do war e Feeler. Gitt wgl. zréck a probéiert nach eng Kéier. Message: $1",
 	"googlelogin-form-merge": "De Google Benotzerkont am Wiki Benotzerkont verbannen",
 	"googlelogin-form-unlink": "Link tëscht dem Google am Wiki Benotzerkont opléisen",
 	"googlelogin-googleuser": "Google-Benotzer",
