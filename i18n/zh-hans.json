@@ -5,7 +5,8 @@
 			"Fengchao",
 			"Luotiancheng",
 			"Gaoxuewei",
-			"Macofe"
+			"Macofe",
+			"VulpesVulpes825"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "向Google+ api发出请求以找出有关指定用户的一些个人信息。",
@@ -37,7 +38,7 @@
 	"googlelogin-manage-orgsince": "自",
 	"googlelogin-manage-yes": "是",
 	"googlelogin-manage-no": "否",
-	"googlelogin-manage-dismiss": "解除",
+	"googlelogin-manage-dismiss": "关闭",
 	"googlelogin-manage-openpluslink": "打开Google+个人资料",
 	"googlelogin-manage-unknownerror": "当载入您的数据时发生未知错误。也许用户在Google+上不存在，或者个人资料ID无效？",
 	"googlelogin-manage-plusinfo-title": "个人信息",
