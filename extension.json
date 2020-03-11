@@ -107,30 +107,14 @@
 	},
 	"callback": "GoogleLogin\\GoogleLoginHooks::onSetup",
 	"Hooks": {
-		"AuthChangeFormFields": [
-			"GoogleLogin\\GoogleLoginHooks::onAuthChangeFormFields"
-		],
-		"UserLogoutComplete": [
-			"GoogleLogin\\GoogleLoginHooks::onUserLogoutComplete"
-		],
-		"LoadExtensionSchemaUpdates": [
-			"GoogleLogin\\GoogleLoginHooks::onLoadExtensionSchemaUpdates"
-		],
-		"MergeAccountFromTo": [
-			"GoogleLogin\\GoogleLoginHooks::onMergeAccountFromTo"
-		],
-		"UserMergeAccountDeleteTables": [
-			"GoogleLogin\\GoogleLoginHooks::onUserMergeAccountDeleteTables"
-		],
-		"BeforeCreateEchoEvent": [
-			"GoogleLogin\\GoogleLoginHooks::onBeforeCreateEchoEvent"
-		],
-		"EchoGetBundleRules": [
-			"GoogleLogin\\GoogleLoginHooks::onEchoGetBundleRules"
-		],
-		"ApiMain::moduleManager": [
-			"GoogleLogin\\GoogleLoginHooks::onApiMainModuleManager"
-		]
+		"AuthChangeFormFields": "GoogleLogin\\GoogleLoginHooks::onAuthChangeFormFields",
+		"UserLogoutComplete": "GoogleLogin\\GoogleLoginHooks::onUserLogoutComplete",
+		"LoadExtensionSchemaUpdates": "GoogleLogin\\GoogleLoginHooks::onLoadExtensionSchemaUpdates",
+		"MergeAccountFromTo": "GoogleLogin\\GoogleLoginHooks::onMergeAccountFromTo",
+		"UserMergeAccountDeleteTables": "GoogleLogin\\GoogleLoginHooks::onUserMergeAccountDeleteTables",
+		"BeforeCreateEchoEvent": "GoogleLogin\\GoogleLoginHooks::onBeforeCreateEchoEvent",
+		"EchoGetBundleRules": "GoogleLogin\\GoogleLoginHooks::onEchoGetBundleRules",
+		"ApiMain::moduleManager": "GoogleLogin\\GoogleLoginHooks::onApiMainModuleManager"
 	},
 	"config": {
 		"GLSecret": "",
