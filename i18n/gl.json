@@ -3,8 +3,8 @@
 		"authors": [
 			"Banjo",
 			"Elisardojm",
-			"Toliño",
-			"Macofe"
+			"Macofe",
+			"Toliño"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Facer unha petición á API de Google+ para atopar a información persoal sobre o usuario indicado.",

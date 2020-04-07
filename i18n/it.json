@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16",
 			"Baffo",
-			"Macofe",
-			"Statix64",
+			"Beta16",
 			"Einreiher",
-			"Senpremì"
+			"Macofe",
+			"Senpremì",
+			"Statix64"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Effettua una richiesta alle API Google+ per trovare alcune informazioni personali su di un determinato utente.",

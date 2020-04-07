@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Omotecho",
+			"Otokoume",
 			"Shirayuki",
 			"SkyDaisy9",
-			"Sujiniku",
-			"Otokoume",
-			"Omotecho"
+			"Sujiniku"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "指定された利用者についての一部個人情報を取得するために、Google+ APIへの要求を行います。",

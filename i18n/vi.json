@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Minh Nguyen",
 			"Nguyen Quynh Chau",
-			"Nguyên Lê",
-			"Minh Nguyen"
+			"Nguyên Lê"
 		]
 	},
 	"googlelogin-manage-noplus": "<strong>Chú ý:</strong> Người sử dụng với ID Google bạn nhập dường như không có hồ sơ Google+. Có phải lỗi đánh máy?",

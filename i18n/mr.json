@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"V.narsikar",
-			"अभय नातू",
 			"Rupalichinchure",
-			"Sureshkhole"
+			"Sureshkhole",
+			"V.narsikar",
+			"अभय नातू"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "दिलेल्या सदस्याबाबत काही वैयक्तिक माहिती शोधण्यास गूगल+एपीआयला विनंती करते.",

@@ -1,17 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko",
-			"Orikrin1998",
-			"Weft",
 			"ChaudLeChocolat",
-			"Macofe",
-			"Lucky",
-			"Wladek92",
-			"Trial",
 			"Fitoschido",
+			"Gomoko",
+			"Lucky",
+			"Macofe",
+			"Orikrin1998",
 			"The RedBurn",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Trial",
+			"Weft",
+			"Wladek92"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fait une requête à l’API de Google+ pour trouver des informations personnelles sur un utilisateur donné.",

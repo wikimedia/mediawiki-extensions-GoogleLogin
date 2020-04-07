@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ата",
 			"Andriykopanytsia",
-			"Olion",
-			"Translatemyname",
 			"Dars",
 			"Macofe",
+			"Olion",
 			"Piramidion",
 			"SimondR",
-			"Vlad5250"
+			"Translatemyname",
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Робить запит до API Google+, аби отримати деяку особову інформацію про вказаного користувача.",

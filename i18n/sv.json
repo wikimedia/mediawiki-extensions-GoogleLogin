@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lokal Profil",
-			"WikiPhoenix",
 			"Jopparn",
-			"Macofe",
 			"Josve05a",
-			"Umeaboy"
+			"Lokal Profil",
+			"Macofe",
+			"Umeaboy",
+			"WikiPhoenix"
 		]
 	},
 	"apihelp-googleplusprofileinfo-param-googleid": "Användarens Google-ID.",

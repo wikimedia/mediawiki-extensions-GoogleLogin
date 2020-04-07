@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zygimantus",
-			"Eitvys200"
+			"Eitvys200",
+			"Zygimantus"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Atlieka Google+ api užklausą, kad sužinotu asmeninės informacijos apie nurodytą vartotoją.",

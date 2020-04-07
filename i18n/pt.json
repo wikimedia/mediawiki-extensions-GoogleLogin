@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente",
+			"Hamilton Abreu",
 			"Imperadeiro90",
 			"Macofe",
-			"Hamilton Abreu",
-			"McDutchie"
+			"McDutchie",
+			"Vitorvicentevalente"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um utilizador.",

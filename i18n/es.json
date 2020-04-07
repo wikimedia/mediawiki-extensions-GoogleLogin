@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"Fitoschido",
 			"Amitie 10g",
-			"Ryo567",
-			"YoViajo",
+			"Fitoschido",
+			"Macofe",
+			"MarcoAurelio",
 			"Rubentl134",
-			"MarcoAurelio"
+			"Ryo567",
+			"YoViajo"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Realiza una solicitud a la API de Google+ para obtener información personal sobre alguien.",

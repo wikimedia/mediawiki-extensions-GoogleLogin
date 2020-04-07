@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ghsuvr",
 			"Guycn2",
-			"LaG roiL",
-			"Ghsuvr"
+			"LaG roiL"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "לשלוח בקשה ל־api של Google+ כדי למצוא מידע אישי על משתמש מסוים.",

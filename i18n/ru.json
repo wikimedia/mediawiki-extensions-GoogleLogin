@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras",
+			"Diralik",
+			"Facenapalm",
 			"Kaganer",
 			"Kareyac",
-			"Facenapalm",
-			"Vlad5250",
-			"Diralik"
+			"Okras",
+			"Vlad5250"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Совершает запрос к приложению Google+ для получения личной информации о данном участнике.",

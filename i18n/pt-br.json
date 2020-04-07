@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rodrigo codignoli",
-			"Guilhermemau",
+			"Eduardo Addad de Oliveira",
 			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Guilhermemau",
+			"Rodrigo codignoli"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fazer um pedido à API do Google+ para obter alguma informação pessoal sobre um usuário.",

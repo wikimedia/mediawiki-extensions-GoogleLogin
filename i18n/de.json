@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Florian",
 			"Florian Schmidt",
 			"Metalhead64",
-			"Thomas Bohn",
-			"Florian",
-			"Tehabe"
+			"Tehabe",
+			"Thomas Bohn"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Macht eine Anfrage an die Google+-API, um einige persönliche Informationen über einen angegebenen Benutzer herauszufinden.",
