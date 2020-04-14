@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fierodelveneto"
+		]
+	},
+	"apihelp-googleplusprofileinfo-description": "Fa na domanda a łe API Google+ par catar algune informasion personałi so on determinà utente.",
+	"apihelp-googleplusprofileinfo-summary": "Fa na domanda a łe API Google+ par catar algune informasion personałi so on determinà utente.",
+	"apihelp-googleplusprofileinfo-param-googleid": "L'ID Google de l'utente.",
+	"apihelp-googleloginmanagealloweddomain-summary": "Jestisi domìni consentii par GoogleLogin",
+	"apihelp-googleloginmanagealloweddomain-param-domain": "El dominio da xontare o cavare a ła lista.",
+	"googlelogin": "Va drento co Google",
+	"googleloginalloweddomains": "Jestisi domìni consentii par GoogleLogin",
+	"googlelogin-manage-user": "Jestisi {{GENDER:$1|l'utente}} <strong>$1</strong>.",
+	"googlelogin-manage-linked": "L'utenza ła xé cołigada co {{PLURAL:$1|on|dei}} profiłi Google co {{PLURAL:$1|el che vien|i che vien}} ID:",
+	"googlelogin-manage-isplusser": "Rejistrà in Google+",
+	"googlelogin-manage-yes": "sì",
+	"googlelogin-manage-no": "no",
+	"googlelogin-manage-dismiss": "Scondi",
+	"googlelogin-manage-openpluslink": "Verxi el profiło Google+",
+	"googlelogin-manage-errorloading": "Erore in te l'entrada",
+	"googlelogin-manage-addlabel": "Xonta ID Google",
+	"googlelogin-username": "Nome utensa",
+	"googlelogin-create": "Crea co Google",
+	"googlelogin-desc-authmanager": "El consente ai utenti de far l'entrada co el propio profiło Google",
+	"googlelogin-generic-error": "Ocio, ghe xé stà on erore. Torna indrio e riprova. Mesajo: $1",
+	"googlelogin-googleuser": "Utente Google",
+	"googlelogin-link-help": "Cołiga ła to utensa Wiki co el to profiło Google",
+	"googlelogin-param-error-label": "Codaxe de erore dato indrio da Google",
+	"googlelogin-param-code-label": "Token de entrada da Google",
+	"googlelogin-auth-service-unknown-account": "Utensa Google sconosesta",
+	"googlelogin-alloweddomain-terminatebutton": "Cava",
+	"googlelogin-alloweddomain-addlabel": "Xonta dominio consentio",
+	"googlelogin-alloweddomain-added-success": "El dominio $1 el xé sta xontà co suçeso in te ła lista dei domini consentii.",
+	"googlelogin-alloweddomain-removed-success": "El dominio $1 el xé sta cavà co suçeso da ła lista dei domini consentii.",
+	"googlelogin-alloweddomain-change-error": "Ghe xé sta on erore finmente che se jera drio modifegare ła lista dei domini consentii",
+	"tag-googlelogin": "[[Special:GoogleLogin|Entrada so Google]]",
+	"action-managegooglelogindomains": "jestire i domini GoogleEntrada consentii"
+}
