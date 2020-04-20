@@ -35,5 +35,5 @@
 	"googlelogin-alloweddomain-removed-success": "El dominio $1 el xé sta cavà co suçeso da ła lista dei domini consentii.",
 	"googlelogin-alloweddomain-change-error": "Ghe xé sta on erore finmente che se jera drio modifegare ła lista dei domini consentii",
 	"tag-googlelogin": "[[Special:GoogleLogin|Entrada so Google]]",
-	"action-managegooglelogindomains": "jestire i domini GoogleEntrada consentii"
+	"action-managegooglelogindomains": "xestionare i domini GoogleEntrada consentii"
 }
