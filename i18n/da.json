@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"googlelogin": "Log ind med Google",
+	"googlelogin-desc-authmanager": "Tillad brugere at logge ind med deres Google konto"
+}
