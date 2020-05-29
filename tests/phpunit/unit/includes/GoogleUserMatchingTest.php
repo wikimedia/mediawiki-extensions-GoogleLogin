@@ -112,7 +112,7 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
 		$user = $matchingService->getUserFromToken( $this->validToken );
-		$this->assertEquals( 1, $user->getId() );
+		$this->assertSame( 1, $user->getId() );
 	}
 
 	/**
