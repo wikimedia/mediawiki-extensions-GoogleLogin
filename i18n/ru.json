@@ -76,6 +76,7 @@
 	"tag-googlelogin-description": "Регистрация с этим тегом была произведена с помощью [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "управление связью с Google",
 	"right-managegooglelogin": "Возможность добавления, удаления и просмотра связей с Google",
+	"action-managegooglelogindomains": "управление разрешёнными доменами GoogleLogin",
 	"right-managegooglelogindomains": "Управление разрешёнными доменами для входа через Google",
 	"echo-category-title-change-googlelogin": "Изменения в связанности с Google",
 	"notification-header-change-googlelogin": "Связанность вашей учётной записи с Google была изменена",
