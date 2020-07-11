@@ -64,7 +64,7 @@ class EmailDomain {
 	/**
 	 * Returns the domain and tld (without subdomains) of the provided mail address
 	 * @param string $domain The domain part of the email address to extract from.
-	 * @param $strict
+	 * @param bool $strict
 	 * @return string The Tld and domain of $domain without subdomains
 	 */
 	private function parseHost( $domain, $strict ) {
@@ -79,7 +79,7 @@ class EmailDomain {
 	}
 
 	/**
-	 * @param $url
+	 * @param array $url
 	 * @return string
 	 */
 	private function getDomainPart( $url ) {

@@ -10,7 +10,7 @@ class GoogleUser {
 
 	/**
 	 * GoogleUser constructor.
-	 * @param $googleId string The Google ID which this GoogleUser object represents
+	 * @param string $googleId The Google ID which this GoogleUser object represents
 	 */
 	private function __construct( $googleId ) {
 		$this->googleId = $googleId;
@@ -96,7 +96,7 @@ class GoogleUser {
 	}
 
 	/**
-	 * @param $data string
+	 * @param string $data
 	 * @return string
 	 */
 	private function getWithGoogleId( $data ) {
