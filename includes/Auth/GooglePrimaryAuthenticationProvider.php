@@ -361,7 +361,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	 * request can be handled by GoogleLogin and, if so, returns an AuthenticationResponse that
 	 * redirects to the external authentication site of Google, otherwise returns an abstain response.
 	 * @param array $reqs
-	 * @param $buttonAuthenticationRequestName
+	 * @param string $buttonAuthenticationRequestName
 	 * @return AuthenticationResponse
 	 */
 	private function beginGoogleAuthentication( array $reqs, $buttonAuthenticationRequestName ) {
@@ -399,7 +399,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	/**
 	 * Creates a new authenticated Google Plus Service from a GoogleServerAuthenticationRequest.
 	 *
-	 * @param $request
+	 * @param GoogleServerAuthenticationRequest $request
 	 * @return array|AuthenticationResponse
 	 * @throws MWException
 	 */
@@ -426,7 +426,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	}
 
 	/**
-	 * @param $verifiedToken
+	 * @param array $verifiedToken
 	 * @return AuthenticationResponse
 	 */
 	private function nonExistingUserResponse( $verifiedToken ) {
