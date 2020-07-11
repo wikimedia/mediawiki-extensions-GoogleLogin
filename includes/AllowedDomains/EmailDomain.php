@@ -62,11 +62,12 @@ class EmailDomain {
 	}
 
 	/**
-	 * Returns the domain and tld (without subdomains) of the provided E-Mailadress
+	 * Returns the domain and tld (without subdomains) of the provided mail address
 	 * @param string $domain The domain part of the email address to extract from.
+	 * @param $strict
 	 * @return string The Tld and domain of $domain without subdomains
 	 */
-	private function parseHost( $domain = '', $strict ) {
+	private function parseHost( $domain, $strict ) {
 		if ( $strict ) {
 			// we can trust google to give us only valid email address, so give the last element
 			return $domain;
