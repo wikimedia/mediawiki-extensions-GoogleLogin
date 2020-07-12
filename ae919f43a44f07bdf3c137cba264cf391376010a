@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4224bc66_2f84fcaa",
+        "filename": "includes/Auth/GooglePrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-07-12T04:34:13Z",
+      "side": 1,
+      "message": "array",
+      "range": {
+        "startLine": 429,
+        "startChar": 11,
+        "endLine": 429,
+        "endChar": 18
+      },
+      "revId": "ae919f43a44f07bdf3c137cba264cf391376010a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
