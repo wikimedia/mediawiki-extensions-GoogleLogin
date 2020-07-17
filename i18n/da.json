@@ -9,5 +9,6 @@
 	"googlelogin-manage-yes": "ja",
 	"googlelogin-manage-no": "nej",
 	"googlelogin-manage-errorloading": "Indlæsningsfejl",
-	"googlelogin-desc-authmanager": "Tillad brugere at logge ind med deres Google konto"
+	"googlelogin-desc-authmanager": "Tillad brugere at logge ind med deres Google konto",
+	"googlelogin-alloweddomain-addlabel": "Tilføj tilladt domæne"
 }
