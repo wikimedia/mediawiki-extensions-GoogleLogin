@@ -124,7 +124,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 			}
 			$out->addHTML(
 				Html::openElement( 'div' ) .
-				$this->msg( 'googlelogin-manage-linked', $googleIdCount )->escaped() .
+				$this->msg( 'googlelogin-manage-linked', $googleIdCount )->escaped() . '&#160;' .
 				Html::openElement( 'strong' ) .
 				$googleIdLinks .
 				Html::closeElement( 'strong' ) .
