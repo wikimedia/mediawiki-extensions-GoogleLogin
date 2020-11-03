@@ -21,7 +21,7 @@ class EmailDomain {
 	/**
 	 * EmailDomain constructor.
 	 *
-	 * @param String $mail The whole e-mail address, which is represented by this object
+	 * @param string $mail The whole e-mail address, which is represented by this object
 	 * @param bool $strict If the domain should be parsed strictly or not (e.g.
 	 *  test@test.example.com will be converted to example.com if this is false)
 	 * @param array $suffixes An optional array of suffixes to use parsing the domain part. If
@@ -55,7 +55,7 @@ class EmailDomain {
 	}
 
 	/**
-	 * @return String The raw e-mail address which was passed to this object during it's creation.
+	 * @return string The raw e-mail address which was passed to this object during it's creation.
 	 */
 	public function getEmail() {
 		return $this->emailAddress;

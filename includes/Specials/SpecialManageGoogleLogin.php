@@ -23,7 +23,7 @@ use User;
  * connections between wiki accounts and Google accounts.
  */
 class SpecialManageGoogleLogin extends SpecialPage {
-	/** @var User $manageableUser User object of the user to manage */
+	/** @var User User object of the user to manage */
 	private $manageableUser = null;
 
 	function __construct() {
