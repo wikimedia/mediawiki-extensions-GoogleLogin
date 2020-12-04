@@ -2,10 +2,10 @@
 
 namespace GoogleLogin;
 
+use MediaWiki\User\UserIdentityValue;
 use MediaWikiUnitTestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use stdClass;
-use User;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 
@@ -36,7 +36,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 		$this->dbConnection->expects( $this->never() )->method( 'select' );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$this->assertEmpty( $googleIdProvider->getFromUser( new User() ) );
+		$this->assertEmpty( $googleIdProvider->getFromUser( new UserIdentityValue( 0, '127.0.0.1', 0 ) ) );
 	}
 
 	/**
@@ -49,7 +49,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 			->willReturn( false );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$this->assertEmpty( $googleIdProvider->getFromUser( User::newFromId( 123 ) ) );
+		$this->assertEmpty( $googleIdProvider->getFromUser( new UserIdentityValue( 123, __FUNCTION__, 0 ) ) );
 	}
 
 	/**
@@ -66,7 +66,10 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 			->willReturn( [ $aResult, $anotherResult ] );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$this->assertEquals( [ 1, 2 ], $googleIdProvider->getFromUser( User::newFromId( 123 ) ) );
+		$this->assertEquals(
+			[ 1, 2 ],
+			$googleIdProvider->getFromUser( new UserIdentityValue( 123, __FUNCTION__, 0 ) )
+		);
 	}
 
 	/**
