@@ -158,25 +158,25 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\GoogleUserMatching::matchUser()
 	 */
 	public function testMatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->match( new User(), [] ) );
+		$this->assertFalse( $matchingService->matchUser( new User(), [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\GoogleUserMatching::matchUser()
 	 */
 	public function testMatchWithoutTokenId() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->match( $this->loggedInUser, [] ) );
+		$this->assertFalse( $matchingService->matchUser( $this->loggedInUser, [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\GoogleUserMatching::matchUser()
 	 */
 	public function testMatchWithTokenIdAndUser() {
 		$this->dbConnection->expects( $this->once() )
@@ -188,29 +188,29 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 			->willReturn( true );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertTrue( $matchingService->match( $this->loggedInUser, $this->validToken ) );
+		$this->assertTrue( $matchingService->matchUser( $this->loggedInUser, $this->validToken ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\GoogleUserMatching::unmatchUser()
 	 */
 	public function testUnmatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->unmatch( new User(), [] ) );
+		$this->assertFalse( $matchingService->unmatchUser( new User(), [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\GoogleUserMatching::unmatchUser()
 	 */
 	public function testUnmatchWithoutTokenId() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->unmatch( $this->loggedInUser, [] ) );
+		$this->assertFalse( $matchingService->unmatchUser( $this->loggedInUser, [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\GoogleUserMatching::unmatchUser()
 	 */
 	public function testUnmatchWithTokenIdAndUser() {
 		$this->dbConnection->expects( $this->once() )
@@ -222,6 +222,6 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 			->willReturn( true );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertTrue( $matchingService->unmatch( $this->loggedInUser, $this->validToken ) );
+		$this->assertTrue( $matchingService->unmatchUser( $this->loggedInUser, $this->validToken ) );
 	}
 }
