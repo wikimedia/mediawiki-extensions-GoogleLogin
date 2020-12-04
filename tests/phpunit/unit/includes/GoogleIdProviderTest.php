@@ -49,7 +49,9 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 			->willReturn( false );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$this->assertEmpty( $googleIdProvider->getFromUser( User::newFromId( 123 ) ) );
+		$user = $this->createMock( User::class );
+		$user->method( 'getId' )->willReturn( 123 );
+		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
 	/**
@@ -66,7 +68,9 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 			->willReturn( [ $aResult, $anotherResult ] );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$this->assertEquals( [ 1, 2 ], $googleIdProvider->getFromUser( User::newFromId( 123 ) ) );
+		$user = $this->createMock( User::class );
+		$user->method( 'getId' )->willReturn( 123 );
+		$this->assertEquals( [ 1, 2 ], $googleIdProvider->getFromUser( $user ) );
 	}
 
 	/**

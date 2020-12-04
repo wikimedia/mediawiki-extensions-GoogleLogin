@@ -117,6 +117,9 @@ class SpecialGoogleLoginAllowedDomains extends SpecialPage {
 		return true;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'users';
 	}
