@@ -39,7 +39,7 @@ class GoogleUserMatching {
 	 * @param array $token A verified token provided from Google after authenticating a user
 	 * @return bool True, if matching was successful, false otehrwise
 	 */
-	public function match( User $user, array $token ) {
+	public function matchUser( User $user, array $token ) {
 		if ( $user->isAnon() ) {
 			return false;
 		}
@@ -62,7 +62,7 @@ class GoogleUserMatching {
 	 * @param array $token
 	 * @return bool True, if unmatching was successful, false otherwise
 	 */
-	public function unmatch( User $user, array $token ) {
+	public function unmatchUser( User $user, array $token ) {
 		if ( $user->isAnon() ) {
 			return false;
 		}

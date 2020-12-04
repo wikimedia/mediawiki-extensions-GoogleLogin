@@ -12,7 +12,7 @@ use MediaWiki\Auth\AuthenticationRequest;
  * An AuthenticationRequest that holds Google user information.
  */
 class GoogleUserInfoAuthenticationRequest extends AuthenticationRequest {
-	public $required = self::OPTIONAL;
+
 	/** @var array An array of infos (provided by Google)
 	 * about a user.
 	 */
@@ -20,6 +20,7 @@ class GoogleUserInfoAuthenticationRequest extends AuthenticationRequest {
 
 	public function __construct( $userInfo ) {
 		$this->userInfo = $userInfo;
+		$this->required = self::OPTIONAL;
 	}
 
 	public function getFieldInfo() {
