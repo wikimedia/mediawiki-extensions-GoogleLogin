@@ -208,7 +208,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 			$success = [];
 			foreach ( $requestGoogleId as $count => $googleId ) {
 				$id = str_replace( 'google-', '', $googleId );
-				if ( $userMatchingService->unmatch( $this->manageableUser, [ 'sub' => $id ] ) ) {
+				if ( $userMatchingService->unmatchUser( $this->manageableUser, [ 'sub' => $id ] ) ) {
 					$out->addWikiMsg( 'googlelogin-manage-terminatesuccess' );
 					$success[] = $id;
 				} else {
@@ -244,7 +244,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				}
 
 				$matchResult = $userMatchingService
-					->match( $this->manageableUser, [ 'sub' => $requestAddGoogleId ] );
+					->matchUser( $this->manageableUser, [ 'sub' => $requestAddGoogleId ] );
 
 				if ( $matchResult ) {
 					$out->addWikiMsg( 'googlelogin-manage-changedsuccess' );
@@ -257,10 +257,18 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		return false;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'users';
 	}
 
+	/**
+	 * @param \Config $config
+	 * @param string $action
+	 * @param string[] $googleId
+	 */
 	protected function notifyUser( \Config $config, $action, array $googleId ) {
 		if ( $config->get( 'GLEnableEchoEvents' ) &&
 			ExtensionRegistry::getInstance()->isLoaded( 'Echo' )

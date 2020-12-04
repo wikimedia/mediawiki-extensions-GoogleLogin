@@ -92,7 +92,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 
 		$verifiedToken =
 			$this->manager->getAuthenticationSessionData( self::GOOGLE_ACCOUNT_TOKEN_KEY );
-		$userMatchingService->match( $user, $verifiedToken );
+		$userMatchingService->matchUser( $user, $verifiedToken );
 		$this->manager->removeAuthenticationSessionData( self::GOOGLE_ACCOUNT_TOKEN_KEY );
 	}
 
@@ -215,13 +215,13 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 		if ( get_class( $req ) === GoogleRemoveAuthenticationRequest::class &&
 			$req->action === AuthManager::ACTION_REMOVE ) {
 			$user = User::newFromName( $req->username );
-			$userMatchingService->unmatch( $user, [ 'sub' => $req->getGoogleId() ] );
+			$userMatchingService->unmatchUser( $user, [ 'sub' => $req->getGoogleId() ] );
 		}
 
 		if ( get_class( $req ) === GoogleUserInfoAuthenticationRequest::class &&
 			$req->action === AuthManager::ACTION_CHANGE ) {
 			$user = User::newFromName( $req->username );
-			$userMatchingService->match( $user, $req->userInfo );
+			$userMatchingService->matchUser( $user, $req->userInfo );
 		}
 	}
 
@@ -300,7 +300,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 		/** @var GoogleUserMatching $userMatchingService */
 		$userMatchingService =
 			MediaWikiServices::getInstance()->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
-		$userMatchingService->match( $user, $userInfo );
+		$userMatchingService->matchUser( $user, $userInfo );
 
 		return null;
 	}
@@ -341,7 +341,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 					return AuthenticationResponse::newFail( wfMessage( 'googlelogin-unallowed-domain',
 						$email ) );
 				}
-				$result = $userMatchingService->match( $user, $verifiedToken );
+				$result = $userMatchingService->matchUser( $user, $verifiedToken );
 				if ( $result ) {
 					return AuthenticationResponse::newPass();
 				} else {
