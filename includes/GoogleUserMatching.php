@@ -2,6 +2,7 @@
 
 namespace GoogleLogin;
 
+use MediaWiki\User\UserIdentity;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -35,12 +36,12 @@ class GoogleUserMatching {
 	}
 
 	/**
-	 * @param User $user The user to match the token to
+	 * @param UserIdentity $user The user to match the token to
 	 * @param array $token A verified token provided from Google after authenticating a user
 	 * @return bool True, if matching was successful, false otehrwise
 	 */
-	public function match( User $user, array $token ) {
-		if ( $user->isAnon() ) {
+	public function match( UserIdentity $user, array $token ) {
+		if ( !$user->isRegistered() ) {
 			return false;
 		}
 		if ( !isset( $token['sub'] ) ) {
@@ -58,12 +59,12 @@ class GoogleUserMatching {
 	}
 
 	/**
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @param array $token
 	 * @return bool True, if unmatching was successful, false otherwise
 	 */
-	public function unmatch( User $user, array $token ) {
-		if ( $user->isAnon() ) {
+	public function unmatch( UserIdentity $user, array $token ) {
+		if ( !$user->isRegistered() ) {
 			return false;
 		}
 		if ( !isset( $token['sub'] ) ) {
