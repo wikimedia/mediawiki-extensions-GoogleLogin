@@ -2,7 +2,7 @@
 
 namespace GoogleLogin;
 
-use MediaWikiUnitTestCase;
+use MediaWikiIntegrationTestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use stdClass;
 use User;
@@ -10,7 +10,7 @@ use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 
-class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
+class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @var PHPUnit_Framework_MockObject_MockObject
 	 */
@@ -39,7 +39,9 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 			->getMock();
 		$this->loadBalancer->method( 'getConnection' )->willReturn( $this->dbConnection );
 
-		$this->loggedInUser = User::newFromId( 100 );
+		$user = $this->createMock( User::class );
+		$user->method( 'getId' )->willReturn( 100 );
+		$this->loggedInUser = $user;
 	}
 
 	/**
@@ -158,25 +160,25 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\GoogleUserMatching::matchUser()
 	 */
 	public function testMatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->match( new User(), [] ) );
+		$this->assertFalse( $matchingService->matchUser( new User(), [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\GoogleUserMatching::matchUser()
 	 */
 	public function testMatchWithoutTokenId() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->match( $this->loggedInUser, [] ) );
+		$this->assertFalse( $matchingService->matchUser( $this->loggedInUser, [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::match()
+	 * @covers \GoogleLogin\GoogleUserMatching::matchUser()
 	 */
 	public function testMatchWithTokenIdAndUser() {
 		$this->dbConnection->expects( $this->once() )
@@ -188,29 +190,29 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 			->willReturn( true );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertTrue( $matchingService->match( $this->loggedInUser, $this->validToken ) );
+		$this->assertTrue( $matchingService->matchUser( $this->loggedInUser, $this->validToken ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\GoogleUserMatching::unmatchUser()
 	 */
 	public function testUnmatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->unmatch( new User(), [] ) );
+		$this->assertFalse( $matchingService->unmatchUser( new User(), [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\GoogleUserMatching::unmatchUser()
 	 */
 	public function testUnmatchWithoutTokenId() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->unmatch( $this->loggedInUser, [] ) );
+		$this->assertFalse( $matchingService->unmatchUser( $this->loggedInUser, [] ) );
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleUserMatching::unmatch()
+	 * @covers \GoogleLogin\GoogleUserMatching::unmatchUser()
 	 */
 	public function testUnmatchWithTokenIdAndUser() {
 		$this->dbConnection->expects( $this->once() )
@@ -222,6 +224,6 @@ class GoogleUserMatchingTest extends MediaWikiUnitTestCase {
 			->willReturn( true );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertTrue( $matchingService->unmatch( $this->loggedInUser, $this->validToken ) );
+		$this->assertTrue( $matchingService->unmatchUser( $this->loggedInUser, $this->validToken ) );
 	}
 }

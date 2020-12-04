@@ -61,8 +61,8 @@ class GoogleLoginHooks {
 						->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
 				$token = [ 'sub' => $id ];
 
-				$userMatchingService->unmatch( $oldUser, $token );
-				$userMatchingService->match( $newUser, $token );
+				$userMatchingService->unmatchUser( $oldUser, $token );
+				$userMatchingService->matchUser( $newUser, $token );
 			}
 		}
 
