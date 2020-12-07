@@ -2,14 +2,14 @@
 
 namespace GoogleLogin;
 
-use MediaWikiIntegrationTestCase;
+use MediaWiki\User\UserIdentity;
+use MediaWikiUnitTestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use stdClass;
-use User;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 
-class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
+class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 	/**
 	 * @var PHPUnit_Framework_MockObject_MockObject
 	 */
@@ -36,7 +36,8 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 		$this->dbConnection->expects( $this->never() )->method( 'select' );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$this->assertEmpty( $googleIdProvider->getFromUser( new User() ) );
+		$user = $this->createUser();
+		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
 	/**
@@ -49,8 +50,7 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 			->willReturn( false );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$user = $this->createMock( User::class );
-		$user->method( 'getId' )->willReturn( 123 );
+		$user = $this->createUser( 123 );
 		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
@@ -68,8 +68,7 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 			->willReturn( [ $aResult, $anotherResult ] );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$user = $this->createMock( User::class );
-		$user->method( 'getId' )->willReturn( 123 );
+		$user = $this->createUser( 123 );
 		$this->assertEquals( [ 1, 2 ], $googleIdProvider->getFromUser( $user ) );
 	}
 
@@ -95,5 +94,16 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 			[ 1, true ],
 			[ 42, true ],
 		];
+	}
+
+	/**
+	 * @param int $id
+	 * @return UserIdentity
+	 */
+	private function createUser( int $id = 0 ) {
+		$user = $this->createMock( UserIdentity::class );
+		$user->method( 'getId' )->willReturn( $id );
+		$user->method( 'isRegistered' )->willReturn( (bool)$id );
+		return $user;
 	}
 }
