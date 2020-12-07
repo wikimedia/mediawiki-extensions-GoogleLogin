@@ -51,6 +51,7 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 
 		$user = $this->createMock( User::class );
 		$user->method( 'getId' )->willReturn( 123 );
+		$user->method( 'isRegistered' )->willReturn( true );
 		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
@@ -70,6 +71,7 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 
 		$user = $this->createMock( User::class );
 		$user->method( 'getId' )->willReturn( 123 );
+		$user->method( 'isRegistered' )->willReturn( true );
 		$this->assertEquals( [ 1, 2 ], $googleIdProvider->getFromUser( $user ) );
 	}
 

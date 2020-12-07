@@ -2,7 +2,7 @@
 
 namespace GoogleLogin;
 
-use User;
+use MediaWiki\User\UserIdentity;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 class GoogleIdProvider {
@@ -13,11 +13,11 @@ class GoogleIdProvider {
 	}
 
 	/**
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return array An array of associated Google account IDs
 	 */
-	public function getFromUser( User $user ) {
-		if ( $user->isAnon() ) {
+	public function getFromUser( UserIdentity $user ) {
+		if ( !$user->isRegistered() ) {
 			return [];
 		}
 		$db = $this->loadBalancer->getConnection( DB_MASTER );

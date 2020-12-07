@@ -41,6 +41,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 
 		$user = $this->createMock( User::class );
 		$user->method( 'getId' )->willReturn( 100 );
+		$user->method( 'isRegistered' )->willReturn( true );
 		$this->loggedInUser = $user;
 	}
 
