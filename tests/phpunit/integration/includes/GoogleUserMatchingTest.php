@@ -2,10 +2,10 @@
 
 namespace GoogleLogin;
 
+use MediaWiki\User\UserIdentity;
 use MediaWikiIntegrationTestCase;
 use PHPUnit_Framework_MockObject_MockObject;
 use stdClass;
-use User;
 use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -17,7 +17,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	private $dbConnection;
 	private $loadBalancer;
 	/**
-	 * @var User
+	 * @var UserIdentity
 	 */
 	private $loggedInUser;
 
@@ -39,9 +39,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 			->getMock();
 		$this->loadBalancer->method( 'getConnection' )->willReturn( $this->dbConnection );
 
-		$user = $this->createMock( User::class );
-		$user->method( 'getId' )->willReturn( 100 );
-		$this->loggedInUser = $user;
+		$this->loggedInUser = $this->createUser( 100 );
 	}
 
 	/**
@@ -165,7 +163,8 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	public function testMatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->matchUser( new User(), [] ) );
+		$user = $this->createUser();
+		$this->assertFalse( $matchingService->matchUser( $user, [] ) );
 	}
 
 	/**
@@ -199,7 +198,8 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	public function testUnmatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->unmatchUser( new User(), [] ) );
+		$user = $this->createUser();
+		$this->assertFalse( $matchingService->unmatchUser( $user, [] ) );
 	}
 
 	/**
@@ -225,5 +225,16 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
 		$this->assertTrue( $matchingService->unmatchUser( $this->loggedInUser, $this->validToken ) );
+	}
+
+	/**
+	 * @param int $id
+	 * @return UserIdentity
+	 */
+	private function createUser( int $id = 0 ) {
+		$user = $this->createMock( UserIdentity::class );
+		$user->method( 'getId' )->willReturn( $id );
+		$user->method( 'isRegistered' )->willReturn( (bool)$id );
+		return $user;
 	}
 }
