@@ -2,6 +2,7 @@
 
 namespace GoogleLogin;
 
+use MediaWiki\User\UserIdentity;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -18,29 +19,19 @@ class GoogleUserMatching {
 
 	/**
 	 * @param array $token A verified token provided from Google after authenticating a user
-	 * @return User|null The user associated with the token or null if no user associated
+	 * @return UserIdentity|null The user associated with the token or null if no user associated
 	 */
 	public function getUserFromToken( array $token ) {
-		$candidate = $this->userIdMatcher( $token );
-		if ( $candidate instanceof User ) {
-			return $candidate;
-		}
-
-		$candidate = $this->authenticatedEmailMatcher( $token );
-		if ( $candidate instanceof User ) {
-			return $candidate;
-		}
-
-		return null;
+		return $this->userIdMatcher( $token ) ?? $this->authenticatedEmailMatcher( $token );
 	}
 
 	/**
-	 * @param User $user The user to match the token to
+	 * @param UserIdentity $user The user to match the token to
 	 * @param array $token A verified token provided from Google after authenticating a user
 	 * @return bool True, if matching was successful, false otehrwise
 	 */
-	public function matchUser( User $user, array $token ) {
-		if ( $user->isAnon() ) {
+	public function matchUser( UserIdentity $user, array $token ) {
+		if ( !$user->isRegistered() ) {
 			return false;
 		}
 		if ( !isset( $token['sub'] ) ) {
@@ -58,12 +49,12 @@ class GoogleUserMatching {
 	}
 
 	/**
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @param array $token
 	 * @return bool True, if unmatching was successful, false otherwise
 	 */
-	public function unmatchUser( User $user, array $token ) {
-		if ( $user->isAnon() ) {
+	public function unmatchUser( UserIdentity $user, array $token ) {
+		if ( !$user->isRegistered() ) {
 			return false;
 		}
 		if ( !isset( $token['sub'] ) ) {

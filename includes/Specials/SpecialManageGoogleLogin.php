@@ -15,6 +15,7 @@ use Html;
 use HTMLForm;
 use Http;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserIdentity;
 use SpecialPage;
 use User;
 
@@ -23,7 +24,7 @@ use User;
  * connections between wiki accounts and Google accounts.
  */
 class SpecialManageGoogleLogin extends SpecialPage {
-	/** @var User User object of the user to manage */
+	/** @var UserIdentity User to manage */
 	private $manageableUser = null;
 
 	function __construct() {
@@ -36,13 +37,11 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	}
 
 	/**
-	 * Special page executer
-	 * @param SubPage $par Subpage
+	 * @param string|null $par Subpage
 	 */
 	function execute( $par ) {
 		$user = $this->getUser();
 		$out = $this->getOutput();
-		$request = $this->getRequest();
 		if ( !$this->userCanExecute( $user ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -89,9 +88,9 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	/**
 	 * Renders a form to manage this user and handles all actions.
 	 *
-	 * @param User $user
+	 * @param UserIdentity $user
 	 */
-	private function manageUser( User $user ) {
+	private function manageUser( UserIdentity $user ) {
 		$out = $this->getOutput();
 
 		$out->addModules(
@@ -179,7 +178,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		/** @var GoogleUserMatching $userMatchingService */
 		$userMatchingService = MediaWikiServices::getInstance()
 			->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
-		/** @var GoogleIdProvider $userMatchingService */
+		/** @var GoogleIdProvider $googleIdProvider */
 		$googleIdProvider = MediaWikiServices::getInstance()
 			->getService( Constants::SERVICE_GOOGLE_ID_PROVIDER );
 
