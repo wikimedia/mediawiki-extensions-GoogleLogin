@@ -2,18 +2,23 @@
 
 namespace GoogleLogin;
 
-use MediaWikiIntegrationTestCase;
-use PHPUnit_Framework_MockObject_MockObject;
+use MediaWiki\User\UserIdentityValue;
+use MediaWikiUnitTestCase;
+use PHPUnit\Framework\MockObject\MockObject;
 use stdClass;
-use User;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\LoadBalancer;
 
-class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
+class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 	/**
-	 * @var PHPUnit_Framework_MockObject_MockObject
+	 * @var IDatabase|MockObject
 	 */
 	private $dbConnection;
+
+	/**
+	 * @var LoadBalancer
+	 */
 	private $loadBalancer;
 
 	protected function setUp() : void {
@@ -36,7 +41,8 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 		$this->dbConnection->expects( $this->never() )->method( 'select' );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$this->assertEmpty( $googleIdProvider->getFromUser( new User() ) );
+		$user = new UserIdentityValue( 0, '127.0.0.1', 0 );
+		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
 	/**
@@ -49,9 +55,7 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 			->willReturn( false );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$user = $this->createMock( User::class );
-		$user->method( 'getId' )->willReturn( 123 );
-		$user->method( 'isRegistered' )->willReturn( true );
+		$user = new UserIdentityValue( 123, 'Test', 222 );
 		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
@@ -69,9 +73,7 @@ class GoogleIdProviderTest extends MediaWikiIntegrationTestCase {
 			->willReturn( [ $aResult, $anotherResult ] );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$user = $this->createMock( User::class );
-		$user->method( 'getId' )->willReturn( 123 );
-		$user->method( 'isRegistered' )->willReturn( true );
+		$user = new UserIdentityValue( 123, 'Test', 222 );
 		$this->assertEquals( [ 1, 2 ], $googleIdProvider->getFromUser( $user ) );
 	}
 
