@@ -2,22 +2,30 @@
 
 namespace GoogleLogin;
 
+use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
 use MediaWikiIntegrationTestCase;
-use PHPUnit_Framework_MockObject_MockObject;
+use PHPUnit\Framework\MockObject\MockObject;
 use stdClass;
-use User;
 use Wikimedia\Rdbms\FakeResultWrapper;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\LoadBalancer;
 
 class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
+
 	/**
-	 * @var PHPUnit_Framework_MockObject_MockObject
+	 * @var IDatabase|MockObject
 	 */
 	private $dbConnection;
-	private $loadBalancer;
+
 	/**
-	 * @var User
+	 * @var LoadBalancer
+	 */
+	private $loadBalancer;
+
+	/**
+	 * @var UserIdentity
 	 */
 	private $loggedInUser;
 
@@ -39,10 +47,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 			->getMock();
 		$this->loadBalancer->method( 'getConnection' )->willReturn( $this->dbConnection );
 
-		$user = $this->createMock( User::class );
-		$user->method( 'getId' )->willReturn( 100 );
-		$user->method( 'isRegistered' )->willReturn( true );
-		$this->loggedInUser = $user;
+		$this->loggedInUser = new UserIdentityValue( 100, __CLASS__, 0 );
 	}
 
 	/**
@@ -166,7 +171,8 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	public function testMatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->matchUser( new User(), [] ) );
+		$user = new UserIdentityValue( 0, '127.0.0.1', 0 );
+		$this->assertFalse( $matchingService->matchUser( $user, [] ) );
 	}
 
 	/**
@@ -200,7 +206,8 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	public function testUnmatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$this->assertFalse( $matchingService->unmatchUser( new User(), [] ) );
+		$user = new UserIdentityValue( 0, '127.0.0.1', 0 );
+		$this->assertFalse( $matchingService->unmatchUser( $user, [] ) );
 	}
 
 	/**
