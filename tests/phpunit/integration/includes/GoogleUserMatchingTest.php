@@ -99,8 +99,6 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
 	 */
 	public function testGetUserFromTokenOneEmailLinked() {
-		$aResult = new StdClass();
-		$aResult->user_id = 1;
 		$this->dbConnection->expects( $this->once() )
 			->method( 'selectRow' )
 			->willReturn( false );
@@ -111,7 +109,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 				[ 'user_id' ],
 				[ 'user_email' => 'test@example.com', 'user_email_authenticated IS NOT NULL' ]
 			)
-			->willReturn( new FakeResultWrapper( [ $aResult ] ) );
+			->willReturn( new FakeResultWrapper( [ (object)[ 'user_id' => 1 ] ] ) );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
 		$user = $matchingService->getUserFromToken( $this->validToken );
@@ -122,10 +120,8 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
 	 */
 	public function testGetUserFromTokenMultipleEmailsLinked() {
-		$aResult = new StdClass();
-		$aResult->user_id = 1;
-		$anotherResult = new StdClass();
-		$anotherResult->user_id = 1;
+		$aResult = (object)[ 'user_id' => 1 ];
+		$anotherResult = (object)[ 'user_id' => 1 ];
 		$this->dbConnection->expects( $this->once() )
 			->method( 'selectRow' )
 			->willReturn( false );
@@ -146,13 +142,10 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleUserMatching::getUserFromToken()
 	 */
 	public function testGetUserFromTokenTokenAssociated() {
-		$userConnection = new StdClass();
-		$userConnection->user_id = 100;
-
 		$this->dbConnection->expects( $this->once() )
 			->method( 'selectRow' )
 			->with( $this->anything(), $this->anything(), [ 'user_googleid' => '123' ] )
-			->willReturn( $userConnection );
+			->willReturn( (object)[ 'user_id' => 100 ] );
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
 		$user = $matchingService->getUserFromToken( $this->validToken );
