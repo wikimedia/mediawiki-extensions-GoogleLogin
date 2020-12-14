@@ -106,6 +106,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	public function testGetUserFromTokenOneEmailLinked() {
 		$aResult = new StdClass();
 		$aResult->user_id = 1;
+		$aResult->user_name = '';
 		$this->dbConnection->expects( $this->once() )
 			->method( 'selectRow' )
 			->willReturn( false );
@@ -113,7 +114,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 			->method( 'select' )
 			->with(
 				'user',
-				[ 'user_id' ],
+				[ 'user_id', 'user_name' ],
 				[ 'user_email' => 'test@example.com', 'user_email_authenticated IS NOT NULL' ]
 			)
 			->willReturn( new FakeResultWrapper( [ $aResult ] ) );
@@ -138,7 +139,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 			->method( 'select' )
 			->with(
 				'user',
-				[ 'user_id' ],
+				[ 'user_id', 'user_name' ],
 				[ 'user_email' => 'test@example.com', 'user_email_authenticated IS NOT NULL' ]
 			)
 			->willReturn( new FakeResultWrapper( [ $aResult, $anotherResult ] ) );

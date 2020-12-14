@@ -3,9 +3,9 @@
 namespace GoogleLogin;
 
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
-use Wikimedia\Rdbms\IResultWrapper;
 
 class GoogleUserMatching {
 	/**
@@ -73,25 +73,33 @@ class GoogleUserMatching {
 		);
 	}
 
+	/**
+	 * @param array $token
+	 * @return UserIdentity|null
+	 */
 	private function userIdMatcher( array $token ) {
 		if ( !isset( $token['sub'] ) ) {
 			return null;
 		}
 		$db = $this->loadBalancer->getConnection( DB_MASTER );
 
-		$s = $db->selectRow(
+		$row = $db->selectRow(
 			'user_google_user',
 			[ 'user_id' ],
 			[ 'user_googleid' => $token['sub'] ],
 			__METHOD__
 		);
 
-		if ( $s !== false ) {
-			return User::newFromId( $s->user_id );
+		if ( $row ) {
+			return User::newFromId( $row->user_id );
 		}
 		return null;
 	}
 
+	/**
+	 * @param array $token
+	 * @return UserIdentity|null
+	 */
 	private function authenticatedEmailMatcher( array $token ) {
 		if ( !isset( $token['email'] ) ) {
 			return null;
@@ -101,9 +109,9 @@ class GoogleUserMatching {
 		}
 		$db = $this->loadBalancer->getConnection( DB_MASTER );
 
-		$s = $db->select(
+		$res = $db->select(
 			'user',
-			[ 'user_id' ],
+			[ 'user_id', 'user_name' ],
 			[
 				'user_email' => $token['email'],
 				'user_email_authenticated IS NOT NULL',
@@ -111,8 +119,11 @@ class GoogleUserMatching {
 			__METHOD__
 		);
 
-		if ( $s instanceof IResultWrapper && $s->numRows() === 1 ) {
-			return User::newFromId( $s->current()->user_id );
+		// Critical check because user_email is not guaranteed to be unique
+		if ( $res && $res->numRows() === 1 ) {
+			$row = $res->fetchObject();
+			// Note: We know the code consuming this never uses the actor_id
+			return new UserIdentityValue( $row->user_id, $row->user_name, 0 );
 		}
 		return null;
 	}
