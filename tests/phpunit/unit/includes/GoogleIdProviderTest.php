@@ -5,7 +5,6 @@ namespace GoogleLogin;
 use MediaWiki\User\UserIdentityValue;
 use MediaWikiUnitTestCase;
 use PHPUnit\Framework\MockObject\MockObject;
-use stdClass;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\LoadBalancer;
@@ -64,10 +63,8 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 	 * @covers \GoogleLogin\GoogleIdProvider::getFromUser()
 	 */
 	public function testGetFromUserAssociatedIds() {
-		$aResult = new StdClass();
-		$aResult->user_googleid = 1;
-		$anotherResult = new StdClass();
-		$anotherResult->user_googleid = 2;
+		$aResult = (object)[ 'user_googleid' => 1 ];
+		$anotherResult = (object)[ 'user_googleid' => 2 ];
 		$this->dbConnection->expects( $this->once() )
 			->method( 'select' )
 			->with( $this->anything(), $this->anything(), [ 'user_id' => 123 ] )
