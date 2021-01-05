@@ -27,14 +27,12 @@ class EchoGoogleLoginPresentationModel extends \EchoEventPresentationModel {
 					implode( ', ', $googleId ),
 					count( $googleId )
 				);
-				break;
 			case 'add':
 				return $this->msg(
 					'notification-add-googlelogin',
 					implode( ', ', $googleId ),
 					count( $googleId )
 				);
-				break;
 			default:
 				return $this->getMessageWithAgent( 'notification-change-googlelogin' );
 		}

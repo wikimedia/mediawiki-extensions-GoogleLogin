@@ -103,7 +103,6 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 					new GoogleAuthenticationRequest( wfMessage( 'googlelogin' ),
 						wfMessage( 'googlelogin-loginbutton-help' ) ),
 				];
-				break;
 			case AuthManager::ACTION_LINK:
 				if ( $this->isAuthoritative() ) {
 					return [];
@@ -113,7 +112,6 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 					new GoogleAuthenticationRequest( wfMessage( 'googlelogin-form-merge' ),
 						wfMessage( 'googlelogin-link-help' ) ),
 				];
-				break;
 			case AuthManager::ACTION_REMOVE:
 				if ( $this->isAuthoritative() ) {
 					return [];
@@ -139,7 +137,6 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 				}
 
 				return $reqs;
-				break;
 			case AuthManager::ACTION_CREATE:
 				// TODO: ACTION_CREATE doesn't really need all
 				// the things provided by inheriting
@@ -149,7 +146,6 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 					new GoogleAuthenticationRequest( wfMessage( 'googlelogin-create' ),
 						wfMessage( 'googlelogin-link-help' ) ),
 				];
-				break;
 			default:
 				return [];
 		}
@@ -408,7 +404,6 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			switch ( $request->errorCode ) {
 				case 'access_denied':
 					return AuthenticationResponse::newFail( wfMessage( 'googlelogin-access-denied' ) );
-					break;
 				default:
 					return AuthenticationResponse::newFail( wfMessage( 'googlelogin-generic-error',
 						$request->errorCode ? $request->errorCode : 'unknown' ) );
