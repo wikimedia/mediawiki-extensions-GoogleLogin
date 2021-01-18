@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eleassar",
 			"HairyFotr"
 		]
 	},
-	"googlelogin-alloweddomain-terminatebutton": "Odstrani"
+	"googlelogin-manage-yes": "da",
+	"googlelogin-manage-no": "ne",
+	"googlelogin-alloweddomain-terminatebutton": "Odstrani",
+	"echo-pref-tooltip-change-googlelogin": "Obvesti me, ko administrator GoogleLogin spremeni moje povezane račune v Googlu."
 }
