@@ -77,8 +77,6 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideIsAssociated
-	 * @param $resultCount
-	 * @param $expected
 	 * @covers \GoogleLogin\GoogleIdProvider::isAssociated()
 	 */
 	public function testIsAssociated( $resultCount, $expected ) {
