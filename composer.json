@@ -4,7 +4,11 @@
 	"license": "MIT",
 	"require": {
 		"google/apiclient": "^2.0.0@RC",
+<<<<<<< HEAD   (dfe43c build: Updating ini to 1.3.8)
 		"monolog/monolog": "~1.25.3"
+=======
+		"monolog/monolog": "~2.2.0"
+>>>>>>> CHANGE (ffc93c Follow-up e96dd73e48: Raise monolog to ~2.2.0 to match MW 1.)
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "31.0.0",
