@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"require": {
 		"google/apiclient": "^2.0.0@RC",
-		"monolog/monolog": "~2.0.2"
+		"monolog/monolog": "~2.2.0"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "34.0.0",
