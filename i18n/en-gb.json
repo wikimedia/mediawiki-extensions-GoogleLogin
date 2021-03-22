@@ -1,8 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Captaindogfish"
+			"Captaindogfish",
+			"ChrisJr4Eva87"
 		]
 	},
+	"apihelp-googleplusprofileinfo-description": "Makes a request to the Google+ api to find out some personal information about a given user.",
+	"apihelp-googleplusprofileinfo-summary": "Makes a request to the Google+ api to find out some personal information about a given user.",
+	"apihelp-googleplusprofileinfo-param-googleid": "The Google ID of the user.",
+	"apihelp-googleloginmanagealloweddomain-description": "Allows you to manage the list of domains, which are allowed to be used to login with Google.",
+	"apihelp-googleloginmanagealloweddomain-summary": "Manage allowed domains for GoogleLogin",
+	"apihelp-googleloginmanagealloweddomain-param-method": "The method to execute, either removing or adding a domain from/to the list.",
+	"apihelp-googleloginmanagealloweddomain-param-domain": "The domain to add or remove to the list.",
+	"googlelogin": "Log in with Google",
+	"googlelogin-auth-service-name": "Google",
+	"managegooglelogin": "Manage GoogleLogin connections",
+	"googleloginalloweddomains": "Administrate allowed domains for GoogleLogin",
 	"googlelogin-create": "Create with Google"
 }
