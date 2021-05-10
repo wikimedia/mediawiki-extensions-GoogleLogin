@@ -62,7 +62,7 @@ class DBAllowedDomainsStore implements AllowedDomainsStore, MutableAllowedDomain
 		if ( $this->contains( $domain ) ) {
 			return -1;
 		}
-		$dbw = $this->dbLoadBalancer->getConnection( DB_MASTER );
+		$dbw = $this->dbLoadBalancer->getConnection( DB_PRIMARY );
 		$dbw->insert(
 			'googlelogin_allowed_domains',
 			[
@@ -75,7 +75,7 @@ class DBAllowedDomainsStore implements AllowedDomainsStore, MutableAllowedDomain
 	}
 
 	public function clear() {
-		$dbw = $this->dbLoadBalancer->getConnection( DB_MASTER );
+		$dbw = $this->dbLoadBalancer->getConnection( DB_PRIMARY );
 
 		$ok = $dbw->delete( 'googlelogin_allowed_domains', '*', __METHOD__ );
 		$this->allowedDomains = null;
@@ -87,7 +87,7 @@ class DBAllowedDomainsStore implements AllowedDomainsStore, MutableAllowedDomain
 		if ( !$this->contains( $domain ) ) {
 			return true;
 		}
-		$dbw = $this->dbLoadBalancer->getConnection( DB_MASTER );
+		$dbw = $this->dbLoadBalancer->getConnection( DB_PRIMARY );
 		return (bool)$dbw->delete( 'googlelogin_allowed_domains', [ 'gl_allowed_domain' =>
 			$domain->getHost() ], __METHOD__ );
 	}

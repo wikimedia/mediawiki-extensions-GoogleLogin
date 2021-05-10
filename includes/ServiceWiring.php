@@ -10,7 +10,7 @@ use GoogleLogin\GoogleUserMatching;
 use MediaWiki\MediaWikiServices;
 
 return [
-	Constants::SERVICE_ALLOWED_DOMAINS_STORE => function ( MediaWikiServices $services ) {
+	Constants::SERVICE_ALLOWED_DOMAINS_STORE => static function ( MediaWikiServices $services ) {
 		$glConfig = GoogleLogin::getGLConfig();
 		if (
 			is_array( $glConfig->get( 'GLAllowedDomains' ) ) &&
@@ -26,11 +26,11 @@ return [
 		return null;
 	},
 
-	Constants::SERVICE_GOOGLE_USER_MATCHING => function ( MediaWikiServices $services ) {
+	Constants::SERVICE_GOOGLE_USER_MATCHING => static function ( MediaWikiServices $services ) {
 		return new GoogleUserMatching( $services->getDBLoadBalancer() );
 	},
 
-	Constants::SERVICE_GOOGLE_ID_PROVIDER => function ( MediaWikiServices $services ) {
+	Constants::SERVICE_GOOGLE_ID_PROVIDER => static function ( MediaWikiServices $services ) {
 		return new GoogleIdProvider( $services->getDBLoadBalancer() );
 	}
 ];

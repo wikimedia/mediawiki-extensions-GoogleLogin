@@ -108,7 +108,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		$dbUpdaterMock->method( 'getDB' )->willReturn( wfGetDB( DB_REPLICA ) );
 		$dbUpdaterMock->expects( $this->exactly( 2 ) )
 			->method( 'addExtensionUpdate' )
-			->with( $this->callback( function ( $arg ) {
+			->with( $this->callback( static function ( $arg ) {
 				return in_array( $arg[1], [ 'user_google_user', 'googlelogin_allowed_domains' ] );
 			} ) );
 

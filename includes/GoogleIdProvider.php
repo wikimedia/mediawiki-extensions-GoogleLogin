@@ -20,7 +20,7 @@ class GoogleIdProvider {
 		if ( !$user->isRegistered() ) {
 			return [];
 		}
-		$db = $this->loadBalancer->getConnection( DB_MASTER );
+		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 
 		$result = $db->select(
 			'user_google_user',
@@ -45,7 +45,7 @@ class GoogleIdProvider {
 	 * @return bool Returns false, if the ID is not associated already, true otherwise
 	 */
 	public function isAssociated( $id ) {
-		$db = $this->loadBalancer->getConnection( DB_MASTER );
+		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 		$result = $db->selectRowCount(
 			'user_google_user',
 			'user_googleid',
