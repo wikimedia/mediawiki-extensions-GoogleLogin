@@ -38,7 +38,7 @@ class GoogleUserMatching {
 			return false;
 		}
 
-		$db = $this->loadBalancer->getConnection( DB_MASTER );
+		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 		return $db->insert(
 			'user_google_user',
 			[
@@ -61,7 +61,7 @@ class GoogleUserMatching {
 			return false;
 		}
 
-		$db = $this->loadBalancer->getConnection( DB_MASTER );
+		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 
 		return (bool)$db->delete(
 			"user_google_user",
@@ -77,7 +77,7 @@ class GoogleUserMatching {
 		if ( !isset( $token['sub'] ) ) {
 			return null;
 		}
-		$db = $this->loadBalancer->getConnection( DB_MASTER );
+		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 
 		$s = $db->selectRow(
 			'user_google_user',
@@ -99,7 +99,7 @@ class GoogleUserMatching {
 		if ( !isset( $token['email_verified'] ) || $token['email_verified'] !== true ) {
 			return null;
 		}
-		$db = $this->loadBalancer->getConnection( DB_MASTER );
+		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 
 		$s = $db->select(
 			'user',
