@@ -41,7 +41,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 		$this->dbConnection->expects( $this->never() )->method( 'select' );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$user = new UserIdentityValue( 0, '127.0.0.1', 0 );
+		$user = new UserIdentityValue( 0, '127.0.0.1' );
 		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
@@ -55,7 +55,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 			->willReturn( false );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$user = new UserIdentityValue( 123, __CLASS__, 222 );
+		$user = new UserIdentityValue( 123, __CLASS__ );
 		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
 	}
 
@@ -71,7 +71,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 			->willReturn( [ $aResult, $anotherResult ] );
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
-		$user = new UserIdentityValue( 123, __CLASS__, 222 );
+		$user = new UserIdentityValue( 123, __CLASS__ );
 		$this->assertEquals( [ 1, 2 ], $googleIdProvider->getFromUser( $user ) );
 	}
 

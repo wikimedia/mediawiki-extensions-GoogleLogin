@@ -46,7 +46,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 			->getMock();
 		$this->loadBalancer->method( 'getConnection' )->willReturn( $this->dbConnection );
 
-		$this->loggedInUser = new UserIdentityValue( 100, __CLASS__, 0 );
+		$this->loggedInUser = new UserIdentityValue( 100, __CLASS__ );
 	}
 
 	/**
@@ -163,7 +163,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	public function testMatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$user = new UserIdentityValue( 0, '127.0.0.1', 0 );
+		$user = new UserIdentityValue( 0, '127.0.0.1' );
 		$this->assertFalse( $matchingService->matchUser( $user, [] ) );
 	}
 
@@ -198,7 +198,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 	public function testUnmatchAnonymousUser() {
 		$matchingService = new GoogleUserMatching( $this->loadBalancer );
 
-		$user = new UserIdentityValue( 0, '127.0.0.1', 0 );
+		$user = new UserIdentityValue( 0, '127.0.0.1' );
 		$this->assertFalse( $matchingService->unmatchUser( $user, [] ) );
 	}
 
