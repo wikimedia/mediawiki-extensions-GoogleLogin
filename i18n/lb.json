@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Les Meloures",
 			"Robby",
 			"Soued031"
 		]
@@ -25,7 +26,7 @@
 	"googlelogin-manage-unknownerror": "Et gouf en onbekannt Feeler beim Luede vun Ären Daten. Vläicht gëtt et de Benotzer net op Google+ oder d'Nummer (ID) vum Profil ass falsch?",
 	"googlelogin-manage-plusinfo-title": "Profil-Informatiounen",
 	"googlelogin-manage-errorloading": "Feeler beim Lueden",
-	"googlelogin-manage-addlabel": "Google ID dobäisetzen",
+	"googlelogin-manage-addlabel": "Google ID derbäisetzen",
 	"googlelogin-username": "Benotzernumm",
 	"googlelogin-desc-authmanager": "Benotzer erlabe sech mat hirem Google Benotzerkont anzeloggen",
 	"googlelogin-generic-error": "Ups, do war e Feeler. Gitt wgl. zréck a probéiert nach eng Kéier. Message: $1",
