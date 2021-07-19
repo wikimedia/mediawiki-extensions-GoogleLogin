@@ -23,6 +23,7 @@
 	"googlelogin-manage-dismiss": "非表示",
 	"googlelogin-manage-openpluslink": "Google+ のプロフィールを開く",
 	"googlelogin-manage-addlabel": "Google IDを追加",
+	"googlelogin-username": "利用者名",
 	"googlelogin-create": "Google で作成",
 	"googlelogin-desc-authmanager": "利用者が、自身のGoogleアカウントと連携させ、ログインすることを許可する",
 	"googlelogin-link-help": "Googleアカウントをウィキのアカウントと連携します",
