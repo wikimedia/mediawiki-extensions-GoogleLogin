@@ -34,7 +34,7 @@ class GoogleUserMatchingTest extends MediaWikiIntegrationTestCase {
 		'email_verified' => true,
 	];
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->dbConnection = $this->getMockBuilder( IDatabase::class )

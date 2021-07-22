@@ -18,7 +18,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 */
 	private $moduleManager;
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 		$this->moduleManager = new ApiModuleManager(
 			new ApiMain(),

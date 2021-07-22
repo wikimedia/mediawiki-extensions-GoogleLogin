@@ -10,9 +10,9 @@ use GoogleLogin\AllowedDomains\EmailDomain;
 use MediaWiki\MediaWikiServices;
 
 class GoogleLogin {
-	/** @var Google_Client $mGoogleClient Stores an instance of GoogleClient */
+	/** @var Google_Client Stores an instance of GoogleClient */
 	private static $mGoogleClient;
-	/** @var \Config $mConfig object created for GoogleLogin extension */
+	/** @var \Config object created for GoogleLogin extension */
 	private static $mConfig;
 
 	/**
