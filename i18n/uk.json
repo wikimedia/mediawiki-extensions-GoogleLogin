@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Andriykopanytsia",
+			"DDPAT",
 			"Dars",
 			"Macofe",
 			"Olion",
@@ -76,7 +77,7 @@
 	"googlelogin-alloweddomain-removed-success": "Домен $1 успішно вилучено зі списку прийнятних доменів.",
 	"googlelogin-alloweddomain-change-error": "Сталася помилка при зміні списку прийнятних доменів.",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
-	"tag-googlelogin-description": "Реєстрації з цим теґом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
+	"tag-googlelogin-description": "Реєстрації з цим тегом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "керування зв'язками GoogleLogin",
 	"right-managegooglelogin": "Можливість додати, видалити або оглянути зв'язки із GoogleLogin",
 	"action-managegooglelogindomains": "керування дозволеними доменами GoogleLogin",
