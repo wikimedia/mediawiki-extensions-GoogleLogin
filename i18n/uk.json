@@ -21,6 +21,7 @@
 	"apihelp-googleloginmanagealloweddomain-param-method": "Метод виконання — або вилучення, або додавання домену з/до списку.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Домен, який слід додати чи вилучити зі списку.",
 	"googlelogin": "Увійти з Google",
+	"googlelogin-auth-service-name": "Google",
 	"managegooglelogin": "Управляти зв'язками GoogleLogin",
 	"googleloginalloweddomains": "Адмініструвати доменами, прийнятними для GoogleLogin",
 	"googlelogin-managelegend": "Шукати користувача для управління",
