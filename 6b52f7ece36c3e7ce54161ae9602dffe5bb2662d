@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd6eb5dd_ab242dd8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2021-09-04T11:04:37Z",
+      "side": 1,
+      "message": "Why master passed? T273261",
+      "revId": "6b52f7ece36c3e7ce54161ae9602dffe5bb2662d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
