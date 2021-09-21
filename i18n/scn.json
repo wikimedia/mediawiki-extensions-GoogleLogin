@@ -6,5 +6,6 @@
 	},
 	"googlelogin-manage-yes": "sì",
 	"googlelogin-manage-no": "no",
-	"googlelogin-username": "Nomu utenti"
+	"googlelogin-username": "Nomu utenti",
+	"googlelogin-alloweddomain-terminatebutton": "Leva"
 }
