@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Alirezaaa",
+			"Jeeputer",
 			"Reza1615"
 		]
 	},
@@ -10,5 +11,6 @@
 	"googlelogin-manage-no": "خیر",
 	"googlelogin-manage-dismiss": "نپذیرفتن",
 	"googlelogin-username": "نام کاربری",
-	"googlelogin-prefs-status": "وضعیت واردشدن به‌وسیله گوگل:"
+	"googlelogin-prefs-status": "وضعیت واردشدن به‌وسیله گوگل:",
+	"googlelogin-alloweddomain-terminatebutton": "حذف"
 }
