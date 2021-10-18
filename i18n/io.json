@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier"
 		]
 	},
+	"googlelogin-manage-yes": "yes",
 	"googlelogin-alloweddomain-terminatebutton": "Efacar"
 }
