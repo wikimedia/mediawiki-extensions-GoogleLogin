@@ -15,7 +15,7 @@ interface MutableAllowedDomainsStore extends AllowedDomainsStore {
 	 *
 	 * @param EmailDomain $domain The e-mail-address as an EmailDomain object to add as allowed
 	 * to the store
-	 * @return integer The ID of the newly added entry (0 if IDs are not used, -1 on failure)
+	 * @return int The ID of the newly added entry (0 if IDs are not used, -1 on failure)
 	 */
 	function add( EmailDomain $domain );
 
@@ -26,7 +26,7 @@ interface MutableAllowedDomainsStore extends AllowedDomainsStore {
 	 *
 	 * @param EmailDomain $domain The e-mail-address as an EmailDomain object to remove from the
 	 * store.
-	 * @return boolean
+	 * @return bool
 	 */
 	function remove( EmailDomain $domain );
 

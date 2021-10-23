@@ -17,7 +17,7 @@ interface AllowedDomainsStore {
 	 *
 	 * @param EmailDomain $domain The e-mail-address as an EmailDomain object to check if it is
 	 * contained in the store.
-	 * @return boolean
+	 * @return bool
 	 */
 	function contains( EmailDomain $domain );
 
