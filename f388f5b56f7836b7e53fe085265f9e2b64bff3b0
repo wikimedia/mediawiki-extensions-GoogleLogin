@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c991847f_26b4fcd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2021-12-05T00:53:53Z",
+      "side": 1,
+      "message": "[Just linking T273261 for the CI failure]",
+      "revId": "f388f5b56f7836b7e53fe085265f9e2b64bff3b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
