@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Pyscowicz",
-			"Silvonen"
+			"Silvonen",
+			"MITO"
 		]
 	},
 	"googlelogin": "Kirjaudu sisään käyttämällä Google-tunnusta",
+	"googlelogin-manage-usersubmit": "Hallitse käyttäjää",
 	"googlelogin-manage-orgsince": "Alkaen",
 	"googlelogin-manage-yes": "kyllä",
 	"googlelogin-manage-no": "ei",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Csega",
 			"Macofe",
-			"ViDam"
+			"ViDam",
+			"Tacsipacsi"
 		]
 	},
 	"googlelogin": "Bejelentkezés Google-lel",
@@ -14,5 +15,5 @@
 	"googlelogin-form-merge": "A Google fiók összekapcsolása a wikissel",
 	"googlelogin-form-unlink": "Google fiók leválasztása a wikisről",
 	"googlelogin-googleuser": "Google felhasználó",
-	"googlelogin-link-other": "A Google fiókod már egy másik felhasználóhoz van hozzákapcsolva. Egy Google fiók csak egy wikis fiókhoz lehet hozzákapcsolva. Kérlek, válaszd szét az összeköttetést a másik wikis fiókoddal, vagy ha nincs másik wikis fiókod, akkor lépj kapcsolatba egy rendszergazdával."
+	"googlelogin-link-other": "A Google-fiókod már egy másik felhasználóhoz van hozzákapcsolva. Válaszd szét az összeköttetést a másik wikis fiókoddal, vagy ha nincs másik wikis fiókod, akkor lépj kapcsolatba egy rendszergazdával."
 }
