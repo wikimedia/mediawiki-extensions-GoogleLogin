@@ -11,7 +11,8 @@
 			"Thibaut120094",
 			"Trial",
 			"Weft",
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Fait une requête à l’API de Google+ pour trouver des informations personnelles sur un utilisateur donné.",
@@ -22,6 +23,7 @@
 	"apihelp-googleloginmanagealloweddomain-param-method": "Méthode à exécuter, pour soit enlever (ou ajouter) un domaine de (ou à) la liste.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Le domaine à ajouter ou à retirer de la liste.",
 	"googlelogin": "Connexion avec Google",
+	"googlelogin-auth-service-name": "Google",
 	"managegooglelogin": "Gérer les connexions GoogleLogin",
 	"googleloginalloweddomains": "Gérer les domaines autorisés pour GoogleLogin",
 	"googlelogin-managelegend": "Trouver l'utilisateur à gérer",

@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"apihelp-googleplusprofileinfo-param-googleid": "L'ID Google di l'utenti.",
+	"googlelogin": "Trasi cu Google",
+	"googlelogin-manage-changelegend": "Cancia ID Google",
+	"googlelogin-manage-isplusser": "Riggistratu supra Google+",
+	"googlelogin-manage-yes": "sì",
+	"googlelogin-manage-no": "no",
+	"googlelogin-manage-addlabel": "Agghiunci ID Google",
+	"googlelogin-username": "Nomu utenti",
+	"googlelogin-googleuser": "Utenti Google",
+	"googlelogin-prefs-status": "Statu GoogleLogin:",
+	"googlelogin-alloweddomain-terminatebutton": "Leva"
+}

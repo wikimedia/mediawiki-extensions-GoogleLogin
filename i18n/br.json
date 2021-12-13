@@ -4,12 +4,24 @@
 			"Fohanno",
 			"Fulup",
 			"Macofe",
-			"Y-M D"
+			"Y-M D",
+			"Adriendelucca"
 		]
 	},
+	"apihelp-googleplusprofileinfo-param-googleid": "ID Google an implijer",
 	"googlelogin": "Kevreañ gant Google",
+	"googlelogin-manage-changelegend": "Kemmañ ar Google ID",
+	"googlelogin-manage-yes": "ya",
+	"googlelogin-manage-no": "ket",
 	"googlelogin-manage-dismiss": "Disteurel",
+	"googlelogin-manage-openpluslink": "Digeriñ ar profil Google+",
+	"googlelogin-manage-plusinfo-title": "Titouroù ar profil",
+	"googlelogin-manage-errorloading": "Kudenn kargañ",
+	"googlelogin-manage-addlabel": "Ouzhpennañ Google ID",
+	"googlelogin-username": "Anv implijer",
+	"googlelogin-create": "Krouiñ gant Google",
 	"googlelogin-generic-error": "Hopopop, ur fazi a oa. Distroit, mar plij, hag esaeit en-dro. Kemennadenn : $1",
 	"googlelogin-googleuser": "Implijer Google",
-	"googlelogin-prefs-status": "Statud GoogleLogin :"
+	"googlelogin-prefs-status": "Statud GoogleLogin :",
+	"googlelogin-alloweddomain-terminatebutton": "Dilemel"
 }

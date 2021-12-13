@@ -6,7 +6,8 @@
 			"Einreiher",
 			"Macofe",
 			"Senpremì",
-			"Statix64"
+			"Statix64",
+			"Ajeje Brazorf"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Effettua una richiesta alle API Google+ per trovare alcune informazioni personali su di un determinato utente.",
@@ -22,6 +23,7 @@
 	"googlelogin-manage-yes": "sì",
 	"googlelogin-manage-no": "no",
 	"googlelogin-manage-addlabel": "Aggiungi ID Google",
+	"googlelogin-username": "Nome utente",
 	"googlelogin-create": "Crea con Google",
 	"googlelogin-desc-authmanager": "Consente agli utenti di effettuare l'accesso con il proprio account Google.",
 	"googlelogin-generic-error": "Oops, c'è stato un'errore. Torna indietro e riprova. Messaggio: $1",

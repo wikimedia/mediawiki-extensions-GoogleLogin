@@ -1,8 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"HairyFotr"
+			"HairyFotr",
+			"Eleassar"
 		]
 	},
-	"googlelogin-alloweddomain-terminatebutton": "Odstrani"
+	"googlelogin-manage-yes": "da",
+	"googlelogin-manage-no": "ne",
+	"googlelogin-alloweddomain-terminatebutton": "Odstrani",
+	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
+	"tag-googlelogin-description": "Registracij s to oznako so bile opravljene z možnostjo [[Special:GoogleLogin|GoogleLogin]]",
+	"echo-pref-tooltip-change-googlelogin": "Obvesti me, ko administrator GoogleLogin spremeni moje povezane račune v Googlu."
 }
