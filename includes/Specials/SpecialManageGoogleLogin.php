@@ -194,7 +194,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 		$requestAddGoogleId = null;
 		$requestGoogleId = null;
 		if ( isset( $data['googleids'] ) ) {
-			$requestGoogleId = $data['googleids'];
+			$requestGoogleId = array_keys( array_filter( $data['googleids'] ) );
 		}
 		if ( isset( $data['addgoogleid'] ) ) {
 			$requestAddGoogleId = $data['addgoogleid'];
