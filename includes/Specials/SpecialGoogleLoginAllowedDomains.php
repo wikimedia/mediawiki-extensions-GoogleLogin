@@ -77,7 +77,7 @@ class SpecialGoogleLoginAllowedDomains extends SpecialPage {
 		$requestAdd = null;
 		$requestRemove = null;
 		if ( isset( $data['alloweddomains'] ) ) {
-			$requestRemove = $data['alloweddomains'];
+			$requestRemove = array_keys( array_filter( $data['alloweddomains'] ) );
 		}
 		if ( isset( $data['addallowedomain'] ) ) {
 			$requestAdd = $data['addallowedomain'];
