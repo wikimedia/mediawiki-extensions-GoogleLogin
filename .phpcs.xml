@@ -4,6 +4,16 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPrivate" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationProtected" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NoParamType" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortBoolReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortIntReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveStringParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveStringReturn" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPublic" />
+		<exclude name="MediaWiki.Commenting.RedundantVarName.Found" />
+		<exclude name="MediaWiki.Usage.StaticClosure.StaticClosure" />
+		<exclude name="PSR12.Functions.ReturnTypeDeclaration.SpaceBeforeColon" />
 		<exclude name="PSR12.Properties.ConstantVisibility.NotFound" />
 		<exclude name="Squiz.PHP.NonExecutableCode.Unreachable" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
@@ -11,5 +21,4 @@
 	<file>.</file>
 	<arg name="extensions" value="php" />
 	<arg name="encoding" value="UTF-8" />
-	<exclude-pattern>vendor</exclude-pattern>
 </ruleset>
