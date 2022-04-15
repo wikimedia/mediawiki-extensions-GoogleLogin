@@ -6,9 +6,9 @@ the MediaWiki User account.
 
 Requirements
 ==
-* MediaWiki Version 1.28+
+* MediaWiki Version 1.36+
 * MySQL (sorry, no PostgreSQL or SQLite support for now)
-* PHP 5.5+
+* PHP 7.3+
 * Google Developer Account with Google+ API access
 * Google+ API access
 * API Credentials for Webapplication (Client ID and Client Secret)
