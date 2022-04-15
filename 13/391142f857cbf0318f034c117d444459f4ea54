@@ -1,0 +1,7 @@
+Code-Review+2: Libraryupgrader <tools.libraryupgrader@tools.wmflabs.org>
+Verified+2: Zabe <alexander.vorwerk@stud.uni-goettingen.de>
+Submitted-by: Zabe <alexander.vorwerk@stud.uni-goettingen.de>
+Submitted-at: Fri, 15 Apr 2022 11:47:56 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GoogleLogin/+/781611
+Project: mediawiki/extensions/GoogleLogin
+Branch: refs/heads/REL1_36
