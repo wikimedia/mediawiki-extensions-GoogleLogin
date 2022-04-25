@@ -8,7 +8,8 @@
 			"Rubentl134",
 			"Ryo567",
 			"YoViajo",
-			"Jakeukalane"
+			"Jakeukalane",
+			"DiegoAmbrocio"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Realiza una solicitud a la API de Google+ para obtener información personal sobre alguien.",
@@ -57,7 +58,12 @@
 	"googlelogin-loginbutton-help": "Te autentica con tu cuenta de Google.",
 	"googlelogin-link-help": "Vincular tu cuenta en la wiki con tu cuenta de Google.",
 	"googlelogin-param-error-label": "Código de error devuelto por Google",
+	"googlelogin-param-code-label": "Token de acceso de Google",
+	"googlelogin-param-code-help": "En caso de una autenticación exitosa, el token de acceso devuelto por Google.",
+	"googlelogin-change-account-not-linked": "No puedes eliminar la conexión de una cuenta de Google, porque tu cuenta no está conectada con una cuenta de Google.",
 	"googlelogin-auth-service-unknown-account": "Cuenta de Google desconocida",
+	"googlelogin-access-denied": "No se puede acceder. Se ha denegado el acceso a la información de tu cuenta de Google.",
+	"googlelogin-alloweddomains-notmanageable": "Los dominios permitidos no pueden ser administrados usando esta interfaz. Para poder gestionar los dominios permitidos para GoogleLogin, es necesario habilitar la lista para que se almacene en la base de datos.",
 	"googlelogin-alloweddomain-terminatebutton": "Eliminar",
 	"googlelogin-alloweddomain-addlabel": "Añadir dominio permitido",
 	"googlelogin-alloweddomain-added-success": "Se añadió correctamente el dominio $1 a la lista de dominios permitidos.",
