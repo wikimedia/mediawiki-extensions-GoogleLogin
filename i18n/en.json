@@ -71,7 +71,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registrations with this tag were made with [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "manage GoogleLogin connections",
-	"right-managegooglelogin": "Can add, remove and view GoogleLogin connections",
+	"right-managegooglelogin": "Add, remove and view GoogleLogin connections",
 	"action-managegooglelogindomains": "manage allowed GoogleLogin domains",
 	"right-managegooglelogindomains": "Manage allowed GoogleLogin domains",
 	"echo-category-title-change-googlelogin": "Connected Google account changes",
