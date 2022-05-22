@@ -3,7 +3,13 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPrivate" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortBoolReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortIntReturn" />
 		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
+		<exclude name="MediaWiki.Commenting.RedundantVarName.Found" />
+		<exclude name="MediaWiki.Usage.DeprecatedConstantUsage.DB_MASTER" />
+		<exclude name="MediaWiki.Usage.StaticClosure.StaticClosure" />
+		<exclude name="PSR12.Functions.ReturnTypeDeclaration.SpaceBeforeColon" />
 		<exclude name="PSR12.Properties.ConstantVisibility.NotFound" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
 	</rule>
