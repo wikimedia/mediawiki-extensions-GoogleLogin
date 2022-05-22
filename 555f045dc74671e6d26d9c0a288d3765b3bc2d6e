@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bbc76b3_5a5ab004",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2022-05-22T09:37:10Z",
+      "side": 1,
+      "message": "LGTM, trivial change and failures are unrelated, force merging",
+      "revId": "555f045dc74671e6d26d9c0a288d3765b3bc2d6e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
