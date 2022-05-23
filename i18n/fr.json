@@ -82,7 +82,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Les inscriptions avec cette balise ont été faites avec [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gérer les connexions GoogleLogin",
-	"right-managegooglelogin": "Droit d’ajouter, supprimer et afficher des connexions GoogleLogin",
+	"right-managegooglelogin": "Ajouter, supprimer et afficher des connexions GoogleLogin",
 	"action-managegooglelogindomains": "gérer les domaines GoogleLogin autorisés",
 	"right-managegooglelogindomains": "Gérer des domaines GoogleLogin autorisés",
 	"echo-category-title-change-googlelogin": "Modifications des comptes Google connectés",

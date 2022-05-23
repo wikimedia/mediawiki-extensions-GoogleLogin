@@ -70,7 +70,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registrationes con iste etiquetta ha essite facite con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gerer connexiones GoogleLogin",
-	"right-managegooglelogin": "Pote adder, remover e vider connexiones GoogleLogin",
+	"right-managegooglelogin": "Adder, remover e vider connexiones GoogleLogin",
 	"action-managegooglelogindomains": "gerer dominios permittite pro GoogleLogin",
 	"right-managegooglelogindomains": "Gerer dominios permittite pro GoogleLogin",
 	"echo-category-title-change-googlelogin": "Cambiamentos de contos connectite de Google",

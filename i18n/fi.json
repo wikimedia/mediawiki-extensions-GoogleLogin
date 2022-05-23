@@ -21,5 +21,6 @@
 	"googlelogin-form-unlink": "Pura linkitys wiki-tiliin",
 	"googlelogin-googleuser": "Google-käyttäjä",
 	"googlelogin-auth-service-unknown-account": "Tuntematon Google-tili",
-	"googlelogin-alloweddomain-terminatebutton": "Poista"
+	"googlelogin-alloweddomain-terminatebutton": "Poista",
+	"right-managegooglelogin": "Lisätä, poistaa ja katsoa GoogleLogin-yhteyksiä"
 }

@@ -3,6 +3,7 @@
 		"authors": [
 			"Fengchao",
 			"Gaoxuewei",
+			"GuoPC",
 			"Liuxinyu970226",
 			"Luotiancheng",
 			"Macofe",
@@ -76,7 +77,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|Google登录]]",
 	"tag-googlelogin-description": "带此标记的注册是通过 [[Special:GoogleLogin|GoogleLogin]] 进行的",
 	"action-managegooglelogin": "管理GoogleLogin连接",
-	"right-managegooglelogin": "可以添加，移除和查看GoogleLogin连接",
+	"right-managegooglelogin": "添加、移除和查看GoogleLogin连接",
 	"echo-category-title-change-googlelogin": "连接的Google账号更改",
 	"notification-header-change-googlelogin": "您连接的Google账号已被更改",
 	"notification-change-googlelogin": "{{GENDER:$2|GoogleLogin管理员}}$1更改了您连接的Google账户。",
