@@ -81,7 +81,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Реєстрації з цим тегом були зроблені через [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "керування зв'язками GoogleLogin",
-	"right-managegooglelogin": "Можливість додати, видалити або оглянути зв'язки із GoogleLogin",
+	"right-managegooglelogin": "Додання, вилучення і перегляд зв'язків GoogleLogin",
 	"action-managegooglelogindomains": "керування дозволеними доменами GoogleLogin",
 	"right-managegooglelogindomains": "Керування дозволеними доменами GoogleLogin",
 	"echo-category-title-change-googlelogin": "Зміни пов'язаного облікового запису Google",
