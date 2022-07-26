@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"U.ayaao.p"
+		]
+	},
+	"googlelogin": "Google арқылы кіру",
+	"managegooglelogin": "GoogleLogin қосылымдарын басқару",
+	"googleloginalloweddomains": "GoogleLogin үшін рұқсат етілген домендерді басқару",
+	"googlelogin-managelegend": "Басқару үшін пайдаланушыны табыңыз",
+	"googlelogin-manage-usersubmit": "Пайдаланушыны басқару",
+	"googlelogin-manage-dismiss": "Жабу"
+}
