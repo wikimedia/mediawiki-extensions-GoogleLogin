@@ -9,6 +9,8 @@
 	"googlelogin": "ورود با گوگل",
 	"googlelogin-managelegend": "یافتن کاربر برای مدیریت",
 	"googlelogin-manage-usersubmit": "مدیریت کاربر",
+	"googlelogin-manage-orgname": "نام سازمان",
+	"googlelogin-manage-orgtitle": "موقعیت شغلی",
 	"googlelogin-manage-orgsince": "از",
 	"googlelogin-manage-yes": "بله",
 	"googlelogin-manage-no": "خیر",
