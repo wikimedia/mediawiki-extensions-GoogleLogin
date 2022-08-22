@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Boxmein",
-			"Pikne"
+			"Pikne",
+			"Kareyac"
 		]
 	},
+	"googlelogin-manage-yes": "jah",
 	"googlelogin-prefs-status": "GoogleLogini olek:"
 }
