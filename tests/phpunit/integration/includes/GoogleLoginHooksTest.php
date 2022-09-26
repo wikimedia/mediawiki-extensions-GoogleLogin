@@ -116,7 +116,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 * @covers \GoogleLogin\GoogleLoginHooks::onBeforeInitialize()
 	 */
 	public function testOnSetupAuthoritativeOtherProviders() {
 		$this->setMwGlobals( [
@@ -132,11 +132,11 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		] );
 		$this->expectException( ConfigurationError::class );
 
-		GoogleLoginHooks::onSetup();
+		GoogleLoginHooks::onBeforeInitialize();
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 * @covers \GoogleLogin\GoogleLoginHooks::onBeforeInitialize()
 	 */
 	public function testOnSetupAuthoritativeNoOtherProviders() {
 		$this->setMwGlobals( [
@@ -152,7 +152,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		] );
 
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			$this->assertNull( GoogleLoginHooks::onBeforeInitialize() );
 		}
 		catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
@@ -160,7 +160,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 * @covers \GoogleLogin\GoogleLoginHooks::onBeforeInitialize()
 	 */
 	public function testOnSetupNonAuthoritativeOtherProviders() {
 		$this->setMwGlobals( [
@@ -176,7 +176,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		] );
 
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			$this->assertNull( GoogleLoginHooks::onBeforeInitialize() );
 		}
 		catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
@@ -184,7 +184,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 * @covers \GoogleLogin\GoogleLoginHooks::onBeforeInitialize()
 	 */
 	public function testOnSetupNonAuthoritativeAtDisallowedUserChar() {
 		$this->setMwGlobals( [
@@ -201,7 +201,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		] );
 
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			$this->assertNull( GoogleLoginHooks::onBeforeInitialize() );
 		}
 		catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
@@ -209,7 +209,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 * @covers \GoogleLogin\GoogleLoginHooks::onBeforeInitialize()
 	 */
 	public function testOnSetupAuthoritativeAtDisallowedUserChar() {
 		$this->setMwGlobals( [
@@ -226,11 +226,11 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 		$this->expectException( ConfigurationError::class );
 
-		GoogleLoginHooks::onSetup();
+		GoogleLoginHooks::onBeforeInitialize();
 	}
 
 	/**
-	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
+	 * @covers \GoogleLogin\GoogleLoginHooks::onBeforeInitialize()
 	 */
 	public function testOnSetupAuthoritativeNoAtDisallowedUserChar() {
 		$this->setMwGlobals( [
@@ -246,7 +246,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		] );
 
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			$this->assertNull( GoogleLoginHooks::onBeforeInitialize() );
 		}
 		catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
