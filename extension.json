@@ -105,8 +105,8 @@
 		"localBasePath": "",
 		"remoteExtPath": "GoogleLogin"
 	},
-	"callback": "GoogleLogin\\GoogleLoginHooks::onSetup",
 	"Hooks": {
+		"BeforeInitialize": "GoogleLogin\\GoogleLoginHooks::onBeforeInitialize",
 		"AuthChangeFormFields": "GoogleLogin\\GoogleLoginHooks::onAuthChangeFormFields",
 		"UserLogoutComplete": "GoogleLogin\\GoogleLoginHooks::onUserLogoutComplete",
 		"LoadExtensionSchemaUpdates": "GoogleLogin\\GoogleLoginHooks::onLoadExtensionSchemaUpdates",

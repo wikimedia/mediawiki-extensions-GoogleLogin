@@ -170,7 +170,7 @@ class GoogleLoginHooks {
 	/**
 	 * @throws ConfigurationError
 	 */
-	public static function onSetup() {
+	public static function onBeforeInitialize() {
 		$services = MediaWikiServices::getInstance();
 		$config = $services->getConfigFactory()->makeConfig( 'googlelogin' );
 		if ( !$config->get( 'GLAuthoritativeMode' ) ) {
