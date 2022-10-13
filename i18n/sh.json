@@ -44,7 +44,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|Prijava s Guglom]]",
 	"tag-googlelogin-description": "Registracije sa ovim oznakom su učinjene uz [[Special:GoogleLogin|Prijava s Guglom]]",
 	"action-managegooglelogin": "upravljanje vezanjima s Guglom",
-	"right-managegooglelogin": "Mogućnost dodavanja, uklanjanja i pregleda veza s Guglom",
+	"right-managegooglelogin": "Dodavanje, uklanjanje i pregled veza prema GoogleLogin-u",
 	"action-managegooglelogindomains": "upravljanje dopuštenih domena za најава со Гугл",
 	"right-managegooglelogindomains": "Upravljanje dopuštenih domena za најава со Гугл",
 	"echo-pref-tooltip-change-googlelogin": "Obavijesti me kada administrator Најава со Гугл će mi promijeniti povezanost s Guglom."
