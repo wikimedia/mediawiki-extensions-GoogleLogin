@@ -7,6 +7,7 @@
 	},
 	"googlelogin-manage-yes": "da",
 	"googlelogin-manage-no": "ne",
+	"googlelogin-manage-dismiss": "Opusti",
 	"googlelogin-username": "Uporabniško ime",
 	"googlelogin-alloweddomain-terminatebutton": "Odstrani",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
