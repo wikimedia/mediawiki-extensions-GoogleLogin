@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aram1985"
+			"Aram1985",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"googlelogin-manage-isplusser": "Գրանցված է Google Plus-ոմ",
@@ -9,5 +10,6 @@
 	"googlelogin-manage-orgsince": "Մինչ",
 	"googlelogin-manage-yes": "Այո՛",
 	"googlelogin-manage-no": "ո՛չ",
-	"googlelogin-manage-errorloading": "Բեռնման սխալ"
+	"googlelogin-manage-errorloading": "Բեռնման սխալ",
+	"googlelogin-username": "Օգտանուն"
 }
