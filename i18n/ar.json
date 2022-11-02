@@ -74,7 +74,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "تمت عمليات التسجيل بهذا الوسم باستخدام [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "إدارة اتصالات GoogleLogin",
-	"right-managegooglelogin": "يمكنه إضافة وإزالة وعرض اتصالات GoogleLogin",
+	"right-managegooglelogin": "إضافة وإزالة وعرض اتصالات GoogleLogin",
 	"action-managegooglelogindomains": "إدارة نطاقات تسجيل دخول جوجل المسموح بها",
 	"right-managegooglelogindomains": "إدارة نطاقات تسجيل دخول جوجل المسموح بها",
 	"echo-category-title-change-googlelogin": "تغييرات الحساب المرتبط بجوجل",
