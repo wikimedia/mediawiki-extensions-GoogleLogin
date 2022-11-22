@@ -74,7 +74,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registos com esta marca foram feitos com o [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gerir ligações GoogleLogin",
-	"right-managegooglelogin": "Pode adicionar, remover e ver ligações GoogleLogin",
+	"right-managegooglelogin": "Adicionar, remover e ver ligações GoogleLogin",
 	"action-managegooglelogindomains": "gerir domínios permitidos para o GoogleLogin",
 	"right-managegooglelogindomains": "Gerir domínios permitidos para o GoogleLogin",
 	"echo-category-title-change-googlelogin": "Alterações na conta Google ligada",
