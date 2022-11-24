@@ -42,7 +42,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
 		$user = new UserIdentityValue( 0, '127.0.0.1' );
-		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
+		$this->assertSame( [], $googleIdProvider->getFromUser( $user ) );
 	}
 
 	/**
@@ -56,7 +56,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 		$googleIdProvider = new GoogleIdProvider( $this->loadBalancer );
 
 		$user = new UserIdentityValue( 123, __CLASS__ );
-		$this->assertEmpty( $googleIdProvider->getFromUser( $user ) );
+		$this->assertSame( [], $googleIdProvider->getFromUser( $user ) );
 	}
 
 	/**
