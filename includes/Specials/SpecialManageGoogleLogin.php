@@ -230,7 +230,7 @@ class SpecialManageGoogleLogin extends SpecialPage {
 				$out->wrapWikiMsg( '<div class="error">$1</div>', 'googlelogin-manage-givenid' );
 			} else {
 				// check, if the google id has a google plus profile
-				$plusCheck = Http::get(
+				$plusCheck = MediaWikiServices::getInstance()->getHttpRequestFactory()->get(
 					'https://www.googleapis.com/plus/v1/people/' .
 					$requestAddGoogleId .
 					'?key=' .
