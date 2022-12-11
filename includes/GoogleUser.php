@@ -1,6 +1,8 @@
 <?php
 namespace GoogleLogin;
 
+use MediaWiki\MediaWikiServices;
+
 class GoogleUser {
 	/**
 	 * @var string The Google ID of this GoogleUser object
@@ -67,7 +69,7 @@ class GoogleUser {
 		}
 		$requestUrl = 'https://www.googleapis.com/plus/v1/people/' . $this->googleId;
 		$requestUrl = wfAppendQuery( $requestUrl, [ 'key' => $glConfig->get( 'GLAPIKey' ) ] );
-		$plusCheck = \Http::get( $requestUrl );
+		$plusCheck = MediaWikiServices::getInstance()->getHttpRequestFactory()->get( $requestUrl );
 		if ( $plusCheck ) {
 			$this->userData = json_decode( $plusCheck, true );
 		}
