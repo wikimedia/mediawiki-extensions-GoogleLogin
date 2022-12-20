@@ -13,5 +13,5 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registracij s to oznako so bile opravljene z možnostjo [[Special:GoogleLogin|GoogleLogin]]",
 	"echo-category-title-change-googlelogin": "Spremembe povezanega Google računa",
-	"echo-pref-tooltip-change-googlelogin": "Obvesti me, ko administrator GoogleLogin spremeni moje povezane račune v Googlu."
+	"echo-pref-tooltip-change-googlelogin": "Obvesti me, ko administrator GoogleLogin spremeni moje povezane Google račune."
 }
