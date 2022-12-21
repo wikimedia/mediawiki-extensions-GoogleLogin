@@ -4,5 +4,6 @@
 			"Yupik"
 		]
 	},
-	"googlelogin": "Čálit sisa Google bokte"
+	"googlelogin": "Čálit sisa Google bokte",
+	"googlelogin-alloweddomain-terminatebutton": "Sihko"
 }
