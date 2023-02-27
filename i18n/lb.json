@@ -3,7 +3,8 @@
 		"authors": [
 			"Robby",
 			"Soued031",
-			"Les Meloures"
+			"Les Meloures",
+			"Volvox"
 		]
 	},
 	"googlelogin": "Alogge mat Google",
@@ -14,7 +15,7 @@
 	"googlelogin-manage-changelegend": "Google-ID änneren",
 	"googlelogin-manage-changedsuccess": "De Benotzer ass elo mam Google-Benotzerkont verbonn.",
 	"googlelogin-manage-terminatesuccess": "De  Benotzer ass net méi mat engem Google-Benotzerkont verbonn.",
-	"googlelogin-manage-invalidid": "Déi nei Google-ID déi Dir aginn hutt ass net valabel. D'ID muss numeresch sinn.",
+	"googlelogin-manage-invalidid": "Déi nei Google-ID, déi Dir aginn hutt, ass net valabel. D'ID muss numeresch sinn.",
 	"googlelogin-manage-isplusser": "Op Google+ registréiert",
 	"googlelogin-manage-givenid": "D'Google ID déi Dir aginn hutt ass scho mat engem anere Wiki-Benotzer verlinkt.",
 	"googlelogin-manage-orgname": "Numm vun der Organisatioun",
