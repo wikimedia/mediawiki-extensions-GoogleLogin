@@ -153,8 +153,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 		try {
 			$this->assertNull( GoogleLoginHooks::onSetup() );
-		}
-		catch ( ConfigurationError $exception ) {
+		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
 	}
@@ -177,8 +176,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 		try {
 			$this->assertNull( GoogleLoginHooks::onSetup() );
-		}
-		catch ( ConfigurationError $exception ) {
+		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
 	}
@@ -202,8 +200,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 		try {
 			$this->assertNull( GoogleLoginHooks::onSetup() );
-		}
-		catch ( ConfigurationError $exception ) {
+		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
 	}
@@ -247,8 +244,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 		try {
 			$this->assertNull( GoogleLoginHooks::onSetup() );
-		}
-		catch ( ConfigurationError $exception ) {
+		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
 	}

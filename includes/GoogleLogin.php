@@ -3,7 +3,6 @@
 namespace GoogleLogin;
 
 use ConfigFactory;
-
 use Google_Client;
 use GoogleLogin\AllowedDomains\AllowedDomainsStore;
 use GoogleLogin\AllowedDomains\EmailDomain;

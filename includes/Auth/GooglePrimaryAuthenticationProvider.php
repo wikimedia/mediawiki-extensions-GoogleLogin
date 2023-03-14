@@ -78,8 +78,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 
 				return $resp;
 			}
-		}
-		catch ( Exception $e ) {
+		} catch ( Exception $e ) {
 			return AuthenticationResponse::newFail( wfMessage( 'googlelogin-generic-error',
 				$e->getMessage() ) );
 		}
@@ -281,8 +280,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 			}
 
 			return AuthenticationResponse::newFail( wfMessage( 'googlelogin-link-other' ) );
-		}
-		catch ( Exception $e ) {
+		} catch ( Exception $e ) {
 			return AuthenticationResponse::newFail( wfMessage( 'googlelogin-generic-error',
 				$e->getMessage() ) );
 		}
@@ -345,8 +343,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 					return AuthenticationResponse::newFail( new \RawMessage( 'Database error' ) );
 				}
 			}
-		}
-		catch ( Exception $e ) {
+		} catch ( Exception $e ) {
 			return AuthenticationResponse::newFail( wfMessage( 'googlelogin-generic-error',
 				$e->getMessage() ) );
 		}
