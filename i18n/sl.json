@@ -11,6 +11,7 @@
 	"googlelogin-manage-errorloading": "Napaka nalaganja",
 	"googlelogin-username": "Uporabniško ime",
 	"googlelogin-create": "Ustvari z Googlom",
+	"googlelogin-form-merge": "Poveži račun Google z vikiračunom",
 	"googlelogin-alloweddomain-terminatebutton": "Odstrani",
 	"googlelogin-alloweddomain-addlabel": "Dodaj dovoljeno domeno",
 	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
