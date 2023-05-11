@@ -2,10 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Eitvys200",
-			"Zygimantus"
+			"Zygimantus",
+			"Nokeoo"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Atlieka Google+ api užklausą, kad sužinotu asmeninės informacijos apie nurodytą vartotoją.",
+	"apihelp-googleplusprofileinfo-summary": "Atlieka Google+ api užklausą, kad sužinotu asmeninės informacijos apie nurodytą naudotoją.",
+	"apihelp-googleplusprofileinfo-param-googleid": "Naudotojo Google ID.",
+	"apihelp-googleloginmanagealloweddomain-description": "Leidžia tvarkyti domenų, kuriuos leidžiama naudoti prisijungiant prie Google, sąrašą.",
+	"apihelp-googleloginmanagealloweddomain-summary": "Tvarkyti leidžiamus GoogleLogin domenus",
 	"googlelogin": "Prisijungti su Google",
 	"googlelogin-manage-usersubmit": "Tvarkyti vartotoją",
 	"googlelogin-manage-linked": "Paskyra susieta su {{PLURAL:$1|Google paskyra|Google paskyromis}} su {{PLURAL:$1|šiuo ID|šiais ID}}:",
