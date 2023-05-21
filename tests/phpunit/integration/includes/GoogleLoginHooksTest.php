@@ -249,7 +249,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	public function provideAllowedDomainsConfig() {
+	public static function provideAllowedDomainsConfig() {
 		return [
 			[ true ],
 			[ false ],

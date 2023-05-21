@@ -89,7 +89,7 @@ class GoogleIdProviderTest extends MediaWikiUnitTestCase {
 		$this->assertEquals( $expected, $googleIdProvider->isAssociated( 123 ) );
 	}
 
-	public function provideIsAssociated() {
+	public static function provideIsAssociated() {
 		return [
 			[ 0, false ],
 			[ 1, true ],
