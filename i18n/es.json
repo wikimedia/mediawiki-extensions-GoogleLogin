@@ -7,6 +7,7 @@
 			"Jakeukalane",
 			"Macofe",
 			"MarcoAurelio",
+			"No se",
 			"Rubentl134",
 			"Ryo567",
 			"YoViajo"
@@ -73,5 +74,7 @@
 	"tag-googlelogin-description": "Los registros con esta etiqueta se han hecho con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "administrar conexiones de GoogleLogin",
 	"right-managegooglelogin": "Capaz de añadir, eliminar y ver conexiones de GoogleLogin",
-	"right-managegooglelogindomains": "Gestionar dominios de GoogleLogin autorizados"
+	"right-managegooglelogindomains": "Gestionar dominios de GoogleLogin autorizados",
+	"echo-category-title-change-googlelogin": "Cambios en la cuenta de Google conectada",
+	"echo-pref-tooltip-change-googlelogin": "Notificarme cuando un administrador de GoogleLogin cambie mis cuentas de Google conectadas."
 }
