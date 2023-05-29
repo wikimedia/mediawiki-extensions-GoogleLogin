@@ -14,7 +14,6 @@
 	"googlelogin-form-merge": "Poveži račun Google z vikiračunom",
 	"googlelogin-alloweddomain-terminatebutton": "Odstrani",
 	"googlelogin-alloweddomain-addlabel": "Dodaj dovoljeno domeno",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registracij s to oznako so bile opravljene z možnostjo [[Special:GoogleLogin|GoogleLogin]]",
 	"echo-category-title-change-googlelogin": "Spremembe povezanega Google računa",
 	"echo-pref-tooltip-change-googlelogin": "Obvesti me, ko administrator GoogleLogin spremeni moje povezane Google račune."

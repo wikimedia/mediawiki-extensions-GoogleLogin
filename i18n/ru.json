@@ -72,7 +72,6 @@
 	"googlelogin-alloweddomain-added-success": "Домен $1 успешно добавлен в список разрешённых доменов.",
 	"googlelogin-alloweddomain-removed-success": "Домен $1 успешно удалён из списка разрешённых доменов.",
 	"googlelogin-alloweddomain-change-error": "Произошла ошибка при изменении списка разрешённых доменов.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Регистрация с этим тегом была произведена с помощью [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "управление связью с Google",
 	"right-managegooglelogin": "Добавлять, удалять и смотреть связи с GoogleLogin",

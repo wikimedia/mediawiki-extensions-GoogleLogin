@@ -67,7 +67,6 @@
 	"googlelogin-alloweddomain-added-success": "Le dominio $1 ha essite addite al lista de dominios permittite.",
 	"googlelogin-alloweddomain-removed-success": "Le dominio $1 ha essite removite del lista de dominios permittite.",
 	"googlelogin-alloweddomain-change-error": "Un error ha occurrite durante le cambiamento del lista de dominios permittite.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registrationes con iste etiquetta ha essite facite con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gerer connexiones GoogleLogin",
 	"right-managegooglelogin": "Adder, remover e vider connexiones GoogleLogin",

@@ -72,7 +72,6 @@
 	"googlelogin-alloweddomain-added-success": "$1 alan adı, izin verilen alan adları listesine başarıyla eklendi.",
 	"googlelogin-alloweddomain-removed-success": "$1 alan adı, izin verilen alan adları listesine başarıyla kaldırıldı.",
 	"googlelogin-alloweddomain-change-error": "İzin verilen alanların listesi değişikliği sırasında bir hata oluştu.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Bu etikete yapılan kayıtlar [[Special:GoogleLogin|GoogleLogin]] ile yapıldı",
 	"action-managegooglelogin": "GoogleLogin bağlantılarını yönetin",
 	"right-managegooglelogin": "GoogleLogin bağlantılarını ekleyebilir, kaldırabilir ve görüntüleyebilir",

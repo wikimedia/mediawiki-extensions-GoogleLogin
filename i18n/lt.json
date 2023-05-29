@@ -66,7 +66,6 @@
 	"googlelogin-alloweddomain-added-success": "Domenas $1 sėkmingai įtrauktas į leidžiamų domenų sąrašą.",
 	"googlelogin-alloweddomain-removed-success": "Domenas $1 sėkmingai pašalintas iš leidžiamų domenų sąrašo.",
 	"googlelogin-alloweddomain-change-error": "Keičiant leidžiamų domenų sąrašą įvyko klaida.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registracija su šia žyma buvo atlikta naudojant [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "valdyti „GoogleLogin“ ryšius",
 	"right-managegooglelogin": "Pridėti, pašalinti ir peržiūrėti „GoogleLogin“ ryšius",
