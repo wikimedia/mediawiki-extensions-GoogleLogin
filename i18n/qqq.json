@@ -13,10 +13,8 @@
 			"Umherirrender"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "{{doc-apihelp-description|googleplusprofileinfo}}",
 	"apihelp-googleplusprofileinfo-summary": "{{doc-apihelp-summary|googleplusprofileinfo}}",
 	"apihelp-googleplusprofileinfo-param-googleid": "{{doc-apihelp-param|googleplusprofileinfo|googleid}}",
-	"apihelp-googleloginmanagealloweddomain-description": "{{doc-apihelp-description|googleloginmanagealloweddomain}}",
 	"apihelp-googleloginmanagealloweddomain-summary": "{{doc-apihelp-summary|googleloginmanagealloweddomain}}",
 	"apihelp-googleloginmanagealloweddomain-param-method": "{{doc-apihelp-param|googleloginmanagealloweddomain|method}}",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "{{doc-apihelp-param|googleloginmanagealloweddomain|domain}}",
