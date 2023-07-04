@@ -71,7 +71,7 @@
 	"tag-googlelogin": "[[Special:GoogleLogin|Најава со Гугл]]",
 	"tag-googlelogin-description": "Зачленувањата со оваа ознака се направени со [[Special:GoogleLogin|Најава со Гугл]]",
 	"action-managegooglelogin": "раководење со поврзувања со Гугл",
-	"right-managegooglelogin": "Можност за додавање, отстранување и преглед на врски со Гугл",
+	"right-managegooglelogin": "Додавање, отстранување и преглед на врски со Гугл",
 	"action-managegooglelogindomains": "раководење со допуштени домени за најава со Гугл",
 	"right-managegooglelogindomains": "Раководење со допуштени домени за најава со Гугл",
 	"echo-category-title-change-googlelogin": "Промени во поврзаноста со Гугл",
