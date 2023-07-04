@@ -9,10 +9,8 @@
 			"Watermelon juice"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Belirli bir kullanıcı hakkındaki bazı kişisel bilgileri öğrenmek için Google+ API'sine bir istek yapar.",
 	"apihelp-googleplusprofileinfo-summary": "Belirli bir kullanıcı hakkındaki bazı kişisel bilgileri öğrenmek için Google+ API'sine bir istek yapar.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Kullanıcının Google kimliği.",
-	"apihelp-googleloginmanagealloweddomain-description": "Google ile oturum açmak için kullanılmasına izin verilen alanların listesini yönetmenizi sağlar.",
 	"apihelp-googleloginmanagealloweddomain-summary": "GoogleLogin için izin verilen alanları yönetin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Yerine getirme yöntemi, listeden bir alan adının (domain) kaldırılması veya eklenmesidir.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Listeye eklenecek veya kaldırılacak alan.",

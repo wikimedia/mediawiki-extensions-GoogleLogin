@@ -7,10 +7,8 @@
 			"LaG roiL"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "לשלוח בקשה ל־api של Google+ כדי למצוא מידע אישי על משתמש מסוים.",
 	"apihelp-googleplusprofileinfo-summary": "לשלוח בקשה ל־API של גוגל+ כדי למצוא מידע אישי על משתמש מסוים.",
 	"apihelp-googleplusprofileinfo-param-googleid": "מזהה גוגל של המשתמש.",
-	"apihelp-googleloginmanagealloweddomain-description": "מאפשרת לך לנהל את רשימת התחומים המותרים לשימוש לכניסה לגוגל.",
 	"apihelp-googleloginmanagealloweddomain-summary": "ניהול תחומים מותרים עבור GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "השיטה לביצוע – הסרה או הוספה של תחום מהרשימה או אליה.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "התחום שיש להוסיף לרשימה או להסיר ממנה.",

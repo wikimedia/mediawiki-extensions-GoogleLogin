@@ -4,10 +4,8 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Gjør en forespørsel til Google+s API for å finne ut noe personlig informasjon om en gitt bruker.",
 	"apihelp-googleplusprofileinfo-summary": "Gjør en forespørsel til Google+s API for å finne ut noe personlig informasjon om en gitt bruker.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Brukerens Google-ID.",
-	"apihelp-googleloginmanagealloweddomain-description": "Lar deg behandle listen over domener som kan brukes for å logge inn med Google.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Behandle tillatte domener for GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Metoden som skal kjøres, enten fjerning eller tilføyelse av et domene fra/til lista.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Domenet som skal legges til eller fjernes fra lista.",

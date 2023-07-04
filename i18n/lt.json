@@ -6,10 +6,8 @@
 			"Zygimantus"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Atlieka Google+ api užklausą, kad sužinotu asmeninės informacijos apie nurodytą vartotoją.",
 	"apihelp-googleplusprofileinfo-summary": "Atlieka Google+ api užklausą, kad sužinotu asmeninės informacijos apie nurodytą naudotoją.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Naudotojo Google ID.",
-	"apihelp-googleloginmanagealloweddomain-description": "Leidžia tvarkyti domenų, kuriuos leidžiama naudoti prisijungiant prie Google, sąrašą.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Tvarkyti leidžiamus GoogleLogin domenus",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Vykdymo metodas – domeno pašalinimas iš sąrašo arba įtraukimas į jį.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Domenas, kurį norite įtraukti arba pašalinti iš sąrašo.",

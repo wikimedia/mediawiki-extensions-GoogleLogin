@@ -4,10 +4,8 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Dobavlja zahtjev до прилогот Gugla+ za dobijanje informacija o datom korisniku.",
 	"apihelp-googleplusprofileinfo-summary": "Dobavlja zahtjev до прилогот Gugla+ za dobijanje informacija o datom korisniku.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Korisnička naznaka Gugla.",
-	"apihelp-googleloginmanagealloweddomain-description": "Omogućuje upravljanje spisak domena na kojima dopuštena je prijava sa Guglom.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Upravljanje dopuštenim domenama za Најава со Гугл",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Domena što će se dodati/ukloni sa spiska.",
 	"googlelogin": "Prijava uz Gugl",

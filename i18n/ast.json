@@ -4,10 +4,8 @@
 			"Xuacu"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Facer una solicitú a la API de Google+ p'alcontrar información personal del usuariu indicáu.",
 	"apihelp-googleplusprofileinfo-summary": "Facer una solicitú a la API de Google+ p'alcontrar información personal del usuariu indicáu.",
 	"apihelp-googleplusprofileinfo-param-googleid": "ID de Google del usuariu.",
-	"apihelp-googleloginmanagealloweddomain-description": "Te permite alministrar la llista de dominios que pueden usase p'aniciar sesión con Google.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Alministrar dominios permitíos pa GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "El métodu a executar, o desaniciar o amestar un dominiu de/a la llista.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "El dominiu a amestar o desaniciar de la llista.",

@@ -13,10 +13,8 @@
 			"YoViajo"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Realiza una solicitud a la API de Google+ para obtener información personal sobre alguien.",
 	"apihelp-googleplusprofileinfo-summary": "Realiza una solicitud a la API de Google+ para obtener información personal sobre alguien.",
 	"apihelp-googleplusprofileinfo-param-googleid": "El ID Google del usuario.",
-	"apihelp-googleloginmanagealloweddomain-description": "Permite gestionar la lista de dominios permitidos para autenticarse con Google.",
 	"googlelogin": "Iniciar sesión con Google",
 	"managegooglelogin": "Administrar conexiones GoogleLogin",
 	"googlelogin-managelegend": "Buscar usuario para administrar",

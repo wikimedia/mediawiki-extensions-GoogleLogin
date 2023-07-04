@@ -4,10 +4,8 @@
 			"McDutchie"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Face un requesta al API de Google+ pro trovar alcun information personal sur un usator indicate.",
 	"apihelp-googleplusprofileinfo-summary": "Face un requesta al API de Google+ pro trovar alcun information personal sur un usator indicate.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Le ID de Google del usator.",
-	"apihelp-googleloginmanagealloweddomain-description": "Permitte gerer le lista de dominios que pote esser usate pro aperir session con Google.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Gerer dominios permittite pro GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Le methodo a executar: addition o remotion de un dominio al/del lista.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Le dominio a adder al lista o remover del lista.",

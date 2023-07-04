@@ -14,10 +14,8 @@
 			"Ата"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Робить запит до API Google+, аби отримати деяку особову інформацію про вказаного користувача.",
 	"apihelp-googleplusprofileinfo-summary": "Робить запит до API Google+, аби отримати деяку особову інформацію про вказаного користувача.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Google-ідентифікатор користувача.",
-	"apihelp-googleloginmanagealloweddomain-description": "Дозволяє Вам управляти списком доменів, які можна використовувати для входу в систему за допомогою Google.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Керувати доменами, прийнятними для GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Метод виконання — або вилучення, або додавання домену з/до списку.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Домен, який слід додати чи вилучити зі списку.",

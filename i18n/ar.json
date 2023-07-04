@@ -7,10 +7,8 @@
 			"محمد أحمد عبد الفتاح"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "يقدم طلبا إلى api جوجل+ لاكتشاف بعض المعلومات الشخصية عن مستخدم معين.",
 	"apihelp-googleplusprofileinfo-summary": "يقدم طلبا إلى api جوجل+ لاكتشاف بعض المعلومات الشخصية عن مستخدم معين.",
 	"apihelp-googleplusprofileinfo-param-googleid": "معرف جوجل للمستخدم.",
-	"apihelp-googleloginmanagealloweddomain-description": "يسمح لك بإدارة قائمة النطاقات، المسموح باستخدامها لتسجيل الدخول باستخدام جوجل.",
 	"apihelp-googleloginmanagealloweddomain-summary": "إدارة النطاقات المسموح بها لـGoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "طريقة التنفيذ، إما إزالة أو إضافة نطاق من/إلى القائمة.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "النطاق لإضافته أو إزالته إلى القائمة.",

@@ -9,7 +9,6 @@
 			"Sujiniku"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "指定された利用者についての一部個人情報を取得するために、Google+ APIへの要求を行います。",
 	"googlelogin": "Google を使用してログイン",
 	"managegooglelogin": "GoogleLogin 接続の管理",
 	"googlelogin-manage-usersubmit": "ユーザー管理",

@@ -13,10 +13,8 @@
 			"Xiplus"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "向 Google+ api 建立找出所指定使用者個人資訊的請求。",
 	"apihelp-googleplusprofileinfo-summary": "向 Google+ api 建立找出所指定使用者個人資訊的請求。",
 	"apihelp-googleplusprofileinfo-param-googleid": "使用者的 Google ID。",
-	"apihelp-googleloginmanagealloweddomain-description": "允許您管理可用來以 google 登入的網域清單。",
 	"apihelp-googleloginmanagealloweddomain-summary": "管理用於 Google 登入的允許網域",
 	"apihelp-googleloginmanagealloweddomain-param-method": "執行的方式：增加、或從列表中刪除網域。",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "要添加、或從列表中刪除的網域。",

@@ -7,7 +7,6 @@
 			"Toliño"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Facer unha petición á API de Google+ para atopar a información persoal sobre o usuario indicado.",
 	"apihelp-googleplusprofileinfo-summary": "Facer unha petición á API de Google+ para atopar a información persoal sobre o usuario indicado.",
 	"apihelp-googleplusprofileinfo-param-googleid": "O identificador Google do usuario.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Xestionar dominios permitidos para GoogleLogin",

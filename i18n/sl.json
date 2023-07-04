@@ -5,10 +5,8 @@
 			"HairyFotr"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Pošlje zahtevek API-ju Google+, da poišče nekaj osebnih podatkov o določenem uporabniku.",
 	"apihelp-googleplusprofileinfo-summary": "Pošilja zahtevek API-ju Google+, da poišče nekaj osebnih podatkov o določenem uporabniku.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Google ID uporabnika.",
-	"apihelp-googleloginmanagealloweddomain-description": "Omogoča vam upravljanje seznama domen, ki jih je dovoljeno uporabljati za prijavo v Google.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Upravljanje dovoljenih domen za GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Metoda za izvedbo odstranitve ali dodajanja domene s seznama/na seznam.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Domena, ki jo želite dodati na seznam ali odstraniti s seznama.",

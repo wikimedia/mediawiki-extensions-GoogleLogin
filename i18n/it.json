@@ -10,7 +10,6 @@
 			"Statix64"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Effettua una richiesta alle API Google+ per trovare alcune informazioni personali su di un determinato utente.",
 	"apihelp-googleplusprofileinfo-summary": "Effettua una richiesta alle API Google+ per trovare alcune informazioni personali su di un determinato utente.",
 	"apihelp-googleplusprofileinfo-param-googleid": "L'ID Google dell'utente.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Gestisci domini consentiti per GoogleLogin",

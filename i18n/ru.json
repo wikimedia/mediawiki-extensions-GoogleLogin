@@ -9,10 +9,8 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-googleplusprofileinfo-description": "Совершает запрос к приложению Google+ для получения личной информации о данном участнике.",
 	"apihelp-googleplusprofileinfo-summary": "Совершает запрос к приложению Google+ для получения личной информации о данном участнике.",
 	"apihelp-googleplusprofileinfo-param-googleid": "Google ID участника.",
-	"apihelp-googleloginmanagealloweddomain-description": "Позволяет управлять списком доменов, которые разрешены для входа через Google.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Управление разрешёнными доменами для Входа через Google",
 	"apihelp-googleloginmanagealloweddomain-param-method": "Способ выполнения, с удалением или добавлением домена из/в список.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Домен, который будет добавлен/удалён из списка.",
