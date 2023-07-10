@@ -67,7 +67,7 @@
 	"googlelogin-alloweddomain-change-error": "En feil oppsto under endringen av listen over tillatte domener.",
 	"tag-googlelogin-description": "Registreringer med denne taggen ble gjort med [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "behandle GoogleLogin-tilknytninger",
-	"right-managegooglelogin": "Kan legge til, fjerne og vise GoogleLogin-tilknytninger",
+	"right-managegooglelogin": "Legge til, fjerne og vise GoogleLogin-tilknytninger",
 	"action-managegooglelogindomains": "behandle tillatte GoogleLogin-domener",
 	"right-managegooglelogindomains": "Behandle tillatte GoogleLogin-domener",
 	"echo-category-title-change-googlelogin": "Endringer i tilknyttede Google-kontoer",
