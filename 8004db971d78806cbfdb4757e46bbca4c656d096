@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ffce896_ae1248d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2023-07-15T23:29:46Z",
+      "side": 1,
+      "message": "This means it now checks only during page views (index.php/MediaWiki.php) and not during api.php, rest.php, thumb.php, img_auth.php etc; and not during maintenance scripts (e.g. install.php or update.php).\n\nIs that intentional?",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 39
+      },
+      "revId": "8004db971d78806cbfdb4757e46bbca4c656d096",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
