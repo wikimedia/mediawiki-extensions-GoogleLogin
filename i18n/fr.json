@@ -12,7 +12,8 @@
 			"Trial",
 			"Verdy p",
 			"Weft",
-			"Wladek92"
+			"Wladek92",
+			"McDutchie"
 		]
 	},
 	"apihelp-googleplusprofileinfo-summary": "Effectue des requêtes vers l’API Google+ pour extraire des informations personnelles concernant un utilisateur donné.",
@@ -84,7 +85,7 @@
 	"echo-category-title-change-googlelogin": "Modifications des comptes Google associés",
 	"notification-header-change-googlelogin": "Vos comptes Google associés ont été modifiés",
 	"notification-change-googlelogin": "L’administrat{{GENDER:$2|eur|rice}} GoogleLogin $1 a modifié vos comptes Google associés.",
-	"notification-add-googlelogin": "Le{{PLURAL:$2||s}} compte{{PLURAL:$2||s}} Google suivant{{PLURAL:$2||s}} {{PLURAL:$2|es|son}}t maintenant associé{{PLURAL:$2||s}} à votre compte wiki : $1.",
-	"notification-remove-googlelogin": "Le{{PLURAL:$2||s}} compte{{PLURAL:$2||s}} Google suivant{{PLURAL:$2||s}} n{{PLURAL:$2|’es|e son}}t plus associé{{PLURAL:$2||s}} à votre compte wiki : $1.",
+	"notification-add-googlelogin": "{{PLURAL:$2|Le compte Google suivant est maintenant associé|Les comptes Google suivants sont maintenant associés}} à votre compte wiki : $1.",
+	"notification-remove-googlelogin": "{{PLURAL:$2|Le compte Google suivant n’est plus associé|Les comptes Google suivants ne sont plus associés}} à votre compte wiki : $1.",
 	"echo-pref-tooltip-change-googlelogin": "M’avertir lorsqu’un administrateur GoogleLogin modifie mes comptes Google associés."
 }
