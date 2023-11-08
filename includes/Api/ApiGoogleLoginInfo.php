@@ -11,12 +11,12 @@ class ApiGoogleLoginInfo extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !isset( $params['googleid'] ) ) {
-			$this->dieUsage( 'Invalid Google ID', 'googleidinvalid' );
+			$this->dieWithError( 'Invalid Google ID', 'googleidinvalid' );
 		}
 
 		// only user with the managegooglelogin right can use this Api
 		if ( !$user->isAllowed( 'managegooglelogin' ) ) {
-			$this->dieUsage(
+			$this->dieWithError(
 				'Insufficient permissions. You need the managegooglelogin permission to use this API module',
 				'insufficientpermissions'
 			);
@@ -24,7 +24,7 @@ class ApiGoogleLoginInfo extends ApiBase {
 
 		$googleUser = \GoogleLogin\GoogleUser::newFromGoogleId( $params['googleid'] );
 		if ( !$googleUser->isDataLoaded() ) {
-			$this->dieUsage( 'Google user not found or false api key.', 'unknownuser' );
+			$this->dieWithError( 'Google user not found or false api key.', 'unknownuser' );
 		}
 		$result = [];
 		if ( $googleUser->getData( 'displayName' ) ) {
