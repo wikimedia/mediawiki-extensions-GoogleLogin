@@ -14,7 +14,7 @@
 	"apihelp-googleloginmanagealloweddomain-summary": "ניהול תחומים מותרים עבור GoogleLogin",
 	"apihelp-googleloginmanagealloweddomain-param-method": "השיטה לביצוע – הסרה או הוספה של תחום מהרשימה או אליה.",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "התחום שיש להוסיף לרשימה או להסיר ממנה.",
-	"googlelogin": "כניסה עם חשבון Google",
+	"googlelogin": "כניסה באמצעות גוגל",
 	"managegooglelogin": "ניהול התחברויות של GoogleLogin",
 	"googleloginalloweddomains": "ניהול תחומים מותרים עבור GoogleLogin",
 	"googlelogin-managelegend": "מציאת משתמש לניהול",
