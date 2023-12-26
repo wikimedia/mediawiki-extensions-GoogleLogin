@@ -48,7 +48,7 @@
 	"googlelogin-manage-addlabel": "Google-ID toevoegen",
 	"googlelogin-username": "Gebruikersnaam",
 	"googlelogin-create": "Maak met Google",
-	"googlelogin-desc-authmanager": "Gebruikers laten inloggen met hun Google-account",
+	"googlelogin-desc-authmanager": "Gebruikers zich laten aanmelden met hun Google-account",
 	"googlelogin-generic-error": "Er is een fout opgetreden. Probeer het opnieuw. Bericht: $1",
 	"googlelogin-unallowed-domain": "Het e-maildomein dat wordt gebruikt voor het primaire e-mailadres van uw Googleaccount ($1) mag niet aanmelden bij deze wiki.",
 	"googlelogin-form-merge": "Koppel Google aan wiki-account",
