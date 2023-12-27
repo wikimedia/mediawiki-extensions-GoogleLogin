@@ -16,7 +16,7 @@
 	"googleloginalloweddomains": "Upravljanje dovoljenih domen za GoogleLogin",
 	"googlelogin-managelegend": "Poiščite uporabnika za upravljanje",
 	"googlelogin-manage-usersubmit": "Upravljanje uporabnika",
-	"googlelogin-manage-user": "Upravljate {{GENDER:$1|uporabnika|uporabnico|uporabnika/co}} <strong>$1</strong>.",
+	"googlelogin-manage-user": "Upravljate {{GENDER:$1|uporabnika|uporabnico|uporabnika_co}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Račun je povezan z {{PLURAL:$1|Google računom|Google računoma|Google računi}} z {{PLURAL:$1|naslednjim ID-jem|naslednjima ID-jema|naslednjimi ID-ji}}:",
 	"googlelogin-manage-notlinked": "Račun ni trenutno povezan z nobenim Google računom.",
 	"googlelogin-manage-changelegend": "Sprememba Google ID-ja",
@@ -74,7 +74,7 @@
 	"right-managegooglelogindomains": "Upravljanje dovoljenih domen GoogleLogin",
 	"echo-category-title-change-googlelogin": "Spremembe povezanega Google računa",
 	"notification-header-change-googlelogin": "Vaši povezani Google računi so spremenjeni",
-	"notification-change-googlelogin": "{{GENDER:$2|Administrator GoogleLogina $1 je spremenil|Administratorka GoogleLogina $1 je spremenila|Administrator/ka GoogleLogina $1 je spremenil/a}} vaše povezane račune Google.",
+	"notification-change-googlelogin": "{{GENDER:$2|Administrator GoogleLogina $1 je spremenil|Administrtorka GoogleLogina $1 je spremenila|Administrator_ka GoogleLogina $1 je spremenil_a}} vaše povezane Google račune.",
 	"notification-add-googlelogin": "{{PLURAL:$2|Naslednji Google račun je zdaj povezan|Naslednja Google računa sta zdaj povezana|Naslednji Google računi so zdaj povezani}} z vašim viki računom: $1.",
 	"notification-remove-googlelogin": "{{PLURAL:$2|Naslednji Google račun zdaj ni več povezan|Naslednja Google računa zdaj nista več povezana|Naslednji Google računi zdaj niso več povezani}} z vašim viki računom: $1.",
 	"echo-pref-tooltip-change-googlelogin": "Obvesti me, ko administrator GoogleLogin spremeni moje povezane Google račune."
