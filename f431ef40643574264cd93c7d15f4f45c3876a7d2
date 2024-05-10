@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84b805c4_8ed7cdf9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2024-05-10T08:46:01Z",
+      "side": 1,
+      "message": "failure is unrelated\n\u003e 04:41:34 PHP Fatal error:  Uncaught LogicException: Premature access to service container in /workspace/src/includes/MediaWikiServices.php:326",
+      "revId": "f431ef40643574264cd93c7d15f4f45c3876a7d2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
