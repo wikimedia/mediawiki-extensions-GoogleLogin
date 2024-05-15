@@ -52,5 +52,5 @@
 	"tag-googlelogin-description": "このタグは[[Special:GoogleLogin|Googleログイン]]が登録しました",
 	"action-managegooglelogin": "GoogleLogin 接続の管理",
 	"right-managegooglelogin": "GoogleLoginの接続を追加、解除、または観覧",
-	"action-managegooglelogindomains": "許可されたGoogleLoginドメインを管理"
+	"action-managegooglelogindomains": "許可されたGoogleLoginドメインの管理"
 }
