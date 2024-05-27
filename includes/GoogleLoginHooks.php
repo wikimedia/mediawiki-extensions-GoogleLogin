@@ -7,6 +7,7 @@ use GoogleLogin\Api\ApiGoogleLoginManageAllowedDomains;
 use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
 use GoogleLogin\HtmlForm\HTMLGoogleLoginButtonField;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Settings\SettingsBuilder;
 
 class GoogleLoginHooks {
 	public static function onUserLogoutComplete() {
@@ -170,20 +171,17 @@ class GoogleLoginHooks {
 	/**
 	 * @throws ConfigurationError
 	 */
-	public static function onSetup() {
-		$services = MediaWikiServices::getInstance();
-		$config = $services->getConfigFactory()->makeConfig( 'googlelogin' );
-		if ( !$config->get( 'GLAuthoritativeMode' ) ) {
+	public static function onSetup( $extInfo, SettingsBuilder $sb ) {
+		if ( !$sb->getConfig()->get( 'GLAuthoritativeMode' ) ) {
 			return;
 		}
 
-		$mainConfig = $services->getMainConfig();
-		if ( !self::isOnlyPrimaryProvider( self::authManagerConfig( $mainConfig ) ) ) {
+		if ( !self::isOnlyPrimaryProvider( self::authManagerConfig( $sb->getConfig() ) ) ) {
 			throw new ConfigurationError( "GoogleLogin runs in authoritative mode, " .
 				"but multiple primary authentication providers where found. Found the following providers: " .
-				self::primaryProviderNames( self::authManagerConfig( $mainConfig ) ) );
+				self::primaryProviderNames( self::authManagerConfig( $sb->getConfig() ) ) );
 		}
-		if ( strpos( $mainConfig->get( 'InvalidUsernameCharacters' ), '@' ) !== false ) {
+		if ( strpos( $sb->getConfig()->get( 'InvalidUsernameCharacters' ), '@' ) !== false ) {
 			throw new ConfigurationError( "GoogleLogin runs in authoritative mode, " .
 				"but the @ sign is not allowed to be used in usernames." );
 		}
