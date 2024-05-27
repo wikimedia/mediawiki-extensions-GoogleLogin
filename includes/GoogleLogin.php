@@ -2,7 +2,6 @@
 
 namespace GoogleLogin;
 
-use ConfigFactory;
 use Google_Client;
 use GoogleLogin\AllowedDomains\AllowedDomainsStore;
 use GoogleLogin\AllowedDomains\EmailDomain;
@@ -41,7 +40,7 @@ class GoogleLogin {
 	 */
 	public static function getGLConfig() {
 		if ( self::$mConfig === null ) {
-			self::$mConfig = ConfigFactory::getDefaultInstance()->makeConfig( 'googlelogin' );
+			self::$mConfig = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'googlelogin' );
 		}
 		return self::$mConfig;
 	}

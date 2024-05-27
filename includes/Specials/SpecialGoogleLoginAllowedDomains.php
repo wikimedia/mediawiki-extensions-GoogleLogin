@@ -11,10 +11,8 @@ use MediaWiki\MediaWikiServices;
 use SpecialPage;
 
 class SpecialGoogleLoginAllowedDomains extends SpecialPage {
-
 	function __construct() {
 		parent::__construct( 'GoogleLoginAllowedDomains', 'managegooglelogindomains' );
-		$this->listed = true;
 	}
 
 	public function doesWrites() {

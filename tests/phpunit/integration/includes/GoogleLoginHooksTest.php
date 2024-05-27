@@ -6,6 +6,7 @@ use ApiMain;
 use ApiModuleManager;
 use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Settings\SettingsBuilder;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -87,7 +88,8 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			$this->getMockBuilder( \DatabaseUpdater::class )
 				->disableOriginalConstructor()
 				->getMock();
-		$dbUpdaterMock->method( 'getDB' )->willReturn( wfGetDB( DB_REPLICA ) );
+		$dbUpdaterMock->method( 'getDB' )
+			->willReturn( MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase() );
 		$dbUpdaterMock->expects( $this->atLeastOnce() )->method( 'addExtensionUpdate' );
 
 		GoogleLoginHooks::onLoadExtensionSchemaUpdates( $dbUpdaterMock );
@@ -105,7 +107,8 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			$this->getMockBuilder( \DatabaseUpdater::class )
 				->disableOriginalConstructor()
 				->getMock();
-		$dbUpdaterMock->method( 'getDB' )->willReturn( wfGetDB( DB_REPLICA ) );
+		$dbUpdaterMock->method( 'getDB' )
+			->willReturn( MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase() );
 		$dbUpdaterMock->expects( $this->exactly( 2 ) )
 			->method( 'addExtensionUpdate' )
 			->with( $this->callback( static function ( $arg ) {
@@ -132,7 +135,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		] );
 		$this->expectException( ConfigurationError::class );
 
-		GoogleLoginHooks::onSetup();
+		GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 	}
 
 	/**
@@ -151,8 +154,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgInvalidUsernameCharacters' => ':',
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
@@ -174,8 +178,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			],
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
@@ -198,8 +203,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgInvalidUsernameCharacters' => '@',
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
@@ -223,7 +229,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 		$this->expectException( ConfigurationError::class );
 
-		GoogleLoginHooks::onSetup();
+		GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 	}
 
 	/**
@@ -242,8 +248,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgInvalidUsernameCharacters' => ':',
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
