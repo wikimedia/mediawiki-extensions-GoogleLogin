@@ -39,6 +39,23 @@
       "message": "I agree with Krinkle.\n\nInstead of onBeforeInitialization hook, i would suggest registering the callback as an ExtensionFunctions key.",
       "revId": "8004db971d78806cbfdb4757e46bbca4c656d096",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "408e75f6_81dabfd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2024-05-27T22:51:13Z",
+      "side": 1,
+      "message": "Sorry for not coming back to this any sooner 😞 I didn\u0027t see that in my massively overloaded inbox, and now I did a change myself before looking if there is one provided already: I60132e9e4680daeac41fd9e3346e9acaa54f090a I merged that already (as it is not a WMF deployed extension). Is it safe to assume that we can abandon this changeset?",
+      "revId": "8004db971d78806cbfdb4757e46bbca4c656d096",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
