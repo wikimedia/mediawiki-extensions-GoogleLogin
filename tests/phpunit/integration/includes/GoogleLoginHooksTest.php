@@ -6,6 +6,7 @@ use ApiMain;
 use ApiModuleManager;
 use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Settings\SettingsBuilder;
 use MediaWikiIntegrationTestCase;
 
 /**
@@ -132,7 +133,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 		] );
 		$this->expectException( ConfigurationError::class );
 
-		GoogleLoginHooks::onSetup();
+		GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 	}
 
 	/**
@@ -151,8 +152,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgInvalidUsernameCharacters' => ':',
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
@@ -174,8 +176,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			],
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
@@ -198,8 +201,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgInvalidUsernameCharacters' => '@',
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
@@ -223,7 +227,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 
 		$this->expectException( ConfigurationError::class );
 
-		GoogleLoginHooks::onSetup();
+		GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 	}
 
 	/**
@@ -242,8 +246,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 			'wgInvalidUsernameCharacters' => ':',
 		] );
 
+		$this->expectNotToPerformAssertions();
 		try {
-			$this->assertNull( GoogleLoginHooks::onSetup() );
+			GoogleLoginHooks::onSetup( [], SettingsBuilder::getInstance() );
 		} catch ( ConfigurationError $exception ) {
 			$this->fail( 'Exception should not be thrown' );
 		}
