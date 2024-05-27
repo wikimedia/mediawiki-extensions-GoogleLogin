@@ -28,7 +28,6 @@ class SpecialManageGoogleLogin extends SpecialPage {
 
 	function __construct() {
 		parent::__construct( 'ManageGoogleLogin', 'managegooglelogin' );
-		$this->listed = true;
 	}
 
 	public function doesWrites() {
