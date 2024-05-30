@@ -11,7 +11,8 @@
 			"Stang",
 			"Tranve",
 			"VulpesVulpes825",
-			"沈澄心"
+			"沈澄心",
+			"LittlePaw365"
 		]
 	},
 	"apihelp-googleplusprofileinfo-summary": "向Google+ api发出请求以找出有关指定用户的一些个人信息。",
@@ -31,7 +32,7 @@
 	"googlelogin-manage-noplus": "<strong>注意：</strong>您输入的Google ID对应的用户看起来没有Google+个人信息。可能输入有误？",
 	"googlelogin-manage-changedsuccess": "用户现已与Google账号链接。",
 	"googlelogin-manage-terminatesuccess": "用户不再连接一个Google账号。",
-	"googlelogin-manage-changederror": "<strong>当创建/终止wiki用户与Google账号之间的连接时发生错误。</strong>",
+	"googlelogin-manage-changederror": "<strong>创建/终止wiki用户与Google账号的关联时出现错误。</strong>",
 	"googlelogin-manage-terminatebutton": "移除连接",
 	"googlelogin-manage-invalidid": "您输入的新的Google ID无效。ID应该是数字。",
 	"googlelogin-manage-isplusser": "在Google+上注册",
