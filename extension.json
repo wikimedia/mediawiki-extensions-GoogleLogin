@@ -12,7 +12,7 @@
 		}
 	},
 	"requires": {
-		"MediaWiki": ">= 1.36.0"
+		"MediaWiki": ">= 1.39.0"
 	},
 	"AvailableRights": [
 		"managegooglelogin",

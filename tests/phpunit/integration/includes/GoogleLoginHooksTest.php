@@ -5,6 +5,7 @@ namespace GoogleLogin;
 use ApiMain;
 use ApiModuleManager;
 use GoogleLogin\Auth\GooglePrimaryAuthenticationProvider;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Settings\SettingsBuilder;
 use MediaWikiIntegrationTestCase;
@@ -31,8 +32,8 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onApiMainModuleManager()
 	 */
 	public function testOnApiMainModuleManagerDefault() {
-		$this->setMwGlobals( [
-			'wgGLAllowedDomainsDB' => false,
+		$this->overrideConfigValues( [
+			'GLAllowedDomainsDB' => false,
 		] );
 		GoogleLoginHooks::onApiMainModuleManager( $this->moduleManager );
 		$this->assertFalse( $this->moduleManager->isDefined( 'googleloginmanagealloweddomain' ) );
@@ -42,11 +43,11 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onApiMainModuleManager()
 	 */
 	public function testOnApiMainModuleManagerNonDB() {
-		$this->setMwGlobals( [
-			'wgGLAllowedDomains' => [
+		$this->overrideConfigValues( [
+			'GLAllowedDomains' => [
 				'test.com',
 			],
-			'wgGLAllowedDomainsDB' => false,
+			'GLAllowedDomainsDB' => false,
 		] );
 		GoogleLoginHooks::onApiMainModuleManager( $this->moduleManager );
 		$this->assertFalse( $this->moduleManager->isDefined( 'googleloginmanagealloweddomain' ) );
@@ -56,8 +57,8 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onApiMainModuleManager()
 	 */
 	public function testOnApiMainModuleManagerDB() {
-		$this->setMwGlobals( [
-			'wgGLAllowedDomainsDB' => true,
+		$this->overrideConfigValues( [
+			'GLAllowedDomainsDB' => true,
 		] );
 		GoogleLoginHooks::onApiMainModuleManager( $this->moduleManager );
 		$this->assertTrue( $this->moduleManager->isDefined( 'googleloginmanagealloweddomain' ) );
@@ -67,11 +68,11 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onApiMainModuleManager()
 	 */
 	public function testOnApiMainModuleManagerDBNonDB() {
-		$this->setMwGlobals( [
-			'wgGLAllowedDomains' => [
+		$this->overrideConfigValues( [
+			'GLAllowedDomains' => [
 				'test.com',
 			],
-			'wgGLAllowedDomainsDB' => true,
+			'GLAllowedDomainsDB' => true,
 		] );
 		GoogleLoginHooks::onApiMainModuleManager( $this->moduleManager );
 		$this->assertTrue( $this->moduleManager->isDefined( 'googleloginmanagealloweddomain' ) );
@@ -81,8 +82,8 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onLoadExtensionSchemaUpdates()
 	 */
 	public function testOnLoadExtensionSchemaUpdatesAddsToShared() {
-		$this->setMwGlobals( [
-			'wgSharedDB' => true,
+		$this->overrideConfigValues( [
+			MainConfigNames::SharedDB => true,
 		] );
 		$dbUpdaterMock =
 			$this->getMockBuilder( \DatabaseUpdater::class )
@@ -100,8 +101,8 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider provideAllowedDomainsConfig
 	 */
 	public function testOnLoadExtensionSchemaUpdatesAddsAllowdDomains( $isAllowedDomainsEnabled ) {
-		$this->setMwGlobals( [
-			'wgGLAllowedDomainsDB' => $isAllowedDomainsEnabled,
+		$this->overrideConfigValues( [
+			'GLAllowedDomainsDB' => $isAllowedDomainsEnabled,
 		] );
 		$dbUpdaterMock =
 			$this->getMockBuilder( \DatabaseUpdater::class )
@@ -122,9 +123,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
 	 */
 	public function testOnSetupAuthoritativeOtherProviders() {
-		$this->setMwGlobals( [
-			'wgGLAuthoritativeMode' => true,
-			'wgAuthManagerConfig' => [
+		$this->overrideConfigValues( [
+			'GLAuthoritativeMode' => true,
+			 MainConfigNames::AuthManagerConfig => [
 				'primaryauth' => [
 					'AnyOtherProvider' => [],
 					GooglePrimaryAuthenticationProvider::class => [
@@ -142,16 +143,16 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
 	 */
 	public function testOnSetupAuthoritativeNoOtherProviders() {
-		$this->setMwGlobals( [
-			'wgGLAuthoritativeMode' => true,
-			'wgAuthManagerConfig' => [
+		$this->overrideConfigValues( [
+			'GLAuthoritativeMode' => true,
+			 MainConfigNames::AuthManagerConfig => [
 				'primaryauth' => [
 					GooglePrimaryAuthenticationProvider::class => [
 						'class' => GooglePrimaryAuthenticationProvider::class,
 					],
 				],
 			],
-			'wgInvalidUsernameCharacters' => ':',
+			MainConfigNames::InvalidUsernameCharacters => ':',
 		] );
 
 		$this->expectNotToPerformAssertions();
@@ -166,9 +167,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
 	 */
 	public function testOnSetupNonAuthoritativeOtherProviders() {
-		$this->setMwGlobals( [
-			'wgGLAuthoritativeMode' => false,
-			'wgAuthManagerConfig' => [
+		$this->overrideConfigValues( [
+			'GLAuthoritativeMode' => false,
+			 MainConfigNames::AuthManagerConfig => [
 				'primaryauth' => [
 					'AnyOtherProvider' => [],
 					GooglePrimaryAuthenticationProvider::class => [
@@ -190,9 +191,9 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
 	 */
 	public function testOnSetupNonAuthoritativeAtDisallowedUserChar() {
-		$this->setMwGlobals( [
-			'wgGLAuthoritativeMode' => false,
-			'wgAuthManagerConfig' => [
+		$this->overrideConfigValues( [
+			'GLAuthoritativeMode' => false,
+			 MainConfigNames::AuthManagerConfig => [
 				'primaryauth' => [
 					'AnyOtherProvider' => [],
 					GooglePrimaryAuthenticationProvider::class => [
@@ -200,7 +201,7 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 					],
 				],
 			],
-			'wgInvalidUsernameCharacters' => '@',
+			MainConfigNames::InvalidUsernameCharacters => '@',
 		] );
 
 		$this->expectNotToPerformAssertions();
@@ -215,16 +216,16 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
 	 */
 	public function testOnSetupAuthoritativeAtDisallowedUserChar() {
-		$this->setMwGlobals( [
-			'wgGLAuthoritativeMode' => true,
-			'wgAuthManagerConfig' => [
+		$this->overrideConfigValues( [
+			'GLAuthoritativeMode' => true,
+			 MainConfigNames::AuthManagerConfig => [
 				'primaryauth' => [
 					GooglePrimaryAuthenticationProvider::class => [
 						'class' => GooglePrimaryAuthenticationProvider::class,
 					],
 				],
 			],
-			'wgInvalidUsernameCharacters' => '@',
+			MainConfigNames::InvalidUsernameCharacters => '@',
 		] );
 
 		$this->expectException( ConfigurationError::class );
@@ -236,16 +237,16 @@ class GoogleLoginHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \GoogleLogin\GoogleLoginHooks::onSetup()
 	 */
 	public function testOnSetupAuthoritativeNoAtDisallowedUserChar() {
-		$this->setMwGlobals( [
-			'wgGLAuthoritativeMode' => true,
-			'wgAuthManagerConfig' => [
+		$this->overrideConfigValues( [
+			'GLAuthoritativeMode' => true,
+			 MainConfigNames::AuthManagerConfig => [
 				'primaryauth' => [
 					GooglePrimaryAuthenticationProvider::class => [
 						'class' => GooglePrimaryAuthenticationProvider::class,
 					],
 				],
 			],
-			'wgInvalidUsernameCharacters' => ':',
+			MainConfigNames::InvalidUsernameCharacters => ':',
 		] );
 
 		$this->expectNotToPerformAssertions();
