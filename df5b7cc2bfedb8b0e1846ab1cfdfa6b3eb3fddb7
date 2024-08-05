@@ -46,6 +46,30 @@
       },
       "revId": "df5b7cc2bfedb8b0e1846ab1cfdfa6b3eb3fddb7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a21c215_4d1e1644",
+        "filename": "tests/phpunit/integration/includes/GoogleLoginHooksTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2024-08-05T10:11:50Z",
+      "side": 1,
+      "message": "I think one of us got a bit confused here. The \"wg\" was in the original code. Patchset 1 removed it. Anyway. Patchset 2 appears to be correct now. Thanks for the fix!",
+      "parentUuid": "4c76a8f1_735302b2",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 21
+      },
+      "revId": "df5b7cc2bfedb8b0e1846ab1cfdfa6b3eb3fddb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
