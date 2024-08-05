@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a9f828d_b4ee08ae",
+        "filename": "tests/phpunit/integration/includes/GoogleLoginHooksTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2024-08-05T07:03:58Z",
+      "side": 1,
+      "message": "This appears to be a mistake. You probably forgot to replace this as well.",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 21
+      },
+      "revId": "df5b7cc2bfedb8b0e1846ab1cfdfa6b3eb3fddb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
