@@ -22,6 +22,30 @@
       },
       "revId": "df5b7cc2bfedb8b0e1846ab1cfdfa6b3eb3fddb7",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c76a8f1_735302b2",
+        "filename": "tests/phpunit/integration/includes/GoogleLoginHooksTest.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 562
+      },
+      "writtenOn": "2024-08-05T09:04:35Z",
+      "side": 1,
+      "message": "I omitted this because the key start not with `wg` and `overrideConfigValues` would add a `wg`. But I guess the missing `wg` is mistake in the original test. I added `wg` in PS2 by using `overrideConfigValues`.",
+      "parentUuid": "3a9f828d_b4ee08ae",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 21
+      },
+      "revId": "df5b7cc2bfedb8b0e1846ab1cfdfa6b3eb3fddb7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
