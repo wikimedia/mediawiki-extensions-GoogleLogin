@@ -22,10 +22,11 @@ class GoogleLoginHooks {
 		$sql = __DIR__ . '/sql';
 		$schema = "$sql/user_google_user.sql";
 		$updater->addExtensionUpdate( [ 'addTable', 'user_google_user', $schema, true ] );
-		if ( !$updater->getDB()->indexExists( 'user_google_user', 'user_id' ) ) {
-			$updater->modifyExtensionField( 'user_google_user', 'user_id',
-				"$sql/user_google_user_user_id_index.sql" );
-		}
+		$updater->addExtensionIndex(
+			'user_google_user',
+			'user_id',
+			"$sql/user_google_user_user_id_index.sql"
+		);
 		$schema = "$sql/googlelogin_allowed_domains.sql";
 		$updater->addExtensionUpdate( [
 			'addTable',
