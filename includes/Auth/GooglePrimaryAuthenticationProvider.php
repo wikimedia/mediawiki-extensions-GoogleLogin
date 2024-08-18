@@ -10,6 +10,7 @@ use GoogleLogin\Constants;
 use GoogleLogin\GoogleIdProvider;
 use GoogleLogin\GoogleLogin;
 use GoogleLogin\GoogleUserMatching;
+use IDBAccessObject;
 use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
@@ -150,7 +151,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 		}
 	}
 
-	public function testUserExists( $username, $flags = User::READ_NORMAL ) {
+	public function testUserExists( $username, $flags = IDBAccessObject::READ_NORMAL ) {
 		return false;
 	}
 
