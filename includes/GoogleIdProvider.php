@@ -3,6 +3,8 @@
 namespace GoogleLogin;
 
 use MediaWiki\User\UserIdentity;
+use MWDebug;
+use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 class GoogleIdProvider {
@@ -22,12 +24,17 @@ class GoogleIdProvider {
 		}
 		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
 
-		$result = $db->select(
-			'user_google_user',
-			[ 'user_googleid' ],
-			[ 'user_id' => $user->getId() ],
-			__METHOD__
-		);
+		try {
+			$result = $db->select(
+				'user_google_user',
+				[ 'user_googleid' ],
+				[ 'user_id' => $user->getId() ],
+				__METHOD__
+			);
+		} catch ( DBQueryError $ex ) {
+			MWDebug::warning( $ex->getMessage(), 1, E_USER_WARNING, 'production' );
+			return [];
+		}
 
 		if ( $result === false ) {
 			return [];
