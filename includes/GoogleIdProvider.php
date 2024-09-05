@@ -21,6 +21,10 @@ class GoogleIdProvider {
 			return [];
 		}
 		$db = $this->loadBalancer->getConnection( DB_PRIMARY );
+		if ( !$db->tableExists( 'user_google_user', __METHOD__ ) ) {
+			// Table has not been created yet, don't break
+			return [];
+		}
 
 		$result = $db->select(
 			'user_google_user',
