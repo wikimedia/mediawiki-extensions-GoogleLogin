@@ -5,6 +5,8 @@
  * @ingroup Maintenance
  */
 
+use GoogleLogin\AllowedDomains\PublicSuffixArrayPath;
+
 require_once getenv( 'MW_INSTALL_PATH' ) !== false
 	? getenv( 'MW_INSTALL_PATH' ) . '/maintenance/Maintenance.php'
 	: __DIR__ . '/../../../maintenance/Maintenance.php';
@@ -23,7 +25,10 @@ class UpdatePublicSuffixArray extends Maintenance {
 	}
 
 	public function execute() {
-		$arrayDirectory = __DIR__ . '/../';
+		$filename = PublicSuffixArrayPath::fromDirectory(
+			$this->getConfig()->get( 'GLPublicSuffixArrayDir' )
+		);
+		$arrayDirectory = dirname( $filename );
 		if ( !is_writable( $arrayDirectory ) ) {
 			throw new MWException( $arrayDirectory . ' is not writeable!' );
 		}
@@ -57,7 +62,7 @@ class UpdatePublicSuffixArray extends Maintenance {
 		}
 
 		file_put_contents(
-			$arrayDirectory . \GoogleLogin\Constants::PUBLIC_SUFFIX_ARRAY_FILE,
+			$filename,
 			"<?php\n" . 'return [ "' . implode( "\",\n\"", $publicSuffixes ) . '" ];'
 		);
 	}
