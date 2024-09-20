@@ -23,7 +23,8 @@ class UpdatePublicSuffixArray extends Maintenance {
 	}
 
 	public function execute() {
-		$arrayDirectory = __DIR__ . '/../';
+		$filename = \GoogleLogin\AllowedDomains\EmailDomain::getPublicSuffixArrayFilePath();
+		$arrayDirectory = dirname( $filename );
 		if ( !is_writable( $arrayDirectory ) ) {
 			throw new MWException( $arrayDirectory . ' is not writeable!' );
 		}
@@ -57,7 +58,7 @@ class UpdatePublicSuffixArray extends Maintenance {
 		}
 
 		file_put_contents(
-			$arrayDirectory . \GoogleLogin\Constants::PUBLIC_SUFFIX_ARRAY_FILE,
+			$filename,
 			"<?php\n" . 'return [ "' . implode( "\",\n\"", $publicSuffixes ) . '" ];'
 		);
 	}
