@@ -3,7 +3,6 @@
 namespace GoogleLogin\Api;
 
 use ApiBase;
-use GoogleLogin\AllowedDomains\EmailDomain;
 use GoogleLogin\Constants;
 use MediaWiki\MediaWikiServices;
 
@@ -27,8 +26,11 @@ class ApiGoogleLoginManageAllowedDomains extends ApiBase {
 		// this API module is not registered, if the AllowedDomain store is null or not mutable
 		$allowedDomainsStore = MediaWikiServices::getInstance()->getService(
 			Constants::SERVICE_ALLOWED_DOMAINS_STORE );
+		$emailDomainFactory = MediaWikiServices::getInstance()->getService(
+			Constants::SERVICE_EMAIL_DOMAIN_FACTORY
+		);
 
-		$emailAddress = new EmailDomain( $params['domain'] );
+		$emailAddress = $emailDomainFactory->newFromEmail( $params['domain'] );
 		if ( $params['method'] === 'add' ) {
 			$result = $allowedDomainsStore->add( $emailAddress );
 		} else {
