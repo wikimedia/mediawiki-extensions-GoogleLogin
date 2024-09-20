@@ -124,7 +124,8 @@
 		"GLAllowedDomainsDB": false,
 		"GLAPIKey": "",
 		"GLEnableEchoEvents": true,
-		"GLAuthoritativeMode": false
+		"GLAuthoritativeMode": false,
+		"GLPublicSuffixArrayDir": ""
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
