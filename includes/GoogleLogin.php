@@ -4,7 +4,6 @@ namespace GoogleLogin;
 
 use Google_Client;
 use GoogleLogin\AllowedDomains\AllowedDomainsStore;
-use GoogleLogin\AllowedDomains\EmailDomain;
 use MediaWiki\MediaWikiServices;
 
 class GoogleLogin {
@@ -56,13 +55,13 @@ class GoogleLogin {
 		$allowedDomainsStore = MediaWikiServices::getInstance()
 			->getService( Constants::SERVICE_ALLOWED_DOMAINS_STORE );
 		if ( $allowedDomainsStore !== null ) {
-			$domain = new EmailDomain( $mailDomain, $glConfig->get( 'GLAllowedDomainsStrict' ) );
-			if (
-				$allowedDomainsStore->contains( $domain )
-			) {
-				return true;
-			}
-			return false;
+			$emailDomainFactory = MediaWikiServices::getInstance()
+				->getService( Constants::SERVICE_EMAIL_DOMAIN_FACTORY );
+			$domain = $emailDomainFactory->newFromEmail(
+				$mailDomain,
+				$glConfig->get( 'GLAllowedDomainsStrict' )
+			);
+			return $allowedDomainsStore->contains( $domain );
 		}
 		return true;
 	}
