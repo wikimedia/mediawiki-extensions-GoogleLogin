@@ -3,7 +3,6 @@
 namespace GoogleLogin\Specials;
 
 use GoogleLogin\AllowedDomains\AllowedDomainsStore;
-use GoogleLogin\AllowedDomains\EmailDomain;
 use GoogleLogin\AllowedDomains\MutableAllowedDomainsStore;
 use GoogleLogin\Constants;
 use HTMLForm;
@@ -71,6 +70,9 @@ class SpecialGoogleLoginAllowedDomains extends SpecialPage {
 		/** @var MutableAllowedDomainsStore $allowedDomains */
 		$allowedDomainsStore = MediaWikiServices::getInstance()->getService(
 			Constants::SERVICE_ALLOWED_DOMAINS_STORE );
+		$emailDomainFactory = MediaWikiServices::getInstance()->getService(
+			Constants::SERVICE_EMAIL_DOMAIN_FACTORY
+		);
 
 		$requestAdd = null;
 		$requestRemove = null;
@@ -84,12 +86,12 @@ class SpecialGoogleLoginAllowedDomains extends SpecialPage {
 			// terminate the connection
 			$allowedDomains = $allowedDomainsStore->getAllowedDomains();
 			$error = false;
-			foreach ( $requestRemove as $count => $allowedDomain ) {
+			foreach ( $requestRemove as $allowedDomain ) {
 				$id = str_replace( 'ad-', '', $allowedDomain );
 
 				if (
 					isset( $allowedDomains[$id] ) &&
-					$allowedDomainsStore->remove( new EmailDomain( $allowedDomains[$id] ) )
+					$allowedDomainsStore->remove( $emailDomainFactory->newFromEmail( $allowedDomains[$id] ) )
 				) {
 					$out->addWikiMsg( 'googlelogin-alloweddomain-removed-success', $allowedDomains[$id] );
 				} else {
@@ -103,7 +105,7 @@ class SpecialGoogleLoginAllowedDomains extends SpecialPage {
 		}
 
 		if ( $requestAdd ) {
-			$status = $allowedDomainsStore->add( new EmailDomain( $requestAdd ) );
+			$status = $allowedDomainsStore->add( $emailDomainFactory->newFromEmail( $requestAdd ) );
 			if ( $status !== -1 ) {
 				$out->addWikiMsg( 'googlelogin-alloweddomain-added-success', $requestAdd );
 			} else {

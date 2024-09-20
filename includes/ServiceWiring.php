@@ -3,6 +3,7 @@
 use GoogleLogin\AllowedDomains\ArrayAllowedDomainsStore;
 use GoogleLogin\AllowedDomains\CachedAllowedDomainsStore;
 use GoogleLogin\AllowedDomains\DBAllowedDomainsStore;
+use GoogleLogin\AllowedDomains\EmailDomainFactory;
 use GoogleLogin\Constants;
 use GoogleLogin\GoogleIdProvider;
 use GoogleLogin\GoogleLogin;
@@ -24,6 +25,12 @@ return [
 			return new CachedAllowedDomainsStore( $dbBackedStore, $cache );
 		}
 		return null;
+	},
+
+	Constants::SERVICE_EMAIL_DOMAIN_FACTORY => static function ( MediaWikiServices $services ) {
+		return new EmailDomainFactory(
+			$services->getConfigFactory()->makeConfig( 'googlelogin' )
+		);
 	},
 
 	Constants::SERVICE_GOOGLE_USER_MATCHING => static function ( MediaWikiServices $services ) {
