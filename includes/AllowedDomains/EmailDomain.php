@@ -3,6 +3,7 @@
 namespace GoogleLogin\AllowedDomains;
 
 use GoogleLogin\Constants;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Represents a single E-Mail address.
@@ -99,7 +100,7 @@ class EmailDomain {
 	 * @return array
 	 */
 	private function getPublicSuffixArray() {
-		$file = __DIR__ . '/../../' . Constants::PUBLIC_SUFFIX_ARRAY_FILE;
+		$file = self::getPublicSuffixArrayFilePath();
 		if ( !file_exists( $file ) ) {
 			throw new \UnexpectedValueException( 'The public suffix array file does not exist at'
 				. ' the expecte dlocation: ' . $file . '. Have you forgotten to run the '
@@ -111,5 +112,20 @@ class EmailDomain {
 				. 'array file is expected to be an array, got ' . gettype( $content ) );
 		}
 		return array_flip( $content );
+	}
+
+	/**
+	 * @return string
+	 */
+	public static function getPublicSuffixArrayFilePath() {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$dir = $config->get( 'GLPublicSuffixArrayDir' );
+
+		if ( !$dir ) {
+			$dir = __DIR__ . '/../../';
+		} elseif ( $dir[-1] !== '/' ) {
+			$dir .= '/';
+		}
+		return $dir . Constants::PUBLIC_SUFFIX_ARRAY_FILE;
 	}
 }
