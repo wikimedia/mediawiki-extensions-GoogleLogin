@@ -4,7 +4,6 @@ namespace GoogleLogin;
 
 use Google_Client;
 use GoogleLogin\AllowedDomains\AllowedDomainsStore;
-use GoogleLogin\AllowedDomains\EmailDomain;
 use MediaWiki\MediaWikiServices;
 
 class GoogleLogin {
@@ -36,9 +35,14 @@ class GoogleLogin {
 	/**
 	 * Returns Config object for use in GoogleLogin.
 	 *
+	 * @param MediaWikiServices|null $services When provided, config is built from this instance
+	 *  (preferred in service wiring). When null, uses the global services singleton with caching.
 	 * @return \Config
 	 */
-	public static function getGLConfig() {
+	public static function getGLConfig( ?MediaWikiServices $services = null ) {
+		if ( $services !== null ) {
+			return $services->getConfigFactory()->makeConfig( 'googlelogin' );
+		}
 		if ( self::$mConfig === null ) {
 			self::$mConfig = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'googlelogin' );
 		}
@@ -56,13 +60,13 @@ class GoogleLogin {
 		$allowedDomainsStore = MediaWikiServices::getInstance()
 			->getService( Constants::SERVICE_ALLOWED_DOMAINS_STORE );
 		if ( $allowedDomainsStore !== null ) {
-			$domain = new EmailDomain( $mailDomain, $glConfig->get( 'GLAllowedDomainsStrict' ) );
-			if (
-				$allowedDomainsStore->contains( $domain )
-			) {
-				return true;
-			}
-			return false;
+			$emailDomainFactory = MediaWikiServices::getInstance()
+				->getService( Constants::SERVICE_EMAIL_DOMAIN_FACTORY );
+			$domain = $emailDomainFactory->newFromEmail(
+				$mailDomain,
+				$glConfig->get( 'GLAllowedDomainsStrict' )
+			);
+			return $allowedDomainsStore->contains( $domain );
 		}
 		return true;
 	}

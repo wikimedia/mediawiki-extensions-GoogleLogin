@@ -2,8 +2,6 @@
 
 namespace GoogleLogin\AllowedDomains;
 
-use GoogleLogin\Constants;
-
 /**
  * Represents a single E-Mail address.
  *
@@ -14,28 +12,20 @@ class EmailDomain {
 	private $domainHost = '';
 
 	/**
-	 * @var array
+	 * @var PublicSuffixLookup
 	 */
-	private $publicSuffixes;
+	private $publicSuffixLookup;
 
 	/**
 	 * EmailDomain constructor.
 	 *
 	 * @param string $mail The whole e-mail address, which is represented by this object
+	 * @param PublicSuffixLookup $publicSuffixLookup Lookup for public suffix checks.
 	 * @param bool $strict If the domain should be parsed strictly or not (e.g.
 	 *  test@test.example.com will be converted to example.com if this is false)
-	 * @param array $suffixes An optional array of suffixes to use parsing the domain part. If
-	 *  not set, the Array will be optained from the publicSuffixArray file (see
-	 *  Constants::PUBLIC_SUFFIX_ARRAY_FILE), which needs to be initialized with the
-	 *  updatePublicSuffixArray.php maintenance script.
-	 * @throws \UnexpectedValueException Thrown, when the publix suffix array file does not exist.
 	 */
-	public function __construct( $mail, $strict = false, array $suffixes = [] ) {
-		if ( $suffixes ) {
-			$this->publicSuffixes = array_flip( $suffixes );
-		} else {
-			$this->publicSuffixes = $this->getPublicSuffixArray();
-		}
+	public function __construct( $mail, PublicSuffixLookup $publicSuffixLookup, $strict = false ) {
+		$this->publicSuffixLookup = $publicSuffixLookup;
 
 		$this->emailAddress = $mail;
 		$domain = explode( '@', $mail );
@@ -86,30 +76,12 @@ class EmailDomain {
 		$parts = array_reverse( $url );
 		foreach ( $parts as $key => $part ) {
 			$tld = implode( '.', $parts );
-			if ( isset( $this->publicSuffixes[$tld] ) ) {
+			if ( $this->publicSuffixLookup->contains( $tld ) ) {
 				return implode( '.', array_slice( $url, $key - 1 ) );
 			}
 			array_pop( $parts );
 		}
 
 		return implode( '.', $url );
-	}
-
-	/**
-	 * @return array
-	 */
-	private function getPublicSuffixArray() {
-		$file = __DIR__ . '/../../' . Constants::PUBLIC_SUFFIX_ARRAY_FILE;
-		if ( !file_exists( $file ) ) {
-			throw new \UnexpectedValueException( 'The public suffix array file does not exist at'
-				. ' the expecte dlocation: ' . $file . '. Have you forgotten to run the '
-				. 'updatePublicSuffixArray.php maintenance script to create it?' );
-		}
-		$content = include $file;
-		if ( !is_array( $content ) ) {
-			throw new \UnexpectedValueException( 'The content returned by the public suffix '
-				. 'array file is expected to be an array, got ' . gettype( $content ) );
-		}
-		return array_flip( $content );
 	}
 }
