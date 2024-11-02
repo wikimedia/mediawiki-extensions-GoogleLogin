@@ -18,7 +18,7 @@ class GoogleLoginHooks {
 		}
 	}
 
-	public static function onLoadExtensionSchemaUpdates( \DatabaseUpdater $updater = null ) {
+	public static function onLoadExtensionSchemaUpdates( ?\DatabaseUpdater $updater = null ) {
 		$sql = __DIR__ . '/sql';
 		$schema = "$sql/user_google_user.sql";
 		$updater->addExtensionUpdate( [ 'addTable', 'user_google_user', $schema, true ] );
