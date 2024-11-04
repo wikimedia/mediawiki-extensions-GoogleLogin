@@ -69,7 +69,6 @@
 	"googlelogin-alloweddomain-added-success": "Domena $1 je bila uspešno dodana na seznam dovoljenih domen.",
 	"googlelogin-alloweddomain-removed-success": "Domena $1 je bila uspešno odstranjena s seznama dovoljenih domen.",
 	"googlelogin-alloweddomain-change-error": "Pri spreminjanju seznama dovoljenih domen je prišlo do napake.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registracij s to oznako so bile opravljene z možnostjo [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "upravljanje povezav GoogleLogin",
 	"right-managegooglelogin": "Dodajanje, odstranjevanje in ogledovanje povezav GoogleLogin",

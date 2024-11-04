@@ -74,7 +74,6 @@
 	"googlelogin-alloweddomain-added-success": "Het domein $1 is toegevoegd aan de lijst met toegestane domeinen.",
 	"googlelogin-alloweddomain-removed-success": "Het domein $1 is verwijderd uit de lijst met toegestane domeinen.",
 	"googlelogin-alloweddomain-change-error": "Er is een fout opgetreden tijdens het wijzigen van de lijst met toegestane domeinen.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registraties met dit label zijn gemaakt met [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "GoogleLogin-verbindingen te beheren",
 	"right-managegooglelogin": "GoogleLogin-verbindingen toevoegen, verwijderen en bekijken",

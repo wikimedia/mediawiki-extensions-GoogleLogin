@@ -67,7 +67,6 @@
 	"googlelogin-alloweddomain-added-success": "Domenet $1 ble lagt til i lista over tillatte domener.",
 	"googlelogin-alloweddomain-removed-success": "Domenet $1 ble fjernet fra lista over tillatte domener.",
 	"googlelogin-alloweddomain-change-error": "En feil oppsto under endringen av listen over tillatte domener.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registreringer med denne taggen ble gjort med [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "behandle GoogleLogin-tilknytninger",
 	"right-managegooglelogin": "Legge til, fjerne og vise GoogleLogin-tilknytninger",

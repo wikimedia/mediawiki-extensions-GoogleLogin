@@ -57,7 +57,6 @@
 	"googlelogin-access-denied": "Kunde inte logga in. Du nekades åtkomst till din Google-kontoinformation.",
 	"googlelogin-alloweddomain-terminatebutton": "Ta bort",
 	"googlelogin-alloweddomain-addlabel": "Lägg till en tillåten domän",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registreringar med den här taggen gjordes med [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "hantera GoogleLogin-anslutningar",
 	"right-managegooglelogin": "Kan inte lägga till, ta bort och visa GoogleLogin-anslutningar",

@@ -71,7 +71,6 @@
 	"googlelogin-alloweddomain-added-success": "تمت إضافة النطاق $1 بنجاح إلى قائمة النطاقات المسموح بها.",
 	"googlelogin-alloweddomain-removed-success": "تمت إزالة النطاق $1 بنجاح من قائمة النطاقات المسموح بها.",
 	"googlelogin-alloweddomain-change-error": "حدث خطأ أثناء تغيير قائمة النطاقات المسموح بها.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "تمت عمليات التسجيل بهذا الوسم باستخدام [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "إدارة اتصالات GoogleLogin",
 	"right-managegooglelogin": "إضافة وإزالة وعرض اتصالات GoogleLogin",

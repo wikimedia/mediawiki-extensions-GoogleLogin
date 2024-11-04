@@ -67,7 +67,6 @@
 	"googlelogin-alloweddomain-added-success": "El dominiu $1 añadióse correutamente a la llista de dominios permitíos.",
 	"googlelogin-alloweddomain-removed-success": "El dominiu $1 desanicióse correutamente de la llista de dominios permitíos.",
 	"googlelogin-alloweddomain-change-error": "Asocedió un error demientres se cambiaba la llista de dominios permitíos.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Los rexistros con esta etiqueta fixéronse con [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "alministrar conexones de GoogleLogin",
 	"right-managegooglelogin": "Puede amestar, desaniciar y ver conexones de GoogleLogin",

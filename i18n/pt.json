@@ -71,7 +71,6 @@
 	"googlelogin-alloweddomain-added-success": "O domínio $1 foi adicionado à lista de domínios permitidos.",
 	"googlelogin-alloweddomain-removed-success": "O domínio $1 foi removido da lista de domínios permitidos.",
 	"googlelogin-alloweddomain-change-error": "Ocorreu um erro durante a alteração da lista de domínios permitidos.",
-	"tag-googlelogin": "[[Special:GoogleLogin|GoogleLogin]]",
 	"tag-googlelogin-description": "Registos com esta marca foram feitos com o [[Special:GoogleLogin|GoogleLogin]]",
 	"action-managegooglelogin": "gerir ligações GoogleLogin",
 	"right-managegooglelogin": "Adicionar, remover e ver ligações GoogleLogin",
