@@ -64,7 +64,7 @@
 	"googlelogin-param-code-label": "Шифр доступа Google",
 	"googlelogin-param-code-help": "В случае успешной аутентификации, шифр доступа, возвращаемый Google.",
 	"googlelogin-change-account-not-linked": "Вы не можете удалить связь с учётной записью Google, поскольку ваша учётная запись не связана с Google.",
-	"googlelogin-auth-service-unknown-account": "Неизвестный Google аккаунт",
+	"googlelogin-auth-service-unknown-account": "Неизвестная учётная запись Google",
 	"googlelogin-access-denied": "Невозможно войти. Вы запретили доступ к данным о вашей учётной записи Google.",
 	"googlelogin-alloweddomains-notmanageable": "Этот интерфейс не позволяет работать с разрешёнными доменами. Чтобы вы могли управлять разрешёнными доменами для «Входа Google», вам нужно включить список, хранящийся в базе данных.",
 	"googlelogin-alloweddomain-terminatebutton": "Удалить",
