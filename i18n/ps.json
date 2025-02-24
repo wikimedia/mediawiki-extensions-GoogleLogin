@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"googlelogin": "د گووگل په مرسته ورننوتل",
 	"googlelogin-manage-yes": "هو",
 	"googlelogin-manage-addlabel": "گووگل پېژند ورگډول",
-	"googlelogin-username": "کارن‌نوم"
+	"googlelogin-username": "کارننوم"
 }
