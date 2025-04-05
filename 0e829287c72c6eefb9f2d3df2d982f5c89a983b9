@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "936f3998_42605467",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 356
+      },
+      "writtenOn": "2025-04-05T07:23:23Z",
+      "side": 1,
+      "message": "I tested the patch on MW 1.39.11:\n\n```\nroot@8442269a515b:/var/www/mediawiki/w# php maintenance/update.php \nPHP Warning:  Error 1146: Table \u0027mediawiki.user_google_user\u0027 doesn\u0027t exist\nFunction: GoogleLogin\\GoogleIdProvider::getFromUser\nQuery: SELECT  user_googleid  FROM `user_google_user`    WHERE user_id \u003d 3  \n [Called from GoogleLogin\\GoogleIdProvider::getFromUser in /var/www/mediawiki/w/extensions/GoogleLogin/includes/GoogleIdProvider.php at line 38] in /var/www/mediawiki/w/includes/debug/MWDebug.php on line 507\nMediaWiki 1.39.11 Updater\n\nYour composer.lock file is up to date with current dependencies!\nGoing to run database updates for mediawiki\nDepending on the size of your database this may take a while!\nAbort with control-c in the next five seconds (skip this countdown with --quick) ...0\n```",
+      "revId": "0e829287c72c6eefb9f2d3df2d982f5c89a983b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
