@@ -1,0 +1,7 @@
+Verified+2: jenkins-bot
+Code-Review+2: L10n-bot <l10n-bot@translatewiki.net>
+Submitted-by: jenkins-bot
+Submitted-at: Mon, 28 Apr 2025 06:34:00 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GoogleLogin/+/1139260
+Project: mediawiki/extensions/GoogleLogin
+Branch: refs/heads/REL1_39
