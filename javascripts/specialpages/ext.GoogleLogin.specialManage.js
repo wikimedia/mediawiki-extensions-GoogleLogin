@@ -1,5 +1,5 @@
 $( function ( mw ) {
-	var api = new mw.Api(),
+	const api = new mw.Api(),
 		windowManager = new OO.ui.WindowManager();
 
 	// GoogleLogin javascript module
@@ -13,7 +13,7 @@ $( function ( mw ) {
 		 * @param {Integer} plusid The Google Plus ID to load the data from
 		 */
 		showInfoDialog: function ( plusid ) {
-			var infoDialog;
+			let infoDialog;
 			// Create an information overlay to show basics about a google plus id
 			function InfoDialog( config ) {
 				InfoDialog.super.call( this, config );
@@ -42,7 +42,7 @@ $( function ( mw ) {
 
 			// Make an api request to get the data and show the dialog.
 			InfoDialog.prototype.initialize = function () {
-				var self = this, fieldset, messageDialog;
+				let self = this, fieldset, messageDialog;
 				InfoDialog.super.prototype.initialize.apply( this, arguments );
 				this.content = new OO.ui.PanelLayout( {
 					$: this.$,
@@ -54,10 +54,10 @@ $( function ( mw ) {
 				api.get( {
 					action: 'googleplusprofileinfo',
 					googleid: plusid
-				} ).done( function ( data ) {
+				} ).done( ( data ) => {
 					if ( data && data.googleplusprofileinfo && data.googleplusprofileinfo.result ) {
-						data.googleplusprofileinfo.result.forEach( function ( value, index ) {
-							var element;
+						data.googleplusprofileinfo.result.forEach( ( value, index ) => {
+							let element;
 
 							if ( index !== 'profileimage' ) {
 								// add a new information fieldset
@@ -104,8 +104,8 @@ $( function ( mw ) {
 
 					// finished loading, hide loading
 					self.popPending();
-				} ).fail( function ( code, error ) {
-					var msg;
+				} ).fail( ( code, error ) => {
+					let msg;
 
 					if ( error.info ) {
 						msg = error.info;
