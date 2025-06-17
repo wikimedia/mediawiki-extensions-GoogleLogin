@@ -43,7 +43,7 @@
 	"googlelogin-param-code-label": "Googleからのアクセストークン",
 	"googlelogin-change-account-not-linked": "あなたのアカウントはGoogleアカウントと連携されていないため、Googleアカウントとの連携を解除することはできません。",
 	"googlelogin-auth-service-unknown-account": "不明なGoogleアカウントです",
-	"googlelogin-access-denied": "Googleアカウント情報へのアクセスが拒否されたため、ログインすることができません。",
+	"googlelogin-access-denied": "ログインできません。Google アカウント情報へのアクセスが拒否されました。",
 	"googlelogin-alloweddomain-terminatebutton": "除去",
 	"googlelogin-alloweddomain-addlabel": "許可するドメインを追加",
 	"googlelogin-alloweddomain-added-success": "ドメイン $1 は正常に許可ドメインリストに追加されました。",
