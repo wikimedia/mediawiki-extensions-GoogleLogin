@@ -3,12 +3,14 @@
 		"authors": [
 			"Eduardo Martinez",
 			"Medol",
-			"Mguix"
+			"Mguix",
+			"Yupik"
 		]
 	},
 	"googlelogin": "Inicieu la sessió amb Google",
 	"googlelogin-manage-notlinked": "El compte actualment no està enllaçat amb cap compte de Google.",
 	"googlelogin-manage-addlabel": "Afegir la ID de Google",
+	"googlelogin-username": "Nom d'usuari",
 	"googlelogin-desc-authmanager": "Permetre als usuaris que accedeixin amb el seu compte de Google.",
 	"googlelogin-link-same": "El vostre compte de Google ja està enllaçat al vostre usuari, així que no es pot enllaçar un altre cop.",
 	"googlelogin-loginbutton-help": "L'autentificació ha de ser amb el teu compte de Google.",

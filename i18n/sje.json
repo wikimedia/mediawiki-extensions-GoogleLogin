@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Olve Utne"
+			"Olve Utne",
+			"Yupik"
 		]
 	},
-	"googlelogin": "Luggi sisa Google'a mildi"
+	"googlelogin": "Luggi sisa Google'a mildi",
+	"googlelogin-username": "Adnejnamma"
 }
