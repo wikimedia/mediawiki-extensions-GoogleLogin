@@ -5,8 +5,13 @@
 			"شاه زمان پټان"
 		]
 	},
+	"apihelp-googleplusprofileinfo-param-googleid": "د کارن گوگل پېژند.",
+	"apihelp-googleloginmanagealloweddomain-summary": "گوگل‌ننوتلو لپاره د پرېښول‌شوو واک‌سيمو مهارول",
 	"googlelogin": "د گووگل په مرسته ورننوتل",
 	"googlelogin-manage-yes": "هو",
 	"googlelogin-manage-addlabel": "گووگل پېژند ورگډول",
-	"googlelogin-username": "کارن‌نوم"
+	"googlelogin-username": "کارن‌نوم",
+	"googlelogin-googleuser": "گوگل کارن",
+	"googlelogin-prefs-status": "گوگل‌ننوتلو دريځ:",
+	"googlelogin-alloweddomain-terminatebutton": "لرې‌کول"
 }
