@@ -5,8 +5,10 @@
 			"شاه زمان پټان"
 		]
 	},
+	"apihelp-googleplusprofileinfo-summary": "د گوگل+ ای‌پي‌آی څخه غوښتنه کوي چې د يو ځانگړي کارن په اړه ځينې ځانواله مالومات ومومي.",
 	"apihelp-googleplusprofileinfo-param-googleid": "د کارن گوگل پېژند.",
 	"apihelp-googleloginmanagealloweddomain-summary": "گوگل‌ننوتلو لپاره د پرېښول‌شوو واک‌سيمو مهارول",
+	"apihelp-googleloginmanagealloweddomain-param-method": "هغه چلندلار چې اجرا يې کړئ، يا د لړليک څخه/ته د پازوال لرې کول يا ورگډول.",
 	"googlelogin": "د گووگل په مرسته ورننوتل",
 	"googlelogin-managelegend": "مهارولو لپاره کارن موندل",
 	"googlelogin-manage-usersubmit": "کارن مهارول",
