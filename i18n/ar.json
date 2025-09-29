@@ -4,7 +4,8 @@
 			"Meno25",
 			"ديفيد",
 			"علاء",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Mohammed Qays"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "يقدم طلبا إلى api جوجل+ لاكتشاف بعض المعلومات الشخصية عن مستخدم معين.",
@@ -58,7 +59,7 @@
 	"googlelogin-error-no-authentication-workflow": "لقد طلبت مواصلة سير عمل مصادقة جوجل الذي بدأته بالفعل، ولكن لا يوجد أي مستخدم بدأ بالفعل; يُرجَى بدء سير عمل مصادقة جديد من خلال محاولة تسجيل الدخول مرة أخرى.",
 	"googlelogin-loginbutton-help": "يصادقك مع حساب جوجل الخاص بك.",
 	"googlelogin-link-help": "ربط حسابك في الويكي بحسابك في Google.",
-	"googlelogin-param-error-label": "تم إرجاع رمز الخطأ من جوجل",
+	"googlelogin-param-error-label": "رمز الخطأ العائد من جوجل",
 	"googlelogin-param-error-help": "في حالة فشل المصادقة ، يتم إرجاع رمز الخطأ من جوجل.",
 	"googlelogin-param-code-label": "رمز الوصول من جوجل",
 	"googlelogin-param-code-help": "في حالة إجراء مصادقة ناجحة، يتم إرجاع الرمز المميز للوصول من جوجل.",
