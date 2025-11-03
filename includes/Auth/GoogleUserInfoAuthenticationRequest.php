@@ -7,6 +7,7 @@ namespace GoogleLogin\Auth;
 
 use GoogleLogin\GoogleUser;
 use MediaWiki\Auth\AuthenticationRequest;
+use MediaWiki\Language\RawMessage;
 
 /**
  * An AuthenticationRequest that holds Google user information.
@@ -32,7 +33,7 @@ class GoogleUserInfoAuthenticationRequest extends AuthenticationRequest {
 		return [
 			'provider' => wfMessage( 'googlelogin-auth-service-name' ),
 			'account' =>
-				$googleUser ? new \RawMessage( '$1', [ $googleUser->getEmailWithId() ] ) :
+				$googleUser ? new RawMessage( '$1', [ $googleUser->getEmailWithId() ] ) :
 					wfMessage( 'googlelogin-auth-service-unknown-account' )
 		];
 	}
