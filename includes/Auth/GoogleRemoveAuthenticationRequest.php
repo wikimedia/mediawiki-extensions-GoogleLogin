@@ -7,6 +7,7 @@ namespace GoogleLogin\Auth;
 
 use GoogleLogin\GoogleUser;
 use MediaWiki\Auth\AuthenticationRequest;
+use MediaWiki\Language\RawMessage;
 
 /**
  * Implementation of an AuthenticationReuqest that is used to remove a
@@ -42,7 +43,7 @@ class GoogleRemoveAuthenticationRequest extends AuthenticationRequest {
 		return [
 			'provider' => wfMessage( 'googlelogin-auth-service-name' ),
 			'account' =>
-				new \RawMessage( '$1', [ $googleUser->getFullNameWithId() ] ),
+				new RawMessage( '$1', [ $googleUser->getFullNameWithId() ] ),
 		];
 	}
 }

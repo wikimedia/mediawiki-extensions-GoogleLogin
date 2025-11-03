@@ -15,6 +15,7 @@ use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\MediaWikiServices;
 use MWException;
 use SpecialPage;
@@ -341,7 +342,7 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 					return AuthenticationResponse::newPass();
 				} else {
 					// TODO: Better error message
-					return AuthenticationResponse::newFail( new \RawMessage( 'Database error' ) );
+					return AuthenticationResponse::newFail( new RawMessage( 'Database error' ) );
 				}
 			}
 		} catch ( Exception $e ) {
