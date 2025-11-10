@@ -12,14 +12,14 @@
 		}
 	},
 	"requires": {
-		"MediaWiki": ">= 1.40.0"
+		"MediaWiki": ">= 1.41.0"
 	},
 	"AvailableRights": [
 		"managegooglelogin",
 		"managegooglelogindomains"
 	],
 	"ConfigRegistry": {
-		"googlelogin": "GlobalVarConfig::newInstance"
+		"googlelogin": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"SpecialPages": {
 		"GoogleLoginReturn": "GoogleLogin\\Specials\\SpecialGoogleLoginReturn",
