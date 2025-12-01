@@ -6,7 +6,8 @@
 			"Hedda",
 			"MuratTheTurkish",
 			"Sayginer",
-			"Watermelon juice"
+			"Watermelon juice",
+			"SaldırganSincap"
 		]
 	},
 	"apihelp-googleplusprofileinfo-description": "Belirli bir kullanıcı hakkındaki bazı kişisel bilgileri öğrenmek için Google+ API'sine bir istek yapar.",
@@ -74,7 +75,7 @@
 	"googlelogin-alloweddomain-change-error": "İzin verilen alanların listesi değişikliği sırasında bir hata oluştu.",
 	"tag-googlelogin-description": "Bu etikete yapılan kayıtlar [[Special:GoogleLogin|GoogleLogin]] ile yapıldı",
 	"action-managegooglelogin": "GoogleLogin bağlantılarını yönetin",
-	"right-managegooglelogin": "GoogleLogin bağlantılarını ekleyebilir, kaldırabilir ve görüntüleyebilir",
+	"right-managegooglelogin": "GoogleLogin bağlantılarını ekle, kaldır ve görüntüle",
 	"action-managegooglelogindomains": "izin verilen GoogleLogin alanlarını yönet",
 	"right-managegooglelogindomains": "İzin verilen GoogleLogin alanlarını yönet",
 	"echo-category-title-change-googlelogin": "Bağlı Google hesabı değişiklikleri",
