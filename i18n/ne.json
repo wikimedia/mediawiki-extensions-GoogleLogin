@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"पर्वत सुबेदी"
+			"पर्वत सुबेदी",
+			"बडा काजी"
 		]
 	},
-	"googlelogin-manage-orgsince": "देखि"
+	"googlelogin": "गुगल प्रयोग गरेर प्रवेश गर्नुहोस्",
+	"googlelogin-auth-service-name": "गुगल",
+	"googlelogin-manage-orgsince": "देखि",
+	"googlelogin-manage-yes": "हो",
+	"googlelogin-manage-no": "होइन",
+	"googlelogin-manage-dismiss": "खारेज गर्नुहोस्",
+	"googlelogin-alloweddomain-terminatebutton": "हटाउनुहोस्"
 }
