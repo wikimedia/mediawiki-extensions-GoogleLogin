@@ -87,14 +87,23 @@ class GooglePrimaryAuthenticationProvider extends AbstractPrimaryAuthenticationP
 	}
 
 	public function autoCreatedAccount( $user, $source ) {
+		// Skip matching for temporary users created automatically (e.g., on edit)
+		// Temporary users are not associated with Google accounts
+		if ( $source === AuthManager::AUTOCREATE_SOURCE_TEMP ) {
+			return;
+		}
+
 		/** @var GoogleUserMatching $userMatchingService */
 		$userMatchingService =
 			MediaWikiServices::getInstance()->getService( Constants::SERVICE_GOOGLE_USER_MATCHING );
 
 		$verifiedToken =
 			$this->manager->getAuthenticationSessionData( self::GOOGLE_ACCOUNT_TOKEN_KEY );
-		$userMatchingService->matchUser( $user, $verifiedToken );
-		$this->manager->removeAuthenticationSessionData( self::GOOGLE_ACCOUNT_TOKEN_KEY );
+		// Only match if we have a verified token (user authenticated via Google)
+		if ( $verifiedToken !== null && is_array( $verifiedToken ) ) {
+			$userMatchingService->matchUser( $user, $verifiedToken );
+			$this->manager->removeAuthenticationSessionData( self::GOOGLE_ACCOUNT_TOKEN_KEY );
+		}
 	}
 
 	public function getAuthenticationRequests( $action, array $options ) {
