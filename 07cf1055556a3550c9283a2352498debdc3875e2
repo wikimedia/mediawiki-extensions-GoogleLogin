@@ -16,6 +16,23 @@
       "message": "please review",
       "revId": "07cf1055556a3550c9283a2352498debdc3875e2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "667c230c_978f9bcc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2026-01-29T16:25:46Z",
+      "side": 1,
+      "message": "Please backport fixes like these to all supported branches, not just LTS",
+      "revId": "07cf1055556a3550c9283a2352498debdc3875e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ],
   "submitRequirementResults": []
