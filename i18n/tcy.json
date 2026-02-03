@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"BHARATHESHA ALASANDEMAJALU",
-			"Vishwanatha Badikana"
+			"Vishwanatha Badikana",
+			"ChiK"
 		]
 	},
 	"googlelogin": "Googleಟ್ಟು ಲಾಗಿನ್ ಅಲೇ",
+	"googlelogin-manage-dismiss": "ದೆತ್ತ್‌ಪಾಡ್ಲೆ",
 	"googlelogin-manage-addlabel": "Google IDನ್ ಸೇರಲೇ",
 	"googlelogin-link-help": "ಇರೇನಾ Google accountನ್ Wiki accountತೊಟ್ಟು ಜೋಡಿಸಲೇ.",
 	"googlelogin-auth-service-unknown-account": "ಗೊತ್ತಿಜ್ಜಂತಿನ Google ಕಾತೆ",
