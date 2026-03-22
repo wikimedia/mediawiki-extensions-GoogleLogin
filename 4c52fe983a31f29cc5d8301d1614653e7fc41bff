@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e144df0_1069eba7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2026-03-22T19:10:07Z",
+      "side": 1,
+      "message": "thanks for the patch and big sorry for not coming back to you any earlier. I kind of miss gerrit emails these days 🙈",
+      "revId": "4c52fe983a31f29cc5d8301d1614653e7fc41bff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce5f58f9_d2445a1f",
+        "filename": "includes/AllowedDomains/EmailDomain.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2026-03-22T19:10:07Z",
+      "side": 1,
+      "message": "uhm... I don\u0027t really like that approach. The EmailDomain class should not rely on knowing where the configuration comes from. See, for example, the other parameters of the construtor ($mail, etc). The caller of the construtor should sort out where to get the directory from and pass that in as a parameter.\n\nHence I suggest to add another construtor parameter, something like \"$publicSuffixPath\" and use that here. You might add a static helper method here that takes the \"GLPublicSuffixArrayDir\" config and builds the path as in this logic (but does not rely on the Config object).\n\nYou may then use the context where EmailDomain is instantiated to access a config object that is not the global main config one.",
+      "revId": "4c52fe983a31f29cc5d8301d1614653e7fc41bff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a38865b3_46edbc87",
+        "filename": "maintenance/updatePublicSuffixArray.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2026-03-22T19:10:07Z",
+      "side": 1,
+      "message": "same as in EmailDomain. This can surely use a helper function in EmailDomain to construct the path. But, e.g., you can use $this-\u003egetConfig() (from Maintenance) to gather the actual config value for the path. No need to rely on the global main config.",
+      "revId": "4c52fe983a31f29cc5d8301d1614653e7fc41bff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
