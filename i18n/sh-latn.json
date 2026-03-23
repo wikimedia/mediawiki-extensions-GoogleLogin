@@ -1,25 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
 	"apihelp-googleplusprofileinfo-summary": "Dobavlja zahtjev до прилогот Gugla+ za dobijanje informacija o datom korisniku.",
-	"apihelp-googleplusprofileinfo-param-googleid": "Korisnička naznaka Gugla.",
+	"apihelp-googleplusprofileinfo-param-googleid": "Google ID korisnika.",
 	"apihelp-googleloginmanagealloweddomain-summary": "Upravljanje dopuštenim domenama za Најава со Гугл",
 	"apihelp-googleloginmanagealloweddomain-param-domain": "Domena što će se dodati/ukloni sa spiska.",
 	"googlelogin": "Prijava uz Gugl",
 	"managegooglelogin": "Upravstvo vezanjima s Guglom",
-	"googleloginalloweddomains": "Administriranje dopuštenih domena za „Најава со Гугл“",
+	"googleloginalloweddomains": "Administriranje dopuštenih domena za GoogleLogin",
 	"googlelogin-manage-usersubmit": "Upravljanje korisnikom",
 	"googlelogin-manage-user": "Upravljate sa {{GENDER:$1|korisnikom|korisnicom}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "Ovaj račun je povezan s {{PLURAL:$1|računom Gugla|računima Gugla}} preko {{PLURAL:$1|sljedećom naznakom|sljedećim naznakama}}:",
 	"googlelogin-manage-notlinked": "Račun trenutno nije povezan ni sa jednim računom Gugla.",
-	"googlelogin-manage-changelegend": "Smijeni naznaku Gugla",
+	"googlelogin-manage-changelegend": "Promijeni Google ID",
 	"googlelogin-manage-changedsuccess": "Korisnik je sada vezan sa računom Gugla.",
 	"googlelogin-manage-terminatesuccess": "Korisnik više nije vezan sa računom Gugla.",
 	"googlelogin-manage-terminatebutton": "Ukloni priključanje",
-	"googlelogin-manage-invalidid": "Nova naznaka Gugla koju ste unijeli je nevažeća. Naznaka mora se sastajati do brojki.",
+	"googlelogin-manage-invalidid": "Novi Google ID koji ste unijeli je neispravan. ID mora biti numerički.",
 	"googlelogin-manage-isplusser": "Registriran na Gugl+",
 	"googlelogin-manage-givenid": "Naznaku Gugla koju ste unijeli je već ima drugi korisnik wikija.",
 	"googlelogin-manage-orgname": "Ime organizacije",
