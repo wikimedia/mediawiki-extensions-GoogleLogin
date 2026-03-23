@@ -35,6 +35,24 @@
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82f8b716_b1dcb790",
+        "filename": "includes/AllowedDomains/EmailDomain.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 356
+      },
+      "writtenOn": "2026-03-23T11:45:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce5f58f9_d2445a1f",
+      "revId": "4c52fe983a31f29cc5d8301d1614653e7fc41bff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a38865b3_46edbc87",
@@ -48,6 +66,24 @@
       "writtenOn": "2026-03-22T19:10:07Z",
       "side": 1,
       "message": "same as in EmailDomain. This can surely use a helper function in EmailDomain to construct the path. But, e.g., you can use $this-\u003egetConfig() (from Maintenance) to gather the actual config value for the path. No need to rely on the global main config.",
+      "revId": "4c52fe983a31f29cc5d8301d1614653e7fc41bff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18976979_129ecefe",
+        "filename": "maintenance/updatePublicSuffixArray.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 356
+      },
+      "writtenOn": "2026-03-23T11:45:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a38865b3_46edbc87",
       "revId": "4c52fe983a31f29cc5d8301d1614653e7fc41bff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
