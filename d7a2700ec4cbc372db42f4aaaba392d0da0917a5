@@ -16,6 +16,40 @@
       "message": "Thanks for the review, I resolved this",
       "revId": "d7a2700ec4cbc372db42f4aaaba392d0da0917a5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c7ad814_8daae64b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2026-03-24T18:51:49Z",
+      "side": 1,
+      "message": "Looks good, thanks for taking my comments into the change 😊\n\nI\u0027ve just one thing that came into my mind when reviewing. What do you think about it?",
+      "revId": "d7a2700ec4cbc372db42f4aaaba392d0da0917a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "910936b1_52229ed2",
+        "filename": "includes/ServiceWiring.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 890
+      },
+      "writtenOn": "2026-03-24T18:51:49Z",
+      "side": 1,
+      "message": "This might be a bit too much refactoring for this change, however: For the SERVICE_ALLOWED_DOMAINS_STORE service, we use GoogleLogin::getGLConfig() already. Right now, this is using the global services access method, however what do you think about building it in a way that accepts an instance of MediaWikiServices (which is optional) and use that when needing to build a new config object?",
+      "revId": "d7a2700ec4cbc372db42f4aaaba392d0da0917a5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
