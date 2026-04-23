@@ -27,7 +27,12 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	private $manageableUser = null;
 
 	function __construct() {
-		parent::__construct( 'ManageGoogleLogin', 'managegooglelogin' );
+		parent::__construct( 'ManageGoogleLogin' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'managegooglelogin';
 	}
 
 	public function doesWrites() {

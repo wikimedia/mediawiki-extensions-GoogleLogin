@@ -11,7 +11,12 @@ use SpecialPage;
 
 class SpecialGoogleLoginAllowedDomains extends SpecialPage {
 	function __construct() {
-		parent::__construct( 'GoogleLoginAllowedDomains', 'managegooglelogindomains' );
+		parent::__construct( 'GoogleLoginAllowedDomains' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'managegooglelogindomains';
 	}
 
 	public function doesWrites() {
