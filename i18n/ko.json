@@ -9,7 +9,8 @@
 			"Yearning",
 			"Ykhwong",
 			"아라",
-			"YeBoy371"
+			"YeBoy371",
+			"Tensama0415"
 		]
 	},
 	"apihelp-googleplusprofileinfo-param-googleid": "사용자의 구글 ID.",
@@ -42,7 +43,7 @@
 	"googlelogin-manage-addlabel": "구글 ID 추가",
 	"googlelogin-username": "사용자 이름",
 	"googlelogin-create": "구글로 만들기",
-	"googlelogin-desc-authmanager": "사용자가 자신의 구글 계정과 로그인할 수 있게 허용합니다.",
+	"googlelogin-desc-authmanager": "사용자가 자신의 구글 계정으로 로그인할 수 있게 허용합니다.",
 	"googlelogin-generic-error": "죄송합니다, 오류가 있었습니다. 뒤로 간 후 다시 시도해 주세요.\n메시지: $1",
 	"googlelogin-unallowed-domain": "당신의 구글 계정의 기본 이메일 주소에서 사용된 이메일 도메인 ($1)은 이 위키에 로그인하도록 허용되지 않았습니다.",
 	"googlelogin-form-merge": "구글을 위키 계정에 연결",
@@ -56,7 +57,7 @@
 	"googlelogin-loginbutton-help": "사용자의 구글 계정으로 인증합니다.",
 	"googlelogin-link-help": "사용자의 위키 계정을 구글 계정과 연동합니다.",
 	"googlelogin-param-error-label": "구글로부터 반환된 오류 코드",
-	"googlelogin-param-error-help": "인증에 실패한 경우, Google로부터 오류 코드가 반환됩니다.",
+	"googlelogin-param-error-help": "인증에 실패한 경우, 구글로부터 오류 코드가 반환됩니다.",
 	"googlelogin-param-code-label": "구글로부터의 액세스 토큰",
 	"googlelogin-param-code-help": "성공적으로 인증한 경우, Google로부터 접근 토큰이 반환됩니다.",
 	"googlelogin-change-account-not-linked": "사용자 계정이 구글 계정과 연결되어 있지 않기 때문에 구글 계정 연결을 제거할 수 없습니다.",
@@ -69,10 +70,10 @@
 	"googlelogin-alloweddomain-removed-success": "$1 도메인은 허용된 도메인 목록에서 성공적으로 제거되었습니다.",
 	"googlelogin-alloweddomain-change-error": "허용된 도메인 목록을 변경하는 동안 오류가 발생했습니다.",
 	"tag-googlelogin": "[[Special:GoogleLogin|구글로그인]]",
-	"action-managegooglelogin": "구글로그인 연결을 관리할",
+	"action-managegooglelogin": "구글로그인 연결을 관리",
 	"right-managegooglelogin": "구글로그인 연결을 추가, 제거 및 보기",
-	"action-managegooglelogindomains": "허용된 구글로그인 도메인을 관리합니다",
-	"right-managegooglelogindomains": "허용된 구글로그인 도메인을 관리합니다",
+	"action-managegooglelogindomains": "허용된 구글로그인 도메인을 관리하기",
+	"right-managegooglelogindomains": "허용된 구글로그인 도메인을 관리하기",
 	"echo-category-title-change-googlelogin": "연결된 구글 계정 변경사항",
 	"notification-header-change-googlelogin": "연결된 구글 계정이 변경되었습니다",
 	"echo-pref-tooltip-change-googlelogin": "연결된 구글 계정을 관리자가 변경할 때 내게 알립니다."
