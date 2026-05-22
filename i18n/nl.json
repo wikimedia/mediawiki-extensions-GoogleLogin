@@ -32,7 +32,7 @@
 	"googlelogin-manage-terminatesuccess": "De gebruiker niet langer aan een Google-account gekoppeld.",
 	"googlelogin-manage-changederror": "<strong>Er is een fout opgetreden tijdens het maken/beëindiging van de koppeling tussen de wiki-gebruiker en de Google-account.</strong>",
 	"googlelogin-manage-terminatebutton": "Verbinding verwijderen",
-	"googlelogin-manage-invalidid": "De nieuwe Google-ID die u hebt opgegeven is ongeldig. De ID moet numeriek zijn.",
+	"googlelogin-manage-invalidid": "De nieuwe Google-ID die u hebt opgegeven is incorrect. De ID moet numeriek zijn.",
 	"googlelogin-manage-isplusser": "Geregistreerd op Google+",
 	"googlelogin-manage-givenid": "Het Google-ID dat u hebt ingevoerd is al gekoppeld met een andere wikigebruiker.",
 	"googlelogin-manage-orgname": "Organisatienaam",
