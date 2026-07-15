@@ -5,6 +5,7 @@
 			"Chrumps",
 			"Devwebtel",
 			"InternerowyGołąb",
+			"PanWor",
 			"Py64",
 			"Rail",
 			"Railfail536",
@@ -37,7 +38,7 @@
 	"googlelogin-create": "Stwórz z Google",
 	"googlelogin-desc-authmanager": "Umożliwia użytkownikom logowanie za pośrednictwem ich kont Google",
 	"googlelogin-generic-error": "Ups, wystąpił błąd. Proszę wrócić i spróbować jeszcze raz. Komunikat: $1",
-	"googlelogin-unallowed-domain": "Domena adresu e-mail wykorzystywana przez twoje podstawowe konto Google ($1) nie jest akceptowana przy logowaniu się na tą wiki.",
+	"googlelogin-unallowed-domain": "Domena adresu e-mail wykorzystywana przez Twoje podstawowe konto Google ($1) nie jest akceptowana przy logowaniu się na tą wiki.",
 	"googlelogin-form-merge": "Połącz Google z kontem na wiki",
 	"googlelogin-form-unlink": "Odłącz Google od konta na wiki",
 	"googlelogin-googleuser": "Użytkownik Google",
@@ -61,7 +62,7 @@
 	"right-managegooglelogin": "Umożliwia dodawania, usuwanie i przeglądanie połączeń GoogleLogin",
 	"action-managegooglelogindomains": "zarządzania dozwolonymi domenami GoogleLogin",
 	"notification-header-change-googlelogin": "Twoje połączone konta Google zostały zmienione",
-	"notification-change-googlelogin": "{{PLURAL:$2|Administrator|Administratorka}} GoogleLogin, $1, {{PLURAL:$2|zmienił|zmieniła}} twoje połączone konta Google.",
+	"notification-change-googlelogin": "{{PLURAL:$2|Administrator|Administratorka}} GoogleLogin, $1, {{PLURAL:$2|zmienił|zmieniła}} Twoje połączone konta Google.",
 	"notification-add-googlelogin": "Następujące {{PLURAL:$2|konto|konta}} Google {{PLURAL:$1|jest|są}} teraz połączone z twoim kontem wiki: $1.",
 	"notification-remove-googlelogin": "Następujące {{PLURAL:$2|konto|konta}} Google nie {{PLURAL:$2|jest|są}} już połączone z twoim kontem wiki: $1."
 }
