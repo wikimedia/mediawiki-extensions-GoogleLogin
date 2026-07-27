@@ -5,6 +5,7 @@
 			"Eduardoaddad",
 			"Felipe L. Ewald",
 			"Guilhermemau",
+			"NenhumaFênix",
 			"Rodrigo codignoli"
 		]
 	},
@@ -18,7 +19,7 @@
 	"googleloginalloweddomains": "Administrar domínios permitidos para o GoogleLogin",
 	"googlelogin-managelegend": "Localizar usuário para gerenciar",
 	"googlelogin-manage-usersubmit": "Gerir usuário",
-	"googlelogin-manage-user": "Está a gerir {{GENDER:$1|o usuário|a usuária}} <strong>$1</strong>.",
+	"googlelogin-manage-user": "Está a gerir {{GENDER:$1|o usuário|a usuária|usuário(a)}} <strong>$1</strong>.",
 	"googlelogin-manage-linked": "A conta está ligada com {{PLURAL:$1|uma conta|contas}} Google com {{PLURAL:$1|o seguinte identificador|os seguintes identificadores}}:",
 	"googlelogin-manage-notlinked": "Esta conta não está ligada atualmente a nenhuma conta Google.",
 	"googlelogin-manage-changelegend": "Alterar o identificador Google",
