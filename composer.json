@@ -3,8 +3,7 @@
 	"description": "Allow users to login to MediaWiki with their Google Account",
 	"license": "MIT",
 	"require": {
-		"google/apiclient": "^v2.16.0",
-		"monolog/monolog": "^2.2.0"
+		"google/apiclient": "^v2.16.0"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "52.0.0",
