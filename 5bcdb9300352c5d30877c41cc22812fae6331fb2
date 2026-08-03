@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2db0781_98d4910d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2026-08-03T00:34:31Z",
+      "side": 1,
+      "message": "It might actually also work to drop the monolog dependency entirely as it seems that the dependency here is just to support google/apiclient which specifies its own monolog dependency. Either way something needs to change for compat with mediawiki/core\u0027s current master.",
+      "revId": "5bcdb9300352c5d30877c41cc22812fae6331fb2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    }
+  ]
+}
