@@ -16,6 +16,24 @@
       "message": "It might actually also work to drop the monolog dependency entirely as it seems that the dependency here is just to support google/apiclient which specifies its own monolog dependency. Either way something needs to change for compat with mediawiki/core\u0027s current master.",
       "revId": "5bcdb9300352c5d30877c41cc22812fae6331fb2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b60a39e_07a7618b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2026-08-03T07:03:50Z",
+      "side": 1,
+      "message": "google/apiclient 2.16.0 already requires monolog/monolog \"^2.9||^3.0\", which should be fine for what we want here. I updated the patch accordingly. I hope you don\u0027t mind.\n\nhttps://github.com/googleapis/google-api-php-client/blob/v2.16.0/composer.json#L13",
+      "parentUuid": "c2db0781_98d4910d",
+      "revId": "5bcdb9300352c5d30877c41cc22812fae6331fb2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
