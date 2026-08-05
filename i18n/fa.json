@@ -3,7 +3,8 @@
 		"authors": [
 			"Alirezaaa",
 			"Jeeputer",
-			"Reza1615"
+			"Reza1615",
+			"Mohammad ebz"
 		]
 	},
 	"googlelogin": "ورود با گوگل",
@@ -18,5 +19,6 @@
 	"googlelogin-username": "نام کاربری",
 	"googlelogin-googleuser": "کاربر گوگل",
 	"googlelogin-prefs-status": "وضعیت واردشدن به‌وسیله گوگل:",
+	"googlelogin-link-help": "حساب ویکی خود را به حساب گوگل خود متصل کنید.",
 	"googlelogin-alloweddomain-terminatebutton": "حذف"
 }
