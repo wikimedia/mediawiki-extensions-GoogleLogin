@@ -16,6 +16,24 @@
       "message": "@bd808, are you OK with this modified form going out in your name?",
       "revId": "a67d3ca4e70ed7053f86fa9798f483a3ed7efa99",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de3c6bae_c4ba261a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2026-08-08T00:17:52Z",
+      "side": 1,
+      "message": "I added a Co-Authored-by footer because giving credit is good. :)",
+      "parentUuid": "f4cbdfc5_42d61a20",
+      "revId": "a67d3ca4e70ed7053f86fa9798f483a3ed7efa99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951"
     }
   ]
 }
