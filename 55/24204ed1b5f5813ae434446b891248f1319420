@@ -1,0 +1,9 @@
+Code-Review+1: BryanDavis <bd808@wikimedia.org>
+Code-Review+2: Jforrester <jforrester@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Mon, 10 Aug 2026 13:57:41 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GoogleLogin/+/1319958
+Comments-Total: 4
+Project: mediawiki/extensions/GoogleLogin
+Branch: refs/heads/master
