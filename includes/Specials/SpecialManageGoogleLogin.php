@@ -6,14 +6,15 @@
 namespace GoogleLogin\Specials;
 
 use ErrorPageError;
-use ExtensionRegistry;
 use GoogleLogin\Constants;
 use GoogleLogin\GoogleIdProvider;
 use GoogleLogin\GoogleLogin;
+use GoogleLogin\GoogleLoginAgentNotification;
 use GoogleLogin\GoogleUserMatching;
 use HTMLForm;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Notification\RecipientSet;
 use MediaWiki\User\UserIdentity;
 use SpecialPage;
 use User;
@@ -272,18 +273,15 @@ class SpecialManageGoogleLogin extends SpecialPage {
 	 * @param string[] $googleId
 	 */
 	protected function notifyUser( \Config $config, $action, array $googleId ) {
-		if ( $config->get( 'GLEnableEchoEvents' ) &&
-			ExtensionRegistry::getInstance()->isLoaded( 'Echo' )
-		) {
-			\EchoEvent::create( [
-				'type' => 'change-googlelogin',
-				'extra' => [
+		if ( $config->get( 'GLEnableEchoEvents' ) ) {
+			MediaWikiServices::getInstance()->getNotificationService()->notify(
+				new GoogleLoginAgentNotification( 'change-googlelogin', $this->getUser(), [
 					'user' => $this->manageableUser->getID(),
 					'action' => $action,
 					'googleId' => $googleId,
-				],
-				'agent' => $this->getUser(),
-			] );
+				] ),
+				new RecipientSet( $this->manageableUser )
+			);
 		}
 	}
 }
