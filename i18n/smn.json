@@ -6,6 +6,7 @@
 		]
 	},
 	"googlelogin": "Čáládât siisâ Google-tubdâlduváin",
+	"googlelogin-manage-errorloading": "Luođimfeilâ",
 	"googlelogin-username": "Kevtteenommâ",
 	"googlelogin-alloweddomain-terminatebutton": "Siho"
 }
